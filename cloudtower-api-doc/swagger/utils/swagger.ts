@@ -1,7 +1,7 @@
 import { List, Map as IMap } from "immutable";
-import i18next from './i18n';
-import swaggerSpec1_8 from "./specs/v1.8.0-swagger.json";
-import swaggerSpec1_9 from './specs/v1.9.0-swagger.json';
+import i18next from '../i18n';
+import swaggerSpec1_8 from "../specs/v1.8.0-swagger.json";
+import swaggerSpec1_9 from '../specs/v1.9.0-swagger.json';
 
 
 export const specMap = {
@@ -65,6 +65,10 @@ export interface CommonSwaggerProps {
       status: "loading" | "success" | "failed" | "failedConfig"
     ) => void;
   };
+  authSelectors: {
+    authorized: () => IMap<string, string>,
+    shownDefinitions: () => boolean,
+  }
 }
 
 export type TopBarSelection =
