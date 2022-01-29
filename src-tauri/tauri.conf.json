@@ -4,8 +4,8 @@
     "version": "0.1.0"
   },
   "build": {
-    "distDir": "../build",
-    "devPath": "../build",
+    "distDir": "../cloudtower-api-doc/build",
+    "devPath": "../cloudtower-api-doc/build",
     "beforeDevCommand": "",
     "beforeBuildCommand": ""
   },
@@ -53,7 +53,7 @@
     },
     "windows": [
       {
-        "title": "CloudTower API Doc",
+        "title": "CloudTower API Doc Demo",
         "width": 800,
         "height": 600,
         "resizable": true,

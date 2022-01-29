@@ -1,0 +1,22 @@
+{
+  "version-v1.8.0/tutorialSidebar": [
+    "version-v1.8.0/intro",
+    {
+      "分类声明": [
+        "version-v1.8.0/all",
+        "version-v1.8.0/userManagement",
+        "version-v1.8.0/monitoring",
+        "version-v1.8.0/applicationManagement",
+        "version-v1.8.0/clusters",
+        "version-v1.8.0/audit",
+        "version-v1.8.0/resources",
+        "version-v1.8.0/tasks",
+        "version-v1.8.0/vm",
+        "version-v1.8.0/operators",
+        "version-v1.8.0/timeMachine",
+        "version-v1.8.0/storage"
+      ]
+    },
+    "version-v1.8.0/download"
+  ]
+}

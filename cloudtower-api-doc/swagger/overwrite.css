@@ -1,0 +1,61 @@
+/*
+* swagger-ui
+*/
+span.url {
+  display: none;
+}
+.swagger-ui img[alt="first"], 
+.swagger-ui img[alt="first-and-skip"],
+.swagger-ui img[alt="last"],
+.swagger-ui img[alt="last-and-skip"],
+.swagger-ui img[alt="after-first"], 
+.swagger-ui img[alt="after-skip-first"], 
+.swagger-ui img[alt="before-last"],
+.swagger-ui img[alt="before-skip-last"] {
+  max-width: 730px;
+}
+
+.swagger-ui .markdown p, .swagger-ui .markdown pre, .swagger-ui .renderedMarkdown p, .swagger-ui .renderedMarkdown pre {
+  white-space: break-spaces;
+}
+
+.add-server {
+  display: inline-block;
+}
+.add-server input {
+  height: 24px;
+  width: 400px;
+}
+
+.swagger-ui div.scheme-container {
+  box-shadow: none;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#swagger-loading {
+  text-align: center;
+  height: 32px;
+}
+#swagger-loading svg{
+  animation: loading 0.4s linear  infinite;
+  height: 32px;
+  width: 32px;
+}
+
+.swagger-ui div.servers>label select {
+  max-width: 130px;
+} 
+
+/*
+* docusaurus
+*/
+#__docusaurus > nav > div.navbar__inner > div.navbar__items.navbar__items--right > div.navbar__item.dropdown.dropdown--hoverable.dropdown--right > a > span > svg {
+  display: none;
+}
