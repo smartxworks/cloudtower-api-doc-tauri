@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const {
-  Api,
-  TOWER_PROJECT_ID
-} = reuire('./utils');
+const { fetchGitLabFile } = reuire('./utils');
 
 const swaggerSpecPath = "packages/operation-api/src/generated/swagger-3.0.json";
 const downloadPath = path.resolve(__dirname, "../swagger/specs");
@@ -23,14 +20,7 @@ const downloadFile = async (versions) => {
    * as java sdk type problem, we reset v1.8.0 commit to 583ec54d48a05db60f12955a572cb7605132a051.
    */
   for (const version in versions) {
-    const file = await Api.RepositoryFiles.show(
-      TOWER_PROJECT_ID,
-      "",
-      versions[version],
-      {
-        file_path: swaggerSpecPath,
-      }
-    );
+    const file = await fetchGitLabFile(swaggerSpecPath, versions[version]);
     const download_file_name = path.join(
       downloadPath,
       `${version}-swagger.json`
