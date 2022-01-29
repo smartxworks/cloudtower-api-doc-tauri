@@ -3,9 +3,9 @@
   "scripts": {
     "tauri": "tauri",
     "scan": "npm run swagger:scan && npm run prisma:scan",
-    "prisma:scan": "node ./scripts/scan-prisma.js",
-    "swagger:scan": "node ./scripts/scan-swagger.js",
-    "doc:new": "node ./scripts/create-new-version.js",
+    "prisma:scan": "node ./cloudtower-api-doc/scripts/scan-prisma.js",
+    "swagger:scan": "node ./cloudtower-api-doc/scripts/scan-swagger.js",
+    "doc:new": "node ./cloudtower-api-doc/scripts/create-new-version.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start  ./cloudtower-api-doc -p 3300",
     "build": "docusaurus build  ./cloudtower-api-doc",
