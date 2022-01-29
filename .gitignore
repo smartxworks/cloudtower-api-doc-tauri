@@ -14,5 +14,5 @@ yarn-error.log*
 
 */build/*
 
-.yarn
+.yarn/cache/*
 .docusaurus

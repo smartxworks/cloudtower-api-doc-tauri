@@ -15,19 +15,19 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - name: get version
-        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+        run: echo "TAG_VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: create release
         id: create_release
         uses: actions/create-release@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: app-v${{ env.PACKAGE_VERSION }}
-          release_name: "Desktop app v${{ env.PACKAGE_VERSION }}"
+          tag_name: app-${{ env.TAG_VERSION }}
+          release_name: "Desktop app ${{ env.TAG_VERSION }}"
           body: "See the assets to download this version and install."
-          draft: true
+          draft: false
           prerelease: false
   build-tauri:
     needs: create-release
@@ -42,7 +42,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 14
     - name: install Rust stable
       uses: actions-rs/toolchain@v1
       with:
