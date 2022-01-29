@@ -1,6 +1,6 @@
 import React from 'react';
 import Servers from './components/Servers';
-import { CommonSwaggerProps } from './utils';
+import { CommonSwaggerProps, translateComponent } from './utils';
 import i18next from './i18n';
 
 interface ILayoutState {
@@ -29,6 +29,7 @@ export default class extends React.PureComponent<
         })
       );
     }
+    translateComponent();
   }
 
   render() {

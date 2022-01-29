@@ -200,9 +200,6 @@ const App: React.FC = () => {
               return;
             }
             if(prop.type === 'object') {
-              if(schema_name.includes('LabelUp')) {
-                console.log(p)
-              }
               return traverseProperties(prop, schema_name, p);
             }
             const paramName = [schema_name, sub_path, p].filter(Boolean).join('_')
