@@ -4573,6 +4573,7 @@ __metadata:
     clsx: ^1.1.1
     docusaurus-plugin-relative-paths: ^1.0.0
     file-loader: ^6.2.0
+    graphql: ^16.3.0
     i18next: ^21.3.1
     lodash: ^4.17.21
     prism-react-renderer: ^1.2.1
@@ -7179,6 +7180,13 @@ __metadata:
   version: 4.2.9
   resolution: "graceful-fs@npm:4.2.9"
   checksum: 68ea4e07ff2c041ada184f9278b830375f8e0b75154e3f080af6b70f66172fabb4108d19b3863a96b53fc068a310b9b6493d86d1291acc5f3861eb4b79d26ad6
+  languageName: node
+  linkType: hard
+
+"graphql@npm:^16.3.0":
+  version: 16.3.0
+  resolution: "graphql@npm:16.3.0"
+  checksum: ba540641e9cd2a8de5b989ff1433b015f232fa73aaef478d6709c1339cd43113347917acb965a5799c004667687852fc8ff0cfaa935eb26374c91c1fd7fdaeb1
   languageName: node
   linkType: hard
 

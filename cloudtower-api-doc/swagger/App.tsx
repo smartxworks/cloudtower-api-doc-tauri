@@ -41,7 +41,6 @@ const App: React.FC = () => {
     const { paths, components } = wrapSpecWithI18n;
     _.set(wrapSpecWithI18n, ['paths'], splitPaths(filter, paths));
     _.set(wrapSpecWithI18n, ['components', 'schemas'], splitSchema(wrapSpecWithI18n.paths, components.schemas))
-    console.log(wrapSpecWithI18n.components.schemas)
     SwaggerUI({
       dom_id: "#swagger-ui",
       spec: wrapSpecWithI18n,
