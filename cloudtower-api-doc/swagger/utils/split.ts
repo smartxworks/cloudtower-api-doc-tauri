@@ -4,9 +4,9 @@ import i18next from "../i18n";
 
 // get paths we need and add translate tags and description
 export const splitPaths = (filter: string, allPaths: ISpec['paths']) => {
-  const tags: string[] = SwaggerTopBar[filter].map(tag => i18next.t(`tags.${tag}`));
-  const paths =
-    !tags || tags[0] === "*"
+  const selectAll = filter === 'all';
+  const tags: string[] = selectAll ?  [] : SwaggerTopBar[filter].map(tag => i18next.t(`tags.${tag}`));
+  const paths = selectAll
       ? allPaths
       : pickBy(allPaths, (p) => p.post.tags && tags.includes(p.post.tags[0]));
   return paths;

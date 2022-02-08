@@ -25,7 +25,7 @@ const getLocales = (filename) => {
   }
 };
 
-const writeLoclaes = (locales) => {
+const writeLocales = (locales) => {
   const { en, zh } = locales;
   const write = (content) => {
     const { locales, localesPath } = content;
@@ -60,7 +60,7 @@ const fetchGitLabFile = async (file_path, commit) => {
 
 module.exports = {
   getLocales,
-  writeLoclaes,
+  writeLocales,
   Api,
   TOWER_PROJECT_ID,
   fetchGitLabFile

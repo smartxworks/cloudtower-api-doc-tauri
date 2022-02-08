@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { getLocales, writeLoclaes } = require("./utils");
+const { getLocales, writeLocales } = require("./utils");
 
 const scan = () => {
   const specDir = path.resolve(__dirname, "../swagger/specs");
@@ -25,10 +25,11 @@ const scan = () => {
         ["OR", "NOT", "AND", "aggregate", "__typename", "after", "before", "first", "last", "orderBy", "skip"].includes(field) ||
         schemaName.endsWith("WhereInput") ||
         schemaName.endsWith('WhereUniqueInput') ||
-        schemaName.startsWith('Nested') ||
+        schemaName.startsWith('NestedAggregate') ||
         schemaName.startsWith('WithTask')
       );
     };
+    const isIgnoreEnum = (schemaName) => schemaName.endsWith('OrderByInput')
     const collectParams = (schemaName, schemaContent, schemas) => {
       if (schemaContent.allOf) {
         for (const prop of schemaContent.allOf) {
@@ -62,6 +63,10 @@ const scan = () => {
             paramsLocales[`${schemaName}_${prop}`] = "";
           }
         }
+      } else if(schemaContent.type === 'string' && schemaContent.enum) {
+        if(!isIgnoreEnum(schemaName)) {
+          paramsLocales[`${schemaName}`] = ''
+        }
       } else {
         console.warn("unhandled schema", schemaName);
       }
@@ -87,15 +92,15 @@ const scan = () => {
     Object.keys(schemas).forEach((schemaName) =>
       collectParams(schemaName, schemas[schemaName], schemas)
     );
-    writeLoclaes({
+    writeLocales({
       en: { locales: tagLocales, localesPath: tagEnLocalesFile },
       zh: { locales: tagLocales, localesPath: tagZhLocalesFile },
     });
-    writeLoclaes({
+    writeLocales({
       en: { locales: desLocales, localesPath: desEnLocalesFile },
       zh: { locales: desLocales, localesPath: desZhLocalesFile },
     });
-    writeLoclaes({
+    writeLocales({
       en: { locales: paramsLocales, localesPath: paramsEnLocalesFile },
       zh: { locales: paramsLocales, localesPath: paramsZhLocalesFile },
     });

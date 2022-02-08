@@ -34,7 +34,7 @@ export const wrapSchemaWithI18n = (schemas: ISpec['components']['schemas'], lang
       ["OR", "NOT", "AND", "aggregate", "__typename", "after", "before", "first", "last", "orderBy", "skip", "where"].includes(field) ||
       schema_name.endsWith("WhereInput") ||
       schema_name.endsWith('WhereUniqueInput') ||
-      schema_name.startsWith('Nested') ||
+      schema_name.startsWith('NestedAggregate') ||
       schema_name.startsWith('WithTask')
     );
   };
