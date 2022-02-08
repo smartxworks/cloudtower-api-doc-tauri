@@ -2920,5 +2920,6 @@
   "Zone_total_memory_bytes": "Total Memory",
   "Zone_used_data_space": "Used Storage Capacity",
   "Zone_valid_data_space": "Allocated Storage Capacity",
-  "Zone_vm_num": "Number of Virtual Machines"
+  "Zone_vm_num": "Number of Virtual Machines",
+  "content-language": "Language of response body"
 }
