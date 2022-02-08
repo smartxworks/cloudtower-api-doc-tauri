@@ -4,14 +4,14 @@
 span.url {
   display: none;
 }
-.swagger-ui img[alt="first"], 
-.swagger-ui img[alt="first-and-skip"],
-.swagger-ui img[alt="last"],
-.swagger-ui img[alt="last-and-skip"],
-.swagger-ui img[alt="after-first"], 
-.swagger-ui img[alt="after-skip-first"], 
-.swagger-ui img[alt="before-last"],
-.swagger-ui img[alt="before-skip-last"] {
+.markdown img[alt="first"], 
+.markdown img[alt="first-and-skip"],
+.markdown img[alt="last"],
+.markdown img[alt="last-and-skip"],
+.markdown img[alt="after-first"], 
+.markdown img[alt="after-skip-first"], 
+.markdown img[alt="before-last"],
+.markdown img[alt="before-skip-last"] {
   max-width: 730px;
 }
 
@@ -58,4 +58,40 @@ span.url {
 */
 #__docusaurus > nav > div.navbar__inner > div.navbar__items.navbar__items--right > div.navbar__item.dropdown.dropdown--hoverable.dropdown--right > a > span > svg {
   display: none;
+}
+
+/* dark mode */
+html[data-theme='dark'] .swagger-ui div.scheme-container {
+  background: transparent;
+}
+html[data-theme='dark'] .swagger-ui .code, html[data-theme='dark'] .swagger-ui code {
+  background-color: transparent
+}
+.swagger-ui .opblock-tag {
+  color: #3b4151;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: 0 0 5px;
+}
+html[data-theme='dark'] .swagger-ui, 
+html[data-theme='dark'] .swagger-ui .opblock-tag,
+html[data-theme='dark'] .swagger-ui .opblock .opblock-summary-operation-id, 
+html[data-theme='dark'] .swagger-ui .opblock .opblock-summary-path, 
+html[data-theme='dark'] .swagger-ui .opblock .opblock-summary-path__deprecated,
+html[data-theme='dark'] .swagger-ui .opblock-description-wrapper p, 
+html[data-theme='dark'] .swagger-ui .opblock-external-docs-wrapper p, 
+html[data-theme='dark'] .swagger-ui .opblock-title_normal p,
+html[data-theme='dark'] .swagger-ui table thead tr td, 
+html[data-theme='dark'] .swagger-ui table thead tr th,
+html[data-theme='dark'] .swagger-ui .parameter__name,
+html[data-theme='dark'] .swagger-ui .tab li,
+html[data-theme='dark'] .swagger-ui .response-col_status,
+html[data-theme='dark'] .swagger-ui .model-title,
+html[data-theme='dark'] .swagger-ui .model,
+html[data-theme='dark'] input 
+{
+  color: white;
+}
+html[data-theme='dark'] input {
+  background: white;
 }
