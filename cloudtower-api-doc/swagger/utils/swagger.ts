@@ -14,6 +14,93 @@ export enum SupportLanguage {
   en = "en",
 }
 
+
+export type Property = Record<
+string,
+{
+  allOf?: [{ $ref?: string }];
+  $ref?: string;
+  items?: { $ref?: string };
+  type?: 'object' | 'string' | 'aray';
+  properties?: Property
+}
+>
+export interface Schema {
+  type?: "object" | "string" | 'array';
+  enum?: string[];
+  allOf?:[{ $ref?: string,properties?:Property }];
+  items?: { properties?: Property };
+  properties?: Record<
+    string,
+    {
+      allOf?:[{ $ref?: string,properties?:Property }];
+      $ref?: string;
+      items?: { $ref?: string };
+      type?: 'object' | 'string' | 'array';
+      properties?: Property
+    }
+  >;
+}
+export interface ISpec {
+  components: {
+    schemas: Record<string, Schema>;
+    securitySchemes: Record<
+      string,
+      {
+        type: string;
+        name: string;
+        in: "header";
+        description: string;
+      }
+    >;
+  };
+  paths: Record<
+    string,
+    {
+      post: {
+        tags: string[];
+        description: string;
+        parameters?: {
+          name: string;
+          in: string;
+          description: string;
+        }[];
+        responses: {
+          200: {
+            content: {
+              "application/json": {
+                schema: {
+                  items?: {
+                    $ref?: string;
+                    properties?: {
+                      data?: {
+                        allOf?: [{ $ref?: string }];
+                      };
+                    };
+                  };
+                  $ref?: string;
+                };
+              };
+            };
+          };
+        };
+        requestBody: {
+          content: {
+            "application/json"?: {
+              schema: {
+                $ref?: string;
+                items?: {
+                  $ref?: string;
+                };
+              };
+            };
+          };
+        };
+      };
+    }
+  >;
+}
+
 type SwaggerComponent = React.FC<{
   className?: string;
   mobile?: number;

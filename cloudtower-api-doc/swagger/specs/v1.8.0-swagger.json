@@ -124766,11 +124766,7 @@
       }
     }
   },
-  "info": {
-    "title": "Tower SDK API",
-    "version": "1.8.0",
-    "description": "cloudtower operation API and SDK"
-  },
+  "info": {},
   "openapi": "3.0.0",
   "paths": {
     "/get-alert-notifiers": {
@@ -145466,9 +145462,5 @@
       }
     }
   },
-  "servers": [
-    {
-      "url": "/v2/api"
-    }
-  ]
+  "servers": []
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const { fetchGitLabFile } = reuire('./utils');
+const { fetchGitLabFile } = require('./utils');
 
 const swaggerSpecPath = "packages/operation-api/src/generated/swagger-3.0.json";
 const downloadPath = path.resolve(__dirname, "../swagger/specs");
@@ -25,9 +25,18 @@ const downloadFile = async (versions) => {
       downloadPath,
       `${version}-swagger.json`
     );
+    const spec = JSON.parse(Buffer.from(file.content, file.encoding).toString("utf-8"))
     fs.writeFileSync(
       download_file_name,
-      Buffer.from(file.content, file.encoding).toString("utf-8"),
+      JSON.stringify(
+       {
+         ...spec,
+         info: {},
+         servers: []
+       },
+       null,
+       2
+      ),
       "utf-8"
     );
   }
