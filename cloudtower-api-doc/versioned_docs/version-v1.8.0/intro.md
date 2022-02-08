@@ -5,7 +5,6 @@ slug: /
 ---
 
 # CloudTower APIs 通用指南
-​
 欢迎使用 CloudTower API, 请仔细阅读通用指南。
 * CloudTower API 可以用于调用 CloudTower 内所管理的各类资源。
 * 此文档采用 OpenApi v3.0.0 规范书写。
@@ -14,7 +13,6 @@ slug: /
 ​
 ​
 ## 如何调用
-​
 CloudTower API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或任何 HTTP 客户端进行调用。
 ​
 为每个具体的接口提供 example 示例，包括请求参数和返回参数示例，可以通过修改示例参数来进行调用。
@@ -52,17 +50,19 @@ curl -X 'POST' \
 其中  `data.token` 是需要用到的鉴权字段，加入到 `header.Authorization ` 即可。
 * 如果通过 cURL 调用， 则加入 `-H 'Authorization: token-string'`。
 * 如果通过 swagger api 文档页面调用，则点击 `Authorization` 按钮，将`data.token` 填入到 `value` 中即可。
-​
-
 ## 分页查询
-* **after** string 类型，非必填项。填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。
-* **before** string 类型，非必填项。填入单个资源的 id。表示从该资源之前开始获取，不包含该资源。
-* **first** number 类型，非必填项。可与 after / before 搭配使用，表示获取指定资源后的多少个数据。
-* **last** number 类型，非必填项。可与 after / before 搭配使用，表示获取指定资源前的多少个数据。
-* **skip** number 类型，非必填项。可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。
-* **orderBy** 枚举类型，所有的值都在 api 各自的 schema 中可以查询到。表示查询顺序，通常包含了资源所有字段的降序或者倒序，`_DESC` 或 `_ASC`。
-* **where** 条件查询，表示查询符合该条件的资源。where 的具体类型定义可在对应 api 的 schema 中查询到。以 `/get-users` 为例，where 为 `UserWhereInput` , 对 id 值的查询条件进行说明。
+| 字段名 |  类型 |  是否必填 |  解释 | 
+|  ----- |  :---: |  :-------: |  --- | 
+|  **after** |  string |  否 |  填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。| 
+|  **before** | string | 否 | 填入单个资源的 id。表示从该资源之前开始获取，不包含该资源。| 
+|  **first** | number | 否| 可与 after / before 搭配使用，表示获取指定资源后的多少个数据。| 
+| **last** | number | 否 | 非必填项。可与 after / before 搭配使用，表示获取指定资源前的多少个数据。| 
+|  **skip** | number | 否 | 非必填项。可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。| 
+|  **orderBy** | enum | 否 | 所有的值都在 api 各自的 schema 中可以查询到。表示查询顺序，通常包含了资源所有字段的降序(`_DESC`)或者升序 (`_ASC`)。| 
+|  **where** | object | 否| 条件查询，表示查询符合该条件的资源。where 的具体类型定义可在对应 api 的 schema 中查询到。| 
 ```graphql
+# 以 `/get-users` 为例，where 为 `UserWhereInput` , 对 id 值的查询条件进行说明。
+
 {
    # 满足 id 为 1 的资源
    id: "1",
@@ -167,9 +167,7 @@ curl -X 'POST' \
  skip: 5,
 }
 ```
-​
 ## 异步任务
-​
 CloudTower 在管理资源时，大多数时候会将实际的操作过程放入异步任务中执行。因此当一次涉及到创建、删除、修改的 API 返回结果后，其对应的实际操作可能还在执行中，该操作的状态将由对应的异步任务进行展示。
 ​
 为了保持 API 调用的简洁与一致，此类 API 会将其产生的异步任务 id 以 `{ task_id: string }` 的参数返回。
@@ -177,10 +175,7 @@ CloudTower 在管理资源时，大多数时候会将实际的操作过程放入
 获得 `task_id` 后可以进一步通过 `/get-tasks` 查询异步任务的状态和结果，具体参数类型请查看 `任务中心`。
  
 需要注意的是，在资源执行异步任务时，只有资源的 id 是可信稳定的，资源的其他字段及其关联资源的字段都有可能在异步任务中进行更改。如果需要对这些字段进行查询或其它操作，请在异步任务完成之后通过 id 再次进行操作。
- 
-​
 ## 虚拟机备份 CloudTower API 示例
-​
 1. 获取所需虚拟机的基本信息，例如通过虚拟机名称查询，基本信息中将包含 vm 的 id。
 ```ssh
 curl --location --request POST 'http://192.168.31.209/v2/api/get-vms' \ --header 'Authorization: YOUR_TOKEN' \
