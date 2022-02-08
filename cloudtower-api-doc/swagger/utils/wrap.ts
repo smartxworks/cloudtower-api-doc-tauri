@@ -6,23 +6,16 @@ export const wrapPathWithI18n = (paths: ISpec["paths"], language: string) => {
     const post = paths[api_name].post;
     if (post.tags) {
       post.tags = post.tags.map((tag) =>
-        i18next.t(`tags.${tag}`, { lng: language })
+        i18next.t(`tags.${tag}`, { lng: language, defaultValue: '' })
       );
     }
     // add description of api
-    post.description = i18next.exists(`description.${api_name}`)
-      ? i18next.t(`description.${api_name}`)
-      : undefined;
+    post.description = i18next.t(`description.${api_name}`, { lng: language, defaultValue: '' })
     // add description of header parameters
-    post.parameters = post.parameters?.map((param) => {
-      if (i18next.exists(`parameters.${param.name}`, { lng: language })) {
-        return {
-          ...param,
-          description: i18next.t(`parameters.${param.name}`),
-        };
-      }
-      return param;
-    });
+    post.parameters = post.parameters?.map((param) => ({
+        ...param,
+        description: i18next.t(`parameters.${param.name}`, {lng: language, defaultValue: ''}),
+    }));
     _.set(paths, [api_name, 'post'], post);
   });
   return paths;
