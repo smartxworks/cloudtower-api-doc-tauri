@@ -2,7 +2,7 @@
   "server_placeholder": "add new server, http://YOUR_TOWER_URL/v2/api",
   "authorization": "Authorize",
   "servers": "Servers",
-  "filter_placeholder": "Filter By Tag",
+  "filter_placeholder": "Filter By Tag, API, API Description.",
   "parameters": "Parameters",
   "download": "Download File",
   "tryItOut": "Try It Out",

@@ -15,7 +15,7 @@ import {
   wrapPathWithI18n,
   wrapSchemaWithI18n,
 } from "./utils";
-import _ from "lodash";
+import _, { values } from "lodash";
 
 
 const WrapWithI18n = (Original) => (props) => <Original {...props} i18next={i18next} />;
@@ -50,6 +50,17 @@ const App: React.FC = () => {
       plugins: [
         () => ({
           components: { CustomLayout },
+          fn: {
+            opsFilter: (taggedOps, filter) => {
+              const filters = filter.split(' ');
+              return taggedOps.filter((val, key) => {
+                const ops = val.get('operations');
+                return filters.some(item => key.indexOf(item) > -1) || ops.some(op => {
+                  return filters.some(item => op.get('path').includes(item) || op.get('operation').get('description').includes(item));
+                })
+              })
+            }
+          },
           wrapComponents: {
             Example: WrapWithI18n,
             authorizeBtn: WrapWithI18n,

@@ -1,7 +1,6 @@
 import React from 'react';
 import Servers from './components/Servers';
 import { CommonSwaggerProps, translateComponent } from './utils';
-import i18next from './i18n';
 
 interface ILayoutState {
   customServers: { url: string }[];
