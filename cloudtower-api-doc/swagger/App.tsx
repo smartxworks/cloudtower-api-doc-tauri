@@ -15,10 +15,8 @@ import {
   wrapPathWithI18n,
   wrapSchemaWithI18n,
 } from "./utils";
-import _, { values } from "lodash";
+import _ from "lodash";
 
-
-const WrapWithI18n = (Original) => (props) => <Original {...props} i18next={i18next} />;
 
 const App: React.FC = () => {
   const wrapper = useRef<HTMLDivElement>(null);
@@ -60,20 +58,6 @@ const App: React.FC = () => {
                 })
               })
             }
-          },
-          wrapComponents: {
-            Example: WrapWithI18n,
-            authorizeBtn: WrapWithI18n,
-            TryItOutButton: WrapWithI18n,
-            FilterContainer: WrapWithI18n,
-            parameters: WrapWithI18n,
-            modelExample: WrapWithI18n,
-            responses: WrapWithI18n,
-            response: WrapWithI18n,
-            parameterRow: WrapWithI18n,
-            authorizationPopup: WrapWithI18n,
-            auths: WrapWithI18n,
-            apiKeyAuth: WrapWithI18n,
           },
         }),
       ],
