@@ -2,7 +2,7 @@
   "server_placeholder": "添加新的 server，http://YOUR_TOWER_URL/v2/api",
   "authorization": "鉴权",
   "servers": "服务",
-  "filter_placeholder": "通过标签过滤",
+  "filter_placeholder": "通过标签， API，API 描述过滤，通过空格进行多个过滤",
   "parameters": "参数",
   "download": "下载文件",
   "tryItOut": "试一试",
