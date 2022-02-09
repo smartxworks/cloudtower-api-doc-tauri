@@ -94,4 +94,5 @@ html[data-theme='dark'] input
 }
 html[data-theme='dark'] input {
   background: white;
+  color: black;
 }
