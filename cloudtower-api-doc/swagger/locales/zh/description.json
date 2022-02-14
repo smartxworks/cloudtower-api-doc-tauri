@@ -47,7 +47,7 @@
   "/create-vm-from-template": "从模板创建虚拟机",
   "/create-vm-placement-group": "创建虚拟机放置组",
   "/create-vm-snapshot": "创建虚拟机快照",
-  "/create-vm-vlan": "创建虚拟机网络",
+  "/create-vm-vlan": "创建 VLAN",
   "/create-vm-volume": "创建虚拟卷",
   "/delete-brick-topo": "删除机箱",
   "/delete-cluster": "移除集群",
@@ -84,7 +84,7 @@
   "/delete-vm-placement-group": "删除虚拟机放置组",
   "/delete-vm-snapshot": "删除虚拟机快照",
   "/delete-vm-template": "删除虚拟机模板",
-  "/delete-vm-vlan": "删除虚拟机网络",
+  "/delete-vm-vlan": "删除 VLAN",
   "/delete-vm-volume": "删除虚拟卷",
   "/execute-snapshot-plan": "立即执行快照计划",
   "/force-restart-vm": "虚拟机强制重启",
@@ -350,7 +350,7 @@
   "/update-vm-nic": "更新虚拟网卡",
   "/update-vm-placement-group": "更新虚拟机放置组",
   "/update-vm-template": "更新虚拟机模板",
-  "/update-vm-vlan": "更新虚拟机网络",
+  "/update-vm-vlan": "更新 VLAN",
   "/upload-elf-image": "上传 ISO 映像",
   "auth": "通过 post /v2/api/login 获取到 token"
 }
