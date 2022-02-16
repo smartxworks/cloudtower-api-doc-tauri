@@ -10,7 +10,7 @@ const config = {
   title: "CloudTowerr APIs",
   url: "https://www.smartx.com/",
   baseUrl: "/",
-  favicon: "img/smartx.svg",
+  favicon: "img/favicon.ico",
   organizationName: "SmartX", // Usually your GitHub org/user name.
   projectName: "CloudTower APIs", // Usually your repo name.
   i18n: {
