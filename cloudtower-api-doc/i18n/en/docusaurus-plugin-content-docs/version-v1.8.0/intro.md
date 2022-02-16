@@ -3,16 +3,16 @@ sidebar_position: 1
 id: intro
 slug: /
 ---
-# CloudTower APIs General Guide
+# CloudTower API General Guide
 Welcome to CloudTower API! Please read this General Guide carefully.
-* You can use the CloudTower APIs to call the different types of resources that are managed by CloudTower.
+* You can use the CloudTower API to call the different types of resources that are managed by CloudTower.
 * This document is written following the OpenApi Specification v3.0.0.
 * For a better readability, this API document is divided into multiple modules. You can select a particular module by clicking the drop-down box at the upper-right corner of the page, for example, “User Management”, “Multiple Cluster Management”, etc.
-* The CloudTower APIs provide very flexible request parameter types, which are convenient for batch operations and conditional queries. Considering the flexibility of parameters and the convenience of usage, such as the `GET` request has some restrictions, this API document only uses the `POST` request to send data in json format.
+* The CloudTower API provides very flexible request parameter types, which are convenient for batch operations and conditional queries. Considering the flexibility of parameters and the convenience of usage, such as the `GET` request has some restrictions, this API document only uses the `POST` request to send data in json format.
  
 ​## How to Call
 ​
-The CloudTower APIs are developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. 
+The CloudTower API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. 
  
 The APIs provide examples for each specific interface, including request parameters and return results. You can modify the example parameters to call the API.
 ​
@@ -22,7 +22,7 @@ Click `Try it out` to make an API call in the real environment and connect to th
 ## Authentication
 > Except for login, all the requests need to add the authentication field.
 ​
-The CloudTower APIs make authentication by passing the `Authorization` field in the headers. Here is how to get a token, using cURL as an example:
+The CloudTower API makes authentication by passing the `Authorization` field in the headers. Here is how to get a token, using cURL as an example:
 ```ssh
 curl -X 'POST' \
  'http://localhost:3000/v2/api/login' \
@@ -174,7 +174,7 @@ In order to keep API invocations concise and consistent, this type of APIs will 
 After obtaining the `task_id`, you can further query the status and results of the asynchronous task via `/get-tasks`. Refer to `Task Center`for specific parameter types.
 
 Please note that when a resource executes an asynchronous task, only the resource id is credible and stable, but the other fields of this resource and the fields of its associated resources could be modified in the asynchronous task. If you need to perform query or other operations on these fields, please use the resource id to perform operations again after the asynchronous task is completed.
-## An Example of CloudTower APIs: Virtual Machine Backup
+## An Example of CloudTower API: Virtual Machine Backup
 1. Obtain the basic information of the virtual machine, for example, query by virtual machine name to obtain the virtual machine’s id.
 ```ssh
 curl --location --request POST 'http://192.168.31.209/v2/api/get-vms' \ --header 'Authorization: YOUR_TOKEN' \
