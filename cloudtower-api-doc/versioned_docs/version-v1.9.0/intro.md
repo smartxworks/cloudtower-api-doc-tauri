@@ -4,7 +4,7 @@ id: intro
 slug: /
 ---
 
-# CloudTower APIs 通用指南
+# CloudTower API 通用指南
 欢迎使用 CloudTower API, 请仔细阅读通用指南。
 * CloudTower API 可以用于调用 CloudTower 内所管理的各类资源。
 * 此文档采用 OpenApi v3.0.0 规范书写。

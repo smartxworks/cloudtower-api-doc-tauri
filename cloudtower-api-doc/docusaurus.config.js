@@ -7,7 +7,7 @@ const versions = require('./versions.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "CloudTowerr APIs",
+  title: "CloudTower API",
   url: "https://www.smartx.com/",
   baseUrl: "/",
   favicon: "img/favicon.ico",
