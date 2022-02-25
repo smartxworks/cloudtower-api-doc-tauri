@@ -96,3 +96,9 @@ html[data-theme='dark'] input {
   background: white;
   color: black;
 }
+
+
+html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(2),
+html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(3) {
+  display: none;
+}
