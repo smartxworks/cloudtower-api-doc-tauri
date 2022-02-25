@@ -23,7 +23,7 @@ const App: React.FC = () => {
   const { pathname } = useLocation();
   const { version } = useDocsVersion();
   const { i18n, siteConfig } = useDocusaurusContext();
-  const filter = pathname.replace(siteConfig.baseUrl, "");
+  const filter = pathname.replace(siteConfig.baseUrl, "").split('/').pop();
 
   const wrapSpecWithI18n = useMemo(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
