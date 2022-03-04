@@ -9,7 +9,7 @@ export const splitPaths = (filter: string, allPaths: ISpec['paths']) => {
   const paths = selectAll
       ? allPaths
       : pickBy(allPaths, (p) => p.post.tags && tags.includes(p.post.tags[0]));
-  return allPaths;
+  return paths;
 };
 
 // get schemas we need
