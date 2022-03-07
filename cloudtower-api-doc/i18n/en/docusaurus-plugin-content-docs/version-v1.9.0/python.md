@@ -5,12 +5,13 @@ slug: /python-sdk
 ---
 # Cloudtower Python SDK
 
-Python 环境下的 Cloudtower SDK，适用于 2.7 和 3.4 及以上版本
+The Cloudtower SDK in Python for versions of  2.7, 3.4 and above.
 
-- [源码地址](https://github.com/smartxworks/cloudtower-python-sdk)
-- [下载地址](https://github.com/smartxworks/cloudtower-python-sdk/releases)
+- [Source Address](https://github.com/smartxworks/cloudtower-python-sdk)
+- [Download Links](https://github.com/smartxworks/cloudtower-python-sdk/releases)
+- [General Guide](https://cloudtower-api-doc.vercel.app)
 
-## 安装
+## Install
 
 - ### whl
 
@@ -26,7 +27,7 @@ Python 环境下的 Cloudtower SDK，适用于 2.7 和 3.4 及以上版本
   python setup.py install
   ```
 
-- ### git 源码安装
+- ### git source installation
 
   ```
   git clone https://github.com/smartxworks/cloudtower-python-sdk.git
@@ -34,60 +35,60 @@ Python 环境下的 Cloudtower SDK，适用于 2.7 和 3.4 及以上版本
   python setup.py install
   ```
 
-- ### git pip 安装
+- ### git pip installation
 
   ```shell
   pip install git+https://github.com/smartxworks/cloudtower-python-sdk.git
   ```
 
-- ### pypi 安装
+- ### pypi installation
   ```shell
   pip install cloudtower-sdk
   ```
 
-## 使用
+## The Use of SDK
 
-### 创建实例
+### Create an instance
 
-#### 创建 `ApiClient` 实例
+#### Create an `ApiClient` instance
 
 ```python
 from cloudtower.configuration import Configuration
 from cloudtower import ApiClient
-# 配置 operation-api endpoint
+# Configure operation-api endpoint
 configuration = Configuration(host="http://192.168.96.133/v2/api")
 client = ApiClient(configuration)
 ```
 
-#### 创建对应的 API 实例
+#### Create a corresponding API instance
 
-> 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。
+> Create a relevant API instance based on operations for different purposes, e.g., a `VmApi` needs to be created for the operations related to virtual machines.
 
 ```python
 from cloudtower.api.vm_api import VmApi
 vm_api = VmApi(client)
 ```
 
-### 鉴权
+### Authentication
 
 ```python
 from cloudtower.api.user_api import UserApi
 from cloudtower.models import UserSource
-# 通过 UserApi 中的 login 方法来获得 token。
+# Obtain a token through the login method in UserApi.
 user_api = UserApi(client)
 login_res = user_api.login({
     "username": "your_username",
     "password": "your_password",
     "source": UserSource.LOCAL
 })
-# 将 token 配置在 configuration.api_key["Authorization"] 中，
-# 这样所有使用当前 client 的 api 都会获得鉴权的 token 信息。
+# Configure the token in configuration.api_key["Authorization"],
+# so that all the APIs using the current client will get the token information of authentication.
 configuration.api_key["Authorization"] = login_res.data.token
 ```
 
-### 发送请求
+### Send a request
 
-#### 获取资源
+#### Get resources
 
 ```python
 vms = vm_api.get_vms({
@@ -98,9 +99,9 @@ vms = vm_api.get_vms({
 })
 ```
 
-#### 更新资源
+#### Update resources
 
-> 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
+> Resource updates will generate relevant asynchronous tasks. When an asynchronous task finishes, the resource operations are completed and the data has been updated.
 
 ```python
 start_res = vm_api.start_vm({
@@ -110,47 +111,47 @@ start_res = vm_api.start_vm({
 })
 ```
 
-> 可以通过提供的工具方法同步等待异步任务结束
+> Users can synchronously wait for the asynchronous task to finish through the provided tool method.
 
 ```python
 from cloudtower.utils import wait_tasks
 try:
  wait_tasks([res.task_id for res in start_res], api_client)
 except ApiException as e:
- # 处理错误
+ # Handle errors
 else:
- # task完成后的回调
+ # Callback after the task finishes
 ```
 
-##### 方法参数说明
+##### Description of Method Parameters
 
-| 参数名        | 类型      | 是否必须 | 说明                                                                                 |
+| Parameter name        | Type      | Required | Description                                                                                 |
 | ------------- | --------- | -------- | ------------------------------------------------------------------------------------ |
-| ids           | list[str] | 是       | 需查询的 task 的 id 列表                                                             |
-| api_client    | ApiClient | 是       | 查询所使用的 ApiClient 实例                                                          |
-| interval      | int       | 否       | 轮询的间隔时间，默认为 5s                                                            |
-| timeout       | int       | 否       | 超时时间，默认为 300s                                                                |
-| exit_on_error | bool      | 否       | 是否在单个 Task 出错时立即退出，否则则会等待全部 Task 都完成后再退出，默认为 False。 |
+| ids           | list[str] | Yes       | The id list of the tasks to be queried.                                                             |
+| api_client    | ApiClient | Yes       | The ApiClient instance used by the query.                                                          |
+| interval      | int       | No       | The polling interval with the default value of 5s.                                                            |
+| timeout       | int       | No       | The timeout with the default value of 300s.                                                                |
+| exit_on_error | bool      | No       | Whether to exit immediately when a single task fails, otherwise wait for all the tasks to finish before exiting, and the default value is False. |
 
-##### 错误说明
+##### Error Description
 
-| 错误码 | 说明             |
+| Error code | Description             |
 | ------ | ---------------- |
-| 408    | 超时             |
-| 500    | 异步任务内部错误 |
+| 408    | Timeout             |
+| 500    | An internal error of asynchronous task |
 
-#### 自定义 header
+#### Custom header
 
-> cloudtower api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
+> The cloudtower APIs support setting the language of the returned information by setting the content-language in the header. The optional values are `en-US` and `zh-CN`, and the default is `en-US`.
 
-##### 通过 `ApiClient` 的 `set_default_header` 方法
+##### By using the `set_default_header` method of `ApiClient` 
 
-> 可以通过 `ApiClient` 的 `set_default_header` 方法设置默认的 header 信息。
+> The default header information can be set using the `set_default_header` method of `ApiClient`.
 
 ```python
 api_client.set_default_header("content_language","en-US")
 alert_api = AlertApi(api_client)
-# 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为英文描述。
+# The message, solution, cause, impact in the alerts obtained at this time will be converted into English descriptions.
 alerts = alert_api.get_alerts(
   {
     "where": {
@@ -163,15 +164,15 @@ alerts = alert_api.get_alerts(
 )
 ```
 
-##### 通过设置请求的关键字参数
+##### By setting the keyword parameter of the request
 
-> 也可以通过设置请求的关键字参数 `content_language` 来设置返回信息的语言。
+> The language of the returned information can also be set by setting the keyword parameter `content_language` of the request.
 
 ```python
 from cloudtower.api.user_api import AlertApi
 
 alert_api = AlertApi(api_client)
-# 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为中文描述。
+# The message, solution, cause, impact in the alerts obtained at this time will be converted into Chinese descriptions.
 alerts = alert_api.get_alerts(
   {
     "where": {
@@ -185,12 +186,13 @@ alerts = alert_api.get_alerts(
 )
 ```
 
-#### 其他
+#### Others
 
-##### 发送异步请求
+##### Send an asynchronous request
 
-> 上述请求的发送都是同步的请求，会堵塞当前进程。如果需要使用异步请求，请在对应请求的关键字参数中加上 `async_req=True`。
-> 通过返回结果 `ApplyResult.get()` 来获取对应的结果。
+> The sending of the above requests are all synchronous and will block the current process. If users need to use an asynchronous request, please add `async_req=True` to the keyword parameter of the corresponding request.
+> And obtain the corresponding result from the returned value of `ApplyResult.get()`.
+
 
 ```python
 vms = vm_api.get_vms(
@@ -204,17 +206,17 @@ vms = vm_api.get_vms(
 print(vms.get()[0].name)
 ```
 
-### 使用完成后销毁 ApiClient 实例
+### Destroy an ApiClient instance after use
 
 ```python
 client.close()
 ```
 
-## 操作示例
+## Operation Examples
 
-### 获取虚拟机
+### Get a virtual machine
 
-#### 获取所有虚拟机
+#### Get all virtual machines
 
 ```python
 from cloudtower import ApiClient
@@ -226,7 +228,7 @@ vm_api = VmApi(api_client)
 vms = vm_api.get_vms({})
 ```
 
-#### 分页获取虚拟机
+#### Get virtual machines by page
 
 ```python
 from cloudtower import ApiClient
@@ -241,7 +243,7 @@ vms_from_51_to_100 = vm_api.get_vms({
 })
 ```
 
-#### 获取所有已开机虚拟机
+#### Get all powered-on virtual machines
 
 ```python
 from cloudtower import ApiClient
@@ -260,7 +262,7 @@ running_vms = vm_api.get_vms(
 )
 ```
 
-#### 获取名称或描述中包含特定字符串的虚拟机
+#### Get virtual machines with a specific string in their names or descriptions
 
 ```python
 from cloudtower import ApiClient
@@ -278,7 +280,7 @@ vms_name_contains = vm_api.get_vms(
 )
 ```
 
-#### 获取所有 vcpu > n 的虚拟机
+#### Get all virtual machines with vcpu > n
 
 ```python
 from cloudtower import ApiClient
@@ -296,9 +298,9 @@ vms_has_4_more_vcpu = vm_api.get_vms(
 )
 ```
 
-### 从模版创建虚拟机
+### Create a virtual machine from a template
 
-#### 仅指定 id
+#### Specify ids only
 
 ```python
 from cloudtower import ApiClient
@@ -326,7 +328,7 @@ created_vms = vm_api.get_vms({
 })
 ```
 
-#### 配置与模板不同的虚拟盘参数
+#### Configure the virtual disk parameters which are different from those of the template
 
 ```python
 from cloudtower import ApiClient
@@ -401,7 +403,7 @@ created_vms = vm_api.get_vms({
 })
 ```
 
-#### 配置与模版不同的网卡参数
+#### Configure the NIC parameters which are different from those of the template
 
 ```python
 from cloudtower import ApiClient
@@ -436,9 +438,9 @@ created_vms = vm_api.get_vms({
 })
 ```
 
-### 创建空白虚拟机
+### Create a blank virtual machine
 
-#### 简单创建
+#### Create a virtual machine simply
 
 ```python
 from cloudtower import ApiClient
@@ -491,9 +493,9 @@ created_vm = vm_api.get_vms({
 })
 ```
 
-#### 创建时配置虚拟盘
+#### Configure a virtual disk during creation
 
-##### CD-ROM 加载 ISO
+##### Load an ISO from CD-ROM
 
 ```python
 from cloudtower import ApiClient
@@ -541,7 +543,7 @@ created_vm = vm_api.get_vms({
 })
 ```
 
-##### 挂载虚拟卷为虚拟盘
+##### Mount a virtual volume as a virtual disk
 
 ```python
 from cloudtower import ApiClient
@@ -591,7 +593,7 @@ created_vm = vm_api.get_vms({
 })
 ```
 
-##### 新增并挂载虚拟盘
+##### Add and mount a virtual disk
 
 ```python
 from cloudtower import ApiClient
@@ -646,7 +648,7 @@ created_vm = vm_api.get_vms({
 })
 ```
 
-#### 创建时配置虚拟网卡
+#### Configure a virtual NIC during creation
 
 ```python
 from cloudtower import ApiClient
@@ -704,9 +706,9 @@ created_vm = vm_api.get_vms({
 })
 ```
 
-### 编辑虚拟机
+### Edit a virtual machine
 
-#### 编辑基本信息
+#### Edit basic information
 
 ```python
 from cloudtower import ApiClient
@@ -741,9 +743,9 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-#### CD-ROM 编辑
+#### Edit a CD-ROM
 
-##### 添加 CD-ROM
+##### Add a CD-ROM
 
 ```python
 from cloudtower import ApiClient
@@ -777,7 +779,7 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-##### 删除 CD-ROM
+##### Delete a CD-ROM
 
 ```python
 from cloudtower import ApiClient
@@ -806,9 +808,9 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-#### 虚拟卷操作
+#### Virtual volume operations
 
-##### 添加新虚拟卷
+##### Add a new virtual volume
 
 ```python
 from cloudtower import ApiClient
@@ -851,7 +853,7 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-##### 挂载已存在虚拟卷为虚拟盘
+##### Mount an existing virtual volume as a virtual disk
 
 ```python
 from cloudtower import ApiClient
@@ -890,7 +892,7 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-##### 卸载虚拟盘
+##### Unmount a virtual disk
 
 ```python
 from cloudtower import ApiClient
@@ -920,9 +922,9 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-#### 网卡操作
+#### NIC operations
 
-##### 添加网卡
+##### Add a NIC
 
 ```python
 from cloudtower import ApiClient
@@ -970,7 +972,7 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-##### 编辑网卡
+##### Edit a NIC
 
 ```python
 from cloudtower import ApiClient
@@ -1005,7 +1007,7 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-##### 移除网卡
+##### Delete a NIC
 
 ```python
 from cloudtower import ApiClient
@@ -1034,9 +1036,9 @@ updated_vm = vm_api.get_vms({
 })
 ```
 
-#### 虚拟机迁移
+#### Virtual machine migration
 
-##### 迁移至指定主机
+##### Migrate to a specified host
 
 ```python
 from cloudtower import ApiClient
@@ -1060,7 +1062,7 @@ with_task_vm = vm_api.mig_rate_vm({
 wait_tasks([with_task_vm.task_id], api_client)
 ```
 
-##### 自动调度到合适的主机
+##### Schedule to an appropriate host automatically
 
 ```python
 from cloudtower import ApiClient
@@ -1081,11 +1083,11 @@ with_task_vm = vm_api.mig_rate_vm({
 wait_tasks([with_task_vm.task_id], api_client)
 ```
 
-### 虚拟机电源操作
+### Virtual machine power operations
 
-#### 虚拟机开机:
+#### Power on a virtual machine
 
-##### 指定虚拟机开机，自动调度到合适的虚拟机
+##### The specified virtual machine is powered on and scheduled to an appropriate virtual machine automatically
 
 ```python
 from cloudtower import ApiClient
@@ -1107,7 +1109,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 opened_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 批量虚拟机开机，自动调度到合适的虚拟机
+##### The virtual machines are powered on in batch and scheduled to appropriate virtual machines automatically
 
 ```python
 from cloudtower import ApiClient
@@ -1131,7 +1133,7 @@ wait_tasks(tasks, api_client)
 opened_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-##### 开机至指定主机
+##### The virtual machine is powered on to a specified host
 
 ```python
 from cloudtower import ApiClient
@@ -1156,9 +1158,9 @@ wait_tasks(with_task_vm.task_id, api_client)
 opened_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-#### 虚拟机关机
+#### Power off a virtual machine
 
-##### 指定虚拟机关机
+##### Shut down the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1180,7 +1182,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 closed_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 批量虚拟机关机
+##### Shut down the virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1205,7 +1207,7 @@ wait_tasks(tasks, api_client)
 closed_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-##### 强制关机指定虚拟机
+##### Power off the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1227,7 +1229,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 closed_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 强制关机批量虚拟机
+##### Power off virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1251,9 +1253,9 @@ wait_tasks(tasks, api_client)
 closed_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-#### 虚拟机重启
+#### Reboot a virtual machine
 
-##### 重启指定虚拟机
+##### Reboot the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1275,7 +1277,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 restarted_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 重启批量虚拟机
+##### Reboot the virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1299,7 +1301,7 @@ wait_tasks(tasks, api_client)
 restarted_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-##### 重启指定虚拟机
+##### Reboot the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1321,7 +1323,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 restarted_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 强制重启批量虚拟机
+##### Force reboot the virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1345,9 +1347,9 @@ wait_tasks(tasks, api_client)
 restarted_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-#### 虚拟机暂停
+#### Suspend a virtual machine
 
-##### 暂停指定虚拟机
+##### Suspend the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1369,7 +1371,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 suspended_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 暂停批量虚拟机
+##### Suspend the virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1393,9 +1395,9 @@ wait_tasks(tasks, api_client)
 suspended_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-#### 虚拟机恢复
+#### Resume a virtual machine
 
-##### 恢复指定虚拟机
+##### Resume the specified virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1417,7 +1419,7 @@ wait_tasks(with_task_vm.task_id, api_client)
 resumed_vm = vm_api.get_vms({"where": {"id": "vm_id"}})[0]
 ```
 
-##### 恢复批量虚拟机
+##### Resume the virtual machines in batch
 
 ```python
 from cloudtower import ApiClient
@@ -1441,11 +1443,11 @@ wait_tasks(tasks, api_client)
 resumed_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-### 删除虚拟机
+### Delete a virtual machine
 
-#### 回收站
+#### Recycle bin
 
-##### 移入回收站
+##### Move to recycle bin
 
 ```python
 from cloudtower import ApiClient
@@ -1469,7 +1471,7 @@ wait_tasks(tasks, api_client)
 vm_moved_to_recycle_bin = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-##### 从回收站恢复
+##### Recover from recycle bin
 
 ```python
 from cloudtower import ApiClient
@@ -1493,7 +1495,7 @@ wait_tasks(tasks, api_client)
 recovered_vms = vm_api.get_vms({"where": {"id_in": ["vm_id_1", "vm_id_2"]}})
 ```
 
-#### 永久删除
+#### Delete permanently
 
 ```python
 from cloudtower import ApiClient
@@ -1515,9 +1517,9 @@ tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete
 wait_tasks(tasks, api_client)
 ```
 
-## 场景示例
+## A scenario example
 
-### 虚拟机备份
+### Backup a virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -1540,18 +1542,18 @@ def create_vm_snapshot(
     vm_api = VmApi(api_client)
     vm_snapshot_api = VmSnapshotApi(api_client)
     iscsi_lun_snapshot_api = IscsiLunSnapshotApi(api_client)
-    # 1. 获取所需备份的虚拟机的信息，这里我们需要vm的id来构建创建snapshot的参数
+    # 1. Get the information of the virtual machine to be backed up, here we need the id of the virtual machine to construct the parameters for creating a snapshot.
     vm = vm_api.get_vms({
         "where": {
             "name": target_vm_name
         },
         "first": 1
     })
-    # vm 已安装并启动 VMTools 时，consistent_type 可以使用 FILE_SYSTEM_CONSISTENT 代表文件系统一致性快照
+    # When the VMTools has been installed and started in the virtual machine, the consistent_type can use FILE_SYSTEM_CONSISTENT to represent a file system consistency snapshot.
     if vm.vm_tools_status != VmToolsStatus.RUNNING and consistent_type == ConsistentType.FILE_SYSTEM_CONSISTENT:
         consistent_type = ConsistentType.CRASH_CONSISTENT
 
-    # 2. 创建虚拟机快照
+    # 2. Create a snapshot of the virtual machine.
     snapshots_with_task = vm_snapshot_api.create_vm_snapshot({
         "data": [
             {
@@ -1562,18 +1564,18 @@ def create_vm_snapshot(
         ]
     })
 
-    # 3. 等待Task完成
+    # 3. Wait for the task to finish.
     wait_tasks([snapshots_with_task[0].task_id], api_client)
 
-    # 4. 根据返回的id查询生成的虚拟机快照
+    # 4. Query the generated virtual machine snapshot according to the returned id.
     snapshot = vm_snapshot_api.get_vm_snapshots({
         "where": {
             "id": snapshots_with_task.data.id
         }
     })[0]
-    # 5. 根据返回的snapshot中的vm_disks包含了快照的虚拟盘信息
-    # type 为 DISK 表示对应一个卷，其中会包含一个 snapshot_local_id 则表示该虚拟卷对应的lun快照的 local_id
-    # type 为 CD-ROM则代表为被挂载的CD-ROM，不会产生lun快照
+    # 5. The vm_disks in the returned snapshot includes the virtual disk information of the snapshot.
+    # If the type is DISK, it indicates a corresponding volume, which contains a snapshot_local_id, indicating the local_id of the lun snapshot corresponding to the virtual volume.
+    # If the type is CD-ROM, it indicates a mounted CD-ROM, and no lun snapshot has been generated.
     lun_snapshot_ids = []
     for disk in snapshot.vm_disks:
         if disk.type == "DISK":
@@ -1592,9 +1594,9 @@ def create_vm_snapshot(
 
 ```
 
-### Dashboard 构建
+### Build Dashboard
 
-#### 定义工具方法
+#### Define utility methods
 
 ```python
 from functools import reduce
@@ -1622,7 +1624,7 @@ def format_unit(base: int, units, step=1024):
     return "{:.2f}{}".format(base, units[-1])
 ```
 
-#### 构建报警信息
+#### Build alart information
 
 ```python
 def build_alerts(api_client: ApiClient, cluster_ids):
@@ -1648,9 +1650,9 @@ def build_alerts(api_client: ApiClient, cluster_ids):
     }
 ```
 
-#### 构建硬盘信息
+#### Build hard disk information
 
-> 这里以机械硬盘为例
+> Here is an example of a mechanical hard disk
 
 ```python
 def build_hdd_info(api_client: ApiClient, cluster_ids):
@@ -1682,9 +1684,9 @@ def build_hdd_info(api_client: ApiClient, cluster_ids):
     return hdd
 ```
 
-#### 构建性能指标
+#### Build performance metrics
 
-> 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
+> Get total CPU cores, total CPU frequency, used CPU frequency, total memory, used memory, total storage, used storage, invalid storage, and available storage of the specified cluster.
 
 ```python
 def build_metrics(api_client: ApiClient, clusters, cluster_ids):
@@ -1754,7 +1756,7 @@ def build_metrics(api_client: ApiClient, clusters, cluster_ids):
     return result
 ```
 
-#### 构建 Dashboard
+#### Build Dashboard
 
 ```python
 def build_dashboard(api_client: ApiClient, datacenter_id: str = None, cluster_id: str = None):
