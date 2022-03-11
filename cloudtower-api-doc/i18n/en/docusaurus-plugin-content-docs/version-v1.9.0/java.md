@@ -9,7 +9,6 @@ The Cloudtower SDK in Java for versions 1.8 and above
 
 - [Source Address](https://github.com/smartxworks/cloudtower-java-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-java-sdk/releases)
-- [General Guide](https://cloudtower-api-doc.vercel.app)
 
 ## Install
 
