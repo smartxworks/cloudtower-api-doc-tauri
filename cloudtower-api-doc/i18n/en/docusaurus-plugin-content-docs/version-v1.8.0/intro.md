@@ -10,7 +10,7 @@ Welcome to CloudTower API! Please read this General Guide carefully.
 * For a better readability, this API document is divided into multiple modules. You can select a particular module by clicking the drop-down box at the upper-right corner of the page, for example, “User Management”, “Multiple Cluster Management”, etc.
 * The CloudTower API provides very flexible request parameter types, which are convenient for batch operations and conditional queries. Considering the flexibility of parameters and the convenience of usage, such as the `GET` request has some restrictions, this API document only uses the `POST` request to send data in json format.
  
-​## How to Call
+## How to Call
 ​
 The CloudTower API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. 
  
