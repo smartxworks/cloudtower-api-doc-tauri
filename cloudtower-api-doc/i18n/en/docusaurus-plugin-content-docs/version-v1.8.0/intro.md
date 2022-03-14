@@ -25,13 +25,13 @@ Click `Try it out` to make an API call in the real environment and connect to th
 The CloudTower API makes authentication by passing the `Authorization` field in the headers. Here is how to get a token, using cURL as an example:
 ```ssh
 curl -X 'POST' \
- 'http://localhost:3000/v2/api/login' \
+ 'http://192.168.31.209/v2/api/login' \
  -H 'accept: application/json' \
  -H 'content-language: en-US' \
  -H 'Content-Type: application/json' \
  -d '{
  "username": "string",
- "source": "LOCAL"，
+ "source": "LOCAL",
  "password": "string"
 }'
 ```

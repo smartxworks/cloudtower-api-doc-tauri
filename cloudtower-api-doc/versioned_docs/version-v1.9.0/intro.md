@@ -29,13 +29,13 @@ CloudTower API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或�
 CloudTower API 通过在 headers 中传递 `Authorization` 字段进行鉴权，token 的获取方式如下, 以 cURL 为例：
 ```ssh
 curl -X 'POST' \
- 'http://localhost:3000/v2/api/login' \
+ 'http://192.168.31.209/v2/api/login' \
  -H 'accept: application/json' \
  -H 'content-language: en-US' \
  -H 'Content-Type: application/json' \
  -d '{
  "username": "string",
- "source": "LOCAL"，
+ "source": "LOCAL",
  "password": "string"
 }'
 ```
