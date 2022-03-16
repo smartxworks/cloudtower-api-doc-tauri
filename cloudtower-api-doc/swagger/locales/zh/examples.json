@@ -1,10 +1,22 @@
 {
-  "getUserRoleNexts_single": "获取唯一用户",
-  "getUserRoleNexts_multiple": "获取多个用户",
-  "getUserRoleNexts_first": "获取第一个用户",
-  "getUserRoleNexts_all": "获取所有用户",
+  "getUserRoleNexts_single": "获取指定用户角色",
+  "getUserRoleNexts_multiple": "获取多个用户橘色",
+  "getUserRoleNexts_first": "获取指定用户角色",
+  "getUserRoleNexts_all": "获取所有用户橘色",
   "getUserRoleNextsConnection_all": "获取所有用户角色的数量",
-  "getUserRoleNextsConnection_condition": "获取符合特定条件的用户角色",
+  "getUserRoleNextsConnection_condition": "获取符合特定条件的用户数量",
   "getCreateUserRoleNexts_all": "创建新角色",
-  "getCreateUserRoleNexts_multiple": "创建多个新角色"
+  "getCreateUserRoleNexts_multiple": "创建多个新角色",
+  "getUpdateUserRoleNexts_single": "更新指定用户角色",
+  "getUpdateUserRoleNexts_multiple": "更新多个用户角色",
+  "getDeleteUserRoleNexts_single": "删除指定用户角色",
+  "getDeleteUserRoleNexts_multiple": "删除多个用户角色",
+  "getUsers_single": "获取指定用户",
+  "getUsers_multiple": "获取多个用户",
+  "getUsersConnection_all": "获取所有用户的数量",
+  "getUsersConnection_condition":"获取符合特定条件的用户数量",
+  "getDeleteUsers_single": "删除指定用户",
+  "getDeleteUsers_all": "删除所有用户",
+  "getUpdateUsers_single": "更新指定用户",
+  "getUpdateUsers_multiple": "更新多个用户"
 }
