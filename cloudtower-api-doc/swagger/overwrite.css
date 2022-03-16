@@ -1,9 +1,7 @@
 /*
 * swagger-ui
 */
-span.url {
-  display: none;
-}
+
 .markdown img[alt="first"], 
 .markdown img[alt="first-and-skip"],
 .markdown img[alt="last"],
@@ -99,4 +97,32 @@ html[data-theme='dark'] input {
 
 html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(4) {
   display: none;
+}
+
+#swagger-ui .col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module {
+  max-width: fit-content !important;
+}
+
+#__docusaurus  div.main-wrapper.docs-wrapper.docs-doc-page .container.redoc-container {
+  /* background-color: coral; */
+  max-width: 100%;
+  padding: 0px;
+}
+
+#__docusaurus  div.main-wrapper.docs-wrapper.docs-doc-page .container.redoc-container .docItemCol_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+
+#__docusaurus  div.main-wrapper.docs-wrapper.docs-doc-page .container.redoc-container .theme-doc-version-badge.badge.badge--secondary,
+#__docusaurus  div.main-wrapper.docs-wrapper.docs-doc-page .container.redoc-container .theme-doc-markdown.markdown header 
+{
+   display: none;
+}
+
+.container.redoc-container #swagger-ui .menu-content div.sc-ilfuhL.eDCSMz {
+  display: none;
+}
+.container.redoc-container.padding-top--md {
+  padding-top: 0px !important;
 }
