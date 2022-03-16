@@ -3,7 +3,8 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const versions = require('./versions.json');
+const webpack = require("webpack");
+const versions = require("./versions.json");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,7 +24,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: '/',
+          path: "/",
           routeBasePath: "/",
           // editUrl: "https://github.com/facebook/docusaurus/edit/main/website/",
           lastVersion: versions[0],
@@ -32,10 +33,33 @@ const config = {
         blog: false,
         pages: false,
         theme: {
-          customCss: [ require.resolve('./swagger/overwrite.css')]
-        }
+          customCss: [require.resolve("./swagger/overwrite.css")],
+        },
       }),
     ],
+  ],
+  plugins: [
+    (context, opts) => {
+      return {
+        name: "overwrite-config",
+        configureWebpack(config, isServer, utils, content) {
+          return {
+            plugins: [
+              new webpack.ProvidePlugin({
+                process: "process/browser.js",
+              }),
+            ],
+            resolve: {
+              fallback: {
+                path: require.resolve("path-browserify"),
+                os: require.resolve("os-browserify/browser"),
+                tty: require.resolve("tty-browserify"),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
 
   themeConfig:
@@ -49,14 +73,48 @@ const config = {
         },
         items: [
           {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            // dropdownActiveClassDisabled: true,
+            type: "docsVersion",
+            to: "/",
+            label: "通用指南" 
+          },
+          {
+            type: "docsVersion",
+            to: "/api",
+            label: "CloudtTower API"
+          },
+          {
+            label: "下载",
+            items: [
+              {
+                type: "docsVersion",
+                to: "/download",
+                label: "概览"
+              },
+              {
+                type: "docsVersion",
+                to: "/java-sdk",
+                label: "CloudTower Java SDK",
+              },
+              {
+                to: "/python-sdk",
+                type: "docsVersion",
+                label: "CloudTower Python SDK"
+              },
+              {
+                tl: "/go-sdk",
+                type: "docsVersion",
+                label: "CloudTower Go SDK"
+              }
+            ]
+          },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
           },
           {
             type: "localeDropdown",
-            position: "right"
-          }
+            position: "right",
+          },
         ],
       },
       footer: {

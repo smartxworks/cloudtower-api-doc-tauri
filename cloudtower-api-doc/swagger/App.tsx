@@ -1,74 +1,70 @@
-import "swagger-ui/dist/swagger-ui.css";
-import React, { useRef, useEffect, useMemo } from "react";
-import SwaggerUI from "swagger-ui/dist/swagger-ui-es-bundle";
-import { useLocation } from "@docusaurus/router";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import _ from "lodash";
+import { RedocStandalone } from "redoc";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useDocsVersion } from "@docusaurus/theme-common";
 import i18next from "./i18n";
-import Loading from "../assets/loading-svgrepo-com.svg";
-import CustomLayout from "./layout";
 import {
   ISpec,
-  specMap, 
+  specMap,
   splitPaths,
   splitSchema,
   wrapPathWithI18n,
   wrapSchemaWithI18n,
+  TopBarSelection
 } from "./utils";
-import _ from "lodash";
 
 
-const App: React.FC = () => {
+const App: React.FC = (props) => {
   const wrapper = useRef<HTMLDivElement>(null);
-  const { pathname } = useLocation();
   const { version } = useDocsVersion();
-  const { i18n, siteConfig } = useDocusaurusContext();
-  const filter = pathname.replace(siteConfig.baseUrl, "").split('/').pop();
+  const { i18n } = useDocusaurusContext();
+  const [spec, setSpec] = useState<ISpec>();
+  // const { filter } = props;
+  const filter:TopBarSelection = "userManagement"
 
-  const wrapSpecWithI18n = useMemo(() => {
+  useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
-    const swaggerSpec:ISpec = _.cloneDeep(specMap[lastVersion]);
-    _.set(swaggerSpec, ['paths'], wrapPathWithI18n(swaggerSpec.paths, i18n.currentLocale));
-    _.set(swaggerSpec, ['components', 'schemas'], wrapSchemaWithI18n(swaggerSpec.components.schemas, i18n.currentLocale));
-    return swaggerSpec;
-  }, [i18n.currentLocale, version]);
+    const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
+    const { paths, components } = swaggerSpec;
+    // handle paths
+    _.set(
+      swaggerSpec,
+      ["paths"],
+      wrapPathWithI18n(swaggerSpec.paths, i18n.currentLocale)
+    );
+    _.set(swaggerSpec, ["paths"], splitPaths(filter, paths));
+    // handle components and schemas
+    _.set(
+      swaggerSpec,
+      ["components", "schemas"],
+      wrapSchemaWithI18n(swaggerSpec.components.schemas, i18n.currentLocale)
+    );
+    _.set(
+      swaggerSpec,
+      ["components", "schemas"],
+      splitSchema(swaggerSpec.paths, components.schemas)
+    );
+    setSpec(swaggerSpec)
+  }, [filter, version, i18n.currentLocale])
 
   useEffect(() => {
     i18next.changeLanguage(i18n.currentLocale);
-    // split paths and schema
-    const { paths, components } = wrapSpecWithI18n;
-    _.set(wrapSpecWithI18n, ['paths'], splitPaths(filter, paths));
-    _.set(wrapSpecWithI18n, ['components', 'schemas'], splitSchema(wrapSpecWithI18n.paths, components.schemas))
-    SwaggerUI({
-      dom_id: "#swagger-ui",
-      spec: wrapSpecWithI18n,
-      filter: true,
-      presets: [SwaggerUI.presets.apis],
-      layout: "CustomLayout",
-      plugins: [
-        () => ({
-          components: { CustomLayout },
-          fn: {
-            opsFilter: (taggedOps, filter) => {
-              const filters = filter.split(' ');
-              return taggedOps.filter((val, key) => {
-                const ops = val.get('operations');
-                return filters.some(item => key.indexOf(item) > -1) || ops.some(op => {
-                  return filters.some(item => op.get('path').includes(item) || op.get('operation').get('description').includes(item));
-                })
-              })
-            }
-          },
-        }),
-      ],
-    });
-  }, [filter, i18n.currentLocale, wrapSpecWithI18n]);
+  }, [i18n.currentLocale]);
+
+  const onReDocLoaded = useCallback(() => {
+    const docContainer = document.querySelector('#__docusaurus > div.main-wrapper.docs-wrapper.docs-doc-page > div > main > div');
+    if(docContainer) {
+      docContainer.classList.add("redoc-container");
+    }
+  }, [])
 
   return (
     <div id="swagger-ui" ref={wrapper}>
-      <div id="swagger-loading">
-        <Loading />
-      </div>
+      <RedocStandalone spec={spec} onLoaded={onReDocLoaded} options={{
+        scrollYOffset: 60,
+        hideDownloadButton: true,
+      }}/>
     </div>
   );
 };

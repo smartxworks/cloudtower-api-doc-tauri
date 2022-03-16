@@ -4,6 +4,8 @@ const { getLocales, writeLocales } = require("./utils");
 
 const scan = () => {
   const specDir = path.resolve(__dirname, "../swagger/specs");
+  const declerationsDir = path.resolve(__dirname, "../declerations");
+  const apis = [];
   fs.readdirSync(specDir).forEach((f) => {
     // scan swagger
     const specContext = require(path.join(specDir, f));
@@ -11,6 +13,8 @@ const scan = () => {
       getLocales("tags");
     const { zhLocalesPath: desZhLocalesFile, enLocalesPath: desEnLocalesFile } =
       getLocales("description");
+    const { zhLocalesPath: summaryZhLocalesFile, enLocalesPath: summaryEnLocalesFile } =
+      getLocales("summary");
     const {
       zhLocalesPath: paramsZhLocalesFile,
       enLocalesPath: paramsEnLocalesFile,
@@ -20,6 +24,7 @@ const scan = () => {
     const tagLocales = {};
     const desLocales = {};
     const paramsLocales = {};
+    const summaryLocales = {};
     const isIgnoreParams = (schemaName, field) => {
       return (
         ["OR", "NOT", "AND", "aggregate", "__typename", "after", "before", "first", "last", "orderBy", "skip"].includes(field) ||
@@ -74,6 +79,8 @@ const scan = () => {
     Object.keys(paths).forEach((p) => {
       const { tags, requestBody } = paths[p].post;
       desLocales[p] = "";
+      summaryLocales[p] = "";
+      apis.push(p);
       if (tags) {
         tags.forEach((tag) => {
           tagLocales[tag] = "";
@@ -104,7 +111,12 @@ const scan = () => {
       en: { locales: paramsLocales, localesPath: paramsEnLocalesFile },
       zh: { locales: paramsLocales, localesPath: paramsZhLocalesFile },
     });
+    writeLocales({
+      en: { locales: summaryLocales, localesPath: summaryEnLocalesFile },
+      zh: { locales: summaryLocales, localesPath: summaryZhLocalesFile },
+    })
   });
+  fs.writeFileSync(path.join(declerationsDir, 'swagger-api.ts'), `export type SwaggerApi = '${apis.join("' | '")}'`);
 };
 
 scan();

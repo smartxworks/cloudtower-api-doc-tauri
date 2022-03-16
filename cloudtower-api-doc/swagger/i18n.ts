@@ -8,6 +8,10 @@ import enDescription from './locales/en/description.json';
 import zhDescription from './locales/zh/description.json';
 import enParameters from './locales/en/parameters.json';
 import zhParameters from './locales/zh/parameters.json';
+import zhSummary from './locales/zh/summary.json';
+import enSummary from './locales/en/summary.json';
+import zhExamples from './locales/zh/examples.json';
+import enExamples from './locales/en/examples.json';
 
 i18next.init({
   resources: {
@@ -17,6 +21,8 @@ i18next.init({
         components: enComponents,
         description: enDescription,
         parameters: enParameters,
+        summary: enSummary,
+        examples: enExamples
       }
     },
     [SupportLanguage.zh]: {
@@ -24,7 +30,9 @@ i18next.init({
         tags: zhTags,
         components: zhComponents,
         description: zhDescription,
-        parameters: zhParameters
+        parameters: zhParameters,
+        summary: zhSummary,
+        examples: zhExamples
       }
     },
   },
