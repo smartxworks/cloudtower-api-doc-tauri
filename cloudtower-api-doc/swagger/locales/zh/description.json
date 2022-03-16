@@ -352,5 +352,7 @@
   "/update-vm-template": "更新虚拟机模板",
   "/update-vm-vlan": "更新 VLAN",
   "/upload-elf-image": "上传 ISO 映像",
-  "auth": "通过 post /v2/api/login 获取到 token"
+  "auth": "通过 post /v2/api/login 获取到 token",
+  "User": "通过下述 API 对用户进行增删改查",
+  "UserRoleNext": "通过下述 API 对角色进行增删改查"
 }

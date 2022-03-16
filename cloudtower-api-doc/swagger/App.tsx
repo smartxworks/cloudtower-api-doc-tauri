@@ -11,16 +11,17 @@ import {
   splitSchema,
   wrapPathWithI18n,
   wrapSchemaWithI18n,
-  TopBarSelection
+  TopBarSelection,
+  wrapTagsWithI18n
 } from "./utils";
 
-
+const REDOC_CLASS = 'redoc-container'
 const App: React.FC = (props) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const { version } = useDocsVersion();
   const { i18n } = useDocusaurusContext();
   const [spec, setSpec] = useState<ISpec>();
-  // const { filter } = props;
+  // TODO: remove later
   const filter:TopBarSelection = "userManagement"
 
   useEffect(() => {
@@ -28,23 +29,25 @@ const App: React.FC = (props) => {
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
     const { paths, components } = swaggerSpec;
     // handle paths
+    _.set(swaggerSpec, ["paths"], splitPaths(filter, paths));
+    _.set(swaggerSpec, ["tags"], wrapTagsWithI18n(swaggerSpec.paths, i18n.currentLocale))
     _.set(
       swaggerSpec,
       ["paths"],
       wrapPathWithI18n(swaggerSpec.paths, i18n.currentLocale)
     );
-    _.set(swaggerSpec, ["paths"], splitPaths(filter, paths));
     // handle components and schemas
-    _.set(
-      swaggerSpec,
-      ["components", "schemas"],
-      wrapSchemaWithI18n(swaggerSpec.components.schemas, i18n.currentLocale)
-    );
     _.set(
       swaggerSpec,
       ["components", "schemas"],
       splitSchema(swaggerSpec.paths, components.schemas)
     );
+    _.set(
+      swaggerSpec,
+      ["components", "schemas"],
+      wrapSchemaWithI18n(swaggerSpec.components.schemas, i18n.currentLocale)
+    );
+
     setSpec(swaggerSpec)
   }, [filter, version, i18n.currentLocale])
 
@@ -52,10 +55,19 @@ const App: React.FC = (props) => {
     i18next.changeLanguage(i18n.currentLocale);
   }, [i18n.currentLocale]);
 
+  useEffect(() => {
+    return () => {
+      const docContainer = document.querySelector('#__docusaurus > div.main-wrapper.docs-wrapper.docs-doc-page > div > main > div');
+      if(docContainer && docContainer.classList.contains(REDOC_CLASS)) {
+        docContainer.classList.remove(REDOC_CLASS);
+      }
+    }
+  }, [])
+
   const onReDocLoaded = useCallback(() => {
     const docContainer = document.querySelector('#__docusaurus > div.main-wrapper.docs-wrapper.docs-doc-page > div > main > div');
     if(docContainer) {
-      docContainer.classList.add("redoc-container");
+      docContainer.classList.add(REDOC_CLASS);
     }
   }, [])
 
@@ -66,8 +78,21 @@ const App: React.FC = (props) => {
   },[])
   return (
     <div id="swagger-ui" ref={wrapper}>
-      <RedocStandalone spec={spec} onLoaded={onReDocLoaded} options={{
+      <RedocStandalone 
+      spec={spec} 
+      onLoaded={onReDocLoaded} 
+      options={{
+        theme: {
+          rightPanel: {
+            backgroundColor: "transparent"
+          },
+          codeBlock: {
+            backgroundColor: "#11171a"
+          }
+          
+        },
         scrollYOffset: 60,
+        nativeScrollbars: true,
         hideDownloadButton: true,
       }}/>
     </div>
