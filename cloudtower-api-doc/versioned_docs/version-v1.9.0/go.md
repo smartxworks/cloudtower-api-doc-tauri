@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 id: go-sdk
 slug: /go-sdk
 ---
