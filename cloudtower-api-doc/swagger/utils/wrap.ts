@@ -79,3 +79,18 @@ export const wrapSchemaWithI18n = (schemas: ISpec['components']['schemas'], lang
   );
   return schemas;
 };
+
+export const wrapTagsWithI18n = (paths: ISpec["paths"], language: string) => {
+  const tags: ISpec['tags'] = [];
+  Object.values(paths).forEach(api => {
+    if(api.post.tags) {
+      console.log(api.post.tags)
+      const tags_obj = api.post.tags.map(tag => ({
+        name: i18next.t(`tags.${tag}`, {lng: language, defaultValue: ''}),
+        description: i18next.t(`description.${tag}`, {lng: language, defaultValue: ''}),
+      } as ISpec['tags'][0]))
+      tags.push(...tags_obj);
+    }
+  })
+  return Array.from(new Set(tags));
+}
