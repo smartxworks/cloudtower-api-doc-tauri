@@ -1812,7 +1812,7 @@ func create_vm_snapshot(
 	getLunSnapshotParams := iscsi_lun_snapshot.NewGetIscsiLunSnapshotsParams()
 	getLunSnapshotParams.RequestBody = &models.GetIscsiLunSnapshotsRequestBody{
 		Where: &models.IscsiLunSnapshotWhereInput{
-			IDIn: lunSnapshotIds,
+			NameIn: lunSnapshotIds,
 		},
 	}
 	getLunSnapshotRes, err := client.IscsiLunSnapshot.GetIscsiLunSnapshots(getLunSnapshotParams)

@@ -1582,7 +1582,7 @@ def create_vm_snapshot(
 
     lun_snapshots = iscsi_lun_snapshot_api.get_iscsi_lun_snapshots({
         "where": {
-            "local_id_in": lun_snapshot_ids
+            "name_in": lun_snapshot_ids
         }
     })
 
