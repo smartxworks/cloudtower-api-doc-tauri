@@ -1271,7 +1271,7 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
     lunSnapshots = iscsiLunSnapshotApi.getIscsiLunSnapshots(
         new GetIscsiLunSnapshotsRequestBody()
             .where(new IscsiLunSnapshotWhereInput()
-                .localIdIn(lunSnapshotIds)));
+                .nameIn(lunSnapshotIds)));
   }
   return new BackupResult(snapshot, lunSnapshots);
 }
