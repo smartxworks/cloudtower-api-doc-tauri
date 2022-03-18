@@ -3,6 +3,7 @@ sidebar_position: 1
 id: go-sdk
 slug: /go-sdk
 ---
+
 # Cloudtower Go SDK
 
 Golang 环境下的 Cloudtower SDK，适用于 golang 1.16 及以上版本
@@ -404,7 +405,14 @@ createParams.RequestBody = []*models.VMCreationParams{
 		VMNics: []*models.VMNicParams{
 			{ConnectVlanID: pointy.String("target_vlan_id")},
 		},
-    VMDisks: &models.VMDiskParams{},
+		VMDisks: &models.VMDiskParams{
+			MountCdRoms: []*models.VMCdRomParams{
+				{
+					Boot:  pointy.Int32(1),
+					Index: pointy.Int32(1),
+				},
+			},
+		},
 	},
 }
 createRes, err := client.VM.CreateVM(createParams)
@@ -505,6 +513,7 @@ createParams.RequestBody = []*models.VMCreationParams{
 					Boot:       pointy.Int32(0),
 					Bus:        models.BusVIRTIO.Pointer(),
 					VMVolumeID: pointy.String("target_volume_id"),
+          Index:      pointy.Int32(0),
 				},
 			},
 		},
