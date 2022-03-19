@@ -10,6 +10,7 @@ import {
   splitPaths,
   splitSchema,
   wrapPathWithI18n,
+  wrapPathWithExamples,
   wrapSchemaWithI18n,
   TopBarSelection,
   wrapTagsWithI18n
@@ -36,6 +37,7 @@ const App: React.FC = (props) => {
       ["paths"],
       wrapPathWithI18n(swaggerSpec.paths, i18n.currentLocale)
     );
+    _.set(swaggerSpec, ["paths"], wrapPathWithExamples(swaggerSpec, i18n.currentLocale))
     // handle components and schemas
     _.set(
       swaggerSpec,
@@ -85,6 +87,11 @@ const App: React.FC = (props) => {
         theme: {
           rightPanel: {
             backgroundColor: "transparent"
+          },
+          typography: {
+            code: {
+              backgroundColor:  "#11171a"
+            }
           },
           codeBlock: {
             backgroundColor: "#11171a"

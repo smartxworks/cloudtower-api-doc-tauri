@@ -1,8 +1,8 @@
 {
   "getUserRoleNexts_single": "获取指定用户角色",
-  "getUserRoleNexts_multiple": "获取多个用户橘色",
+  "getUserRoleNexts_multiple": "获取多个用户角色",
   "getUserRoleNexts_first": "获取指定用户角色",
-  "getUserRoleNexts_all": "获取所有用户橘色",
+  "getUserRoleNexts_all": "获取所有用户角色",
   "getUserRoleNextsConnection_all": "获取所有用户角色的数量",
   "getUserRoleNextsConnection_condition": "获取符合特定条件的用户数量",
   "getCreateUserRoleNexts_all": "创建新角色",
