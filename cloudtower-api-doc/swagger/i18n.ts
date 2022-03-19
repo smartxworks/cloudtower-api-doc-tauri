@@ -16,24 +16,20 @@ import enExamples from './locales/en/examples.json';
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
-      translation: {
         tags: enTags,
         components: enComponents,
         description: enDescription,
         parameters: enParameters,
         summary: enSummary,
         examples: enExamples
-      }
     },
     [SupportLanguage.zh]: {
-      translation: {
         tags: zhTags,
         components: zhComponents,
         description: zhDescription,
         parameters: zhParameters,
         summary: zhSummary,
         examples: zhExamples
-      }
     },
   },
   lng: SupportLanguage.zh,
@@ -44,6 +40,7 @@ i18next.init({
     suffix: "}",
     escapeValue: false,
   },
+  ns: ['tags', 'components', 'description', 'parameters', 'summary', 'examples'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
