@@ -1,10 +1,8 @@
 import _ from "lodash";
 import { OpenAPIV3 } from "openapi-types";
-import httpSnippet from 'httpsnippet';
-import { SwaggerApi } from "../../declerations/swagger-api";
-import { getExamples } from "../examples";
+import httpSnippet from "httpsnippet";
 import i18next from "../i18n";
-import { ISpec, SupportLanguage } from "./swagger";
+import { ISpec } from "./swagger";
 
 const toSchemaObj = (obj: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject) =>
   obj as OpenAPIV3.SchemaObject;
@@ -176,34 +174,52 @@ export const wrapPathWithExamples = (spec: ISpec, language: string) => {
         "application/json"
       ]
     ) {
-      const examples = getExamples(
-        api_name as SwaggerApi,
-        language as SupportLanguage
-      );
-      (post.requestBody as OpenAPIV3.RequestBodyObject).content[
-        "application/json"
-      ].examples = examples;
+      const keys = Object.keys(
+        i18next.getResourceBundle(language, "examples")
+      ).filter((key) => new RegExp(`^${api_name}_example[0-9]+$`).test(key));
+      if (keys.length) {
+        const examples: Record<string, OpenAPIV3.ExampleObject> = {};
+        keys.forEach((key) => {
+          examples[key] = i18next.t(`examples.${key}`, {
+            returnObjects: true,
+          }) as OpenAPIV3.ExampleObject;
+        });
+        (post.requestBody as OpenAPIV3.RequestBodyObject).content[
+          "application/json"
+        ].examples = examples;
 
-      _.set(spec, ['servers'], [{ url: ``}])
-      const snippetValue = Object.values(examples)[0].value;
-      const snippet = new httpSnippet({
-        method: 'POST',
-        url: `http://YOUR_TOWER_URL/v2/api${api_name}`,
-        headers: [
-          { name: "Authorization", value: "YOUR_TOKEN"},
-          { name: "content-language", value: "en-US", comment: "en-US or zh-CN"},
-        ],
-        postData: {
-          mimeType:  "application/json",
-          text: JSON.stringify(snippetValue),
-          }
-      });
-      _.set(paths, [api_name, 'post', 'x-codeSamples'], [
-        {
-          lang: 'curl',
-          source: snippet.convert('shell', 'curl', { indent: '\t', short: true})
-        }
-      ]);
+        _.set(spec, ["servers"], [{ url: `` }]);
+        const snippetValue = Object.values(examples)[0].value;
+        const snippet = new httpSnippet({
+          method: "POST",
+          url: `http://YOUR_TOWER_URL/v2/api${api_name}`,
+          headers: [
+            { name: "Authorization", value: "YOUR_TOKEN" },
+            {
+              name: "content-language",
+              value: "en-US",
+              comment: "en-US or zh-CN",
+            },
+          ],
+          postData: {
+            mimeType: "application/json",
+            text: JSON.stringify(snippetValue),
+          },
+        });
+        _.set(
+          paths,
+          [api_name, "post", "x-codeSamples"],
+          [
+            {
+              lang: "curl",
+              source: snippet.convert("shell", "curl", {
+                indent: "\t",
+                short: true,
+              }),
+            },
+          ]
+        );
+      }
     }
     _.set(paths, [api_name, "post"], post);
   });

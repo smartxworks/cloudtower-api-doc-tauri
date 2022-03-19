@@ -1,22 +1,174 @@
 {
-  "getUserRoleNexts_single": "获取指定用户角色",
-  "getUserRoleNexts_multiple": "获取多个用户角色",
-  "getUserRoleNexts_first": "获取指定用户角色",
-  "getUserRoleNexts_all": "获取所有用户角色",
-  "getUserRoleNextsConnection_all": "获取所有用户角色的数量",
-  "getUserRoleNextsConnection_condition": "获取符合特定条件的用户数量",
-  "getCreateUserRoleNexts_all": "创建新角色",
-  "getCreateUserRoleNexts_multiple": "创建多个新角色",
-  "getUpdateUserRoleNexts_single": "更新指定用户角色",
-  "getUpdateUserRoleNexts_multiple": "更新多个用户角色",
-  "getDeleteUserRoleNexts_single": "删除指定用户角色",
-  "getDeleteUserRoleNexts_multiple": "删除多个用户角色",
-  "getUsers_single": "获取指定用户",
-  "getUsers_multiple": "获取多个用户",
-  "getUsersConnection_all": "获取所有用户的数量",
-  "getUsersConnection_condition":"获取符合特定条件的用户数量",
-  "getDeleteUsers_single": "删除指定用户",
-  "getDeleteUsers_all": "删除所有用户",
-  "getUpdateUsers_single": "更新指定用户",
-  "getUpdateUsers_multiple": "更新多个用户"
+  "/get-user-role-nexts_example1": {
+    "summary": "获取指定用户角色",
+    "description": "获取 id 为 user-id-1 的用户角色",
+    "value": {
+        "where": { "": "user-id-1 "}
+      }
+  },
+  "/get-user-role-nexts_example2": {
+    "summary": "获取多个用户角色",
+    "description": "获取 id 值为 user-id-1, user-id-2 的用户角色",
+    "value": {
+      "where": { "id_in": [
+        "user-id-1",
+        "user-id-2"
+      ]}
+    }
+  },
+  "/get-user-role-nexts_example3": {
+    "summary":"获取所有用户角色",
+    "value": {
+     "where": {}
+    } 
+  },
+  "/get-user-role-nexts-connection_example1": {
+    "summary": "获取所有用户角色的数量",
+    "value": {
+      "where": {}
+    }
+  },
+  "/get-user-role-nexts-connection_example2": {
+    "summary": "获取符合特定条件的用户数量",
+    "description": "获取在 tower 平台上创建的所有用户角色",
+    "value": {
+      "where": {
+        "platform": "MANAGEMENT"
+      }
+    } 
+  },
+  "/create-role_exampl1": {
+    "summary": "创建新角色",
+    "description": "创建名为 'new-role' 的新角色，该角色拥有所有权限",
+    "value": [
+      {
+        "name": "new-role",
+        "actions": [
+          "ROLE_ACTION.ROOT_ACTION"
+        ]
+      }
+    ]
+  },
+  "/create-role_example2": {
+    "summary": "创建多个新角色",
+   "description": "创建名为 'new-role-1' 的新角色，该角色可以创建，删除，更新虚拟机。同时创建名为 'new-role-2' 的角色，该角色没有任何权限",
+    "value": [
+      { "name": "new-role-1", "actions": ["CREATE_VM", "UPDATE_VM", "DELETE_VM"] },
+      { "name": "new-role-2", "actions": [] }
+    ]
+  },
+  "/update-role_example1": {
+    "summary": "更新指定角色",
+    "description": "将 id 为 `id-1` 的用户角色名称更新为 new-role-name",
+    "value": {
+      "where": { "id": "id-1" },
+      "data": {
+        "name": "new-role-name"
+      }
+    }
+  },
+  "/update-role_example2": {
+    "summary": "更新多个角色",
+    "description": "将 id 为 `id-1`、 `id-2`、`id-3`的用户角色名称更新为 new-role-name",
+    "value": {
+      "where": { "id_in":["id-1", "id-2", "id-3"] },
+      "data": {
+        "name": "new-role-name"
+      }
+    }
+  },
+  "/delete-role_example1": {
+    "summary": "删除指定用户角色",
+    "description": "删除 id 为 `id-1` 的用户角色",
+    "value": {
+     "where": { "id": "id-1"}
+    }
+  },
+  "/delete-role_example2": {
+    "summary": "删除多个用户角色",
+    "description": "删除 id 为 `id-1`、`id-2`、`id-3` 的用户角色",
+    "value": {
+      "where": { "id_in": ["id-1","id-2", "id-3"]}
+    }
+  },
+  "/get-users_example1": {
+    "summary": "获取指定用户",
+    "description": "获取 id 为 `id-1` 的用户信息",
+    "value":  {
+      "where": { "id": "id-1" }
+    }
+  },
+  "/get-users_example2": {
+    "summary": "获取多个用户",
+    "description": "获取用户名中包含 test 的用户信息",
+    "value":  {
+      "where": { "name_contains": "test" }
+    }
+  },
+  "/get-users-connection_example1": {
+    "summary": "获取所有用户的数量",
+    "description": "获取全部用户数量",
+    "value" : {
+      "where": {}
+    }
+  },
+  "/get-users-connection_example2": {
+    "summary": "获取符合特定条件的用户数量",
+    "description": "获取用户名中包含 `test` 的所有用户数量",
+    "value" : {
+      "where": {
+       "username_contains": "test"
+      }
+    }
+  },
+  "/login_example1": {
+    "summary": "登录",
+    "value": {
+      "username": "root",
+      "password": "1111",
+      "source": "LOCAL"
+    },
+    "description": "登录用户名为 root， 密码为 111111 的用户。source 为 tower 平台创建的用户。"
+  },
+  "/create-user_example1": {
+    "summary": "创建用户",
+    "description": "创建用户名为 new-user, 昵称为 new-user-name，密码为 111111， 用户角色所属角色 id 为 1 的用户",
+    "value": [
+      { "role_id": "id-1", "name": "new-user", "username": "new-user-name", "password": "111111" }
+    ]
+  },
+  "/delete-user_example1": {
+    "summary": "删除指定用户",
+    "description": "删除 id 为 `id-1` 的用户角色",
+   " value": {
+      "where": { "id": "id-1"}
+    }
+  },
+  "/delete-user_example2": {
+    "summary": "删除所有用户",
+    "description": "删除 id 为 `id-1`、`id-2`、`id-3` 的用户角色",
+    "value": {
+      "where": { "id_in": ["id-1","id-2", "id-3"]}
+    }
+  },
+  "/update-user_example1": {
+    "summary": "更新指定用户",
+    "description": "更新 id 为 id-1 的用户， 将名称改为 'new name'",
+    "value": {
+      "where": { "id": "id-1" },
+      "data": {
+        "name": "new name"
+      }
+    }
+  },
+  "/update-user_example2": {
+    "summary": "更新多个用户",
+    "description": "将名称中包含 test 的用户的名称改为 'sprint1-test'",
+    "value": {
+      "where": { "name_contains": "test"},
+      "data": {
+        "name": "sprint1-test"
+      }
+    }
+  }
 }
