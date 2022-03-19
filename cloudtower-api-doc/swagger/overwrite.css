@@ -126,3 +126,12 @@ html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(4) {
 .container.redoc-container.padding-top--md {
   padding-top: 0px !important;
 }
+
+.container.redoc-container .react-tabs__tab-panel--selected  pre,
+.container.redoc-container .react-tabs__tab-panel--selected  code {
+  background: transparent;
+}
+
+.redoc-container .sc-hiwPVj {
+  background: rgb(38 50 56 / 60%);
+}

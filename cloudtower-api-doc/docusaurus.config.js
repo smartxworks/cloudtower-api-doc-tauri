@@ -51,6 +51,8 @@ const config = {
             ],
             resolve: {
               fallback: {
+                stream: require.resolve("stream-browserify"),
+                util:  require.resolve("util/"),
                 path: require.resolve("path-browserify"),
                 os: require.resolve("os-browserify/browser"),
                 tty: require.resolve("tty-browserify"),
