@@ -2935,6 +2935,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/har-format@npm:*":
+  version: 1.2.8
+  resolution: "@types/har-format@npm:1.2.8"
+  checksum: a14c6f31fb7c39be383638e00b3beaf693acfa6a2d8a10d9333f3d5cb70d3f2fc4d369a781775451012adc52faef08ff476e40a34fc6a1d6a557dd02ad984c0c
+  languageName: node
+  linkType: hard
+
 "@types/hast@npm:^2.0.0":
   version: 2.3.4
   resolution: "@types/hast@npm:2.3.4"
@@ -4687,6 +4694,7 @@ __metadata:
     "@types/httpsnippet": ^1.23.1
     "@types/lodash": ^4.14.176
     clsx: ^1.1.1
+    core-js: ^3.21.1
     file-loader: ^6.2.0
     graphql: ^16.3.0
     httpsnippet: ^2.0.0
@@ -11635,13 +11643,6 @@ __metadata:
   version: 0.2.0
   resolution: "querystring@npm:0.2.0"
   checksum: 8258d6734f19be27e93f601758858c299bdebe71147909e367101ba459b95446fbe5b975bf9beb76390156a592b6f4ac3a68b6087cea165c259705b8b4e56a69
-  languageName: node
-  linkType: hard
-
-"querystringify@npm:^2.1.1":
-  version: 2.2.0
-  resolution: "querystringify@npm:2.2.0"
-  checksum: 5641ea231bad7ef6d64d9998faca95611ed4b11c2591a8cae741e178a974f6a8e0ebde008475259abe1621cb15e692404e6b6626e927f7b849d5c09392604b15
   languageName: node
   linkType: hard
 
