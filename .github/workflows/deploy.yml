@@ -3,32 +3,31 @@ on:
   push:
     branches:
       - master
-  pull_request_target:
+  pull_request:
 
 jobs:
   vercel-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: setup node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v2
         with:
-          node-version: 16
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: build
         run: yarn && yarn build
       - name: set up pr preview
-        uses: ./
+        uses: amondnet/vercel-action@v20
         id: vercel-action-staging
-        if: github.event_name == 'pull_request_target'
+        if: github.event_name == 'pull_request'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./cloudtower-api-doc/build
-          alias-domains: |
-            pr-{{PR_NUMBER}}.cloudtoer-api-doc.vercle.app
-      # - uses: ./
+          working-directory: ./
+      # - name: set up production
+      #   uses: amondnet/vercel-action@v20
       #   id: vercel-action-production
       #   if: github.event_name == 'push'
       #   with:
@@ -36,5 +35,5 @@ jobs:
       #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
       #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
       #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-      #     working-directory: ./cloudtower-api-doc/build
+      #     working-directory: cloudtower-api-doc/build
       #     vercel-args: '--prod'
