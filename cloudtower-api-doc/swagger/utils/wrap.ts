@@ -12,11 +12,6 @@ const toParameterObj = (
 export const wrapPathWithI18n = (paths: ISpec["paths"], language: string) => {
   Object.keys(paths).forEach((api_name) => {
     const post = paths[api_name].post;
-    if (post.tags) {
-      post.tags = post.tags.map((tag) =>
-        i18next.t(`tags.${tag}`, { lng: language, defaultValue: "" })
-      );
-    }
     // add description of api
     post.description = i18next.t(`description.${api_name}`, {
       lng: language,
@@ -152,7 +147,8 @@ export const wrapTagsWithI18n = (paths: ISpec["paths"], language: string) => {
       const tags_obj = api.post.tags.map(
         (tag) =>
           ({
-            name: i18next.t(`tags.${tag}`, { lng: language, defaultValue: "" }),
+            'x-displayName': i18next.t(`tags.${tag}`, { lng: language, defaultValue: "" }),
+            name: tag,
             description: i18next.t(`description.${tag}`, {
               lng: language,
               defaultValue: "",

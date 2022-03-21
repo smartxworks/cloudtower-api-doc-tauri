@@ -103,7 +103,7 @@ const config = {
                 label: "CloudTower Python SDK"
               },
               {
-                tl: "/go-sdk",
+                to: "/go-sdk",
                 type: "docsVersion",
                 label: "CloudTower Go SDK"
               }
