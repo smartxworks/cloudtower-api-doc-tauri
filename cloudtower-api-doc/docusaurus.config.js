@@ -67,8 +67,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
-  // plugins: ["docusaurus-plugin-relative-paths"],
+    })
 };
 
 module.exports = config;

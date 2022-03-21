@@ -2053,20 +2053,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/types@npm:^2.0.0-beta.14":
-  version: 2.0.0-beta.15
-  resolution: "@docusaurus/types@npm:2.0.0-beta.15"
-  dependencies:
-    commander: ^5.1.0
-    joi: ^17.4.2
-    querystring: 0.2.1
-    utility-types: ^3.10.0
-    webpack: ^5.61.0
-    webpack-merge: ^5.8.0
-  checksum: f630b77d16ccf4b201ac473df8a65c79bbbd9735278ed85654e67d1c8810927df1034b6bfbcbc4bb153f4733329a782c2560e0032633c2bd2faa90f4c1ce0fe1
-  languageName: node
-  linkType: hard
-
 "@docusaurus/utils-common@npm:2.0.0-beta.14":
   version: 2.0.0-beta.14
   resolution: "@docusaurus/utils-common@npm:2.0.0-beta.14"
@@ -2821,15 +2807,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:^9.0.13":
-  version: 9.0.13
-  resolution: "@types/fs-extra@npm:9.0.13"
-  dependencies:
-    "@types/node": "*"
-  checksum: add79e212acd5ac76b97b9045834e03a7996aef60a814185e0459088fd290519a3c1620865d588fa36c4498bf614210d2a703af5cf80aa1dbc125db78f6edac3
-  languageName: node
-  linkType: hard
-
 "@types/hast@npm:^2.0.0":
   version: 2.3.4
   resolution: "@types/hast@npm:2.3.4"
@@ -3028,15 +3005,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 4079f4f959cd4a4bfaeda8b89fe8a1b1f8bdc9d87acfdc5f74a0b39cec9ec6a470724357c62778c0f063180b360c250e920c5a142f1dbcda67d9cc25a6d43a85
-  languageName: node
-  linkType: hard
-
-"@types/recursive-readdir@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@types/recursive-readdir@npm:2.2.0"
-  dependencies:
-    "@types/node": "*"
-  checksum: ddb0f033aaa4ff198dec8480bd907658ff042a99b621b53f28a2514c8d5ab258da3ddc8a46340e5408a9d74e0c74846e82d1c689eaa750172cafcf37303071d7
   languageName: node
   linkType: hard
 
@@ -4359,13 +4327,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "chalk@npm:5.0.0"
-  checksum: 6eba7c518b9aa5fe882ae6d14a1ffa58c418d72a3faa7f72af56641f1bbef51b645fca1d6e05d42357b7d3c846cd504c0b7b64d12309cdd07867e3b4411e0d01
-  languageName: node
-  linkType: hard
-
 "character-entities-legacy@npm:^1.0.0":
   version: 1.1.4
   resolution: "character-entities-legacy@npm:1.1.4"
@@ -4571,7 +4532,6 @@ __metadata:
     "@tsconfig/docusaurus": ^1.0.4
     "@types/lodash": ^4.14.176
     clsx: ^1.1.1
-    docusaurus-plugin-relative-paths: ^1.0.0
     file-loader: ^6.2.0
     graphql: ^16.3.0
     i18next: ^21.3.1
@@ -5635,20 +5595,6 @@ __metadata:
   dependencies:
     buffer-indexof: ^1.0.0
   checksum: 80130b665379ecd991687ae079fbee25d091e03e4c4cef41e7643b977849ac48c2f56bfcb3727e53594d29029b833749811110d9f3fbee1b26a6e6f8096a5cef
-  languageName: node
-  linkType: hard
-
-"docusaurus-plugin-relative-paths@npm:^1.0.0":
-  version: 1.0.3
-  resolution: "docusaurus-plugin-relative-paths@npm:1.0.3"
-  dependencies:
-    "@docusaurus/types": ^2.0.0-beta.14
-    "@types/fs-extra": ^9.0.13
-    "@types/recursive-readdir": ^2.2.0
-    chalk: ^5.0.0
-    fs-extra: ^10.0.0
-    recursive-readdir: ^2.2.2
-  checksum: e86da25abc9865dc6f4c8550acc9364960f6517b09358570528c347c91851411c74f8251f4ec101a1f0664b6f8e22f4c51eea8ccaa82f76b50d6238063a1e8fb
   languageName: node
   linkType: hard
 
@@ -11185,13 +11131,6 @@ __metadata:
   version: 0.2.0
   resolution: "querystring@npm:0.2.0"
   checksum: 8258d6734f19be27e93f601758858c299bdebe71147909e367101ba459b95446fbe5b975bf9beb76390156a592b6f4ac3a68b6087cea165c259705b8b4e56a69
-  languageName: node
-  linkType: hard
-
-"querystring@npm:0.2.1":
-  version: 0.2.1
-  resolution: "querystring@npm:0.2.1"
-  checksum: 7b83b45d641e75fd39cd6625ddfd44e7618e741c61e95281b57bbae8fde0afcc12cf851924559e5cc1ef9baa3b1e06e22b164ea1397d65dd94b801f678d9c8ce
   languageName: node
   linkType: hard
 
