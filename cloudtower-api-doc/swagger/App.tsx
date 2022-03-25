@@ -8,12 +8,11 @@ import {
   ISpec,
   specMap,
   splitPaths,
-  splitSchema,
-  wrapPathWithI18n,
-  wrapPathWithExamples,
-  wrapSchemaWithI18n,
+  wrapSpecWithI18n,
+  // wrapPathWithExamples,
+  // wrapSchemaWithI18n,
   TopBarSelection,
-  wrapTagsWithI18n
+  // wrapTagsWithI18n
 } from "./utils";
 
 const REDOC_CLASS = 'redoc-container'
@@ -28,29 +27,11 @@ const App: React.FC = (props) => {
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
-    const { paths, components } = swaggerSpec;
+    const { paths } = swaggerSpec;
     // handle paths
+    // TODO remove this later
     _.set(swaggerSpec, ["paths"], splitPaths(filter, paths));
-    _.set(swaggerSpec, ["tags"], wrapTagsWithI18n(swaggerSpec.paths, i18n.currentLocale))
-    _.set(
-      swaggerSpec,
-      ["paths"],
-      wrapPathWithI18n(swaggerSpec.paths, i18n.currentLocale)
-    );
-    _.set(swaggerSpec, ["paths"], wrapPathWithExamples(swaggerSpec, i18n.currentLocale))
-    // handle components and schemas
-    _.set(
-      swaggerSpec,
-      ["components", "schemas"],
-      splitSchema(swaggerSpec.paths, components.schemas)
-    );
-    _.set(
-      swaggerSpec,
-      ["components", "schemas"],
-      wrapSchemaWithI18n(swaggerSpec.components.schemas, i18n.currentLocale)
-    );
-
-    setSpec(swaggerSpec)
+    setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale))
   }, [filter, version, i18n.currentLocale])
 
   useEffect(() => {

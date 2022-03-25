@@ -8,28 +8,37 @@ import enDescription from './locales/en/description.json';
 import zhDescription from './locales/zh/description.json';
 import enParameters from './locales/en/parameters.json';
 import zhParameters from './locales/zh/parameters.json';
-import zhSummary from './locales/zh/summary.json';
-import enSummary from './locales/en/summary.json';
-import zhExamples from './locales/zh/examples.json';
-import enExamples from './locales/en/examples.json';
+
+import zhBasicApi from '../generated/locales/zh/basic.json';
+import enBasicApi from '../generated/locales/en/basic.json';
+
+export type ApiDoc = {
+  summary: string;
+  description: string;
+  requestBody: Record<string, string>;
+  examples: {
+    description: string;
+    summary: string;
+    value: object;
+  }[];
+  responses: Record<string, string>;
+};
 
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
+        ['api_v1.8.0']: enBasicApi,
         tags: enTags,
         components: enComponents,
         description: enDescription,
         parameters: enParameters,
-        summary: enSummary,
-        examples: enExamples
     },
     [SupportLanguage.zh]: {
+        ['api_v1.8.0']: zhBasicApi,
         tags: zhTags,
         components: zhComponents,
         description: zhDescription,
         parameters: zhParameters,
-        summary: zhSummary,
-        examples: zhExamples
     },
   },
   lng: SupportLanguage.zh,
@@ -40,7 +49,8 @@ i18next.init({
     suffix: "}",
     escapeValue: false,
   },
-  ns: ['tags', 'components', 'description', 'parameters', 'summary', 'examples'],
+  keySeparator: false,
+  ns: ['tags', 'components', 'description', 'parameters', 'summary', 'api'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
