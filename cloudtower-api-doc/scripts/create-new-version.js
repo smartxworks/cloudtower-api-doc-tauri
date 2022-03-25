@@ -31,7 +31,6 @@ const downloadFile = async (versions) => {
       JSON.stringify(
        {
          ...spec,
-         info: {},
          servers: []
        },
        null,
