@@ -7,7 +7,7 @@ const TOWER_PROJECT_ID = 215;
 const Api = new Gitlab({
   token: process.env.GITLAB_TOKEN,
   host: "http://gitlab.smartx.com/",
-  version: 3,
+  version: 4,
 });
 
 const getLocales = (filename) => {

@@ -1,0 +1,30 @@
+**Summary**: 
+
+**Description**: 
+
+**Path** : <%= api %>
+
+**Method** : `POST`
+
+**RequestBody**
+
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |<% params.forEach(param => { %>
+| <%= param.name %>  |  <%= param.type %>  | <%- param.description %>   |<% }) %>
+
+
+**RequestBody Examples** 
+
+```json
+{
+    "description": "please write the description",
+    "summary": "please write the summary",
+    "value": "{}"
+}
+```
+
+**Response**
+| code      | Description |
+| ----------- | ----------- |<% responses.forEach(code => { %>
+|  <%= code %>   |       |<% }) %>
+
