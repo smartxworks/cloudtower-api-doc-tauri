@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 const yargsInteractive = require("yargs-interactive");
-const fs = require("fs");
 const nodePath = require("path");
-const { getMarkDown } = require('./describe');
-const { Diff } = require('./diff');
+const fsExtra = require("fs-extra");
+const {
+  getMarkDown,
+  getSchemaMarkdown,
+  getTagsMarkdown,
+} = require("./describe");
 
 yargsInteractive()
   .usage("$0 <command> [args]")
   .help("help")
   .alias("help", "h")
   .interactive({
-    interactive:  { default: true },
+    interactive: { default: true },
     spec: {
       description: "Provide the relative file path of the swagger json file",
       type: "input",
@@ -19,73 +22,91 @@ yargsInteractive()
       description: "Provide the relative dir path of the output markdown file",
       type: "input",
     },
-    api: {
-      description:
-        "Provide the api name, starts with /, if you want to generate whole api doc, just leave it blank",
-      type: "input",
-    },
     diff: {
-      description: "Provide the old json spec file you want to compare with, leave it blank when you don't want to compare",
-      type: "input"
-    },
-    maxLimit: {
-      description: "Provvide the max limit of object key path, otherwise it will generate all possible path",
-      default: 3,
-      type: "input"
-    },
-    skip: {
       description:
-        "Provide the regex text, if you want to skip some params, eg: --skip where.AND where.OR",
+        "Provide the old json spec file you want to compare with, leave it blank when you don't want to compare",
       type: "input",
     },
   })
-  .then(result => {
+  .then((result) => {
     createNewApiDoc(result);
   });
 
 const createNewApiDoc = async (argv) => {
-  const { spec: specPath, api, skip, output, maxLimit, diff } = argv;
+  const { spec: specPath, output, diff } = argv;
   const specAbsolutePath = nodePath.resolve(process.cwd(), specPath);
-  const skips = !skip.trim() ? undefined : skip.split(" ");
-  if (!fs.existsSync(specAbsolutePath)) {
+  const pMap = (await import("p-map")).default;
+  if (!fsExtra.existsSync(specAbsolutePath)) {
     throw new Error(
       "can not find spec file, please check your path, provided path is: " +
         specAbsolutePath
     );
   }
-  if(!fs.statSync(specAbsolutePath).isFile()) {
+  if (!fsExtra.statSync(specAbsolutePath).isFile()) {
     throw new Error(
       "this is not a json file, pelease check the proveded spec path: " +
         specAbsolutePath
     );
   }
-  const outputPath = nodePath.resolve(process.cwd(), output);
-  if (!fs.existsSync(outputPath)) {
-    throw new Error(
-      "can not find output dir path, please check you dir path, provided output path is: " +
-        outputPath
-    );
-  }
-  if (api && !api.startsWith("/")) {
-    throw new Error("please provide api starts with /");
-  }
-  if(diff) {
-    const diffSpecPath = nodePath.resolve(process.cwd(), diff);
-    if(!fs.existsSync(diffSpecPath)) {
-      throw new Error('can not find spec file path, check your path, provided path is: ', diffSpecPath);
+  const outputApiPath = nodePath.resolve(process.cwd(), output, "paths");
+  const outputSchemaPath = nodePath.resolve(process.cwd(), output, "schemas");
+  const outputTagPath = nodePath.resolve(process.cwd(), output, "tags");
+  [outputApiPath, outputSchemaPath, outputTagPath].forEach((path) =>
+    fsExtra.ensureDirSync(path, { mode: 0777 })
+  );
+  let diffSpecPath;
+  let diffSpec;
+  if (diff) {
+    diffSpecPath = nodePath.resolve(process.cwd(), diff);
+    if (!fsExtra.existsSync(diffSpecPath)) {
+      throw new Error(
+        "can not find spec file path, check your path, provided path is: " +
+          diffSpecPath
+      );
     }
-    return await Diff({oldSpec:diffSpecPath, newSpec:specAbsolutePath, maxLimit, skip:skips, outputPath})
+    diffSpec = require(diffSpecPath);
   }
-  const spec = JSON.parse(fs.readFileSync(specPath, "utf-8"));
-  const apis = api ? [api] : Object.keys(spec.paths);
-  await Promise.all(apis.map(api => new Promise((resolve, reject) => {
-      const apiSpec = spec.paths[api];
-      if (!apiSpec) {
-        reject(`do not exist api: ${api} in spec file, pelase check it. spec file path: ${specPath}`)
+  const spec = require(specAbsolutePath);
+  const { paths, components } = spec;
+  const tags = new Set();
+  await pMap(Object.keys(components.schemas), async (schemaName) => {
+    const outputSchemaFilePath = nodePath.join(
+      outputSchemaPath,
+      `${schemaName}.md`
+    );
+    const content = getSchemaMarkdown({ schemaName, spec });
+    if (diff && diffSpec.components.schemas[schemaName]) {
+      const diffContent = getSchemaMarkdown({ schemaName, spec: diffSpec });
+      if (content === diffContent) {
+        return;
       }
-      const OutputApiPath = nodePath.join(outputPath, `${api}.md`);
-      const content = getMarkDown({  spec, api, maxLimit, skip: skips })
-      fs.writeFile(OutputApiPath, content, 'utf-8', () => resolve(true))
-  })));
+    }
+    fsExtra.writeFileSync(outputSchemaFilePath, content, "utf-8");
+  });
+  await pMap(Object.keys(paths), (api) => {
+    const outputApiFilePath = nodePath.join(outputApiPath, `${api}.md`);
+    const content = getMarkDown({ spec, api });
+    const tagList = spec.paths[api].post.tags;
+    if (tagList) {
+      tagList.forEach(tag => tags.add(tag));
+    }
+    if (diff && diffSpec.paths[api]) {
+      const diffTagList = diffSpec.paths[api].post.tags;
+      if (diffTagList) {
+        diffTagList.forEach((tag) => {
+          if (tags.has(tag)) {
+            tags.delete(tag);
+          }
+        });
+      }
+      const diffContent = getMarkDown({ spec: diffSpec, api });
+      if (content === diffContent) {
+        return;
+      }
+    }
+    fsExtra.writeFileSync(outputApiFilePath, content, "utf-8");
+  });
+  const outputTagFilePath = nodePath.join(outputTagPath, `tag.md`);
+  const content = getTagsMarkdown(Array.from(tags));
+  fsExtra.writeFileSync(outputTagFilePath, content);
 };
-

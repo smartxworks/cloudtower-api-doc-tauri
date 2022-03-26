@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| cluster_num  |  integer  |    |
+| clusters  |  object  |    |
+| clusters  |  array  |    |
+| failure_data_space  |  number  |    |
+| host_num  |  integer  |    |
+| id  |  string  |    |
+| labels  |  object  |    |
+| labels  |  array  |    |
+| name  |  string  |    |
+| organization  |  object  |    |
+| total_cpu_hz  |  number  |    |
+| total_data_capacity  |  number  |    |
+| total_memory_bytes  |  number  |    |
+| used_cpu_hz  |  number  |    |
+| used_data_space  |  number  |    |
+| used_memory_bytes  |  number  |    |
+| vm_num  |  integer  |    |

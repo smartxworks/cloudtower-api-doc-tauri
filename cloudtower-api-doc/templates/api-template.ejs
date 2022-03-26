@@ -6,12 +6,13 @@
 
 **Method** : `POST`
 
+<% if(params.length) { %>
 **RequestBody**
 
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |<% params.forEach(param => { %>
 | <%= param.name %>  |  <%= param.type %>  | <%- param.description %>   |<% }) %>
-
+<%  } %>
 
 **RequestBody Examples** 
 

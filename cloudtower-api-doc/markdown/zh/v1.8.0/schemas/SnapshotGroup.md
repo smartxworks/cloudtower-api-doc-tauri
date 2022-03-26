@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| cluster  |  object  |    |
+| deleted  |  boolean  |    |
+| entityAsyncStatus  |  object  |    |
+| estimated_recycling_time  |  string  |    |
+| id  |  string  |    |
+| internal  |  boolean  |    |
+| keep  |  boolean  |    |
+| local_created_at  |  string  |    |
+| local_id  |  string  |    |
+| logical_size_bytes  |  number  |    |
+| name  |  string  |    |
+| object_num  |  integer  |    |
+| snapshotPlanTask  |  object  |    |
+| vm_info  |  object  |    |
+| vm_info  |  array  |    |
+| vm_snapshots  |  object  |    |
+| vm_snapshots  |  array  |    |

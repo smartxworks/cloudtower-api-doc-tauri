@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| bond_mode  |  string  |    |
+| cluster  |  object  |    |
+| entityAsyncStatus  |  object  |    |
+| everoute_cluster  |  object  |    |
+| id  |  string  |    |
+| internal  |  boolean  |    |
+| labels  |  object  |    |
+| labels  |  array  |    |
+| local_id  |  string  |    |
+| name  |  string  |    |
+| nics  |  object  |    |
+| nics  |  array  |    |
+| ovsbr_name  |  string  |    |
+| type  |  object  |    |
+| vlans  |  object  |    |
+| vlans  |  array  |    |
+| vlans_num  |  integer  |    |

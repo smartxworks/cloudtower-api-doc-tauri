@@ -1,0 +1,24 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| data.instance_ids  |  string  |    |
+| data.instance_ids  |  array  |    |
+| data.luns  |  object  |    |
+| data.vmNics  |  object  |    |
+| data.nics  |  object  |    |
+| data.disks  |  object  |    |
+| data.vmVolumes  |  object  |    |
+| data.vms  |  object  |    |
+| data.hosts  |  object  |    |
+| data.network  |  object  |    |
+| data.cluster  |  object  |    |
+| data.service  |  string  |    |
+| data.metric_type  |  object  |    |
+| data.metric_count  |  integer  |    |
+| data.type  |  object  |    |
+| data.resource_type  |  string  |    |
+| data.title  |  string  |    |
+| data.metric_name  |  string  |    |
+| data.connect_id  |  string  |    |
+| data.connect_id  |  array  |    |
+| data  |  object  |    |
+| where  |  object  |    |
