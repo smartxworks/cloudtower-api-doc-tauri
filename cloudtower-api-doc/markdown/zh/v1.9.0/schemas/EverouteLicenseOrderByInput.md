@@ -1,0 +1,3 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| enum  |  string  | code_ASC: <br/>code_DESC: <br/>createdAt_ASC: <br/>createdAt_DESC: <br/>expire_date_ASC: <br/>expire_date_DESC: <br/>id_ASC: <br/>id_DESC: <br/>max_socket_num_ASC: <br/>max_socket_num_DESC: <br/>serial_ASC: <br/>serial_DESC: <br/>sign_date_ASC: <br/>sign_date_DESC: <br/>software_edition_ASC: <br/>software_edition_DESC: <br/>type_ASC: <br/>type_DESC: <br/>uid_ASC: <br/>uid_DESC: <br/>updatedAt_ASC: <br/>updatedAt_DESC:    |

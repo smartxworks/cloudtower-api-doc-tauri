@@ -1,0 +1,26 @@
+**Summary**: 
+
+**Description**: 
+
+**Path** : /update-nfs-export
+
+**Method** : `POST`
+
+
+
+**RequestBody Examples** 
+
+```json
+{
+    "description": "please write the description",
+    "summary": "please write the summary",
+    "value": "{}"
+}
+```
+
+**Response**
+| code      | Description |
+| ----------- | ----------- |
+|  200   |       |
+|  400   |       |
+

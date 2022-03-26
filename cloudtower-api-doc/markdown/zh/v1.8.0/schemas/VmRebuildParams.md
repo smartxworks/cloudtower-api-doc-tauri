@@ -1,0 +1,24 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| rebuild_from_snapshot_id  |  string  |    |
+| max_bandwidth_policy  |  object  |    |
+| max_bandwidth  |  number  |    |
+| max_iops_policy  |  object  |    |
+| max_iops  |  integer  |    |
+| io_policy  |  object  |    |
+| vcpu  |  integer  |    |
+| status  |  object  |    |
+| firmware  |  object  |    |
+| ha  |  boolean  |    |
+| vm_nics  |  object  |    |
+| vm_nics  |  array  |    |
+| vm_disks  |  object  |    |
+| memory  |  number  |    |
+| cpu_cores  |  integer  |    |
+| cpu_sockets  |  integer  |    |
+| guest_os_type  |  object  |    |
+| folder_id  |  string  |    |
+| description  |  string  |    |
+| name  |  string  |    |
+| host_id  |  string  |    |
+| cluster_id  |  string  |    |

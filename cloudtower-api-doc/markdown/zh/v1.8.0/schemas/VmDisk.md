@@ -1,0 +1,23 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| boot  |  integer  |    |
+| bus  |  object  |    |
+| cloud_init_image_name  |  string  |    |
+| cloud_init_image_path  |  string  |    |
+| device  |  string  |    |
+| disabled  |  boolean  |    |
+| elf_image  |  object  |    |
+| id  |  string  |    |
+| key  |  integer  |    |
+| max_bandwidth  |  number  |    |
+| max_bandwidth_policy  |  object  |    |
+| max_iops  |  integer  |    |
+| max_iops_policy  |  object  |    |
+| serial  |  string  |    |
+| svt_image  |  object  |    |
+| type  |  object  |    |
+| unsafe_image_path  |  string  |    |
+| unsafe_image_uuid  |  string  |    |
+| unsafe_provision  |  string  |    |
+| vm  |  object  |    |
+| vm_volume  |  object  |    |

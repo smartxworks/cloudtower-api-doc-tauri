@@ -1,77 +1,51 @@
 const EJS = require("ejs");
-const nodePath = require('path');
-const fs = require('fs');
-const _ = require('lodash');
+const nodePath = require("path");
+const fsExtra = require('fs-extra');
+const _ = require("lodash");
 
-const collectSchema = new Set();
 const describeRef = (params) => {
-  const { ref, spec, path, describeFn } = params;
-  const schemaName = ref.split("/").pop();
-  const schemaID = `${spec.info.version}_${schemaName}`
-  // prevent infinite refs
-  if (collectSchema.has(schemaID)) {
-    return;
-  }
-  collectSchema.add(schemaID);
-  const schemaObj = spec.components.schemas[schemaName];
-  if (schemaObj.$ref) {
-    describeRef({
-      spec,
-      ref: schemaObj.$ref,
-      path,
-      prefix: [],
-      describeFn,
-    });
-  } else {
-    describeSchema({
-      spec,
-      schema: schemaObj,
-      path,
-      describeFn,
-      prefix: ["components", "schemas", schemaName],
-    });
-  }
+  const { path, describeFn, prefix } = params;
+  describeFn({
+    prefix,
+    path,
+  })
 };
 const describeArraySchema = (params) => {
-  const { spec, path, arraySchema, prefix, describeFn } = params;
+  const { path, arraySchema, prefix, describeFn } = params;
+  const nextPrefix = prefix.concat(["items"])
   if (arraySchema.items.$ref) {
     describeRef({
-      ref: arraySchema.items.$ref,
-      spec,
       path,
-      prefix: [],
+      prefix: nextPrefix,
       describeFn,
     });
   } else {
     describeSchema({
       schema: arraySchema.items,
-      spec,
       path,
-      prefix: prefix.concat(["items"]),
+      prefix: nextPrefix,
       describeFn,
     });
   }
   describeFn({ prefix, path });
 };
 const describeObjectSchema = (params) => {
-  const { objectSchema, spec, path, prefix, describeFn } = params;
+  const { objectSchema, path, prefix, describeFn } = params;
   for (const key in objectSchema.properties) {
-    const completePath = `${path === "" ? "" : path + "."}${key}`;
+    const completePath = `${path ? path + "." : ""}${key}`;
     const value = objectSchema.properties[key];
+    const nextPrefix = prefix.concat(['properties', key])
     if (value.$ref) {
       describeRef({
-        spec,
         path: completePath,
-        ref: value.$ref,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn,
       });
     } else {
       describeSchema({
-        spec,
         schema: value,
         path: completePath,
-        prefix: prefix.concat(["properties", key]),
+        prefix: nextPrefix,
         describeFn,
       });
     }
@@ -80,23 +54,21 @@ const describeObjectSchema = (params) => {
 };
 
 const describeAllOfSchema = (params) => {
-  const { allOfSchema, spec, path, prefix, describeFn } = params;
+  const { allOfSchema, path, prefix, describeFn } = params;
   allOfSchema.allOf.forEach((item, index) => {
+    const nextPrefix = prefix.concat(["allOf", index.toString()])
     if (item.$ref) {
       describeRef({
-        spec,
         path,
-        ref: item.$ref,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn,
       });
     } else {
       describeSchema({
-        spec,
         describeFn,
         schema: item,
         path,
-        prefix: prefix.concat(["allOf", index.toString()]),
+        prefix: nextPrefix,
       });
     }
   });
@@ -106,37 +78,34 @@ const describeEnum = (params) => {
   const { enumSchema, path, prefix, describeFn } = params;
   describeFn({
     prefix,
-    path,
-    description: enumSchema.enum.map((e) => `${e}: `).join("<br/>"),
+    path: 'enum',
+    description: prefix.join('').includes(`OrderByInput`) ? '' : enumSchema.enum.map((e) => `${e}: `).join("<br/>"),
   });
 };
 const describeAnyOfSchema = (params) => {
-  const { anyOfSchema, spec, path, prefix, describeFn } = params;
+  const { anyOfSchema, path, prefix, describeFn } = params;
   anyOfSchema.anyOf.forEach((item, index) => {
-    if (item.ref) {
+    const nextPrefix = prefix.concat(["anyOf", index.toString()])
+    if (item.$ref) {
       describeRef({
-        ref: item.$ref,
         path,
-        spec,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn,
       });
     } else {
       describeSchema({
         schema: item,
         path,
-        prefix: prefix.concat(["anyOf", index.toString()]),
-        spec,
+        prefix: nextPrefix,
         describeFn,
       });
     }
   });
 };
 const describeSchema = (params) => {
-  const { spec, schema, path, prefix, describeFn } = params;
+  const { schema, path, prefix, describeFn } = params;
   if (schema.type === "array") {
     describeArraySchema({
-      spec,
       path,
       prefix,
       arraySchema: schema,
@@ -144,7 +113,6 @@ const describeSchema = (params) => {
     });
   } else if (schema.type === "object") {
     describeObjectSchema({
-      spec,
       path,
       prefix,
       objectSchema: schema,
@@ -152,7 +120,6 @@ const describeSchema = (params) => {
     });
   } else if (schema.enum) {
     describeEnum({
-      spec,
       enumSchema: schema,
       path,
       prefix,
@@ -160,7 +127,6 @@ const describeSchema = (params) => {
     });
   } else if (schema.allOf) {
     describeAllOfSchema({
-      spec,
       allOfSchema: schema,
       path,
       prefix,
@@ -168,7 +134,6 @@ const describeSchema = (params) => {
     });
   } else if (schema.anyOf) {
     describeAnyOfSchema({
-      spec,
       anyOfSchema: schema,
       path,
       prefix,
@@ -180,32 +145,13 @@ const describeSchema = (params) => {
 };
 
 const describeRequestBody = (parmas) => {
-  const { prefix, path, spec, api_name, describeFn } = parmas;
-  const requestBody = spec.paths[api_name].post.requestBody;
-  collectSchema.clear();
-  if (requestBody.$ref) {
-    describeRef({
-      spec,
-      path,
-      prefix,
-      ref: requestBody.$ref,
-      describeFn,
-    });
-  } else if (requestBody.content) {
+  const { requestBody, api_name, describeFn } = parmas;
+  if (requestBody.content) {
     Object.keys(requestBody.content).forEach((media) => {
       const { schema } = requestBody.content[media];
-      if (schema.$ref) {
-        describeRef({
-          spec,
-          path,
-          prefix,
-          describeFn,
-          ref: schema.$ref,
-        });
-      } else {
+      if (!schema.$ref && schema.type !== "array") {
         describeSchema({
-          spec,
-          path,
+          path: '',
           describeFn,
           schema: schema,
           prefix: [
@@ -223,40 +169,24 @@ const describeRequestBody = (parmas) => {
   }
 };
 
-
 const getMarkDown = (parameter) => {
-  const { spec, api, maxLimit, skip } = parameter;
+  const { spec, api } = parameter;
   const params = [];
-  const paths = new Set();
-  const ApiTemplatePath = nodePath.resolve(__dirname, "../templates/api-template.ejs");
-  const ApiTemplateContent = fs.readFileSync(ApiTemplatePath, "utf-8");
+  const ApiTemplatePath = nodePath.resolve(
+    __dirname,
+    "../templates/api-template.ejs"
+  );
+  const ApiTemplateContent = fsExtra.readFileSync(ApiTemplatePath, "utf-8");
   const apiSpec = spec.paths[api];
-  if(!apiSpec) {
-    return ''
+  if (!apiSpec) {
+    return "";
   }
   describeRequestBody({
-    spec,
-    path: "",
-    prefix: [],
+    requestBody: spec.paths[api].post.requestBody,
     api_name: api,
     describeFn: ({ prefix, path, description }) => {
+      if(!path) { return;}
       const schema = _.get(spec, prefix);
-      /**
-       * skip when:
-       * 1. match ski filer
-       * 2. path is empty
-       * 3. path existed before
-       * 4. path level is larger than maxLimit
-       */
-      const shouldSkip =
-        (skip && skip.filter((s) => new RegExp(s).test(path)).length) ||
-        !path ||
-        paths.has(path) ||
-        path.split('.').length > maxLimit;
-      if (shouldSkip) {
-        return;
-      }
-      paths.add(path);
       params.push({
         name: path,
         type: schema.type,
@@ -269,6 +199,42 @@ const getMarkDown = (parameter) => {
     responses: Object.keys(apiSpec.post.responses),
     params,
   });
+};
+
+const getSchemaMarkdown = ({ schemaName, spec }) => {
+  const params = [];
+  const templatePath = nodePath.resolve(
+    __dirname,
+    "../templates/schema-template.ejs"
+  );
+  const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
+  describeSchema({
+    spec, 
+    schema: spec.components.schemas[schemaName], 
+    prefix: ['components', 'schemas',  schemaName], 
+    describeFn: ({ prefix, path, description }) => {
+      if(path === undefined) { return;}
+      const schema = _.get(spec, prefix);
+      params.push({
+        name: path,
+        type: schema.type || 'object',
+        description,
+      });
+    }
+  })
+  return EJS.render(templateContent, {
+    params,
+  });
 }
 
-module.exports = { getMarkDown, describeRequestBody }
+
+const getTagsMarkdown = (tags) => {
+  const templatePath = nodePath.resolve(
+    __dirname,
+    "../templates/tag-template.ejs"
+  );
+  const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
+  return EJS.render(templateContent, {tags});
+}
+
+module.exports = { getMarkDown, getSchemaMarkdown, getTagsMarkdown };
