@@ -1,0 +1,21 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| auth_pass_phrase  |  string  |    |
+| auth_protocol  |  object  |    |
+| cluster  |  object  |    |
+| community  |  string  |    |
+| disabled  |  boolean  |    |
+| engine_id  |  string  |    |
+| entityAsyncStatus  |  object  |    |
+| host  |  string  |    |
+| id  |  string  |    |
+| inform  |  boolean  |    |
+| language_code  |  object  |    |
+| local_id  |  string  |    |
+| name  |  string  |    |
+| port  |  integer  |    |
+| privacy_pass_phrase  |  string  |    |
+| privacy_protocol  |  object  |    |
+| protocol  |  object  |    |
+| username  |  string  |    |
+| version  |  object  |    |

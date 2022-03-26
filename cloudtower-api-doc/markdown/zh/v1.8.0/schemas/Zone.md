@@ -1,0 +1,26 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| cluster  |  object  |    |
+| datacenter  |  object  |    |
+| failure_data_space  |  number  |    |
+| host_num  |  integer  |    |
+| hosts  |  object  |    |
+| hosts  |  array  |    |
+| id  |  string  |    |
+| is_preferred  |  boolean  |    |
+| local_id  |  string  |    |
+| provisioned_cpu_cores  |  integer  |    |
+| provisioned_cpu_cores_for_active_vm  |  integer  |    |
+| provisioned_data_space  |  number  |    |
+| provisioned_memory_bytes  |  number  |    |
+| running_vm_num  |  integer  |    |
+| stopped_vm_num  |  integer  |    |
+| suspended_vm_num  |  integer  |    |
+| total_cache_capacity  |  number  |    |
+| total_cpu_cores  |  integer  |    |
+| total_cpu_hz  |  number  |    |
+| total_data_capacity  |  number  |    |
+| total_memory_bytes  |  number  |    |
+| used_data_space  |  number  |    |
+| valid_data_space  |  number  |    |
+| vm_num  |  integer  |    |

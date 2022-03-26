@@ -7,12 +7,7 @@ import i18next from "./i18n";
 import {
   ISpec,
   specMap,
-  splitPaths,
   wrapSpecWithI18n,
-  // wrapPathWithExamples,
-  // wrapSchemaWithI18n,
-  TopBarSelection,
-  // wrapTagsWithI18n
 } from "./utils";
 
 const REDOC_CLASS = 'redoc-container'
@@ -21,18 +16,11 @@ const App: React.FC = (props) => {
   const { version } = useDocsVersion();
   const { i18n } = useDocusaurusContext();
   const [spec, setSpec] = useState<ISpec>();
-  // TODO: remove later
-  const filter:TopBarSelection = "userManagement"
-
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
-    const { paths } = swaggerSpec;
-    // handle paths
-    // TODO remove this later
-    _.set(swaggerSpec, ["paths"], splitPaths(filter, paths));
-    setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale))
-  }, [filter, version, i18n.currentLocale])
+    setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version));
+  }, [ version, i18n.currentLocale])
 
   useEffect(() => {
     i18next.changeLanguage(i18n.currentLocale);

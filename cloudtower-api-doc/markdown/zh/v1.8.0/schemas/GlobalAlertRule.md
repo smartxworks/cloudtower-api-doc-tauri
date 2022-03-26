@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| alert_rules  |  object  |    |
+| alert_rules  |  array  |    |
+| boolean  |  boolean  |    |
+| cause  |  string  |    |
+| default_thresholds  |  object  |    |
+| default_thresholds  |  array  |    |
+| disabled  |  boolean  |    |
+| id  |  string  |    |
+| impact  |  string  |    |
+| message  |  string  |    |
+| name  |  string  |    |
+| object  |  object  |    |
+| operator  |  string  |    |
+| solution  |  string  |    |
+| thresholds  |  object  |    |
+| thresholds  |  array  |    |
+| unit  |  object  |    |

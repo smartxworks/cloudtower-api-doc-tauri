@@ -1,61 +1,38 @@
 import { OpenAPIV3 } from 'openapi-types';
 import _ from 'lodash';
-import { ISpec } from './swagger';
 
 type DescribeFn<T extends Record<string, any>> = (params: {
-  spec:ISpec,
-  path: string,
+  path?: string,
   prefix: string[],
   describeFn: (params: {
     prefix: string[],
     path: string,
   }) => void,
 } & T) => void
-const collectSchema = new Set<string>();
-const describeRef:DescribeFn<{ref: string}> = (params) => {
-  const { ref, spec, path, describeFn } = params;
-  const schemaName = ref.split('/').pop();
-  // prevent infinite refs
-  if(collectSchema.has(schemaName)) { return; }
-  collectSchema.add(schemaName);
-  const schemaObj = spec.components.schemas[schemaName];
-  if((schemaObj as OpenAPIV3.ReferenceObject).$ref) {
-    describeRef({
-      spec,
-      ref: (schemaObj as OpenAPIV3.ReferenceObject).$ref,
-      path,
-      prefix: [],
-      describeFn,
-    })
-  } else {
-    describeSchema({
-      spec,
-      schema: schemaObj as OpenAPIV3.SchemaObject,
-      path,
-      describeFn,
-      prefix: ['components', 'schemas', schemaName ]
-    })
-  }
+const describeRef:DescribeFn<{}> = (params) => {
+  const { path, describeFn, prefix } = params;
+  describeFn({
+    prefix,
+    path,
+  })
 }
 
 const describeArraySchema:DescribeFn<{
   arraySchema: OpenAPIV3.ArraySchemaObject,
 }> = (params) => {
-  const { spec, path, arraySchema, prefix, describeFn } = params;
+  const { path, arraySchema, prefix, describeFn } = params;
+  const nextPrefix = [...prefix, 'items'];
   if((arraySchema.items as OpenAPIV3.ReferenceObject).$ref) {
     describeRef({
-      ref:(arraySchema.items as OpenAPIV3.ReferenceObject).$ref,
-      spec,
       path,
-      prefix: [],
+      prefix: nextPrefix,
       describeFn,
     })
   } else {
     describeSchema({
       schema: (arraySchema.items as OpenAPIV3.SchemaObject),
-      spec,
       path,
-      prefix,
+      prefix: nextPrefix,
       describeFn,
     })
   }
@@ -64,24 +41,22 @@ const describeArraySchema:DescribeFn<{
 const describeObjectSchema: DescribeFn<{
   objectSchema: OpenAPIV3.NonArraySchemaObject,
 }> = (params) => {
-  const { objectSchema, spec, path, prefix, describeFn } = params;
+  const { objectSchema, path, prefix, describeFn } = params;
   for(const key in objectSchema.properties) {
-    const completePath = `${path === '' ? '' : path + '.'}${key}`;
+    const completePath = `${path === undefined ? '' : path + '.'}${key}`;
     const value = objectSchema.properties[key];
+    const nextPrefix = prefix.concat(['properties', key])
     if((value as OpenAPIV3.ReferenceObject).$ref) {
       describeRef({
-        spec,
         path: completePath,
-        ref: (value as OpenAPIV3.ReferenceObject).$ref,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn
       })
     } else {
       describeSchema({
-        spec,
         schema: value as OpenAPIV3.SchemaObject,
         path: completePath,
-        prefix: prefix.concat(['properties', key]),
+        prefix: nextPrefix,
         describeFn
       })
     }
@@ -90,56 +65,52 @@ const describeObjectSchema: DescribeFn<{
 }
 
 const describeAllOfSchema:DescribeFn<{allOfSchema: OpenAPIV3.BaseSchemaObject}> = (params) => {
-  const { allOfSchema, spec, path, prefix, describeFn } = params;
+  const { allOfSchema, path, prefix, describeFn } = params;
   allOfSchema.allOf.forEach((item, index) => {
+    const nextPrefix =  prefix.concat(['allOf', index.toString()])
     if((item as OpenAPIV3.ReferenceObject).$ref) {
       describeRef({
-        spec,
         path,
-        ref: (item as OpenAPIV3.ReferenceObject).$ref,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn,
       })
     } else {
       describeSchema({
-        spec,
         describeFn,
         schema: item as OpenAPIV3.SchemaObject,
         path,
-        prefix: prefix.concat(['allOf', index.toString()]),
+        prefix: nextPrefix,
       })
     }
   })
 }
 const describeAnyOfSchema:DescribeFn<{anyOfSchema: OpenAPIV3.BaseSchemaObject}> = (params) => {
-  const { anyOfSchema, spec, path, prefix, describeFn } = params;
+  const { anyOfSchema, path, prefix, describeFn } = params;
   anyOfSchema.anyOf.forEach((item, index) => {
+    const nextPrefix = prefix.concat(["anyOf", index.toString()])
     if((item as OpenAPIV3.ReferenceObject).$ref) {
       describeRef({
-        ref: (item as OpenAPIV3.ReferenceObject).$ref,
         path, 
-        spec,
-        prefix: [],
+        prefix: nextPrefix,
         describeFn,
       })
     } else {
       describeSchema({
         schema: item as OpenAPIV3.SchemaObject,
         path,
-        prefix: prefix.concat(['anyOf', index.toString()]),
-        spec,
+        prefix: nextPrefix,
         describeFn
       })
     }
   })
 }
-const describeSchema:DescribeFn<{
-  schema: OpenAPIV3.SchemaObject,
+
+export const describeSchema:DescribeFn<{
+  schema: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject,
 }> = (params) => {
-  const { spec, schema, path, prefix, describeFn } = params;
+  const { schema, path, prefix, describeFn } = params;
   if((schema as OpenAPIV3.ArraySchemaObject).type === 'array') {
     describeArraySchema({
-      spec,
       path,
       prefix,
       arraySchema: schema as OpenAPIV3.ArraySchemaObject,
@@ -147,7 +118,6 @@ const describeSchema:DescribeFn<{
     })
   } else if ((schema as OpenAPIV3.NonArraySchemaObject).type === 'object') {
     describeObjectSchema({
-      spec,
       path,
       prefix,
       objectSchema: schema as OpenAPIV3.NonArraySchemaObject,
@@ -155,7 +125,6 @@ const describeSchema:DescribeFn<{
     })
   } else if ((schema as OpenAPIV3.BaseSchemaObject).allOf) {
     describeAllOfSchema({
-      spec,
       allOfSchema: schema as OpenAPIV3.BaseSchemaObject,
       path,
       prefix,
@@ -163,54 +132,18 @@ const describeSchema:DescribeFn<{
     })
   } else if((schema as OpenAPIV3.BaseSchemaObject).anyOf) {
     describeAnyOfSchema({
-      spec,
       anyOfSchema: schema as OpenAPIV3.BaseSchemaObject,
       path,
       prefix,
       describeFn
     })
-  } else {
-    describeFn({ prefix, path })
-  }
-}
-
-export const describeRequestBody:DescribeFn<{ api_name: string }> = (parmas) => {
-  const {
-    prefix,
-    path,
-    spec,
-    api_name,
-    describeFn,
-  } = parmas;
-  const requestBody = spec.paths[api_name].post.requestBody;
-  if((requestBody as OpenAPIV3.ReferenceObject).$ref) {
+  } else if ((schema as OpenAPIV3.ReferenceObject).$ref) {
     describeRef({
-      spec,
-      path,
       prefix,
-      ref: (requestBody as OpenAPIV3.ReferenceObject).$ref,
-      describeFn,
+      path,
+      describeFn
     })
-  } else if((requestBody as OpenAPIV3.RequestBodyObject).content) {
-    Object.keys((requestBody as OpenAPIV3.RequestBodyObject).content).forEach(media => {
-      const { schema } = (requestBody as OpenAPIV3.RequestBodyObject).content[media];
-      if((schema as OpenAPIV3.ReferenceObject).$ref) {
-        describeRef({
-          spec,
-          path,
-          prefix,
-          describeFn,
-          ref: (schema as OpenAPIV3.ReferenceObject).$ref,
-        })
-      } else {
-        describeSchema({
-          spec,
-          path,
-          describeFn,
-          schema: schema as OpenAPIV3.SchemaObject,
-          prefix: ['paths', api_name, 'post', 'requestBody', 'content', media, 'schema']
-        })
-      }
-    })
-  } 
+  } else {
+    describeFn({ prefix, path: (schema as OpenAPIV3.BaseSchemaObject).enum ? 'enum' : path })
+  }
 }
