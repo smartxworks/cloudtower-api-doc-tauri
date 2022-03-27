@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const yargsInteractive = require("yargs-interactive");
 
 const traverse = (p, callback) => {
   if (fs.statSync(p).isDirectory()) {
@@ -9,7 +10,22 @@ const traverse = (p, callback) => {
     callback(p);
   }
 };
-const generateMarkDownJson = async () => {
+
+yargsInteractive()
+  .usage("$0 <command> [args]")
+  .help("help")
+  .alias("help", "h")
+  .interactive({
+    interactive: { default: true },
+    includes: {
+      description: "Provided the regex of the files to include, leave it blank when you want to include all files",
+      type: "input",
+    },
+  })
+  .then((result) => {
+    generate(result);
+  });
+const generateMarkDownJson = async (includes) => {
   const { fromMarkdown } = await import("mdast-util-from-markdown");
   const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
   const { gfmTable } = await import("micromark-extension-gfm-table");
@@ -17,11 +33,12 @@ const generateMarkDownJson = async () => {
   const markdownPath = path.join(__dirname, "../markdown");
   const outputBasePath = path.join(__dirname, "../generated/locales");
   const lngs = fs.readdirSync(markdownPath);
+  const regex = new RegExp(includes);
   await pMap(lngs, async (lng) => {
     const markdownLngPath = path.join(markdownPath, lng);
     const outputLngPath = path.join(outputBasePath, lng);
     const paths = [];
-    traverse(markdownLngPath, (p) => paths.push(p));
+    traverse(markdownLngPath, (p) => regex.test(p) && paths.push(p));
     await pMap(paths, async (p) => {
       try {
         const p_list = p.split(path.sep);
@@ -124,8 +141,8 @@ const generateMarkDownJson = async () => {
     });
   });
 };
-const generate = async () => {
-  await generateMarkDownJson();
+
+const generate = async (result) => {
+  await generateMarkDownJson(result.includes);
 };
 
-generate();
