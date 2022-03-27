@@ -22,6 +22,13 @@ const isIgnoreParams = (params: {
   }
 };
 
+const combineAllTags = (lng:string) => {
+  const tags:ISpec['tags'] = [
+    ...(i18next.t(`v1_8_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+    ...(i18next.t(`v1_9_0.tags`, { returnObjects: true, lng }) as ISpec['tags'])
+  ];
+  return tags;
+}
 export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
@@ -29,12 +36,7 @@ export const wrapSpecWithI18n = (
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
-  const tags = i18next.getResource(
-    language,
-    version,
-    "tags"
-  ) as OpenAPIV3.TagObject[];
-  cloneSpec.tags = tags;
+  cloneSpec.tags = combineAllTags(language);
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${version.split('.').join('_')}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
     const post = paths[p].post as OpenAPIV3.OperationObject;
