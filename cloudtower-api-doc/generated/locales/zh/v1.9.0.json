@@ -4756,52 +4756,52 @@
   "tags": [
     {
       "name": "BackupLicense",
-      "x-displayName": "",
+      "x-displayName": "备份许可",
       "description": ""
     },
     {
       "name": "BackupPackage",
-      "x-displayName": "",
+      "x-displayName": "备份安装包",
       "description": ""
     },
     {
       "name": "BackupPlanExecution",
-      "x-displayName": "",
+      "x-displayName": "备份计划执行",
       "description": ""
     },
     {
       "name": "BackupPlan",
-      "x-displayName": "",
+      "x-displayName": "备份计划",
       "description": ""
     },
     {
       "name": "BackupRestoreExecution",
-      "x-displayName": "",
+      "x-displayName": "备份恢复执行",
       "description": ""
     },
     {
       "name": "BackupRestorePoint",
-      "x-displayName": "",
+      "x-displayName": "备份恢复点",
       "description": ""
     },
     {
       "name": "BackupService",
-      "x-displayName": "",
+      "x-displayName": "备份服务",
       "description": ""
     },
     {
       "name": "BackupStoreRepository",
-      "x-displayName": "",
+      "x-displayName": "备份存储库",
       "description": ""
     },
     {
       "name": "BackupTargetExecution",
-      "x-displayName": "",
+      "x-displayName": "备份目标执行",
       "description": ""
     },
     {
       "name": "LogServiceConfig",
-      "x-displayName": "",
+      "x-displayName": "日志服务配置",
       "description": ""
     }
   ]

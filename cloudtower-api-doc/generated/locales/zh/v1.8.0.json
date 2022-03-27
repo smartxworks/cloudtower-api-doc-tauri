@@ -26292,147 +26292,147 @@
   "tags": [
     {
       "name": "AlertNotifier",
-      "x-displayName": "",
+      "x-displayName": "报警通知",
       "description": ""
     },
     {
       "name": "AlertRule",
-      "x-displayName": "",
+      "x-displayName": "集群报警规则",
       "description": ""
     },
     {
       "name": "Alert",
-      "x-displayName": "",
+      "x-displayName": "报警",
       "description": ""
     },
     {
       "name": "Application",
-      "x-displayName": "",
+      "x-displayName": "高级监控应用",
       "description": ""
     },
     {
       "name": "BrickTopo",
-      "x-displayName": "",
+      "x-displayName": "机箱",
       "description": ""
     },
     {
       "name": "ClusterImage",
-      "x-displayName": "",
+      "x-displayName": "集群镜像",
       "description": ""
     },
     {
       "name": "Cluster",
-      "x-displayName": "",
+      "x-displayName": "集群",
       "description": ""
     },
     {
       "name": "ClusterSettings",
-      "x-displayName": "",
+      "x-displayName": "集群设置",
       "description": ""
     },
     {
       "name": "ClusterTopo",
-      "x-displayName": "",
+      "x-displayName": "集群拓扑",
       "description": ""
     },
     {
       "name": "ClusterUpgradeHistory",
-      "x-displayName": "",
+      "x-displayName": "集群升级进度",
       "description": ""
     },
     {
       "name": "ConsistencyGroup",
-      "x-displayName": "",
+      "x-displayName": "一致性组",
       "description": ""
     },
     {
       "name": "ConsistencyGroupSnapshot",
-      "x-displayName": "",
+      "x-displayName": "一致性快照组",
       "description": ""
     },
     {
       "name": "ContentLibraryImage",
-      "x-displayName": "",
+      "x-displayName": "内容库 ISO 映像",
       "description": ""
     },
     {
       "name": "ContentLibraryVmTemplate",
-      "x-displayName": "",
+      "x-displayName": "内容库虚拟机模板",
       "description": ""
     },
     {
       "name": "Datacenter",
-      "x-displayName": "",
+      "x-displayName": "数据中心",
       "description": ""
     },
     {
       "name": "Deploy",
-      "x-displayName": "",
+      "x-displayName": "CloudTower",
       "description": ""
     },
     {
       "name": "DiscoveredHost",
-      "x-displayName": "",
+      "x-displayName": "发现主机",
       "description": ""
     },
     {
       "name": "Disk",
-      "x-displayName": "",
+      "x-displayName": "物理盘",
       "description": ""
     },
     {
       "name": "ElfDataStore",
-      "x-displayName": "",
+      "x-displayName": "系统存储对象",
       "description": ""
     },
     {
       "name": "ElfImage",
-      "x-displayName": "",
+      "x-displayName": "ISO 映像",
       "description": ""
     },
     {
       "name": "ElfStoragePolicy",
-      "x-displayName": "",
+      "x-displayName": "存储策略",
       "description": ""
     },
     {
       "name": "EntityFilter",
-      "x-displayName": "",
+      "x-displayName": "资源优化",
       "description": ""
     },
     {
       "name": "EverouteCluster",
-      "x-displayName": "",
+      "x-displayName": "Everoute 集群",
       "description": ""
     },
     {
       "name": "EverouteLicense",
-      "x-displayName": "",
+      "x-displayName": "Everoute 使用许可",
       "description": ""
     },
     {
       "name": "EveroutePackage",
-      "x-displayName": "",
+      "x-displayName": "Everoute 安装包",
       "description": ""
     },
     {
       "name": "GlobalAlertRule",
-      "x-displayName": "",
+      "x-displayName": "CloudTower 报警规则",
       "description": ""
     },
     {
       "name": "GlobalSettings",
-      "x-displayName": "",
+      "x-displayName": "CloudTower 设置",
       "description": ""
     },
     {
       "name": "Graph",
-      "x-displayName": "",
+      "x-displayName": "监控图表",
       "description": ""
     },
     {
       "name": "Host",
-      "x-displayName": "",
+      "x-displayName": "主机",
       "description": ""
     },
     {
@@ -26442,287 +26442,287 @@
     },
     {
       "name": "Ipmi",
-      "x-displayName": "",
+      "x-displayName": "IPMI 信息",
       "description": ""
     },
     {
       "name": "IscsiConnection",
-      "x-displayName": "",
+      "x-displayName": "ISCSI",
       "description": ""
     },
     {
       "name": "Iscsi",
-      "x-displayName": "",
+      "x-displayName": "活跃链接",
       "description": ""
     },
     {
       "name": "IscsiLun",
-      "x-displayName": "",
+      "x-displayName": "LUN",
       "description": ""
     },
     {
       "name": "IscsiLunSnapshot",
-      "x-displayName": "",
+      "x-displayName": "LUN 快照",
       "description": ""
     },
     {
       "name": "IscsiTarget",
-      "x-displayName": "",
+      "x-displayName": "ISCSI 对象",
       "description": ""
     },
     {
       "name": "IsolationPolicy",
-      "x-displayName": "",
+      "x-displayName": "隔离策略",
       "description": ""
     },
     {
       "name": "Label",
-      "x-displayName": "",
+      "x-displayName": "标签",
       "description": ""
     },
     {
       "name": "License",
-      "x-displayName": "",
+      "x-displayName": "使用许可",
       "description": ""
     },
     {
       "name": "LogCollection",
-      "x-displayName": "",
+      "x-displayName": "日志采集",
       "description": ""
     },
     {
       "name": "MigrateTransmitter",
-      "x-displayName": "",
+      "x-displayName": "传输代理",
       "description": ""
     },
     {
       "name": "NamespaceGroup",
-      "x-displayName": "",
+      "x-displayName": "Namespace Group",
       "description": ""
     },
     {
       "name": "NfsExport",
-      "x-displayName": "",
+      "x-displayName": "NFS Export",
       "description": ""
     },
     {
       "name": "NfsInode",
-      "x-displayName": "",
+      "x-displayName": "NFS 文件",
       "description": ""
     },
     {
       "name": "Nic",
-      "x-displayName": "",
+      "x-displayName": "网口",
       "description": ""
     },
     {
       "name": "NodeTopo",
-      "x-displayName": "",
+      "x-displayName": "主机拓扑",
       "description": ""
     },
     {
       "name": "NvmfNamespace",
-      "x-displayName": "",
+      "x-displayName": "NVMF namespace",
       "description": ""
     },
     {
       "name": "NvmfNamespaceSnapshot",
-      "x-displayName": "",
+      "x-displayName": "NVMF namespace 快照",
       "description": ""
     },
     {
       "name": "NvmfSubsystem",
-      "x-displayName": "",
+      "x-displayName": "NVMF Subsystem",
       "description": ""
     },
     {
       "name": "Organization",
-      "x-displayName": "",
+      "x-displayName": "组织",
       "description": ""
     },
     {
       "name": "PmemDimm",
-      "x-displayName": "",
+      "x-displayName": "PMem DIMM",
       "description": ""
     },
     {
       "name": "RackTopo",
-      "x-displayName": "",
+      "x-displayName": "机架",
       "description": ""
     },
     {
       "name": "ReportTask",
-      "x-displayName": "",
+      "x-displayName": "报表定时生成计划",
       "description": ""
     },
     {
       "name": "ReportTemplate",
-      "x-displayName": "",
+      "x-displayName": "报表模板",
       "description": ""
     },
     {
       "name": "SecurityPolicy",
-      "x-displayName": "",
+      "x-displayName": "安全策略",
       "description": ""
     },
     {
       "name": "SnapshotGroup",
-      "x-displayName": "",
+      "x-displayName": "快照组",
       "description": ""
     },
     {
       "name": "SnapshotPlan",
-      "x-displayName": "",
+      "x-displayName": "快照计划",
       "description": ""
     },
     {
       "name": "SnapshotPlanTask",
-      "x-displayName": "",
+      "x-displayName": "快照计划执行记录",
       "description": ""
     },
     {
       "name": "SnmpTransport",
-      "x-displayName": "",
+      "x-displayName": "SNMP 传输",
       "description": ""
     },
     {
       "name": "SnmpTrapReceiver",
-      "x-displayName": "",
+      "x-displayName": "SNMP 陷阱接收端",
       "description": ""
     },
     {
       "name": "StoragePolicyConector",
-      "x-displayName": "",
+      "x-displayName": "StoragePolicyConector",
       "description": ""
     },
     {
       "name": "SvtImage",
-      "x-displayName": "",
+      "x-displayName": "虚拟机工具 ISO 映像",
       "description": ""
     },
     {
       "name": "SystemAuditLog",
-      "x-displayName": "",
+      "x-displayName": "系统事件",
       "description": ""
     },
     {
       "name": "Task",
-      "x-displayName": "",
+      "x-displayName": "任务",
       "description": ""
     },
     {
       "name": "UploadTask",
-      "x-displayName": "",
+      "x-displayName": "上传任务",
       "description": ""
     },
     {
       "name": "UsbDevice",
-      "x-displayName": "",
+      "x-displayName": "USB 设备怒",
       "description": ""
     },
     {
       "name": "UserAuditLog",
-      "x-displayName": "",
+      "x-displayName": "用户事件",
       "description": ""
     },
     {
       "name": "UserRoleNext",
-      "x-displayName": "",
+      "x-displayName": "角色",
       "description": ""
     },
     {
       "name": "User",
-      "x-displayName": "",
+      "x-displayName": "用户",
       "description": ""
     },
     {
       "name": "VcenterAccount",
-      "x-displayName": "",
+      "x-displayName": "vCenter 账户",
       "description": ""
     },
     {
       "name": "Vds",
-      "x-displayName": "",
+      "x-displayName": "虚拟分布式交换机",
       "description": ""
     },
     {
       "name": "View",
-      "x-displayName": "",
+      "x-displayName": "监控视图",
       "description": ""
     },
     {
       "name": "Vlan",
-      "x-displayName": "",
+      "x-displayName": "网络",
       "description": ""
     },
     {
       "name": "VmDisk",
-      "x-displayName": "",
+      "x-displayName": "虚拟盘",
       "description": ""
     },
     {
       "name": "VmEntityFilterResult",
-      "x-displayName": "",
+      "x-displayName": "资源优化分析结果",
       "description": ""
     },
     {
       "name": "VmFolder",
-      "x-displayName": "",
+      "x-displayName": "虚拟机分组",
       "description": ""
     },
     {
       "name": "VmNic",
-      "x-displayName": "",
+      "x-displayName": "虚拟网卡",
       "description": ""
     },
     {
       "name": "VmPlacementGroup",
-      "x-displayName": "",
+      "x-displayName": "虚拟机放置组",
       "description": ""
     },
     {
       "name": "Vm",
-      "x-displayName": "",
+      "x-displayName": "虚拟机",
       "description": ""
     },
     {
       "name": "VmSnapshot",
-      "x-displayName": "",
+      "x-displayName": "虚拟机快照",
       "description": ""
     },
     {
       "name": "VmTemplate",
-      "x-displayName": "",
+      "x-displayName": "虚拟机模板",
       "description": ""
     },
     {
       "name": "VmVolume",
-      "x-displayName": "",
+      "x-displayName": "虚拟卷",
       "description": ""
     },
     {
       "name": "VsphereEsxiAccount",
-      "x-displayName": "",
+      "x-displayName": "vSphere 账号",
       "description": ""
     },
     {
       "name": "Witness",
-      "x-displayName": "",
+      "x-displayName": "仲裁节点",
       "description": ""
     },
     {
       "name": "WitnessService",
-      "x-displayName": "",
+      "x-displayName": "仲裁节点服务",
       "description": ""
     },
     {
       "name": "Zone",
-      "x-displayName": "",
+      "x-displayName": "可用域",
       "description": ""
     },
     {
       "name": "ZoneTopo",
-      "x-displayName": "",
+      "x-displayName": "可用域拓扑",
       "description": ""
     }
   ]
