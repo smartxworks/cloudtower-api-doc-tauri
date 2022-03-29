@@ -214,7 +214,7 @@ curl --location --request POST 'http://192.168.31.209/v2/api/get-vm-snapshots' \
 5. Query the corresponding LUN snapshot by using the LUN snapshot name.
 The local_id of each LUN snapshot is the identifier in ZBS and can be used by ZBS APIs for more interactive operations.
 ```ssh
-curl --location --request POST 'http://192.168.31.209/v2/api/get-iscsi-lun- snapshots' \
+curl --location --request POST 'http://192.168.31.209/v2/api/get-iscsi-lun-snapshots' \
 --header 'Authorization: YOUR_TOKEN' \
 --header 'Content-Type: application/json' \
 --data-raw '{ "where": {
