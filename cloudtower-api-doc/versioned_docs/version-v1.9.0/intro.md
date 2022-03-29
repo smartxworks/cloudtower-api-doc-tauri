@@ -222,7 +222,7 @@ curl --location --request POST 'http://192.168.31.209/v2/api/get-vm-snapshots' \
 每一个 LUN 快照的 local_id 字段即在 ZBS 中的标识符，可以通过 ZBS API 进行进一步交互。
 ```ssh
 ​
-curl --location --request POST 'http://192.168.31.209/v2/api/get-iscsi-lun- snapshots' \
+curl --location --request POST 'http://192.168.31.209/v2/api/get-iscsi-lun-snapshots' \
 --header 'Authorization: YOUR_TOKEN' \
 --header 'Content-Type: application/json' \
 --data-raw '{ "where": {
