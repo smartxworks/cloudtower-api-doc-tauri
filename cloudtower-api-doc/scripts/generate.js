@@ -89,7 +89,7 @@ const generateMarkDownJson = async (includes) => {
                 if(paramName === 'enum') {
                   return `* ${c.value}`
                 }
-                return c.vlaue
+                return c.value
               }).join('\n');
             });
             apiObj.schemas[filename] = schema;
@@ -121,7 +121,7 @@ const generateMarkDownJson = async (includes) => {
                   ? description.children[0].value
                   : "";
               });
-            apiObj.paths[filename] = {
+            apiObj.paths['/' + filename] = {
               summary,
               description,
               examples,
