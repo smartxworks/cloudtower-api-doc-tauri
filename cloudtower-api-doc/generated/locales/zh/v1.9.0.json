@@ -344,351 +344,6 @@
         "200": "",
         "400": ""
       }
-    },
-    "create-log-collection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-log-collection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "force-stop-log-collection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-licenses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-licenses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-packages-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-packages": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-plan-executions-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-plan-executions": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-plans-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-plans": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-restore-executions-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-restore-executions": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-restore-points-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-restore-points": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-services-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-services": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-store-repositories-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-store-repositories": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-target-executions-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-backup-target-executions": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-log-service-configs": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-alert-notifier": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
     }
   },
   "schemas": {
@@ -4756,52 +4411,52 @@
   "tags": [
     {
       "name": "BackupLicense",
-      "x-displayName": "",
+      "x-displayName": "备份许可",
       "description": ""
     },
     {
       "name": "BackupPackage",
-      "x-displayName": "",
+      "x-displayName": "备份安装包",
       "description": ""
     },
     {
       "name": "BackupPlanExecution",
-      "x-displayName": "",
+      "x-displayName": "备份计划执行",
       "description": ""
     },
     {
       "name": "BackupPlan",
-      "x-displayName": "",
+      "x-displayName": "备份计划",
       "description": ""
     },
     {
       "name": "BackupRestoreExecution",
-      "x-displayName": "",
+      "x-displayName": "备份恢复执行",
       "description": ""
     },
     {
       "name": "BackupRestorePoint",
-      "x-displayName": "",
+      "x-displayName": "备份恢复点",
       "description": ""
     },
     {
       "name": "BackupService",
-      "x-displayName": "",
+      "x-displayName": "备份服务",
       "description": ""
     },
     {
       "name": "BackupStoreRepository",
-      "x-displayName": "",
+      "x-displayName": "备份存储库",
       "description": ""
     },
     {
       "name": "BackupTargetExecution",
-      "x-displayName": "",
+      "x-displayName": "备份目标执行",
       "description": ""
     },
     {
       "name": "LogServiceConfig",
-      "x-displayName": "",
+      "x-displayName": "日志服务配置",
       "description": ""
     }
   ]

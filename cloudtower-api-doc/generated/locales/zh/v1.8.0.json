@@ -4949,4956 +4949,6 @@
         "200": "",
         "400": ""
       }
-    },
-    "add-labels-to-resources": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "add-vm-cd-rom": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "add-vm-disk": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "add-vm-nic": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "add-vm-to-folder": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "clone-iscsi-lun-from-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "clone-nvmf-namespace-from-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "clone-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "clone-vm-template-from-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "clone-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "connect-cluster": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "convert-vm-template-from-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "convert-vm-template-to-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-brick-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-cluster-recycle-bin-setting": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-consistency-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-consistency-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-datacenter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-entity-filter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-graph": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-host": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-iscsi-lun-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-iscsi-lun": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-iscsi-target": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-label": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-namespace-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-nfs-export": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-nvmf-namespace-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-nvmf-namespace": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-nvmf-subsystem": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-organization": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-rack-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-report-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-role": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-snmp-transport": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-snmp-trap-receiver": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-user": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vds-with-access-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vds-with-migrate-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vds": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-view": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-folder": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-from-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-placement-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm-volume": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "create-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-brick-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-cluster-recycle-bin-setting": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-cluster": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-consistency-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-consistency-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-datacenter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-elf-image": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-entity-filter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-graph": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-iscsi-lun-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-iscsi-lun": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-iscsi-target": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-label": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-namespace-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-nfs-export": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-nvmf-namespace-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-nvmf-namespace": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-nvmf-subsystem": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-organization": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-rack-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-report-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-role": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-snmp-transport": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-snmp-trap-receiver": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-user": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vds": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-view": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-folder": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-placement-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm-volume": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "delete-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "execute-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "force-restart-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "generate-from-report-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alert-notifiers-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alert-notifiers": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alert-rules-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alert-rules": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alerts-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-alerts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-applications-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-applications": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-brick-topoes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-brick-topoes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-images-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-images": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-settingses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-settingses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-topoes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-topoes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-upgrade-histories-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-cluster-upgrade-histories": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-clusters-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-clusters": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-consistency-group-snapshots-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-consistency-group-snapshots": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-consistency-groups-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-consistency-groups": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-content-library-images-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-content-library-images": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-content-library-vm-templates-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-content-library-vm-templates": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-datacenters-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-datacenters": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-deploys-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-deploys": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-discover-hosts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-disks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-disks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-data-stores-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-data-stores": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-images-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-images": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-storage-policies-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-elf-storage-policies": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-entity-filters-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-entity-filters": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-clusters-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-clusters": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-licenses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-licenses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-packages-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-everoute-packages": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-global-alert-rules-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-global-alert-rules": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-global-settingses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-global-settingses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-graphs-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-graphs": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-hosts-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-hosts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-images-connector": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-ipmis": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-connections-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-connections": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-lun-snapshots-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-lun-snapshots": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-luns-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-luns": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-targets-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-iscsi-targets": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-isolation-policies-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-isolation-policies": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-labels-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-labels": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-licenses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-licenses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-log-collections-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-log-collections": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-migrate-transmitters-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-migrate-transmitters": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-namespace-groups-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-namespace-groups": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nfs-exports-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nfs-exports": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nfs-inodes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nfs-inodes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nics-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nics": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-node-topoes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-node-topoes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-namespace-snapshots-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-namespace-snapshots": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-namespaces-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-namespaces": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-subsystems-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-nvmf-subsystems": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-organizations-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-organizations": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-pmem-dimms-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-pmem-dimms": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-rack-topoes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-rack-topoes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-report-tasks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-report-tasks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-report-templates-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-report-templates": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-security-policies-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-security-policies": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-groups-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-groups": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-plan-tasks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-plan-tasks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-plans-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snapshot-plans": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snmp-transports-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snmp-transports": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snmp-trap-receivers-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-snmp-trap-receivers": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-storage-policies-connector": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-svt-images-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-svt-images": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-system-audit-logs-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-system-audit-logs": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-tasks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-tasks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-upload-tasks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-upload-tasks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-usb-devices-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-usb-devices": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-user-audit-logs-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-user-audit-logs": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-user-role-nexts-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-user-role-nexts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-users-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-users": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vcenter-accounts-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vcenter-accounts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vdses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vdses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-views-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-views": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vlans-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vlans": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-disks-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-disks": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-entity-filter-results-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-entity-filter-results": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-folders-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-folders": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-nics-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-nics": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-placement-groups-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-placement-groups": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-snapshots-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-snapshots": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-templates-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-templates": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-volumes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vm-volumes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vms-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vms": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vsphere-esxi-accounts-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-vsphere-esxi-accounts": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-witness-services": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-witnesses-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-witnesses": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-zone-topoes-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-zone-topoes": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-zones-connection": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "get-zones": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "install-vmtools": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "keep-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "login": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "migrate-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "mount-disk": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "mount-usb-device": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "move-brick-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "move-node-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "move-vm-to-recycle": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "poweroff-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rebuild-vm-from-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "recover-vm-from-recycle": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "remove-labels-from-resources": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "remove-vm-cd-rom": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "remove-vm-disk": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "remove-vm-from-folder": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "remove-vm-nic": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "resolve-alert": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "restart-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "resume-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "resume-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rollback-consistency-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rollback-iscsi-lun-from-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rollback-nvmf-namespace-from-snapshot": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rollback-snapshot-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "rollback-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "shutdown-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "start-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "suspend-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "suspend-vm": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "trigger-disk-blink": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "unmount-disk": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "unmount-usb-device": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-brick-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-cluster-license": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-cluster-recycle-bin-setting": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-cluster": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-consistency-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-customize-alert-rule": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-datacenter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-elf-image": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-entity-filter": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-global-alert-rule": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-global-recycle-bin-setting": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-graph": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-host": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-iscsi-lun": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-iscsi-target": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-label": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-license": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-management-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-migration-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-namespace-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-nfs-export": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-nic": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-nvmf-namespace": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-nvmf-subsystem": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-organization": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-rack-topo": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-report-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-role": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-snapshot-plan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-snmp-transport": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-snmp-trap-receiver": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-user": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vds": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-view": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-basic-info": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-disk": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-folder": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-nic": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-placement-group": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-template": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "update-vm-vlan": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
-    },
-    "upload-elf-image": {
-      "summary": "",
-      "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
-      "responses": {
-        "200": "",
-        "400": ""
-      }
     }
   },
   "schemas": {
@@ -9968,6 +5018,9 @@
     },
     "AlertNotifierConnection": {
       "aggregate": ""
+    },
+    "AlertNotifierOrderByInput": {
+      "enum": ""
     },
     "AlertNotifierWhereInput": {
       "AND": "",
@@ -10062,6 +5115,9 @@
       "username_not_starts_with": "",
       "username_starts_with": ""
     },
+    "AlertOrderByInput": {
+      "enum": ""
+    },
     "AlertRule": {
       "cluster": "",
       "customized": "",
@@ -10074,9 +5130,18 @@
     "AlertRuleConnection": {
       "aggregate": ""
     },
+    "AlertRuleObject": {
+      "enum": "* BRICK: \n* CLUSTER: \n* DISK: \n* HYPERVISOR: \n* NETWORK: \n* NTP_SERVER: \n* PHYSICAL_HOST: \n* SCVM: \n* SNAPSHOT_PLAN: \n* STORAGE_CHUNK: \n* STORAGE_POOL: \n* SYSTEM_SERVICE: \n* TIME_MACHINE_PLAN: \n* VM: \n* WITNESS: \n* WITNESS_NETWORK: \n* ZBS_ZONE:"
+    },
+    "AlertRuleOrderByInput": {
+      "enum": ""
+    },
     "AlertRuleThresholds": {
       "value": "",
       "severity": ""
+    },
+    "AlertRuleUnit": {
+      "enum": "* BIT: \n* BYTE: \n* BYTE_PER_SECOND: \n* CELSIUS: \n* HERTZ: \n* NANOSECOND: \n* PERCENT: \n* SECOND: \n* UNIT_UNSPECIFIED:"
     },
     "AlertRuleWhereInput": {
       "AND": "",
@@ -10313,6 +5378,15 @@
     "ApplicationConnection": {
       "aggregate": ""
     },
+    "ApplicationOrderByInput": {
+      "enum": ""
+    },
+    "ApplicationState": {
+      "enum": "* DEPLOY_ERROR: \n* DEPLOYED: \n* DEPLOYING: \n* EDITING: \n* NOT_DEPLOYED: \n* STOP_ERROR: \n* STOPPED: \n* STOPPING: \n* UPGRADING:"
+    },
+    "ApplicationType": {
+      "enum": "* MONITOR:"
+    },
     "ApplicationWhereInput": {
       "AND": "",
       "cluster": "",
@@ -10443,9 +5517,15 @@
       "volume_size_not": "",
       "volume_size_not_in": ""
     },
+    "Architecture": {
+      "enum": "* AARCH64: \n* X86_64:"
+    },
     "BatchHosts": {
       "task": "",
       "enum": "* BatchHosts:"
+    },
+    "BrickPhaseEnum": {
+      "enum": "* BACKWARD: \n* FORWARD:"
     },
     "BrickTopo": {
       "capacity": "",
@@ -10486,6 +5566,9 @@
       "data.position": "",
       "data": "",
       "where": ""
+    },
+    "BrickTopoOrderByInput": {
+      "enum": ""
     },
     "BrickTopoUpdationParams": {
       "data.tag_position_in_brick": "",
@@ -10588,6 +5671,12 @@
       "power_position_not_in": "",
       "rack_topo": ""
     },
+    "Bus": {
+      "enum": "* IDE: \n* SCSI: \n* VIRTIO:"
+    },
+    "CloudInitNetworkTypeEnum": {
+      "enum": "* IPV4: \n* IPV4_DHCP:"
+    },
     "Cluster": {
       "applications": "",
       "architecture": "",
@@ -10675,6 +5764,9 @@
     "ClusterConnection": {
       "aggregate": ""
     },
+    "ClusterConnectorErrorCode": {
+      "enum": "* LOAD_CLUSTER_FAILED: \n* LOAD_CLUSTER_NETWORK_ERROR: \n* LOAD_CLUSTER_NOT_FOUND: \n* LOAD_CLUSTER_UNAUTHORIZED: \n* LOAD_CLUSTER_UNHEALTHY:"
+    },
     "ClusterCreationParams": {
       "datacenter_id": "",
       "secondary_zone_datacenter_id": "",
@@ -10698,6 +5790,9 @@
     },
     "ClusterImageConnection": {
       "aggregate": ""
+    },
+    "ClusterImageOrderByInput": {
+      "enum": ""
     },
     "ClusterImageWhereInput": {
       "AND": "",
@@ -10790,6 +5885,9 @@
       "data": "",
       "where": ""
     },
+    "ClusterOrderByInput": {
+      "enum": ""
+    },
     "ClusterRecycleBinCreationParams": {
       "data.retain": "",
       "data.enabled": "",
@@ -10813,6 +5911,9 @@
     },
     "ClusterSettingsConnection": {
       "aggregate": ""
+    },
+    "ClusterSettingsOrderByInput": {
+      "enum": ""
     },
     "ClusterSettingsWhereInput": {
       "AND": "",
@@ -10847,6 +5948,9 @@
     },
     "ClusterTopoConnection": {
       "aggregate": ""
+    },
+    "ClusterTopoOrderByInput": {
+      "enum": ""
     },
     "ClusterTopoWhereInput": {
       "AND": "",
@@ -10905,6 +6009,9 @@
       "zone_topoes_none": "",
       "zone_topoes_some": ""
     },
+    "ClusterType": {
+      "enum": "* BLUESHARK: \n* SMTX_OS: \n* SMTX_ZBS:"
+    },
     "ClusterUpdationParams": {
       "data.secondary_zone_id": "",
       "data.primary_zone_id": "",
@@ -10929,6 +6036,9 @@
     },
     "ClusterUpgradeHistoryConnection": {
       "aggregate": ""
+    },
+    "ClusterUpgradeHistoryOrderByInput": {
+      "enum": ""
     },
     "ClusterUpgradeHistoryWhereInput": {
       "AND": "",
@@ -11569,6 +6679,9 @@
       "id": "",
       "local_id": ""
     },
+    "ConnectState": {
+      "enum": "* CONNECTED: \n* DISCONNECTED: \n* INITIALIZING: \n* REMOVING:"
+    },
     "ConsistencyGroup": {
       "cluster": "",
       "consistency_group_snapshots": "",
@@ -11598,6 +6711,9 @@
       "data": "",
       "where": ""
     },
+    "ConsistencyGroupOrderByInput": {
+      "enum": ""
+    },
     "ConsistencyGroupSnapshot": {
       "consistency_group": "",
       "entityAsyncStatus": "",
@@ -11621,6 +6737,9 @@
       "data.remain_volume_snapshot": "",
       "data": "",
       "where": ""
+    },
+    "ConsistencyGroupSnapshotOrderByInput": {
+      "enum": ""
     },
     "ConsistencyGroupSnapshotUpdationParams": {
       "where": ""
@@ -11805,6 +6924,9 @@
       "unique_size_not": "",
       "unique_size_not_in": ""
     },
+    "ConsistentType": {
+      "enum": "* CRASH_CONSISTENT: \n* FILE_SYSTEM_CONSISTENT:"
+    },
     "ContentLibraryImage": {
       "clusters": "",
       "createdAt": "",
@@ -11823,6 +6945,9 @@
     },
     "ContentLibraryImageConnection": {
       "aggregate": ""
+    },
+    "ContentLibraryImageOrderByInput": {
+      "enum": ""
     },
     "ContentLibraryImageWhereInput": {
       "AND": "",
@@ -11943,6 +7068,9 @@
     "ContentLibraryVmTemplateConnection": {
       "aggregate": ""
     },
+    "ContentLibraryVmTemplateOrderByInput": {
+      "enum": ""
+    },
     "ContentLibraryVmTemplateWhereInput": {
       "AND": "",
       "cloud_init_supported": "",
@@ -12045,6 +7173,9 @@
       "name": "",
       "converted_from_template_id": ""
     },
+    "CpuFanSpeedUnit": {
+      "enum": "* PERCENT: \n* RPM:"
+    },
     "CustomizeAlertRuleUpdationParams": {
       "data.thresholds": "",
       "data.disabled": "",
@@ -12079,6 +7210,9 @@
     },
     "DatacenterDeletionParams": {
       "where": ""
+    },
+    "DatacenterOrderByInput": {
+      "enum": ""
     },
     "DatacenterUpdationParams": {
       "data.clusters": "",
@@ -12322,6 +7456,9 @@
     "DeployConnection": {
       "aggregate": ""
     },
+    "DeployOrderByInput": {
+      "enum": ""
+    },
     "DeployWhereInput": {
       "AND": "",
       "id": "",
@@ -12355,6 +7492,9 @@
       "version_not_in": "",
       "version_not_starts_with": "",
       "version_starts_with": ""
+    },
+    "Direction": {
+      "enum": "* HORIZONTAL: \n* VERTICAL:"
     },
     "DiscoveredHost": {
       "all_flash": "",
@@ -12404,13 +7544,31 @@
     "DiskConnection": {
       "aggregate": ""
     },
+    "DiskFunction": {
+      "enum": "* CACHE: \n* DATA: \n* SMTX_SYSTEM:"
+    },
+    "DiskHealthStatus": {
+      "enum": "* HEALTHY: \n* SMART_FAILED: \n* SUBHEALTHY: \n* UNHEALTHY:"
+    },
     "DiskMountParams": {
       "data.function": "",
       "data": "",
       "where": ""
     },
+    "DiskOrderByInput": {
+      "enum": ""
+    },
+    "DiskType": {
+      "enum": "* HDD: \n* PMem: \n* SSD:"
+    },
     "DiskUnmountParams": {
       "where": ""
+    },
+    "DiskUsage": {
+      "enum": "* BOOT: \n* CACHE: \n* CACHE_AND_META: \n* DATA: \n* DATA_AND_META:"
+    },
+    "DiskUsageStatus": {
+      "enum": "* ISOLATED: \n* MOUNTED: \n* MOUNTING: \n* PARTIAL_MOUNTED: \n* UNMOUNTED: \n* UNMOUNTING:"
     },
     "DiskWhereInput": {
       "AND": "",
@@ -12621,6 +7779,12 @@
     "ElfDataStoreConnection": {
       "aggregate": ""
     },
+    "ElfDataStoreOrderByInput": {
+      "enum": ""
+    },
+    "ElfDataStoreType": {
+      "enum": "* ISCSI: \n* NFS: \n* NVMe:"
+    },
     "ElfDataStoreWhereInput": {
       "AND": "",
       "cluster": "",
@@ -12740,6 +7904,9 @@
     },
     "ElfImageDeletionParams": {
       "where": ""
+    },
+    "ElfImageOrderByInput": {
+      "enum": ""
     },
     "ElfImageUpdationParams": {
       "data.description": "",
@@ -12871,6 +8038,9 @@
     "ElfStoragePolicyConnection": {
       "aggregate": ""
     },
+    "ElfStoragePolicyOrderByInput": {
+      "enum": ""
+    },
     "ElfStoragePolicyWhereInput": {
       "AND": "",
       "cluster": "",
@@ -12963,6 +8133,9 @@
       "thin_provision": "",
       "thin_provision_not": ""
     },
+    "EntityAsyncStatus": {
+      "enum": "* CREATING: \n* DELETING: \n* UPDATING:"
+    },
     "EntityFilter": {
       "apply_to_all_clusters": "",
       "clusters": "",
@@ -12990,6 +8163,9 @@
     },
     "EntityFilterDeletionParams": {
       "where": ""
+    },
+    "EntityFilterOrderByInput": {
+      "enum": ""
     },
     "EntityFilterUpdationParams": {
       "data.exclude_vms": "",
@@ -13071,6 +8247,9 @@
       "preset_not_starts_with": "",
       "preset_starts_with": ""
     },
+    "EntityType": {
+      "enum": "* VM:"
+    },
     "EverouteCluster": {
       "agent_elf_clusters": "",
       "agent_elf_vdses": "",
@@ -13085,6 +8264,12 @@
     },
     "EverouteClusterConnection": {
       "aggregate": ""
+    },
+    "EverouteClusterOrderByInput": {
+      "enum": ""
+    },
+    "EverouteClusterPhase": {
+      "enum": "* Associated: \n* Failed: \n* Init: \n* Running: \n* Terminating: \n* Updating: \n* Upgrading:"
     },
     "EverouteClusterWhereInput": {
       "agent_elf_clusters_every": "",
@@ -13159,6 +8344,9 @@
     },
     "EverouteLicenseConnection": {
       "aggregate": ""
+    },
+    "EverouteLicenseOrderByInput": {
+      "enum": ""
     },
     "EverouteLicenseWhereInput": {
       "AND": "",
@@ -13240,6 +8428,9 @@
     },
     "EveroutePackageConnection": {
       "aggregate": ""
+    },
+    "EveroutePackageOrderByInput": {
+      "enum": ""
     },
     "EveroutePackageWhereInput": {
       "AND": "",
@@ -13326,6 +8517,9 @@
       "version_not_starts_with": "",
       "version_starts_with": ""
     },
+    "FilterRuleAggregationEnum": {
+      "enum": "* AVG: \n* MAX: \n* MIN: \n* QUANTILE: \n* SUM:"
+    },
     "FilterRuleInput": {
       "threshold": "",
       "quantile": "",
@@ -13333,6 +8527,15 @@
       "metric": "",
       "duration": "",
       "aggregation": ""
+    },
+    "FilterRuleMetricEnum": {
+      "enum": "* VM_CPU_USAGE: \n* VM_MEMORY_USAGE: \n* VM_POWEROFF_DAYS: \n* VM_POWERON_DAYS: \n* VM_READWRITE_IO:"
+    },
+    "FilterRuleOpEnum": {
+      "enum": "* GT: \n* GTE: \n* LT: \n* LTE:"
+    },
+    "FilterStatus": {
+      "enum": "* EXECUTING: \n* FAILED: \n* INITIALIZING: \n* PARTIAL_SUCCESSED: \n* SUCCESSED:"
     },
     "GetAlertNotifiersConnectionRequestBody": {
       "after": "",
@@ -14833,6 +10036,9 @@
     "GlobalAlertRuleConnection": {
       "aggregate": ""
     },
+    "GlobalAlertRuleOrderByInput": {
+      "enum": ""
+    },
     "GlobalAlertRuleUpdationParams": {
       "data.thresholds": "",
       "data.disabled": "",
@@ -14957,6 +10163,9 @@
       "unit_not": "",
       "unit_not_in": ""
     },
+    "GlobalPolicyAction": {
+      "enum": "* ALLOW: \n* DROP:"
+    },
     "GlobalRecycleBinUpdationParams": {
       "retain": "",
       "enabled": ""
@@ -14967,6 +10176,9 @@
     },
     "GlobalSettingsConnection": {
       "aggregate": ""
+    },
+    "GlobalSettingsOrderByInput": {
+      "enum": ""
     },
     "GlobalSettingsWhereInput": {
       "AND": "",
@@ -15034,6 +10246,12 @@
     "GraphDeletionParams": {
       "where": ""
     },
+    "GraphOrderByInput": {
+      "enum": ""
+    },
+    "GraphType": {
+      "enum": "* AREA: \n* STACK:"
+    },
     "GraphUpdationParams": {
       "data.instance_ids": "",
       "data.luns": "",
@@ -15055,174 +10273,6 @@
       "data.connect_id": "",
       "data": "",
       "where": ""
-    },
-    "AlertNotifierOrderByInput": {
-      "enum": ""
-    },
-    "AlertOrderByInput": {
-      "enum": ""
-    },
-    "AlertRuleObject": {
-      "enum": "* BRICK: \n* CLUSTER: \n* DISK: \n* HYPERVISOR: \n* NETWORK: \n* NTP_SERVER: \n* PHYSICAL_HOST: \n* SCVM: \n* SNAPSHOT_PLAN: \n* STORAGE_CHUNK: \n* STORAGE_POOL: \n* SYSTEM_SERVICE: \n* TIME_MACHINE_PLAN: \n* VM: \n* WITNESS: \n* WITNESS_NETWORK: \n* ZBS_ZONE:"
-    },
-    "AlertRuleOrderByInput": {
-      "enum": ""
-    },
-    "AlertRuleUnit": {
-      "enum": "* BIT: \n* BYTE: \n* BYTE_PER_SECOND: \n* CELSIUS: \n* HERTZ: \n* NANOSECOND: \n* PERCENT: \n* SECOND: \n* UNIT_UNSPECIFIED:"
-    },
-    "ApplicationOrderByInput": {
-      "enum": ""
-    },
-    "ApplicationState": {
-      "enum": "* DEPLOY_ERROR: \n* DEPLOYED: \n* DEPLOYING: \n* EDITING: \n* NOT_DEPLOYED: \n* STOP_ERROR: \n* STOPPED: \n* STOPPING: \n* UPGRADING:"
-    },
-    "ApplicationType": {
-      "enum": "* MONITOR:"
-    },
-    "Architecture": {
-      "enum": "* AARCH64: \n* X86_64:"
-    },
-    "BrickPhaseEnum": {
-      "enum": "* BACKWARD: \n* FORWARD:"
-    },
-    "BrickTopoOrderByInput": {
-      "enum": ""
-    },
-    "Bus": {
-      "enum": "* IDE: \n* SCSI: \n* VIRTIO:"
-    },
-    "CloudInitNetworkTypeEnum": {
-      "enum": "* IPV4: \n* IPV4_DHCP:"
-    },
-    "ClusterConnectorErrorCode": {
-      "enum": "* LOAD_CLUSTER_FAILED: \n* LOAD_CLUSTER_NETWORK_ERROR: \n* LOAD_CLUSTER_NOT_FOUND: \n* LOAD_CLUSTER_UNAUTHORIZED: \n* LOAD_CLUSTER_UNHEALTHY:"
-    },
-    "ClusterImageOrderByInput": {
-      "enum": ""
-    },
-    "ClusterOrderByInput": {
-      "enum": ""
-    },
-    "ClusterSettingsOrderByInput": {
-      "enum": ""
-    },
-    "ClusterTopoOrderByInput": {
-      "enum": ""
-    },
-    "ClusterType": {
-      "enum": "* BLUESHARK: \n* SMTX_OS: \n* SMTX_ZBS:"
-    },
-    "ClusterUpgradeHistoryOrderByInput": {
-      "enum": ""
-    },
-    "ConnectState": {
-      "enum": "* CONNECTED: \n* DISCONNECTED: \n* INITIALIZING: \n* REMOVING:"
-    },
-    "ConsistencyGroupOrderByInput": {
-      "enum": ""
-    },
-    "ConsistencyGroupSnapshotOrderByInput": {
-      "enum": ""
-    },
-    "ConsistentType": {
-      "enum": "* CRASH_CONSISTENT: \n* FILE_SYSTEM_CONSISTENT:"
-    },
-    "ContentLibraryImageOrderByInput": {
-      "enum": ""
-    },
-    "ContentLibraryVmTemplateOrderByInput": {
-      "enum": ""
-    },
-    "CpuFanSpeedUnit": {
-      "enum": "* PERCENT: \n* RPM:"
-    },
-    "DatacenterOrderByInput": {
-      "enum": ""
-    },
-    "DeployOrderByInput": {
-      "enum": ""
-    },
-    "Direction": {
-      "enum": "* HORIZONTAL: \n* VERTICAL:"
-    },
-    "DiskFunction": {
-      "enum": "* CACHE: \n* DATA: \n* SMTX_SYSTEM:"
-    },
-    "DiskHealthStatus": {
-      "enum": "* HEALTHY: \n* SMART_FAILED: \n* SUBHEALTHY: \n* UNHEALTHY:"
-    },
-    "DiskOrderByInput": {
-      "enum": ""
-    },
-    "DiskType": {
-      "enum": "* HDD: \n* PMem: \n* SSD:"
-    },
-    "DiskUsage": {
-      "enum": "* BOOT: \n* CACHE: \n* CACHE_AND_META: \n* DATA: \n* DATA_AND_META:"
-    },
-    "DiskUsageStatus": {
-      "enum": "* ISOLATED: \n* MOUNTED: \n* MOUNTING: \n* PARTIAL_MOUNTED: \n* UNMOUNTED: \n* UNMOUNTING:"
-    },
-    "ElfDataStoreOrderByInput": {
-      "enum": ""
-    },
-    "ElfDataStoreType": {
-      "enum": "* ISCSI: \n* NFS: \n* NVMe:"
-    },
-    "ElfImageOrderByInput": {
-      "enum": ""
-    },
-    "ElfStoragePolicyOrderByInput": {
-      "enum": ""
-    },
-    "EntityAsyncStatus": {
-      "enum": "* CREATING: \n* DELETING: \n* UPDATING:"
-    },
-    "EntityFilterOrderByInput": {
-      "enum": ""
-    },
-    "EntityType": {
-      "enum": "* VM:"
-    },
-    "EverouteClusterOrderByInput": {
-      "enum": ""
-    },
-    "EverouteClusterPhase": {
-      "enum": "* Associated: \n* Failed: \n* Init: \n* Running: \n* Terminating: \n* Updating: \n* Upgrading:"
-    },
-    "EverouteLicenseOrderByInput": {
-      "enum": ""
-    },
-    "EveroutePackageOrderByInput": {
-      "enum": ""
-    },
-    "FilterRuleAggregationEnum": {
-      "enum": "* AVG: \n* MAX: \n* MIN: \n* QUANTILE: \n* SUM:"
-    },
-    "FilterRuleMetricEnum": {
-      "enum": "* VM_CPU_USAGE: \n* VM_MEMORY_USAGE: \n* VM_POWEROFF_DAYS: \n* VM_POWERON_DAYS: \n* VM_READWRITE_IO:"
-    },
-    "FilterRuleOpEnum": {
-      "enum": "* GT: \n* GTE: \n* LT: \n* LTE:"
-    },
-    "FilterStatus": {
-      "enum": "* EXECUTING: \n* FAILED: \n* INITIALIZING: \n* PARTIAL_SUCCESSED: \n* SUCCESSED:"
-    },
-    "GlobalAlertRuleOrderByInput": {
-      "enum": ""
-    },
-    "GlobalPolicyAction": {
-      "enum": "* ALLOW: \n* DROP:"
-    },
-    "GlobalSettingsOrderByInput": {
-      "enum": ""
-    },
-    "GraphOrderByInput": {
-      "enum": ""
-    },
-    "GraphType": {
-      "enum": "* AREA: \n* STACK:"
     },
     "GraphWhereInput": {
       "AND": "",
@@ -17818,6 +12868,9 @@
       "data": "",
       "where": ""
     },
+    "Maybe_DiskFunction_": {},
+    "Maybe_DiskType_": {},
+    "Maybe_Scalars-at-Int_": {},
     "MetricType": {
       "enum": "* BOTTOMK: \n* NORMAL: \n* TOPK:"
     },
@@ -20672,6 +15725,7 @@
       "OR": "",
       "zone_topo": ""
     },
+    "RemoveLabelsFromResourcesParams": {},
     "ReportResourceInputEnum": {
       "enum": "* ALERT: \n* ALL: \n* CLUSTER: \n* DATA_CENTER: \n* DISK: \n* ELF_IMAGE: \n* ENTITY_FILTERS: \n* GLOBAL_ALERT_RULE: \n* HOST: \n* TASK: \n* VDS: \n* VLAN: \n* VM: \n* VM_TEMPLATE:"
     },
@@ -26283,156 +21337,152 @@
       "vm_num_lte": "",
       "vm_num_not": "",
       "vm_num_not_in": ""
-    },
-    "Maybe_DiskFunction_": {},
-    "Maybe_DiskType_": {},
-    "Maybe_Scalars-at-Int_": {},
-    "RemoveLabelsFromResourcesParams": {}
+    }
   },
   "tags": [
     {
       "name": "AlertNotifier",
-      "x-displayName": "",
+      "x-displayName": "报警通知",
       "description": ""
     },
     {
       "name": "AlertRule",
-      "x-displayName": "",
+      "x-displayName": "集群报警规则",
       "description": ""
     },
     {
       "name": "Alert",
-      "x-displayName": "",
+      "x-displayName": "报警",
       "description": ""
     },
     {
       "name": "Application",
-      "x-displayName": "",
+      "x-displayName": "高级监控应用",
       "description": ""
     },
     {
       "name": "BrickTopo",
-      "x-displayName": "",
+      "x-displayName": "机箱",
       "description": ""
     },
     {
       "name": "ClusterImage",
-      "x-displayName": "",
+      "x-displayName": "集群镜像",
       "description": ""
     },
     {
       "name": "Cluster",
-      "x-displayName": "",
+      "x-displayName": "集群",
       "description": ""
     },
     {
       "name": "ClusterSettings",
-      "x-displayName": "",
+      "x-displayName": "集群设置",
       "description": ""
     },
     {
       "name": "ClusterTopo",
-      "x-displayName": "",
+      "x-displayName": "集群拓扑",
       "description": ""
     },
     {
       "name": "ClusterUpgradeHistory",
-      "x-displayName": "",
+      "x-displayName": "集群升级进度",
       "description": ""
     },
     {
       "name": "ConsistencyGroup",
-      "x-displayName": "",
+      "x-displayName": "一致性组",
       "description": ""
     },
     {
       "name": "ConsistencyGroupSnapshot",
-      "x-displayName": "",
+      "x-displayName": "一致性快照组",
       "description": ""
     },
     {
       "name": "ContentLibraryImage",
-      "x-displayName": "",
+      "x-displayName": "内容库 ISO 映像",
       "description": ""
     },
     {
       "name": "ContentLibraryVmTemplate",
-      "x-displayName": "",
+      "x-displayName": "内容库虚拟机模板",
       "description": ""
     },
     {
       "name": "Datacenter",
-      "x-displayName": "",
+      "x-displayName": "数据中心",
       "description": ""
     },
     {
       "name": "Deploy",
-      "x-displayName": "",
+      "x-displayName": "CloudTower",
       "description": ""
     },
     {
       "name": "DiscoveredHost",
-      "x-displayName": "",
+      "x-displayName": "发现主机",
       "description": ""
     },
     {
       "name": "Disk",
-      "x-displayName": "",
+      "x-displayName": "物理盘",
       "description": ""
     },
     {
       "name": "ElfDataStore",
-      "x-displayName": "",
+      "x-displayName": "系统存储对象",
       "description": ""
     },
     {
       "name": "ElfImage",
-      "x-displayName": "",
+      "x-displayName": "ISO 映像",
       "description": ""
     },
     {
       "name": "ElfStoragePolicy",
-      "x-displayName": "",
+      "x-displayName": "存储策略",
       "description": ""
     },
     {
       "name": "EntityFilter",
-      "x-displayName": "",
+      "x-displayName": "资源优化",
       "description": ""
     },
     {
       "name": "EverouteCluster",
-      "x-displayName": "",
+      "x-displayName": "Everoute 集群",
       "description": ""
     },
     {
       "name": "EverouteLicense",
-      "x-displayName": "",
+      "x-displayName": "Everoute 使用许可",
       "description": ""
     },
     {
       "name": "EveroutePackage",
-      "x-displayName": "",
+      "x-displayName": "Everoute 安装包",
       "description": ""
     },
     {
       "name": "GlobalAlertRule",
-      "x-displayName": "",
+      "x-displayName": "CloudTower 报警规则",
       "description": ""
     },
     {
       "name": "GlobalSettings",
-      "x-displayName": "",
+      "x-displayName": "CloudTower 设置",
       "description": ""
     },
     {
       "name": "Graph",
-      "x-displayName": "",
+      "x-displayName": "监控图表",
       "description": ""
     },
     {
       "name": "Host",
-      "x-displayName": "",
+      "x-displayName": "主机",
       "description": ""
     },
     {
@@ -26442,287 +21492,287 @@
     },
     {
       "name": "Ipmi",
-      "x-displayName": "",
+      "x-displayName": "IPMI 信息",
       "description": ""
     },
     {
       "name": "IscsiConnection",
-      "x-displayName": "",
+      "x-displayName": "ISCSI",
       "description": ""
     },
     {
       "name": "Iscsi",
-      "x-displayName": "",
+      "x-displayName": "活跃链接",
       "description": ""
     },
     {
       "name": "IscsiLun",
-      "x-displayName": "",
+      "x-displayName": "LUN",
       "description": ""
     },
     {
       "name": "IscsiLunSnapshot",
-      "x-displayName": "",
+      "x-displayName": "LUN 快照",
       "description": ""
     },
     {
       "name": "IscsiTarget",
-      "x-displayName": "",
+      "x-displayName": "ISCSI 对象",
       "description": ""
     },
     {
       "name": "IsolationPolicy",
-      "x-displayName": "",
+      "x-displayName": "隔离策略",
       "description": ""
     },
     {
       "name": "Label",
-      "x-displayName": "",
+      "x-displayName": "标签",
       "description": ""
     },
     {
       "name": "License",
-      "x-displayName": "",
+      "x-displayName": "使用许可",
       "description": ""
     },
     {
       "name": "LogCollection",
-      "x-displayName": "",
+      "x-displayName": "日志采集",
       "description": ""
     },
     {
       "name": "MigrateTransmitter",
-      "x-displayName": "",
+      "x-displayName": "传输代理",
       "description": ""
     },
     {
       "name": "NamespaceGroup",
-      "x-displayName": "",
+      "x-displayName": "Namespace Group",
       "description": ""
     },
     {
       "name": "NfsExport",
-      "x-displayName": "",
+      "x-displayName": "NFS Export",
       "description": ""
     },
     {
       "name": "NfsInode",
-      "x-displayName": "",
+      "x-displayName": "NFS 文件",
       "description": ""
     },
     {
       "name": "Nic",
-      "x-displayName": "",
+      "x-displayName": "网口",
       "description": ""
     },
     {
       "name": "NodeTopo",
-      "x-displayName": "",
+      "x-displayName": "主机拓扑",
       "description": ""
     },
     {
       "name": "NvmfNamespace",
-      "x-displayName": "",
+      "x-displayName": "NVMF namespace",
       "description": ""
     },
     {
       "name": "NvmfNamespaceSnapshot",
-      "x-displayName": "",
+      "x-displayName": "NVMF namespace 快照",
       "description": ""
     },
     {
       "name": "NvmfSubsystem",
-      "x-displayName": "",
+      "x-displayName": "NVMF Subsystem",
       "description": ""
     },
     {
       "name": "Organization",
-      "x-displayName": "",
+      "x-displayName": "组织",
       "description": ""
     },
     {
       "name": "PmemDimm",
-      "x-displayName": "",
+      "x-displayName": "PMem DIMM",
       "description": ""
     },
     {
       "name": "RackTopo",
-      "x-displayName": "",
+      "x-displayName": "机架",
       "description": ""
     },
     {
       "name": "ReportTask",
-      "x-displayName": "",
+      "x-displayName": "报表定时生成计划",
       "description": ""
     },
     {
       "name": "ReportTemplate",
-      "x-displayName": "",
+      "x-displayName": "报表模板",
       "description": ""
     },
     {
       "name": "SecurityPolicy",
-      "x-displayName": "",
+      "x-displayName": "安全策略",
       "description": ""
     },
     {
       "name": "SnapshotGroup",
-      "x-displayName": "",
+      "x-displayName": "快照组",
       "description": ""
     },
     {
       "name": "SnapshotPlan",
-      "x-displayName": "",
+      "x-displayName": "快照计划",
       "description": ""
     },
     {
       "name": "SnapshotPlanTask",
-      "x-displayName": "",
+      "x-displayName": "快照计划执行记录",
       "description": ""
     },
     {
       "name": "SnmpTransport",
-      "x-displayName": "",
+      "x-displayName": "SNMP 传输",
       "description": ""
     },
     {
       "name": "SnmpTrapReceiver",
-      "x-displayName": "",
+      "x-displayName": "SNMP 陷阱接收端",
       "description": ""
     },
     {
       "name": "StoragePolicyConector",
-      "x-displayName": "",
+      "x-displayName": "StoragePolicyConector",
       "description": ""
     },
     {
       "name": "SvtImage",
-      "x-displayName": "",
+      "x-displayName": "虚拟机工具 ISO 映像",
       "description": ""
     },
     {
       "name": "SystemAuditLog",
-      "x-displayName": "",
+      "x-displayName": "系统事件",
       "description": ""
     },
     {
       "name": "Task",
-      "x-displayName": "",
+      "x-displayName": "任务",
       "description": ""
     },
     {
       "name": "UploadTask",
-      "x-displayName": "",
+      "x-displayName": "上传任务",
       "description": ""
     },
     {
       "name": "UsbDevice",
-      "x-displayName": "",
+      "x-displayName": "USB 设备怒",
       "description": ""
     },
     {
       "name": "UserAuditLog",
-      "x-displayName": "",
+      "x-displayName": "用户事件",
       "description": ""
     },
     {
       "name": "UserRoleNext",
-      "x-displayName": "",
+      "x-displayName": "角色",
       "description": ""
     },
     {
       "name": "User",
-      "x-displayName": "",
+      "x-displayName": "用户",
       "description": ""
     },
     {
       "name": "VcenterAccount",
-      "x-displayName": "",
+      "x-displayName": "vCenter 账户",
       "description": ""
     },
     {
       "name": "Vds",
-      "x-displayName": "",
+      "x-displayName": "虚拟分布式交换机",
       "description": ""
     },
     {
       "name": "View",
-      "x-displayName": "",
+      "x-displayName": "监控视图",
       "description": ""
     },
     {
       "name": "Vlan",
-      "x-displayName": "",
+      "x-displayName": "网络",
       "description": ""
     },
     {
       "name": "VmDisk",
-      "x-displayName": "",
+      "x-displayName": "虚拟盘",
       "description": ""
     },
     {
       "name": "VmEntityFilterResult",
-      "x-displayName": "",
+      "x-displayName": "资源优化分析结果",
       "description": ""
     },
     {
       "name": "VmFolder",
-      "x-displayName": "",
+      "x-displayName": "虚拟机分组",
       "description": ""
     },
     {
       "name": "VmNic",
-      "x-displayName": "",
+      "x-displayName": "虚拟网卡",
       "description": ""
     },
     {
       "name": "VmPlacementGroup",
-      "x-displayName": "",
+      "x-displayName": "虚拟机放置组",
       "description": ""
     },
     {
       "name": "Vm",
-      "x-displayName": "",
+      "x-displayName": "虚拟机",
       "description": ""
     },
     {
       "name": "VmSnapshot",
-      "x-displayName": "",
+      "x-displayName": "虚拟机快照",
       "description": ""
     },
     {
       "name": "VmTemplate",
-      "x-displayName": "",
+      "x-displayName": "虚拟机模板",
       "description": ""
     },
     {
       "name": "VmVolume",
-      "x-displayName": "",
+      "x-displayName": "虚拟卷",
       "description": ""
     },
     {
       "name": "VsphereEsxiAccount",
-      "x-displayName": "",
+      "x-displayName": "vSphere 账号",
       "description": ""
     },
     {
       "name": "Witness",
-      "x-displayName": "",
+      "x-displayName": "仲裁节点",
       "description": ""
     },
     {
       "name": "WitnessService",
-      "x-displayName": "",
+      "x-displayName": "仲裁节点服务",
       "description": ""
     },
     {
       "name": "Zone",
-      "x-displayName": "",
+      "x-displayName": "可用域",
       "description": ""
     },
     {
       "name": "ZoneTopo",
-      "x-displayName": "",
+      "x-displayName": "可用域拓扑",
       "description": ""
     }
   ]
