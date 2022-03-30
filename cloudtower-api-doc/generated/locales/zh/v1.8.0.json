@@ -21667,7 +21667,7 @@
     },
     {
       "name": "UsbDevice",
-      "x-displayName": "USB 设备怒",
+      "x-displayName": "USB 设备",
       "description": ""
     },
     {
@@ -21702,7 +21702,7 @@
     },
     {
       "name": "Vlan",
-      "x-displayName": "网络",
+      "x-displayName": "VLAN",
       "description": ""
     },
     {

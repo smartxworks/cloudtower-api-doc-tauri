@@ -71,9 +71,9 @@ const generateMarkDownJson = async (includes) => {
             children[0].children.slice(1).forEach(({ children }) => {
               const [name, display, description] = children;
               tags.push({
-                name: getChildrenTextAsString(name.children),
-                "x-displayName": getChildrenTextAsString(display.children),
-                description: getChildrenTextAsString(description.children),
+                name: name ? getChildrenTextAsString(name.children) : '',
+                "x-displayName": display ? getChildrenTextAsString(display.children) : '',
+                description: description ? getChildrenTextAsString(description.children) : '',
               });
             });
             apiObj.tags = tags;

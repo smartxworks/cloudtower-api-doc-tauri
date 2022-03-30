@@ -1,0 +1,56 @@
+{
+  "paths": {},
+  "schemas": {},
+  "tags": [
+    {
+      "name": "BackupLicense",
+      "x-displayName": "Backup License",
+      "description": ""
+    },
+    {
+      "name": "BackupPackage",
+      "x-displayName": "Backup Installation Package",
+      "description": ""
+    },
+    {
+      "name": "BackupPlanExecution",
+      "x-displayName": "Backup Plan Execution",
+      "description": ""
+    },
+    {
+      "name": "BackupPlan",
+      "x-displayName": "Backup Plan",
+      "description": ""
+    },
+    {
+      "name": "BackupRestoreExecution",
+      "x-displayName": "Backup Restore Execution",
+      "description": ""
+    },
+    {
+      "name": "BackupRestorePoint",
+      "x-displayName": "Backup Restore Point",
+      "description": ""
+    },
+    {
+      "name": "BackupService",
+      "x-displayName": "Backup Service",
+      "description": ""
+    },
+    {
+      "name": "BackupStoreRepository",
+      "x-displayName": "Backup Store Repository",
+      "description": ""
+    },
+    {
+      "name": "BackupTargetExecution",
+      "x-displayName": "Backup Target Execution",
+      "description": ""
+    },
+    {
+      "name": "LogServiceConfig",
+      "x-displayName": "Log Service Config",
+      "description": ""
+    }
+  ]
+}

@@ -66,14 +66,14 @@
   | SystemAuditLog  | 系统事件  |   |
   | Task  | 任务  |   |
   | UploadTask  | 上传任务  |   |
-  | UsbDevice  |  USB 设备怒  |   |
+  | UsbDevice  |  USB 设备  |   |
   | UserAuditLog  | 用户事件  |   |
   | UserRoleNext  | 角色  |   |
   | User  | 用户  |   |
   | VcenterAccount  | vCenter 账户  |   |
   | Vds  | 虚拟分布式交换机  |   |
   | View  | 监控视图  |   |
-  | Vlan  | 网络  |   |
+  | Vlan  | VLAN  |   |
   | VmDisk  | 虚拟盘  |   |
   | VmEntityFilterResult  | 资源优化分析结果  |   |
   | VmFolder  | 虚拟机分组  |   |

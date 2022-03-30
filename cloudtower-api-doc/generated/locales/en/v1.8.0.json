@@ -1,0 +1,439 @@
+{
+  "tags": [
+    {
+      "name": "AlertNotifier",
+      "x-displayName": "Alert Email Notification",
+      "description": ""
+    },
+    {
+      "name": "AlertRule  Cluster Alert Rules",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "Alert",
+      "x-displayName": "Alert",
+      "description": ""
+    },
+    {
+      "name": "Application",
+      "x-displayName": "Advanced Monitoring Application",
+      "description": ""
+    },
+    {
+      "name": "BrickTopo",
+      "x-displayName": "Rack",
+      "description": ""
+    },
+    {
+      "name": "ClusterImage",
+      "x-displayName": "Cluster Image",
+      "description": ""
+    },
+    {
+      "name": "Cluster",
+      "x-displayName": "Cluster",
+      "description": ""
+    },
+    {
+      "name": "ClusterSettings",
+      "x-displayName": "Cluster Setting",
+      "description": ""
+    },
+    {
+      "name": "ClusterTopo",
+      "x-displayName": "Cluster Topology",
+      "description": ""
+    },
+    {
+      "name": "ClusterUpgradeHistory",
+      "x-displayName": "Cluster Upgrade Process",
+      "description": ""
+    },
+    {
+      "name": "ConsistencyGroup",
+      "x-displayName": "Consistency Group",
+      "description": ""
+    },
+    {
+      "name": "ConsistencyGroupSnapshot",
+      "x-displayName": "Consistency Group Snapshot",
+      "description": ""
+    },
+    {
+      "name": "ContentLibraryImage",
+      "x-displayName": "Content Library ISO Image",
+      "description": ""
+    },
+    {
+      "name": "ContentLibraryVmTemplate",
+      "x-displayName": "VM Template",
+      "description": ""
+    },
+    {
+      "name": "Datacenter",
+      "x-displayName": "Datacenter\"",
+      "description": ""
+    },
+    {
+      "name": "Deploy",
+      "x-displayName": "CloudTower",
+      "description": ""
+    },
+    {
+      "name": "DiscoveredHost",
+      "x-displayName": "Discover Host",
+      "description": ""
+    },
+    {
+      "name": "Disk",
+      "x-displayName": "Physical Disk",
+      "description": ""
+    },
+    {
+      "name": "ElfDataStore",
+      "x-displayName": "System Storage Object",
+      "description": ""
+    },
+    {
+      "name": "ElfImage",
+      "x-displayName": "ISO Image",
+      "description": ""
+    },
+    {
+      "name": "ElfStoragePolicy",
+      "x-displayName": "Storage Policy",
+      "description": ""
+    },
+    {
+      "name": "EntityFilter",
+      "x-displayName": "Resource Optimization",
+      "description": ""
+    },
+    {
+      "name": "EverouteCluster",
+      "x-displayName": "Everoute Cluster",
+      "description": ""
+    },
+    {
+      "name": "EverouteLicense",
+      "x-displayName": "Everoute License",
+      "description": ""
+    },
+    {
+      "name": "EveroutePackage",
+      "x-displayName": "Everoute Installation Package",
+      "description": ""
+    },
+    {
+      "name": "GlobalAlertRule",
+      "x-displayName": "CloudTower Alert Rule",
+      "description": ""
+    },
+    {
+      "name": "GlobalSettings",
+      "x-displayName": "CloudTower Settings",
+      "description": ""
+    },
+    {
+      "name": "Graph",
+      "x-displayName": "Monitoring Graph",
+      "description": ""
+    },
+    {
+      "name": "Host",
+      "x-displayName": "Host",
+      "description": ""
+    },
+    {
+      "name": "ImageConnector",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "Ipmi",
+      "x-displayName": "IPMI Message",
+      "description": ""
+    },
+    {
+      "name": "IscsiConnection",
+      "x-displayName": "ISCSI",
+      "description": ""
+    },
+    {
+      "name": "Iscsi",
+      "x-displayName": "Active Connection",
+      "description": ""
+    },
+    {
+      "name": "IscsiLun",
+      "x-displayName": "LUN",
+      "description": ""
+    },
+    {
+      "name": "IscsiLunSnapshot",
+      "x-displayName": "LUN Snapshot",
+      "description": ""
+    },
+    {
+      "name": "IscsiTarget",
+      "x-displayName": "ISCSI Target",
+      "description": ""
+    },
+    {
+      "name": "IsolationPolicy",
+      "x-displayName": "Isolation Policy",
+      "description": ""
+    },
+    {
+      "name": "Label",
+      "x-displayName": "Label",
+      "description": ""
+    },
+    {
+      "name": "License",
+      "x-displayName": "License",
+      "description": ""
+    },
+    {
+      "name": "LogCollection",
+      "x-displayName": "Log Collection",
+      "description": ""
+    },
+    {
+      "name": "MigrateTransmitter",
+      "x-displayName": "Transmission Agent",
+      "description": ""
+    },
+    {
+      "name": "NamespaceGroup",
+      "x-displayName": "Namespace Group",
+      "description": ""
+    },
+    {
+      "name": "NfsExport",
+      "x-displayName": "NFS Export",
+      "description": ""
+    },
+    {
+      "name": "NfsInode",
+      "x-displayName": "NFS File",
+      "description": ""
+    },
+    {
+      "name": "Nic",
+      "x-displayName": "NIC",
+      "description": ""
+    },
+    {
+      "name": "NodeTopo",
+      "x-displayName": "Host Topology",
+      "description": ""
+    },
+    {
+      "name": "NvmfNamespace",
+      "x-displayName": "NVMF namespace",
+      "description": ""
+    },
+    {
+      "name": "NvmfNamespaceSnapshot",
+      "x-displayName": "NVMF Namespace Snapshot",
+      "description": ""
+    },
+    {
+      "name": "NvmfSubsystem",
+      "x-displayName": "NVMF Subsystem",
+      "description": ""
+    },
+    {
+      "name": "Organization",
+      "x-displayName": "Organization",
+      "description": ""
+    },
+    {
+      "name": "PmemDimm",
+      "x-displayName": "PMem DIMM",
+      "description": ""
+    },
+    {
+      "name": "RackTopo",
+      "x-displayName": "Rack",
+      "description": ""
+    },
+    {
+      "name": "ReportTask",
+      "x-displayName": "Regular Generation Plan of Report",
+      "description": ""
+    },
+    {
+      "name": "ReportTemplate",
+      "x-displayName": "Report Template",
+      "description": ""
+    },
+    {
+      "name": "SecurityPolicy",
+      "x-displayName": "Security Policy",
+      "description": ""
+    },
+    {
+      "name": "SnapshotGroup",
+      "x-displayName": "Snapshot Group",
+      "description": ""
+    },
+    {
+      "name": "SnapshotPlan",
+      "x-displayName": "Snapshot Plan",
+      "description": ""
+    },
+    {
+      "name": "SnapshotPlanTask",
+      "x-displayName": "Execution Record of Snapshot Plan",
+      "description": ""
+    },
+    {
+      "name": "SnmpTransport",
+      "x-displayName": "SNMP Transport",
+      "description": ""
+    },
+    {
+      "name": "SnmpTrapReceiver",
+      "x-displayName": "SNMP Trap",
+      "description": ""
+    },
+    {
+      "name": "StoragePolicyConector",
+      "x-displayName": "StoragePolicyConector",
+      "description": ""
+    },
+    {
+      "name": "SvtImage",
+      "x-displayName": "VMTools ISO Image",
+      "description": ""
+    },
+    {
+      "name": "SystemAuditLog",
+      "x-displayName": "System Event",
+      "description": ""
+    },
+    {
+      "name": "Task",
+      "x-displayName": "Task",
+      "description": ""
+    },
+    {
+      "name": "UploadTask",
+      "x-displayName": "Upload Task",
+      "description": ""
+    },
+    {
+      "name": "UsbDevice",
+      "x-displayName": "USB Device",
+      "description": ""
+    },
+    {
+      "name": "UserAuditLog",
+      "x-displayName": "User Event",
+      "description": ""
+    },
+    {
+      "name": "UserRoleNext",
+      "x-displayName": "Role",
+      "description": ""
+    },
+    {
+      "name": "User",
+      "x-displayName": "User",
+      "description": ""
+    },
+    {
+      "name": "VcenterAccount",
+      "x-displayName": "vCenter Account",
+      "description": ""
+    },
+    {
+      "name": "Vds",
+      "x-displayName": "Virtual Distributed Switch",
+      "description": ""
+    },
+    {
+      "name": "View",
+      "x-displayName": "Monitoring View",
+      "description": ""
+    },
+    {
+      "name": "Vlan",
+      "x-displayName": "VLAN",
+      "description": ""
+    },
+    {
+      "name": "VmDisk",
+      "x-displayName": "Virtual Disk",
+      "description": ""
+    },
+    {
+      "name": "VmEntityFilterResult",
+      "x-displayName": "Analyse result of Resource Optimization",
+      "description": ""
+    },
+    {
+      "name": "VmFolder",
+      "x-displayName": "VM Group",
+      "description": ""
+    },
+    {
+      "name": "VmNic",
+      "x-displayName": "Virtual NIC",
+      "description": ""
+    },
+    {
+      "name": "VmPlacementGroup",
+      "x-displayName": "VM Placement Grou",
+      "description": ""
+    },
+    {
+      "name": "Vm",
+      "x-displayName": "VM",
+      "description": ""
+    },
+    {
+      "name": "VmSnapshot",
+      "x-displayName": "VM Snapshot",
+      "description": ""
+    },
+    {
+      "name": "VmTemplate",
+      "x-displayName": "VM Template",
+      "description": ""
+    },
+    {
+      "name": "VmVolume",
+      "x-displayName": "Virtual Volume",
+      "description": ""
+    },
+    {
+      "name": "VsphereEsxiAccount",
+      "x-displayName": "vSphere Account",
+      "description": ""
+    },
+    {
+      "name": "Witness",
+      "x-displayName": "Witness Node",
+      "description": ""
+    },
+    {
+      "name": "WitnessService",
+      "x-displayName": "Witness Node Service",
+      "description": ""
+    },
+    {
+      "name": "Zone",
+      "x-displayName": "Availability Zone",
+      "description": ""
+    },
+    {
+      "name": "ZoneTopo",
+      "x-displayName": "Availability Zone Topology",
+      "description": ""
+    }
+  ]
+}
