@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取内容库虚拟机模板
 
 **Description**: 
 

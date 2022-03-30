@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新回收站设置
 
 **Description**: 
 

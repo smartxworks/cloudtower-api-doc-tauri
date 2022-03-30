@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 从快照回滚 NVMF namespace
 
 **Description**: 
 

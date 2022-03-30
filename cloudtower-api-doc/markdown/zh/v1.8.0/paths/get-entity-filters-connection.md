@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取资源优化数量
 
 **Description**: 
 

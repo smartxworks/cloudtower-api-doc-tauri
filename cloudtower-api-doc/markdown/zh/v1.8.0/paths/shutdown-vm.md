@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 虚拟机关机
 
 **Description**: 
 

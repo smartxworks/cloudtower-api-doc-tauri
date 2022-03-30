@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取监控视图
 
 **Description**: 
 

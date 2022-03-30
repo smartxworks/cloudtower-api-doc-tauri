@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除机架
 
 **Description**: 
 

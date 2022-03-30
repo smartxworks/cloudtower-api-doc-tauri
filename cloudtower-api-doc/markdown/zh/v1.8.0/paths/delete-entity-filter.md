@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除资源优化规则
 
 **Description**: 
 

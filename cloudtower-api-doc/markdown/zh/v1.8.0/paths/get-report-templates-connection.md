@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取报表模板数量
 
 **Description**: 
 

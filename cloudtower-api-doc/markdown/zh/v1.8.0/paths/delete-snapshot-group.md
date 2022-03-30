@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 快照计划手动删除快照组
 
 **Description**: 
 

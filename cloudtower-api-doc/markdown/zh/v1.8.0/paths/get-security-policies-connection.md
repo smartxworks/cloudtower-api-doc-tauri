@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取安全策略数量
 
 **Description**: 
 

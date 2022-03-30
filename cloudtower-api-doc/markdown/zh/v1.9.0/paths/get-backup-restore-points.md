@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取备份恢复点
 
 **Description**: 
 

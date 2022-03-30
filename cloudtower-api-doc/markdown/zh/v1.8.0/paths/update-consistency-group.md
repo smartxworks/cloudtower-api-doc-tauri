@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新一致性组
 
 **Description**: 
 

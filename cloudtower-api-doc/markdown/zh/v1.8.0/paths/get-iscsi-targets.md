@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 ISCSI 对象
 
 **Description**: 
 

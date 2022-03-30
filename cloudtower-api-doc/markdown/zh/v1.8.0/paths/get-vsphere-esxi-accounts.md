@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 vSphere 账号
 
 **Description**: 
 

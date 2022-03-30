@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取可用域拓扑
 
 **Description**: 
 

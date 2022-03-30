@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 保留本地快照组
 
 **Description**: 
 

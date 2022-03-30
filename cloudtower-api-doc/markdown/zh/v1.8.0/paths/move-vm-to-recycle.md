@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 将虚拟机移至回收站
 
 **Description**: 
 

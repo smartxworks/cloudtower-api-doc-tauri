@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 创建虚拟机快照
 
 **Description**: 
 

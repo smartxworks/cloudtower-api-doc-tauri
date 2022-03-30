@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 USB 设备
 
 **Description**: 
 

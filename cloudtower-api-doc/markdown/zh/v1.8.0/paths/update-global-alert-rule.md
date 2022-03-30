@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新全局报警规则
 
 **Description**: 
 

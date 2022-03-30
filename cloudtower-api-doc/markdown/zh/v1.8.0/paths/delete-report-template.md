@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除报表模板
 
 **Description**: 
 

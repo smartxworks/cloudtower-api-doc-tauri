@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取快照组数量
 
 **Description**: 
 

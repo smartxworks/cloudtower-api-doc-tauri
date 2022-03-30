@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取虚拟分布式交换机数量
 
 **Description**: 
 

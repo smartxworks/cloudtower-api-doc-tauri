@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 将虚拟机转换为虚拟机模板
 
 **Description**: 
 

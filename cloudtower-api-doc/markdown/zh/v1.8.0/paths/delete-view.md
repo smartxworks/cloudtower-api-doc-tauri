@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除监控视图
 
 **Description**: 
 

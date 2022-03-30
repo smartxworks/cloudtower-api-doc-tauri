@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取隔离策略数量
 
 **Description**: 
 
