@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 从模板创建虚拟机
 
 **Description**: 
 

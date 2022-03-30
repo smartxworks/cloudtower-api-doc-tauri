@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 从虚拟机模板克隆虚拟机
 
 **Description**: 
 

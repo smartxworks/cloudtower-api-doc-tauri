@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除 LUN 快照
 
 **Description**: 
 

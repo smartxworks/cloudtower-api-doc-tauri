@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取备份服务数量
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 ISO 映像数量
 
 **Description**: 
 

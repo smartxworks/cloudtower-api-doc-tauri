@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 移除 CD-ROM
 
 **Description**: 
 

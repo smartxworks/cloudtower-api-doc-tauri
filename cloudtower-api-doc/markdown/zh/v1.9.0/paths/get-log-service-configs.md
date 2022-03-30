@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取日志服务配置
 
 **Description**: 
 

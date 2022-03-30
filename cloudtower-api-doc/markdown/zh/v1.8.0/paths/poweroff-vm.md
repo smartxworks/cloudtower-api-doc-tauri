@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 虚拟机强制关机
 
 **Description**: 
 

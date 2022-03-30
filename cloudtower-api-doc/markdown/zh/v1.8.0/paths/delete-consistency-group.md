@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除一致性组
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 恢复虚拟机
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取集群虚拟机模板
 
 **Description**: 
 

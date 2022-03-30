@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 创建一致性组
 
 **Description**: 
 

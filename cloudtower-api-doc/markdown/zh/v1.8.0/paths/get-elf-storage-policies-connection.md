@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取存储策略数量
 
 **Description**: 
 

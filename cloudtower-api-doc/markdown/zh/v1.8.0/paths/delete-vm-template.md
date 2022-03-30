@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除虚拟机模板
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取报警数量
 
 **Description**: 
 

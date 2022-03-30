@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取备份存储仓库数量
 
 **Description**: 
 

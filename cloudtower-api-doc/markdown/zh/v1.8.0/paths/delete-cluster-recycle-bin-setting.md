@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除集群回收站设置
 
 **Description**: 
 

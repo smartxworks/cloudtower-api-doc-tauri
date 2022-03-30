@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取系统事件数量
 
 **Description**: 
 

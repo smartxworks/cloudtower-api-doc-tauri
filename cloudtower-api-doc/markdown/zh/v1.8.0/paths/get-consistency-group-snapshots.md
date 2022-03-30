@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取一致性组快照
 
 **Description**: 
 

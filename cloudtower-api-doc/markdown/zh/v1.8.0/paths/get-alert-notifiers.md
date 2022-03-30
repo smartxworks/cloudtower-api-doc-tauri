@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取报警通知
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取机箱数量
 
 **Description**: 
 

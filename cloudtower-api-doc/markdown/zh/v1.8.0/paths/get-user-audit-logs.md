@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取用户事件
 
 **Description**: 
 

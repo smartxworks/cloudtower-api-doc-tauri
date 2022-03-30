@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 编辑 SNMP 陷阱接收端
 
 **Description**: 
 

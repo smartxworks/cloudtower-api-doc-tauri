@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除虚拟机放置组
 
 **Description**: 
 

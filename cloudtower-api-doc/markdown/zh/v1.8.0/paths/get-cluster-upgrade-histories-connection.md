@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取集群升级进度数量
 
 **Description**: 
 

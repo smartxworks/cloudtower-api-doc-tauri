@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 LUN 快照数量
 
 **Description**: 
 

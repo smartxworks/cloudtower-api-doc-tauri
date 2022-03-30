@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取集群拓扑数量
 
 **Description**: 
 

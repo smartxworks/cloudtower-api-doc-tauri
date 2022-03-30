@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取机架数量
 
 **Description**: 
 

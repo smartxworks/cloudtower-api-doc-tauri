@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取快照计划数量
 
 **Description**: 
 

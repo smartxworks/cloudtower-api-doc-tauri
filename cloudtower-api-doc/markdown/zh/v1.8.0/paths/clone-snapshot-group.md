@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 快照计划克隆本地快照组
 
 **Description**: 
 

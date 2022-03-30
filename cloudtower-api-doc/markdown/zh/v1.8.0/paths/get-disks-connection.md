@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取硬盘数量
 
 **Description**: 
 

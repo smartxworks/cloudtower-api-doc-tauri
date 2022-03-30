@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取仲裁节点数量
 
 **Description**: 
 

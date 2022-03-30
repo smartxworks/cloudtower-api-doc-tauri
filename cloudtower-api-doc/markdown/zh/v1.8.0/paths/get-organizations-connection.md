@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取组织数量
 
 **Description**: 
 
