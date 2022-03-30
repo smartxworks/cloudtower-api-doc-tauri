@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除虚拟卷
 
 **Description**: 
 

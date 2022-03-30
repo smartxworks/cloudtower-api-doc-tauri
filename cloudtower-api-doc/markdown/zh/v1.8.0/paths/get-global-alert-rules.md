@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取全局报警规则
 
 **Description**: 
 

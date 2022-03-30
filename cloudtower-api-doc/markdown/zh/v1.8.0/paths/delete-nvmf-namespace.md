@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除 NVMF namespace
 
 **Description**: 
 

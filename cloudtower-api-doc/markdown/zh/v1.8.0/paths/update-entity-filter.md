@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新资源优化规则
 
 **Description**: 
 

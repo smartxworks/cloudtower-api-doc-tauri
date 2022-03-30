@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 Namespace Group 数量
 
 **Description**: 
 

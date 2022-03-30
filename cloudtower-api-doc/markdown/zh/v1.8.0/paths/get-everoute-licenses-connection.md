@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 Everoute 使用许可数量
 
 **Description**: 
 

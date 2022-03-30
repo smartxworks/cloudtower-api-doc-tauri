@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 USB 设备数量
 
 **Description**: 
 

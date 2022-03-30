@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取虚拟分布式交换机
 
 **Description**: 
 

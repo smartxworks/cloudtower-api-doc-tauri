@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取系统存储对象
 
 **Description**: 
 

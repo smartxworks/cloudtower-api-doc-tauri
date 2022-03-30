@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取监控图表数量
 
 **Description**: 
 

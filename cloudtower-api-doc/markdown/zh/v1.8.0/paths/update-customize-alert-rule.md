@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新特例报警规则
 
 **Description**: 
 

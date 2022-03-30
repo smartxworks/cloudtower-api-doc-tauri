@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 NVMF namespace 快照
 
 **Description**: 
 

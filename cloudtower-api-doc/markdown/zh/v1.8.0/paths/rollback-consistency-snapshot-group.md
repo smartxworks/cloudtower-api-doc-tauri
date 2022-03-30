@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 回滚一致性快照
 
 **Description**: 
 

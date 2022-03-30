@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 SNMP 传输数量
 
 **Description**: 
 

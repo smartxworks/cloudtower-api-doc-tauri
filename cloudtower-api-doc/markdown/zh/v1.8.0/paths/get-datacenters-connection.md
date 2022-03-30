@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取数据中心数量
 
 **Description**: 
 

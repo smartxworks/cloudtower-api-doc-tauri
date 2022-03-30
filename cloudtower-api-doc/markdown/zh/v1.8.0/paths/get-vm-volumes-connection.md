@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取虚拟卷数量
 
 **Description**: 
 

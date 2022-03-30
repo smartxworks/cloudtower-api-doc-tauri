@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除组织
 
 **Description**: 
 

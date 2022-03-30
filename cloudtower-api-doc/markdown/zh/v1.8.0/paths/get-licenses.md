@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取使用许可
 
 **Description**: 
 

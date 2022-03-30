@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 将虚拟机从虚拟机分组中移出
 
 **Description**: 
 

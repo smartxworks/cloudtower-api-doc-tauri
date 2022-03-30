@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 从快照重建虚拟机
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 CloudTower 设置
 
 **Description**: 
 

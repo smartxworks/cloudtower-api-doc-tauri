@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 从回收站恢复虚拟机
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取集群数量
 
 **Description**: 
 

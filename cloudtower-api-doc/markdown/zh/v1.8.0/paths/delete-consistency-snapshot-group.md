@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除一致性快照
 
 **Description**: 
 

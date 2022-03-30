@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 PMem DIMM 数量
 
 **Description**: 
 

@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 更新虚拟机模板
 
 **Description**: 
 

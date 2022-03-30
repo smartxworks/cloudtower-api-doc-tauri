@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取日志采集数量
 
 **Description**: 
 

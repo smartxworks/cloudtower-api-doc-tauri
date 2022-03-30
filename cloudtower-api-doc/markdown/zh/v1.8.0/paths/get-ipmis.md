@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取 IPMI 信息
 
 **Description**: 
 

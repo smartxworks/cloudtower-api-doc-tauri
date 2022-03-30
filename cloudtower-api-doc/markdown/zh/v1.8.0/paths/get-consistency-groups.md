@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取一致性组
 
 **Description**: 
 

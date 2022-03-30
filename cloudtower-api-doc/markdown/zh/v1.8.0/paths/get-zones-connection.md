@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 获取可用域数量
 
 **Description**: 
 

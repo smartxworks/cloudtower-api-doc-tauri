@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 创建监控视图
 
 **Description**: 
 

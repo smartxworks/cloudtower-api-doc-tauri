@@ -1,4 +1,4 @@
-**Summary**: 
+**Summary**: 删除 SNMP 传输
 
 **Description**: 
 
