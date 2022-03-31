@@ -15,7 +15,7 @@
   | ConsistencyGroupSnapshot  | Consistency Group Snapshot  |   |
   | ContentLibraryImage  | Content Library ISO Image  |   |
   | ContentLibraryVmTemplate  | VM Template  |   |
-  | Datacenter  | Datacenter"   |   |
+  | Datacenter  | Datacenter   |   |
   | Deploy  | CloudTower  |   |
   | DiscoveredHost  | Discover Host  |   |
   | Disk  | Physical Disk  |   |
