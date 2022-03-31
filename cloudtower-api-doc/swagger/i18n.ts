@@ -6,7 +6,10 @@ import enComponents from './locales/en/components.json';
 import zhComponents from './locales/zh/components.json';
 
 import zh1_8Api from '../generated/locales/zh/v1.8.0.json';
+import en1_8API from '../generated/locales/en/v1.8.0.json'
+
 import zh1_9Api from '../generated/locales/zh/v1.9.0.json';
+import en1_9API from '../generated/locales/en/v1.9.0.json'
 
 export type ApiDoc = {
   summary: string;
@@ -18,8 +21,8 @@ export type ApiDoc = {
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
-        ['v1_8_0']: {},
-        ['v1_9_0']: {},
+        ['v1_8_0']: en1_8API,
+        ['v1_9_0']: en1_9API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
