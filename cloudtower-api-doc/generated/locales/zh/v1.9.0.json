@@ -46,7 +46,7 @@
       }
     },
     "/get-backup-licenses-connection": {
-      "summary": "",
+      "summary": " 获取备份许可数量",
       "description": "",
       "examples": [
         {
@@ -61,7 +61,7 @@
       }
     },
     "/get-backup-licenses": {
-      "summary": "",
+      "summary": " 获取备份许可",
       "description": "",
       "examples": [
         {
@@ -76,7 +76,7 @@
       }
     },
     "/get-backup-packages-connection": {
-      "summary": "",
+      "summary": " 获取备份安装包数量",
       "description": "",
       "examples": [
         {
@@ -91,7 +91,7 @@
       }
     },
     "/get-backup-packages": {
-      "summary": "",
+      "summary": " 获取备份安装包",
       "description": "",
       "examples": [
         {
@@ -106,7 +106,7 @@
       }
     },
     "/get-backup-plan-executions-connection": {
-      "summary": "",
+      "summary": " 获取备份计划执行数量",
       "description": "",
       "examples": [
         {
@@ -121,7 +121,7 @@
       }
     },
     "/get-backup-plan-executions": {
-      "summary": "",
+      "summary": " 获取备份计划执行",
       "description": "",
       "examples": [
         {
@@ -136,7 +136,7 @@
       }
     },
     "/get-backup-plans-connection": {
-      "summary": "",
+      "summary": " 获取备份计划数量",
       "description": "",
       "examples": [
         {
@@ -151,7 +151,7 @@
       }
     },
     "/get-backup-plans": {
-      "summary": "",
+      "summary": " 获取备份计划",
       "description": "",
       "examples": [
         {
@@ -166,7 +166,7 @@
       }
     },
     "/get-backup-restore-executions-connection": {
-      "summary": "",
+      "summary": " 获取备份恢复执行数量",
       "description": "",
       "examples": [
         {
@@ -181,7 +181,7 @@
       }
     },
     "/get-backup-restore-executions": {
-      "summary": "",
+      "summary": " 获取备份恢复执行",
       "description": "",
       "examples": [
         {
@@ -196,7 +196,7 @@
       }
     },
     "/get-backup-restore-points-connection": {
-      "summary": "",
+      "summary": " 获取备份恢复点数量",
       "description": "",
       "examples": [
         {
@@ -211,7 +211,7 @@
       }
     },
     "/get-backup-restore-points": {
-      "summary": "",
+      "summary": " 获取备份恢复点",
       "description": "",
       "examples": [
         {
@@ -226,7 +226,7 @@
       }
     },
     "/get-backup-services-connection": {
-      "summary": "",
+      "summary": " 获取备份服务数量",
       "description": "",
       "examples": [
         {
@@ -241,7 +241,7 @@
       }
     },
     "/get-backup-services": {
-      "summary": "",
+      "summary": " 获取备份服务",
       "description": "",
       "examples": [
         {
@@ -256,7 +256,7 @@
       }
     },
     "/get-backup-store-repositories-connection": {
-      "summary": "",
+      "summary": " 获取备份存储仓库数量",
       "description": "",
       "examples": [
         {
@@ -271,7 +271,7 @@
       }
     },
     "/get-backup-store-repositories": {
-      "summary": "",
+      "summary": " 获取备份存储仓库",
       "description": "",
       "examples": [
         {
@@ -286,7 +286,7 @@
       }
     },
     "/get-backup-target-executions-connection": {
-      "summary": "",
+      "summary": " 获取备份目标执行数量",
       "description": "",
       "examples": [
         {
@@ -301,7 +301,7 @@
       }
     },
     "/get-backup-target-executions": {
-      "summary": "",
+      "summary": " 获取备份目标执行",
       "description": "",
       "examples": [
         {
@@ -316,7 +316,7 @@
       }
     },
     "/get-log-service-configs": {
-      "summary": "",
+      "summary": " 获取日志服务配置",
       "description": "",
       "examples": [
         {

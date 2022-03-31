@@ -1,5 +1,351 @@
 {
-  "paths": {},
+  "paths": {
+    "/create-log-collection": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-log-collection": {
+      "summary": " Delete the Log Collection",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/force-stop-log-collection": {
+      "summary": " Force stop the log collection",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-licenses-connection": {
+      "summary": " Get the number of backup licneses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-licenses": {
+      "summary": " Get backup licenses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-packages-connection": {
+      "summary": " Get the number of backup installation packages",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-packages": {
+      "summary": " Get backup installation packages",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-plan-executions-connection": {
+      "summary": " Get the number of backup plan executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-plan-executions": {
+      "summary": " Get backup plan executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-plans-connection": {
+      "summary": " Get the number of backup plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-plans": {
+      "summary": " Get backup plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-restore-executions-connection": {
+      "summary": " Get the number of backup restore executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-restore-executions": {
+      "summary": " Get backup restore executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-restore-points-connection": {
+      "summary": " Get the number of backup restore points",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-restore-points": {
+      "summary": " Get backup restore points",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-services-connection": {
+      "summary": " Get the number of backup services",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-services": {
+      "summary": " Get backup services",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-store-repositories-connection": {
+      "summary": " Get the number of backup store repositories",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-store-repositories": {
+      "summary": " Get backup store repositories",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-target-executions-connection": {
+      "summary": " Get the number of backup target executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-backup-target-executions": {
+      "summary": " Get backup target executions",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-log-service-configs": {
+      "summary": " Get log service configurations",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-alert-notifier": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    }
+  },
   "schemas": {},
   "tags": [
     {
