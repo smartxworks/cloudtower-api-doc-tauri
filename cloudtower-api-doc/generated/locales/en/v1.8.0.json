@@ -435,5 +435,4957 @@
       "x-displayName": "Availability Zone Topology",
       "description": ""
     }
-  ]
+  ],
+  "paths": {
+    "/add-labels-to-resources": {
+      "summary": " Associate a label",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/add-vm-cd-rom": {
+      "summary": " Add a CD-ROM",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/add-vm-disk": {
+      "summary": " Add a virtual disk",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/add-vm-nic": {
+      "summary": " Add a virtual NIC",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/add-vm-to-folder": {
+      "summary": " Move the virtual machine to the virtual machine group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/clone-iscsi-lun-from-snapshot": {
+      "summary": " Clone a LUN from snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/clone-nvmf-namespace-from-snapshot": {
+      "summary": " Clone a NVMF namespace from snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/clone-snapshot-group": {
+      "summary": " The snapshot plan clones the local snapshot group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/clone-vm-template-from-vm": {
+      "summary": " Clone a virtual machine from the virtual machine template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/clone-vm": {
+      "summary": " Clone a virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/connect-cluster": {
+      "summary": " Associate the cluster",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/convert-vm-template-from-vm": {
+      "summary": " Convert a virtual machine to a virtual machine template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/convert-vm-template-to-vm": {
+      "summary": " Convert a virtual machine template to a virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-brick-topo": {
+      "summary": " Create a chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-cluster-recycle-bin-setting": {
+      "summary": " Create cluster recycle bin settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-consistency-group": {
+      "summary": " Create a consistency group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-consistency-snapshot-group": {
+      "summary": " Create a consistency snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-datacenter": {
+      "summary": " Create a data center",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-entity-filter": {
+      "summary": " Create a resource optimization rule",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-graph": {
+      "summary": " Create a monitoring graph",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-host": {
+      "summary": " Add a host",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-iscsi-lun-snapshot": {
+      "summary": " Create a LUN snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-iscsi-lun": {
+      "summary": " Create a LUN",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-iscsi-target": {
+      "summary": " Create an iSCSI Target",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-label": {
+      "summary": " Create a label",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-namespace-group": {
+      "summary": " Create a Namespace Group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-nfs-export": {
+      "summary": " Create an NFS Export",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-nvmf-namespace-snapshot": {
+      "summary": " Create an NVMF namespace snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-nvmf-namespace": {
+      "summary": " Create an NVMF namespace",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-nvmf-subsystem": {
+      "summary": " Create an NVMF Subsystem",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-organization": {
+      "summary": " Create an organization",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-rack-topo": {
+      "summary": " Create a rack",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-report-template": {
+      "summary": " Create a report template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-role": {
+      "summary": " Create a role",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-snapshot-plan": {
+      "summary": " Create a snapshot plan",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-snmp-transport": {
+      "summary": " Add an SNMP transport",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-snmp-trap-receiver": {
+      "summary": " Add an SNMP trap receiver",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-user": {
+      "summary": " Create a user",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vds-with-access-vlan": {
+      "summary": " Create an access network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vds-with-migrate-vlan": {
+      "summary": " Create a migration network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vds": {
+      "summary": " Create a virtual distributed switch",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-view": {
+      "summary": " Create a monitoring view",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-folder": {
+      "summary": " Create a virtual machine group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-from-template": {
+      "summary": " Create a virtual machine from template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-placement-group": {
+      "summary": " Create a virtual machine placement group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-snapshot": {
+      "summary": " Create a virtual machine snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-vlan": {
+      "summary": " Create a virtual machine network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm-volume": {
+      "summary": " Create a virtual volume",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/create-vm": {
+      "summary": " Create a virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-brick-topo": {
+      "summary": " Delete the chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-cluster-recycle-bin-setting": {
+      "summary": " Delete the cluster recycle bin settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-cluster": {
+      "summary": " Delete the cluster",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-consistency-group": {
+      "summary": " Delete the consistency group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-consistency-snapshot-group": {
+      "summary": " Delete the consistency snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-datacenter": {
+      "summary": " Delete the data center",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-elf-image": {
+      "summary": " Delete the ISO image",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-entity-filter": {
+      "summary": " Delete the resource optimization rule",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-graph": {
+      "summary": " Delete the monitoring graph",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-iscsi-lun-snapshot": {
+      "summary": " Delete the LUN snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-iscsi-lun": {
+      "summary": " Delete the LUN",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-iscsi-target": {
+      "summary": " Delete the iSCSI Target",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-label": {
+      "summary": " Delete the label",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-namespace-group": {
+      "summary": " Delete the Namespace Group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-nfs-export": {
+      "summary": " Delete the NFS Export",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-nvmf-namespace-snapshot": {
+      "summary": " Delete the NVMF namespace snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-nvmf-namespace": {
+      "summary": " Delete the NVMF namespace",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-nvmf-subsystem": {
+      "summary": " Delete the NVMF Subsystem",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-organization": {
+      "summary": " Delete the organization",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-rack-topo": {
+      "summary": " Delete the rack",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-report-template": {
+      "summary": " Delete the report template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-role": {
+      "summary": " Delete the role",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-snapshot-group": {
+      "summary": " The snapshot plan manually deletes the snapshot group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-snapshot-plan": {
+      "summary": " Delete the snapshot plan",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-snmp-transport": {
+      "summary": " Delete the SNMP transport",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-snmp-trap-receiver": {
+      "summary": " Delete the SNMP trap receiver",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-user": {
+      "summary": " Delete the user",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vds": {
+      "summary": " Delete the virtual distributed switch",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-view": {
+      "summary": " Delete the monitoring view",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-folder": {
+      "summary": " Delete the virtual machine group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-placement-group": {
+      "summary": " Delete the virtual machine placement group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-snapshot": {
+      "summary": " Delete the virtual machine snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-template": {
+      "summary": " Delete the virtual machine template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-vlan": {
+      "summary": " Delete the virtual machine network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm-volume": {
+      "summary": " Delete the virtual volume",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/delete-vm": {
+      "summary": " Delete the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/execute-snapshot-plan": {
+      "summary": " Execute the snapshot plan immediately",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/force-restart-vm": {
+      "summary": " Force restart the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/generate-from-report-template": {
+      "summary": " Generate a report",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alert-notifiers-connection": {
+      "summary": " Get the number of alert notifications",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alert-notifiers": {
+      "summary": " Get alert notifications",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alert-rules-connection": {
+      "summary": " Get the number of special alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alert-rules": {
+      "summary": " Get special alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alerts-connection": {
+      "summary": " Get the number of alerts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-alerts": {
+      "summary": " Get alerts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-applications-connection": {
+      "summary": " Get advanced monitoring applications",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-applications": {
+      "summary": " Get advanced monitoring",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-brick-topoes-connection": {
+      "summary": " Get the number of chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-brick-topoes": {
+      "summary": " Get chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-images-connection": {
+      "summary": " Get the number of cluster images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-images": {
+      "summary": " Get cluster images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-settingses-connection": {
+      "summary": " Get the number of cluster settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-settingses": {
+      "summary": " Get cluster settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-topoes-connection": {
+      "summary": " Get the number of cluster topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-topoes": {
+      "summary": " Get cluster topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-upgrade-histories-connection": {
+      "summary": " Get the number of cluster upgrade progresses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-cluster-upgrade-histories": {
+      "summary": " Get cluster upgrade progresses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-clusters-connection": {
+      "summary": " Get the number of clusters",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-clusters": {
+      "summary": " Get clusters",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-consistency-group-snapshots-connection": {
+      "summary": " Get the number of consistency group snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-consistency-group-snapshots": {
+      "summary": " Get consistency group snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-consistency-groups-connection": {
+      "summary": " Get the number of consistency groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-consistency-groups": {
+      "summary": " Get consistency groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-content-library-images-connection": {
+      "summary": " Get the number of content library ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-content-library-images": {
+      "summary": " Get content library ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-content-library-vm-templates-connection": {
+      "summary": " Get the number of content library virtual machine templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-content-library-vm-templates": {
+      "summary": " Get content library virtual machine templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-datacenters-connection": {
+      "summary": " Get the number of data centers",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-datacenters": {
+      "summary": " Get Data centers",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-deploys-connection": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-deploys": {
+      "summary": " Get CloudTower",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-discover-hosts": {
+      "summary": " Get discover hosts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-disks-connection": {
+      "summary": " Get the number of hard disks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-disks": {
+      "summary": " Get hard disks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-data-stores-connection": {
+      "summary": " Get the number of system storage objects",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-data-stores": {
+      "summary": " Get system storage objects",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-images-connection": {
+      "summary": " Get the number of ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-images": {
+      "summary": " Get ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-storage-policies-connection": {
+      "summary": " Get the number of storage policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-elf-storage-policies": {
+      "summary": " Get storage policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-entity-filters-connection": {
+      "summary": " Get the number of resource optimizations",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-entity-filters": {
+      "summary": " Get resource optimizations",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-clusters-connection": {
+      "summary": " Get the number of Everoute clusters",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-clusters": {
+      "summary": " Get Everoute clusters",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-licenses-connection": {
+      "summary": " Get the number of Everoute licenses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-licenses": {
+      "summary": " Get Everoute licenses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-packages-connection": {
+      "summary": " Get the number of Everoute installation packages",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-everoute-packages": {
+      "summary": " Get Everoute installation packages",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-global-alert-rules-connection": {
+      "summary": " Get the number of global alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-global-alert-rules": {
+      "summary": " Get global alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-global-settingses-connection": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-global-settingses": {
+      "summary": " Get CloudTower settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-graphs-connection": {
+      "summary": " Get the number of monitoring graphs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-graphs": {
+      "summary": " Get monitoring graphs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-hosts-connection": {
+      "summary": " Get the number of hosts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-hosts": {
+      "summary": " Get hosts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-images-connector": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-ipmis": {
+      "summary": " Get IPMI info",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-connections-connection": {
+      "summary": " Get the number of active connections",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-connections": {
+      "summary": " Get active connections",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-lun-snapshots-connection": {
+      "summary": " Get LUN snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-lun-snapshots": {
+      "summary": " Get LUN snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-luns-connection": {
+      "summary": " Get number of LUNs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-luns": {
+      "summary": " Get LUNs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-targets-connection": {
+      "summary": " Get the number of ISCSI objects",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-iscsi-targets": {
+      "summary": " Get ISCSI objects",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-isolation-policies-connection": {
+      "summary": " Get the number of quarantine policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-isolation-policies": {
+      "summary": " Get quarantine policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-labels-connection": {
+      "summary": " Get the number of labels",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-labels": {
+      "summary": " Get labels",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-licenses-connection": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-licenses": {
+      "summary": " Get licenses",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-log-collections-connection": {
+      "summary": " Get the number of log collections",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-log-collections": {
+      "summary": " Get log collections",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-migrate-transmitters-connection": {
+      "summary": " Get the number of transport agents",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-migrate-transmitters": {
+      "summary": " Get transport agents",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-namespace-groups-connection": {
+      "summary": " Get the number of Namespace Groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-namespace-groups": {
+      "summary": " Get Namespace Groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nfs-exports-connection": {
+      "summary": " Get the number of NFS Exports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nfs-exports": {
+      "summary": " Get NFS Exports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nfs-inodes-connection": {
+      "summary": " Get the number of NFS files",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nfs-inodes": {
+      "summary": " Get NFS files",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nics-connection": {
+      "summary": " Get the number of network ports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nics": {
+      "summary": " Get network ports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-node-topoes-connection": {
+      "summary": " Get the number of host topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-node-topoes": {
+      "summary": " Get host topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-namespace-snapshots-connection": {
+      "summary": " Get the number of NVMF namespace snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-namespace-snapshots": {
+      "summary": " Get NVMF namespace snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-namespaces-connection": {
+      "summary": " Get the number of NVMF namespaces",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-namespaces": {
+      "summary": " Get NVMF namespaces",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-subsystems-connection": {
+      "summary": " Get the number of NVMF Subsystems",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-nvmf-subsystems": {
+      "summary": " Get NVMF Subsystems",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-organizations-connection": {
+      "summary": " Get the number of organizations",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-organizations": {
+      "summary": " Get organizations",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-pmem-dimms-connection": {
+      "summary": " Get the number of PMem DIMMs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-pmem-dimms": {
+      "summary": " Get PMem DIMM",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-rack-topoes-connection": {
+      "summary": " Get the number of racks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-rack-topoes": {
+      "summary": " Get racks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-report-tasks-connection": {
+      "summary": " Get the number of scheduled report generation plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-report-tasks": {
+      "summary": " Get the scheduled report generation plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-report-templates-connection": {
+      "summary": " Get the number of report templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-report-templates": {
+      "summary": " Get report templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-security-policies-connection": {
+      "summary": " Get the number of security policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-security-policies": {
+      "summary": " Get security policies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-groups-connection": {
+      "summary": " Get the number of snapshot groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-groups": {
+      "summary": " Get snapshot groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-plan-tasks-connection": {
+      "summary": " Get the number of snapshot plan execution records",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-plan-tasks": {
+      "summary": " Get snapshot plan execution records",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-plans-connection": {
+      "summary": " Get the number of snapshot plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snapshot-plans": {
+      "summary": " Get snapshot plans",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snmp-transports-connection": {
+      "summary": " Get the number of SNMP transports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snmp-transports": {
+      "summary": " Get SNMP transports",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snmp-trap-receivers-connection": {
+      "summary": " Get the number of SNMP trap receivers",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-snmp-trap-receivers": {
+      "summary": " Get SNMP trap receivers",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-storage-policies-connector": {
+      "summary": "",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-svt-images-connection": {
+      "summary": " Get the number of VMTools ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-svt-images": {
+      "summary": " Get VMTools ISO images",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-system-audit-logs-connection": {
+      "summary": " Get the number of system events",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-system-audit-logs": {
+      "summary": " Get system events",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-tasks-connection": {
+      "summary": " Get the number of tasks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-tasks": {
+      "summary": " Get tasks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-upload-tasks-connection": {
+      "summary": " Get the number of upload tasks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-upload-tasks": {
+      "summary": " Get upload tasks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-usb-devices-connection": {
+      "summary": " Get the number of USB devices",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-usb-devices": {
+      "summary": " Get USB devices",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-user-audit-logs-connection": {
+      "summary": " Get the number of user events",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-user-audit-logs": {
+      "summary": " Get user events",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-user-role-nexts-connection": {
+      "summary": " Get the number of roles",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-user-role-nexts": {
+      "summary": " Get roles",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-users-connection": {
+      "summary": " Get the number of users",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-users": {
+      "summary": " Get users",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vcenter-accounts-connection": {
+      "summary": " Get the number of vCenter accounts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vcenter-accounts": {
+      "summary": " Get vCenter accounts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vdses-connection": {
+      "summary": " Get the number of virtual distributed switches",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vdses": {
+      "summary": " Get virtual distributed switches",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-views-connection": {
+      "summary": " Get the number of monitoring views",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-views": {
+      "summary": " Get monitoring views",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vlans-connection": {
+      "summary": " Get the number of networks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vlans": {
+      "summary": " Get networks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-disks-connection": {
+      "summary": " Get the number of virtual disks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-disks": {
+      "summary": " Get virtual disks",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-entity-filter-results-connection": {
+      "summary": " Get the number of resource optimization analysis results",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-entity-filter-results": {
+      "summary": " Get resource optimization analysis results",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-folders-connection": {
+      "summary": " Get the number of virtual machine groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-folders": {
+      "summary": " Get virtual machine groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-nics-connection": {
+      "summary": " Get the number of virtual NICs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-nics": {
+      "summary": " Get virtual NICs",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-placement-groups-connection": {
+      "summary": " Get the number of virtual machine placement groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-placement-groups": {
+      "summary": " Get virtual machine placement groups",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-snapshots-connection": {
+      "summary": " Get the number of virtual machine snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-snapshots": {
+      "summary": " Get virtual machine snapshots",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-templates-connection": {
+      "summary": " Get cluster virtual machine templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-templates": {
+      "summary": " Get cluster virtual machine templates",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-volumes-connection": {
+      "summary": " Get the number of virtual volumes",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vm-volumes": {
+      "summary": " Get virtual volumes",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vms-connection": {
+      "summary": " Get the number of virtual machines",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vms": {
+      "summary": " Get virtual machines",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vsphere-esxi-accounts-connection": {
+      "summary": " Get the number of vSphere accounts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-vsphere-esxi-accounts": {
+      "summary": " Get vSphere accounts",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-witness-services": {
+      "summary": " Get the service of witness node",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-witnesses-connection": {
+      "summary": " Get the number of witness nodes",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-witnesses": {
+      "summary": " Get witness node",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-zone-topoes-connection": {
+      "summary": " Get availability zone topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-zone-topoes": {
+      "summary": " Get availability zone topologies",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-zones-connection": {
+      "summary": " Get the number of availability zones",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/get-zones": {
+      "summary": " Get availability zones",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/install-vmtools": {
+      "summary": " Install the VMTools",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/keep-snapshot-group": {
+      "summary": " Retain a local snapshot group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/login": {
+      "summary": " Login",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/migrate-vm": {
+      "summary": " Migrate the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/mount-disk": {
+      "summary": " Mount a physical disk",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/mount-usb-device": {
+      "summary": " Mount a USB device",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/move-brick-topo": {
+      "summary": " Move the chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/move-node-topo": {
+      "summary": " Move the host",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/move-vm-to-recycle": {
+      "summary": " Move the virtual machine to recycle bin",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/poweroff-vm": {
+      "summary": " Force shutdown the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rebuild-vm-from-snapshot": {
+      "summary": " Rebuild a virtual machine from snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/recover-vm-from-recycle": {
+      "summary": " Recover the virtual machine from recycle bin",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/remove-labels-from-resources": {
+      "summary": " Dissociate the label",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/remove-vm-cd-rom": {
+      "summary": " Remove the CD-ROM",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/remove-vm-disk": {
+      "summary": " Remove the virtual disk",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/remove-vm-from-folder": {
+      "summary": " Remove the  virtual machine from the virtual machine group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/remove-vm-nic": {
+      "summary": " Remove virtual NIC",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/resolve-alert": {
+      "summary": " Mark the alert as resolved",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/restart-vm": {
+      "summary": " Restart the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/resume-snapshot-plan": {
+      "summary": " Resume the snapshot plan",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/resume-vm": {
+      "summary": " Resume the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rollback-consistency-snapshot-group": {
+      "summary": " Rollback the consistency snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rollback-iscsi-lun-from-snapshot": {
+      "summary": " Rollback the LUN",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rollback-nvmf-namespace-from-snapshot": {
+      "summary": " Rollback the NVMF namespace from snapshot",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rollback-snapshot-group": {
+      "summary": " The snapshot plan rollbacks the local snapshot group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/rollback-vm": {
+      "summary": " Rollback the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/shutdown-vm": {
+      "summary": " Shutdown the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/start-vm": {
+      "summary": " Start the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/suspend-snapshot-plan": {
+      "summary": " Suspend the snapshot plan",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/suspend-vm": {
+      "summary": " Suspend the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/trigger-disk-blink": {
+      "summary": " Physical disk flash light",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/unmount-disk": {
+      "summary": " Unmount the physical disk",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/unmount-usb-device": {
+      "summary": " Unmount the USB device",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-brick-topo": {
+      "summary": " Update the chassis",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-cluster-license": {
+      "summary": " Update the cluster certificate",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-cluster-recycle-bin-setting": {
+      "summary": " Update the cluster recycle bin settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-cluster": {
+      "summary": " Update the cluster",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-consistency-group": {
+      "summary": " Update the consistency group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-customize-alert-rule": {
+      "summary": " Update special alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-datacenter": {
+      "summary": " Update the data center",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-elf-image": {
+      "summary": " Update the ISO image",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-entity-filter": {
+      "summary": " Update the resource optimization rule",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-global-alert-rule": {
+      "summary": " Update global alert rules",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-global-recycle-bin-setting": {
+      "summary": " Update the recycle bin settings",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-graph": {
+      "summary": " Update the monitoring graph",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-host": {
+      "summary": " Update the host",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-iscsi-lun": {
+      "summary": " Update the LUN",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-iscsi-target": {
+      "summary": " Update the iSCSI Target",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-label": {
+      "summary": " Update the label",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-license": {
+      "summary": " Update the license",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-management-vlan": {
+      "summary": " Update the management network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-migration-vlan": {
+      "summary": " Update the migration network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-namespace-group": {
+      "summary": " Update the Namespace Group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-nfs-export": {
+      "summary": " Update the NFS Export",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-nic": {
+      "summary": " Update the network port",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-nvmf-namespace": {
+      "summary": " Update the NVMF namespace",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-nvmf-subsystem": {
+      "summary": " Update the NVMF Subsystem",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-organization": {
+      "summary": " Update the organization",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-rack-topo": {
+      "summary": " Update the rack",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-report-template": {
+      "summary": " Update the report template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-role": {
+      "summary": " Update the role",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-snapshot-plan": {
+      "summary": " Update the snapshot plan",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-snmp-transport": {
+      "summary": " Update the SNMP transport",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-snmp-trap-receiver": {
+      "summary": " Edit the SNMP trap receiver",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-user": {
+      "summary": " Update the user",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vds": {
+      "summary": " Update the virtual distributed switch",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-view": {
+      "summary": " Update the monitoring view",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-basic-info": {
+      "summary": " Update the basic information of the virtual machine",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-disk": {
+      "summary": " Update the virtual disk",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-folder": {
+      "summary": " Update the virtual machine group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-nic": {
+      "summary": " Update the virtual NIC",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-placement-group": {
+      "summary": " Update the virtual machine placement group",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-template": {
+      "summary": " Update the virtual machine template",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/update-vm-vlan": {
+      "summary": " Update the virtual machine network",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    },
+    "/upload-elf-image": {
+      "summary": " Upload a ISO image",
+      "description": "",
+      "examples": [
+        {
+          "description": "please write the description",
+          "summary": "please write the summary",
+          "value": "{}"
+        }
+      ],
+      "responses": {
+        "200": "",
+        "400": ""
+      }
+    }
+  }
 }
