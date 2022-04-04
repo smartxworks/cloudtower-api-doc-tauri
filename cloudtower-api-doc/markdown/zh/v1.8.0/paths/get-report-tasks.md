@@ -1,22 +1,10 @@
 **Summary**: 获取报表定时生成计划
 
-**Description**: 
+**Description**:
 
 **Path** : /get-report-tasks
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

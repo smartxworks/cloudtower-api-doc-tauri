@@ -1,22 +1,10 @@
 **Summary**: 挂载 USB 设备
 
-**Description**: 
+**Description**:
 
 **Path** : /mount-usb-device
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

@@ -3,13 +3,6 @@
     "/add-labels-to-resources": {
       "summary": " 关联标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -18,13 +11,6 @@
     "/add-vm-cd-rom": {
       "summary": " 添加 CD-ROM",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -33,13 +19,6 @@
     "/add-vm-disk": {
       "summary": " 添加虚拟盘",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -48,13 +27,6 @@
     "/add-vm-nic": {
       "summary": " 添加虚拟网卡",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -63,13 +35,6 @@
     "/add-vm-to-folder": {
       "summary": " 移动虚拟机至虚拟机分组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -78,13 +43,6 @@
     "/clone-iscsi-lun-from-snapshot": {
       "summary": " 从快照克隆 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -93,13 +51,6 @@
     "/clone-nvmf-namespace-from-snapshot": {
       "summary": " 从快照克隆 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -108,13 +59,6 @@
     "/clone-snapshot-group": {
       "summary": " 快照计划克隆本地快照组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -123,13 +67,6 @@
     "/clone-vm-template-from-vm": {
       "summary": " 从虚拟机模板克隆虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -138,13 +75,6 @@
     "/clone-vm": {
       "summary": " 克隆虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -153,13 +83,6 @@
     "/connect-cluster": {
       "summary": " 关联集群",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -168,13 +91,6 @@
     "/convert-vm-template-from-vm": {
       "summary": " 将虚拟机转换为虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -183,13 +99,6 @@
     "/convert-vm-template-to-vm": {
       "summary": " 将虚拟机模板转换为虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -198,13 +107,6 @@
     "/create-brick-topo": {
       "summary": " 创建机箱",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -213,13 +115,6 @@
     "/create-cluster-recycle-bin-setting": {
       "summary": " 创建集群回收站设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -228,13 +123,6 @@
     "/create-consistency-group": {
       "summary": " 创建一致性组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -243,13 +131,6 @@
     "/create-consistency-snapshot-group": {
       "summary": " 创建一致性快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -258,13 +139,6 @@
     "/create-datacenter": {
       "summary": " 创建数据中心",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -273,13 +147,6 @@
     "/create-entity-filter": {
       "summary": " 创建资源优化规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -288,13 +155,6 @@
     "/create-graph": {
       "summary": " 创建监控图表",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -303,13 +163,6 @@
     "/create-host": {
       "summary": " 添加主机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -318,13 +171,6 @@
     "/create-iscsi-lun-snapshot": {
       "summary": " 创建 LUN 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -333,13 +179,6 @@
     "/create-iscsi-lun": {
       "summary": " 创建 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -348,13 +187,6 @@
     "/create-iscsi-target": {
       "summary": " 创建 iSCSI Target",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -363,13 +195,6 @@
     "/create-label": {
       "summary": " 创建标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -378,13 +203,6 @@
     "/create-namespace-group": {
       "summary": " 创建 Namespace Group",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -393,13 +211,6 @@
     "/create-nfs-export": {
       "summary": " 创建 NFS Export",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -408,13 +219,6 @@
     "/create-nvmf-namespace-snapshot": {
       "summary": " 创建 NVMF namespace 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -423,13 +227,6 @@
     "/create-nvmf-namespace": {
       "summary": " 创建 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -438,13 +235,6 @@
     "/create-nvmf-subsystem": {
       "summary": " 创建 NVMF Subsystem",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -453,13 +243,6 @@
     "/create-organization": {
       "summary": " 创建组织",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -468,13 +251,6 @@
     "/create-rack-topo": {
       "summary": " 创建机架",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -483,13 +259,6 @@
     "/create-report-template": {
       "summary": " 创建报表模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -498,13 +267,6 @@
     "/create-role": {
       "summary": " 创建角色",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -513,13 +275,6 @@
     "/create-snapshot-plan": {
       "summary": " 创建快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -528,13 +283,6 @@
     "/create-snmp-transport": {
       "summary": " 创建 SNMP 传输",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -543,13 +291,6 @@
     "/create-snmp-trap-receiver": {
       "summary": " 添加 SNMP 陷阱接收端",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -558,13 +299,6 @@
     "/create-user": {
       "summary": " 创建用户",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -573,13 +307,6 @@
     "/create-vds-with-access-vlan": {
       "summary": " 创建接入网络",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -588,13 +315,6 @@
     "/create-vds-with-migrate-vlan": {
       "summary": " 创建迁移网络",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -603,13 +323,6 @@
     "/create-vds": {
       "summary": " 创建虚拟分布式交换机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -618,13 +331,6 @@
     "/create-view": {
       "summary": " 创建监控视图",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -633,13 +339,6 @@
     "/create-vm-folder": {
       "summary": " 创建虚拟机分组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -648,13 +347,6 @@
     "/create-vm-from-template": {
       "summary": " 从模板创建虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -663,13 +355,6 @@
     "/create-vm-placement-group": {
       "summary": " 创建虚拟机放置组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -678,13 +363,6 @@
     "/create-vm-snapshot": {
       "summary": " 创建虚拟机快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -693,13 +371,6 @@
     "/create-vm-vlan": {
       "summary": " 创建 VLAN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -708,13 +379,6 @@
     "/create-vm-volume": {
       "summary": " 创建虚拟卷",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -723,13 +387,6 @@
     "/create-vm": {
       "summary": " 创建虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -738,13 +395,6 @@
     "/delete-brick-topo": {
       "summary": " 删除机箱",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -753,13 +403,6 @@
     "/delete-cluster-recycle-bin-setting": {
       "summary": " 删除集群回收站设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -768,13 +411,6 @@
     "/delete-cluster": {
       "summary": " 移除集群",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -783,13 +419,6 @@
     "/delete-consistency-group": {
       "summary": " 删除一致性组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -798,13 +427,6 @@
     "/delete-consistency-snapshot-group": {
       "summary": " 删除一致性快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -813,13 +435,6 @@
     "/delete-datacenter": {
       "summary": " 删除数据中心",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -828,13 +443,6 @@
     "/delete-elf-image": {
       "summary": " 删除 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -843,13 +451,6 @@
     "/delete-entity-filter": {
       "summary": " 删除资源优化规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -858,13 +459,6 @@
     "/delete-graph": {
       "summary": " 删除监控图表",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -873,13 +467,6 @@
     "/delete-iscsi-lun-snapshot": {
       "summary": " 删除 LUN 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -888,13 +475,6 @@
     "/delete-iscsi-lun": {
       "summary": " 删除 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -903,13 +483,6 @@
     "/delete-iscsi-target": {
       "summary": " 删除 iSCSI Target",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -918,13 +491,6 @@
     "/delete-label": {
       "summary": " 删除标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -933,13 +499,6 @@
     "/delete-namespace-group": {
       "summary": " 删除 Namespace Group",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -948,13 +507,6 @@
     "/delete-nfs-export": {
       "summary": " 删除 NFS Export",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -963,13 +515,6 @@
     "/delete-nvmf-namespace-snapshot": {
       "summary": " 删除 NVMF namespace 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -978,13 +523,6 @@
     "/delete-nvmf-namespace": {
       "summary": " 删除 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -993,13 +531,6 @@
     "/delete-nvmf-subsystem": {
       "summary": " 删除 NVMF Subsystem",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1008,13 +539,6 @@
     "/delete-organization": {
       "summary": " 删除组织",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1023,13 +547,6 @@
     "/delete-rack-topo": {
       "summary": " 删除机架",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1038,13 +555,6 @@
     "/delete-report-template": {
       "summary": " 删除报表模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1053,13 +563,6 @@
     "/delete-role": {
       "summary": " 删除角色",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1068,13 +571,6 @@
     "/delete-snapshot-group": {
       "summary": " 快照计划手动删除快照组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1083,13 +579,6 @@
     "/delete-snapshot-plan": {
       "summary": " 删除快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1098,13 +587,6 @@
     "/delete-snmp-transport": {
       "summary": " 删除 SNMP 传输",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1113,13 +595,6 @@
     "/delete-snmp-trap-receiver": {
       "summary": " 删除 SNMP 陷阱接收端",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1128,13 +603,6 @@
     "/delete-user": {
       "summary": " 删除用户",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1143,13 +611,6 @@
     "/delete-vds": {
       "summary": " 删除虚拟分布式交换机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1158,13 +619,6 @@
     "/delete-view": {
       "summary": " 删除监控视图",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1173,13 +627,6 @@
     "/delete-vm-folder": {
       "summary": " 删除虚拟机分组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1188,13 +635,6 @@
     "/delete-vm-placement-group": {
       "summary": " 删除虚拟机放置组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1203,13 +643,6 @@
     "/delete-vm-snapshot": {
       "summary": " 删除虚拟机快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1218,13 +651,6 @@
     "/delete-vm-template": {
       "summary": " 删除虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1233,13 +659,6 @@
     "/delete-vm-vlan": {
       "summary": " 删除 VLAN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1248,13 +667,6 @@
     "/delete-vm-volume": {
       "summary": " 删除虚拟卷",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1263,13 +675,6 @@
     "/delete-vm": {
       "summary": " 删除虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1278,13 +683,6 @@
     "/execute-snapshot-plan": {
       "summary": " 立即执行快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1293,13 +691,6 @@
     "/force-restart-vm": {
       "summary": " 虚拟机强制重启",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1308,13 +699,6 @@
     "/generate-from-report-template": {
       "summary": " 生成报表",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1323,13 +707,6 @@
     "/get-alert-notifiers-connection": {
       "summary": " 获取报警通知数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1338,13 +715,6 @@
     "/get-alert-notifiers": {
       "summary": " 获取报警通知",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1353,13 +723,6 @@
     "/get-alert-rules-connection": {
       "summary": " 获取特例报警规则数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1368,13 +731,6 @@
     "/get-alert-rules": {
       "summary": " 获取特例报警规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1383,13 +739,6 @@
     "/get-alerts-connection": {
       "summary": " 获取报警数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1398,13 +747,6 @@
     "/get-alerts": {
       "summary": " 获取报警",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1413,13 +755,6 @@
     "/get-applications-connection": {
       "summary": " 获取高级监控应用",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1428,13 +763,6 @@
     "/get-applications": {
       "summary": " 获取高级监控",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1443,13 +771,6 @@
     "/get-brick-topoes-connection": {
       "summary": " 获取机箱数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1458,13 +779,6 @@
     "/get-brick-topoes": {
       "summary": " 获取机箱",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1473,13 +787,6 @@
     "/get-cluster-images-connection": {
       "summary": " 获取集群镜像数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1488,13 +795,6 @@
     "/get-cluster-images": {
       "summary": " 获取集群镜像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1503,13 +803,6 @@
     "/get-cluster-settingses-connection": {
       "summary": " 获取集群设置数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1518,13 +811,6 @@
     "/get-cluster-settingses": {
       "summary": " 获取集群设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1533,13 +819,6 @@
     "/get-cluster-topoes-connection": {
       "summary": " 获取集群拓扑数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1548,13 +827,6 @@
     "/get-cluster-topoes": {
       "summary": " 获取集群拓扑",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1563,13 +835,6 @@
     "/get-cluster-upgrade-histories-connection": {
       "summary": " 获取集群升级进度数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1578,13 +843,6 @@
     "/get-cluster-upgrade-histories": {
       "summary": " 获取集群升级进度",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1593,13 +851,6 @@
     "/get-clusters-connection": {
       "summary": " 获取集群数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1608,13 +859,6 @@
     "/get-clusters": {
       "summary": " 获取集群",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1623,13 +867,6 @@
     "/get-consistency-group-snapshots-connection": {
       "summary": " 获取一致性组快照数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1638,13 +875,6 @@
     "/get-consistency-group-snapshots": {
       "summary": " 获取一致性组快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1653,13 +883,6 @@
     "/get-consistency-groups-connection": {
       "summary": " 获取一致性组数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1668,13 +891,6 @@
     "/get-consistency-groups": {
       "summary": " 获取一致性组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1683,13 +899,6 @@
     "/get-content-library-images-connection": {
       "summary": " 获取内容库 ISO 映像数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1698,13 +907,6 @@
     "/get-content-library-images": {
       "summary": " 获取内容库 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1713,13 +915,6 @@
     "/get-content-library-vm-templates-connection": {
       "summary": " 获取内容库虚拟机模板数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1728,13 +923,6 @@
     "/get-content-library-vm-templates": {
       "summary": " 获取内容库虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1743,13 +931,6 @@
     "/get-datacenters-connection": {
       "summary": " 获取数据中心数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1758,13 +939,6 @@
     "/get-datacenters": {
       "summary": " 获取数据中心",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1773,13 +947,6 @@
     "/get-deploys-connection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1788,13 +955,6 @@
     "/get-deploys": {
       "summary": " 获取 CloudTower",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1803,13 +963,6 @@
     "/get-discover-hosts": {
       "summary": " 获取发现主机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1818,13 +971,6 @@
     "/get-disks-connection": {
       "summary": " 获取硬盘数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1833,13 +979,6 @@
     "/get-disks": {
       "summary": " 获取硬盘",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1848,13 +987,6 @@
     "/get-elf-data-stores-connection": {
       "summary": " 获取系统存储对象数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1863,13 +995,6 @@
     "/get-elf-data-stores": {
       "summary": " 获取系统存储对象",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1878,13 +1003,6 @@
     "/get-elf-images-connection": {
       "summary": " 获取 ISO 映像数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1893,13 +1011,6 @@
     "/get-elf-images": {
       "summary": " 获取 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1908,13 +1019,6 @@
     "/get-elf-storage-policies-connection": {
       "summary": " 获取存储策略数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1923,13 +1027,6 @@
     "/get-elf-storage-policies": {
       "summary": " 获取存储策略",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1938,13 +1035,6 @@
     "/get-entity-filters-connection": {
       "summary": " 获取资源优化数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1953,13 +1043,6 @@
     "/get-entity-filters": {
       "summary": " 获取资源优化",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1968,13 +1051,6 @@
     "/get-everoute-clusters-connection": {
       "summary": " 获取 Everoute 集群数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1983,13 +1059,6 @@
     "/get-everoute-clusters": {
       "summary": " 获取 Everoute 集群",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -1998,13 +1067,6 @@
     "/get-everoute-licenses-connection": {
       "summary": " 获取 Everoute 使用许可数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2013,13 +1075,6 @@
     "/get-everoute-licenses": {
       "summary": " 获取 Everoute 使用许可",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2028,13 +1083,6 @@
     "/get-everoute-packages-connection": {
       "summary": " 获取 Everoute 安装包数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2043,13 +1091,6 @@
     "/get-everoute-packages": {
       "summary": " 获取 Everoute 安装包",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2058,13 +1099,6 @@
     "/get-global-alert-rules-connection": {
       "summary": " 获取全局报警规则数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2073,13 +1107,6 @@
     "/get-global-alert-rules": {
       "summary": " 获取全局报警规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2088,13 +1115,6 @@
     "/get-global-settingses-connection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2103,13 +1123,6 @@
     "/get-global-settingses": {
       "summary": " 获取 CloudTower 设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2118,13 +1131,6 @@
     "/get-graphs-connection": {
       "summary": " 获取监控图表数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2133,13 +1139,6 @@
     "/get-graphs": {
       "summary": " 获取监控图表",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2148,13 +1147,6 @@
     "/get-hosts-connection": {
       "summary": " 获取主机数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2163,13 +1155,6 @@
     "/get-hosts": {
       "summary": " 获取主机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2178,13 +1163,6 @@
     "/get-images-connector": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2193,13 +1171,6 @@
     "/get-ipmis": {
       "summary": " 获取 IPMI 信息",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2208,13 +1179,6 @@
     "/get-iscsi-connections-connection": {
       "summary": " 获取活跃链接数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2223,13 +1187,6 @@
     "/get-iscsi-connections": {
       "summary": " 获取活跃链接",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2238,13 +1195,6 @@
     "/get-iscsi-lun-snapshots-connection": {
       "summary": " 获取 LUN 快照数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2253,13 +1203,6 @@
     "/get-iscsi-lun-snapshots": {
       "summary": " 获取 LUN 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2268,13 +1211,6 @@
     "/get-iscsi-luns-connection": {
       "summary": " 获取 LUN 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2283,13 +1219,6 @@
     "/get-iscsi-luns": {
       "summary": " 获取 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2298,13 +1227,6 @@
     "/get-iscsi-targets-connection": {
       "summary": " 获取 ISCSI 对象数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2313,13 +1235,6 @@
     "/get-iscsi-targets": {
       "summary": " 获取 ISCSI 对象",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2328,13 +1243,6 @@
     "/get-isolation-policies-connection": {
       "summary": " 获取隔离策略数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2343,13 +1251,6 @@
     "/get-isolation-policies": {
       "summary": " 获取隔离策略",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2358,13 +1259,6 @@
     "/get-labels-connection": {
       "summary": " 获取标签数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2373,13 +1267,6 @@
     "/get-labels": {
       "summary": " 获取标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2388,13 +1275,6 @@
     "/get-licenses-connection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2403,13 +1283,6 @@
     "/get-licenses": {
       "summary": " 获取使用许可",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2418,13 +1291,6 @@
     "/get-log-collections-connection": {
       "summary": " 获取日志采集数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2433,13 +1299,6 @@
     "/get-log-collections": {
       "summary": " 获取日志采集",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2448,13 +1307,6 @@
     "/get-migrate-transmitters-connection": {
       "summary": " 获取传输代理数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2463,13 +1315,6 @@
     "/get-migrate-transmitters": {
       "summary": " 获取传输代理",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2478,13 +1323,6 @@
     "/get-namespace-groups-connection": {
       "summary": " 获取 Namespace Group 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2493,13 +1331,6 @@
     "/get-namespace-groups": {
       "summary": " 获取 Namespace Group",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2508,13 +1339,6 @@
     "/get-nfs-exports-connection": {
       "summary": " 获取 NFS Export 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2523,13 +1347,6 @@
     "/get-nfs-exports": {
       "summary": " 获取 NFS Export",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2538,13 +1355,6 @@
     "/get-nfs-inodes-connection": {
       "summary": " 获取 NFS 文件数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2553,13 +1363,6 @@
     "/get-nfs-inodes": {
       "summary": " 获取 NFS 文件",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2568,13 +1371,6 @@
     "/get-nics-connection": {
       "summary": " 获取网口数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2583,13 +1379,6 @@
     "/get-nics": {
       "summary": " 获取网口",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2598,13 +1387,6 @@
     "/get-node-topoes-connection": {
       "summary": " 获取主机拓扑数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2613,13 +1395,6 @@
     "/get-node-topoes": {
       "summary": " 获取主机拓扑",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2628,13 +1403,6 @@
     "/get-nvmf-namespace-snapshots-connection": {
       "summary": " 获取 NVMF namespace 快照数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2643,13 +1411,6 @@
     "/get-nvmf-namespace-snapshots": {
       "summary": " 获取 NVMF namespace 快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2658,13 +1419,6 @@
     "/get-nvmf-namespaces-connection": {
       "summary": " 获取 NVMF namespace 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2673,13 +1427,6 @@
     "/get-nvmf-namespaces": {
       "summary": " 获取 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2688,13 +1435,6 @@
     "/get-nvmf-subsystems-connection": {
       "summary": " 获取 NVMF Subsystem 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2703,13 +1443,6 @@
     "/get-nvmf-subsystems": {
       "summary": " 获取 NVMF Subsystem",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2718,13 +1451,6 @@
     "/get-organizations-connection": {
       "summary": " 获取组织数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2733,13 +1459,6 @@
     "/get-organizations": {
       "summary": " 获取组织",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2748,13 +1467,6 @@
     "/get-pmem-dimms-connection": {
       "summary": " 获取 PMem DIMM 数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2763,13 +1475,6 @@
     "/get-pmem-dimms": {
       "summary": " 获取 PMem DIMM",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2778,13 +1483,6 @@
     "/get-rack-topoes-connection": {
       "summary": " 获取机架数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2793,13 +1491,6 @@
     "/get-rack-topoes": {
       "summary": " 获取机架",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2808,13 +1499,6 @@
     "/get-report-tasks-connection": {
       "summary": " 获取报表定时生成计划数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2823,13 +1507,6 @@
     "/get-report-tasks": {
       "summary": " 获取报表定时生成计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2838,13 +1515,6 @@
     "/get-report-templates-connection": {
       "summary": " 获取报表模板数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2853,13 +1523,6 @@
     "/get-report-templates": {
       "summary": " 获取报表模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2868,13 +1531,6 @@
     "/get-security-policies-connection": {
       "summary": " 获取安全策略数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2883,13 +1539,6 @@
     "/get-security-policies": {
       "summary": " 获取安全策略",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2898,13 +1547,6 @@
     "/get-snapshot-groups-connection": {
       "summary": " 获取快照组数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2913,13 +1555,6 @@
     "/get-snapshot-groups": {
       "summary": " 获取快照组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2928,13 +1563,6 @@
     "/get-snapshot-plan-tasks-connection": {
       "summary": " 获取快照计划执行记录数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2943,13 +1571,6 @@
     "/get-snapshot-plan-tasks": {
       "summary": " 获取快照计划执行记录",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2958,13 +1579,6 @@
     "/get-snapshot-plans-connection": {
       "summary": " 获取快照计划数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2973,13 +1587,6 @@
     "/get-snapshot-plans": {
       "summary": " 获取快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -2988,13 +1595,6 @@
     "/get-snmp-transports-connection": {
       "summary": " 获取 SNMP 传输数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3003,13 +1603,6 @@
     "/get-snmp-transports": {
       "summary": " 获取 SNMP 传输",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3018,13 +1611,6 @@
     "/get-snmp-trap-receivers-connection": {
       "summary": " 获取 SNMP 陷阱接收端数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3033,13 +1619,6 @@
     "/get-snmp-trap-receivers": {
       "summary": " 获取 SNMP 陷阱接收端",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3048,13 +1627,6 @@
     "/get-storage-policies-connector": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3063,13 +1635,6 @@
     "/get-svt-images-connection": {
       "summary": " 获取虚拟机工具 ISO 映像数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3078,13 +1643,6 @@
     "/get-svt-images": {
       "summary": " 获取虚拟机工具 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3093,13 +1651,6 @@
     "/get-system-audit-logs-connection": {
       "summary": " 获取系统事件数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3108,13 +1659,6 @@
     "/get-system-audit-logs": {
       "summary": " 获取系统事件",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3123,13 +1667,6 @@
     "/get-tasks-connection": {
       "summary": " 获取任务数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3138,13 +1675,6 @@
     "/get-tasks": {
       "summary": " 获取任务",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3153,13 +1683,6 @@
     "/get-upload-tasks-connection": {
       "summary": " 获取上传任务数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3168,13 +1691,6 @@
     "/get-upload-tasks": {
       "summary": " 获取上传任务",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3183,13 +1699,6 @@
     "/get-usb-devices-connection": {
       "summary": " 获取 USB 设备数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3198,13 +1707,6 @@
     "/get-usb-devices": {
       "summary": " 获取 USB 设备",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3213,13 +1715,6 @@
     "/get-user-audit-logs-connection": {
       "summary": " 获取用户事件数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3228,13 +1723,6 @@
     "/get-user-audit-logs": {
       "summary": " 获取用户事件",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3243,13 +1731,6 @@
     "/get-user-role-nexts-connection": {
       "summary": " 获取角色数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3258,13 +1739,6 @@
     "/get-user-role-nexts": {
       "summary": " 获取角色",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3273,13 +1747,6 @@
     "/get-users-connection": {
       "summary": " 获取用户数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3288,13 +1755,6 @@
     "/get-users": {
       "summary": " 获取用户",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3303,13 +1763,6 @@
     "/get-vcenter-accounts-connection": {
       "summary": " 获取 vCenter 账户数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3318,13 +1771,6 @@
     "/get-vcenter-accounts": {
       "summary": " 获取 vCenter 账户",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3333,13 +1779,6 @@
     "/get-vdses-connection": {
       "summary": " 获取虚拟分布式交换机数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3348,13 +1787,6 @@
     "/get-vdses": {
       "summary": " 获取虚拟分布式交换机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3363,13 +1795,6 @@
     "/get-views-connection": {
       "summary": " 获取监控视图数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3378,13 +1803,6 @@
     "/get-views": {
       "summary": " 获取监控视图",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3393,13 +1811,6 @@
     "/get-vlans-connection": {
       "summary": " 获取网络数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3408,13 +1819,6 @@
     "/get-vlans": {
       "summary": " 获取网络",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3423,13 +1827,6 @@
     "/get-vm-disks-connection": {
       "summary": " 获取虚拟盘数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3438,13 +1835,6 @@
     "/get-vm-disks": {
       "summary": " 获取虚拟盘",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3453,13 +1843,6 @@
     "/get-vm-entity-filter-results-connection": {
       "summary": " 获取资源优化分析结果数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3468,13 +1851,6 @@
     "/get-vm-entity-filter-results": {
       "summary": " 获取资源优化分析结果",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3483,13 +1859,6 @@
     "/get-vm-folders-connection": {
       "summary": " 获取虚拟机分组数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3498,13 +1867,6 @@
     "/get-vm-folders": {
       "summary": " 获取虚拟机分组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3513,13 +1875,6 @@
     "/get-vm-nics-connection": {
       "summary": " 获取虚拟网卡数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3528,13 +1883,6 @@
     "/get-vm-nics": {
       "summary": " 获取虚拟网卡",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3543,13 +1891,6 @@
     "/get-vm-placement-groups-connection": {
       "summary": " 获取虚拟机放置组数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3558,13 +1899,6 @@
     "/get-vm-placement-groups": {
       "summary": " 获取虚拟机放置组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3573,13 +1907,6 @@
     "/get-vm-snapshots-connection": {
       "summary": " 获取虚拟机快照数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3588,13 +1915,6 @@
     "/get-vm-snapshots": {
       "summary": " 获取虚拟机快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3603,13 +1923,6 @@
     "/get-vm-templates-connection": {
       "summary": " 获取集群虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3618,13 +1931,6 @@
     "/get-vm-templates": {
       "summary": " 获取集群虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3633,13 +1939,6 @@
     "/get-vm-volumes-connection": {
       "summary": " 获取虚拟卷数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3648,13 +1947,6 @@
     "/get-vm-volumes": {
       "summary": " 获取虚拟卷",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3663,13 +1955,6 @@
     "/get-vms-connection": {
       "summary": " 获取虚拟机数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3678,13 +1963,6 @@
     "/get-vms": {
       "summary": " 获取虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3693,13 +1971,6 @@
     "/get-vsphere-esxi-accounts-connection": {
       "summary": " 获取 vSphere 账号数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3708,13 +1979,6 @@
     "/get-vsphere-esxi-accounts": {
       "summary": " 获取 vSphere 账号",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3723,13 +1987,6 @@
     "/get-witness-services": {
       "summary": " 获取仲裁节点服务",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3738,13 +1995,6 @@
     "/get-witnesses-connection": {
       "summary": " 获取仲裁节点数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3753,13 +2003,6 @@
     "/get-witnesses": {
       "summary": " 获取仲裁节点",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3768,13 +2011,6 @@
     "/get-zone-topoes-connection": {
       "summary": " 获取可用域拓扑",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3783,13 +2019,6 @@
     "/get-zone-topoes": {
       "summary": " 获取可用域拓扑",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3798,13 +2027,6 @@
     "/get-zones-connection": {
       "summary": " 获取可用域数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3813,13 +2035,6 @@
     "/get-zones": {
       "summary": " 获取可用域",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3828,13 +2043,6 @@
     "/install-vmtools": {
       "summary": " 安装虚拟机工具",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3843,13 +2051,6 @@
     "/keep-snapshot-group": {
       "summary": " 保留本地快照组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3858,13 +2059,6 @@
     "/login": {
       "summary": " 登录",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3873,13 +2067,6 @@
     "/migrate-vm": {
       "summary": " 迁移虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3888,13 +2075,6 @@
     "/mount-disk": {
       "summary": " 物理盘挂载",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3903,13 +2083,6 @@
     "/mount-usb-device": {
       "summary": " 挂载 USB 设备",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3918,13 +2091,6 @@
     "/move-brick-topo": {
       "summary": " 移动机箱",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3933,13 +2099,6 @@
     "/move-node-topo": {
       "summary": " 移动主机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3948,13 +2107,6 @@
     "/move-vm-to-recycle": {
       "summary": " 将虚拟机移至回收站",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3963,13 +2115,6 @@
     "/poweroff-vm": {
       "summary": " 虚拟机强制关机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3978,13 +2123,6 @@
     "/rebuild-vm-from-snapshot": {
       "summary": " 从快照重建虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -3993,13 +2131,6 @@
     "/recover-vm-from-recycle": {
       "summary": " 从回收站恢复虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4008,13 +2139,6 @@
     "/remove-labels-from-resources": {
       "summary": " 取消关联标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4023,13 +2147,6 @@
     "/remove-vm-cd-rom": {
       "summary": " 移除 CD-ROM",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4038,13 +2155,6 @@
     "/remove-vm-disk": {
       "summary": " 移除虚拟盘",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4053,13 +2163,6 @@
     "/remove-vm-from-folder": {
       "summary": " 将虚拟机从虚拟机分组中移出",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4068,13 +2171,6 @@
     "/remove-vm-nic": {
       "summary": " 移除虚拟网卡",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4083,13 +2179,6 @@
     "/resolve-alert": {
       "summary": " 标记报警为已解决",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4098,13 +2187,6 @@
     "/restart-vm": {
       "summary": " 虚拟机重启",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4113,13 +2195,6 @@
     "/resume-snapshot-plan": {
       "summary": " 继续快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4128,13 +2203,6 @@
     "/resume-vm": {
       "summary": " 恢复虚拟机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4143,13 +2211,6 @@
     "/rollback-consistency-snapshot-group": {
       "summary": " 回滚一致性快照",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4158,13 +2219,6 @@
     "/rollback-iscsi-lun-from-snapshot": {
       "summary": " 回滚 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4173,13 +2227,6 @@
     "/rollback-nvmf-namespace-from-snapshot": {
       "summary": " 从快照回滚 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4188,13 +2235,6 @@
     "/rollback-snapshot-group": {
       "summary": " 快照计划回滚本地快照组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4203,13 +2243,6 @@
     "/rollback-vm": {
       "summary": " 虚拟机回滚",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4218,13 +2251,6 @@
     "/shutdown-vm": {
       "summary": " 虚拟机关机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4233,13 +2259,6 @@
     "/start-vm": {
       "summary": " 虚拟机开机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4248,13 +2267,6 @@
     "/suspend-snapshot-plan": {
       "summary": " 暂停快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4263,13 +2275,6 @@
     "/suspend-vm": {
       "summary": " 虚拟机暂停",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4278,13 +2283,6 @@
     "/trigger-disk-blink": {
       "summary": " 物理盘闪灯",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4293,13 +2291,6 @@
     "/unmount-disk": {
       "summary": " 物理盘卸载",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4308,13 +2299,6 @@
     "/unmount-usb-device": {
       "summary": " 卸载 USB 设备",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4323,13 +2307,6 @@
     "/update-brick-topo": {
       "summary": " 更新机箱",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4338,13 +2315,6 @@
     "/update-cluster-license": {
       "summary": " 更新集群证书",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4353,13 +2323,6 @@
     "/update-cluster-recycle-bin-setting": {
       "summary": " 更新集群回收站设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4368,13 +2331,6 @@
     "/update-cluster": {
       "summary": " 更新集群",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4383,13 +2339,6 @@
     "/update-consistency-group": {
       "summary": " 更新一致性组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4398,13 +2347,6 @@
     "/update-customize-alert-rule": {
       "summary": " 更新特例报警规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4413,13 +2355,6 @@
     "/update-datacenter": {
       "summary": " 更新数据中心",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4428,13 +2363,6 @@
     "/update-elf-image": {
       "summary": " 更新 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4443,13 +2371,6 @@
     "/update-entity-filter": {
       "summary": " 更新资源优化规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4458,13 +2379,6 @@
     "/update-global-alert-rule": {
       "summary": " 更新全局报警规则",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4473,13 +2387,6 @@
     "/update-global-recycle-bin-setting": {
       "summary": " 更新回收站设置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4488,13 +2395,6 @@
     "/update-graph": {
       "summary": " 更新监控图表",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4503,13 +2403,6 @@
     "/update-host": {
       "summary": " 更新主机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4518,13 +2411,6 @@
     "/update-iscsi-lun": {
       "summary": " 更新 LUN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4533,13 +2419,6 @@
     "/update-iscsi-target": {
       "summary": " 更新 iSCSI Target",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4548,13 +2427,6 @@
     "/update-label": {
       "summary": " 更新标签",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4563,13 +2435,6 @@
     "/update-license": {
       "summary": " 更新使用许可",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4578,13 +2443,6 @@
     "/update-management-vlan": {
       "summary": " 更新管理网络",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4593,13 +2451,6 @@
     "/update-migration-vlan": {
       "summary": " 更新迁移网络",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4608,13 +2459,6 @@
     "/update-namespace-group": {
       "summary": " 更新 Namespace Group",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4623,13 +2467,6 @@
     "/update-nfs-export": {
       "summary": " 更新 NFS Export",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4638,13 +2475,6 @@
     "/update-nic": {
       "summary": " 更新网口",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4653,13 +2483,6 @@
     "/update-nvmf-namespace": {
       "summary": " 更新 NVMF namespace",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4668,13 +2491,6 @@
     "/update-nvmf-subsystem": {
       "summary": " 更新 NVMF Subsystem",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4683,13 +2499,6 @@
     "/update-organization": {
       "summary": " 更新组织",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4698,13 +2507,6 @@
     "/update-rack-topo": {
       "summary": " 更新机架",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4713,13 +2515,6 @@
     "/update-report-template": {
       "summary": " 更新报表模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4728,13 +2523,6 @@
     "/update-role": {
       "summary": " 更新角色",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4743,13 +2531,6 @@
     "/update-snapshot-plan": {
       "summary": " 更新快照计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4758,13 +2539,6 @@
     "/update-snmp-transport": {
       "summary": " 更新 SNMP 传输",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4773,13 +2547,6 @@
     "/update-snmp-trap-receiver": {
       "summary": " 编辑 SNMP 陷阱接收端",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4788,13 +2555,6 @@
     "/update-user": {
       "summary": " 更新用户",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4803,13 +2563,6 @@
     "/update-vds": {
       "summary": " 更新虚拟分布式交换机",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4818,13 +2571,6 @@
     "/update-view": {
       "summary": " 更新监控视图",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4833,13 +2579,6 @@
     "/update-vm-basic-info": {
       "summary": " 更新虚拟机的基本信息",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4848,13 +2587,6 @@
     "/update-vm-disk": {
       "summary": " 更新虚拟盘",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4863,13 +2595,6 @@
     "/update-vm-folder": {
       "summary": " 更新虚拟机分组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4878,13 +2603,6 @@
     "/update-vm-nic": {
       "summary": " 更新虚拟网卡",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4893,13 +2611,6 @@
     "/update-vm-placement-group": {
       "summary": " 更新虚拟机放置组",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4908,13 +2619,6 @@
     "/update-vm-template": {
       "summary": " 更新虚拟机模板",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4923,13 +2627,6 @@
     "/update-vm-vlan": {
       "summary": " 更新 VLAN",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -4938,13 +2635,6 @@
     "/upload-elf-image": {
       "summary": " 上传 ISO 映像",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""

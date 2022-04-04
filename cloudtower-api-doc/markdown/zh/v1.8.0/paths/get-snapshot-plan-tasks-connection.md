@@ -1,22 +1,10 @@
 **Summary**: 获取快照计划执行记录数量
 
-**Description**: 
+**Description**:
 
 **Path** : /get-snapshot-plan-tasks-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

@@ -1,22 +1,10 @@
 **Summary**: 从回收站恢复虚拟机
 
-**Description**: 
+**Description**:
 
 **Path** : /recover-vm-from-recycle
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

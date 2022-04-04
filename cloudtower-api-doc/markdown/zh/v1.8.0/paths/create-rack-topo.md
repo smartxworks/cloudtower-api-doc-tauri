@@ -1,22 +1,10 @@
 **Summary**: 创建机架
 
-**Description**: 
+**Description**:
 
 **Path** : /create-rack-topo
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

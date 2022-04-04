@@ -1,22 +1,10 @@
 **Summary**: 创建 iSCSI Target
 
-**Description**: 
+**Description**:
 
 **Path** : /create-iscsi-target
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

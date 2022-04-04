@@ -3,13 +3,6 @@
     "/create-log-collection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -18,13 +11,6 @@
     "/delete-log-collection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -33,13 +19,6 @@
     "/force-stop-log-collection": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -48,13 +27,6 @@
     "/get-backup-licenses-connection": {
       "summary": " 获取备份许可数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -63,13 +35,6 @@
     "/get-backup-licenses": {
       "summary": " 获取备份许可",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -78,13 +43,6 @@
     "/get-backup-packages-connection": {
       "summary": " 获取备份安装包数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -93,13 +51,6 @@
     "/get-backup-packages": {
       "summary": " 获取备份安装包",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -108,13 +59,6 @@
     "/get-backup-plan-executions-connection": {
       "summary": " 获取备份计划执行数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -123,13 +67,6 @@
     "/get-backup-plan-executions": {
       "summary": " 获取备份计划执行",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -138,13 +75,6 @@
     "/get-backup-plans-connection": {
       "summary": " 获取备份计划数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -153,13 +83,6 @@
     "/get-backup-plans": {
       "summary": " 获取备份计划",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -168,13 +91,6 @@
     "/get-backup-restore-executions-connection": {
       "summary": " 获取备份恢复执行数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -183,13 +99,6 @@
     "/get-backup-restore-executions": {
       "summary": " 获取备份恢复执行",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -198,13 +107,6 @@
     "/get-backup-restore-points-connection": {
       "summary": " 获取备份恢复点数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -213,13 +115,6 @@
     "/get-backup-restore-points": {
       "summary": " 获取备份恢复点",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -228,13 +123,6 @@
     "/get-backup-services-connection": {
       "summary": " 获取备份服务数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -243,13 +131,6 @@
     "/get-backup-services": {
       "summary": " 获取备份服务",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -258,13 +139,6 @@
     "/get-backup-store-repositories-connection": {
       "summary": " 获取备份存储仓库数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -273,13 +147,6 @@
     "/get-backup-store-repositories": {
       "summary": " 获取备份存储仓库",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -288,13 +155,6 @@
     "/get-backup-target-executions-connection": {
       "summary": " 获取备份目标执行数量",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -303,13 +163,6 @@
     "/get-backup-target-executions": {
       "summary": " 获取备份目标执行",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -318,13 +171,6 @@
     "/get-log-service-configs": {
       "summary": " 获取日志服务配置",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""
@@ -333,13 +179,6 @@
     "/update-alert-notifier": {
       "summary": "",
       "description": "",
-      "examples": [
-        {
-          "description": "please write the description",
-          "summary": "please write the summary",
-          "value": "{}"
-        }
-      ],
       "responses": {
         "200": "",
         "400": ""

@@ -1,22 +1,10 @@
 **Summary**: 获取机架
 
-**Description**: 
+**Description**:
 
 **Path** : /get-rack-topoes
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

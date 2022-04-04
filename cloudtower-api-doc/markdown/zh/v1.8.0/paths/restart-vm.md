@@ -1,22 +1,10 @@
 **Summary**: 虚拟机重启
 
-**Description**: 
+**Description**:
 
 **Path** : /restart-vm
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

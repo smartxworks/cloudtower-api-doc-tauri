@@ -1,22 +1,10 @@
 **Summary**: Update the Namespace Group
 
-**Description**: 
+**Description**:
 
 **Path** : /update-namespace-group
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

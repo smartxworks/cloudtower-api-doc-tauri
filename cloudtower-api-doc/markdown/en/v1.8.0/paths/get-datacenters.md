@@ -1,22 +1,10 @@
 **Summary**: Get Data centers
 
-**Description**: 
+**Description**:
 
 **Path** : /get-datacenters
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

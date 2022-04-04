@@ -1,22 +1,10 @@
 **Summary**: Get the number of cluster topologies
 
-**Description**: 
+**Description**:
 
 **Path** : /get-cluster-topoes-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

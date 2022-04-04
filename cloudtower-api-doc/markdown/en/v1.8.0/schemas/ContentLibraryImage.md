@@ -1,0 +1,23 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| clusters  |  object  |    |
+| clusters  |  array  |    |
+| createdAt  |  string  |    |
+| description  |  string  |    |
+| elf_image_uuids  |  string  |    |
+| elf_image_uuids  |  array  |    |
+| elf_images  |  object  |    |
+| elf_images  |  array  |    |
+| entityAsyncStatus  |  object  |    |
+| id  |  string  |    |
+| labels  |  object  |    |
+| labels  |  array  |    |
+| name  |  string  |    |
+| path  |  string  |    |
+| size  |  number  |    |
+| vm_disks  |  object  |    |
+| vm_disks  |  array  |    |
+| vm_snapshots  |  object  |    |
+| vm_snapshots  |  array  |    |
+| vm_templates  |  object  |    |
+| vm_templates  |  array  |    |

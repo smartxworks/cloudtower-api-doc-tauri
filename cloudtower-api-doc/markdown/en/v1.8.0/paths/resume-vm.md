@@ -1,22 +1,10 @@
 **Summary**: Resume the virtual machine
 
-**Description**: 
+**Description**:
 
 **Path** : /resume-vm
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

@@ -1,22 +1,10 @@
 **Summary**: Get IPMI info
 
-**Description**: 
+**Description**:
 
 **Path** : /get-ipmis
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

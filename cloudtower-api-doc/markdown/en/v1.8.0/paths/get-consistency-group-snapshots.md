@@ -1,22 +1,10 @@
 **Summary**: Get consistency group snapshots
 
-**Description**: 
+**Description**:
 
 **Path** : /get-consistency-group-snapshots
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

@@ -1,22 +1,10 @@
 **Summary**: 创建组织
 
-**Description**: 
+**Description**:
 
 **Path** : /create-organization
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

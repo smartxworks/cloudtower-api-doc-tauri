@@ -1,22 +1,10 @@
 **Summary**: 获取集群设置
 
-**Description**: 
+**Description**:
 
 **Path** : /get-cluster-settingses
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

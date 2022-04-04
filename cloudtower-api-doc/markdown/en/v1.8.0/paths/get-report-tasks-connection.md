@@ -1,22 +1,10 @@
 **Summary**: Get the number of scheduled report generation plans
 
-**Description**: 
+**Description**:
 
 **Path** : /get-report-tasks-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

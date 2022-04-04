@@ -1,22 +1,10 @@
 **Summary**: 删除数据中心
 
-**Description**: 
+**Description**:
 
 **Path** : /delete-datacenter
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

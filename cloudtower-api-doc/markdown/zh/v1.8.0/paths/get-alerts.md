@@ -1,22 +1,10 @@
 **Summary**: 获取报警
 
-**Description**: 
+**Description**:
 
 **Path** : /get-alerts
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

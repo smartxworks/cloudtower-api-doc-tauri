@@ -1,0 +1,21 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| bps_wr_max_length  |  number  |    |
+| bps_wr_max  |  number  |    |
+| bps_rd_max_length  |  number  |    |
+| bps_rd_max  |  number  |    |
+| bps_max_length  |  number  |    |
+| bps_max  |  number  |    |
+| iops_wr_max_length  |  number  |    |
+| iops_wr_max  |  number  |    |
+| iops_rd_max_length  |  number  |    |
+| iops_rd_max  |  number  |    |
+| iops_max_length  |  number  |    |
+| iops_max  |  number  |    |
+| bps_wr  |  number  |    |
+| bps_rd  |  number  |    |
+| bps  |  number  |    |
+| iops_wr  |  number  |    |
+| iops_rd  |  number  |    |
+| iops  |  number  |    |
+| nqn_whitelist  |  string  |    |

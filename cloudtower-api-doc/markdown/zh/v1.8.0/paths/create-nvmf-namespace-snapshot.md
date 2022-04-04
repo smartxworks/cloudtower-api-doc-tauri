@@ -1,22 +1,10 @@
 **Summary**: 创建 NVMF namespace 快照
 
-**Description**: 
+**Description**:
 
 **Path** : /create-nvmf-namespace-snapshot
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

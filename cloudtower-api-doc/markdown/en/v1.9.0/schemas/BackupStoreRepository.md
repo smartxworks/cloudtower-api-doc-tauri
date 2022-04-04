@@ -1,0 +1,24 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| backup_plans  |  object  |    |
+| backup_plans  |  array  |    |
+| backup_restore_points  |  object  |    |
+| backup_restore_points  |  array  |    |
+| backup_service  |  object  |    |
+| description  |  string  |    |
+| entityAsyncStatus  |  object  |    |
+| id  |  string  |    |
+| iscsi_chap_name  |  string  |    |
+| iscsi_chap_secret  |  string  |    |
+| iscsi_ip  |  string  |    |
+| iscsi_lun_id  |  string  |    |
+| iscsi_port  |  integer  |    |
+| iscsi_target_iqn  |  string  |    |
+| name  |  string  |    |
+| nfs_path  |  string  |    |
+| nfs_server  |  string  |    |
+| status  |  object  |    |
+| total_capacity  |  number  |    |
+| type  |  object  |    |
+| used_data_space  |  number  |    |
+| valid_data_space  |  number  |    |

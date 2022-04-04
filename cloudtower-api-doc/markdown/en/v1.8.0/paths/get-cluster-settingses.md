@@ -1,22 +1,10 @@
 **Summary**: Get cluster settings
 
-**Description**: 
+**Description**:
 
 **Path** : /get-cluster-settingses
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

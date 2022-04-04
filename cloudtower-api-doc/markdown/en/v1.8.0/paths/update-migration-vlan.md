@@ -1,22 +1,10 @@
 **Summary**: Update the migration network
 
-**Description**: 
+**Description**:
 
 **Path** : /update-migration-vlan
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

@@ -1,22 +1,10 @@
 **Summary**: 创建机箱
 
-**Description**: 
+**Description**:
 
 **Path** : /create-brick-topo
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

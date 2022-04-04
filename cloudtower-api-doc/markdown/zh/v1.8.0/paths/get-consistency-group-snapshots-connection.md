@@ -1,22 +1,10 @@
 **Summary**: 获取一致性组快照数量
 
-**Description**: 
+**Description**:
 
 **Path** : /get-consistency-group-snapshots-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |
