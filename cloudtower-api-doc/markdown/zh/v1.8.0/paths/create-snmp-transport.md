@@ -1,22 +1,10 @@
 **Summary**: 创建 SNMP 传输
 
-**Description**: 
+**Description**:
 
 **Path** : /create-snmp-transport
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

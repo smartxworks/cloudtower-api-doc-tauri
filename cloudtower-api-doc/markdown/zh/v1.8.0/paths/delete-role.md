@@ -1,22 +1,10 @@
 **Summary**: 删除角色
 
-**Description**: 
+**Description**:
 
 **Path** : /delete-role
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

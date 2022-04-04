@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| backup_group  |  string  |    |
+| backup_plan_execution  |  object  |    |
+| backup_restore_point  |  object  |    |
+| cluster_local_id  |  string  |    |
+| duration  |  integer  |    |
+| entityAsyncStatus  |  object  |    |
+| executed_at  |  string  |    |
+| id  |  string  |    |
+| local_id  |  string  |    |
+| parent_backup  |  string  |    |
+| read_bytes  |  number  |    |
+| status  |  object  |    |
+| total_bytes  |  number  |    |
+| type  |  object  |    |
+| vm  |  object  |    |
+| vm_local_id  |  string  |    |
+| vm_name  |  string  |    |

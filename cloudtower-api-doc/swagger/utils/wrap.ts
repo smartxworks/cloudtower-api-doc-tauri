@@ -56,33 +56,35 @@ export const wrapSpecWithI18n = (
       (post.responses[c] as OpenAPIV3.ResponseObject).description =
         responses[c];
     });
-    const snippetValue = examples[0].value;
-    const snippet = new httpSnippet({
-      method: "POST",
-      url: `http://YOUR_TOWER_URL/v2/api${p}`,
-      headers: [
-        { name: "Authorization", value: "YOUR_TOKEN" },
-        {
-          name: "content-language",
-          value: "en-US",
-          comment: "en-US or zh-CN",
+    if(examples[0]) {
+      const snippetValue = examples[0].value;
+      const snippet = new httpSnippet({
+        method: "POST",
+        url: `http://YOUR_TOWER_URL/v2/api${p}`,
+        headers: [
+          { name: "Authorization", value: "YOUR_TOKEN" },
+          {
+            name: "content-language",
+            value: "en-US",
+            comment: "en-US or zh-CN",
+          },
+        ],
+        postData: {
+          mimeType: "application/json",
+          text: JSON.stringify(snippetValue),
         },
-      ],
-      postData: {
-        mimeType: "application/json",
-        text: JSON.stringify(snippetValue),
-      },
-    } as httpSnippet.Data);
-
-    post["x-codeSamples"] = [
-      {
-        lang: "curl",
-        source: snippet.convert("shell", "curl", {
-          indent: "\t",
-          short: true,
-        }),
-      },
-    ];
+      } as httpSnippet.Data);
+  
+      post["x-codeSamples"] = [
+        {
+          lang: "curl",
+          source: snippet.convert("shell", "curl", {
+            indent: "\t",
+            short: true,
+          }),
+        },
+      ];
+    }
     cloneSpec.paths[p].post = post;
   });
   Object.keys(components.schemas).forEach((s) => {

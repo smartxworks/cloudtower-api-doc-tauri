@@ -80,6 +80,7 @@ const generateMarkDownJson = async (includes) => {
             break;
           }
           case "schemas": {
+            if(!apiObj.schemas) { apiObj.schemas = {} }
             const { children } = ast;
             const schema = {};
             children[0].children.slice(1).forEach(({ children }) => {
@@ -96,16 +97,12 @@ const generateMarkDownJson = async (includes) => {
             break;
           }
           case "paths": {
+            if(!apiObj.paths) { apiObj.paths = {} }
             const { children } = ast;
             const summary = children[0].children[1].value.split(":")[1];
             const description = children[1].children[1].value.split(":")[1];
             children[1].children[1].value.split(":")[1];
 
-            const examples = children
-              .filter((c) => c.type === "code" && c.lang === "json")
-              .map(({ value }) => {
-                return JSON.parse(value);
-              });
             const responses = {};
             const responseIndex = children
               .slice()
@@ -124,7 +121,6 @@ const generateMarkDownJson = async (includes) => {
             apiObj.paths['/' + filename] = {
               summary,
               description,
-              examples,
               responses,
             };
             break;

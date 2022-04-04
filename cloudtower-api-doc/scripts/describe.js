@@ -169,13 +169,50 @@ const describeRequestBody = (parmas) => {
   }
 };
 
-const getMarkDown = (parameter) => {
-  const { spec, api } = parameter;
+const getPathMarkdownAst = async (output) => {
+  if(!fsExtra.existsSync(output)) { return {} }
+  const { fromMarkdown } = await import("mdast-util-from-markdown");
+  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
+  const { gfmTable } = await import("micromark-extension-gfm-table");
+  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
+    extensions: [gfmTable],
+    mdastExtensions: [gfmTableFromMarkdown],
+  });
+  const { children } = ast;
+  const summary = children[0].children[1].value.split(":")[1];
+  const description = children[1].children[1].value.split(":")[1];
+  children[1].children[1].value.split(":")[1];
+
+  const responses = {};
+  const responseIndex = children
+    .slice()
+    .reverse()
+    .findIndex((c) => c.type == "table");
+  children
+    .slice()
+    .reverse()
+    [responseIndex].children.slice(1)
+    .forEach(({ children }) => {
+      const [code, description] = children;
+      responses[code.children[0].value] = description.children[0]
+        ? description.children[0].value
+        : "";
+    });
+  return {
+    summary,
+    description,
+    responses,
+  };
+}
+
+const getMarkDown = async (parameter) => {
+  const { spec, api, language, output } = parameter;
   const params = [];
   const ApiTemplatePath = nodePath.resolve(
     __dirname,
     "../templates/api-template.ejs"
   );
+  const existApiContent =  await getPathMarkdownAst(output);
   const ApiTemplateContent = fsExtra.readFileSync(ApiTemplatePath, "utf-8");
   const apiSpec = spec.paths[api];
   if (!apiSpec) {
@@ -196,8 +233,11 @@ const getMarkDown = (parameter) => {
   });
   return EJS.render(ApiTemplateContent, {
     api,
-    responses: Object.keys(apiSpec.post.responses),
+    responses: Object.keys(apiSpec.post.responses, params),
     params,
+    description: existApiContent.description || '',
+    summary: existApiContent.summary || '',
+    language,
   });
 };
 

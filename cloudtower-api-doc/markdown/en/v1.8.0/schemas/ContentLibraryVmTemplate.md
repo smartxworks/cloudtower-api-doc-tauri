@@ -1,0 +1,21 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| cloud_init_supported  |  boolean  |    |
+| clusters  |  object  |    |
+| clusters  |  array  |    |
+| cpu  |  object  |    |
+| createdAt  |  string  |    |
+| description  |  string  |    |
+| entityAsyncStatus  |  object  |    |
+| guest_os_type  |  object  |    |
+| id  |  string  |    |
+| labels  |  object  |    |
+| labels  |  array  |    |
+| memory  |  number  |    |
+| name  |  string  |    |
+| size  |  number  |    |
+| vcpu  |  integer  |    |
+| vm_template_uuids  |  string  |    |
+| vm_template_uuids  |  array  |    |
+| vm_templates  |  object  |    |
+| vm_templates  |  array  |    |

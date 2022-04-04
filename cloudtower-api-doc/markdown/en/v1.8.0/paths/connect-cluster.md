@@ -1,22 +1,10 @@
 **Summary**: Associate the cluster
 
-**Description**: 
+**Description**:
 
 **Path** : /connect-cluster
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

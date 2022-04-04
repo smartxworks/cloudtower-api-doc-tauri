@@ -1,22 +1,10 @@
 **Summary**: Get the number of alerts
 
-**Description**: 
+**Description**:
 
 **Path** : /get-alerts-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

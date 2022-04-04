@@ -1,22 +1,10 @@
 **Summary**: 删除虚拟机放置组
 
-**Description**: 
+**Description**:
 
 **Path** : /delete-vm-placement-group
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

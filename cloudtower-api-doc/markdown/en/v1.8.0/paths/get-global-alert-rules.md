@@ -1,22 +1,10 @@
 **Summary**: Get global alert rules
 
-**Description**: 
+**Description**:
 
 **Path** : /get-global-alert-rules
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

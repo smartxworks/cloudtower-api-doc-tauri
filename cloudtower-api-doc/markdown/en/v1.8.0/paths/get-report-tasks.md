@@ -1,22 +1,10 @@
 **Summary**: Get the scheduled report generation plans
 
-**Description**: 
+**Description**:
 
 **Path** : /get-report-tasks
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

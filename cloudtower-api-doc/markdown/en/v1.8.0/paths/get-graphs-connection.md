@@ -1,22 +1,10 @@
 **Summary**: Get the number of monitoring graphs
 
-**Description**: 
+**Description**:
 
 **Path** : /get-graphs-connection
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

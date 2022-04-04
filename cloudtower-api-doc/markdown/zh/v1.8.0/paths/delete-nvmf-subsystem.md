@@ -1,22 +1,10 @@
 **Summary**: 删除 NVMF Subsystem
 
-**Description**: 
+**Description**:
 
 **Path** : /delete-nvmf-subsystem
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

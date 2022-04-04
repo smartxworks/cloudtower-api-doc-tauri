@@ -1,22 +1,10 @@
 **Summary**: Create a virtual machine from template
 
-**Description**: 
+**Description**:
 
 **Path** : /create-vm-from-template
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

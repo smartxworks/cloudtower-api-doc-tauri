@@ -1,22 +1,10 @@
 **Summary**: 更新标签
 
-**Description**: 
+**Description**:
 
 **Path** : /update-label
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

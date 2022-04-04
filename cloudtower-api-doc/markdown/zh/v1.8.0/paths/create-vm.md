@@ -1,22 +1,10 @@
 **Summary**: 创建虚拟机
 
-**Description**: 
+**Description**:
 
 **Path** : /create-vm
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

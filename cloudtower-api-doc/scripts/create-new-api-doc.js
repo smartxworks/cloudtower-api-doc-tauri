@@ -14,17 +14,17 @@ yargsInteractive()
   .alias("help", "h")
   .interactive({
     interactive: { default: true },
-    spec: {
-      description: "Provide the relative file path of the swagger json file",
+    version: {
+      description: "Provide swagger json file version",
       type: "input",
     },
-    output: {
-      description: "Provide the relative dir path of the output markdown file",
-      type: "input",
+    lng: {
+      description: "zh or en",
+      type: "input"
     },
     diff: {
       description:
-        "Provide the old json spec file you want to compare with, leave it blank when you don't want to compare",
+        "Provide the old json spec file version you want to compare with, leave it blank when you don't want to compare",
       type: "input",
     },
   })
@@ -33,31 +33,29 @@ yargsInteractive()
   });
 
 const createNewApiDoc = async (argv) => {
-  const { spec: specPath, output, diff } = argv;
-  const specAbsolutePath = nodePath.resolve(process.cwd(), specPath);
+  const { version, diff } = argv;
+  let { lng } = argv;
+  const getSwaggerPath = (v) => nodePath.resolve(process.cwd(), './cloudtower-api-doc/swagger/specs/', `${v}-swagger.json`);
+  const specAbsolutePath = getSwaggerPath(version);
   const pMap = (await import("p-map")).default;
-  if (!fsExtra.existsSync(specAbsolutePath)) {
-    throw new Error(
-      "can not find spec file, please check your path, provided path is: " +
-        specAbsolutePath
-    );
-  }
   if (!fsExtra.statSync(specAbsolutePath).isFile()) {
     throw new Error(
       "this is not a json file, pelease check the proveded spec path: " +
         specAbsolutePath
     );
   }
-  const outputApiPath = nodePath.resolve(process.cwd(), output, "paths");
-  const outputSchemaPath = nodePath.resolve(process.cwd(), output, "schemas");
-  const outputTagPath = nodePath.resolve(process.cwd(), output, "tags");
+  if(!lng) { lng = 'zh' }
+  const outputBasePath = nodePath.resolve(process.cwd(), "./cloudtower-api-doc/markdown/", lng, version );
+  const outputApiPath = nodePath.join(outputBasePath, "paths");
+  const outputSchemaPath = nodePath.join(outputBasePath, "schemas");
+  const outputTagPath = nodePath.join(outputBasePath, "tags");
   [outputApiPath, outputSchemaPath, outputTagPath].forEach((path) =>
     fsExtra.ensureDirSync(path, { mode: 0777 })
   );
   let diffSpecPath;
   let diffSpec;
   if (diff) {
-    diffSpecPath = nodePath.resolve(process.cwd(), diff);
+    diffSpecPath = getSwaggerPath(diff);
     if (!fsExtra.existsSync(diffSpecPath)) {
       throw new Error(
         "can not find spec file path, check your path, provided path is: " +
@@ -83,9 +81,9 @@ const createNewApiDoc = async (argv) => {
     }
     fsExtra.writeFileSync(outputSchemaFilePath, content, "utf-8");
   });
-  await pMap(Object.keys(paths), (api) => {
+  await pMap(Object.keys(paths), async (api) => {
     const outputApiFilePath = nodePath.join(outputApiPath, `${api}.md`);
-    const content = getMarkDown({ spec, api });
+    const content = await getMarkDown({ spec, api, language: lng, output:outputApiFilePath});
     const tagList = spec.paths[api].post.tags;
     if (tagList) {
       tagList.forEach(tag => tags.add(tag));
@@ -99,7 +97,7 @@ const createNewApiDoc = async (argv) => {
           }
         });
       }
-      const diffContent = getMarkDown({ spec: diffSpec, api });
+      const diffContent = await getMarkDown({ spec: diffSpec, api, language: lng, output: outputApiFilePath});
       if (content === diffContent) {
         return;
       }

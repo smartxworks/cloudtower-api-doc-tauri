@@ -1,22 +1,10 @@
 **Summary**: Get VMTools ISO images
 
-**Description**: 
+**Description**:
 
 **Path** : /get-svt-images
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

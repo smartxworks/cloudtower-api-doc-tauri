@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const { fetchGitLabFile } = require('./utils');
-
+const yargsInteractive = require("yargs-interactive");
+const _ = require('lodash');
 const swaggerSpecPath = "packages/operation-api/src/generated/swagger-3.0.json";
 const downloadPath = path.resolve(__dirname, "../swagger/specs");
 const commitJSON = require("./commit.json");
-const commitPath = path.join(__dirname, "commit.json");
+const { fetchGitLabFile } = require("./utils");
 
+//we dont need examples, ommit them
+const omitExamples = (spec) => {
+  Object.keys(spec.components.schemas).forEach(schemaName => {
+    _.unset(spec, ['components', 'schemas', schemaName, 'example'])
+  })
+  return spec;
+}
 const downloadFile = async (versions) => {
   /**
    * for some reason, the tag is not a good way to get the matched version,
@@ -25,81 +32,83 @@ const downloadFile = async (versions) => {
       downloadPath,
       `${version}-swagger.json`
     );
-    const spec = JSON.parse(file);
+    const spec = omitExamples(JSON.parse(file));
     fs.writeFileSync(
       download_file_name,
       JSON.stringify(
-       {
-         ...spec,
-         servers: []
-       },
-       null,
-       2
+        {
+          ...spec,
+          servers: [],
+        },
+        null,
+        2
       ),
       "utf-8"
     );
   }
 };
 
-const argv = require("yargs/yargs")(process.argv.slice(2))
-  .usage("create new version of CloudTower API")
+yargsInteractive()
+  .usage("$0 <command> [args]")
   .help("help")
   .alias("help", "h")
-  .options({
+  .interactive({
+    interactive: { default: true },
     doc_version: {
       description: "Provide new version",
-      required: true,
-      alias: "v",
-      type: "string",
+      type: "input"
     },
-    commit: {
-      description: "Provide the commit hash of cloudtower",
-      required: true,
-      alias: "c",
-      type: "string",
-    },
-  }).argv;
+  })
+  .then((argv) => {
+    const { doc_version } = argv;
+    const commit = commitJSON[doc_version];
+    if (!commit) {
+      throw new Error(
+        "can not find commit, please check the commit in commin.json"
+      );
+    }
+    downloadFile(commitJSON).then(() => {
+      const oldVersion = "v1.8.0";
+      const copyDir = (rootDir) => {
+        const oldDir = path.join(rootDir, `version-${oldVersion}`);
+        const newDir = path.join(rootDir, `version-${doc_version}`);
+        !fs.existsSync(newDir) && fs.mkdirSync(newDir);
+        fs.readdirSync(oldDir).forEach((f) => {
+          fs.copyFileSync(path.join(oldDir, f), path.join(newDir, f));
+        });
+      };
+      // create new en files
+      const enDocDir = path.resolve(
+        __dirname,
+        "../i18n/en/docusaurus-plugin-content-docs"
+      );
+      copyDir(enDocDir);
+      fs.copyFileSync(
+        path.join(enDocDir, `version-${oldVersion}.json`),
+        path.join(enDocDir, `version-${doc_version}.json`)
+      );
 
-const { doc_version, commit } = argv;
+      // create new docs
+      const docDir = path.resolve(__dirname, "../versioned_docs");
+      copyDir(docDir);
 
-// step 1 write to commit.json and download operation-api
-commitJSON[doc_version] = commit;
-fs.writeFileSync(commitPath, JSON.stringify(commitJSON, null, 2));
-// step 2 download file and create new doc files
-downloadFile(commitJSON).then(() => {
-  const oldVersion = 'v1.8.0'
-  const copyDir = (rootDir) => {
-    const oldDir = path.join(rootDir, `version-${oldVersion}`);
-    const newDir = path.join(rootDir, `version-${doc_version}`);
-    !fs.existsSync(newDir) && fs.mkdirSync(newDir);
-    fs.readdirSync(oldDir).forEach((f) => {
-      fs.copyFileSync(path.join(oldDir, f), path.join(newDir, f));
+      // create new version sidbars
+      const sidebarDir = path.resolve(__dirname, "../versioned_sidebars");
+      const sidebarContent = JSON.stringify(
+        require(path.join(sidebarDir, `version-${oldVersion}-sidebars.json`)),
+        null,
+        2
+      );
+      fs.writeFileSync(
+        path.join(sidebarDir, `version-${doc_version}-sidebars.json`),
+        sidebarContent.replace(new RegExp(oldVersion, "g"), doc_version)
+      );
+
+      // add to versions.json
+      const versions = require("../versions.json");
+      fs.writeFileSync(
+        path.join(__dirname, "../versions.json"),
+        JSON.stringify(Array.from(new Set([doc_version, ...versions])), null, 2)
+      );
     });
-  }
-  // create new en files
-  const enDocDir = path.resolve(__dirname, "../i18n/en/docusaurus-plugin-content-docs");
-  copyDir(enDocDir);
-  fs.copyFileSync(
-    path.join(enDocDir, `version-${oldVersion}.json`),
-    path.join(enDocDir, `version-${doc_version}.json`)
-  )
-
-  // create new docs
-  const docDir = path.resolve(__dirname, '../versioned_docs');
-  copyDir(docDir);
-
-  // create new version sidbars
-  const sidebarDir = path.resolve(__dirname, '../versioned_sidebars');
-  const sidebarContent = JSON.stringify(require(path.join(sidebarDir, `version-${oldVersion}-sidebars.json`)), null, 2);
-  fs.writeFileSync(
-      path.join(sidebarDir, `version-${doc_version}-sidebars.json`),
-      sidebarContent.replace(new RegExp(oldVersion, 'g'), doc_version)
-  )
-
-  // add to versions.json
-  const versions = require('../versions.json');
-  fs.writeFileSync(
-      path.join(__dirname, '../versions.json'),
-      JSON.stringify(Array.from(new Set([doc_version, ...versions])), null, 2)
-  )
-});
+  });

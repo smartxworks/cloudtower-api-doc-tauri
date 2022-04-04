@@ -1,22 +1,10 @@
 **Summary**: Get system events
 
-**Description**: 
+**Description**:
 
 **Path** : /get-system-audit-logs
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

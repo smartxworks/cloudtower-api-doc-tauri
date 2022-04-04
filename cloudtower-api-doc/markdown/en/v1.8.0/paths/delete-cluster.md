@@ -1,22 +1,10 @@
 **Summary**: Delete the cluster
 
-**Description**: 
+**Description**:
 
 **Path** : /delete-cluster
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

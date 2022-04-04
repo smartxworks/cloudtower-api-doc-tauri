@@ -1,0 +1,19 @@
+| parameter | Type | Description |
+| ----------- | ----------- |----------- |
+| all_flash  |  boolean  |    |
+| deployed  |  boolean  |    |
+| dimms  |  object  |    |
+| dimms  |  array  |    |
+| disks  |  object  |    |
+| disks  |  array  |    |
+| host_ip  |  string  |    |
+| host_uuid  |  string  |    |
+| hostname  |  string  |    |
+| ifaces  |  object  |    |
+| ifaces  |  array  |    |
+| ipmi_ip  |  string  |    |
+| is_os_in_raid1  |  boolean  |    |
+| product  |  string  |    |
+| serial  |  string  |    |
+| sockets  |  integer  |    |
+| version  |  string  |    |

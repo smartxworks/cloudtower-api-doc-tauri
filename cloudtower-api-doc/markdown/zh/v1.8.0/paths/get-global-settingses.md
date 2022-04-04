@@ -1,22 +1,10 @@
 **Summary**: 获取 CloudTower 设置
 
-**Description**: 
+**Description**:
 
 **Path** : /get-global-settingses
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |

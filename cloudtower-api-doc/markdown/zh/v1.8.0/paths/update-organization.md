@@ -1,22 +1,10 @@
 **Summary**: 更新组织
 
-**Description**: 
+**Description**:
 
 **Path** : /update-organization
 
 **Method** : `POST`
-
-
-
-**RequestBody Examples** 
-
-```json
-{
-    "description": "please write the description",
-    "summary": "please write the summary",
-    "value": "{}"
-}
-```
 
 **Response**
 | code      | Description |
