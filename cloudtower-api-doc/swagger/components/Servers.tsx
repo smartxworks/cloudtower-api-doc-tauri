@@ -21,9 +21,27 @@ export default class Server extends React.Component<
   }
 
   componentDidMount() {
+    const storage = localStorage.getItem('swagger-ui') as null | string;
+    if(storage) {
+      const storage_obj = JSON.parse(storage) as { servers: string[], authorized: object };
+      storage_obj.servers.forEach(s => this.props.addServer(s));
+      (this.props as any).authActions.authorizeWithPersistOption(storage_obj.authorized)
+    }
     let { oas3Selectors } = this.props;
     if (oas3Selectors.selectedServer()) {
       return;
+    }
+  }
+
+  componentDidUpdate() {
+    const { specSelectors, authSelectors } = this.props;
+    const servers = specSelectors.servers().toJS().map(server => server.url);
+    const authorized = authSelectors.authorized().toJS();
+    if(servers.length || JSON.stringify(authorized) !== '{}') {
+      localStorage.setItem('swagger-ui', JSON.stringify({
+        servers,
+        authorized
+      }));
     }
   }
 

@@ -58,7 +58,7 @@ export const wrapSchemaWithI18n = (schemas: ISpec['components']['schemas'], lang
         }
       }
     } else {
-      console.log('unhandle schema', schema);
+      // console.log('unhandle schema', schema);
     }
   }
   Object.keys(schemas).forEach((schemaName) =>

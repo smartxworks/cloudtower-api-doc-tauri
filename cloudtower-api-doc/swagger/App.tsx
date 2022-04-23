@@ -64,6 +64,11 @@ const App: React.FC = () => {
     });
   }, [filter, i18n.currentLocale, wrapSpecWithI18n]);
 
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      localStorage.removeItem('swagger-ui');
+    }
+  },[])
   return (
     <div id="swagger-ui" ref={wrapper}>
       <div id="swagger-loading">
