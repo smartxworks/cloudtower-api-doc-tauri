@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | INPLACE: <br/>REBUILD:    |
+| enum  |  string  | INPLACE: <br/>REBUILD:   |

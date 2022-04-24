@@ -1,4 +1,4 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
 | task  |  object  |    |
-| enum  |  string  | BatchHosts:    |
+| enum  |  string  | BatchHosts:   |

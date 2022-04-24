@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | BOTTOMK: <br/>NORMAL: <br/>TOPK:    |
+| enum  |  string  | BOTTOMK: <br/>NORMAL: <br/>TOPK:   |

@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | LOCALTIME: <br/>UTC:    |
+| enum  |  string  | LOCALTIME: <br/>UTC:   |

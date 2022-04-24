@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | V2C: <br/>V3:    |
+| enum  |  string  | V2C: <br/>V3:   |

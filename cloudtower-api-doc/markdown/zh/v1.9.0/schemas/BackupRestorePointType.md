@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | FULL: <br/>INCREMENTAL:    |
+| enum  |  string  | FULL: <br/>INCREMENTAL:   |

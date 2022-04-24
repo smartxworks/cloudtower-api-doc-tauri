@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | MANAGEMENT: <br/>SELF_SERVICE:    |
+| enum  |  string  | MANAGEMENT: <br/>SELF_SERVICE:   |

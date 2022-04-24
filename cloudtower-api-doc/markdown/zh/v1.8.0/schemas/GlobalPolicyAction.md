@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | ALLOW: <br/>DROP:    |
+| enum  |  string  | ALLOW: <br/>DROP:   |

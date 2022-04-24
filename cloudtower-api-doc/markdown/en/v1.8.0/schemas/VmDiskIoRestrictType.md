@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | DYNAMIC: <br/>FORCED:    |
+| enum  |  string  | DYNAMIC: <br/>FORCED:   |

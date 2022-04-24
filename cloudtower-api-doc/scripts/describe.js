@@ -1,6 +1,6 @@
 const EJS = require("ejs");
 const nodePath = require("path");
-const fsExtra = require('fs-extra');
+const fsExtra = require("fs-extra");
 const _ = require("lodash");
 
 const describeRef = (params) => {
@@ -8,11 +8,11 @@ const describeRef = (params) => {
   describeFn({
     prefix,
     path,
-  })
+  });
 };
 const describeArraySchema = (params) => {
   const { path, arraySchema, prefix, describeFn } = params;
-  const nextPrefix = prefix.concat(["items"])
+  const nextPrefix = prefix.concat(["items"]);
   if (arraySchema.items.$ref) {
     describeRef({
       path,
@@ -34,7 +34,7 @@ const describeObjectSchema = (params) => {
   for (const key in objectSchema.properties) {
     const completePath = `${path ? path + "." : ""}${key}`;
     const value = objectSchema.properties[key];
-    const nextPrefix = prefix.concat(['properties', key])
+    const nextPrefix = prefix.concat(["properties", key]);
     if (value.$ref) {
       describeRef({
         path: completePath,
@@ -56,7 +56,7 @@ const describeObjectSchema = (params) => {
 const describeAllOfSchema = (params) => {
   const { allOfSchema, path, prefix, describeFn } = params;
   allOfSchema.allOf.forEach((item, index) => {
-    const nextPrefix = prefix.concat(["allOf", index.toString()])
+    const nextPrefix = prefix.concat(["allOf", index.toString()]);
     if (item.$ref) {
       describeRef({
         path,
@@ -78,14 +78,16 @@ const describeEnum = (params) => {
   const { enumSchema, path, prefix, describeFn } = params;
   describeFn({
     prefix,
-    path: 'enum',
-    description: prefix.join('').includes(`OrderByInput`) ? '' : enumSchema.enum.map((e) => `${e}: `).join("<br/>"),
+    path: "enum",
+    description: prefix.join("").includes(`OrderByInput`)
+      ? ""
+      : enumSchema.enum.map((e) => `${e}: `).join("<br/>"),
   });
 };
 const describeAnyOfSchema = (params) => {
   const { anyOfSchema, path, prefix, describeFn } = params;
   anyOfSchema.anyOf.forEach((item, index) => {
-    const nextPrefix = prefix.concat(["anyOf", index.toString()])
+    const nextPrefix = prefix.concat(["anyOf", index.toString()]);
     if (item.$ref) {
       describeRef({
         path,
@@ -151,7 +153,7 @@ const describeRequestBody = (parmas) => {
       const { schema } = requestBody.content[media];
       if (!schema.$ref && schema.type !== "array") {
         describeSchema({
-          path: '',
+          path: "",
           describeFn,
           schema: schema,
           prefix: [
@@ -170,7 +172,9 @@ const describeRequestBody = (parmas) => {
 };
 
 const getPathMarkdownAst = async (output) => {
-  if(!fsExtra.existsSync(output)) { return {} }
+  if (!fsExtra.existsSync(output)) {
+    return {};
+  }
   const { fromMarkdown } = await import("mdast-util-from-markdown");
   const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
   const { gfmTable } = await import("micromark-extension-gfm-table");
@@ -203,7 +207,7 @@ const getPathMarkdownAst = async (output) => {
     description,
     responses,
   };
-}
+};
 
 const getMarkDown = async (parameter) => {
   const { spec, api, language, output } = parameter;
@@ -212,7 +216,7 @@ const getMarkDown = async (parameter) => {
     __dirname,
     "../templates/api-template.ejs"
   );
-  const existApiContent =  await getPathMarkdownAst(output);
+  const existApiContent = await getPathMarkdownAst(output);
   const ApiTemplateContent = fsExtra.readFileSync(ApiTemplatePath, "utf-8");
   const apiSpec = spec.paths[api];
   if (!apiSpec) {
@@ -222,7 +226,9 @@ const getMarkDown = async (parameter) => {
     requestBody: spec.paths[api].post.requestBody,
     api_name: api,
     describeFn: ({ prefix, path, description }) => {
-      if(!path) { return;}
+      if (!path) {
+        return;
+      }
       const schema = _.get(spec, prefix);
       params.push({
         name: path,
@@ -235,46 +241,101 @@ const getMarkDown = async (parameter) => {
     api,
     responses: Object.keys(apiSpec.post.responses, params),
     params,
-    description: existApiContent.description || '',
-    summary: existApiContent.summary || '',
+    description: existApiContent.description || "",
+    summary: existApiContent.summary || "",
     language,
   });
 };
 
-const getSchemaMarkdown = ({ schemaName, spec }) => {
+const getSchemaMarkdownAst = async (output) => {
+  if (!fsExtra.existsSync(output)) {
+    return {};
+  }
+  const { fromMarkdown } = await import("mdast-util-from-markdown");
+  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
+  const { gfmTable } = await import("micromark-extension-gfm-table");
+  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
+    extensions: [gfmTable],
+    mdastExtensions: [gfmTableFromMarkdown],
+  });
+  const { children } = ast;
+  const schemas = {};
+  children[0].children.slice(1).forEach(({ children }) => {
+    const [name, _type, description] = children;
+    const nameValue = name.children[0] ? name.children[0].value : "";
+    schemas[nameValue] = description.children[0] ? description.children.map(c => c.value).join('') : ''
+  });
+  return schemas;
+};
+
+const getSchemaMarkdown = async ({ schemaName, spec, output }) => {
   const params = [];
   const templatePath = nodePath.resolve(
     __dirname,
     "../templates/schema-template.ejs"
   );
   const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
+  const exsitSchemas = await getSchemaMarkdownAst(output);
   describeSchema({
-    spec, 
-    schema: spec.components.schemas[schemaName], 
-    prefix: ['components', 'schemas',  schemaName], 
+    spec,
+    schema: spec.components.schemas[schemaName],
+    prefix: ["components", "schemas", schemaName],
     describeFn: ({ prefix, path, description }) => {
-      if(path === undefined) { return;}
+      if (path === undefined) {
+        return;
+      }
       const schema = _.get(spec, prefix);
       params.push({
         name: path,
-        type: schema.type || 'object',
-        description,
+        type: schema.type || "object",
+        description: exsitSchemas[path] || description,
       });
-    }
-  })
+    },
+  });
   return EJS.render(templateContent, {
     params,
   });
-}
+};
 
+const getTagMarkdownAst = async (output) => {
+  if (!fsExtra.existsSync(output)) {
+    return {};
+  }
+  const { fromMarkdown } = await import("mdast-util-from-markdown");
+  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
+  const { gfmTable } = await import("micromark-extension-gfm-table");
+  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
+    extensions: [gfmTable],
+    mdastExtensions: [gfmTableFromMarkdown],
+  });
+  const { children } = ast;
+  const tags = {};
+  children[0].children.slice(1).forEach(({ children }) => {
+    const [name, display, description] = children;
+    const nameValue = name.children[0] ? name.children[0].value : "";
+    tags[nameValue] = {
+      display: display.children[0] ? display.children[0].value : "",
+      description: description.children[0] ? description.children[0].value : "",
+    };
+  });
+  return tags;
+};
 
-const getTagsMarkdown = (tags) => {
+const getTagsMarkdown = async (tags, output) => {
   const templatePath = nodePath.resolve(
     __dirname,
     "../templates/tag-template.ejs"
   );
+  const existTags = await getTagMarkdownAst(output);
+  const newTags = tags.map(tag => {
+    return {
+      name: tag,
+      display: existTags[tag].display || '',
+      description: existTags[tag].description || "",
+    };
+  })
   const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
-  return EJS.render(templateContent, {tags});
-}
+  return EJS.render(templateContent, { tags: newTags });
+};
 
 module.exports = { getMarkDown, getSchemaMarkdown, getTagsMarkdown };

@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | AES: <br/>DES:    |
+| enum  |  string  | AES: <br/>DES:   |

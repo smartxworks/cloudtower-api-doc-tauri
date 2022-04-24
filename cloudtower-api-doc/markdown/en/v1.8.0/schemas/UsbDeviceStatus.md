@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | EJECTED: <br/>NORMAL:    |
+| enum  |  string  | EJECTED: <br/>NORMAL:   |

@@ -2,8 +2,7 @@
 id: api
 slug: /api
 ---
-
-# All
+# CloudTower API
 
 import App from '../../../../swagger/App';
 

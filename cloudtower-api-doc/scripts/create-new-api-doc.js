@@ -72,9 +72,9 @@ const createNewApiDoc = async (argv) => {
       outputSchemaPath,
       `${schemaName}.md`
     );
-    const content = getSchemaMarkdown({ schemaName, spec });
+    const content = await getSchemaMarkdown({ schemaName, spec, output: outputSchemaFilePath, });
     if (diff && diffSpec.components.schemas[schemaName]) {
-      const diffContent = getSchemaMarkdown({ schemaName, spec: diffSpec });
+      const diffContent = await getSchemaMarkdown({ schemaName, spec: diffSpec, output: outputSchemaFilePath });
       if (content === diffContent) {
         return;
       }
@@ -105,6 +105,6 @@ const createNewApiDoc = async (argv) => {
     fsExtra.writeFileSync(outputApiFilePath, content, "utf-8");
   });
   const outputTagFilePath = nodePath.join(outputTagPath, `tag.md`);
-  const content = getTagsMarkdown(Array.from(tags));
+  const content = await getTagsMarkdown(Array.from(tags), outputTagFilePath);
   fsExtra.writeFileSync(outputTagFilePath, content);
 };

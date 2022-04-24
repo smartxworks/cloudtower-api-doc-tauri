@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | COMMUNITY: <br/>ENTERPRISE: <br/>ESSENTIAL: <br/>STANDARD: <br/>TRIAL:    |
+| enum  |  string  | COMMUNITY: <br/>ENTERPRISE: <br/>ESSENTIAL: <br/>STANDARD: <br/>TRIAL:   |

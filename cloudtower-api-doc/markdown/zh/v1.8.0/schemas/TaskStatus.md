@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | EXECUTING: <br/>FAILED: <br/>PENDING: <br/>SUCCESSED:    |
+| enum  |  string  | EXECUTING: <br/>FAILED: <br/>PENDING: <br/>SUCCESSED:   |

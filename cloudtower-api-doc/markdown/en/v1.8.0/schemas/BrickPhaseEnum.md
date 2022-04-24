@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | BACKWARD: <br/>FORWARD:    |
+| enum  |  string  | BACKWARD: <br/>FORWARD:   |

@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | SSL: <br/>STARTTLS: <br/>UNSPECIFIED:    |
+| enum  |  string  | SSL: <br/>STARTTLS: <br/>UNSPECIFIED:   |
