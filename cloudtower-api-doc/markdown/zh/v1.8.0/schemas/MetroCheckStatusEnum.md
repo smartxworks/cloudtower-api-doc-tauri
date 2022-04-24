@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | CRITICAL: <br/>HEALTHY: <br/>INFO: <br/>NOTICE:    |
+| enum  |  string  | CRITICAL: <br/>HEALTHY: <br/>INFO: <br/>NOTICE:   |

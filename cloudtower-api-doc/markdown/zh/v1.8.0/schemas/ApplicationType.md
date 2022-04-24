@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | MONITOR:    |
+| enum  |  string  | MONITOR:   |

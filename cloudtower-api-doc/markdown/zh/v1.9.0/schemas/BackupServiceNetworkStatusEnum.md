@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | CONNECTED: <br/>DISCONNECTED:    |
+| enum  |  string  | CONNECTED: <br/>DISCONNECTED:   |

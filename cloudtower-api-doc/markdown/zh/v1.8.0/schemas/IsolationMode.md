@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | ALL: <br/>PARTIAL:    |
+| enum  |  string  | ALL: <br/>PARTIAL:   |

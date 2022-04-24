@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | ALL: <br/>IP_BLOCK: <br/>SELECTOR:    |
+| enum  |  string  | ALL: <br/>IP_BLOCK: <br/>SELECTOR:   |

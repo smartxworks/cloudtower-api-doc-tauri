@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | FAILED: <br/>SUCCESSED:    |
+| enum  |  string  | FAILED: <br/>SUCCESSED:   |

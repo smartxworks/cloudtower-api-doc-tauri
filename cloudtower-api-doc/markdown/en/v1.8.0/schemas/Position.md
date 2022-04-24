@@ -2,4 +2,4 @@
 | ----------- | ----------- |----------- |
 | row  |  object  |    |
 | column  |  object  |    |
-| enum  |  string  | position:    |
+| enum  |  string  | position:   |

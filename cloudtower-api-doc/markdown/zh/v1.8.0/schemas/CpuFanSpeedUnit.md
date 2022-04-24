@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | PERCENT: <br/>RPM:    |
+| enum  |  string  | PERCENT: <br/>RPM:   |

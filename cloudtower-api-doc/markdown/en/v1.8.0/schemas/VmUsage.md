@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | EVEROUTE_CONTROLLER:    |
+| enum  |  string  | EVEROUTE_CONTROLLER:   |

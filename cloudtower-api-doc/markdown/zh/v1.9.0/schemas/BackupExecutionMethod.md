@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | AUTO: <br/>MANUAL:    |
+| enum  |  string  | AUTO: <br/>MANUAL:   |

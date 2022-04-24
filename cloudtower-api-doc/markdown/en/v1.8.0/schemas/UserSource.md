@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | LDAP: <br/>LOCAL:    |
+| enum  |  string  | LDAP: <br/>LOCAL:   |

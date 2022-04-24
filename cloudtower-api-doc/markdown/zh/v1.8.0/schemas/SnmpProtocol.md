@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | TCP: <br/>UDP:    |
+| enum  |  string  | TCP: <br/>UDP:   |

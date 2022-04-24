@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  | CREATING: <br/>DELETING: <br/>UPDATING:    |
+| enum  |  string  | CREATING: <br/>DELETING: <br/>UPDATING:   |
