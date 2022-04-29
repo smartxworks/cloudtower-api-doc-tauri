@@ -3,12 +3,13 @@ import { ISpec, SwaggerTopBar, Schema } from "./swagger";
 import i18next from "../i18n";
 
 // get paths we need and add translate tags and description
-export const splitPaths = (filter: string, allPaths: ISpec['paths']) => {
+export const splitPaths = (filter: string, allPaths: ISpec['paths'], hideApis:string[] = []) => {
   const selectAll = filter === 'all';
   const tags: string[] = selectAll ?  [] : SwaggerTopBar[filter].map(tag => i18next.t(`tags.${tag}`));
+  const selectPaths = pickBy(allPaths, (p, key) => !hideApis.includes(key))
   const paths = selectAll
-      ? allPaths
-      : pickBy(allPaths, (p) => p.post.tags && tags.includes(p.post.tags[0]));
+      ? selectPaths
+      : pickBy(selectPaths, (p) => p.post.tags && tags.includes(p.post.tags[0]));
   return paths;
 };
 
@@ -24,9 +25,8 @@ export const splitSchema = (paths: ISpec["paths"], allSchemas: ISpec['components
       responsetRef.items?.$ref ||
       responsetRef.items?.properties?.data?.allOf?.[0]?.$ref ||
       responsetRef.$ref
-    )
-      .split("/")
-      .pop();
+    )?.split("/")?.pop();
+    if(!responseSchema) { continue; }
     schemas[responseSchema] = allSchemas[responseSchema];
     const requestRef =
       paths[pt].post.requestBody.content["application/json"]?.schema;
