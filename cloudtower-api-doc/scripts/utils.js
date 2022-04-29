@@ -7,7 +7,7 @@ const TOWER_PROJECT_ID = 215;
 const Api = new Gitlab({
   token: process.env.GITLAB_TOKEN,
   host: "http://gitlab.smartx.com/",
-  version: 3,
+  version: 4,
 });
 
 const getLocales = (filename) => {
@@ -44,11 +44,8 @@ const writeLocales = (locales) => {
 const fetchGitLabFile = async (file_path, commit) => {
   const file = await Api.RepositoryFiles.show(
      TOWER_PROJECT_ID,
-     "",
+     file_path,
      commit,
-     {
-       file_path,
-     }
    ).catch((error) => {
      console.log(`error occur when ${file_path}`, error)
      return { content: '', encoding: 'utf-8'}
