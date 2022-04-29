@@ -10,7 +10,7 @@ import Download from '../../../../swagger/components/Download';
 
 | Language | URL |
 | :-----| :----- |
-| java | [GitHub 地址](https://github.com/smartxworks/cloudtower-java-sdk) | 
+| java | [GitHub Address](https://github.com/smartxworks/cloudtower-java-sdk) | 
 | go | Currently not released | 
 | python | Currently not released | 
 | json | <Download/> |
