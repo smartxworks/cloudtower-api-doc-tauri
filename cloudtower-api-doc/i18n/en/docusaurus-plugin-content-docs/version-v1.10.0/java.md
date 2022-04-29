@@ -3,55 +3,56 @@ sidebar_position: 1
 id: java-sdk
 slug: /java-sdk
 ---
+
 # Cloudtower Java SDK
 
-Java 环境下的 Cloudtower SDK，适用于 Java 1.8 及以上版本
+The Cloudtower SDK in Java for versions 1.8 and above
 
-- [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)
-- [下载地址](https://github.com/smartxworks/cloudtower-java-sdk/releases)
+- [Source Address](https://github.com/smartxworks/cloudtower-java-sdk)
+- [Download Links](https://github.com/smartxworks/cloudtower-java-sdk/releases)
 
-## 安装
+## Install
 
-- ### git 源码安装
+- ### git source installation
 
   ```shell
   git clone https://github.com/smartxworks/cloudtower-java-sdk.git
   mvn clean install
   ```
 
-- ### jar 包安装
+- ### jar package installation
 
   ```shell
   # download jar and pom from release page
   mvn install:install-file -D"file=<path/to/jar>" -D"pomFile=<path/to/pom>"
   ```
 
-- ### 中央仓库
-  > 暂无
+- ### Central repository
+  > Not available
 
-## 使用
+## The Use of SDK
 
-### 创建实例
+### Create an instance
 
-#### 创建 `ApiClient` 实例
+#### Create an `ApiClient` instance
 
 ```java
 ApiClient client = new ApiClient();
 client.setBasePath("http://192.168.96.133/v2/api");
 ```
 
-#### 创建对应的 API 实例
+#### Create a corresponding API instance
 
-> 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。
+> Create a relevant API instance based on operations for different purposes, e.g., a `VmApi` needs to be created for the operations related to virtual machines.
 
 ```java
 VmApi vmApi = new VmApi(client);
 ```
 
-### 鉴权
+### Authentication
 
 ```java
-// 通过 UserApi 中的 login 方法来获得 token。
+// Obtain a token through the login method in UserApi.
 UserApi userApi = new UserApi(client);
 LoginInput loginInput = new LoginInput()
     .username("root")
@@ -60,17 +61,17 @@ WithTaskTokenString token = userApi.login(loginInput);
 ((ApiKeyAuth) client.getAuthentication("Authorization")).setApiKey(token.getData().getToken());
 ```
 
-### 发送请求
+### Send a request
 
-#### 获取资源
+#### Get resources
 
 ```java
 List<Vm> vms = vmApi.getVms(new GetVmsRequestBody().first(1));
 ```
 
-#### 更新资源
+#### Update resources
 
-> 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
+> Resource updates will generate relevant asynchronous tasks. When an asynchronous task finishes, the resource operations are completed and the data has been updated.
 
 ```java
 WithTaskVm withTaskVm = vmApi.startVm(
@@ -79,23 +80,23 @@ WithTaskVm withTaskVm = vmApi.startVm(
             .id(vm.getId()))).get(0);
 ```
 
-> 可以通过提供的工具方法 `WaitTask` 同步等待异步任务结束
+> Users can synchronously wait for the asynchronous task to finish through the provided tool method `WaitTask`.
 >
-> - 方法参数说明
+> - Description of Method Parameters
 >
-> | 参数名    | 类型      | 是否必须 | 说明                        |
-> | --------- | --------- | -------- | --------------------------- |
-> | id        | string    | 是       | 需查询的 task 的 id         |
-> | apiClient | ApiClient | 是       | 查询所使用的 ApiClient 实例 |
-> | interval  | int       | 否       | 轮询的间隔时间，默认为 5s   |
-> | timeout   | int       | 否       | 超时时间，默认为 300s       |
+> | Parameter name | Type      | Required | Description                                       |
+> | -------------- | --------- | -------- | ------------------------------------------------- |
+> | id             | string    | Yes      | The id of the task to be queried                  |
+> | apiClient      | ApiClient | Yes      | The ApiClient instance used by the query          |
+> | interval       | int       | No       | The polling interval with the default value of 5s |
+> | timeout        | int       | No       | The timeout with the default value of 300s        |
 >
-> - 错误说明
+> - Error Description
 >
-> | 错误码 | 说明             |
-> | ------ | ---------------- |
-> | 408    | 超时             |
-> | 500    | 异步任务内部错误 |
+> | Error code | Description                            |
+> | ---------- | -------------------------------------- |
+> | 408        | Timeout                                |
+> | 500        | An internal error of asynchronous task |
 
 ```java
 WithTaskVm withTaskVm = vmApi.startVm(
@@ -105,24 +106,24 @@ WithTaskVm withTaskVm = vmApi.startVm(
 TaskUtil.WaitTask(withTaskVm.getTaskId(), client);
 ```
 
-> 如果是复数任务则可以通过 `WaitTasks`
+> For multiple taska, you can use `WaitTasks`
 >
-> - 方法参数说明
+> - Description of Method Parameters
 >
-> | 参数名      | 类型           | 是否必须 | 说明                                                                               |
-> | ----------- | -------------- | -------- | ---------------------------------------------------------------------------------- |
-> | ids         | List\<String\> | 是       | 需查询的 task 的 id 列表                                                           |
-> | apiClient   | ApiClient      | 是       | 查询所使用的 ApiClient 实例                                                        |
-> | exitOnError | boolean        | 否       | 是否在单个 Task 出错时立即退出，否则则会等待全部 Task 都完成后再退出，默认为 False |
-> | interval    | int            | 否       | 轮询的间隔时间，默认为 5s                                                          |
-> | timeout     | int            | 否       | 超时时间，默认为 300s                                                              |
+> | Parameter name | Type           | Required | Description                                                                                                                                     |
+> | -------------- | -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+> | ids            | List\<String\> | Yes      | The id list of the tasks to be queried                                                                                                          |
+> | apiClient      | ApiClient      | Yes      | The ApiClient instance used by the query                                                                                                        |
+> | exitOnError    | boolean        | No       | Whether to exit immediately when a single task fails, otherwise wait for all the tasks to finish before exiting, and the default value is False |
+> | interval       | int            | No       | The polling interval with the default value of 5s                                                                                               |
+> | timeout        | int            | No       | The timeout with the default value of 300s                                                                                                      |
 >
-> - 错误说明
+> - Error Description
 >
-> | 错误码 | 说明             |
-> | ------ | ---------------- |
-> | 408    | 超时             |
-> | 500    | 异步任务内部错误 |
+> | Error code | Description                            |
+> | ---------- | -------------------------------------- |
+> | 408        | Timeout                                |
+> | 500        | An internal error of asynchronous task |
 
 ```java
 VmStartParams startParams = new VmStartParams()
@@ -134,11 +135,11 @@ List<String> tasks = startedVms.stream().map(startedVm -> startedVm.getTaskId())
 TaskUtil.WaitTasks(tasks, client);
 ```
 
-#### 其他
+#### Others
 
-##### 发送异步请求
+##### Send an asynchronous request
 
-> 上述请求的发送都是同步的请求，会堵塞当前进程。如果需要使用异步请求，可以使用 `${Api}Async` 配合 `ApiCallback` 来发送异步请求。
+> The sending of all the above requests is synchronous and will block the current process. If users need to use an asynchronous request, they can use `${Api}Async` with `ApiCallback` to send an asynchronous request.
 
 ```java
 vmApi.getVmsAsync(
@@ -163,30 +164,30 @@ vmApi.getVmsAsync(
     });
 ```
 
-##### 设置返回信息的语言
+##### Set the language of the returned information
 
-> 可以通过设置/清除默认请求头来设定返回值的语言，可选值为 `["en-US", "zh-CN"]`，不在可选值范围内的语言会返回一个 HTTP 400 错误
+> The language of the return value can be set by setting/clearing the default request header. The optional values are `["en-US", "zh-CN"]`. The languages that are not in the range of optional values will return an HTTP 400 error.
 
 ```java
 AlertApi alertApi = new AlertApi(client);
-// 此时得到的 alerts 中的 message, solution, cause, impact 字段将被为英文描述
+// The fields of message, solution, cause, impact in the alerts obtained at this time will be English descriptions
 List<Alert> alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
-// 此时得到的 alerts 中的 message, solution, cause, impact 字段将被为中文描述
+// The fields of message, solution, cause, impact in the alerts obtained at this time will be converted into Chinese descriptions
 client.addDefaultHeader("content-language", "zh-CN");
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 client.removeDefaultHeader("content-language");
-// 此时得到的 alerts 中的 message, solution, cause, impact 字段将为英文描述
+// The fields of message, solution, cause, impact in the alerts obtained at this time will be English descriptions
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 client.addDefaultHeader("content-language", "fr-CA");
-// 此时将返回一个HTTP 400 错误
+// An HTTP 400 error will be returned at this time
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 ```
 
-## 操作示例
+## Operation Examples
 
-### 获取虚拟机
+### Get a virtual machine
 
-#### 获取所有虚拟机
+#### Get all virtual machines
 
 ```java
 public class App {
@@ -205,7 +206,7 @@ public class App {
 }
 ```
 
-#### 分页获取虚拟机
+#### Get virtual machines by page
 
 ```java
 public class App {
@@ -225,7 +226,7 @@ public class App {
 }
 ```
 
-#### 获取所有已开机虚拟机
+#### Get all powered-on virtual machines
 
 ```java
 public class App {
@@ -246,7 +247,7 @@ public class App {
 }
 ```
 
-#### 获取名称或描述中包含特定字符串的虚拟机
+#### Get virtual machines with a specific string in their names
 
 ```java
 public class App {
@@ -267,7 +268,7 @@ public class App {
 }
 ```
 
-#### 获取所有 vcpu > n 的虚拟机
+#### Get all virtual machines with vcpu > n
 
 ```java
 public class App {
@@ -288,9 +289,9 @@ public class App {
 }
 ```
 
-### 从模版创建虚拟机
+### Create a virtual machine from a template
 
-#### 仅指定 id
+#### Specify ids only
 
 ```java
 public class App {
@@ -326,7 +327,7 @@ public class App {
 }
 ```
 
-#### 配置与模板不同的虚拟盘参数
+#### Configure the virtual disk parameters which are different from those of the template
 
 ```java
 public class App {
@@ -386,7 +387,7 @@ public class App {
 }
 ```
 
-#### 配置与模版不同的网卡参数
+#### Configure the NIC parameters which are different from those of the template
 
 ```java
 public class App {
@@ -426,9 +427,9 @@ public class App {
 }
 ```
 
-### 创建空白虚拟机
+### Create a blank virtual machine
 
-#### 简单创建
+#### Create a virtual machine simply
 
 ```java
 public class App {
@@ -472,9 +473,9 @@ public class App {
 }
 ```
 
-#### 创建时配置虚拟盘
+#### Configure a virtual disk during creation
 
-##### CD-ROM 加载 ISO
+##### Load an ISO from CD-ROM
 
 ```java
 public class App {
@@ -522,7 +523,7 @@ public class App {
 }
 ```
 
-##### 挂载虚拟卷为虚拟盘
+##### Mount a virtual volume as a virtual disk
 
 ```java
 public class App {
@@ -571,7 +572,7 @@ public class App {
 }
 ```
 
-##### 挂载新增虚拟盘
+##### Add and mount a virtual disk
 
 ```java
 public class App {
@@ -623,7 +624,7 @@ public class App {
 }
 ```
 
-#### 创建时配置虚拟网卡
+#### Configure a virtual NIC during creation
 
 ```java
 public class App {
@@ -671,9 +672,9 @@ public class App {
 }
 ```
 
-### 编辑虚拟机
+### Edit a virtual machine
 
-#### 编辑基本信息
+#### Edit basic information
 
 ```java
 public class App {
@@ -711,7 +712,7 @@ public class App {
 }
 ```
 
-#### 编辑高级信息
+#### Edit vm advance options
 
 ```java
 public class App {
@@ -748,9 +749,9 @@ public class App {
 }
 ```
 
-#### CD-ROM 编辑
+#### Edit a CD-ROM
 
-##### 添加 CD-ROM
+##### Add a CD-ROM
 
 ```java
 public class App {
@@ -787,7 +788,7 @@ public class App {
 }
 ```
 
-##### 删除 CD-ROM
+##### Delete a CD-ROM
 
 ```java
 public class App {
@@ -820,9 +821,9 @@ public class App {
 }
 ```
 
-#### 虚拟卷操作
+#### Virtual volume operations
 
-##### 添加新虚拟卷
+##### Add a new virtual volume
 
 ```java
 public class App {
@@ -864,7 +865,7 @@ public class App {
 }
 ```
 
-##### 挂载已存在虚拟卷为虚拟盘
+##### Mount an existing virtual volume as a virtual disk
 
 ```java
 public class App {
@@ -902,7 +903,7 @@ public class App {
 }
 ```
 
-##### 卸载虚拟盘
+##### Unmount a virtual disk
 
 ```java
 public class App {
@@ -935,9 +936,9 @@ public class App {
 }
 ```
 
-#### 网卡操作
+#### NIC operations
 
-##### 添加网卡
+##### Add a NIC
 
 ```java
 public class App {
@@ -971,7 +972,7 @@ public class App {
 }
 ```
 
-##### 编辑网卡基本信息
+##### Edit basic information of a nic
 
 ```java
 public class App {
@@ -1007,7 +1008,7 @@ public class App {
 }
 ```
 
-##### 编辑网卡高级信息
+##### Edit advance information of a nic
 
 ```java
 public class App {
@@ -1044,7 +1045,7 @@ public class App {
 }
 ```
 
-##### 移除网卡
+##### Delete a NIC
 
 ```java
 public class App {
@@ -1078,9 +1079,9 @@ public class App {
 }
 ```
 
-#### 虚拟机迁移
+#### Virtual machine migration
 
-##### 迁移至指定主机
+##### Migrate to a specified host
 
 ```java
 public class App {
@@ -1113,7 +1114,7 @@ public class App {
 }
 ```
 
-##### 自动调度到合适的主机
+##### Schedule to an appropriate host automatically
 
 ```java
 public class App {
@@ -1146,11 +1147,11 @@ public class App {
 }
 ```
 
-### 虚拟机电源操作
+### Virtual machine power operations
 
-#### 虚拟机开机:
+#### Power on a virtual machine:
 
-##### 指定虚拟机开机，自动调度到合适的虚拟机
+##### The specified virtual machine is powered on and scheduled to an appropriate virtual machine automatically
 
 ```java
 public class App {
@@ -1183,7 +1184,7 @@ public class App {
 }
 ```
 
-##### 批量虚拟机开机，自动调度到合适的虚拟机
+##### The virtual machines are powered on in batch and scheduled to appropriate virtual machines automatically
 
 ```java
 public class App {
@@ -1216,7 +1217,7 @@ public class App {
 }
 ```
 
-##### 开机至指定主机
+##### The virtual machine is powered on to a specified host
 
 ```java
 public class App {
@@ -1249,9 +1250,9 @@ public class App {
 }
 ```
 
-#### 虚拟机关机
+#### Power off a virtual machine
 
-##### 指定虚拟机关机
+##### Shut down the specified virtual machine
 
 ```java
 public class App {
@@ -1283,7 +1284,7 @@ public class App {
 }
 ```
 
-##### 批量虚拟机关机
+##### Shut down the virtual machines in batch
 
 ```java
 public class App {
@@ -1315,7 +1316,7 @@ public class App {
 }
 ```
 
-##### 强制关机指定虚拟机
+##### Power off the specified virtual machine
 
 ```java
 public class App {
@@ -1347,7 +1348,7 @@ public class App {
 }
 ```
 
-##### 强制关机批量虚拟机
+##### Power off virtual machines in batch
 
 ```java
 public class App {
@@ -1379,9 +1380,9 @@ public class App {
 }
 ```
 
-#### 虚拟机重启
+#### Reboot a virtual machine
 
-##### 重启指定虚拟机
+##### Reboot a specified virtual machine
 
 ```java
 public class App {
@@ -1413,7 +1414,7 @@ public class App {
 }
 ```
 
-##### 重启批量虚拟机
+##### Reboot the virtual machines in batch
 
 ```java
 public class App {
@@ -1445,7 +1446,7 @@ public class App {
 }
 ```
 
-##### 强制重启指定虚拟机
+##### Reboot the specified virtual machine
 
 ```java
 public class App {
@@ -1477,7 +1478,7 @@ public class App {
 }
 ```
 
-##### 强制重启批量虚拟机
+##### Force reboot the virtual machines in batch
 
 ```java
 public class App {
@@ -1509,9 +1510,9 @@ public class App {
 }
 ```
 
-#### 虚拟机暂停
+#### Suspend a virtual machine
 
-##### 暂停指定虚拟机
+##### Suspend the specified virtual machine
 
 ```java
 public class App {
@@ -1543,7 +1544,7 @@ public class App {
 }
 ```
 
-##### 暂停批量虚拟机
+##### Suspend the virtual machines in batch
 
 ```java
 public class App {
@@ -1575,9 +1576,9 @@ public class App {
 }
 ```
 
-#### 虚拟机恢复
+#### Resume a virtual machine
 
-##### 恢复指定虚拟机
+##### Resume the specified virtual machine
 
 ```java
 public class App {
@@ -1609,7 +1610,7 @@ public class App {
 }
 ```
 
-##### 恢复批量虚拟机
+##### Resume the virtual machines in batch
 
 ```java
 public class App {
@@ -1641,11 +1642,11 @@ public class App {
 }
 ```
 
-### 删除虚拟机
+### Delete virtual machine
 
-#### 回收站
+#### Recycle bin
 
-##### 移入回收站
+##### Move to recycle bin
 
 ```java
 public class App {
@@ -1678,7 +1679,7 @@ public class App {
 }
 ```
 
-##### 从回收站恢复
+##### Recover from recycle bin
 
 ```java
 public class App {
@@ -1711,7 +1712,7 @@ public class App {
 }
 ```
 
-#### 永久删除
+#### Delete permanently
 
 ```java
 public class App {
@@ -1737,9 +1738,9 @@ public class App {
 }
 ```
 
-## 场景示例
+## A scenario example
 
-### 虚拟机备份
+### Backup a virtual machine
 
 ```java
 
@@ -1758,7 +1759,7 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
   VmApi vmApi = new VmApi(client);
   VmSnapshotApi vmSnapshotApi = new VmSnapshotApi(client);
   IscsiLunSnapshotApi iscsiLunSnapshotApi = new IscsiLunSnapshotApi(client);
-  // 1. 获取所需备份的虚拟机的信息，这里我们需要vm的id来构建创建snapshot的参数，以及虚拟机工具的状态来确定是否允许创建文件系统一致性快照
+  // 1. Get the information of the virtual machine to be backed up, here we need the id of the virtual machine to construct the parameters for creating a snapshot, and need the status of the VMTools to determine whether creating a file system consistency snapshot is allowed.
   Vm target = vmApi.getVms(new GetVmsRequestBody().where(new VmWhereInput().id(vmId)).first(1))
       .get(0);
   if (target.getVmToolsStatus() != VmToolsStatus.RUNNING && consistentType == ConsistentType.FILE_SYSTEM_CONSISTENT) {
@@ -1772,14 +1773,14 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
                   .name(snapshotName)
                   .vmId(vmId)))
       .get(0);
-  // 2. 等待Task完成
+  // 2. Wait for the task to finish.
   TaskUtil.WaitTask(snapshot_with_task.getTaskId(), client);
-  // 3. 查询创建完成的虚拟机快照
+  // 3. Query the created virtual machine snapshot.
   VmSnapshot snapshot = vmSnapshotApi.getVmSnapshots(
       new GetVmSnapshotsRequestBody()
           .where(new VmSnapshotWhereInput()
               .id(snapshot_with_task.getData().getId()))).get(0);
-  // 4. 查询生成的Iscsi Lun快照
+  // 4. Query the generated iSCSI Lun snapshot.
   List<String> lunSnapshotIds = snapshot.getVmDisks().stream().filter(disk -> disk.getType() == VmDiskType.DISK)
       .map(disk -> disk.getSnapshotLocalId()).collect(Collectors.toList());
   List<IscsiLunSnapshot> lunSnapshots = null;
@@ -1793,9 +1794,9 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
 }
 ```
 
-### Dashboard 构建
+### Build Dashboard
 
-#### 定义工具方法
+#### Define utility methods
 
 ```java
 private static String[] byteUnits = new String[] { "B", "KiB", "MiB", "GiB", "TiB", "PiB" };
@@ -1818,7 +1819,7 @@ public static String formatUnit(double base, String[] units, int step) {
 }
 ```
 
-#### 构建报警信息
+#### Build alart information
 
 ```java
 public class AlertInfo {
@@ -1860,9 +1861,9 @@ public AlertInfo buildAlerts(ApiClient client, List<String> clusterIds) throws A
 }
 ```
 
-#### 构建硬盘信息
+#### Build hard disk information
 
-> 这里以机械硬盘为例
+> Here is an example of a mechanical hard disk
 
 ```java
 public class DiskInfo {
@@ -1906,9 +1907,9 @@ public DiskInfo buildHddDiskInfo(ApiClient client, List<String> clusterIds) thro
 }
 ```
 
-#### 构建性能指标
+#### Build performance metrics
 
-> 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
+> Get total CPU cores, total CPU frequency, CPU usage, total memory, used memory, total storage, used storage, invalid storage, and available storage of the specified cluster.
 
 ```java
 public class CpuInfo {
@@ -2034,7 +2035,7 @@ public static MetricInfo buildMetricInfo(ApiClient client, List<Cluster> cluster
 }
 ```
 
-#### 构建 Dashboard
+#### Build Dashboard
 
 ```java
 public class DashboardInfo {
