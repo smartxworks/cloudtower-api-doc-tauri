@@ -25,7 +25,7 @@ const downloadFile = async (versions) => {
       downloadPath,
       `${version}-swagger.json`
     );
-    const spec = JSON.parse(Buffer.from(file.content, file.encoding).toString("utf-8"))
+    const spec = JSON.parse(file);
     fs.writeFileSync(
       download_file_name,
       JSON.stringify(
