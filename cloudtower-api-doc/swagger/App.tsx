@@ -10,6 +10,7 @@ import CustomLayout from "./layout";
 import {
   ISpec,
   specMap, 
+  hideApiMap,
   splitPaths,
   splitSchema,
   wrapPathWithI18n,
@@ -37,7 +38,7 @@ const App: React.FC = () => {
     i18next.changeLanguage(i18n.currentLocale);
     // split paths and schema
     const { paths, components } = wrapSpecWithI18n;
-    _.set(wrapSpecWithI18n, ['paths'], splitPaths(filter, paths));
+    _.set(wrapSpecWithI18n, ['paths'], splitPaths(filter, paths, hideApiMap[version]));
     _.set(wrapSpecWithI18n, ['components', 'schemas'], splitSchema(wrapSpecWithI18n.paths, components.schemas))
     SwaggerUI({
       dom_id: "#swagger-ui",
