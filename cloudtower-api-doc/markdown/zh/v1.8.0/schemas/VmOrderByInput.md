@@ -1,3 +1,3 @@
 | parameter | Type | Description |
 | ----------- | ----------- |----------- |
-| enum  |  string  |    |
+| enum  |  string  | 按照指定方式排列放回数据   |

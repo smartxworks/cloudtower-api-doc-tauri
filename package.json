@@ -3,6 +3,7 @@
   "scripts": {
     "tauri": "tauri",
     "scan": "node ./cloudtower-api-doc/scripts/scan-swagger.js",
+    "scan:missing": "node ./cloudtower-api-doc/scripts/scan-missing.js",
     "new:version": "node ./cloudtower-api-doc/scripts/create-new-version.js",
     "new:api": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
     "generate": "node ./cloudtower-api-doc/scripts/generate.js",

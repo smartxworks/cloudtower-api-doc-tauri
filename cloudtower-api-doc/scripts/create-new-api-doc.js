@@ -18,14 +18,14 @@ yargsInteractive()
       description: "Provide swagger json file version",
       type: "input",
     },
-    lng: {
-      description: "zh or en",
-      type: "input"
-    },
     diff: {
       description:
         "Provide the old json spec file version you want to compare with, leave it blank when you don't want to compare",
       type: "input",
+    },
+    lng: {
+      description: "zh or en",
+      type: "input"
     },
   })
   .then((result) => {
@@ -53,6 +53,7 @@ const createNewApiDoc = async (argv) => {
     fsExtra.ensureDirSync(path, { mode: 0777 })
   );
   let diffSpecPath;
+  let diffBasePath;
   let diffSpec;
   if (diff) {
     diffSpecPath = getSwaggerPath(diff);
@@ -63,6 +64,7 @@ const createNewApiDoc = async (argv) => {
       );
     }
     diffSpec = require(diffSpecPath);
+    diffBasePath = nodePath.resolve(process.cwd(), "./cloudtower-api-doc/markdown/", lng, diff );
   }
   const spec = require(specAbsolutePath);
   const { paths, components } = spec;
@@ -72,13 +74,13 @@ const createNewApiDoc = async (argv) => {
       outputSchemaPath,
       `${schemaName}.md`
     );
-    const content = await getSchemaMarkdown({ schemaName, spec, output: outputSchemaFilePath, });
+    let diffSchema;
     if (diff && diffSpec.components.schemas[schemaName]) {
-      const diffContent = await getSchemaMarkdown({ schemaName, spec: diffSpec, output: outputSchemaFilePath });
-      if (content === diffContent) {
-        return;
-      }
+      const outputDiffSchemaFilePath = nodePath.join(diffBasePath, "schemas", `${schemaName}.md`);
+      diffSchema = await getSchemaMarkdown({ schemaName, spec: diffSpec, output: outputDiffSchemaFilePath });
     }
+    const { content } = await getSchemaMarkdown({ schemaName, spec, output: outputSchemaFilePath, previous: diffSchema ? diffSchema.params : undefined});
+    if(diffSchema && diffSchema.content === content) { return;}
     fsExtra.writeFileSync(outputSchemaFilePath, content, "utf-8");
   });
   await pMap(Object.keys(paths), async (api) => {
