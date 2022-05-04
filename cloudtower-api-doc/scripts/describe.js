@@ -268,7 +268,8 @@ const getSchemaMarkdownAst = async (output) => {
   return schemas;
 };
 
-const getSchemaMarkdown = async ({ schemaName, spec, output }) => {
+
+const getSchemaMarkdown = async ({ schemaName, spec, output, previous }) => {
   const params = [];
   const templatePath = nodePath.resolve(
     __dirname,
@@ -276,25 +277,127 @@ const getSchemaMarkdown = async ({ schemaName, spec, output }) => {
   );
   const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
   const exsitSchemas = await getSchemaMarkdownAst(output);
-  describeSchema({
-    spec,
-    schema: spec.components.schemas[schemaName],
-    prefix: ["components", "schemas", schemaName],
-    describeFn: ({ prefix, path, description }) => {
-      if (path === undefined) {
-        return;
-      }
-      const schema = _.get(spec, prefix);
-      params.push({
-        name: path,
-        type: schema.type || "object",
-        description: exsitSchemas[path] || description,
-      });
-    },
-  });
-  return EJS.render(templateContent, {
-    params,
-  });
+  const lng = output.includes('zh') ? 'zh' : 'en';
+  if(schemaName.endsWith('WhereInput')) {
+    const basicSchema = schemaName.replace('WhereInput', '');
+    const basicSchemaOutput = output.replace(schemaName, basicSchema);
+    const basicAst = await getSchemaMarkdownAst(basicSchemaOutput);
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path, description }) => {
+        if (path === undefined) {
+          return;
+        }
+        let des = description;
+        let basicDes = basicAst[path];
+        const previousDescription = previous && previous.length ? (previous.filter( p => p.name === path)).map(p => p.description)[0]: undefined
+        const schema = _.get(spec, prefix);
+        if(basicDes) {
+          des = basicDes
+        } else if(basicDes = basicAst[path.replace('_in', '')]) {
+          des = lng === 'zh' ?  `${basicDes}在指定范围中` : `${basicDes} in given range`;
+        } else if(basicDes = basicAst[path.replace('_not_in', '')]) {
+          des = lng === 'zh' ?  `${basicDes}不在指定范围中` : `${basicDes} not in given range`;
+        } else if(basicDes = basicAst[path.replace('_not', '')]) {
+          des = lng === 'zh' ?  `${basicDes}不等于指定数值` : `${basicDes} not equal given data`;
+        } else if(basicDes = basicAst[path.replace('_contains', '')]) {
+          des = lng === 'zh' ?  `${basicDes}包含指定字符` : `${basicDes} contains given string`;
+        } else if(basicDes = basicAst[path.replace('_not_contains', '')]) {
+          des = lng === 'zh' ?  `${basicDes}不包含指定字符` : `${basicDes} not contains given string`;
+        } else if(basicDes = basicAst[path.replace('_ends_with', '')]) {
+          des = lng === 'zh' ?  `${basicDes}已指定字符结尾` : `${basicDes} ends with given string`;
+        } else if(basicDes = basicAst[path.replace('_not_ends_with', '')]) {
+          des = lng === 'zh' ?  `${basicDes}不已指定字符结尾` : `${basicDes} not ends with given string`;
+        } else if(basicDes = basicAst[path.replace('_starts_with', '')]) {
+          des = lng === 'zh' ?  `${basicDes}已指定字符开始` : `${basicDes} starts with given string`;
+        } else if(basicDes = basicAst[path.replace('_not_starts_with', '')]) {
+          des = lng === 'zh' ?  `${basicDes}不已指定字符开始` : `${basicDes} not starts with given string`;
+        } else if(basicDes = basicAst[path.replace('_gt', '')]) {
+          des = lng === 'zh' ?  `${basicDes}大于指定数值` : `${basicDes} greater than given data`;
+        } else if(basicDes = basicAst[path.replace('_gte', '')]) {
+          des = lng === 'zh' ?  `${basicDes}大于或等于指定数值` : `${basicDes} greater than or equals to given data`;
+        } else if(basicDes = basicAst[path.replace('_lt', '')]) {
+          des = lng === 'zh' ?  `${basicDes}小于指定字符` : `${basicDes} less than given data`;
+        } else if(basicDes = basicAst[path.replace('_lte', '')]) {
+          des = lng === 'zh' ?  `${basicDes}小于或等于指定字符` : `${basicDes} less than or equals to given data`;
+        } else if(basicDes = basicAst[path.replace('_some', '')]) {
+          des = lng === 'zh' ? `返回关联资源一项或多项符合相关筛选条件的资源` : 'Returns all records where one or more ("some") related records match filtering criteria.'
+        } else if (basicDes = basicAst[path.replace('_every', '')]) {
+          des = lng === 'zh' ? `返回关联资源全都符合相关筛选条件的资源` : 'Returns all records where all ("every") related records match filtering criteria.'
+        } else if (basicDes = basicAst[path.replace('_none', '')]) {
+          des = lng === 'zh' ? `返回关联资源不符合相关筛选条件的资源` : 'Returns all records where zero related records match filtering criteria.'
+        } else if(path === 'AND') {
+          des = lng === 'zh' ? '符合所有的筛选条件': `All conditions must return true.`
+        } else if (path === 'OR') {
+          des = lng === 'zh' ? '符合一项或多项筛选条件' : 'One or more conditions must return true.'
+        } else if (path === 'NOT') {
+          des = lng === 'zh' ? '不符合所有筛选条件': 'All conditions must return false.'
+        } else {
+          console.log(path);
+        }
+        params.push({
+          name: path,
+          type: schema.type || "object",
+          description: exsitSchemas[path] === '' ?  previousDescription || des : exsitSchemas[path],
+        });
+      },
+    });
+    return {
+      content:  EJS.render(templateContent, {
+        params,
+      }),
+      params,
+    }
+  } else if(schemaName.endsWith('OrderByInput')) {
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path, description }) => {
+        if (path === undefined) {
+          return;
+        }
+        const schema = _.get(spec, prefix);
+        params.push({
+          name: path,
+          type: schema.type || "object",
+          description: lng === 'zh' ? '按照指定方式排列放回数据' : 'Sorts a list of records',
+        });
+      },
+    });
+    return {
+      content:  EJS.render(templateContent, {
+        params,
+      }),
+      params,
+    }
+  } else {
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path, description }) => {
+        if (path === undefined) {
+          return;
+        }
+        const previousDescription = previous && previous.length ? (previous.filter( p => p.name === path)).map(p => p.description)[0]: undefined
+        const schema = _.get(spec, prefix);
+        params.push({
+          name: path,
+          type: schema.type || "object",
+          description: exsitSchemas[path] === '' ?  previousDescription || description : exsitSchemas[path],
+        });
+      },
+    });
+    return {
+      content:  EJS.render(templateContent, {
+        params,
+      }),
+      params,
+    }
+  }
 };
 
 const getTagMarkdownAst = async (output) => {
