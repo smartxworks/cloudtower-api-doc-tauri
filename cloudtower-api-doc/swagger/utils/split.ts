@@ -48,6 +48,17 @@ export const splitSchema = (paths: ISpec["paths"], allSchemas: ISpec['components
     schema: Schema,
     schema_name: string,
   ) => {
+    const getRef = (schema:any) => {
+      const ref = schema.items?.$ref || schema.$ref || schema.allOf?.[0]?.$ref;
+      if (ref) {
+        const split_ref = ref.split("/").pop();
+        if (!schemas[split_ref]) {
+          const target_schema = allSchemas[split_ref];
+          schemas[split_ref] = target_schema;
+          traverseProperties(target_schema, split_ref);
+        }
+      }
+    }
     if (schema.type === "object") {
       schema.properties &&
         Object.keys(schema.properties).forEach((p) => {
@@ -75,17 +86,7 @@ export const splitSchema = (paths: ISpec["paths"], allSchemas: ISpec['components
           if (p === "AND" || p === "NOT" || p === "OR") {
             return unset(schemas, [schema_name, "properties", p]);
           }
-          const getRef = (schema:any) => {
-            const ref = schema.items?.$ref || schema.$ref || schema.allOf?.[0]?.$ref;
-            if (ref) {
-              const split_ref = ref.split("/").pop();
-              if (!schemas[split_ref]) {
-                const target_schema = allSchemas[split_ref];
-                schemas[split_ref] = target_schema;
-                traverseProperties(target_schema, split_ref);
-              }
-            }
-          }
+  
           getRef(prop);
           if(prop.type === 'object') {
             Object.entries(prop.properties).forEach(([prop_name, properties]) => {
@@ -93,8 +94,9 @@ export const splitSchema = (paths: ISpec["paths"], allSchemas: ISpec['components
             })
           }
         });
+    } else {
+      getRef(schema)
     }
-
   };
   Object.keys(schemas).forEach((schema) => {
     traverseProperties(schemas[schema], schema);
