@@ -1759,6 +1759,10 @@
     }
   },
   "schemas": {
+    "Authorization": {
+      "description": "Get token by post /v2/api/login ",
+      "name": "Authorization"
+    },
     "AddLabelsToResourcesParams": {
       "data.vms": "",
       "data.vm_volumes": "",

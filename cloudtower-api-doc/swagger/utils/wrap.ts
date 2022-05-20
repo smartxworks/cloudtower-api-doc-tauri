@@ -164,6 +164,7 @@ export const wrapSpecWithI18n = (
   // handle security schemas
   Object.keys(components.securitySchemes).forEach((s) => {
     const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
+    console.log('description', schema);
     _.set(cloneSpec, ["components","securitySchemes", s, "description"], schema['description']);
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });
@@ -191,7 +192,6 @@ export const splitSchema = (spec: ISpec,) => {
           ['AND', 'OR', 'NOT'].includes(key) ||
           ((key.endsWith('_some') || key.endsWith('_every') || key.endsWith('none') && ((value as OpenAPIV3.SchemaObject).allOf?.[0] as OpenAPIV3.ReferenceObject)?.$ref?.endsWith('WhereInput')))
         ) {
-          console.log(['components', 'schemas', ...properties_path, 'properties', key])
           _.unset(cloneSpec, ['components', 'schemas', ...properties_path, 'properties', key]);
         }
         traveseSchema(key, value, properties_path.concat(['properties', key]));
