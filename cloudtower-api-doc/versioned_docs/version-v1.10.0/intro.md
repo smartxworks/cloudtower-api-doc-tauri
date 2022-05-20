@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 id: intro
 slug: /
 ---
@@ -13,6 +12,7 @@ slug: /
 ​
 ​
 ## 如何调用
+​
 CloudTower API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或任何 HTTP 客户端进行调用。
 ​
 为每个具体的接口提供 example 示例，包括请求参数和返回参数示例，可以通过修改示例参数来进行调用。

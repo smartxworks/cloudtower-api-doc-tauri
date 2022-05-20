@@ -8,12 +8,13 @@ const traverse = (p, callback) => {
     callback(p);
   }
 }
-const generatedFiles = path.resolve(__dirname, '../generated/locales')
+const generatedFiles = path.resolve(__dirname, '../swagger/locales')
 
-
+console.log('generated', generatedFiles)
 traverse(generatedFiles, (file) => {
   const spec = require(file);
   const { paths, schemas, tags } = spec;
+  if(!paths && !schemas && !tags) { return }
   const miss_summary = {
     count: 0,
     path: [],
@@ -40,13 +41,14 @@ traverse(generatedFiles, (file) => {
     schemas: [],
   };
   schemaEntries.forEach(([key, value]) => {
-    if((Object.values(value).find(v => v === '') !== undefined) || (
+    if((Object.entries(value).filter(([k,v]) => {
+      return !['data', 'where', 'enum'].includes(k);
+    }).find(([k,v]) => v === '') !== undefined) || (
       Object.keys(value)[0] === 'enum' && Object.values(value)[0].split('\n').find(v =>  v.trim().endsWith(':'))
     )) {
+      if(key.endsWith('Connection') || key.endsWith('WhereInput')) { return; }
       miss_schemas.count += 1;
       miss_schemas.schemas.push(key);
-    } else {
-      console.log(key)
     }
   })
   const miss_display = {

@@ -1,7 +1,9 @@
-const EJS = require("ejs");
 const nodePath = require("path");
-const fsExtra = require("fs-extra");
 const _ = require("lodash");
+
+const getLocalesFile = (lng, version) => {
+  return nodePath.resolve(process.cwd(),  "./cloudtower-api-doc/swagger/locales", lng, `${version}.json`)
+}
 
 const describeRef = (params) => {
   const { path, describeFn, prefix } = params;
@@ -76,12 +78,16 @@ const describeAllOfSchema = (params) => {
 
 const describeEnum = (params) => {
   const { enumSchema, path, prefix, describeFn } = params;
+  const enumJson = require(nodePath.resolve(__dirname, '../../../tower/packages/i18n/src/locales/zh-CN/enum.json'));
   describeFn({
     prefix,
     path: "enum",
     description: prefix.join("").includes(`OrderByInput`)
       ? ""
-      : enumSchema.enum.map((e) => `${e}: `).join("<br/>"),
+      : enumSchema.enum.map((e) => {
+        const key = `${prefix[prefix.length - 1]}_${e}`;
+        return `${e}: ${enumJson[key] || ''}`
+      }).join("<br/>"),
   });
 };
 const describeAnyOfSchema = (params) => {
@@ -146,154 +152,25 @@ const describeSchema = (params) => {
   }
 };
 
-const describeRequestBody = (parmas) => {
-  const { requestBody, api_name, describeFn } = parmas;
-  if (requestBody.content) {
-    Object.keys(requestBody.content).forEach((media) => {
-      const { schema } = requestBody.content[media];
-      if (!schema.$ref && schema.type !== "array") {
-        describeSchema({
-          path: "",
-          describeFn,
-          schema: schema,
-          prefix: [
-            "paths",
-            api_name,
-            "post",
-            "requestBody",
-            "content",
-            media,
-            "schema",
-          ],
-        });
-      }
-    });
-  }
-};
 
-const getPathMarkdownAst = async (output) => {
-  if (!fsExtra.existsSync(output)) {
-    return {};
-  }
-  const { fromMarkdown } = await import("mdast-util-from-markdown");
-  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
-  const { gfmTable } = await import("micromark-extension-gfm-table");
-  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
-    extensions: [gfmTable],
-    mdastExtensions: [gfmTableFromMarkdown],
-  });
-  const { children } = ast;
-  const summary = children[0].children[1].value.split(":")[1];
-  const description = children[1].children[1].value.split(":")[1];
-  children[1].children[1].value.split(":")[1];
-
-  const responses = {};
-  const responseIndex = children
-    .slice()
-    .reverse()
-    .findIndex((c) => c.type == "table");
-  children
-    .slice()
-    .reverse()
-    [responseIndex].children.slice(1)
-    .forEach(({ children }) => {
-      const [code, description] = children;
-      responses[code.children[0].value] = description.children[0]
-        ? description.children[0].value
-        : "";
-    });
-  return {
-    summary,
-    description,
-    responses,
-  };
-};
-
-const getMarkDown = async (parameter) => {
-  const { spec, api, language, output } = parameter;
-  const params = [];
-  const ApiTemplatePath = nodePath.resolve(
-    __dirname,
-    "../templates/api-template.ejs"
-  );
-  const existApiContent = await getPathMarkdownAst(output);
-  const ApiTemplateContent = fsExtra.readFileSync(ApiTemplatePath, "utf-8");
-  const apiSpec = spec.paths[api];
-  if (!apiSpec) {
-    return "";
-  }
-  describeRequestBody({
-    requestBody: spec.paths[api].post.requestBody,
-    api_name: api,
-    describeFn: ({ prefix, path, description }) => {
-      if (!path) {
-        return;
-      }
-      const schema = _.get(spec, prefix);
-      params.push({
-        name: path,
-        type: schema.type,
-        description,
-      });
-    },
-  });
-  return EJS.render(ApiTemplateContent, {
-    api,
-    responses: Object.keys(apiSpec.post.responses, params),
-    params,
-    description: existApiContent.description || "",
-    summary: existApiContent.summary || "",
-    language,
-  });
-};
-
-const getSchemaMarkdownAst = async (output) => {
-  if (!fsExtra.existsSync(output)) {
-    return {};
-  }
-  const { fromMarkdown } = await import("mdast-util-from-markdown");
-  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
-  const { gfmTable } = await import("micromark-extension-gfm-table");
-  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
-    extensions: [gfmTable],
-    mdastExtensions: [gfmTableFromMarkdown],
-  });
-  const { children } = ast;
-  const schemas = {};
-  children[0].children.slice(1).forEach(({ children }) => {
-    const [name, _type, description] = children;
-    const nameValue = name.children[0] ? name.children[0].value : "";
-    schemas[nameValue] = description.children[0] ? description.children.map(c => c.value).join('') : ''
-  });
-  return schemas;
-};
-
-
-const getSchemaMarkdown = async ({ schemaName, spec, output, previous }) => {
-  const params = [];
-  const templatePath = nodePath.resolve(
-    __dirname,
-    "../templates/schema-template.ejs"
-  );
-  const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
-  const exsitSchemas = await getSchemaMarkdownAst(output);
-  const lng = output.includes('zh') ? 'zh' : 'en';
+const getSchemaMarkdown = async ({ schemaName, spec, locales, previousVersion, lng }) => {
+  const params = {};
+  const existedLocales = locales.schemas[schemaName] || {};
+  const previous = previousVersion ? require(getLocalesFile(lng, previousVersion)) : { schemas: {} };
+  const previousSchema = previous.schemas[schemaName] || {};
   if(schemaName.endsWith('WhereInput')) {
     const basicSchema = schemaName.replace('WhereInput', '');
-    const basicSchemaOutput = output.replace(schemaName, basicSchema);
-    const basicAst = await getSchemaMarkdownAst(basicSchemaOutput);
+    const basicAst = locales.schemas[basicSchema] || previous.schemas[basicSchema] || {};
     describeSchema({
       spec,
       schema: spec.components.schemas[schemaName],
       prefix: ["components", "schemas", schemaName],
-      describeFn: ({ prefix, path, description }) => {
+      describeFn: ({ prefix, path }) => {
         if (path === undefined) {
           return;
         }
-        let des = description;
+        let des = '';
         let basicDes = basicAst[path];
-        const previousDescription = previous && previous.length ? (previous.filter( p => p.name === path)).map(p => p.description)[0]: undefined
-        const schema = _.get(spec, prefix);
         if(basicDes) {
           des = basicDes
         } else if(basicDes = basicAst[path.replace('_in', '')]) {
@@ -335,110 +212,137 @@ const getSchemaMarkdown = async ({ schemaName, spec, output, previous }) => {
         } else if (path === 'NOT') {
           des = lng === 'zh' ? '不符合所有筛选条件': 'All conditions must return false.'
         } else {
-          console.log(path);
+          // console.log(path);
         }
-        params.push({
-          name: path,
-          type: schema.type || "object",
-          description: exsitSchemas[path] === '' ?  previousDescription || des : exsitSchemas[path],
-        });
+        params[path] = des;
       },
     });
-    return {
-      content:  EJS.render(templateContent, {
-        params,
-      }),
-      params,
-    }
+    return params;
   } else if(schemaName.endsWith('OrderByInput')) {
     describeSchema({
       spec,
       schema: spec.components.schemas[schemaName],
       prefix: ["components", "schemas", schemaName],
-      describeFn: ({ prefix, path, description }) => {
+      describeFn: ({ prefix, path }) => {
         if (path === undefined) {
           return;
         }
-        const schema = _.get(spec, prefix);
-        params.push({
-          name: path,
-          type: schema.type || "object",
-          description: lng === 'zh' ? '按照指定方式排列放回数据' : 'Sorts a list of records',
-        });
+        params[path] = lng === 'zh' ? '按照指定方式排列放回数据' : 'Sorts a list of records';
       },
     });
-    return {
-      content:  EJS.render(templateContent, {
-        params,
-      }),
-      params,
+    return params;
+  } else if(schemaName.startsWith('Nested')) {
+    if(schemaName.startsWith('NestedAggregate')) {
+      describeSchema({
+        spec,
+        schema: spec.components.schemas[schemaName],
+        prefix: ["components", "schemas", schemaName],
+        describeFn: ({ prefix, path }) => {
+          if (path === undefined) {
+            return;
+          }
+          params[path] = lng === 'zh' ? '数量' : 'count'
+        },
+      });
+      return params;
+    } else {
+      describeSchema({
+        spec,
+        schema: spec.components.schemas[schemaName],
+        prefix: ["components", "schemas", schemaName],
+        describeFn: ({ prefix, path }) => {
+          if (path === undefined) {
+            return;
+          }
+          params[path] = lng === 'zh' ? path === 'id' ? '唯一标识' : "名称" : path === 'id' ? 'id' : "name";
+        },
+      });
+      return params;
     }
+  } else if(schemaName.endsWith('RequestBody')){
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path }) => {
+        if (path === undefined) {
+          return;
+        }
+        let des = existedLocales[path] || '';
+        if(path === 'after') {
+          des = lng === 'zh' ? '填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。' : 'Fill in a single resource’s id, representing to acquire resources after this resource and not including it.'
+        } else if (path === 'before') {
+          des = lng === 'zh' ? '填入单个资源的 id。表示从该资源之前开始获取，不包含该资源' : 'Fill in a single resource’s id, representing to acquire resources before this resource but not including it.';
+        } else if(path === 'first') {
+          des = lng === 'zh' ? '可与 after / before 搭配使用，表示获取指定资源后的多少个数据。' : 'It can be used together with after / before, representing the number of data acquired after the specified resource.'
+        } else if (path === 'last') {
+          des = lng === 'zh' ? '可与 after / before 搭配使用，表示获取指定资源前的多少个数据。' : 'It can be used together with after / before, representing the number of data acquired before the specified resource.'
+        } else if (path === 'skip') {
+          des = lng === 'zh' ? '可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。' : 'It can be used together with after / before，representing to start a query after skipping n items of the specified resource.'
+        } else if (path === 'orderBy') {
+          des = lng === 'zh' ? '表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。' : ' It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.'
+        } else if (path === 'where') {
+          des = lng === 'zh' ? '条件查询，表示查询符合该条件的资源。' : 'conditional query, representing to query the resources that meet the conditions. '
+        }
+        params[path] = des;
+      },
+    });
+    return params;
+  } else if(schemaName.startsWith('WithTask_')) {
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path }) => {
+        if (path === undefined) {
+          return;
+        }
+        let des = '';
+        if(path === 'task_id') {
+          des = lng === 'zh' ? '异步任务 id。' : 'asynchronous task id '
+        } else if (path === 'data') {
+          des = lng === 'zh' ? '资源' : 'resources';
+        } else if(path === 'data.token') {
+          des = lng === 'zh' ? '鉴权 token' : 'authorization token';
+        }
+        params[path] = des;
+      },
+    });
+    return params;
+  } else if(schemaName.startsWith('Delete')) {
+    describeSchema({
+      spec,
+      schema: spec.components.schemas[schemaName],
+      prefix: ["components", "schemas", schemaName],
+      describeFn: ({ prefix, path }) => {
+        if (path === undefined) {
+          return;
+        }
+        let des = '';
+        if(path === 'id') {
+          des = lng === 'zh' ? '资源 id' : 'resource‘s id '
+        }
+        params[path] = des;
+      },
+    });
+    return params;
   } else {
     describeSchema({
       spec,
       schema: spec.components.schemas[schemaName],
       prefix: ["components", "schemas", schemaName],
-      describeFn: ({ prefix, path, description }) => {
-        if (path === undefined) {
+      describeFn: ({ prefix, path }) => {
+        if (path === undefined || prefix[prefix.length - 1] === 'items') {
           return;
-        }
-        const previousDescription = previous && previous.length ? (previous.filter( p => p.name === path)).map(p => p.description)[0]: undefined
-        const schema = _.get(spec, prefix);
-        params.push({
-          name: path,
-          type: schema.type || "object",
-          description: exsitSchemas[path] === '' ?  previousDescription || description : exsitSchemas[path],
-        });
+        } 
+        params[path] = existedLocales[path] || previousSchema[path] || '';
       },
     });
-    return {
-      content:  EJS.render(templateContent, {
-        params,
-      }),
-      params,
-    }
+    return params;
   }
 };
 
-const getTagMarkdownAst = async (output) => {
-  if (!fsExtra.existsSync(output)) {
-    return {};
-  }
-  const { fromMarkdown } = await import("mdast-util-from-markdown");
-  const { gfmTableFromMarkdown } = await import("mdast-util-gfm-table");
-  const { gfmTable } = await import("micromark-extension-gfm-table");
-  const ast = fromMarkdown(fsExtra.readFileSync(output, "utf-8"), {
-    extensions: [gfmTable],
-    mdastExtensions: [gfmTableFromMarkdown],
-  });
-  const { children } = ast;
-  const tags = {};
-  children[0].children.slice(1).forEach(({ children }) => {
-    const [name, display, description] = children;
-    const nameValue = name.children[0] ? name.children[0].value : "";
-    tags[nameValue] = {
-      display: display.children[0] ? display.children[0].value : "",
-      description: description.children[0] ? description.children[0].value : "",
-    };
-  });
-  return tags;
+module.exports = { 
+  getLocalesFile,
+  getSchemaMarkdown,
 };
-
-const getTagsMarkdown = async (tags, output) => {
-  const templatePath = nodePath.resolve(
-    __dirname,
-    "../templates/tag-template.ejs"
-  );
-  const existTags = await getTagMarkdownAst(output);
-  const newTags = tags.map(tag => {
-    return {
-      name: tag,
-      display: existTags[tag].display || '',
-      description: existTags[tag].description || "",
-    };
-  })
-  const templateContent = fsExtra.readFileSync(templatePath, "utf-8");
-  return EJS.render(templateContent, { tags: newTags });
-};
-
-module.exports = { getMarkDown, getSchemaMarkdown, getTagsMarkdown };

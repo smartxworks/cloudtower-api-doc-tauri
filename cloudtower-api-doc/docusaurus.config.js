@@ -6,6 +6,14 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
 const versions = require("./versions.json");
 
+process.env = new Proxy(process.env, {
+  get(target, prop) {
+    if(prop === 'NODE_ENV') {
+      return 'development'
+    }
+    return typeof target[prop] === 'function' ? target[prop].bind(target) : target[prop]
+  }
+})
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CloudTower API",
@@ -18,6 +26,7 @@ const config = {
     defaultLocale: "zh",
     locales: ["zh", "en"],
   },
+  onBrokenLinks: "log",
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -56,6 +65,8 @@ const config = {
                 path: require.resolve("path-browserify"),
                 os: require.resolve("os-browserify/browser"),
                 tty: require.resolve("tty-browserify"),
+                fs: false,
+                http: require.resolve("stream-http")
               },
             },
           };
@@ -75,36 +86,36 @@ const config = {
         },
         items: [
           {
-            type: "docsVersion",
-            to: "/",
+            type: "doc",
+            docId: "intro",
             label: "通用指南" 
           },
           {
-            type: "docsVersion",
-            to: "/api",
-            label: "CloudtTower API"
+            docId: "api",
+            type: "doc",
+            label: "CloudtTower API",
           },
           {
             label: "下载",
             items: [
               {
-                type: "docsVersion",
-                to: "/download",
+                type: "doc",
+                docId: "download",
                 label: "概览"
               },
               {
-                type: "docsVersion",
-                to: "/java-sdk",
+                type: "doc",
+                docId: "java-sdk",
                 label: "CloudTower Java SDK",
               },
               {
-                to: "/python-sdk",
-                type: "docsVersion",
+                docId: "python-sdk",
+                type: "doc",
                 label: "CloudTower Python SDK"
               },
               {
-                to: "/go-sdk",
-                type: "docsVersion",
+                docId: "go-sdk",
+                type: "doc",
                 label: "CloudTower Go SDK"
               }
             ]
@@ -127,6 +138,10 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        disableSwitch: true,
+        defaultMode: "light",
+      }
     })
 };
 
