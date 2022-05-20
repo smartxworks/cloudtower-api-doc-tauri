@@ -10,7 +10,6 @@ const traverse = (p, callback) => {
 }
 const generatedFiles = path.resolve(__dirname, '../swagger/locales')
 
-console.log('generated', generatedFiles)
 traverse(generatedFiles, (file) => {
   const spec = require(file);
   const { paths, schemas, tags } = spec;
