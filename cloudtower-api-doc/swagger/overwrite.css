@@ -16,13 +16,23 @@
 .swagger-ui .markdown p, .swagger-ui .markdown pre, .swagger-ui .renderedMarkdown p, .swagger-ui .renderedMarkdown pre {
   white-space: break-spaces;
 }
-
+#swagger-ui>#server-wrapper {
+  display: none;
+}
+#server-wrapper {
+  display: flex;
+  margin-left: 40px;
+}
+#server-wrapper select {
+  margin-left: 10px;
+}
 .add-server {
   display: inline-block;
 }
 .add-server input {
   height: 24px;
   width: 400px;
+  margin-left: 10px;
 }
 
 .swagger-ui div.scheme-container {
@@ -127,11 +137,25 @@ html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(4) {
   padding-top: 0px !important;
 }
 
-.container.redoc-container .react-tabs__tab-panel--selected  pre,
-.container.redoc-container .react-tabs__tab-panel--selected  code {
-  background: transparent;
+.toggleTrack_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
+  display: none;
 }
 
-.redoc-container .sc-hiwPVj {
-  background: rgb(38 50 56 / 60%);
+#__docusaurus  div.main-wrapper.docs-wrapper.docs-doc-page .container.redoc-container .isTegH {
+  display: none;
+}
+#swagger-ui .fIHbnP, #swagger-ui .sc-fmWebE, #swagger-ui .sc-hgKiOD {
+  display: none;
+}
+
+li .dropdown__link[href="/java-sdk"], 
+li .dropdown__link[href="/python-sdk"],
+li .dropdown__link[href="/go-sdk"] ,
+li .dropdown__link[href="/v1.10.0/python-sdk"],
+li .dropdown__link[href="/v1.10.0/go-sdk"],
+li .dropdown__link[href="/v1.8.0/java-sdk"] ,
+li .dropdown__link[href="/v1.8.0/python-sdk"],
+li .dropdown__link[href="/v1.8.0/go-sdk"] {
+  pointer-events: none;
+  color: gray;
 }

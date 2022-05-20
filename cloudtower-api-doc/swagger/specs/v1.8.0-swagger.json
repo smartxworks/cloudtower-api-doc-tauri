@@ -82042,7 +82042,7 @@
   "info": {
     "title": "Tower SDK API",
     "version": "1.8.0",
-    "description": "cloudtower operation API and SDK"
+    "description": ""
   },
   "openapi": "3.0.0",
   "paths": {

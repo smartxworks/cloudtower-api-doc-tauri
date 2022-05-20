@@ -2,10 +2,10 @@
 const yargsInteractive = require("yargs-interactive");
 const nodePath = require("path");
 const fsExtra = require("fs-extra");
+const versions = require("../versions.json");
 const {
-  getMarkDown,
   getSchemaMarkdown,
-  getTagsMarkdown,
+  getLocalesFile,
 } = require("./describe");
 
 yargsInteractive()
@@ -18,24 +18,30 @@ yargsInteractive()
       description: "Provide swagger json file version",
       type: "input",
     },
-    diff: {
-      description:
-        "Provide the old json spec file version you want to compare with, leave it blank when you don't want to compare",
-      type: "input",
-    },
-    lng: {
-      description: "zh or en",
-      type: "input"
-    },
   })
   .then((result) => {
     createNewApiDoc(result);
   });
 
 const createNewApiDoc = async (argv) => {
-  const { version, diff } = argv;
-  let { lng } = argv;
-  const getSwaggerPath = (v) => nodePath.resolve(process.cwd(), './cloudtower-api-doc/swagger/specs/', `${v}-swagger.json`);
+  const { version } = argv;
+  const getSwaggerPath = (v) =>
+    nodePath.resolve(
+      process.cwd(),
+      "./cloudtower-api-doc/swagger/specs/",
+      `${v}-swagger.json`
+    );
+  const traverPreviousVersion = async (current_version, onGetDiffSpec) => {
+    let early_break = false;
+    let versionIndex = versions.findIndex((v) => v === current_version) + 1;
+    versionIndex = versions.findIndex((v) => v === current_version) + 1;
+    while (!early_break && versionIndex < versions.length) {
+      const diff = versions[versionIndex];
+      early_break = await onGetDiffSpec(diff);
+      versionIndex += 1;
+    }
+  };
+
   const specAbsolutePath = getSwaggerPath(version);
   const pMap = (await import("p-map")).default;
   if (!fsExtra.statSync(specAbsolutePath).isFile()) {
@@ -44,69 +50,83 @@ const createNewApiDoc = async (argv) => {
         specAbsolutePath
     );
   }
-  if(!lng) { lng = 'zh' }
-  const outputBasePath = nodePath.resolve(process.cwd(), "./cloudtower-api-doc/markdown/", lng, version );
-  const outputApiPath = nodePath.join(outputBasePath, "paths");
-  const outputSchemaPath = nodePath.join(outputBasePath, "schemas");
-  const outputTagPath = nodePath.join(outputBasePath, "tags");
-  [outputApiPath, outputSchemaPath, outputTagPath].forEach((path) =>
-    fsExtra.ensureDirSync(path, { mode: 0777 })
-  );
-  let diffSpecPath;
-  let diffBasePath;
-  let diffSpec;
-  if (diff) {
-    diffSpecPath = getSwaggerPath(diff);
-    if (!fsExtra.existsSync(diffSpecPath)) {
-      throw new Error(
-        "can not find spec file path, check your path, provided path is: " +
-          diffSpecPath
-      );
-    }
-    diffSpec = require(diffSpecPath);
-    diffBasePath = nodePath.resolve(process.cwd(), "./cloudtower-api-doc/markdown/", lng, diff );
-  }
-  const spec = require(specAbsolutePath);
-  const { paths, components } = spec;
-  const tags = new Set();
-  await pMap(Object.keys(components.schemas), async (schemaName) => {
-    const outputSchemaFilePath = nodePath.join(
-      outputSchemaPath,
-      `${schemaName}.md`
-    );
-    let diffSchema;
-    if (diff && diffSpec.components.schemas[schemaName]) {
-      const outputDiffSchemaFilePath = nodePath.join(diffBasePath, "schemas", `${schemaName}.md`);
-      diffSchema = await getSchemaMarkdown({ schemaName, spec: diffSpec, output: outputDiffSchemaFilePath });
-    }
-    const { content } = await getSchemaMarkdown({ schemaName, spec, output: outputSchemaFilePath, previous: diffSchema ? diffSchema.params : undefined});
-    if(diffSchema && diffSchema.content === content) { return;}
-    fsExtra.writeFileSync(outputSchemaFilePath, content, "utf-8");
-  });
-  await pMap(Object.keys(paths), async (api) => {
-    const outputApiFilePath = nodePath.join(outputApiPath, `${api}.md`);
-    const content = await getMarkDown({ spec, api, language: lng, output:outputApiFilePath});
-    const tagList = spec.paths[api].post.tags;
-    if (tagList) {
-      tagList.forEach(tag => tags.add(tag));
-    }
-    if (diff && diffSpec.paths[api]) {
-      const diffTagList = diffSpec.paths[api].post.tags;
-      if (diffTagList) {
-        diffTagList.forEach((tag) => {
-          if (tags.has(tag)) {
-            tags.delete(tag);
-          }
-        });
-      }
-      const diffContent = await getMarkDown({ spec: diffSpec, api, language: lng, output: outputApiFilePath});
-      if (content === diffContent) {
+
+  await pMap(['zh', 'en'], async (lng) => {
+    const spec = require(specAbsolutePath);
+    const { paths, components } = spec;
+    const tags = new Set();
+    const outputLocalesPath = getLocalesFile(lng, version);
+    const locales = require(outputLocalesPath) || {
+      schemas: {},
+      tags: {},
+      paths: []
+    };
+    await pMap(Object.keys(components.schemas), async (schemaName) => {
+      let diffSchema;
+      let previousVersion;
+      await traverPreviousVersion(version, async (previous) => {
+        const previousLocales = require(getLocalesFile(lng, previous));
+        diffSchema = previousLocales.schemas[schemaName]
+        if(diffSchema) {
+          previousVersion = previous;
+          return diffSchema;
+        }
+      });
+      const content = await getSchemaMarkdown({
+        schemaName,
+        spec,
+        locales,
+        previousVersion: previousVersion,
+        lng,
+      });
+      if (JSON.stringify(diffSchema) === JSON.stringify(content)) {
         return;
       }
+      locales.schemas[schemaName] = content;
+    });
+    await pMap(Object.keys(paths), async (api) => {
+      const content = locales.paths[api];
+      const tagList = spec.paths[api].post.tags;
+      if (tagList) {
+        tagList.forEach((tag) => tags.add(tag));
+      }
+      let diffContent;
+      await traverPreviousVersion(version, async (previous) => {
+        const previousLocales = require(getLocalesFile(lng, previous));
+        diffContent = previousLocales.paths[api];
+        return diffContent;
+      });
+      if (diffContent) {
+        return;
+      }
+      locales.paths[api] = content || {
+        summary: '',
+        description: ''
+      };
+    });
+    await traverPreviousVersion(version, async (previous) => {
+      const previousSpec = require(getSwaggerPath(previous));
+      await pMap(Object.keys(previousSpec.paths), async (api) => {
+        const tagList = previousSpec.paths[api].post.tags;
+        tagList &&
+          tagList.forEach((tag) => {
+            if (tags.has(tag)) {
+              tags.delete(tag);
+            }
+          });
+      });
+      return tags.length === 0;
+    });
+    if (tags.size) {
+      tags.forEach(tag => {
+        if(locales.tags.find(t => t.name === tag)) { return; }
+        locales.tags.push({
+          name: tag,
+          "x-displayName": "",
+          "description": ""
+        })
+      })
     }
-    fsExtra.writeFileSync(outputApiFilePath, content, "utf-8");
-  });
-  const outputTagFilePath = nodePath.join(outputTagPath, `tag.md`);
-  const content = await getTagsMarkdown(Array.from(tags), outputTagFilePath);
-  fsExtra.writeFileSync(outputTagFilePath, content);
+    fsExtra.writeFileSync(outputLocalesPath, JSON.stringify(locales, null, 2), "utf-8");
+  })
 };

@@ -1,31 +1,9 @@
 import _ from "lodash";
-import { OpenAPI, OpenAPIV3 } from "openapi-types";
+import { OpenAPIV3 } from "openapi-types";
 import httpSnippet from "httpsnippet";
 import i18next, { ApiDoc } from "../i18n";
 import { ISpec } from "./swagger";
 import { describeSchema } from "./describe";
-
-const isIgnoreParams = (params: {
-  prefix: string[];
-  spec: ISpec;
-}) => {
-  const { prefix, spec } = params;
-  const itemSchema = _.get(spec, prefix) as OpenAPIV3.ArraySchemaObject | OpenAPIV3.NonArraySchemaObject;
-  if(((itemSchema as OpenAPIV3.ArraySchemaObject)?.items as OpenAPIV3.ReferenceObject)?.$ref?.endsWith(`WhereInput`)) {
-    return true;
-  }
-  if((itemSchema as OpenAPIV3.ReferenceObject)?.$ref?.endsWith(`WhereInput`)) { 
-    return true;
-  }
-};
-
-const combineAllTags = (lng:string) => {
-  const tags:ISpec['tags'] = [
-    ...(i18next.t(`v1_8_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
-    ...(i18next.t(`v1_9_0.tags`, { returnObjects: true, lng }) as ISpec['tags'])
-  ];
-  return tags;
-}
 
 const genSchemaExample = (params: {
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject, field: string, spec:ISpec, schemaName: string,
@@ -61,14 +39,12 @@ const genSchemaExample = (params: {
       })
     }
     if(properties?.where && ((properties.where as OpenAPIV3.NonArraySchemaObject).allOf?.[0] as OpenAPIV3.ReferenceObject)?.$ref && !required?.includes('where')) {
-      console.log('ggg');
       const ref = ((properties.where as OpenAPIV3.NonArraySchemaObject).allOf[0] as OpenAPIV3.ReferenceObject).$ref;
       const resource = ref.split('/').pop().replace('WhereInput', '').replace('WhereUniqueInput', ''); 
       example['where'] = { id: `${resource}-id` }
     }
     if(schemaName.endsWith('WhereInput') || schemaName.endsWith('WhereUniqueInput')) {
       const resource = schemaName.replace('WhereInput', '').replace('WhereUniqueInput', ''); 
-      console.log('sche', schemaName, resource)
       example['id'] = `${resource}-id`;
     }
     return example;
@@ -117,11 +93,12 @@ export const wrapSpecWithI18n = (
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
-  cloneSpec.tags = combineAllTags(language);
+  const tags = new Set<string>();
+  // handle paths
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${version.split('.').join('_')}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
     const post = paths[p].post as OpenAPIV3.OperationObject;
-    const { description, summary, responses } = apiDoc;
+    const { description, summary } = apiDoc;
     post.description = description;
     post.summary = summary;
     if ((post.requestBody as OpenAPIV3.RequestBodyObject).content) {
@@ -161,31 +138,71 @@ export const wrapSpecWithI18n = (
         ];
         (post.requestBody as OpenAPIV3.RequestBodyObject).content[
           meta
-        ].examples = [{
-          description: "",
-          summary: "",
-          value: exampleValue,
-        }] as any;
+        ].examples = {
+          Example: {
+              description: "",
+              summary: "",
+              value: exampleValue,
+          }
+        };
       });
     }
-    Object.keys(post.responses).forEach((c) => {
-      (post.responses[c] as OpenAPIV3.ResponseObject).description =
-        responses[c];
-    });
     cloneSpec.paths[p].post = post;
+    post.tags?.forEach(tag => tags.add(tag));
   });
+  // handle schemas
   Object.keys(components.schemas).forEach((s) => {
     const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
     describeSchema({
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
       describeFn: ({ prefix, path }) => {
-        if (isIgnoreParams({ prefix, spec })) {
-          _.set(cloneSpec, [...prefix], {type: 'object'})
-        }
         _.set(cloneSpec, [...prefix, "description"], schema[path]);
       },
     });
   });
+  // handle security schemas
+  Object.keys(components.securitySchemes).forEach((s) => {
+    const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
+    _.set(cloneSpec, ["components","securitySchemes", s, "description"], schema['description']);
+    _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
+  });
+  // handle tags
+  const combineAllTags = (lng:string, filter:Set<string>) => {
+    const tags:ISpec['tags'] = [
+      ...(i18next.t(`v1_8_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+      ...(i18next.t(`v1_9_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+      ...(i18next.t(`v1_10_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+      ...(i18next.t(`v2_0_0.tags`, { returnObjects: true, lng }) as ISpec['tags'])
+    ];
+    return tags.filter(tag => filter.has(tag.name));
+  }
+  cloneSpec.tags = combineAllTags(language, tags);
   return cloneSpec;
 };
+
+
+export const splitSchema = (spec: ISpec,) => {
+  const cloneSpec = _.cloneDeep(spec);
+  const traveseSchema = (name: string, schemaContent: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject, properties_path: string[]) => {
+    if((schemaContent as OpenAPIV3.SchemaObject)?.type === 'object') {
+      Object.entries((schemaContent as OpenAPIV3.SchemaObject).properties).forEach(([key, value]) => {
+        if(
+          ['AND', 'OR', 'NOT'].includes(key) ||
+          ((key.endsWith('_some') || key.endsWith('_every') || key.endsWith('none') && ((value as OpenAPIV3.SchemaObject).allOf?.[0] as OpenAPIV3.ReferenceObject)?.$ref?.endsWith('WhereInput')))
+        ) {
+          console.log(['components', 'schemas', ...properties_path, 'properties', key])
+          _.unset(cloneSpec, ['components', 'schemas', ...properties_path, 'properties', key]);
+        }
+        traveseSchema(key, value, properties_path.concat(['properties', key]));
+      })
+    } 
+  }
+  Object.entries(cloneSpec.components.schemas).forEach((
+    [ schemaName, schema ]
+  ) => {
+    const properties_path = [ schemaName ];
+    traveseSchema(schemaName, schema, properties_path);
+  })
+  return cloneSpec;
+}

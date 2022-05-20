@@ -1,3 +1,0 @@
-| parameter | Type | Description |
-| ----------- | ----------- |----------- |
-| enum  |  string  | architecture_ASC: <br/>architecture_DESC: <br/>cloud_init_supported_ASC: <br/>cloud_init_supported_DESC: <br/>createdAt_ASC: <br/>createdAt_DESC: <br/>description_ASC: <br/>description_DESC: <br/>entityAsyncStatus_ASC: <br/>entityAsyncStatus_DESC: <br/>id_ASC: <br/>id_DESC: <br/>memory_ASC: <br/>memory_DESC: <br/>name_ASC: <br/>name_DESC: <br/>os_ASC: <br/>os_DESC: <br/>size_ASC: <br/>size_DESC: <br/>updatedAt_ASC: <br/>updatedAt_DESC: <br/>vcpu_ASC: <br/>vcpu_DESC:    |

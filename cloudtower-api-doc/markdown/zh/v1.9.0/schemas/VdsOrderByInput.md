@@ -1,3 +1,0 @@
-| parameter | Type | Description |
-| ----------- | ----------- |----------- |
-| enum  |  string  | bond_mode_ASC: <br/>bond_mode_DESC: <br/>createdAt_ASC: <br/>createdAt_DESC: <br/>entityAsyncStatus_ASC: <br/>entityAsyncStatus_DESC: <br/>id_ASC: <br/>id_DESC: <br/>internal_ASC: <br/>internal_DESC: <br/>local_id_ASC: <br/>local_id_DESC: <br/>name_ASC: <br/>name_DESC: <br/>ovsbr_name_ASC: <br/>ovsbr_name_DESC: <br/>type_ASC: <br/>type_DESC: <br/>updatedAt_ASC: <br/>updatedAt_DESC: <br/>vlans_num_ASC: <br/>vlans_num_DESC: <br/>work_mode_ASC: <br/>work_mode_DESC:    |
