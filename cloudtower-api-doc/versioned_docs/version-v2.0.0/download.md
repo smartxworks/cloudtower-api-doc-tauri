@@ -10,7 +10,7 @@ import Download from '../../swagger/components/Download';
 
 | 语言 | 地址 |
 | :-----| :----- |
-| java | 暂未发布 2.0.0 版本 | 
-| go | 暂未发布 2.0.0 版本 | 
-| python | 暂未发布 2.0.0 版本 | 
+| java | [GitHub 地址](https://github.com/smartxworks/cloudtower-java-sdk/releases/tag/v2.0.0) | 
+| go | [GitHub 地址](https://github.com/smartxworks/cloudtower-go-sdk/releases/tag/v2.0.0) | 
+| python | [GitHub 地址](https://github.com/smartxworks/cloudtower-python-sdk/releases/tag/v2.0.0)  | 
 | json | <Download/> |
