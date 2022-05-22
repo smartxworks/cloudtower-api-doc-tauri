@@ -148,11 +148,6 @@ html[lang="en"]  ul.menu__list > li:nth-child(3) > ul > li:nth-child(4) {
   display: none;
 }
 
-li .dropdown__link[href="/java-sdk"], 
-li .dropdown__link[href="/python-sdk"],
-li .dropdown__link[href="/go-sdk"] ,
-li .dropdown__link[href="/en/java-sdk"], 
-li .dropdown__link[href="/en/python-sdk"],
 li .dropdown__link[href="/en/go-sdk"] ,
 li .dropdown__link[href="/en/v1.10.0/go-sdk"],
 li .dropdown__link[href="/en/v1.9.0/go-sdk"] ,
