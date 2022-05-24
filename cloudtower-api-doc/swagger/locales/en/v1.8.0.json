@@ -7,7 +7,7 @@
     },
     {
       "name": "AlertRule",
-      "x-displayName": "",
+      "x-displayName": "Alert Rules",
       "description": ""
     },
     {
@@ -232,17 +232,17 @@
     },
     {
       "name": "NvmfNamespace",
-      "x-displayName": "NVMF namespace",
+      "x-displayName": "Nvme namespace",
       "description": ""
     },
     {
       "name": "NvmfNamespaceSnapshot",
-      "x-displayName": "NVMF Namespace Snapshot",
+      "x-displayName": "Nvme Namespace Snapshot",
       "description": ""
     },
     {
       "name": "NvmfSubsystem",
-      "x-displayName": "NVMF Subsystem",
+      "x-displayName": "Nvme Subsystem",
       "description": ""
     },
     {
@@ -462,7 +462,7 @@
       "description": ""
     },
     "/clone-nvmf-namespace-from-snapshot": {
-      "summary": " Clone a NVMF namespace from snapshot",
+      "summary": " Clone a Nvme namespace from snapshot",
       "description": ""
     },
     "/clone-snapshot-group": {
@@ -546,15 +546,15 @@
       "description": ""
     },
     "/create-nvmf-namespace-snapshot": {
-      "summary": " Create an NVMF namespace snapshot",
+      "summary": " Create an Nvme namespace snapshot",
       "description": ""
     },
     "/create-nvmf-namespace": {
-      "summary": " Create an NVMF namespace",
+      "summary": " Create an Nvme namespace",
       "description": ""
     },
     "/create-nvmf-subsystem": {
-      "summary": " Create an NVMF Subsystem",
+      "summary": " Create an Nvme Subsystem",
       "description": ""
     },
     "/create-organization": {
@@ -694,15 +694,15 @@
       "description": ""
     },
     "/delete-nvmf-namespace-snapshot": {
-      "summary": " Delete the NVMF namespace snapshot",
+      "summary": " Delete the Nvme namespace snapshot",
       "description": ""
     },
     "/delete-nvmf-namespace": {
-      "summary": " Delete the NVMF namespace",
+      "summary": " Delete the Nvme namespace",
       "description": ""
     },
     "/delete-nvmf-subsystem": {
-      "summary": " Delete the NVMF Subsystem",
+      "summary": " Delete the Nvme Subsystem",
       "description": ""
     },
     "/delete-organization": {
@@ -1138,27 +1138,27 @@
       "description": ""
     },
     "/get-nvmf-namespace-snapshots-connection": {
-      "summary": " Get the number of NVMF namespace snapshots",
+      "summary": " Get the number of Nvme namespace snapshots",
       "description": ""
     },
     "/get-nvmf-namespace-snapshots": {
-      "summary": " Get NVMF namespace snapshots",
+      "summary": " Get Nvme namespace snapshots",
       "description": ""
     },
     "/get-nvmf-namespaces-connection": {
-      "summary": " Get the number of NVMF namespaces",
+      "summary": " Get the number of Nvme namespaces",
       "description": ""
     },
     "/get-nvmf-namespaces": {
-      "summary": " Get NVMF namespaces",
+      "summary": " Get Nvme namespaces",
       "description": ""
     },
     "/get-nvmf-subsystems-connection": {
-      "summary": " Get the number of NVMF Subsystems",
+      "summary": " Get the number of Nvme Subsystems",
       "description": ""
     },
     "/get-nvmf-subsystems": {
-      "summary": " Get NVMF Subsystems",
+      "summary": " Get Nvme Subsystems",
       "description": ""
     },
     "/get-organizations-connection": {
@@ -1550,7 +1550,7 @@
       "description": ""
     },
     "/rollback-nvmf-namespace-from-snapshot": {
-      "summary": " Rollback the NVMF namespace from snapshot",
+      "summary": " Rollback the Nvme namespace from snapshot",
       "description": ""
     },
     "/rollback-snapshot-group": {
@@ -1678,11 +1678,11 @@
       "description": ""
     },
     "/update-nvmf-namespace": {
-      "summary": " Update the NVMF namespace",
+      "summary": " Update the Nvme namespace",
       "description": ""
     },
     "/update-nvmf-subsystem": {
-      "summary": " Update the NVMF Subsystem",
+      "summary": " Update the Nvme Subsystem",
       "description": ""
     },
     "/update-organization": {
@@ -1764,31 +1764,31 @@
       "name": "Authorization"
     },
     "AddLabelsToResourcesParams": {
-      "data.vms": "",
-      "data.vm_volumes": "",
-      "data.vm_templates": "",
-      "data.vm_snapshots": "",
-      "data.vlans": "",
-      "data.vdses": "",
-      "data.nvmf_subsystems": "",
-      "data.nvmf_namespace_snapshots": "",
-      "data.nvmf_namespaces": "",
-      "data.nics": "",
-      "data.nfs_inodes": "",
-      "data.nfs_exports": "",
-      "data.namespace_groups": "",
-      "data.iscsi_targets": "",
-      "data.iscsi_lun_snapshots": "",
-      "data.iscsi_luns": "",
-      "data.hosts": "",
-      "data.elf_images": "",
-      "data.disks": "",
-      "data.datacenters": "",
-      "data.consistency_group_snapshots": "",
-      "data.consistency_groups": "",
-      "data.clusters": "",
-      "data": "",
-      "where": ""
+      "data.vms": "associated VMs",
+      "data.vm_volumes": "associated virtual volumes",
+      "data.vm_templates": "associated VM templates",
+      "data.vm_snapshots": "associated VM snapshots",
+      "data.vlans": "associated VLAN",
+      "data.vdses": "associated virtual distributed switch",
+      "data.nvmf_subsystems": "associated NVMe subsystems",
+      "data.nvmf_namespace_snapshots": "associated NVMe namespace snapshots",
+      "data.nvmf_namespaces": "associated NVMe namespaces",
+      "data.nics": "associated NICs",
+      "data.nfs_inodes": "associated NFS file",
+      "data.nfs_exports": "associated NFS export",
+      "data.namespace_groups": "associated Namespace Groups",
+      "data.iscsi_targets": "associated ISCSI targets",
+      "data.iscsi_lun_snapshots": "associated LUN snapshots",
+      "data.iscsi_luns": "associated Luns",
+      "data.hosts": "associated hosts",
+      "data.elf_images": "associated ISO images",
+      "data.disks": "associated physical disks",
+      "data.datacenters": "associated data centers",
+      "data.consistency_group_snapshots": "associated",
+      "data.consistency_groups": "associated consistency groups",
+      "data.clusters": "associated clusters",
+      "data": "associated resources",
+      "where": "filter condition of labes"
     },
     "Alert": {
       "alert_rule": "",

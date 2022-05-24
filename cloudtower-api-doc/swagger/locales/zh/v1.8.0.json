@@ -25,7 +25,7 @@
       "description": ""
     },
     "/clone-nvmf-namespace-from-snapshot": {
-      "summary": " 从快照克隆 NVMF namespace",
+      "summary": " 从快照克隆 NVMe namespace",
       "description": ""
     },
     "/clone-snapshot-group": {
@@ -109,15 +109,15 @@
       "description": ""
     },
     "/create-nvmf-namespace-snapshot": {
-      "summary": " 创建 NVMF namespace 快照",
+      "summary": " 创建 NVMe namespace 快照",
       "description": ""
     },
     "/create-nvmf-namespace": {
-      "summary": " 创建 NVMF namespace",
+      "summary": " 创建 NVMe namespace",
       "description": ""
     },
     "/create-nvmf-subsystem": {
-      "summary": " 创建 NVMF Subsystem",
+      "summary": " 创建 NVMe Subsystem",
       "description": ""
     },
     "/create-organization": {
@@ -257,15 +257,15 @@
       "description": ""
     },
     "/delete-nvmf-namespace-snapshot": {
-      "summary": " 删除 NVMF namespace 快照",
+      "summary": " 删除 NVMe namespace 快照",
       "description": ""
     },
     "/delete-nvmf-namespace": {
-      "summary": " 删除 NVMF namespace",
+      "summary": " 删除 NVMe namespace",
       "description": ""
     },
     "/delete-nvmf-subsystem": {
-      "summary": " 删除 NVMF Subsystem",
+      "summary": " 删除 NVMe Subsystem",
       "description": ""
     },
     "/delete-organization": {
@@ -701,27 +701,27 @@
       "description": ""
     },
     "/get-nvmf-namespace-snapshots-connection": {
-      "summary": " 获取 NVMF namespace 快照数量",
+      "summary": " 获取 NVMe namespace 快照数量",
       "description": ""
     },
     "/get-nvmf-namespace-snapshots": {
-      "summary": " 获取 NVMF namespace 快照",
+      "summary": " 获取 NVMe namespace 快照",
       "description": ""
     },
     "/get-nvmf-namespaces-connection": {
-      "summary": " 获取 NVMF namespace 数量",
+      "summary": " 获取 NVMe namespace 数量",
       "description": ""
     },
     "/get-nvmf-namespaces": {
-      "summary": " 获取 NVMF namespace",
+      "summary": " 获取 NVMe namespace",
       "description": ""
     },
     "/get-nvmf-subsystems-connection": {
-      "summary": " 获取 NVMF Subsystem 数量",
+      "summary": " 获取 NVMe subsystem 数量",
       "description": ""
     },
     "/get-nvmf-subsystems": {
-      "summary": " 获取 NVMF Subsystem",
+      "summary": " 获取 NVMe subsystem",
       "description": ""
     },
     "/get-organizations-connection": {
@@ -1113,7 +1113,7 @@
       "description": ""
     },
     "/rollback-nvmf-namespace-from-snapshot": {
-      "summary": " 从快照回滚 NVMF namespace",
+      "summary": " 从快照回滚 NVMe namespace",
       "description": ""
     },
     "/rollback-snapshot-group": {
@@ -1241,11 +1241,11 @@
       "description": ""
     },
     "/update-nvmf-namespace": {
-      "summary": " 更新 NVMF namespace",
+      "summary": " 更新 NVMe namespace",
       "description": ""
     },
     "/update-nvmf-subsystem": {
-      "summary": " 更新 NVMF Subsystem",
+      "summary": " 更新 NVMe subsystem",
       "description": ""
     },
     "/update-organization": {
@@ -1333,9 +1333,9 @@
       "data.vm_snapshots": "关联虚拟机快照",
       "data.vlans": "关联 VLAN",
       "data.vdses": "关联虚拟机交换机",
-      "data.nvmf_subsystems": "关联 NVMF Subsystem",
-      "data.nvmf_namespace_snapshots": "关联 NVMF Namespace 快照",
-      "data.nvmf_namespaces": "关联 NVMF Namespace",
+      "data.nvmf_subsystems": "关联 NVMe Subsystem",
+      "data.nvmf_namespace_snapshots": "关联 NVMe namespace 快照",
+      "data.nvmf_namespaces": "关联 NVMe Namespace",
       "data.nics": "关联网卡",
       "data.nfs_inodes": "关联 NFS 文件",
       "data.nfs_exports": "关联 NFS Export",
@@ -2094,7 +2094,7 @@
       "name": "名称",
       "ntp_mode": "NTP 服务器访问模式",
       "ntp_servers": "NTP 服务器",
-      "nvmf_enabled": "是否开启 NVMF",
+      "nvmf_enabled": "是否开启 NVMe",
       "pmem_enabled": "集群是否支持 PMem",
       "provisioned_cpu_cores": "虚拟机 vCPU 总分配",
       "provisioned_cpu_cores_for_active_vm": "虚拟机 vCPU 活跃分配",
@@ -3097,7 +3097,7 @@
       "local_created_at": "创建时间",
       "local_id": "UUID",
       "name": "名称",
-      "nvmf_namespace_snapshots": "NVMF Namespace 快照",
+      "nvmf_namespace_snapshots": "NVMe namespace 快照",
       "unique_size": "独占容量，单位为字节"
     },
     "ConsistencyGroupSnapshotConnection": {
@@ -4145,7 +4145,7 @@
       "local_id": "UUID",
       "name": "名称",
       "nfs_export": "NFS Export",
-      "nvmf_subsystem": "NVMF Subsystem",
+      "nvmf_subsystem": "NVMe subsystem",
       "replica_num": "副本数",
       "thin_provision": "精简置备",
       "type": "类型"
@@ -4239,7 +4239,7 @@
       "name_starts_with": "名称已指定字符开始",
       "nfs_export": "NFS Export",
       "NOT": "不符合所有筛选条件",
-      "nvmf_subsystem": "NVMF Subsystem",
+      "nvmf_subsystem": "NVMe subsystem",
       "OR": "符合一项或多项筛选条件",
       "replica_num": "副本数",
       "replica_num_gt": "副本数大于指定数值",
@@ -9398,13 +9398,13 @@
       "local_id": "UUID",
       "name": "名称",
       "namespaces": "关联 Namespace",
-      "nvmf_subsystem": "关联 NVMF Subsystem"
+      "nvmf_subsystem": "关联 NVMe subsystem"
     },
     "NamespaceGroupConnection": {
       "aggregate": ""
     },
     "NamespaceGroupCreationParams": {
-      "nvmf_subsystem_id": "关联 NVMF Subsystem ID",
+      "nvmf_subsystem_id": "关联 NVMe subsystem ID",
       "name": "名称"
     },
     "NamespaceGroupDeletionParams": {
@@ -9481,7 +9481,7 @@
       "namespaces_none": "返回关联资源不符合相关筛选条件的资源",
       "namespaces_some": "返回关联资源一项或多项符合相关筛选条件的资源",
       "NOT": "不符合所有筛选条件",
-      "nvmf_subsystem": "关联 NVMF Subsystem",
+      "nvmf_subsystem": "关联 NVMe subsystem",
       "OR": "符合一项或多项筛选条件"
     },
     "NestedAggregateAlert": {
@@ -10922,7 +10922,7 @@
       "namespace_group": "Namespace Group",
       "namespace_id": "Namespace ID",
       "nqn_whitelist": "NQN 白名单",
-      "nvmf_subsystem": "关联 NVMF Subsystem",
+      "nvmf_subsystem": "关联 NVMe subsystem",
       "replica_num": "副本数",
       "shared_size": "共享容量，单位为字节",
       "snapshot_num": "快照数",
@@ -10934,7 +10934,7 @@
     },
     "NvmfNamespaceCloneParams": {
       "namespace_group_id": "Namespace Group ID",
-      "nvmf_subsystem_id": "NVMF Subsystem ID",
+      "nvmf_subsystem_id": "NVMe subsystem ID",
       "name": "名称",
       "snapshot_id": "待克隆的快照 ID"
     },
@@ -10968,7 +10968,7 @@
       "is_shared": "是否共享",
       "assigned_size": "分配容量，单位为字节",
       "replica_num": "副本数",
-      "nvmf_subsystem_id": "NVMF Subsystem ID",
+      "nvmf_subsystem_id": "NVMe subsystem ID",
       "name": "名称"
     },
     "NvmfNamespaceDeletionParams": {
@@ -10991,17 +10991,17 @@
       "local_created_at": "创建时间",
       "local_id": "UUID",
       "name": "名称",
-      "nvmf_namespace": "NVMF Namespace",
-      "nvmf_subsystem": "NVMF Subsystem",
+      "nvmf_namespace": "NVMe namespace",
+      "nvmf_subsystem": "NVMe subsystem",
       "unique_size": "独占容量，单位为字节"
     },
     "NvmfNamespaceSnapshotConnection": {
       "aggregate": ""
     },
     "NvmfNamespaceSnapshotCreationParams": {
-      "nvmf_subsystem_id": "NVMF Subsystem ID",
+      "nvmf_subsystem_id": "NVMe subsystem ID",
       "name": "名称",
-      "nvmf_namespace_id": "NVMF Namespace ID"
+      "nvmf_namespace_id": "NVMe namespace ID"
     },
     "NvmfNamespaceSnapshotDeletionParams": {
       "where": "筛选条件"
@@ -11070,8 +11070,8 @@
       "name_not_starts_with": "名称不已指定字符开始",
       "name_starts_with": "名称已指定字符开始",
       "NOT": "不符合所有筛选条件",
-      "nvmf_namespace": "NVMF Namespace",
-      "nvmf_subsystem": "NVMF Subsystem",
+      "nvmf_namespace": "NVMe namespace",
+      "nvmf_subsystem": "NVMe subsystem",
       "OR": "符合一项或多项筛选条件",
       "unique_size": "独占容量，单位为字节",
       "unique_size_gt": "独占容量，单位为字节大于指定数值",
@@ -11336,7 +11336,7 @@
       "nqn_whitelist_not_in": "NQN 白名单不在指定范围中",
       "nqn_whitelist_not_starts_with": "NQN 白名单不已指定字符开始",
       "nqn_whitelist_starts_with": "NQN 白名单已指定字符开始",
-      "nvmf_subsystem": "关联 NVMF Subsystem",
+      "nvmf_subsystem": "关联 NVMe subsystem",
       "OR": "符合一项或多项筛选条件",
       "replica_num": "副本数",
       "replica_num_gt": "副本数大于指定数值",
@@ -17946,17 +17946,17 @@
     },
     {
       "name": "NvmfNamespace",
-      "x-displayName": "NVMF namespace",
+      "x-displayName": "NVMe namespace",
       "description": ""
     },
     {
       "name": "NvmfNamespaceSnapshot",
-      "x-displayName": "NVMF namespace 快照",
+      "x-displayName": "NVMe namespace 快照",
       "description": ""
     },
     {
       "name": "NvmfSubsystem",
-      "x-displayName": "NVMF Subsystem",
+      "x-displayName": "NVMe subsystem",
       "description": ""
     },
     {
