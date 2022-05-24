@@ -49,7 +49,7 @@
       "description": ""
     },
     "/get-nvmf-namespace-metrics": {
-      "summary": " 查询指定 NVMF Namespace 的性能指标",
+      "summary": " 查询指定 NVMe Namespace 的性能指标",
       "description": ""
     },
     "/get-scvm-disk-metrics": {

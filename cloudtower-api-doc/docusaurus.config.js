@@ -93,7 +93,7 @@ const config = {
           {
             docId: "api",
             type: "doc",
-            label: "CloudtTower API",
+            label: "CloudTower API",
           },
           {
             label: "下载",
