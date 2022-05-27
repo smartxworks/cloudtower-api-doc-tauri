@@ -3463,15 +3463,15 @@
       "id": "id"
     },
     "NestedBackupPlanTimePoint": {
-      "date": "name",
-      "date_position": "name",
-      "hour": "name",
-      "minute": "name",
-      "weekday": "name"
+      "date": "",
+      "date_position": "",
+      "hour": "",
+      "minute": "",
+      "weekday": ""
     },
     "NestedBackupRestoreExecutionNetworkMapping": {
-      "dst_vlan_id": "name",
-      "src_vlan_id": "name"
+      "dst_vlan_id": "",
+      "src_vlan_id": ""
     },
     "NestedBackupRestorePoint": {
       "id": "id"
@@ -3481,8 +3481,8 @@
       "name": "name"
     },
     "NestedBackupServiceNetworkStatus": {
-      "cluster": "name",
-      "status": "name"
+      "cluster": "",
+      "status": ""
     },
     "NestedBackupStoreRepository": {
       "id": "id",
@@ -3492,9 +3492,9 @@
       "id": "id"
     },
     "NestedEverouteClusterWhitelist": {
-      "egress": "name",
-      "enable": "name",
-      "ingress": "name"
+      "egress": "",
+      "enable": "",
+      "ingress": ""
     },
     "Vds": {
       "bond_mode": "",

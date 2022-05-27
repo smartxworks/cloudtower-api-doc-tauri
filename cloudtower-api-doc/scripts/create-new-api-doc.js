@@ -2,6 +2,7 @@
 const yargsInteractive = require("yargs-interactive");
 const nodePath = require("path");
 const fsExtra = require("fs-extra");
+const _ = require('lodash');
 const versions = require("../versions.json");
 const {
   getSchemaMarkdown,
@@ -79,11 +80,15 @@ const createNewApiDoc = async (argv) => {
         previousVersion: previousVersion,
         lng,
       });
+      if(Object.keys(diffSchema || {}).join('') === Object.keys(content || {}).join('')) {
+        _.unset(locales, ['schemas', schemaName]);
+      }
       if (JSON.stringify(diffSchema) === JSON.stringify(content)) {
         return;
       }
       locales.schemas[schemaName] = content;
     });
+
     await pMap(Object.keys(paths), async (api) => {
       const content = locales.paths[api];
       const tagList = spec.paths[api].post.tags;
