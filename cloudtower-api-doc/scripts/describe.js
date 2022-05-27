@@ -246,6 +246,16 @@ const getSchemaMarkdown = async ({ schemaName, spec, locales, previousVersion, l
       });
       return params;
     } else {
+      const commonDes = {
+        'zh': {
+          'name': "名称",
+          "id": "唯一标识"
+        },
+        "en": {
+          "name": "name",
+          "id": "id"
+        }
+      };
       describeSchema({
         spec,
         schema: spec.components.schemas[schemaName],
@@ -254,7 +264,7 @@ const getSchemaMarkdown = async ({ schemaName, spec, locales, previousVersion, l
           if (path === undefined) {
             return;
           }
-          params[path] = lng === 'zh' ? path === 'id' ? '唯一标识' : "名称" : path === 'id' ? 'id' : "name";
+          params[path] = existedLocales[path] || previousSchema[path] || commonDes[lng][path] || '';
         },
       });
       return params;

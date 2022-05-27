@@ -2360,7 +2360,7 @@
       "aggregate": ""
     },
     "BrickTopoCreationParams": {
-      "tag_position_in_brick": "内部字段",
+      "tag_position_in_brick": "标记节点位置",
       "node_topoes": "节点拓扑",
       "rack_topo_id": "关联的机架 ID",
       "capacity": "容量",
@@ -9679,9 +9679,6 @@
       "data": "",
       "where": ""
     },
-    "Maybe_DiskFunction_": {},
-    "Maybe_DiskType_": {},
-    "Maybe_Scalars-at-Int_": {},
     "MetricType": {
       "enum": "* BOTTOMK: \n* NORMAL: \n* TOPK:"
     },
@@ -10171,10 +10168,10 @@
       "id": "id"
     },
     "NestedBrickDiskLayout": {
-      "column": "name",
-      "direction": "name",
-      "phase": "name",
-      "row": "name"
+      "column": "",
+      "direction": "",
+      "phase": "",
+      "row": ""
     },
     "NestedBrickPower": {
       "id": "id"
@@ -10184,8 +10181,8 @@
       "name": "name"
     },
     "NestedCapacity": {
-      "column": "name",
-      "row": "name"
+      "column": "",
+      "row": ""
     },
     "NestedCluster": {
       "id": "id",
@@ -10215,8 +10212,8 @@
       "name": "name"
     },
     "NestedCpu": {
-      "cores": "name",
-      "sockets": "name"
+      "cores": "",
+      "sockets": ""
     },
     "NestedDatacenter": {
       "id": "id",
@@ -10226,45 +10223,45 @@
       "id": "id"
     },
     "NestedDiscoveredHostDimms": {
-      "dimm_id": "name",
-      "fw_version": "name",
-      "health_status": "name",
-      "socket_id": "name"
+      "dimm_id": "",
+      "fw_version": "",
+      "health_status": "",
+      "socket_id": ""
     },
     "NestedDiscoveredHostDisk": {
-      "dimm_ids": "name",
-      "drive": "name",
-      "function": "name",
-      "model": "name",
-      "numa_node": "name",
-      "persistent_memory_type": "name",
-      "serial": "name",
-      "size": "name",
-      "type": "name"
+      "dimm_ids": "",
+      "drive": "",
+      "function": "",
+      "model": "",
+      "numa_node": "",
+      "persistent_memory_type": "",
+      "serial": "",
+      "size": "",
+      "type": ""
     },
     "NestedDiscoveredHostIface": {
-      "ipv4": "name",
-      "ipv6": "name",
-      "mac_address": "name",
-      "mtu": "name",
+      "ipv4": "",
+      "ipv6": "",
+      "mac_address": "",
+      "mtu": "",
       "name": "name",
-      "pci_slot_name": "name",
-      "rdma_enabled": "name",
-      "speed": "name",
-      "up": "name"
+      "pci_slot_name": "",
+      "rdma_enabled": "",
+      "speed": "",
+      "up": ""
     },
     "NestedDisk": {
       "id": "id",
       "name": "name"
     },
     "NestedDiskFailureInformation": {
-      "chunk_checksum_error": "name",
-      "chunk_errflag": "name",
-      "chunk_io_error": "name",
-      "chunk_warnflag": "name",
-      "iostat_latency": "name",
-      "iostat_latency_ms": "name",
-      "smart_check": "name"
+      "chunk_checksum_error": "",
+      "chunk_errflag": "",
+      "chunk_io_error": "",
+      "chunk_warnflag": "",
+      "iostat_latency": "",
+      "iostat_latency_ms": "",
+      "smart_check": ""
     },
     "NestedElfImage": {
       "id": "id",
@@ -10275,131 +10272,131 @@
       "name": "name"
     },
     "NestedEverouteAgentStatus": {
-      "host": "name",
-      "hostID": "name",
-      "ipAddr": "name",
-      "isHealth": "name",
-      "message": "name",
-      "phase": "name",
-      "reason": "name"
+      "host": "",
+      "hostID": "",
+      "ipAddr": "",
+      "isHealth": "",
+      "message": "",
+      "phase": "",
+      "reason": ""
     },
     "NestedEverouteCluster": {
       "id": "id",
       "name": "name"
     },
     "NestedEverouteClusterAgentStatus": {
-      "currentNumber": "name",
-      "elfClusterNumber": "name",
-      "expectNumber": "name",
-      "instances": "name",
-      "manageVDSes": "name",
-      "numberHealth": "name"
+      "currentNumber": "",
+      "elfClusterNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "manageVDSes": "",
+      "numberHealth": ""
     },
     "NestedEverouteClusterCondition": {
-      "lastProbeTime": "name",
-      "type": "name"
+      "lastProbeTime": "",
+      "type": ""
     },
     "NestedEverouteClusterControllerStatus": {
-      "currentNumber": "name",
-      "elfClusterNumber": "name",
-      "expectNumber": "name",
-      "instances": "name",
-      "numberHealth": "name"
+      "currentNumber": "",
+      "elfClusterNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "numberHealth": ""
     },
     "NestedEverouteClusterStatus": {
-      "agents": "name",
-      "conditions": "name",
-      "controllers": "name",
-      "message": "name",
-      "phase": "name",
-      "reason": "name",
-      "retryCount": "name",
-      "version": "name"
+      "agents": "",
+      "conditions": "",
+      "controllers": "",
+      "message": "",
+      "phase": "",
+      "reason": "",
+      "retryCount": "",
+      "version": ""
     },
     "NestedEverouteClusterVMMetrics": {
-      "cpuUsage": "name",
-      "dataVolumeUsage": "name",
-      "lastAcquisitionTime": "name",
-      "memoryUsage": "name"
+      "cpuUsage": "",
+      "dataVolumeUsage": "",
+      "lastAcquisitionTime": "",
+      "memoryUsage": ""
     },
     "NestedEverouteControllerInstance": {
-      "ipAddr": "name",
-      "vlan": "name"
+      "ipAddr": "",
+      "vlan": ""
     },
     "NestedEverouteControllerStatus": {
-      "ipAddr": "name",
-      "isHealth": "name",
-      "message": "name",
-      "metrics": "name",
-      "phase": "name",
-      "reason": "name",
-      "vm": "name",
-      "vmID": "name"
+      "ipAddr": "",
+      "isHealth": "",
+      "message": "",
+      "metrics": "",
+      "phase": "",
+      "reason": "",
+      "vm": "",
+      "vmID": ""
     },
     "NestedEverouteControllerTemplate": {
-      "cluster": "name",
-      "gateway": "name",
-      "memory": "name",
-      "netmask": "name",
-      "size": "name",
-      "vcpu": "name"
+      "cluster": "",
+      "gateway": "",
+      "memory": "",
+      "netmask": "",
+      "size": "",
+      "vcpu": ""
     },
     "NestedEverouteManageVDSStatus": {
-      "message": "name",
-      "phase": "name",
-      "reason": "name",
-      "retryCount": "name",
-      "vds": "name",
-      "vdsID": "name"
+      "message": "",
+      "phase": "",
+      "reason": "",
+      "retryCount": "",
+      "vds": "",
+      "vdsID": ""
     },
     "NestedExecutePlan": {
       "id": "id"
     },
     "NestedFilterRule": {
-      "aggregation": "name",
-      "duration": "name",
-      "metric": "name",
-      "op": "name",
-      "quantile": "name",
-      "threshold": "name"
+      "aggregation": "",
+      "duration": "",
+      "metric": "",
+      "op": "",
+      "quantile": "",
+      "threshold": ""
     },
     "NestedFrozenDisks": {
-      "boot": "name",
-      "bus": "name",
-      "disabled": "name",
-      "disk_name": "name",
-      "elf_image_local_id": "name",
-      "image_name": "name",
-      "index": "name",
-      "key": "name",
-      "max_bandwidth": "name",
-      "max_bandwidth_policy": "name",
-      "max_iops": "name",
-      "max_iops_policy": "name",
-      "path": "name",
-      "size": "name",
-      "snapshot_local_id": "name",
-      "storage_policy_uuid": "name",
-      "svt_image_local_id": "name",
-      "type": "name",
-      "vm_volume_local_id": "name"
+      "boot": "",
+      "bus": "",
+      "disabled": "",
+      "disk_name": "",
+      "elf_image_local_id": "",
+      "image_name": "",
+      "index": "",
+      "key": "",
+      "max_bandwidth": "",
+      "max_bandwidth_policy": "",
+      "max_iops": "",
+      "max_iops_policy": "",
+      "path": "",
+      "size": "",
+      "snapshot_local_id": "",
+      "storage_policy_uuid": "",
+      "svt_image_local_id": "",
+      "type": "",
+      "vm_volume_local_id": ""
     },
     "NestedFrozenNic": {
-      "enabled": "name",
-      "gateway": "name",
-      "index": "name",
-      "ip_address": "name",
-      "mac_address": "name",
-      "mirror": "name",
-      "model": "name",
-      "subnet_mask": "name",
-      "vlan": "name"
+      "enabled": "",
+      "gateway": "",
+      "index": "",
+      "ip_address": "",
+      "mac_address": "",
+      "mirror": "",
+      "model": "",
+      "subnet_mask": "",
+      "vlan": ""
     },
     "NestedFrozenVlan": {
       "name": "name",
-      "vds_ovs": "name",
-      "vlan_id": "name",
-      "vlan_local_id": "name"
+      "vds_ovs": "",
+      "vlan_id": "",
+      "vlan_local_id": ""
     },
     "NestedGlobalAlertRule": {
       "id": "id",
@@ -10413,9 +10410,9 @@
       "name": "name"
     },
     "NestedInitiatorChap": {
-      "chap_name": "name",
-      "chap_secret": "name",
-      "initiator_iqn": "name"
+      "chap_name": "",
+      "chap_secret": "",
+      "initiator_iqn": ""
     },
     "NestedIpmi": {
       "id": "id"
@@ -10442,42 +10439,42 @@
       "id": "id"
     },
     "NestedMetroAvailabilityChecklist": {
-      "primaryZone": "name",
-      "primaryZoneAndWitness": "name",
-      "secondaryZone": "name",
-      "secondaryZoneAndWitness": "name",
-      "witness": "name",
-      "zoneAndZone": "name"
+      "primaryZone": "",
+      "primaryZoneAndWitness": "",
+      "secondaryZone": "",
+      "secondaryZoneAndWitness": "",
+      "witness": "",
+      "zoneAndZone": ""
     },
     "NestedMetroCheckItem": {
-      "critical": "name",
-      "info": "name",
-      "key": "name",
-      "labels": "name",
-      "notice": "name",
-      "status": "name"
+      "critical": "",
+      "info": "",
+      "key": "",
+      "labels": "",
+      "notice": "",
+      "status": ""
     },
     "NestedMetroCheckResult": {
-      "critical": "name",
-      "info": "name",
-      "items": "name",
-      "notice": "name",
-      "status": "name"
+      "critical": "",
+      "info": "",
+      "items": "",
+      "notice": "",
+      "status": ""
     },
     "NestedNamespaceGroup": {
       "id": "id",
       "name": "name"
     },
     "NestedNetworkPolicyRule": {
-      "ip_block": "name",
-      "ports": "name",
-      "selector": "name",
-      "selector_ids": "name",
-      "type": "name"
+      "ip_block": "",
+      "ports": "",
+      "selector": "",
+      "selector_ids": "",
+      "type": ""
     },
     "NestedNetworkPolicyRulePort": {
-      "port": "name",
-      "protocol": "name"
+      "port": "",
+      "protocol": ""
     },
     "NestedNfsExport": {
       "id": "id",
@@ -10513,18 +10510,18 @@
     },
     "NestedPartition": {
       "name": "name",
-      "path": "name",
-      "size": "name",
-      "usage": "name",
-      "used_size": "name"
+      "path": "",
+      "size": "",
+      "usage": "",
+      "used_size": ""
     },
     "NestedPmemDimm": {
       "id": "id",
       "name": "name"
     },
     "NestedPosition": {
-      "column": "name",
-      "row": "name"
+      "column": "",
+      "row": ""
     },
     "NestedRackTopo": {
       "id": "id",
@@ -10539,33 +10536,33 @@
       "name": "name"
     },
     "NestedResourceMeta": {
-      "fields": "name",
-      "filter": "name",
+      "fields": "",
+      "filter": "",
       "name": "name",
-      "type": "name"
+      "type": ""
     },
     "NestedSecurityPolicy": {
       "id": "id",
       "name": "name"
     },
     "NestedSecurityPolicyApply": {
-      "communicable": "name",
-      "selector": "name",
-      "selector_ids": "name"
+      "communicable": "",
+      "selector": "",
+      "selector_ids": ""
     },
     "NestedSnapshotGroup": {
       "id": "id",
       "name": "name"
     },
     "NestedSnapshotGroupVmDiskInfo": {
-      "disk_id": "name",
-      "disk_snapshot_status": "name"
+      "disk_id": "",
+      "disk_snapshot_status": ""
     },
     "NestedSnapshotGroupVmInfo": {
-      "disks": "name",
-      "vm_id": "name",
-      "vm_name": "name",
-      "vm_snapshot_status": "name"
+      "disks": "",
+      "vm_id": "",
+      "vm_name": "",
+      "vm_snapshot_status": ""
     },
     "NestedSnapshotPlan": {
       "id": "id",
@@ -10575,35 +10572,35 @@
       "id": "id"
     },
     "NestedStep": {
-      "current": "name",
-      "finished": "name",
-      "key": "name",
-      "per_second": "name",
-      "total": "name",
-      "unit": "name"
+      "current": "",
+      "finished": "",
+      "key": "",
+      "per_second": "",
+      "total": "",
+      "unit": ""
     },
     "NestedSvtImage": {
       "id": "id",
       "name": "name"
     },
     "NestedTagPosition": {
-      "column": "name",
-      "row": "name",
-      "tag": "name"
+      "column": "",
+      "row": "",
+      "tag": ""
     },
     "NestedTemplateNic": {
-      "enabled": "name",
-      "index": "name",
-      "ip_address": "name",
-      "mac_address": "name",
-      "mirror": "name",
-      "model": "name",
-      "vlan": "name"
+      "enabled": "",
+      "index": "",
+      "ip_address": "",
+      "mac_address": "",
+      "mirror": "",
+      "model": "",
+      "vlan": ""
     },
     "NestedThresholds": {
-      "quantile": "name",
-      "severity": "name",
-      "value": "name"
+      "quantile": "",
+      "severity": "",
+      "value": ""
     },
     "NestedUploadTask": {
       "id": "id"
@@ -10657,8 +10654,8 @@
       "name": "name"
     },
     "NestedVmRecycleBin": {
-      "enabled": "name",
-      "retain": "name"
+      "enabled": "",
+      "retain": ""
     },
     "NestedVmSnapshot": {
       "id": "id",
@@ -12536,7 +12533,6 @@
       "OR": "One or more conditions must return true.",
       "zone_topo": ""
     },
-    "RemoveLabelsFromResourcesParams": {},
     "ReportResourceInputEnum": {
       "enum": "* ALERT: \n* ALL: \n* CLUSTER: \n* DATA_CENTER: \n* DISK: \n* ELF_IMAGE: \n* ENTITY_FILTERS: \n* GLOBAL_ALERT_RULE: \n* HOST: \n* TASK: \n* VDS: \n* VLAN: \n* VM: \n* VM_TEMPLATE:"
     },
@@ -18148,6 +18144,10 @@
       "vm_num_lte": "",
       "vm_num_not": "",
       "vm_num_not_in": ""
-    }
+    },
+    "Maybe_DiskFunction_": {},
+    "Maybe_DiskType_": {},
+    "RemoveLabelsFromResourcesParams": {},
+    "Maybe_Scalars-at-Int_": {}
   }
 }
