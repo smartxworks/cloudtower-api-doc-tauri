@@ -164,7 +164,6 @@ export const wrapSpecWithI18n = (
   // handle security schemas
   Object.keys(components.securitySchemes).forEach((s) => {
     const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
-    console.log('description', schema);
     _.set(cloneSpec, ["components","securitySchemes", s, "description"], schema['description']);
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });

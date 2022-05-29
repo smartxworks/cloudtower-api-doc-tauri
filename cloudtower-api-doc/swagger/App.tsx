@@ -9,7 +9,7 @@ import {
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useDocsVersion } from "@docusaurus/theme-common";
 import i18next from "./i18n";
-import { ISpec, specMap, wrapSpecWithI18n, translateComponent, splitSchema } from "./utils";
+import { ISpec, specMap, wrapSpecWithI18n, translateComponent, splitSchema, overwriteArrayClose } from "./utils";
 import Server from './components/Server';
 
 const REDOC_CLASS = "redoc-container";
@@ -42,6 +42,7 @@ const App: React.FC = () => {
   const { version } = useDocsVersion();
   const { i18n } = useDocusaurusContext();
   const [spec, setSpec] = useState<ISpec>();
+  const specRef = useRef<ISpec>(spec)
   const [servers, setServers] = useState<string[]>([]);
   const serversRef = useRef(servers);
 
@@ -55,8 +56,13 @@ const App: React.FC = () => {
     setSpec(newSpec);
   }, [version, i18n.currentLocale, servers]);
 
+  useEffect(() => {
+    specRef.current = spec;
+  }, [spec])
+
   const transCom = useCallback(() => {
     translateComponent();
+    overwriteArrayClose(specRef.current);
   }, [])
 
   useEffect(() => {
