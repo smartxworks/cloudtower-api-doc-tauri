@@ -12,6 +12,6 @@ export const overwriteArrayClose = (spec:ISpec) => {
     const requestRef = _.get(p[1], ['post', 'requestBody', 'content', 'application/json', 'schema', 'items', '$ref'], null);
     if(!requestRef) { return; }
     const ref = requestRef.split('/').pop();
-    title.textContent = title.textContent + ` (${ref})`;
+    title.textContent = title.textContent + `of ${ref}`;
   })
 }
