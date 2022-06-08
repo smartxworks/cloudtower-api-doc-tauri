@@ -25,6 +25,7 @@ const RedocWrapper: React.FC<{spec:ISpec, onInit:RedocProRawOptions['hooks']['on
         },
         routingBasePath: 'api#',
         pagination: "section",
+        ctrlFHijack: false,
         expandDefaultServerVariables: true,
         scrollYOffset: 60,
         nativeScrollbars: true,
