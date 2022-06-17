@@ -4,6 +4,7 @@ import httpSnippet from "httpsnippet";
 import i18next, { ApiDoc } from "../i18n";
 import { ISpec } from "./swagger";
 import { describeSchema } from "./describe";
+import { tagsGroup } from './constant';
 
 const genSchemaExample = (params: {
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject, field: string, spec:ISpec, schemaName: string,
@@ -203,5 +204,14 @@ export const splitSchema = (spec: ISpec,) => {
     const properties_path = [ schemaName ];
     traveseSchema(schemaName, schema, properties_path);
   })
+  return cloneSpec;
+}
+
+export const adjustTagsGroup = (spec:ISpec) => {
+  const cloneSpec = _.cloneDeep(spec);
+  cloneSpec['x-tagGroups'] = tagsGroup.map(group => ({
+    ...group,
+    name: i18next.t(`components.${group.name}`)
+  }))
   return cloneSpec;
 }

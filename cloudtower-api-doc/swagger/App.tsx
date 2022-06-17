@@ -5,12 +5,11 @@ import {
   ProStore,
   RedoclyReferenceDocsStandalone,
   RedocProRawOptions,
-  PanelToggleEvent
 } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useDocsVersion } from "@docusaurus/theme-common";
 import i18next from "./i18n";
-import { ISpec, specMap, wrapSpecWithI18n, translateComponent, splitSchema, overwriteSchemaTitle } from "./utils";
+import { ISpec, specMap, wrapSpecWithI18n, translateComponent, splitSchema, overwriteSchemaTitle, adjustTagsGroup } from "./utils";
 import Server from './components/Server';
 
 const REDOC_CLASS = "redoc-container";
@@ -52,7 +51,7 @@ const App: React.FC = () => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
     i18next.changeLanguage(i18n.currentLocale);
-    const newSpec = splitSchema(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version));
+    const newSpec = splitSchema(adjustTagsGroup(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version)));
     serversRef.current = servers;
     newSpec['servers'] = servers.map(s => ({ url: s }));
     setSpec(newSpec);
