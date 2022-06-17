@@ -4,6 +4,7 @@ import httpSnippet from "httpsnippet";
 import i18next, { ApiDoc } from "../i18n";
 import { ISpec } from "./swagger";
 import { describeSchema } from "./describe";
+import { tagsGroup } from './constant';
 
 const genSchemaExample = (params: {
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject, field: string, spec:ISpec, schemaName: string,
@@ -86,6 +87,15 @@ const genSchemaExample = (params: {
   }
 }
 
+
+const replaceTags = (tag:string) => {
+  const replaceTag = tagsGroup.find(group => group.tags.includes(tag));
+  if(replaceTag) {
+    return replaceTag.name
+  }
+  return tag;
+}
+
 export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
@@ -148,7 +158,11 @@ export const wrapSpecWithI18n = (
       });
     }
     cloneSpec.paths[p].post = post;
-    post.tags?.forEach(tag => tags.add(tag));
+    post.tags = post.tags?.map(tag => {
+      const replaceTag = replaceTags(tag);
+      tags.add(replaceTag);
+      return replaceTag;
+    })
   });
   // handle schemas
   Object.keys(components.schemas).forEach((s) => {
@@ -168,16 +182,20 @@ export const wrapSpecWithI18n = (
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });
   // handle tags
-  const combineAllTags = (lng:string, filter:Set<string>) => {
-    const tags:ISpec['tags'] = [
-      ...(i18next.t(`v1_8_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
-      ...(i18next.t(`v1_9_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
-      ...(i18next.t(`v1_10_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
-      ...(i18next.t(`v2_0_0.tags`, { returnObjects: true, lng }) as ISpec['tags'])
-    ];
-    return tags.filter(tag => filter.has(tag.name));
-  }
-  cloneSpec.tags = combineAllTags(language, tags);
+  // const combineAllTags = (lng:string, filter:Set<string>) => {
+  //   const tags:ISpec['tags'] = [
+  //     ...(i18next.t(`v1_8_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+  //     ...(i18next.t(`v1_9_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+  //     ...(i18next.t(`v1_10_0.tags`, { returnObjects: true, lng }) as ISpec['tags']),
+  //     ...(i18next.t(`v2_0_0.tags`, { returnObjects: true, lng }) as ISpec['tags'])
+  //   ];
+  //   return tags.filter(tag => filter.has(tag.name));
+  // }
+  cloneSpec.tags = Array.from(tags).map(tag => ({
+    name: tag,
+    "x-displayName": i18next.t(`components.${tag}`),
+    description: ""
+  }));
   return cloneSpec;
 };
 
