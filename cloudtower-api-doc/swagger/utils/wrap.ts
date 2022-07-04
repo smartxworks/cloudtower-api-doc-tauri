@@ -131,6 +131,10 @@ export const wrapSpecWithI18n = (
               value: "en-US",
               comment: "en-US or zh-CN",
             },
+            {
+              name: "content-type",
+              value: meta
+            }
           ],
           postData: {
             mimeType: "application/json",
