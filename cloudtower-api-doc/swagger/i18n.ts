@@ -17,6 +17,9 @@ import en1_10Api from './locales/en/v1.10.0.json'
 import zh2_0API from './locales/zh/v2.0.0.json';
 import en2_0API from './locales/en/v2.0.0.json';
 
+import zh2_1API from './locales/zh/v2.1.0.json';
+import en2_1API from './locales/en/v2.1.0.json';
+
 
 export type ApiDoc = {
   summary: string;
@@ -32,6 +35,7 @@ i18next.init({
         ['v1_9_0']: en1_9API,
         ['v1_10_0']: en1_10Api,
         ['v2_0_0']: en2_0API,
+        ['v2_1_0']: en2_1API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -39,20 +43,21 @@ i18next.init({
         ['v1_9_0']:zh1_9Api,
         ['v1_10_0']: zh1_10Api,
         ['v2_0_0']: zh2_0API,
+        ['v2_1_0']: zh2_1API,
         components: zhComponents,
     },
   },
   lng: SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0'],
+  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0'],
   interpolation: {
     prefix: "{",
     suffix: "}",
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'components'],
+  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'components'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {

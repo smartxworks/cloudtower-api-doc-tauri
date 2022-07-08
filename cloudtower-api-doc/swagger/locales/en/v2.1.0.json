@@ -1,0 +1,454 @@
+{
+  "schemas": {
+    "MgtIpMapper": {
+      "ip": "",
+      "host_id": ""
+    },
+    "ClusterNetworkSettingUpdationParams": {
+      "data.mgt_ip_mapper": "",
+      "data.mgt_netmask": "",
+      "data.mgt_gateway": "",
+      "data.ntp_mode": "",
+      "data.ntp_servers": "",
+      "data.dns": "",
+      "data.iscsi_vip": "",
+      "data.management_vip": "",
+      "data": "",
+      "where": ""
+    },
+    "ClusterVirtualizationUpdationParams": {
+      "data.auto_converge": "",
+      "data.current_cpu_model": "",
+      "data": "",
+      "where": ""
+    },
+    "ClusterHaUpdationParams": {
+      "ha": "",
+      "where": ""
+    },
+    "ClusterEnableIscsiUpdationParams": {
+      "enable_iscsi": "",
+      "where": ""
+    },
+    "NestedTask": {
+      "args": "",
+      "description": "",
+      "id": "id",
+      "internal": "",
+      "local_created_at": "",
+      "progress": "",
+      "snapshot": "",
+      "status": "",
+      "steps": ""
+    },
+    "BatchHosts": {
+      "task": ""
+    },
+    "AddLabelsToResourcesParams": {
+      "data.content_library_vm_templates": "",
+      "data.content_library_images": "",
+      "data.isolation_policies": "",
+      "data.security_policies": "",
+      "data.vms": "associated VMs",
+      "data.vm_volumes": "associated virtual volumes",
+      "data.vm_templates": "associated VM templates",
+      "data.vm_snapshots": "associated VM snapshots",
+      "data.vlans": "associated VLAN",
+      "data.vdses": "associated virtual distributed switch",
+      "data.nvmf_subsystems": "associated NVMe subsystems",
+      "data.nvmf_namespace_snapshots": "associated NVMe namespace snapshots",
+      "data.nvmf_namespaces": "associated NVMe namespaces",
+      "data.nics": "associated NICs",
+      "data.nfs_inodes": "associated NFS file",
+      "data.nfs_exports": "associated NFS export",
+      "data.namespace_groups": "associated Namespace Groups",
+      "data.iscsi_targets": "associated ISCSI targets",
+      "data.iscsi_lun_snapshots": "associated LUN snapshots",
+      "data.iscsi_luns": "associated Luns",
+      "data.hosts": "associated hosts",
+      "data.elf_images": "associated ISO images",
+      "data.disks": "associated physical disks",
+      "data.datacenters": "associated data centers",
+      "data.consistency_group_snapshots": "associated",
+      "data.consistency_groups": "associated consistency groups",
+      "data.clusters": "associated clusters",
+      "data": "associated resources",
+      "where": "filter condition of labes"
+    },
+    "UserRoleNext": {
+      "actions": "",
+      "id": "",
+      "name": "",
+      "platform": "",
+      "preset": "",
+      "users": ""
+    },
+    "User": {
+      "email_address": "",
+      "id": "",
+      "internal": "",
+      "ldap_dn": "",
+      "mobile_phone": "",
+      "name": "",
+      "password_expired": "",
+      "password_recover_qa": "",
+      "password_updated_at": "",
+      "role": "",
+      "roles": "",
+      "source": "",
+      "username": ""
+    },
+    "NestedPasswordReoverQaItem": {
+      "question": ""
+    },
+    "NestedPasswordRecoverQa": {
+      "enabled": "",
+      "items": ""
+    },
+    "VmCreateVmFromTemplateParams": {
+      "cloud_init": "",
+      "is_full_copy": "",
+      "template_id": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "disk_operate": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmDiskOperate": {
+      "remove_disks.disk_index": "",
+      "remove_disks": "",
+      "modify_disks": "",
+      "new_disks": ""
+    },
+    "TemplateCloudInit": {
+      "user_data": "",
+      "public_keys": "",
+      "hostname": "",
+      "networks": "",
+      "nameservers": "",
+      "default_user_password": ""
+    },
+    "Task": {
+      "args": "",
+      "cluster": "",
+      "description": "",
+      "error_code": "",
+      "error_message": "",
+      "finished_at": "",
+      "id": "",
+      "internal": "",
+      "key": "",
+      "local_created_at": "",
+      "progress": "",
+      "resource_id": "",
+      "resource_mutation": "",
+      "resource_rollback_error": "",
+      "resource_rollback_retry_count": "",
+      "resource_rollbacked": "",
+      "resource_type": "",
+      "snapshot": "",
+      "started_at": "",
+      "status": "",
+      "steps": "",
+      "type": "",
+      "user": ""
+    },
+    "MetricLabel": {
+      "to_hostname": "",
+      "serial_number": "",
+      "pool": "",
+      "name": "",
+      "metric_name": "",
+      "job": "",
+      "instance": "",
+      "_zone": "",
+      "_witness": "",
+      "_volume": "",
+      "_vm": "",
+      "_to_uuid": "",
+      "_service": "",
+      "_scvm": "",
+      "_network": "",
+      "_mac": "",
+      "_host": "",
+      "_device": "",
+      "_cluster": "",
+      "_chunk": "",
+      "enum": "* MetricLabel:"
+    },
+    "MigrateType": {
+      "enum": ""
+    },
+    "VlanMapping": {
+      "src_vlan_local_id": "",
+      "dest_vlan_local_id": ""
+    },
+    "MigrateVmConfig": {
+      "remove_unmovable_devices": "",
+      "new_name": "",
+      "network_mapping": "",
+      "migrate_type": "",
+      "elf_storage_policy": "",
+      "delete_src_vm": ""
+    },
+    "VmMigrateAcrossClusterParams": {
+      "data.vm_config": "",
+      "data.cluster_id": "",
+      "data.host_id": "",
+      "data": "",
+      "where": ""
+    },
+    "StopVmInCutoverMigrationParams": {
+      "force": "",
+      "tasks": ""
+    },
+    "AbortMigrateVmAcrossClusterParams": {
+      "tasks": ""
+    },
+    "VmUpdateHostOptionsParams": {
+      "data.ntp_servers": "",
+      "data.dns_servers": "",
+      "data.hostname": "",
+      "data": "",
+      "where": ""
+    },
+    "VmResetGuestOsPasswordParams": {
+      "data.password": "",
+      "data.username": "",
+      "data": "",
+      "where": ""
+    },
+    "VmUpdateOwnerParams": {
+      "enum": "",
+      "data.value": "",
+      "data": "",
+      "where": ""
+    },
+    "UpdatePassrodSecurityParams": {
+      "password_expire_days": "",
+      "password_complexity": "",
+      "login_miss_time_threshold": "",
+      "login_miss_num_threshold": ""
+    },
+    "UpdateAccessRestrictionParams": {
+      "access_list": "",
+      "access_mode": ""
+    },
+    "UpdateSessionTimeoutParams": {
+      "session_max_age": ""
+    },
+    "WithTask_VsphereEsxiAccount-Array_": {
+      "task_id": "asynchronous task id ",
+      "data": "resources"
+    },
+    "UpdateVsphereEsxiAccountParamsData": {
+      "port": "",
+      "password": "",
+      "username": "",
+      "ip": "",
+      "esxi_account_id": ""
+    },
+    "UpdateVsphereEsxiAccountParams": {
+      "data": ""
+    },
+    "WithTask_VcenterAccount_": {
+      "task_id": "asynchronous task id ",
+      "data": "resources"
+    },
+    "CreateVcenterAccountParamsData": {
+      "port": "",
+      "password": "",
+      "username": "",
+      "ip": "",
+      "cluster_id": ""
+    },
+    "CreateVcenterAccountParams": {
+      "data": ""
+    },
+    "VcenterAccountWhereUniqueInput": {
+      "id": "",
+      "local_id": ""
+    },
+    "UpdateVcenterAccountParamsData": {
+      "port": "",
+      "password": "",
+      "username": "",
+      "ip": ""
+    },
+    "UpdateVcenterAccountParams": {
+      "data": "",
+      "where": ""
+    },
+    "ColumnConfig": {
+      "name": "",
+      "path": ""
+    },
+    "TableReporterParams": {
+      "filter.nvmfSubsystems": "",
+      "filter.contentLibraryVmTemplates": "",
+      "filter.nvmfNamespaceSnapshots": "",
+      "filter.contentLibraryImages": "",
+      "filter.nvmfNamespaces": "",
+      "filter.namespaceGroups": "",
+      "filter.iscsiLuns": "",
+      "filter.tasks": "",
+      "filter.userAuditLogs": "",
+      "filter.systemAuditLogs": "",
+      "filter.iscsiLunSnapshots": "",
+      "filter.iscsiConnections": "",
+      "filter.consistencyGroups": "",
+      "filter.users": "",
+      "filter.vmEntityFilters": "",
+      "filter.snapshotPlans": "",
+      "filter.globalAlertRules": "",
+      "filter.alerts": "",
+      "filter.vmPlacementGroups": "",
+      "filter.vmTemplates": "",
+      "filter.elfImages": "",
+      "filter.vmVolumes": "",
+      "filter.vlans": "",
+      "filter.disks": "",
+      "filter.vdses": "",
+      "filter.elfDataStores": "",
+      "filter.vms": "",
+      "filter.nfsExports": "",
+      "filter.iscsiTargets": "",
+      "filter.usbDevices": "",
+      "filter.nics": "",
+      "filter.clusters": "",
+      "filter.datacenters": "",
+      "filter.hosts": "",
+      "filter": "",
+      "columns": "",
+      "name": ""
+    },
+    "CancelUploadTaskParams": {
+      "where": ""
+    },
+    "NestedEverouteClusterAgentStatus": {
+      "currentNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "manageVDSes": "",
+      "numberHealth": ""
+    },
+    "NestedEverouteClusterControllerStatus": {
+      "currentNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "numberHealth": ""
+    },
+    "EveroutePackage": {
+      "arch": "",
+      "description": "",
+      "entityAsyncStatus": "",
+      "id": "",
+      "local_created_at": "",
+      "name": "",
+      "package_info": "",
+      "size": "",
+      "version": ""
+    }
+  },
+  "tags": [
+    {
+      "name": "TableReporter",
+      "x-displayName": "报表导出",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/update-cluster-network-setting": {
+      "summary": "Update network setting of clusters",
+      "description": ""
+    },
+    "/update-cluster-virtualization-setting": {
+      "summary": "Update Virtualization setting of clusters",
+      "description": ""
+    },
+    "/update-cluster-ha-setting": {
+      "summary": "update HA setting of clusters",
+      "description": ""
+    },
+    "/update-cluster-enable-iscsi-setting": {
+      "summary": "Update block storage setting of clusters",
+      "description": ""
+    },
+    "/migrate-vm-across-cluster": {
+      "summary": "Migrate VM across clusters",
+      "description": ""
+    },
+    "/stop-vm-in-cutover-migration": {
+      "summary": "Shut down VM when in cut-over migration",
+      "description": ""
+    },
+    "/abort-migrate-vm-across-cluster": {
+      "summary": "Abort migrating VM across cluster",
+      "description": ""
+    },
+    "/update-vm-host-options": {
+      "summary": "Update host options of VM",
+      "description": ""
+    },
+    "/reset-vm-guest-os-password": {
+      "summary": "Reset guest OS password of VM",
+      "description": ""
+    },
+    "/update-vm-owner": {
+      "summary": "Update owner of VM",
+      "description": ""
+    },
+    "/update-password-security": {
+      "summary": "Update password security",
+      "description": ""
+    },
+    "/update-access-restriction": {
+      "summary": "Update access restriction",
+      "description": ""
+    },
+    "/update-session-timeout": {
+      "summary": "Update session timeout",
+      "description": ""
+    },
+    "/update-vsphere-esxi-account": {
+      "summary": "Update Vsphere ESXi account",
+      "description": ""
+    },
+    "/create-vcenter-account": {
+      "summary": "Update Vcenter account",
+      "description": ""
+    },
+    "/update-vcenter-account": {
+      "summary": "Update Vcenter account",
+      "description": ""
+    },
+    "/upload-svt-image": {
+      "summary": "Upload SVT image",
+      "description": ""
+    },
+    "/export-csv": {
+      "summary": "Export CSV",
+      "description": ""
+    },
+    "/cancel-upload-task": {
+      "summary": "Cancel uploading task",
+      "description": ""
+    }
+  }
+}

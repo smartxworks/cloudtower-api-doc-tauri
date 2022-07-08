@@ -57,10 +57,10 @@ const createNewApiDoc = async (argv) => {
     const { paths, components } = spec;
     const tags = new Set();
     const outputLocalesPath = getLocalesFile(lng, version);
-    const locales = require(outputLocalesPath) || {
+    const locales = fsExtra.existsSync(outputLocalesPath) ? require(outputLocalesPath) : {
       schemas: {},
-      tags: {},
-      paths: []
+      tags: [],
+      paths: {}
     };
     await pMap(Object.keys(components.schemas), async (schemaName) => {
       let diffSchema;

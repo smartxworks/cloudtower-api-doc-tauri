@@ -1,0 +1,640 @@
+{
+  "schemas": {
+    "AlertWhereInput": {
+      "alert_rule": "关联报警规则",
+      "AND": "符合所有的筛选条件",
+      "cause": "原因",
+      "cause_contains": "原因包含指定字符",
+      "cause_ends_with": "原因已指定字符结尾",
+      "cause_gt": "原因大于指定数值",
+      "cause_gte": "原因大于或等于指定数值",
+      "cause_in": "原因在指定范围中",
+      "cause_lt": "原因小于指定字符",
+      "cause_lte": "原因小于或等于指定字符",
+      "cause_not": "原因不等于指定数值",
+      "cause_not_contains": "原因不包含指定字符",
+      "cause_not_ends_with": "原因不已指定字符结尾",
+      "cause_not_in": "原因不在指定范围中",
+      "cause_not_starts_with": "原因不已指定字符开始",
+      "cause_starts_with": "原因已指定字符开始",
+      "cluster": "报警所在集群",
+      "create_time": "创建时间",
+      "create_time_gt": "创建时间大于指定数值",
+      "create_time_gte": "创建时间大于或等于指定数值",
+      "create_time_in": "创建时间在指定范围中",
+      "create_time_lt": "创建时间小于指定字符",
+      "create_time_lte": "创建时间小于或等于指定字符",
+      "create_time_not": "创建时间不等于指定数值",
+      "create_time_not_in": "创建时间不在指定范围中",
+      "disk": "关联硬盘",
+      "ended": "是否结束",
+      "ended_not": "是否结束不等于指定数值",
+      "host": "关联主机",
+      "id": "唯一标识",
+      "id_contains": "唯一标识包含指定字符",
+      "id_ends_with": "唯一标识已指定字符结尾",
+      "id_gt": "唯一标识大于指定数值",
+      "id_gte": "唯一标识大于或等于指定数值",
+      "id_in": "唯一标识在指定范围中",
+      "id_lt": "唯一标识小于指定字符",
+      "id_lte": "唯一标识小于或等于指定字符",
+      "id_not": "唯一标识不等于指定数值",
+      "id_not_contains": "唯一标识不包含指定字符",
+      "id_not_ends_with": "唯一标识不已指定字符结尾",
+      "id_not_in": "唯一标识不在指定范围中",
+      "id_not_starts_with": "唯一标识不已指定字符开始",
+      "id_starts_with": "唯一标识已指定字符开始",
+      "impact": "影响",
+      "impact_contains": "影响包含指定字符",
+      "impact_ends_with": "影响已指定字符结尾",
+      "impact_gt": "影响大于指定数值",
+      "impact_gte": "影响大于或等于指定数值",
+      "impact_in": "影响在指定范围中",
+      "impact_lt": "影响小于指定字符",
+      "impact_lte": "影响小于或等于指定字符",
+      "impact_not": "影响不等于指定数值",
+      "impact_not_contains": "影响不包含指定字符",
+      "impact_not_ends_with": "影响不已指定字符结尾",
+      "impact_not_in": "影响不在指定范围中",
+      "impact_not_starts_with": "影响不已指定字符开始",
+      "impact_starts_with": "影响已指定字符开始",
+      "local_create_time": "报警数据写入库时间",
+      "local_create_time_gt": "报警数据写入库时间大于指定数值",
+      "local_create_time_gte": "报警数据写入库时间大于或等于指定数值",
+      "local_create_time_in": "报警数据写入库时间在指定范围中",
+      "local_create_time_lt": "报警数据写入库时间小于指定字符",
+      "local_create_time_lte": "报警数据写入库时间小于或等于指定字符",
+      "local_create_time_not": "报警数据写入库时间不等于指定数值",
+      "local_create_time_not_in": "报警数据写入库时间不在指定范围中",
+      "local_end_time": "报警结束时间",
+      "local_end_time_contains": "报警结束时间包含指定字符",
+      "local_end_time_ends_with": "报警结束时间已指定字符结尾",
+      "local_end_time_gt": "报警结束时间大于指定数值",
+      "local_end_time_gte": "报警结束时间大于或等于指定数值",
+      "local_end_time_in": "报警结束时间在指定范围中",
+      "local_end_time_lt": "报警结束时间小于指定字符",
+      "local_end_time_lte": "报警结束时间小于或等于指定字符",
+      "local_end_time_not": "报警结束时间不等于指定数值",
+      "local_end_time_not_contains": "报警结束时间不包含指定字符",
+      "local_end_time_not_ends_with": "报警结束时间不已指定字符结尾",
+      "local_end_time_not_in": "报警结束时间不在指定范围中",
+      "local_end_time_not_starts_with": "报警结束时间不已指定字符开始",
+      "local_end_time_starts_with": "报警结束时间已指定字符开始",
+      "local_id": "UUID",
+      "local_id_contains": "UUID包含指定字符",
+      "local_id_ends_with": "UUID已指定字符结尾",
+      "local_id_gt": "UUID大于指定数值",
+      "local_id_gte": "UUID大于或等于指定数值",
+      "local_id_in": "UUID在指定范围中",
+      "local_id_lt": "UUID小于指定字符",
+      "local_id_lte": "UUID小于或等于指定字符",
+      "local_id_not": "UUID不等于指定数值",
+      "local_id_not_contains": "UUID不包含指定字符",
+      "local_id_not_ends_with": "UUID不已指定字符结尾",
+      "local_id_not_in": "UUID不在指定范围中",
+      "local_id_not_starts_with": "UUID不已指定字符开始",
+      "local_id_starts_with": "UUID已指定字符开始",
+      "local_start_time": "报警触发时间",
+      "local_start_time_contains": "报警触发时间包含指定字符",
+      "local_start_time_ends_with": "报警触发时间已指定字符结尾",
+      "local_start_time_gt": "报警触发时间大于指定数值",
+      "local_start_time_gte": "报警触发时间大于或等于指定数值",
+      "local_start_time_in": "报警触发时间在指定范围中",
+      "local_start_time_lt": "报警触发时间小于指定字符",
+      "local_start_time_lte": "报警触发时间小于或等于指定字符",
+      "local_start_time_not": "报警触发时间不等于指定数值",
+      "local_start_time_not_contains": "报警触发时间不包含指定字符",
+      "local_start_time_not_ends_with": "报警触发时间不已指定字符结尾",
+      "local_start_time_not_in": "报警触发时间不在指定范围中",
+      "local_start_time_not_starts_with": "报警触发时间不已指定字符开始",
+      "local_start_time_starts_with": "报警触发时间已指定字符开始",
+      "local_update_time": "后端每三十秒检查一下报警状态并记录时间",
+      "local_update_time_contains": "后端每三十秒检查一下报警状态并记录时间包含指定字符",
+      "local_update_time_ends_with": "后端每三十秒检查一下报警状态并记录时间已指定字符结尾",
+      "local_update_time_gt": "后端每三十秒检查一下报警状态并记录时间大于指定数值",
+      "local_update_time_gte": "后端每三十秒检查一下报警状态并记录时间大于或等于指定数值",
+      "local_update_time_in": "后端每三十秒检查一下报警状态并记录时间在指定范围中",
+      "local_update_time_lt": "后端每三十秒检查一下报警状态并记录时间小于指定字符",
+      "local_update_time_lte": "后端每三十秒检查一下报警状态并记录时间小于或等于指定字符",
+      "local_update_time_not": "后端每三十秒检查一下报警状态并记录时间不等于指定数值",
+      "local_update_time_not_contains": "后端每三十秒检查一下报警状态并记录时间不包含指定字符",
+      "local_update_time_not_ends_with": "后端每三十秒检查一下报警状态并记录时间不已指定字符结尾",
+      "local_update_time_not_in": "后端每三十秒检查一下报警状态并记录时间不在指定范围中",
+      "local_update_time_not_starts_with": "后端每三十秒检查一下报警状态并记录时间不已指定字符开始",
+      "local_update_time_starts_with": "后端每三十秒检查一下报警状态并记录时间已指定字符开始",
+      "message": "信息",
+      "message_contains": "信息包含指定字符",
+      "message_ends_with": "信息已指定字符结尾",
+      "message_gt": "信息大于指定数值",
+      "message_gte": "信息大于或等于指定数值",
+      "message_in": "信息在指定范围中",
+      "message_lt": "信息小于指定字符",
+      "message_lte": "信息小于或等于指定字符",
+      "message_not": "信息不等于指定数值",
+      "message_not_contains": "信息不包含指定字符",
+      "message_not_ends_with": "信息不已指定字符结尾",
+      "message_not_in": "信息不在指定范围中",
+      "message_not_starts_with": "信息不已指定字符开始",
+      "message_starts_with": "信息已指定字符开始",
+      "NOT": "不符合所有筛选条件",
+      "OR": "符合一项或多项筛选条件",
+      "severity": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告",
+      "severity_contains": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告包含指定字符",
+      "severity_ends_with": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告已指定字符结尾",
+      "severity_gt": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告大于指定数值",
+      "severity_gte": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告大于或等于指定数值",
+      "severity_in": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告在指定范围中",
+      "severity_lt": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告小于指定字符",
+      "severity_lte": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告小于或等于指定字符",
+      "severity_not": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告不等于指定数值",
+      "severity_not_contains": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告不包含指定字符",
+      "severity_not_ends_with": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告不已指定字符结尾",
+      "severity_not_in": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告不在指定范围中",
+      "severity_not_starts_with": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告不已指定字符开始",
+      "severity_starts_with": "等级。\n* CRITICAL: 严重\n* INFO: 信息\n* NOTICE: 警告已指定字符开始",
+      "solution": "解决方法",
+      "solution_contains": "解决方法包含指定字符",
+      "solution_ends_with": "解决方法已指定字符结尾",
+      "solution_gt": "解决方法大于指定数值",
+      "solution_gte": "解决方法大于或等于指定数值",
+      "solution_in": "解决方法在指定范围中",
+      "solution_lt": "解决方法小于指定字符",
+      "solution_lte": "解决方法小于或等于指定字符",
+      "solution_not": "解决方法不等于指定数值",
+      "solution_not_contains": "解决方法不包含指定字符",
+      "solution_not_ends_with": "解决方法不已指定字符结尾",
+      "solution_not_in": "解决方法不在指定范围中",
+      "solution_not_starts_with": "解决方法不已指定字符开始",
+      "solution_starts_with": "解决方法已指定字符开始",
+      "threshold": "阈值",
+      "threshold_gt": "阈值大于指定数值",
+      "threshold_gte": "阈值大于或等于指定数值",
+      "threshold_in": "阈值在指定范围中",
+      "threshold_lt": "阈值小于指定字符",
+      "threshold_lte": "阈值小于或等于指定字符",
+      "threshold_not": "阈值不等于指定数值",
+      "threshold_not_in": "阈值不在指定范围中",
+      "value": "内部字段",
+      "value_gt": "内部字段大于指定数值",
+      "value_gte": "内部字段大于或等于指定数值",
+      "value_in": "内部字段在指定范围中",
+      "value_lt": "内部字段小于指定字符",
+      "value_lte": "内部字段小于或等于指定字符",
+      "value_not": "内部字段不等于指定数值",
+      "value_not_in": "内部字段不在指定范围中",
+      "vms_every": "返回关联资源全都符合相关筛选条件的资源",
+      "vms_none": "返回关联资源不符合相关筛选条件的资源",
+      "vms_some": "返回关联资源一项或多项符合相关筛选条件的资源"
+    },
+    "MgtIpMapper": {
+      "ip": "管理 IP",
+      "host_id": "管理 IP 的对应主机"
+    },
+    "ClusterNetworkSettingUpdationParams": {
+      "data.mgt_ip_mapper": "配置管理 IP 与集群主机的映射",
+      "data.mgt_netmask": "子网掩码",
+      "data.mgt_gateway": "管理网关",
+      "data.ntp_mode": "True 表示使用集群内主机作为 NTP 服务器，此时无需设置 ntp_servers\nFalse 表示使用集群外部 NTP 服务器",
+      "data.ntp_servers": "NTP 服务器",
+      "data.dns": "DNS 服务器",
+      "data.iscsi_vip": "接入虚拟 IP",
+      "data.management_vip": "管理虚拟 IP",
+      "data": "",
+      "where": "选择编辑集群"
+    },
+    "ClusterVirtualizationUpdationParams": {
+      "data.auto_converge": "是否在迁移时动态限制 vCPU",
+      "data.current_cpu_model": "虚拟机 CPU 兼容性。传入空字符串时表示物理机透传。",
+      "data": "",
+      "where": "选择编辑集群"
+    },
+    "ClusterHaUpdationParams": {
+      "ha": "设置创建虚拟机时高可用（HA）的默认启用状态，是否启用高可用",
+      "where": "选择编辑集群"
+    },
+    "ClusterEnableIscsiUpdationParams": {
+      "enable_iscsi": "是否启用为其他计算端提供块存储",
+      "where": "选择编辑集群"
+    },
+    "NestedTask": {
+      "args": "",
+      "description": "",
+      "id": "唯一标识",
+      "internal": "",
+      "local_created_at": "",
+      "progress": "",
+      "snapshot": "",
+      "status": "",
+      "steps": ""
+    },
+    "BatchHosts": {
+      "task": "异步任务"
+    },
+    "AddLabelsToResourcesParams": {
+      "data.content_library_vm_templates": "关联内容库虚拟机模板",
+      "data.content_library_images": "关联内容库镜像",
+      "data.isolation_policies": "关联隔离政策",
+      "data.security_policies": "关联安全策略",
+      "data.vms": "关联虚拟机",
+      "data.vm_volumes": "关联虚拟卷",
+      "data.vm_templates": "关联虚拟机模板",
+      "data.vm_snapshots": "关联虚拟机快照",
+      "data.vlans": "关联 VLAN",
+      "data.vdses": "关联虚拟机交换机",
+      "data.nvmf_subsystems": "关联 NVMe Subsystem",
+      "data.nvmf_namespace_snapshots": "关联 NVMe namespace 快照",
+      "data.nvmf_namespaces": "关联 NVMe Namespace",
+      "data.nics": "关联网卡",
+      "data.nfs_inodes": "关联 NFS 文件",
+      "data.nfs_exports": "关联 NFS Export",
+      "data.namespace_groups": "关联  Namespace Group",
+      "data.iscsi_targets": "关联 Iscsi 对象",
+      "data.iscsi_lun_snapshots": "关联 LUN 快照",
+      "data.iscsi_luns": "关联 LUN",
+      "data.hosts": "关联主机",
+      "data.elf_images": "关联 ISO 映像",
+      "data.disks": "关联硬盘",
+      "data.datacenters": "关联数据中心",
+      "data.consistency_group_snapshots": "关联一致性快照组",
+      "data.consistency_groups": "关联 一致性组",
+      "data.clusters": "关联集群",
+      "data": "关联资源",
+      "where": "选择操作标签"
+    },
+    "UserRoleNext": {
+      "actions": "权限",
+      "id": "唯一标识",
+      "name": "名称",
+      "platform": "平台",
+      "preset": "预设值",
+      "users": "关联用户"
+    },
+    "User": {
+      "email_address": "电子邮箱",
+      "id": "唯一标识",
+      "internal": "是否为内部创建",
+      "ldap_dn": "LDAP",
+      "mobile_phone": "手机号码",
+      "name": "姓名",
+      "password_expired": "密码是否过期",
+      "password_recover_qa": "密保问题",
+      "password_updated_at": "密码更新时间",
+      "role": "角色",
+      "roles": "角色",
+      "source": "创建来源",
+      "username": "用户名"
+    },
+    "NestedPasswordReoverQaItem": {
+      "question": "密码安全问题"
+    },
+    "NestedPasswordRecoverQa": {
+      "enabled": "是否启用",
+      "items": "密码安全问题设置项"
+    },
+    "VmCreateVmFromTemplateParams": {
+      "cloud_init": "cloud-init 配置",
+      "is_full_copy": "是否为完全拷贝",
+      "template_id": "虚拟机模板 ID",
+      "max_bandwidth_policy": "带宽上限策略",
+      "max_bandwidth": "带宽上线",
+      "max_iops_policy": "IOPS 上限策略",
+      "max_iops": "IOPS 上限",
+      "io_policy": "I/O 限速策略",
+      "vcpu": "vCPU",
+      "status": "电源状态",
+      "firmware": "引导模式",
+      "ha": "高可用",
+      "vm_nics": "填入虚拟机网卡信息",
+      "disk_operate": "填入虚拟盘信息",
+      "memory": "内存大小，单位为字节",
+      "cpu_cores": "CPU 核数",
+      "cpu_sockets": "CPU 插槽",
+      "guest_os_type": "客户端操作系统类型",
+      "folder_id": "虚拟机分组 ID",
+      "description": "描述",
+      "name": "名称",
+      "host_id": "所属主机 ID",
+      "cluster_id": "所属集群 ID"
+    },
+    "VmDiskOperate": {
+      "remove_disks.disk_index": "移除虚拟盘的 index",
+      "remove_disks": "要移除的虚拟盘",
+      "modify_disks": "要修改的虚拟盘",
+      "new_disks": "挂载新盘"
+    },
+    "TemplateCloudInit": {
+      "user_data": "由用户提供的 cloud-init user-data 字段，不支持 base64 编码内容，不能超过 32KiB",
+      "public_keys": "为 cloud-init 默认用户设置的公钥列表，最多只允许配置 10 个公钥",
+      "hostname": "主机名称。Windows 主机名只能包含字母（a-z，A-Z）、数字（0-9）和连字符（-），不能含有空格或者句号(.)。且不能完全是数字。Linux 下主机名可以指定为 FQDN。",
+      "networks": "网卡网络配置信息列表",
+      "nameservers": "Name Server 地址列表，最多只允许配置 3 个 nameserver",
+      "default_user_password": "为 cloud-init 默认用户设置的密码。Windows 下默认为 Admin 用户。Linux 下默认为 root 用户"
+    },
+    "Task": {
+      "args": "任务参数",
+      "cluster": "关联集群",
+      "description": "任务描述",
+      "error_code": "错误码",
+      "error_message": "错误信息",
+      "finished_at": "结束时间",
+      "id": "唯一标识 ID",
+      "internal": "是否为内部引发的",
+      "key": "步骤名",
+      "local_created_at": "该数据创建时间，由数据库创建",
+      "progress": "进度",
+      "resource_id": "资源 ID",
+      "resource_mutation": "内部字段",
+      "resource_rollback_error": "资源回滚的错误原因",
+      "resource_rollback_retry_count": "资源回滚的重试次数",
+      "resource_rollbacked": "是否进行过回滚",
+      "resource_type": "资源类型",
+      "snapshot": "步骤快照",
+      "started_at": "触发时间",
+      "status": "状态",
+      "steps": "步骤",
+      "type": "类型",
+      "user": "触发用户"
+    },
+    "MetricLabel": {
+      "to_hostname": "",
+      "serial_number": "",
+      "pool": "",
+      "name": "",
+      "metric_name": "",
+      "job": "",
+      "instance": "",
+      "_zone": "",
+      "_witness": "",
+      "_volume": "",
+      "_vm": "",
+      "_to_uuid": "",
+      "_service": "",
+      "_scvm": "",
+      "_network": "",
+      "_mac": "",
+      "_host": "",
+      "_device": "",
+      "_cluster": "",
+      "_chunk": "",
+      "enum": "* MetricLabel:"
+    },
+    "MigrateType": {
+      "enum": ""
+    },
+    "VlanMapping": {
+      "src_vlan_local_id": "源 VLAN 的 local id",
+      "dest_vlan_local_id": "目标集群映射 VLAN 的 local id"
+    },
+    "MigrateVmConfig": {
+      "remove_unmovable_devices": "移除设备",
+      "new_name": "重命名目标虚拟机",
+      "network_mapping": "虚拟机网络映射",
+      "migrate_type": "迁移方式",
+      "elf_storage_policy": "存储策略",
+      "delete_src_vm": "是否保留源虚拟机。默认为保留。当迁移方式为热迁移的时候，始终不保留源虚拟机。"
+    },
+    "VmMigrateAcrossClusterParams": {
+      "data.vm_config": "虚拟机配置",
+      "data.cluster_id": "目标集群。",
+      "data.host_id": "目标主机。留空时则自动调度至合适的主机上",
+      "data": "迁移配置",
+      "where": "选择待迁移的虚拟机"
+    },
+    "StopVmInCutoverMigrationParams": {
+      "force": "是否强制性关闭源虚拟机。强制关闭虚拟机是有一定概率造成虚拟机异常。默认为非强制关闭",
+      "tasks": "待触发关闭源虚拟机的分段迁移任务"
+    },
+    "AbortMigrateVmAcrossClusterParams": {
+      "tasks": "待终止的跨集群迁移任务"
+    },
+    "VmUpdateHostOptionsParams": {
+      "data.ntp_servers": "设置 NTP 服务器地址",
+      "data.dns_servers": "设置 DNS 服务器地址",
+      "data.hostname": "设置主机名",
+      "data": "设置需要更新的数据",
+      "where": "用于筛选需要更新的 vm"
+    },
+    "VmResetGuestOsPasswordParams": {
+      "data.password": "新密码",
+      "data.username": "用于指定被修改密码的用户",
+      "data": "设置需要更新的数据",
+      "where": "用于筛选需要更新的 vm"
+    },
+    "VmUpdateOwnerParams": {
+      "enum": "",
+      "data.value": "用于查询新拥有者对应列的值",
+      "data": "设置需要更新的数据",
+      "where": "用于筛选需要更新的 vm"
+    },
+    "UpdatePassrodSecurityParams": {
+      "password_expire_days": "密码有效时间，为 0 时表示永不失效",
+      "password_complexity": "密码复杂度",
+      "login_miss_time_threshold": "限定周期时间，表示多少毫秒内可以进行重试。与 login_miss_num_threshold 同时设置为 0 时表示无限制。",
+      "login_miss_num_threshold": "周期内最大失败次数，表示规定重试时间内可尝试重试的次数。与 login_miss_time_threshold 同时设置为 0 时表示无限制。"
+    },
+    "UpdateAccessRestrictionParams": {
+      "access_list": "访问模式为白名单时表示允许访问的地址方位，访问模式为黑名单时表示禁止访问的地址范围。无限制时无需关心此项。",
+      "access_mode": "访问模式"
+    },
+    "UpdateSessionTimeoutParams": {
+      "session_max_age": "会话超时时间，单位为毫秒。超过设置时间后会自动登出。设置为 0 时表示无超时时间。"
+    },
+    "WithTask_VsphereEsxiAccount-Array_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "UpdateVsphereEsxiAccountParamsData": {
+      "port": "对应主机的 IP 暴露的端口，默认值为 443",
+      "password": "更新对应账号密码，留空则不更新（自动传递空字符串）",
+      "username": "更新对应账号名",
+      "ip": "更新对应 ESXI 节点 IP",
+      "esxi_account_id": "用于查询需要更新的对应账号的 ID"
+    },
+    "UpdateVsphereEsxiAccountParams": {
+      "data": "配置需要被更新的账号信息"
+    },
+    "WithTask_VcenterAccount_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "CreateVcenterAccountParamsData": {
+      "port": "对应 vCenter 监听的端口号",
+      "password": "对应 vCenter 登陆用密码",
+      "username": "对应 vCenter 登陆用账号名",
+      "ip": "对应 vCenter IP",
+      "cluster_id": "对应的集群 ID"
+    },
+    "CreateVcenterAccountParams": {
+      "data": "被创建的账号信息"
+    },
+    "VcenterAccountWhereUniqueInput": {
+      "id": "唯一标识",
+      "local_id": "UUID"
+    },
+    "UpdateVcenterAccountParamsData": {
+      "port": "对应 vCenter 监听的端口号",
+      "password": "对应 vCenter 登陆用密码",
+      "username": "对应 vCenter 登陆用账号名",
+      "ip": "对应 vCenter IP"
+    },
+    "UpdateVcenterAccountParams": {
+      "data": "用于筛选需要被更新的 vCenter Account",
+      "where": "用于更新的账号信息"
+    },
+    "ColumnConfig": {
+      "name": "该字段在表格中的展示名称",
+      "path": "指定字段，该字段必须存在资源中"
+    },
+    "TableReporterParams": {
+      "filter.nvmfSubsystems": "",
+      "filter.contentLibraryVmTemplates": "",
+      "filter.nvmfNamespaceSnapshots": "",
+      "filter.contentLibraryImages": "",
+      "filter.nvmfNamespaces": "",
+      "filter.namespaceGroups": "",
+      "filter.iscsiLuns": "",
+      "filter.tasks": "",
+      "filter.userAuditLogs": "",
+      "filter.systemAuditLogs": "",
+      "filter.iscsiLunSnapshots": "",
+      "filter.iscsiConnections": "",
+      "filter.consistencyGroups": "",
+      "filter.users": "",
+      "filter.vmEntityFilters": "",
+      "filter.snapshotPlans": "",
+      "filter.globalAlertRules": "",
+      "filter.alerts": "",
+      "filter.vmPlacementGroups": "",
+      "filter.vmTemplates": "",
+      "filter.elfImages": "",
+      "filter.vmVolumes": "",
+      "filter.vlans": "",
+      "filter.disks": "",
+      "filter.vdses": "",
+      "filter.elfDataStores": "",
+      "filter.vms": "",
+      "filter.nfsExports": "",
+      "filter.iscsiTargets": "",
+      "filter.usbDevices": "",
+      "filter.nics": "",
+      "filter.clusters": "",
+      "filter.datacenters": "",
+      "filter.hosts": "",
+      "name": "CSV 名称",
+      "columns": "表格定制",
+      "filter": "资源筛选条件，仅导出符合筛选条件的资源。仅且必须提供一种筛选条件。"
+    },
+    "CancelUploadTaskParams": {
+      "where": "选中的任务"
+    },
+    "NestedEverouteClusterAgentStatus": {
+      "currentNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "manageVDSes": "",
+      "numberHealth": ""
+    },
+    "NestedEverouteClusterControllerStatus": {
+      "currentNumber": "",
+      "expectNumber": "",
+      "instances": "",
+      "numberHealth": ""
+    },
+    "EveroutePackage": {
+      "arch": "架构",
+      "description": "描述",
+      "entityAsyncStatus": "内部字段",
+      "id": "唯一标识",
+      "local_created_at": "创建时间",
+      "name": "名称",
+      "package_info": "安装包信息",
+      "size": "容量大小（字节）",
+      "version": "版本"
+    }
+  },
+  "tags": [
+    {
+      "name": "TableReporter",
+      "x-displayName": "Export Table",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/update-cluster-network-setting": {
+      "summary": "编辑集群的网络设置 ",
+      "description": ""
+    },
+    "/update-cluster-virtualization-setting": {
+      "summary": "编辑集群的虚拟化设置 ",
+      "description": ""
+    },
+    "/update-cluster-ha-setting": {
+      "summary": "编辑集群的高可用设置 ",
+      "description": ""
+    },
+    "/update-cluster-enable-iscsi-setting": {
+      "summary": "编辑集群的块存储设置",
+      "description": ""
+    },
+    "/migrate-vm-across-cluster": {
+      "summary": "跨集群迁移虚拟机 ",
+      "description": ""
+    },
+    "/stop-vm-in-cutover-migration": {
+      "summary": "关闭源虚拟机",
+      "description": "在分段迁移中，用户需手动关闭源虚拟机以完成剩下的数据迁移"
+    },
+    "/abort-migrate-vm-across-cluster": {
+      "summary": "中断跨集群迁移 ",
+      "description": "用户手动终止跨集群迁移任务"
+    },
+    "/update-vm-host-options": {
+      "summary": "更新虚拟机主机信息",
+      "description": "用于更新指定虚拟机的主机信息，包括dns，ntp，主机名。"
+    },
+    "/reset-vm-guest-os-password": {
+      "summary": "重置虚拟机密码",
+      "description": "用于更新指定虚拟机 guest_os 用户的密码。"
+    },
+    "/update-vm-owner": {
+      "summary": "更新指定虚拟机所属用户",
+      "description": ""
+    },
+    "/update-password-security": {
+      "summary": "更新密码安全",
+      "description": ""
+    },
+    "/update-access-restriction": {
+      "summary": "更新访问限制",
+      "description": ""
+    },
+    "/update-session-timeout": {
+      "summary": "更新会话超时",
+      "description": ""
+    },
+    "/update-vsphere-esxi-account": {
+      "summary": "更新vsphereEsxiAccount信息 ",
+      "description": ""
+    },
+    "/create-vcenter-account": {
+      "summary": "创建 Vcenter Account",
+      "description": ""
+    },
+    "/update-vcenter-account": {
+      "summary": "更新 Vcenter Account",
+      "description": ""
+    },
+    "/upload-svt-image": {
+      "summary": "上传SVT镜像",
+      "description": ""
+    },
+    "/export-csv": {
+      "summary": "CSV 导出",
+      "description": ""
+    },
+    "/cancel-upload-task": {
+      "summary": "取消上传任务",
+      "description": ""
+    }
+  }
+}

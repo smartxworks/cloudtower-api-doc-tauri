@@ -160,7 +160,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
     name: "ReportManagement",
     tags: [
       "ReportTask",
-      "ReportTemplate"
+      "ReportTemplate",
+      "TableReporter"
     ]
   },
   {
