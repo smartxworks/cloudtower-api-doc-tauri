@@ -1,15 +1,12 @@
 ---
 id: download
 slug: /download
+title: SDK Overview
 ---
+import Download from '../../download.md';
 
-# SDK Overview
-
-import Download from '../../../../swagger/components/Download';
-
-| Language | URL |
-| :-----| :----- |
-| python | [GitHub Address](https://github.com/smartxworks/cloudtower-python-sdk) | 
-| java | [GitHub Address](https://github.com/smartxworks/cloudtower-java-sdk)  | 
-| go | [GitHub Address](https://github.com/smartxworks/cloudtower-go-sdk) | 
-| json | <Download/> |
+<Download 
+java_url="https://github.com/smartxworks/cloudtower-java-sdk"
+go_url="https://github.com/smartxworks/cloudtower-go-sdk"
+python_url="https://github.com/smartxworks/cloudtower-python-sdkv1.10.0.post1"
+/>

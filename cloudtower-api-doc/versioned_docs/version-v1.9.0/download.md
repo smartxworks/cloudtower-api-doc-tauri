@@ -1,15 +1,12 @@
 ---
 id: download
 slug: /download
+title: SDK 概览
 ---
+import Download from '../../i18n/zh/download.md'
 
-# SDK 概览
-
-import Download from '../../swagger/components/Download';
-
-| 语言 | 地址 |
-| :-----| :----- |
-| python | [GitHub 地址](https://github.com/smartxworks/cloudtower-python-sdk) | 
-| java | [GitHub 地址](https://github.com/smartxworks/cloudtower-java-sdk) | 
-| go | [GitHub 地址](https://github.com/smartxworks/cloudtower-go-sdk) | 
-| json | <Download/> |
+<Download 
+java_url="https://github.com/smartxworks/cloudtower-java-sdk"
+go_url="https://github.com/smartxworks/cloudtower-go-sdk"
+python_url="https://github.com/smartxworks/cloudtower-python-sdk"
+/>
