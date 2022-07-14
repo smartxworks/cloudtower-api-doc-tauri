@@ -64,10 +64,13 @@ const genSchemaExample = (params: {
   } else if((schema as OpenAPIV3.NonArraySchemaObject).anyOf) {
     return {};
   } else {
-    const { type } = schema as OpenAPIV3.NonArraySchemaObject;
+    const { type, enum:eValues} = schema as OpenAPIV3.NonArraySchemaObject;
     switch(type) {
       case 'string': {
-        if(field.endsWith('id')) {
+        if(eValues?.length) {
+          return eValues[0]
+        }
+        else if(field.endsWith('id')) {
           return 'ck74rk21wg5lz0786opdnzz5m';
         } else {
           return `${field}-string`
