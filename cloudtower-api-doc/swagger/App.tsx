@@ -58,6 +58,7 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+    localStorage.removeItem(LOCAL_STORAGE_SERVERS_KEY)
     return () => {
       const docContainer = document.querySelector(
         "#__docusaurus > div.main-wrapper.docs-wrapper.docs-doc-page > div > main > div"
@@ -65,7 +66,6 @@ const App: React.FC = () => {
       if (docContainer && docContainer.classList.contains(REDOC_CLASS)) {
         docContainer.classList.remove(REDOC_CLASS);
       }
-      localStorage.removeItem(LOCAL_STORAGE_SERVERS_KEY)
     };
   }, []);
 

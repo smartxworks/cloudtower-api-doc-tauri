@@ -160,3 +160,8 @@ li .dropdown__link[href="/en/v1.8.0/go-sdk"] {
   pointer-events: none;
   color: gray;
 }
+
+.redoc-json code {
+  background-color: inherit;
+  border: none;
+}

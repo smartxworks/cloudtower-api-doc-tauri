@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, useField } from "informed";
-import { JsonPointer } from "@redocly/reference-docs/lib/redoc-lib";
+import _ from 'lodash';
+import { JsonPointer, Server } from "@redocly/reference-docs/lib/redoc-lib";
 import { observer } from "mobx-react";
 import {
   Console as ConsoleComponent,
@@ -9,8 +10,11 @@ import {
   TryItPanel,
 } from "@redocly/reference-docs/lib/components/console/Console";
 import {
-  Accordion,
+  Accordion
 } from "@redocly/reference-docs/lib/components/Panel";
+import {
+  ResponsePanel,
+} from "@redocly/reference-docs/lib/components/console/ResponsePanel";
 import {
   AuthPanel,
   requiredValidator,
@@ -22,6 +26,7 @@ import { l } from "@redocly/reference-docs/lib/redoc-lib/src/services/Labels";
 import { RenderHook } from "@redocly/reference-docs/lib/redoc-lib/src/components/helper";
 import { unescapeQueryParams, updateStorage } from '@redocly/reference-docs/lib/components/console/utils'
 import { ServerChooser } from './ServerDropdown';
+import { TrueRequest } from './TrueRequest';
 
 @observer
 export class Console extends ConsoleComponent {
@@ -43,6 +48,33 @@ export class Console extends ConsoleComponent {
       }, () => updateStorage(newForm))
     }
   }
+
+  handleServerChange: (server: Server) => void = (server) => {
+    const { resolvedRawSpec } = this.state
+    this.setState({
+      server,
+      resolvedRawSpec: {
+        ...resolvedRawSpec,
+        servers: [
+          server,
+          ...resolvedRawSpec.servers,
+        ]
+      }
+    });
+    this.props.operation.setActiveServer(server);
+  }
+
+  renderResponse: () => JSX.Element = () => {
+    const { response, error, time } = this.state
+    return (
+      <>
+      <ResponsePanel response={response} error={error} time={time}/>
+      <TrueRequest/>
+      </>
+    )
+  }
+
+
   renderRequest: () => JSX.Element = () => {
     const { operation, store, securityDefaults, properties} = this.props;
     const { resolvedRawSpec, form, server } = this.state;
