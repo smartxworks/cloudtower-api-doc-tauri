@@ -79,7 +79,7 @@ export class ResponsePanel extends ResponsePanelComponent {
         : resData > 1_000
         ? (resData / 1_000).toFixed(2) + " KB"
         : resData + " B";
-    if (!error?.response || !res) {
+    if ((error && !error.response) || !res) {
       return (
         <>
           <ErrorHeader>{i18next.t('components.ResponseHeader_1')}</ErrorHeader>
