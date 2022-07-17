@@ -13,9 +13,6 @@ import {
   Accordion
 } from "@redocly/reference-docs/lib/components/Panel";
 import {
-  ResponsePanel,
-} from "@redocly/reference-docs/lib/components/console/ResponsePanel";
-import {
   AuthPanel,
   requiredValidator,
 } from "@redocly/reference-docs/lib/components/console/AuthPanel";
@@ -27,6 +24,7 @@ import { RenderHook } from "@redocly/reference-docs/lib/redoc-lib/src/components
 import { unescapeQueryParams, updateStorage } from '@redocly/reference-docs/lib/components/console/utils'
 import { ServerChooser } from './ServerDropdown';
 import { TrueRequest } from './TrueRequest';
+import { ResponsePanel } from './ResponsePanel';
 
 @observer
 export class Console extends ConsoleComponent {

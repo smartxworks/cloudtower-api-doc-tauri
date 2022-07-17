@@ -5,6 +5,7 @@ import {
   ResponseHeader
 } from '@redocly/reference-docs/lib/components/console/ResponsePanel'
 import { JsonViewer, RequestType } from './JsonViewer';
+import i18next from '../../i18n';
 
 
 export const TrueRequest = () => {
@@ -54,7 +55,7 @@ export const TrueRequest = () => {
 
   return (
     <React.Fragment>
-      <ResponseHeader>Actual Request</ResponseHeader>
+      <ResponseHeader>{i18next.t('components.actualRequest')}</ResponseHeader>
       <JsonViewer data={data} requestAsType={requestAsType} onTypeSelect={setRawRequestAsType}/>
     </React.Fragment>
   )

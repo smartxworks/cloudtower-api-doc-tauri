@@ -59,5 +59,19 @@
   "AuditManagement": "事件审计管理",
   "TaskManagement": "任务管理",
   "UserManagement": "用户与权限管理",
-  "BackupManagement": "备份管理"
+  "BackupManagement": "备份管理",
+  "ResponseHeader_1": "无法获得任何返回",
+  "ResponseHeader_2": "可能原因如下：",
+  "ResponseHeader_3": "未知错误",
+  "ResponseErrorReason_1": " - 服务端 CORS 未正确配置",
+  "ResponseErrorReason_2": " - 服务端无法正确返回",
+  "ResponseErrorReason_3": " - 无网络连接",
+  "ResponseErrorReason_4": " - 文档问题，请联系文档维护者",
+  "ResponseErrorReason_5": " - 浏览器安全设置未正确配置",
+  "ResponseErrorReason_6": " - 如果当前 API 接口为 https 端口，请确保通过浏览器访问过请求页面，信任了该页面",
+  "Status": "状态： ",
+  "Time": "时间： ",
+  "Size": "大小： ",
+  "Headers": "请求头： ",
+  "actualRequest": "实际请求："
 }
