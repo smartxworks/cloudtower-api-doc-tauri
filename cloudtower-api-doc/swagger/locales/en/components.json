@@ -60,5 +60,19 @@
   "AuditManagement": "Event Audit Management",
   "TaskManagement": "Task Management",
   "UserManagement": "User And Privileges Management",
-  "BackupManagement": "Backup Management"
+  "BackupManagement": "Backup Management",
+  "ResponseHeader_1": "Could not get any response",
+  "ResponseHeader_2": "Why this might have happened:",
+  "ResponseHeader_3": "Something went wrong",
+  "ResponseErrorReason_1": " - CORS is misconfigured on the server",
+  "ResponseErrorReason_2": " - The server couldn't sent a response",
+  "ResponseErrorReason_3": " - No internet access",
+  "ResponseErrorReason_4": " - Documentation issue - contact API owner",
+  "ResponseErrorReason_5": " - Misconfigured security definition",
+  "ResponseErrorReason_6": " - Make sure you visit the page before if it's https protocols",
+  "Status": "Status: ",
+  "Time": "Time: ",
+  "Size": "Size: ",
+  "Headers": "Headers: ",
+  "actualRequest": "Actual Request: "
 }
