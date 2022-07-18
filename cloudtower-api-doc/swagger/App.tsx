@@ -71,7 +71,7 @@ const App: React.FC = () => {
 
 
   const transCom = useCallback(() => {
-    translateComponent();
+    // translateComponent();
     overwriteSchemaTitle(specRef.current, { request: true, response: true});
   }, [])
 
