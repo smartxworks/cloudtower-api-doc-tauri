@@ -9,6 +9,8 @@ jobs:
   vercel-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: global-setting
+        run: npm install -g vercel@27.0.0
       - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
