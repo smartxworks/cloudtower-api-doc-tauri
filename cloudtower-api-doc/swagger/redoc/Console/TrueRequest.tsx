@@ -46,7 +46,7 @@ export const TrueRequest = () => {
           indent: "\t",
           short: true,
         }) || '';
-        setData(snippet);break;
+        setData(snippet.replace('-X', '-k -X'));break;
       default:
         setData(rawRequest);
         break;
