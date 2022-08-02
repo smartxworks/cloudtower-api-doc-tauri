@@ -961,7 +961,7 @@
       "description": ""
     },
     "/get-vm-templates-connection": {
-      "summary": " 获取集群虚拟机模板",
+      "summary": " 获取集群虚拟机模板数量",
       "description": ""
     },
     "/get-vm-templates": {
