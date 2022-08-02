@@ -1398,7 +1398,7 @@
       "description": ""
     },
     "/get-vm-templates-connection": {
-      "summary": " Get cluster virtual machine templates",
+      "summary": " Get the number of cluster virtual machine templates",
       "description": ""
     },
     "/get-vm-templates": {
