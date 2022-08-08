@@ -6,14 +6,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
 const versions = require("./versions.json");
 
-process.env = new Proxy(process.env, {
-  get(target, prop) {
-    if(prop === 'NODE_ENV') {
-      return 'development'
-    }
-    return typeof target[prop] === 'function' ? target[prop].bind(target) : target[prop]
-  }
-})
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CloudTower API",
