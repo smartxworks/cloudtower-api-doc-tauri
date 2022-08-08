@@ -53,7 +53,13 @@ const config = {
       return {
         name: "overwrite-config",
         configureWebpack(config, isServer, utils, content) {
+          console
           return {
+            output: {
+              ...config.output,
+              filename: '[name].[contenthash:8].js' ,
+              chunkFilename: '[name].[contenthash:8].js',
+            },
             plugins: [
               new webpack.ProvidePlugin({
                 process: "process/browser.js",
