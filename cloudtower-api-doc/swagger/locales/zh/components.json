@@ -40,7 +40,7 @@
   "value": "值",
   "ClusterManagement": "集群管理",
   "MetroXClusterManagement": "双活集群管理",
-  "VmwareManagement": "VmWare 平台相关配置",
+  "VmwareManagement": "VMware 平台相关配置",
   "AlertManagement": "报警管理",
   "VmManagement": "虚拟机管理",
   "CloudTowerSetting": "CloudTower 系统配置",

@@ -53,19 +53,19 @@
       "description": ""
     },
     "/get-scvm-disk-metrics": {
-      "summary": " 查询指定 vmware 主机硬盘性能指标",
+      "summary": " 查询指定 VMware 主机硬盘性能指标",
       "description": ""
     },
     "/get-scvm-metrics": {
-      "summary": " 查询指定 vmware 主机性能指标",
+      "summary": " 查询指定 VMware 主机性能指标",
       "description": ""
     },
     "/get-scvm-network-metrics": {
-      "summary": " 查询指定 vmware 主机网络性能指标",
+      "summary": " 查询指定 VMware 主机网络性能指标",
       "description": ""
     },
     "/get-scvm-service-metrics": {
-      "summary": " 查询指定 vmware 主机服务性能指标",
+      "summary": " 查询指定 VMwaree 主机服务性能指标",
       "description": ""
     },
     "/get-top-n-metrics-in-clusters": {
