@@ -1,7 +1,7 @@
 ---
 id: intro
 slug: /
-title: CloudTower API 通用指南
+hide_title: true
 ---
 import GetToken from '../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../code_blocks/GetTokenResponse.md'

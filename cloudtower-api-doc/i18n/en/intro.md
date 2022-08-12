@@ -1,3 +1,4 @@
+# CloudTower API General Guide
 Welcome to CloudTower API! Please read this General Guide carefully.
 * You can use the CloudTower API to call the different types of resources that are managed by CloudTower.
 * This document is written following the OpenApi Specification v3.0.0.

@@ -1,9 +1,8 @@
 ---
 id: api
 slug: /api
+hide_title: true
 ---
-# CloudTower API
-
 import App from '../../swagger/App';
 
 <App />

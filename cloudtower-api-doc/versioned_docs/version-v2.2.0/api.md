@@ -1,7 +1,7 @@
 ---
 id: api
 slug: /api
-hide: title
+hide_title: true
 ---
 
 import App from '../../swagger/App';
