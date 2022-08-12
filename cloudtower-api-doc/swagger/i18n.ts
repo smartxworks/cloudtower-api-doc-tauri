@@ -1,5 +1,4 @@
 import i18next from "i18next";
-import _ from 'lodash';
 import { OpenAPIV3 } from 'openapi-types';
 import { SupportLanguage } from "./utils";
 import enComponents from './locales/en/components.json';
@@ -21,6 +20,10 @@ import zh2_1API from './locales/zh/v2.1.0.json';
 import en2_1API from './locales/en/v2.1.0.json';
 
 
+import zh2_2API from './locales/zh/v2.2.0.json';
+import en2_2API from './locales/en/v2.2.0.json';
+
+
 export type ApiDoc = {
   summary: string;
   description: string;
@@ -36,6 +39,7 @@ i18next.init({
         ['v1_10_0']: en1_10Api,
         ['v2_0_0']: en2_0API,
         ['v2_1_0']: en2_1API,
+        ['v2_2_0']: en2_2API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -44,20 +48,21 @@ i18next.init({
         ['v1_10_0']: zh1_10Api,
         ['v2_0_0']: zh2_0API,
         ['v2_1_0']: zh2_1API,
+        ['v2_2_0']: zh2_2API,
         components: zhComponents,
     },
   },
   lng: SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0'],
+  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0','v2_2_0'],
   interpolation: {
     prefix: "{",
     suffix: "}",
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'components'],
+  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'v2_2_0', 'components'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {

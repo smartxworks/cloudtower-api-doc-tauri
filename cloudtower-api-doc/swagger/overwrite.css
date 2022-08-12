@@ -165,3 +165,14 @@ li .dropdown__link[href="/en/v1.8.0/go-sdk"] {
   background-color: inherit;
   border: none;
 }
+
+
+@media (min-width: 1440px) {
+  .container:has(#swagger-ui) {
+    max-width: none !important;
+  }
+}
+.container:has(#swagger-ui) {
+  max-width: none !important;
+}
+

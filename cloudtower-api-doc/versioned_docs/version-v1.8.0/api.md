@@ -1,9 +1,8 @@
 ---
 id: api
 slug: /api
+hide_title: true
 ---
-# 全部
-
 import App from '../../swagger/App';
 
 <App />

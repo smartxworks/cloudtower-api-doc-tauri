@@ -1,7 +1,7 @@
 ---
 id: intro
 slug: /
-title: CloudTower API General Guide
+hide_title: true
 ---
 
 import Intro from '../../intro.md'
