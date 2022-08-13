@@ -3,7 +3,7 @@ id: intro
 slug: /
 hide_title: true
 ---
-import Intro from '../../i18n/zh/intro.md'
+import Intro, { toc as introToc } from '../../i18n/zh/intro.md'
 import GetToken from '../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../code_blocks/GetTokenResponse.md'
 import GetVm from '../../code_blocks/GetVm.md'
@@ -29,3 +29,5 @@ import OpenVnc from '../../code_blocks/OpenVnc.md'
  GetVncResponse,
  OpenVnc
 }}/>
+
+export const toc = [...introToc ];
