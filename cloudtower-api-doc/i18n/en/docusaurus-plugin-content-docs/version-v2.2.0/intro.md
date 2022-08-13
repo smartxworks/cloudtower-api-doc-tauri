@@ -4,7 +4,7 @@ slug: /
 hide_title: true
 ---
 
-import Intro from '../../intro.md'
+import Intro, { toc as introToc } from '../../intro.md'
 import GetToken from '../../../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../../../code_blocks/GetTokenResponse.md'
 import GetVm from '../../../../code_blocks/GetVm.md'
@@ -22,3 +22,5 @@ import GetLunSnapshot from '../../../../code_blocks/GetLunSnapshot.md'
  GetVmSnapshot,
  GetLunSnapshot,
 }}/>
+
+export const toc = [...introToc]
