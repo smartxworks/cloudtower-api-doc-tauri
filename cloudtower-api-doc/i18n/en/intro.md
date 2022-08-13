@@ -1,3 +1,11 @@
+import '../../swagger/utils/autoScroll';
+import TOC from '@theme/TOC';
+
+<div style={{ position: "fixed", right: "8%"}}>
+  <TOC toc={toc} minHeadingLevel={2} maxHeadingLevel={3}/>
+</div>
+
+
 # CloudTower API General Guide
 Welcome to CloudTower API! Please read this General Guide carefully.
 * You can use the CloudTower API to call the different types of resources that are managed by CloudTower.

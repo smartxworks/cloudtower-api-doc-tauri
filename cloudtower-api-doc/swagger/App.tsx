@@ -39,6 +39,7 @@ const Redoc = React.memo(RedocWrapper, (prev, next) => {
 });
 
 const App: React.FC = () => {
+  console.log('red');
   const { version } = useDocsVersion();
   const { i18n } = useDocusaurusContext();
   const [spec, setSpec] = useState<ISpec>();
