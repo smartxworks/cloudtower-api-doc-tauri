@@ -3,7 +3,7 @@ id: intro
 slug: /
 hide_title: true
 ---
-import Intro, { introToc } from '../../intro.md'
+import Intro, { toc as introToc } from '../../intro.md'
 import GetToken from '../../../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../../../code_blocks/GetTokenResponse.md'
 import GetVm from '../../../../code_blocks/GetVm.md'
