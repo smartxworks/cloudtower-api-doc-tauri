@@ -6,6 +6,6 @@ slug: /python-sdk
 
 import Python, { toc as pythonToc } from '../../python.md'
 
-<Java />
+<Python />
 
 export const toc = [...pythonToc]

@@ -1,3 +1,5 @@
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
 export const autoScroll = () => {
   const { hash } = document.location;
   const decode_hash = decodeURIComponent(hash)
@@ -6,5 +8,6 @@ export const autoScroll = () => {
     exsitMapComponent.scrollIntoView();
   }
 }
-
-window.addEventListener('load', autoScroll)
+if (ExecutionEnvironment.canUseDOM) {
+  window.addEventListener('load', autoScroll)
+}
