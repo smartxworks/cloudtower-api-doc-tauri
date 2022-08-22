@@ -6,20 +6,34 @@ import {
 } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useDocsVersion } from "@docusaurus/theme-common";
+import {  Badge } from '@redocly/reference-docs/lib/redoc-lib/src/common-elements'
 import i18next from "./i18n";
-import { ISpec, specMap, wrapSpecWithI18n, translateComponent, splitSchema, overwriteSchemaTitle } from "./utils";
+import { ISpec, specMap, wrapSpecWithI18n, splitSchema, overwriteSchemaTitle } from "./utils";
 import Redocly from './redoc/Redoc';
 import { LOCAL_STORAGE_SERVERS_KEY } from './redoc/Console/ServerDropdown';
+import { OpenAPIV3 } from "openapi-types";
 
 const REDOC_CLASS = "redoc-container";
 
-const RedocWrapper: React.FC<{spec:ISpec, onInit:RedocProRawOptions['hooks']['onInit']}> = (props) => {
+const ApiTag:React.FC<{
+  operationId: string;
+  rawSpec: ISpec
+}> = ({ operationId, rawSpec }) => {
+  const findRawTags = useCallback((operation_id) => {
+    const rawPath = Object.values(rawSpec.paths).find((p) => p.post.operationId === operation_id);
+    return rawPath?.post?.tags?.join('-')
+  }, [rawSpec])
+  return <Badge type="secondary">{findRawTags(operationId)}</Badge>
+}
+const RedocWrapper: React.FC<{spec:ISpec, rawSpec:ISpec, onInit:RedocProRawOptions['hooks']['onInit']}> = (props) => {
+
   return props.spec ? (
     <Redocly
       definition={props.spec}
       options={{
         hooks: {
           onInit: props.onInit,
+          AfterOperationSummary: ({operation}) => <ApiTag operationId={operation.operationId} rawSpec={props.rawSpec}/>
         },
         routingBasePath: 'api#',
         pagination: "section",
@@ -39,15 +53,16 @@ const Redoc = React.memo(RedocWrapper, (prev, next) => {
 });
 
 const App: React.FC = () => {
-  console.log('red');
   const { version } = useDocsVersion();
   const { i18n } = useDocusaurusContext();
   const [spec, setSpec] = useState<ISpec>();
+  const [rawSpec, setRawSpec] = useState<ISpec>();
   const specRef = useRef<ISpec>(spec)
 
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
+    setRawSpec(swaggerSpec);
     i18next.changeLanguage(i18n.currentLocale);
     const newSpec = splitSchema(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version));
     setSpec(newSpec);
@@ -98,7 +113,7 @@ const App: React.FC = () => {
 
   return (
     <div id="swagger-ui">
-      <Redoc spec={cloneDeep(spec)} onInit={onReDocLoaded}/>
+      <Redoc spec={cloneDeep(spec)} rawSpec={rawSpec} onInit={onReDocLoaded}/>
     </div>
   );
 };
