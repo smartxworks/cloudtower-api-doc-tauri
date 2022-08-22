@@ -13,6 +13,7 @@ import { CallbacksList } from '@redocly/reference-docs/lib/redoc-lib/src/compone
 import { CallbackSamples } from '@redocly/reference-docs/lib/redoc-lib/src/components/CallbackSamples/CallbackSamples'
 import { SecurityRequirements } from '@redocly/reference-docs/lib/redoc-lib/src/components/SecurityRequirement/SecurityRequirement'
 import { Parameters } from '@redocly/reference-docs/lib/redoc-lib/src/components/Parameters/Parameters';
+import { RenderHook } from '@redocly/reference-docs/lib/redoc-lib/src/components/helper'
 import Endpoint from '../Endpoint';
 
 const OperationRow = styled(Row)`
@@ -29,6 +30,7 @@ const Operation:React.FC<OperationProps> = observer((props) => {
   const store = useContext(StoreContext);
   const des = description || externalDocs;
   const events = store?.options?.events;
+  const hooks = store?.options?.hooks;
   const toggleResponse = React.useCallback((isExpanded:boolean) => {
     const panelToggleEvent = creatPanelToggleEvent({
       operation,
@@ -52,9 +54,12 @@ const Operation:React.FC<OperationProps> = observer((props) => {
   return (
     <OperationRow layout={layout}>
       <MiddlePanel isStacked={layout === LayoutVariant.STACKED}>
+        <RenderHook Hook={hooks.BeforeOperation} props={{ operation }}/>
         <H2>
           <ShareLink to={operation.id}/>
+          <RenderHook Hook={hooks.BeforeOperationSummary} props={{ operation }}/>
           { name }
+          <RenderHook Hook={hooks.AfterOperationSummary} props={{ operation }}/>
           { deprecated && <Badge type="warning">Deprecated</Badge>}
         </H2>
         {
@@ -95,6 +100,7 @@ const Operation:React.FC<OperationProps> = observer((props) => {
             </ScrollableContentPanel>
           ) : null
         }
+        <RenderHook Hook={hooks.AfterOperation} props={{operation}}/>
       </MiddlePanel>
       {
           store.showRightPanel ?
