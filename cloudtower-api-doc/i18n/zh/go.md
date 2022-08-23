@@ -1,8 +1,8 @@
 import '../../swagger/utils/autoScroll';
 
-# Cloudtower Go SDK
+# CloudTower Go SDK
 
-Golang 环境下的 Cloudtower SDK，适用于 golang 1.16 及以上版本
+Golang 环境下的 CloudTower SDK，适用于 golang 1.16 及以上版本
 
 - [源码地址](https://github.com/smartxworks/cloudtower-go-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-go-sdk/releases)

@@ -1,8 +1,8 @@
 import '../../swagger/utils/autoScroll';
 
-# Cloudtower Java SDK
+# CloudTower Java SDK
 
-The Cloudtower SDK in Java for versions 1.8 and above
+The CloudTower SDK in Java for versions 1.8 and above
 
 - [Source Address](https://github.com/smartxworks/cloudtower-java-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-java-sdk/releases)
