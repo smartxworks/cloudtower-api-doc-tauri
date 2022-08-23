@@ -1,8 +1,11 @@
 ---
+hide_title: true
 id: go-sdk
 slug: /go-sdk
 ---
 
-# Cloudtower Go SDK
+import Go, { toc as goToc } from '../../go.md'
 
-Docs not ready yet
+<Go />
+
+export const toc = [...goToc]

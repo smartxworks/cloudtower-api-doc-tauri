@@ -1,8 +1,8 @@
 import '../../swagger/utils/autoScroll';
 
-# Cloudtower Python SDK
+# CloudTower Python SDK
 
-The Cloudtower SDK in Python for versions of 2.7, 3.4 and above.
+The CloudTower SDK in Python for versions of 2.7, 3.4 and above.
 
 - [Source Address](https://github.com/smartxworks/cloudtower-python-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-python-sdk/releases)

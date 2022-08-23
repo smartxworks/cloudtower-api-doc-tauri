@@ -11,7 +11,6 @@ import i18next from "./i18n";
 import { ISpec, specMap, wrapSpecWithI18n, splitSchema, overwriteSchemaTitle } from "./utils";
 import Redocly from './redoc/Redoc';
 import { LOCAL_STORAGE_SERVERS_KEY } from './redoc/Console/ServerDropdown';
-import { OpenAPIV3 } from "openapi-types";
 
 const REDOC_CLASS = "redoc-container";
 
