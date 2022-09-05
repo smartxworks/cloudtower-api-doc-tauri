@@ -3,6 +3,7 @@ id: intro
 slug: /
 hide_title: true
 ---
+
 import GetToken from '../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../code_blocks/GetTokenResponse.md'
 import GetVm from '../../code_blocks/GetVm.md'
@@ -31,4 +32,4 @@ import OpenVnc from '../../code_blocks/OpenVnc.md'
  OpenVnc
 }}/>
 
-export const toc = [...introToc]
+export const toc = [...introToc ]

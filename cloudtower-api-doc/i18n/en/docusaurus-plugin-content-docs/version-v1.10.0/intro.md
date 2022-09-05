@@ -22,4 +22,4 @@ import GetLunSnapshot from '../../../../code_blocks/GetLunSnapshot.md'
  GetLunSnapshot,
 }}/>
 
-export const toc = [...introToc]
+export const toc = [...introToc ]

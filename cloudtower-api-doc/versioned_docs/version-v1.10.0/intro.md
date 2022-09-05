@@ -3,6 +3,7 @@ id: intro
 slug: /
 hide_title: true
 ---
+
 import GetToken from '../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../code_blocks/GetTokenResponse.md'
 import GetVm from '../../code_blocks/GetVm.md'
@@ -16,6 +17,7 @@ import GetVnc from '../../code_blocks/GetVnc.md'
 import GetVncResponse from '../../code_blocks/GetVncResponse.md'
 import OpenVnc from '../../code_blocks/OpenVnc.md'
 
+
 <Intro components={{ 
  GetToken,
  GetTokenResponse,
@@ -24,10 +26,10 @@ import OpenVnc from '../../code_blocks/OpenVnc.md'
  GetTask,
  GetVmSnapshot,
  GetLunSnapshot,
-FormatVnc,
+ FormatVnc,
  GetVnc,
  GetVncResponse,
  OpenVnc
 }}/>
 
-export const toc = [...introToc]
+export const toc = [...introToc ]

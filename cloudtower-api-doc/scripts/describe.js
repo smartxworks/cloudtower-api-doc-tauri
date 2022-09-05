@@ -288,7 +288,7 @@ const getSchemaMarkdown = async ({ schemaName, spec, locales, previousVersion, l
         } else if (path === 'last') {
           des = lng === 'zh' ? '可与 after / before 搭配使用，表示获取指定资源前的多少个数据。' : 'It can be used together with after / before, representing the number of data acquired before the specified resource.'
         } else if (path === 'skip') {
-          des = lng === 'zh' ? '可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。' : 'It can be used together with after / before，representing to start a query after skipping n items of the specified resource.'
+          des = lng === 'zh' ? '可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。' : 'It can be used together with after / before, representing to start a query after skipping n items of the specified resource.'
         } else if (path === 'orderBy') {
           des = lng === 'zh' ? '表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。' : ' It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.'
         } else if (path === 'where') {
