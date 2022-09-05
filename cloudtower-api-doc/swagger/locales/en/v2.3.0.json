@@ -136,7 +136,7 @@
       "vm_disks_some": ""
     },
     "VmVolumeType": {
-      "enum": ""
+      "enum": "* KVM_VOLUME: Normal volume \n* KVM_VOLUME_ISCSI: ISCSI vm volume"
     },
     "VmVolume": {
       "cluster": "",
@@ -159,40 +159,40 @@
       "vm_disks": ""
     },
     "VmVolumeRebuildParams": {
-      "name": "",
-      "description": "",
-      "volume_snapshot_id": ""
+      "name": "vm volume's name",
+      "description": "vm volume's description",
+      "volume_snapshot_id": "id of vm volume snapshot to rebuild from"
     },
     "VmVolumeRollbackParams": {
-      "volume_snapshot_id": ""
+      "volume_snapshot_id": "id of vm volume snapshot to roll back from"
     },
     "VmVolumeWhereUniqueInput": {
       "id": "",
       "local_id": ""
     },
     "CloneVmVolumeParams": {
-      "where": "",
-      "data.description": "",
-      "data.name": "",
+      "where": "conditional query to query target volume for clone",
+      "data.description": "vm volume's description",
+      "data.name": "vm volume's name",
       "data": ""
     },
     "UpdateVmVolumeParams": {
-      "where": "",
-      "data.size": "",
-      "data.description": "",
-      "data.name": "",
+      "where": "conditional query to query target volume to update",
+      "data.size": "vm volume's size",
+      "data.description": "vm volume's description",
+      "data.name": "vm volume's name",
       "data": ""
     },
     "VmCdRomParams": {
-      "content_library_image_id": "",
-      "elf_image_id": "",
+      "content_library_image_id": "id of content_library_image for current cd-rom to mount",
+      "elf_image_id": "id of elf_image for current cd-rom to mount",
       "index": "",
       "key": "",
-      "boot": ""
+      "boot": "boot order for current cd-rom"
     },
     "VmUpdateDiskParams": {
-      "data.content_library_image_id": "",
-      "data.elf_image_id": "",
+      "data.content_library_image_id": "id of content_library_image for current cd-rom to mount",
+      "data.elf_image_id": "id of elf_image for current cd-rom to mount",
       "data.vm_volume_id": "",
       "data.vm_disk_id": "",
       "data.bus": "",
@@ -200,34 +200,34 @@
       "where": ""
     },
     "VmVolumeSnapshotType": {
-      "enum": ""
+      "enum": "KVM_VOLUME_SNAPSHOT: normal vm volume snapshot \n* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI vm volume snapshot"
     },
     "VmVolumeSnapshot": {
-      "cluster": "",
-      "createAt": "",
-      "description": "",
-      "id": "",
-      "local_created_at": "",
-      "local_id": "",
-      "name": "",
-      "shared_size": "",
-      "size": "",
-      "type": "",
-      "unique_size": "",
-      "vm_volume": "",
-      "zbs_snapshot_uuid": ""
+      "cluster": "vm volume snapshot's cluster",
+      "createAt": "vm volume snapshot's create time",
+      "description": "vm volume snapshot's description",
+      "id": "vm volume snapshot's identifier",
+      "local_created_at": "vm volume snapshot's create time in db",
+      "local_id": "uuid",
+      "name": "vm volume snapshot's name",
+      "shared_size": "vm volume snapshot's shared size",
+      "size": "vm volume snapshot's size",
+      "type": "vm volume snapshot's type",
+      "unique_size": "vm volume snapshot's unique size",
+      "vm_volume": "vm volume snapshot's vm volume",
+      "zbs_snapshot_uuid": "vm volume snapshot's zbs_snapshot_uuid"
     },
     "WithTask_VmVolumeSnapshot_": {
       "task_id": "asynchronous task id ",
       "data": "resources"
     },
     "VmVolumeSnapshotCreationParams": {
-      "volume_id": "",
-      "description": "",
-      "name": ""
+      "volume_id": "id of vm volume to create snapshot",
+      "description": "vm volume snapshot's description",
+      "name": "vm volume snapshot's name"
     },
     "DeleteVmVolumeSnapshot": {
-      "id": "resource‘s id "
+      "id": "resource's id "
     },
     "WithTask_DeleteVmVolumeSnapshot_": {
       "task_id": "asynchronous task id ",
@@ -355,7 +355,7 @@
       "zbs_snapshot_uuid_starts_with": ""
     },
     "VmVolumeSnapshotDeletionParams": {
-      "where": ""
+      "where": "conditional query to query vm volume snapshot to delete"
     },
     "VmVolumeSnapshotOrderByInput": {
       "enum": "Sorts a list of records"
@@ -388,54 +388,54 @@
   "tags": [
     {
       "name": "VmVolumeSnapshot",
-      "x-displayName": "",
+      "x-displayName": "Vm Volume Snapshot",
       "description": ""
     },
     {
       "name": "ApiInfo",
-      "x-displayName": "",
+      "x-displayName": "Api Info",
       "description": ""
     }
   ],
   "paths": {
     "/get-my-info": {
-      "summary": "",
+      "summary": "Get current login user info",
       "description": ""
     },
     "/rebuild-vm-volume": {
-      "summary": "",
+      "summary": "Rebuild vm volume from vm volume snapshot",
       "description": ""
     },
     "/rollback-vm-volume": {
-      "summary": "",
+      "summary": "Roll back vm volume from vm volume snapshot",
       "description": ""
     },
     "/clone-vm-volume": {
-      "summary": "",
+      "summary": "Clone vm volume",
       "description": ""
     },
     "/update-vm-volume": {
-      "summary": "",
+      "summary": "Update vm volume",
       "description": ""
     },
     "/create-vm-volume-snapshot": {
-      "summary": "",
+      "summary": "Create vm volume snapshot",
       "description": ""
     },
     "/delete-vm-volume-snapshot": {
-      "summary": "",
+      "summary": "Delete vm volume snapshot",
       "description": ""
     },
     "/get-version": {
-      "summary": "",
+      "summary": "Get current API version",
       "description": ""
     },
     "/get-vm-volume-snapshots": {
-      "summary": "",
+      "summary": "Get vm volume snapshots",
       "description": ""
     },
     "/get-vm-volume-snapshots-connection": {
-      "summary": "",
+      "summary": "Get the number of vm volume snapshots",
       "description": ""
     }
   }
