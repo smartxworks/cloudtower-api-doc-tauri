@@ -45,7 +45,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "Vm",
       "VmSnapshot",
       "VmTemplate",
-      "VmVolume"
+      "VmVolume",
+      "VmVolumeSnapshot"
     ]
   },
   {
@@ -205,6 +206,12 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "BackupService",
       "BackupStoreRepository",
       "BackupTargetExecution"
+    ]
+  },
+  {
+    "name": "Other",
+    "tags": [
+      "ApiInfo"
     ]
   }
 ];

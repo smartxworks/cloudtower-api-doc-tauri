@@ -70,6 +70,7 @@
   "ResponseErrorReason_4": " - Documentation issue - contact API owner",
   "ResponseErrorReason_5": " - Misconfigured security definition",
   "ResponseErrorReason_6": " - Make sure you visit the page before if it's https protocols",
+  "Other": "Others",
   "Status": "Status: ",
   "Time": "Time: ",
   "Size": "Size: ",
