@@ -3119,7 +3119,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupLicensesRequestBody": {
@@ -3128,7 +3128,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPackagesConnectionRequestBody": {
@@ -3137,7 +3137,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPackagesRequestBody": {
@@ -3146,7 +3146,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPlanExecutionsConnectionRequestBody": {
@@ -3155,7 +3155,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPlanExecutionsRequestBody": {
@@ -3164,7 +3164,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPlansConnectionRequestBody": {
@@ -3173,7 +3173,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupPlansRequestBody": {
@@ -3182,7 +3182,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupRestoreExecutionsConnectionRequestBody": {
@@ -3191,7 +3191,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupRestoreExecutionsRequestBody": {
@@ -3200,7 +3200,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupRestorePointsConnectionRequestBody": {
@@ -3209,7 +3209,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupRestorePointsRequestBody": {
@@ -3218,7 +3218,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupServicesConnectionRequestBody": {
@@ -3227,7 +3227,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupServicesRequestBody": {
@@ -3236,7 +3236,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupStoreRepositoriesConnectionRequestBody": {
@@ -3245,7 +3245,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupStoreRepositoriesRequestBody": {
@@ -3254,7 +3254,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupTargetExecutionsConnectionRequestBody": {
@@ -3263,7 +3263,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetBackupTargetExecutionsRequestBody": {
@@ -3272,7 +3272,7 @@
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
       "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
       "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before，representing to start a query after skipping n items of the specified resource.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "GetLogServiceConfigsRequestBody": {
@@ -4131,6 +4131,1473 @@
     "WithTask_LogCollection_": {
       "task_id": "asynchronous task id ",
       "data": "resources"
+    },
+    "GetAlertNotifiersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetAlertNotifiersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetAlertRulesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetAlertRulesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetAlertsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetAlertsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetApplicationsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetApplicationsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetBrickTopoesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetBrickTopoesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterImagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterImagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClustersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClustersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterSettingsesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterSettingsesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterTopoesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterTopoesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterUpgradeHistoriesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetClusterUpgradeHistoriesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetConsistencyGroupsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetConsistencyGroupsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetConsistencyGroupSnapshotsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetConsistencyGroupSnapshotsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetContentLibraryImagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetContentLibraryImagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetContentLibraryVmTemplatesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetContentLibraryVmTemplatesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDatacentersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDatacentersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDeploysRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDeploysConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDisksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetDisksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfDataStoresRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfDataStoresConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfImagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfImagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfStoragePoliciesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetElfStoragePoliciesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEntityFiltersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEntityFiltersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEverouteClustersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEverouteClustersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEverouteLicensesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEverouteLicensesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEveroutePackagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetEveroutePackagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGlobalAlertRulesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGlobalAlertRulesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGlobalSettingsesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGlobalSettingsesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGraphsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetGraphsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetHostsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetHostsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIpmisRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiConnectionsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiConnectionsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiLunsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiLunsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiLunSnapshotsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiLunSnapshotsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiTargetsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIscsiTargetsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIsolationPoliciesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetIsolationPoliciesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLabelsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLabelsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLicensesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLicensesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLogCollectionsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetLogCollectionsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetMigrateTransmittersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetMigrateTransmittersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNamespaceGroupsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNamespaceGroupsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNfsExportsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNfsExportsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNfsInodesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNfsInodesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNicsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNicsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNodeTopoesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNodeTopoesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfNamespacesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfNamespacesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfNamespaceSnapshotsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfNamespaceSnapshotsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfSubsystemsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetNvmfSubsystemsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetOrganizationsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetOrganizationsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetPmemDimmsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetPmemDimmsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetRackTopoesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetRackTopoesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetReportTasksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetReportTasksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetReportTemplatesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetReportTemplatesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSecurityPoliciesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSecurityPoliciesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotGroupsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotGroupsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotPlansRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotPlansConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotPlanTasksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnapshotPlanTasksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnmpTransportsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnmpTransportsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnmpTrapReceiversRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSnmpTrapReceiversConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSvtImagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSvtImagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSystemAuditLogsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetSystemAuditLogsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetTasksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetTasksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUploadTasksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUploadTasksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUsbDevicesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUsbDevicesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUserAuditLogsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUserAuditLogsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUserRoleNextsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUserRoleNextsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUsersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetUsersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVcenterAccountsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVcenterAccountsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVdsesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVdsesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetViewsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetViewsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVlansRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVlansConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmDisksRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmDisksConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmEntityFilterResultsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmEntityFilterResultsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmFoldersRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmFoldersConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmNicsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmNicsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmPlacementGroupsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmPlacementGroupsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmSnapshotsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmSnapshotsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmTemplatesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmTemplatesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmVolumesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVmVolumesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVsphereEsxiAccountsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetVsphereEsxiAccountsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetWitnessesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetWitnessesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetZonesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetZonesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetZoneTopoesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "GetZoneTopoesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
     }
   },
   "tags": [
