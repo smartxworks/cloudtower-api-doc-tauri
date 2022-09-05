@@ -136,7 +136,7 @@
       "vm_disks_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "VmVolumeType": {
-      "enum": ""
+      "enum": "* KVM_VOLUME: 普通虚拟卷快照 \n* KVM_VOLUME_ISCSI: ISCSI 虚拟卷快照"
     },
     "VmVolume": {
       "cluster": "所属集群",
@@ -159,39 +159,39 @@
       "vm_disks": "关联虚拟盘"
     },
     "VmVolumeRebuildParams": {
-      "name": "",
-      "description": "",
-      "volume_snapshot_id": ""
+      "name": "重建虚拟卷的名称",
+      "description": "重建虚拟卷的描述",
+      "volume_snapshot_id": "重建虚拟卷所使用的虚拟卷快照的唯一标识"
     },
     "VmVolumeRollbackParams": {
-      "volume_snapshot_id": ""
+      "volume_snapshot_id": "需要回滚的虚拟卷快照的唯一标识"
     },
     "VmVolumeWhereUniqueInput": {
       "id": "",
       "local_id": ""
     },
     "CloneVmVolumeParams": {
-      "where": "",
-      "data.description": "",
-      "data.name": "",
-      "data": ""
+      "where": "查询被克隆虚拟卷的唯一条件",
+      "data.description": "克隆后虚拟卷的描述",
+      "data.name": "克隆后虚拟卷的名称",
+      "data": "克隆"
     },
     "UpdateVmVolumeParams": {
-      "where": "",
-      "data.size": "",
-      "data.description": "",
-      "data.name": "",
+      "where": "查询被更新虚拟卷的唯一条件",
+      "data.size": "虚拟卷的大小，单位为 byte",
+      "data.description": "虚拟卷的描述",
+      "data.name": "虚拟卷的名称",
       "data": ""
     },
     "VmCdRomParams": {
-      "content_library_image_id": "",
+      "content_library_image_id": "内容库映像 ID",
       "elf_image_id": "ISO 映像 ID",
       "index": "内部字段",
       "key": "磁盘的 key 属性",
       "boot": "启动顺序"
     },
     "VmUpdateDiskParams": {
-      "data.content_library_image_id": "",
+      "data.content_library_image_id": "关联内容库映像 ID",
       "data.elf_image_id": "关联 ISO 映像 ID",
       "data.vm_volume_id": "关联虚拟卷 ID",
       "data.vm_disk_id": "虚拟盘 ID",
@@ -200,31 +200,31 @@
       "where": ""
     },
     "VmVolumeSnapshotType": {
-      "enum": ""
+      "enum": "* KVM_VOLUME_SNAPSHOT: 普通虚拟卷快照 \n* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI 虚拟卷快照"
     },
     "VmVolumeSnapshot": {
-      "cluster": "",
-      "createAt": "",
-      "description": "",
-      "id": "",
-      "local_created_at": "",
-      "local_id": "",
-      "name": "",
-      "shared_size": "",
-      "size": "",
-      "type": "",
-      "unique_size": "",
-      "vm_volume": "",
-      "zbs_snapshot_uuid": ""
+      "cluster": "虚拟卷快照所在集群",
+      "createAt": "虚拟卷快照创建时间",
+      "description": "虚拟卷快照描述",
+      "id": "虚拟卷快照唯一标识",
+      "local_created_at": "虚拟卷快照在数据库中的创建时间",
+      "local_id": "UUID",
+      "name": "虚拟卷快照名称",
+      "shared_size": "虚拟卷快照共享大小",
+      "size": "虚拟卷快照大小",
+      "type": "虚拟卷快照类型",
+      "unique_size": "虚拟卷快照独占容量",
+      "vm_volume": "虚拟卷快照创建于虚拟卷",
+      "zbs_snapshot_uuid": "虚拟卷快照对应ZBS_SNAPSHOT_UUID"
     },
     "WithTask_VmVolumeSnapshot_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VmVolumeSnapshotCreationParams": {
-      "volume_id": "",
-      "description": "",
-      "name": ""
+      "volume_id": "创建快照用虚拟卷的唯一标识",
+      "description": "虚拟卷快照描述",
+      "name": "虚拟卷快照名称"
     },
     "DeleteVmVolumeSnapshot": {
       "id": "资源 id"
@@ -355,7 +355,7 @@
       "zbs_snapshot_uuid_starts_with": ""
     },
     "VmVolumeSnapshotDeletionParams": {
-      "where": ""
+      "where": "查询被删除虚拟卷快照的条件"
     },
     "VmVolumeSnapshotOrderByInput": {
       "enum": "按照指定方式排列放回数据"
@@ -388,54 +388,54 @@
   "tags": [
     {
       "name": "VmVolumeSnapshot",
-      "x-displayName": "",
+      "x-displayName": "虚拟卷快照",
       "description": ""
     },
     {
       "name": "ApiInfo",
-      "x-displayName": "",
+      "x-displayName": "API 信息",
       "description": ""
     }
   ],
   "paths": {
     "/get-my-info": {
-      "summary": "",
+      "summary": "获取当前登录用户信息",
       "description": ""
     },
     "/rebuild-vm-volume": {
-      "summary": "",
+      "summary": "根据虚拟卷快照重建虚拟卷",
       "description": ""
     },
     "/rollback-vm-volume": {
-      "summary": "",
+      "summary": "根据虚拟卷快照回滚虚拟卷",
       "description": ""
     },
     "/clone-vm-volume": {
-      "summary": "",
+      "summary": "克隆虚拟卷",
       "description": ""
     },
     "/update-vm-volume": {
-      "summary": "",
+      "summary": "更新虚拟卷",
       "description": ""
     },
     "/create-vm-volume-snapshot": {
-      "summary": "",
+      "summary": "创建虚拟卷快照",
       "description": ""
     },
     "/delete-vm-volume-snapshot": {
-      "summary": "",
+      "summary": "删除虚拟卷快照",
       "description": ""
     },
     "/get-version": {
-      "summary": "",
+      "summary": "获取 API 版本",
       "description": ""
     },
     "/get-vm-volume-snapshots": {
-      "summary": "",
+      "summary": "获取虚拟卷快照",
       "description": ""
     },
     "/get-vm-volume-snapshots-connection": {
-      "summary": "",
+      "summary": "获取虚拟机快照数量",
       "description": ""
     }
   }
