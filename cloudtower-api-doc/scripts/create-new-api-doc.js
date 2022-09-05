@@ -21,17 +21,51 @@ yargsInteractive()
     },
   })
   .then((result) => {
-    createNewApiDoc(result);
+    const { version } = result;
+    createNewApiLocales(version);
+    createNewApiDoc(version);
+    //TODO: update i18n.ts
+    // updateI18nTs(version);
   });
 
-const createNewApiDoc = async (argv) => {
-  const { version } = argv;
-  const getSwaggerPath = (v) =>
-    nodePath.resolve(
-      process.cwd(),
-      "./cloudtower-api-doc/swagger/specs/",
-      `${v}-swagger.json`
-    );
+
+const getPrevVersion = (v) => {
+  if(versions.indexOf(v) < 0) {
+    return versions[0]
+  }
+  return versions[versions.indexOf(v) + 1];
+}
+const getSwaggerPath = (v) =>
+  nodePath.resolve(
+    process.cwd(),
+    nodePath.join('cloudtower-api-doc', 'swagger', 'specs',  `${v}-swagger.json`)   
+  );
+
+const getVersionedPath =(version, isEn) => {
+  let versionedPath = nodePath.join('versioned_docs', `version-${version}`);
+  if(isEn) {
+    versionedPath = nodePath.join('i18n', 'en', 'docusaurus-plugin-content-docs', `version-${version}`)
+  } 
+  return nodePath.resolve(process.cwd(), nodePath.join('cloudtower-api-doc', versionedPath))
+}
+
+const createNewApiDoc = async (version) => {
+  const prevVersion = getPrevVersion(version);
+  const pMap = (await import("p-map")).default;
+  await pMap(['zh', 'en'], async (lng) => {
+    const versiondPath = getVersionedPath(version, lng === 'en');
+    const prevVersionPath = getVersionedPath(prevVersion, lng === 'en');
+    fsExtra.copySync(prevVersionPath, versiondPath);
+    fsExtra.readdirSync(versiondPath).forEach(file => {
+      if(file === 'download.md') {
+        const completePath = nodePath.join(versiondPath, file);
+        fsExtra.writeFileSync(completePath, fsExtra.readFileSync(completePath, 'utf-8').replaceAll(prevVersion, version), 'utf-8')
+      }
+    })
+  })
+}
+
+const createNewApiLocales = async (version) => {
   const traverPreviousVersion = async (current_version, onGetDiffSpec) => {
     let early_break = false;
     let versionIndex = versions.findIndex((v) => v === current_version) + 1;
@@ -91,7 +125,7 @@ const createNewApiDoc = async (argv) => {
 
     await pMap(Object.keys(paths), async (api) => {
       const content = locales.paths[api];
-      const tagList = spec.paths[api].post.tags;
+      const tagList = spec.paths[api].post ? spec.paths[api].post.tags : spec.paths[api].get.tags;
       if (tagList) {
         tagList.forEach((tag) => tags.add(tag));
       }

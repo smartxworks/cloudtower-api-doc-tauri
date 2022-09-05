@@ -4,7 +4,7 @@
     "tauri": "tauri",
     "api:scan": "node ./cloudtower-api-doc/scripts/scan-missing.js",
     "api:sync": "node ./cloudtower-api-doc/scripts/sync-swagger.js",
-    "api:locales": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
+    "api:new": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start  ./cloudtower-api-doc -p 3300",
     "build": "docusaurus build  ./cloudtower-api-doc",

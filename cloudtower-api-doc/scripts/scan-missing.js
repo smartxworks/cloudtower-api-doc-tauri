@@ -85,5 +85,9 @@ traverse(generatedFiles, (file) => {
       miss_description: miss_tags_description,
     }
   }
-  fs.writeFileSync(path.resolve(__dirname, `../miss/${file.includes('zh') ? 'zh' : 'en'}-${path.basename(file)}`), JSON.stringify(detail, null, 2))
+  const missPath = path.join(__dirname, '../miss');
+  if(!fs.existsSync(missPath)) {
+    fs.mkdirSync(missPath)
+  }
+  fs.writeFileSync(path.resolve(missPath, `${file.includes('zh') ? 'zh' : 'en'}-${path.basename(file)}`), JSON.stringify(detail, null, 2))
 })
