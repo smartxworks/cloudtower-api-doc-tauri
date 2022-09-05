@@ -110,22 +110,23 @@ export const wrapSpecWithI18n = (
   // handle paths
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${version.split('.').join('_')}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
-    const post = paths[p].post as OpenAPIV3.OperationObject;
+    const method = Object.keys(paths[p])[0]
+    const operationObj = paths[p][method] as OpenAPIV3.OperationObject;
     const { description, summary } = apiDoc;
-    post.description = description;
-    post.summary = summary;
-    if ((post.requestBody as OpenAPIV3.RequestBodyObject).content) {
+    operationObj .description = description;
+    operationObj .summary = summary;
+    if ((operationObj .requestBody as OpenAPIV3.RequestBodyObject)?.content) {
       Object.keys(
-        (post.requestBody as OpenAPIV3.RequestBodyObject).content
+        (operationObj .requestBody as OpenAPIV3.RequestBodyObject).content
       ).forEach((meta) => {
         const exampleValue = genSchemaExample({
-          schema: (post.requestBody as OpenAPIV3.RequestBodyObject).content[meta].schema, 
+          schema: (operationObj.requestBody as OpenAPIV3.RequestBodyObject).content[meta].schema, 
           spec,
           field: '',
           schemaName: '',
          });
         const snippet = new httpSnippet({
-          method: "POST",
+          method,
           url: `http://YOUR_TOWER_URL/v2/api${p}`,
           headers: [
             { name: "Authorization", value: "YOUR_TOKEN" },
@@ -144,7 +145,7 @@ export const wrapSpecWithI18n = (
             text: JSON.stringify(exampleValue),
           },
         } as httpSnippet.Data);
-        post["x-codeSamples"] = [
+        operationObj["x-codeSamples"] = [
           {
             lang: "curl",
             source: snippet.convert("shell", "curl", {
@@ -153,7 +154,7 @@ export const wrapSpecWithI18n = (
             }),
           },
         ];
-        (post.requestBody as OpenAPIV3.RequestBodyObject).content[
+        (operationObj.requestBody as OpenAPIV3.RequestBodyObject).content[
           meta
         ].examples = {
           Example: {
@@ -164,8 +165,8 @@ export const wrapSpecWithI18n = (
         };
       });
     }
-    cloneSpec.paths[p].post = post;
-    post.tags = post.tags?.map(tag => {
+    cloneSpec.paths[p][method] = operationObj;
+    operationObj.tags = operationObj.tags?.map(tag => {
       const replaceTag = replaceTags(tag);
       tags.add(replaceTag);
       return replaceTag;

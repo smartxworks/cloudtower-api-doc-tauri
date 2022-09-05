@@ -60,6 +60,7 @@
   "TaskManagement": "任务管理",
   "UserManagement": "用户与权限管理",
   "BackupManagement": "备份管理",
+  "Other": "其他",
   "ResponseHeader_1": "无法获得任何返回",
   "ResponseHeader_2": "可能原因如下：",
   "ResponseHeader_3": "未知错误",

@@ -19,8 +19,8 @@ const ApiTag:React.FC<{
   rawSpec: ISpec
 }> = ({ operationId, rawSpec }) => {
   const findRawTags = useCallback((operation_id) => {
-    const rawPath = Object.values(rawSpec.paths).find((p) => p.post.operationId === operation_id);
-    return rawPath?.post?.tags?.join('-')
+    const rawPath = Object.values(rawSpec.paths).find((p) => (p.post || p.get).operationId === operation_id);
+    return (rawPath?.post || rawPath?.get)?.tags?.join('-')
   }, [rawSpec])
   return <Badge type="secondary">{findRawTags(operationId)}</Badge>
 }
