@@ -17,6 +17,8 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
         run: yarn && yarn build
       - name: set up pr preview
         uses: amondnet/vercel-action@v20
