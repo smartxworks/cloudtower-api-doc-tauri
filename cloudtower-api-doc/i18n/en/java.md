@@ -37,6 +37,14 @@ ApiClient client = new ApiClient();
 client.setBasePath("http://192.168.96.133/v2/api");
 ```
 
+> if https connection is required，cert should be installed，or skip verify cert
+
+```java
+ApiClient client = new ApiClient();
+client.setBasePath("https://192.168.96.133/v2/api");
+client.setVerifyingSsl(false);
+```
+
 #### Create a corresponding API instance
 
 > Create a relevant API instance based on operations for different purposes, e.g., a `VmApi` needs to be created for the operations related to virtual machines.

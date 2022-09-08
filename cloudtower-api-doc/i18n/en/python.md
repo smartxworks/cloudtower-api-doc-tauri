@@ -56,6 +56,14 @@ configuration = Configuration(host="http://192.168.96.133/v2/api")
 client = ApiClient(configuration)
 ```
 
+> if https connection is required，cert should be installed，or skip verify cert
+
+```python
+configuration = Configuration(host="https://192.168.96.133/v2/api")
+configuration.verify_ssl = False
+client = ApiClient(configuration)
+```
+
 #### Create a corresponding API instance
 
 > Create a relevant API instance based on operations for different purposes, e.g., a `VmApi` needs to be created for the operations related to virtual machines.

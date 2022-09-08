@@ -32,6 +32,24 @@ transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 client := apiclient.New(transport, strfmt.Default)
 ```
 
+> if https connection is required，cert should be installed，or skip verify cert
+```go
+import (
+	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+	httptransport "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
+)
+tlsClient, err := httptransport.TLSClient(httptransport.TLSClientOptions{
+	InsecureSkipVerify: true,
+})
+if err != nil {
+	fmt.Print(err)
+	return
+}
+transport := httptransport.NewWithClient("192.168.29.157", "/v2/api", []string{"https"}, tlsClient)
+client := apiclient.New(transport, strfmt.Default)
+```
+
 ### Send Request
 
 #### Import Corresponding `client` Package
