@@ -56,6 +56,14 @@ configuration = Configuration(host="http://192.168.96.133/v2/api")
 client = ApiClient(configuration)
 ```
 
+> 如果需要使用 https，可以安装证书，或者忽略证书验证
+
+```python
+configuration = Configuration(host="https://192.168.96.133/v2/api")
+configuration.verify_ssl = False
+client = ApiClient(configuration)
+```
+
 #### 创建对应的 API 实例
 
 > 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。

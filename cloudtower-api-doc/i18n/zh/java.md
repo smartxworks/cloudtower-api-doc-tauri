@@ -37,6 +37,14 @@ ApiClient client = new ApiClient();
 client.setBasePath("http://192.168.96.133/v2/api");
 ```
 
+> 如果需要使用 https，则需要安装证书，也可以选择忽略证书验证
+
+```java
+ApiClient client = new ApiClient();
+client.setBasePath("https://192.168.96.133/v2/api");
+client.setVerifyingSsl(false);
+```
+
 #### 创建对应的 API 实例
 
 > 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。
