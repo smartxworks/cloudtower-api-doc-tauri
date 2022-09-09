@@ -41,3 +41,13 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
           vercel-args: '--prod'
+      - name: upload to cdn
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        if: github.event_name == 'push'
+        with:
+            username: ${{ secrets.SFTP_USERNAME }}
+            server: ${{ secrets.SFTP_SERVER }}
+            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+            local_path: './cloudtower-api-doc/build/*'
+            remote_path: '/uploads/code-site'
+            sftp_only: true
