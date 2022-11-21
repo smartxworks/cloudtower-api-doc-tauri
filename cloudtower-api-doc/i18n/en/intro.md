@@ -1,21 +1,34 @@
 import '../../swagger/utils/autoScroll';
 
 # CloudTower API General Guide
+
 Welcome to CloudTower API! Please read this General Guide carefully.
 * You can use the CloudTower API to call the different types of resources that are managed by CloudTower.
 * This document is written following the OpenApi Specification v3.0.0.
-* For a better readability, this API document is divided into multiple modules. You can select a particular module by clicking the drop-down box at the upper-right corner of the page, for example, “User Management”, “Multiple Cluster Management”, etc.
+* To enhance ease of use, the API documentation is split into multiple modules, which can be selected from the left sidebar under the CloudTower API page, such as Virtual Machine Management and Cluster Management.
 * The CloudTower API provides very flexible request parameter types, which are convenient for batch operations and conditional queries. Considering the flexibility of parameters and the convenience of usage, such as the `GET` request has some restrictions, this API document only uses the `POST` request to send data in json format.
  
 ## How to Call
 
 The CloudTower API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. 
- 
-The APIs provide examples for each specific interface, including request parameters and return results. You can modify the example parameters to call the API.
 
-The APIs also provide detailed parameter types for the schema of each interface. For more details, please refer to the example and schema of each interface.
+Currently each interface document includes:
+ * Request: Request data
+   * header parameters: Request parameters in the header
+   * request body schema: Request filed description in body
+* Response: Return data
+  * 200: Description of data fields returned after a successful request.
+  * 400: Description of the returned data field when the requested data is incorrect.
+  * 404: A return when no corresponding operation resource can be found.
+  * 500: An error within the service
 
-Click `Try it out` to make an API call in the real environment and connect to the services by selecting the upper drop-down box of `Servers`.
+Note: The panel explained by each field is folded by default. Click > to expand the details.
+
+The panel to the right of the document includes:
+* Try it: Call panel. Click the Try it button to expand the debugging panel, and you can enter parameters in the panel to call the page.
+* Request samples: The calling example panel provides JSON examples and curl example codes of API interface calls.
+* Response samples: Return to the example panel, which provides examples returned by the API interface.
+
 ## Authentication
 > Except for login, all the requests need to add the authentication field.
 
