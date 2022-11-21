@@ -1,0 +1,788 @@
+{
+  "schemas": {
+    "ByteUnit": {
+      "enum": "'B' | 'KB' | 'MB' | 'GB' | 'TB' | 'PB'"
+    },
+    "IscsiTargetCommonParams": {
+      "bps_wr_max_length": "",
+      "bps_wr_max_size": "",
+      "bps_wr_max": "",
+      "bps_rd_max_length": "",
+      "bps_rd_max_unit": "",
+      "bps_rd_max": "",
+      "bps_max_length": "",
+      "bps_max_unit": "",
+      "bps_max": "",
+      "iops_wr_max_length": "",
+      "iops_wr_max": "",
+      "iops_rd_max_length": "",
+      "iops_rd_max": "",
+      "iops_max_length": "",
+      "iops_max": "",
+      "bps_wr_unit": "",
+      "bps_wr": "",
+      "bps_rd_unit": "",
+      "bps_rd": "",
+      "bps_unit": "",
+      "bps": "",
+      "iops_wr": "",
+      "iops_rd": "",
+      "iops": "",
+      "initiator_chaps": "",
+      "chap_secret": "",
+      "chap_name": "",
+      "chap_enabled": "",
+      "description": "",
+      "iqn_whitelist": "",
+      "ip_whitelist": ""
+    },
+    "BPSUnit": {
+      "enum": "'Bps' | 'KBps' | 'MBps' | 'GBps' | 'TBps'"
+    },
+    "IscsiLunCommonParams": {
+      "bps_wr_max_length": "",
+      "bps_wr_max_unit": "",
+      "bps_wr_max": "",
+      "bps_rd_max_length": "",
+      "bps_rd_max_unit": "",
+      "bps_rd_max": "",
+      "bps_max_length": "",
+      "bps_max_unit": "",
+      "bps_max": "",
+      "iops_wr_max_length": "",
+      "iops_wr_max": "",
+      "iops_rd_max_length": "",
+      "iops_rd_max": "",
+      "iops_max_length": "",
+      "iops_max": "",
+      "bps_wr_unit": "",
+      "bps_wr": "",
+      "bps_rd_unit": "",
+      "bps_rd": "",
+      "bps_unit": "",
+      "bps": "",
+      "iops_wr": "",
+      "iops_rd": "",
+      "iops": "",
+      "allowed_initiators": ""
+    },
+    "IscsiLunCreationParams": {
+      "lun_id": "",
+      "assigned_size_unit": "",
+      "assigned_size": "",
+      "replica_num": "",
+      "iscsi_target_id": "",
+      "name": ""
+    },
+    "IscsiLunUpdationParamsData": {
+      "assigned_size_unit": "",
+      "assigned_size": "",
+      "name": ""
+    },
+    "IscsiTargetCreationParams": {
+      "stripe_size_unit": "",
+      "stripe_size": "",
+      "stripe_num": "",
+      "replica_num": "",
+      "thin_provision": "",
+      "cluster_id": "",
+      "name": ""
+    },
+    "NvmfNamespaceCommonParams": {
+      "bps_wr_max_length": "",
+      "bps_wr_max_unit": "",
+      "bps_wr_max": "",
+      "bps_rd_max_length": "",
+      "bps_rd_max_unit": "",
+      "bps_rd_max": "",
+      "bps_max_length": "",
+      "bps_max_unit": "",
+      "bps_max": "",
+      "iops_wr_max_length": "",
+      "iops_wr_max": "",
+      "iops_rd_max_length": "",
+      "iops_rd_max": "",
+      "iops_max_length": "",
+      "iops_max": "",
+      "bps_wr_unit": "",
+      "bps_wr": "",
+      "bps_rd_unit": "",
+      "bps_rd": "",
+      "bps_unit": "",
+      "bps": "",
+      "iops_wr": "",
+      "iops_rd": "",
+      "iops": "",
+      "nqn_whitelist": ""
+    },
+    "NvmfNamespaceCreationParams": {
+      "namespace_id": "",
+      "group_id": "",
+      "is_shared": "",
+      "assigned_size_unit": "",
+      "assigned_size": "",
+      "replica_num": "",
+      "nvmf_subsystem_id": "",
+      "name": ""
+    },
+    "NvmfNamespaceUpdationParamsData": {
+      "assigned_size_unit": "",
+      "assigned_size": "",
+      "name": ""
+    },
+    "NvmfSubsystemCommonParams": {
+      "bps_wr_max_length": "",
+      "bps_wr_max_unit": "",
+      "bps_wr_max": "",
+      "bps_rd_max_length": "",
+      "bps_rd_max_unit": "",
+      "bps_rd_max": "",
+      "bps_max_length": "",
+      "bps_max_unit": "",
+      "bps_max": "",
+      "iops_wr_max_length": "",
+      "iops_wr_max": "",
+      "iops_rd_max_length": "",
+      "iops_rd_max": "",
+      "iops_max_length": "",
+      "iops_max": "",
+      "bps_wr_unit": "",
+      "bps_wr": "",
+      "bps_rd_unit": "",
+      "bps_rd": "",
+      "bps_unit": "",
+      "bps": "",
+      "iops_wr": "",
+      "iops_rd": "",
+      "iops": "",
+      "description": "",
+      "nqn_whitelist": "",
+      "ip_whitelist": ""
+    },
+    "NvmfSubsystemCreationParams": {
+      "replica_num": "",
+      "thin_provision": "",
+      "stripe_size_unit": "",
+      "stripe_size": "",
+      "stripe_num": "",
+      "policy": "",
+      "cluster_id": "",
+      "name": ""
+    },
+    "UpdateVmVolumeParams": {
+      "where": "conditional query to query target volume to update",
+      "data.size_unit": "",
+      "data.size": "vm volume's size",
+      "data.description": "vm volume's description",
+      "data.name": "vm volume's name",
+      "data": ""
+    },
+    "VmCreateVmFromContentLibraryTemplateParams": {
+      "cloud_init": "",
+      "is_full_copy": "",
+      "template_id": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "disk_operate": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmCreateVmFromTemplateParams": {
+      "cloud_init": "",
+      "is_full_copy": "",
+      "template_id": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "disk_operate": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmVolumeCreationParams": {
+      "elf_storage_policy": "",
+      "size_unit": "",
+      "size": "",
+      "sharing": "",
+      "cluster_id": "",
+      "name": ""
+    },
+    "MountNewCreateDisksParams": {
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "vm_volume.elf_storage_policy": "",
+      "vm_volume.path": "",
+      "vm_volume.size_unit": "",
+      "vm_volume.size": "",
+      "vm_volume.name": "",
+      "vm_volume": "",
+      "index": "",
+      "key": "",
+      "bus": "",
+      "boot": ""
+    },
+    "MountDisksParams": {
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "vm_volume_id": "",
+      "index": "",
+      "key": "",
+      "bus": "",
+      "boot": ""
+    },
+    "VmCreationParams": {
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "vm_disks": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmExpandVmDiskParams": {
+      "size_unit": "",
+      "size": "",
+      "where": ""
+    },
+    "VmCloneParams": {
+      "is_full_copy": "",
+      "src_vm_id": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "vm_disks": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmRebuildParams": {
+      "is_full_copy": "",
+      "rebuild_from_snapshot_id": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "vm_nics": "",
+      "vm_disks": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmUpdateParams": {
+      "data.vcpu": "",
+      "data.ha": "",
+      "data.memory_unit": "",
+      "data.memory": "",
+      "data.cpu_cores": "",
+      "data.cpu_sockets": "",
+      "data.description": "",
+      "data.name": "",
+      "data": "",
+      "where": ""
+    },
+    "VmAddDiskParams": {
+      "data.max_bandwidth_policy": "",
+      "data.max_bandwidth_unit": "",
+      "data.max_bandwidth": "",
+      "data.max_iops_policy": "",
+      "data.max_iops": "",
+      "data.io_policy": "",
+      "data.vm_disks.mount_disks": "",
+      "data.vm_disks.mount_new_create_disks": "",
+      "data.vm_disks": "",
+      "data": "",
+      "where": ""
+    },
+    "VmRestrictIoParamsData": {
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": ""
+    },
+    "VmUpdateEachDiskIoPolicyParams": {
+      "data": "",
+      "boot": ""
+    },
+    "VmUpdateIoPolicyParams": {
+      "data.each_disk": "",
+      "data.whole_vm": "",
+      "data.io_policy": "",
+      "data": "",
+      "where": ""
+    },
+    "DeleteCloudTowerApplicationPackage": {
+      "id": "resource‘s id "
+    },
+    "CloudTowerApplicationPackageWhereInput": {
+      "AND": "All conditions must return true.",
+      "applications_every": "",
+      "applications_none": "",
+      "applications_some": "",
+      "architecture": "",
+      "architecture_in": "",
+      "architecture_not": "",
+      "architecture_not_in": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "name": "",
+      "name_contains": "",
+      "name_ends_with": "",
+      "name_gt": "",
+      "name_gte": "",
+      "name_in": "",
+      "name_lt": "",
+      "name_lte": "",
+      "name_not": "",
+      "name_not_contains": "",
+      "name_not_ends_with": "",
+      "name_not_in": "",
+      "name_not_starts_with": "",
+      "name_starts_with": "",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "scosVersion": "",
+      "scosVersion_contains": "",
+      "scosVersion_ends_with": "",
+      "scosVersion_gt": "",
+      "scosVersion_gte": "",
+      "scosVersion_in": "",
+      "scosVersion_lt": "",
+      "scosVersion_lte": "",
+      "scosVersion_not": "",
+      "scosVersion_not_contains": "",
+      "scosVersion_not_ends_with": "",
+      "scosVersion_not_in": "",
+      "scosVersion_not_starts_with": "",
+      "scosVersion_starts_with": "",
+      "version": "",
+      "version_contains": "",
+      "version_ends_with": "",
+      "version_gt": "",
+      "version_gte": "",
+      "version_in": "",
+      "version_lt": "",
+      "version_lte": "",
+      "version_not": "",
+      "version_not_contains": "",
+      "version_not_ends_with": "",
+      "version_not_in": "",
+      "version_not_starts_with": "",
+      "version_starts_with": ""
+    },
+    "CloudTowerApplicationWhereInput": {
+      "AND": "All conditions must return true.",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "name": "",
+      "name_contains": "",
+      "name_ends_with": "",
+      "name_gt": "",
+      "name_gte": "",
+      "name_in": "",
+      "name_lt": "",
+      "name_lte": "",
+      "name_not": "",
+      "name_not_contains": "",
+      "name_not_ends_with": "",
+      "name_not_in": "",
+      "name_not_starts_with": "",
+      "name_starts_with": "",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "package": "",
+      "placementSituation": "",
+      "placementSituation_contains": "",
+      "placementSituation_ends_with": "",
+      "placementSituation_gt": "",
+      "placementSituation_gte": "",
+      "placementSituation_in": "",
+      "placementSituation_lt": "",
+      "placementSituation_lte": "",
+      "placementSituation_not": "",
+      "placementSituation_not_contains": "",
+      "placementSituation_not_ends_with": "",
+      "placementSituation_not_in": "",
+      "placementSituation_not_starts_with": "",
+      "placementSituation_starts_with": "",
+      "placementVerb": "",
+      "placementVerb_contains": "",
+      "placementVerb_ends_with": "",
+      "placementVerb_gt": "",
+      "placementVerb_gte": "",
+      "placementVerb_in": "",
+      "placementVerb_lt": "",
+      "placementVerb_lte": "",
+      "placementVerb_not": "",
+      "placementVerb_not_contains": "",
+      "placementVerb_not_ends_with": "",
+      "placementVerb_not_in": "",
+      "placementVerb_not_starts_with": "",
+      "placementVerb_starts_with": "",
+      "resourceVersion": "",
+      "resourceVersion_gt": "",
+      "resourceVersion_gte": "",
+      "resourceVersion_in": "",
+      "resourceVersion_lt": "",
+      "resourceVersion_lte": "",
+      "resourceVersion_not": "",
+      "resourceVersion_not_in": "",
+      "state": "",
+      "state_in": "",
+      "state_not": "",
+      "state_not_in": "",
+      "targetPackage": "",
+      "targetPackage_contains": "",
+      "targetPackage_ends_with": "",
+      "targetPackage_gt": "",
+      "targetPackage_gte": "",
+      "targetPackage_in": "",
+      "targetPackage_lt": "",
+      "targetPackage_lte": "",
+      "targetPackage_not": "",
+      "targetPackage_not_contains": "",
+      "targetPackage_not_ends_with": "",
+      "targetPackage_not_in": "",
+      "targetPackage_not_starts_with": "",
+      "targetPackage_starts_with": "",
+      "user": ""
+    },
+    "CloudTowerApplicationState": {
+      "enum": ""
+    },
+    "DeleteCloudTowerApplicationPackageParams": {
+      "where": ""
+    },
+    "NestedCloudTowerApplicationPackage": {
+      "id": "id",
+      "name": "name"
+    },
+    "CloudTowerApplication": {
+      "id": "",
+      "instanceStatuses": "",
+      "name": "",
+      "package": "",
+      "placementSituation": "",
+      "placementVerb": "",
+      "resourceVersion": "",
+      "state": "",
+      "targetPackage": "",
+      "user": "",
+      "vmSpec": ""
+    },
+    "ApplicationVmSpecEnv": {
+      "value": "",
+      "name": ""
+    },
+    "ApplicationVmSpecNic": {
+      "vlanId": "",
+      "mask": "",
+      "ip": "",
+      "gateway": "",
+      "dhcp": ""
+    },
+    "ApplicationVmSpecNetwork": {
+      "nics": "",
+      "dns": ""
+    },
+    "ApplicationVmSpecStatus": {
+      "vmIps": "",
+      "message": ""
+    },
+    "ApplicationVmSpecStorage": {
+      "size_unit": "",
+      "size": ""
+    },
+    "ApplicationVmSpec": {
+      "vmUsage": "",
+      "storages": "",
+      "status": "",
+      "publicKeys": "",
+      "network": "",
+      "name": "",
+      "memory_unit": "",
+      "memory": "",
+      "internal": "",
+      "image": "",
+      "host": "",
+      "env": "",
+      "cpu": "",
+      "cluster": "",
+      "cloudInitUserData": ""
+    },
+    "ApplicationVmSpecPlacementSituation": {
+      "enum": ""
+    },
+    "ApplicationVmSpecPlacementVerb": {
+      "enum": ""
+    },
+    "ApplicationVmSpecPlacement": {
+      "verb": "",
+      "situation": ""
+    },
+    "ApplicationVmSpecAffinityPolicy": {
+      "enum": ""
+    },
+    "ApplicationVmSpecDefinition": {
+      "vmAffinity": "",
+      "placement": "",
+      "name": "",
+      "group": "",
+      "template": "",
+      "instances": ""
+    },
+    "DeployCloudTowerApplicationParams": {
+      "name": "",
+      "targetPackage": "",
+      "vmSpec": ""
+    },
+    "CloudTowerApplicationWhereUniqueInput": {
+      "id": ""
+    },
+    "UpgradeCloudTowerApplicationParams": {
+      "data.targetPackage": "",
+      "data": "",
+      "where": ""
+    },
+    "UpdateCloudTowerApplicationVmSpecParams": {
+      "data.vmSpec": "",
+      "data": "",
+      "where": ""
+    },
+    "UninstallCloudTowerApplicationParams": {
+      "where": ""
+    },
+    "NestedCloudTowerApplication": {
+      "id": "id",
+      "name": "name"
+    },
+    "CloudTowerApplicationPackage": {
+      "applications": "",
+      "architecture": "",
+      "containers": "",
+      "id": "",
+      "images": "",
+      "name": "",
+      "scosVersion": "",
+      "version": ""
+    },
+    "CloudTowerApplicationPackageOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
+    "GetCloudTowerApplicationPackagesRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateCloudTowerApplicationPackage": {
+      "count": "count"
+    },
+    "CloudTowerApplicationPackageConnection": {
+      "aggregate": ""
+    },
+    "GetCloudTowerApplicationPackagesConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "CloudTowerApplicationOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
+    "GetCloudTowerApplicationsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateCloudTowerApplication": {
+      "count": "count"
+    },
+    "CloudTowerApplicationConnection": {
+      "aggregate": ""
+    },
+    "GetCloudTowerApplicationsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    }
+  },
+  "tags": [
+    {
+      "name": "ApiInfo",
+      "x-displayName": "Info of the CloudTower API",
+      "description": ""
+    },
+    {
+      "name": "CloudTowerApplication",
+      "x-displayName": "CloudTower Application",
+      "description": ""
+    },
+    {
+      "name": "CloudTowerApplicationPackage",
+      "x-displayName": "CloudTower Application Package",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/update-vm-io-policy": {
+      "summary": "Update IO policy of vm",
+      "description": ""
+    },
+    "/upload-cloudtower-application-package": {
+      "summary": "Upload a CloudTower application package",
+      "description": ""
+    },
+    "/delete-cloudtower-application-package": {
+      "summary": "Delete CloudTower application packages",
+      "description": ""
+    },
+    "/deploy-cloudtower-application": {
+      "summary": "Deploy a CloudTower application",
+      "description": ""
+    },
+    "/upgrade-cloudtower-application": {
+      "summary": "Upgrade a CloudTower application",
+      "description": ""
+    },
+    "/uninstall-cloudtower-application": {
+      "summary": "Uninstall CloudTower applications",
+      "description": ""
+    },
+    "/get-cloudtower-application-packages": {
+      "summary": "Get CloudTower application packages",
+      "description": ""
+    },
+    "/get-cloud-tower-application-packages-connection": {
+      "summary": "Get number of CloudTower application packages",
+      "description": ""
+    },
+    "/get-cloudtower-applications": {
+      "summary": "Get CloudTower applications",
+      "description": ""
+    },
+    "/get-cloud-tower-applications-connection": {
+      "summary": "Get number of CloudTower applications",
+      "description": ""
+    }
+  }
+}
