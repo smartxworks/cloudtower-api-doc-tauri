@@ -146,7 +146,7 @@ const createNewApiLocales = async (version) => {
     await traverPreviousVersion(version, async (previous) => {
       const previousSpec = require(getSwaggerPath(previous));
       await pMap(Object.keys(previousSpec.paths), async (api) => {
-        const tagList = previousSpec.paths[api].post.tags;
+        const tagList = _.get(previousSpec, ['paths', api, 'post', 'tags'])
         tagList &&
           tagList.forEach((tag) => {
             if (tags.has(tag)) {
