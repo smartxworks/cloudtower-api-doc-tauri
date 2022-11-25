@@ -10,4 +10,5 @@ import Download from '../../i18n/zh/download.md'
 java_url="https://github.com/smartxworks/cloudtower-java-sdk/releases/tag/v2.4.0"
 go_url="https://github.com/smartxworks/cloudtower-go-sdk/releases/tag/v2.4.0"
 python_url="https://github.com/smartxworks/cloudtower-python-sdk/releases/tag/v2.4.0"
+node_url="https://github.com/smartxworks/cloudtower-node-sdk/releases/tag/v2.4.1"
 />
