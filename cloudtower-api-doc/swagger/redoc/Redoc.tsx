@@ -26,6 +26,7 @@ import {
   BackgroundStubFix,
 } from "@redocly/reference-docs/lib/components/styled.elements";
 import { VersionSwitcher } from "@redocly/reference-docs/lib/components/VersionSwitcher";
+import { SearchField, ProSearchBox } from "@redocly/reference-docs/lib/components/Search";
 import { VersionedSpecStore } from "@redocly/reference-docs/lib/services/VersionedSpecStore";
 import ContentItems from './ContentItems'
 
@@ -68,6 +69,12 @@ class RedoclyReferenceDocs extends RedoclyReferenceDocsComponent {
                   }}
                 />
               )}
+              <SearchField 
+              showPopUp={() => this.setState({ searchPopUpShown: true })} 
+              searchValue={this.state.searchPopUpValue}
+              setSearchValue={(t) => this.setState({ searchPopUpValue: t})}
+              marker={store.marker}
+              />
               <SideMenu menu={store.menu}/>
             </StickyResponsiveSidebar>
           )}
@@ -96,6 +103,18 @@ class RedoclyReferenceDocs extends RedoclyReferenceDocsComponent {
             )}
             {this.props.children}
           </ApiContentWrap>
+          <ProSearchBox
+          options={store.options}
+          menu={store.menu}
+          marker={store.marker}
+          search={store.search}
+          onActivate={store.menu.activateAndScroll.bind(store.menu)}
+          shown={this.state.searchPopUpShown}
+          hidePopUp={() => this.setState({ searchPopUpShown: false })}
+          showPopUp={() => this.setState({ searchPopUpShown: true})}
+          setSearchValue={(t) => this.setState({ searchPopUpValue: t })}
+          searchValue={this.state.searchPopUpValue}
+          />
           {store.options.theme.layout.showDarkRightPanel &&
             store.showRightPanel &&
             store.layout !== LayoutVariant.STACKED && <BackgroundStubFix />}
