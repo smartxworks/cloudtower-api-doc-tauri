@@ -375,15 +375,15 @@
   ],
   "paths": {
     "/update-cluster-network-setting": {
-      "summary": "编辑集群的网络设置 ",
+      "summary": "编辑集群的网络设置",
       "description": ""
     },
     "/update-cluster-virtualization-setting": {
-      "summary": "编辑集群的虚拟化设置 ",
+      "summary": "编辑集群的虚拟化设置",
       "description": ""
     },
     "/update-cluster-ha-setting": {
-      "summary": "编辑集群的高可用设置 ",
+      "summary": "编辑集群的高可用设置",
       "description": ""
     },
     "/update-cluster-enable-iscsi-setting": {
@@ -391,7 +391,7 @@
       "description": ""
     },
     "/migrate-vm-across-cluster": {
-      "summary": "跨集群迁移虚拟机 ",
+      "summary": "跨集群迁移虚拟机",
       "description": ""
     },
     "/stop-vm-in-cutover-migration": {
@@ -399,7 +399,7 @@
       "description": "在分段迁移中，用户需手动关闭源虚拟机以完成剩下的数据迁移"
     },
     "/abort-migrate-vm-across-cluster": {
-      "summary": "中断跨集群迁移 ",
+      "summary": "中断跨集群迁移",
       "description": "用户手动终止跨集群迁移任务"
     },
     "/update-vm-host-options": {
@@ -427,7 +427,7 @@
       "description": ""
     },
     "/update-vsphere-esxi-account": {
-      "summary": "更新vsphereEsxiAccount信息 ",
+      "summary": "更新vsphereEsxiAccount信息",
       "description": ""
     },
     "/create-vcenter-account": {

@@ -1,32 +1,32 @@
 {
   "paths": {
     "/create-root-user": {
-      "summary": " 创建初始用户",
-      "description": " 用于创建第一个用户，固定用户名为 root 以及角色为 root。"
+      "summary": "创建初始用户",
+      "description": "用于创建第一个用户，固定用户名为 root 以及角色为 root。"
     },
     "/eject-iso-from-vm-cd-rom": {
-      "summary": " 用于卸载选中 cd-rom 的镜像",
+      "summary": "用于卸载选中 cd-rom 的镜像",
       "description": ""
     },
     "/expand-vm-disk": {
-      "summary": " 虚拟盘扩容",
-      "description": " 虚拟盘将被扩容至指定大小"
+      "summary": "虚拟盘扩容",
+      "description": "虚拟盘将被扩容至指定大小"
     },
     "/toggle-vm-cd-rom-disable": {
-      "summary": " 设置 CD-ROM 的启用状态",
+      "summary": "设置 CD-ROM 的启用状态",
       "description": ""
     },
     "/update-vm-advanced-options": {
-      "summary": " 更新虚拟机高级设置",
-      "description": " 用于更新虚拟机高级设置，包括 windows 优化，CPU 模型兼容性，虚拟机时钟，虚拟机显卡类型"
+      "summary": "更新虚拟机高级设置",
+      "description": "用于更新虚拟机高级设置，包括 windows 优化，CPU 模型兼容性，虚拟机时钟，虚拟机显卡类型"
     },
     "/update-vm-nic-advance-info": {
-      "summary": " 更新虚拟网卡高级信息",
-      "description": " 用于更新虚拟机网卡中不常被更新的数据，其中 nic_id 只有当网卡模型为 sr-iov 时才能更新，另外不支持更新网卡模型"
+      "summary": "更新虚拟网卡高级信息",
+      "description": "用于更新虚拟机网卡中不常被更新的数据，其中 nic_id 只有当网卡模型为 sr-iov 时才能更新，另外不支持更新网卡模型"
     },
     "/update-vm-nic-basic-info": {
-      "summary": " 更新虚拟网卡基本信息",
-      "description": " 用于更新虚拟机网卡的基础信息，这部分信息更改频率大于其他类型，但是需要虚拟机工具的支持，在虚拟机工具未安装、运行时，执行可能有 bug。"
+      "summary": "更新虚拟网卡基本信息",
+      "description": "用于更新虚拟机网卡的基础信息，这部分信息更改频率大于其他类型，但是需要虚拟机工具的支持，在虚拟机工具未安装、运行时，执行可能有 bug。"
     }
   },
   "schemas": {

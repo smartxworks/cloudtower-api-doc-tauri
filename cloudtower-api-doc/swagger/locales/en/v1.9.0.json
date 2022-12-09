@@ -5,87 +5,87 @@
       "description": ""
     },
     "/delete-log-collection": {
-      "summary": " Delete the Log Collection",
+      "summary": "Delete the Log Collection",
       "description": ""
     },
     "/force-stop-log-collection": {
-      "summary": " Force stop the log collection",
+      "summary": "Force stop the log collection",
       "description": ""
     },
     "/get-backup-licenses-connection": {
-      "summary": " Get the number of backup licneses",
+      "summary": "Get the number of backup licneses",
       "description": ""
     },
     "/get-backup-licenses": {
-      "summary": " Get backup licenses",
+      "summary": "Get backup licenses",
       "description": ""
     },
     "/get-backup-packages-connection": {
-      "summary": " Get the number of backup installation packages",
+      "summary": "Get the number of backup installation packages",
       "description": ""
     },
     "/get-backup-packages": {
-      "summary": " Get backup installation packages",
+      "summary": "Get backup installation packages",
       "description": ""
     },
     "/get-backup-plan-executions-connection": {
-      "summary": " Get the number of backup plan executions",
+      "summary": "Get the number of backup plan executions",
       "description": ""
     },
     "/get-backup-plan-executions": {
-      "summary": " Get backup plan executions",
+      "summary": "Get backup plan executions",
       "description": ""
     },
     "/get-backup-plans-connection": {
-      "summary": " Get the number of backup plans",
+      "summary": "Get the number of backup plans",
       "description": ""
     },
     "/get-backup-plans": {
-      "summary": " Get backup plans",
+      "summary": "Get backup plans",
       "description": ""
     },
     "/get-backup-restore-executions-connection": {
-      "summary": " Get the number of backup restore executions",
+      "summary": "Get the number of backup restore executions",
       "description": ""
     },
     "/get-backup-restore-executions": {
-      "summary": " Get backup restore executions",
+      "summary": "Get backup restore executions",
       "description": ""
     },
     "/get-backup-restore-points-connection": {
-      "summary": " Get the number of backup restore points",
+      "summary": "Get the number of backup restore points",
       "description": ""
     },
     "/get-backup-restore-points": {
-      "summary": " Get backup restore points",
+      "summary": "Get backup restore points",
       "description": ""
     },
     "/get-backup-services-connection": {
-      "summary": " Get the number of backup services",
+      "summary": "Get the number of backup services",
       "description": ""
     },
     "/get-backup-services": {
-      "summary": " Get backup services",
+      "summary": "Get backup services",
       "description": ""
     },
     "/get-backup-store-repositories-connection": {
-      "summary": " Get the number of backup store repositories",
+      "summary": "Get the number of backup store repositories",
       "description": ""
     },
     "/get-backup-store-repositories": {
-      "summary": " Get backup store repositories",
+      "summary": "Get backup store repositories",
       "description": ""
     },
     "/get-backup-target-executions-connection": {
-      "summary": " Get the number of backup target executions",
+      "summary": "Get the number of backup target executions",
       "description": ""
     },
     "/get-backup-target-executions": {
-      "summary": " Get backup target executions",
+      "summary": "Get backup target executions",
       "description": ""
     },
     "/get-log-service-configs": {
-      "summary": " Get log service configurations",
+      "summary": "Get log service configurations",
       "description": ""
     },
     "/update-alert-notifier": {

@@ -1,7 +1,7 @@
 {
   "paths": {
     "/create-log-collection": {
-      "summary": " 新建采集日志任务",
+      "summary": "新建采集日志任务",
       "description": "",
       "responses": {
         "200": "",
@@ -9,7 +9,7 @@
       }
     },
     "/delete-log-collection": {
-      "summary": " 删除日志采集任务",
+      "summary": "删除日志采集任务",
       "description": "",
       "responses": {
         "200": "",
@@ -17,7 +17,7 @@
       }
     },
     "/force-stop-log-collection": {
-      "summary": " 强制停止日志采集任务",
+      "summary": "强制停止日志采集任务",
       "description": "",
       "responses": {
         "200": "",
@@ -25,15 +25,15 @@
       }
     },
     "/get-backup-licenses-connection": {
-      "summary": " 获取备份许可数量",
+      "summary": "获取备份许可数量",
       "description": ""
     },
     "/get-backup-licenses": {
-      "summary": " 获取备份许可",
+      "summary": "获取备份许可",
       "description": ""
     },
     "/get-backup-packages-connection": {
-      "summary": " 获取备份安装包数量",
+      "summary": "获取备份安装包数量",
       "description": "",
       "responses": {
         "200": "",
@@ -41,7 +41,7 @@
       }
     },
     "/get-backup-packages": {
-      "summary": " 获取备份安装包",
+      "summary": "获取备份安装包",
       "description": "",
       "responses": {
         "200": "",
@@ -49,7 +49,7 @@
       }
     },
     "/get-backup-plan-executions-connection": {
-      "summary": " 获取备份计划执行数量",
+      "summary": "获取备份计划执行数量",
       "description": "",
       "responses": {
         "200": "",
@@ -57,7 +57,7 @@
       }
     },
     "/get-backup-plan-executions": {
-      "summary": " 获取备份计划执行",
+      "summary": "获取备份计划执行",
       "description": "",
       "responses": {
         "200": "",
@@ -65,7 +65,7 @@
       }
     },
     "/get-backup-plans-connection": {
-      "summary": " 获取备份计划数量",
+      "summary": "获取备份计划数量",
       "description": "",
       "responses": {
         "200": "",
@@ -73,7 +73,7 @@
       }
     },
     "/get-backup-plans": {
-      "summary": " 获取备份计划",
+      "summary": "获取备份计划",
       "description": "",
       "responses": {
         "200": "",
@@ -81,7 +81,7 @@
       }
     },
     "/get-backup-restore-executions-connection": {
-      "summary": " 获取备份恢复执行数量",
+      "summary": "获取备份恢复执行数量",
       "description": "",
       "responses": {
         "200": "",
@@ -89,7 +89,7 @@
       }
     },
     "/get-backup-restore-executions": {
-      "summary": " 获取备份恢复执行",
+      "summary": "获取备份恢复执行",
       "description": "",
       "responses": {
         "200": "",
@@ -97,7 +97,7 @@
       }
     },
     "/get-backup-restore-points-connection": {
-      "summary": " 获取备份恢复点数量",
+      "summary": "获取备份恢复点数量",
       "description": "",
       "responses": {
         "200": "",
@@ -105,7 +105,7 @@
       }
     },
     "/get-backup-restore-points": {
-      "summary": " 获取备份恢复点",
+      "summary": "获取备份恢复点",
       "description": "",
       "responses": {
         "200": "",
@@ -113,7 +113,7 @@
       }
     },
     "/get-backup-services-connection": {
-      "summary": " 获取备份服务数量",
+      "summary": "获取备份服务数量",
       "description": "",
       "responses": {
         "200": "",
@@ -121,7 +121,7 @@
       }
     },
     "/get-backup-services": {
-      "summary": " 获取备份服务",
+      "summary": "获取备份服务",
       "description": "",
       "responses": {
         "200": "",
@@ -129,7 +129,7 @@
       }
     },
     "/get-backup-store-repositories-connection": {
-      "summary": " 获取备份存储仓库数量",
+      "summary": "获取备份存储仓库数量",
       "description": "",
       "responses": {
         "200": "",
@@ -137,7 +137,7 @@
       }
     },
     "/get-backup-store-repositories": {
-      "summary": " 获取备份存储仓库",
+      "summary": "获取备份存储仓库",
       "description": "",
       "responses": {
         "200": "",
@@ -145,7 +145,7 @@
       }
     },
     "/get-backup-target-executions-connection": {
-      "summary": " 获取备份目标执行数量",
+      "summary": "获取备份目标执行数量",
       "description": "",
       "responses": {
         "200": "",
@@ -153,7 +153,7 @@
       }
     },
     "/get-backup-target-executions": {
-      "summary": " 获取备份目标执行",
+      "summary": "获取备份目标执行",
       "description": "",
       "responses": {
         "200": "",
@@ -161,7 +161,7 @@
       }
     },
     "/get-log-service-configs": {
-      "summary": " 获取日志服务配置",
+      "summary": "获取日志服务配置",
       "description": "",
       "responses": {
         "200": "",
@@ -169,7 +169,7 @@
       }
     },
     "/update-alert-notifier": {
-      "summary": " 编辑报警邮件通知",
+      "summary": "编辑报警邮件通知",
       "description": "",
       "responses": {
         "200": "",
