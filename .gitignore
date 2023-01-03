@@ -19,3 +19,6 @@ yarn-error.log*
 .vscode/*
 
 **/miss/*.json
+
+
+CloudTower-API-doc_docx/*

@@ -355,4 +355,5 @@ const getSchemaMarkdown = async ({ schemaName, spec, locales, previousVersion, l
 module.exports = { 
   getLocalesFile,
   getSchemaMarkdown,
+  describeSchema
 };

@@ -5,6 +5,7 @@
     "api:scan": "node ./cloudtower-api-doc/scripts/scan-missing.js",
     "api:sync": "node ./cloudtower-api-doc/scripts/sync-swagger.js",
     "api:new": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
+    "api:docx": "node ./cloudtower-api-doc/scripts/build-docs.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start  ./cloudtower-api-doc -p 3300",
     "build": "docusaurus build  ./cloudtower-api-doc",
@@ -45,6 +46,7 @@
     "graphql": "^16.3.0",
     "i18next": "^21.3.1",
     "micromark-extension-gfm-table": "^1.0.5",
+    "node-pandoc": "^0.3.0",
     "openapi-types": "^10.0.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
@@ -53,6 +55,7 @@
     "tty-browserify": "^0.0.1",
     "typescript": "^4.3.5",
     "util": "^0.12.4",
+    "widdershins": "^4.0.1",
     "yargs": "^17.3.1",
     "yargs-interactive": "^3.0.0"
   },
