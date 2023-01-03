@@ -209,6 +209,13 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
     ]
   },
   {
+    name: "CloudTowerApplicationManagement",
+    tags: [
+      "CloudTowerApplication",
+      "CloudTowerApplicationPackage"
+    ]
+  },
+  {
     "name": "Other",
     "tags": [
       "ApiInfo"

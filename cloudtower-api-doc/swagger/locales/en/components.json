@@ -71,6 +71,7 @@
   "ResponseErrorReason_5": " - Misconfigured security definition",
   "ResponseErrorReason_6": " - Make sure you visit the page before if it's https protocols",
   "Other": "Others",
+  "CloudTowerApplicationManagement": "CloudTower Application Management",
   "Status": "Status: ",
   "Time": "Time: ",
   "Size": "Size: ",
