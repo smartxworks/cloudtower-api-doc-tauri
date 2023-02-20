@@ -3,6 +3,7 @@ const yargsInteractive = require("yargs-interactive");
 const path = require("path");
 const httpSnippet = require('httpsnippet');
 const _ = require('lodash');
+const fs = require('fs');
 const i18next = require('i18next');
 const converter = require('widdershins');
 const nodePandoc = require('node-pandoc');
