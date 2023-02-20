@@ -12,6 +12,10 @@ jobs:
       - name: global-setting
         run: npm install -g vercel@27.0.0
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
