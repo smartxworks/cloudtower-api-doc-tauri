@@ -37,6 +37,10 @@ import zh2_6API from './locales/zh/v2.6.0.json';
 import en2_6API from './locales/en/v2.6.0.json';
 
 
+import zh2_7API from './locales/zh/v2.7.0.json';
+import en2_7API from './locales/en/v2.7.0.json';
+
+
 export type ApiDoc = {
   summary: string;
   description: string;
@@ -57,6 +61,7 @@ i18next.init({
         ['v2_4_0']: en2_4API,
         ['v2_5_0']: en2_5API,
         ['v2_6_0']: en2_6API,
+        ['v2_7_0']: en2_7API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -70,20 +75,21 @@ i18next.init({
         ['v2_4_0']: zh2_4API,
         ['v2_5_0']: zh2_5API,
         ['v2_6_0']: zh2_6API,
+        ['v2_7_0']: zh2_7API,
         components: zhComponents,
     },
   },
   lng: SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0','v2_2_0', 'v2_3_0', 'v2_4_0','v2_5_0', 'v2_6_0'],
+  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0','v2_2_0', 'v2_3_0', 'v2_4_0','v2_5_0', 'v2_6_0', 'v2.7.0'],
   interpolation: {
     prefix: "{",
     suffix: "}",
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'v2_2_0', 'v2_3_0', 'v2_4_0', 'v2_5_0','v2_6_0','components'],
+  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'v2_2_0', 'v2_3_0', 'v2_4_0', 'v2_5_0','v2_6_0', 'v2_7_0', 'components'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
