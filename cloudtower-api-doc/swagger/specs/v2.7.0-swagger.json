@@ -38253,6 +38253,7 @@
         "enum": [
           "ADVANCED_MONITORING",
           "BACKUP_CONTROLLER",
+          "BUNDLE_APPLICATION",
           "CLOUDTOWER",
           "EVEROUTE_CONTROLLER",
           "REGISTRY",
@@ -38420,6 +38421,7 @@
         "enum": [
           "COMMUNITY",
           "ENTERPRISE",
+          "ENTERPRISE_PLUS",
           "ESSENTIAL",
           "EXPRESS",
           "STANDARD",
@@ -43032,6 +43034,7 @@
           "CONTENT_LIBRARY_IMAGE",
           "ELF_IMAGE",
           "EVEROUTE_PACKAGE",
+          "HOST_PLUGIN_PACKAGE",
           "MONITOR_IMAGE",
           "OVF",
           "SVT_IMAGE",
@@ -57178,7 +57181,9 @@
           "CREATE_SKS_WORKLOAD_CLUSTER",
           "DELETE_SKS_WORKLOAD_CLUSTER",
           "UPDATE_SKS_WORKLOAD_CLUSTER",
-          "DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG"
+          "DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG",
+          "MANAGE_OBSERVABILITY_PACKAGE",
+          "MANAGE_OBSERVABILITY_SERVICE"
         ],
         "type": "string"
       },
@@ -65030,6 +65035,7 @@
         "enum": [
           "APPLICATION",
           "BACKUP",
+          "HOST_PLUGIN",
           "RESOLVER"
         ],
         "type": "string"
@@ -70965,6 +70971,25 @@
       },
       "VmOperateParams": {
         "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmDeleteParams": {
+        "properties": {
+          "effect": {
+            "properties": {
+              "include_snapshots": {
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          },
           "where": {
             "$ref": "#/components/schemas/VmWhereInput"
           }
@@ -87227,7 +87252,7 @@
   },
   "info": {
     "title": "CloudTower APIs",
-    "version": "2.6.0",
+    "version": "2.7.0",
     "description": "cloudtower operation API and SDK"
   },
   "openapi": "3.0.0",
@@ -110743,7 +110768,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VmOperateParams"
+                "$ref": "#/components/schemas/VmDeleteParams"
               }
             }
           }
