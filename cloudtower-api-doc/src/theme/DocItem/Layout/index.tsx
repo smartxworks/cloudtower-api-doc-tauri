@@ -43,6 +43,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
     <div className="row">
       <div id="left"></div>
       <div id="center" className={clsx("col",!docTOC.hidden && styles.docItemCol)}>
+        <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
             <DocItemContent>{children}</DocItemContent>

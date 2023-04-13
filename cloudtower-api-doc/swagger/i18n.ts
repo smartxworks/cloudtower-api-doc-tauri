@@ -4,41 +4,41 @@ import { SupportLanguage } from "./utils";
 import enComponents from './locales/en/components.json';
 import zhComponents from './locales/zh/components.json';
 
-import zh1_8Api from './locales/zh/v1.8.0.json';
-import en1_8API from './locales/en/v1.8.0.json'
+import zh1_8Api from './locales/zh/1.8.0.json';
+import en1_8API from './locales/en/1.8.0.json'
 
-import zh1_9Api from './locales/zh/v1.9.0.json';
-import en1_9API from './locales/en/v1.9.0.json'
+import zh1_9Api from './locales/zh/1.9.0.json';
+import en1_9API from './locales/en/1.9.0.json'
 
-import zh1_10Api from './locales/zh/v1.10.0.json';
-import en1_10Api from './locales/en/v1.10.0.json'
+import zh1_10Api from './locales/zh/1.10.0.json';
+import en1_10Api from './locales/en/1.10.0.json'
 
-import zh2_0API from './locales/zh/v2.0.0.json';
-import en2_0API from './locales/en/v2.0.0.json';
+import zh2_0API from './locales/zh/2.0.0.json';
+import en2_0API from './locales/en/2.0.0.json';
 
-import zh2_1API from './locales/zh/v2.1.0.json';
-import en2_1API from './locales/en/v2.1.0.json';
-
-
-import zh2_2API from './locales/zh/v2.2.0.json';
-import en2_2API from './locales/en/v2.2.0.json';
-
-import zh2_3API from './locales/zh/v2.3.0.json';
-import en2_3API from './locales/en/v2.3.0.json';
-
-import zh2_4API from './locales/zh/v2.4.0.json';
-import en2_4API from './locales/en/v2.4.0.json';
+import zh2_1API from './locales/zh/2.1.0.json';
+import en2_1API from './locales/en/2.1.0.json';
 
 
-import zh2_5API from './locales/zh/v2.5.0.json';
-import en2_5API from './locales/en/v2.5.0.json';
+import zh2_2API from './locales/zh/2.2.0.json';
+import en2_2API from './locales/en/2.2.0.json';
 
-import zh2_6API from './locales/zh/v2.6.0.json';
-import en2_6API from './locales/en/v2.6.0.json';
+import zh2_3API from './locales/zh/2.3.0.json';
+import en2_3API from './locales/en/2.3.0.json';
+
+import zh2_4API from './locales/zh/2.4.0.json';
+import en2_4API from './locales/en/2.4.0.json';
 
 
-import zh2_7API from './locales/zh/v2.7.0.json';
-import en2_7API from './locales/en/v2.7.0.json';
+import zh2_5API from './locales/zh/2.5.0.json';
+import en2_5API from './locales/en/2.5.0.json';
+
+import zh2_6API from './locales/zh/2.6.0.json';
+import en2_6API from './locales/en/2.6.0.json';
+
+
+import zh2_7API from './locales/zh/2.7.0.json';
+import en2_7API from './locales/en/2.7.0.json';
 
 
 export type ApiDoc = {
@@ -51,45 +51,45 @@ export type ApiDoc = {
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
-        ['v1_8_0']: en1_8API,
-        ['v1_9_0']: en1_9API,
-        ['v1_10_0']: en1_10Api,
-        ['v2_0_0']: en2_0API,
-        ['v2_1_0']: en2_1API,
-        ['v2_2_0']: en2_2API,
-        ['v2_3_0']: en2_3API,
-        ['v2_4_0']: en2_4API,
-        ['v2_5_0']: en2_5API,
-        ['v2_6_0']: en2_6API,
-        ['v2_7_0']: en2_7API,
+        ['1_8_0']: en1_8API,
+        ['1_9_0']: en1_9API,
+        ['1_10_0']: en1_10Api,
+        ['2_0_0']: en2_0API,
+        ['2_1_0']: en2_1API,
+        ['2_2_0']: en2_2API,
+        ['2_3_0']: en2_3API,
+        ['2_4_0']: en2_4API,
+        ['2_5_0']: en2_5API,
+        ['2_6_0']: en2_6API,
+        ['2_7_0']: en2_7API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
-        ['v1_8_0']:zh1_8Api,
-        ['v1_9_0']:zh1_9Api,
-        ['v1_10_0']: zh1_10Api,
-        ['v2_0_0']: zh2_0API,
-        ['v2_1_0']: zh2_1API,
-        ['v2_2_0']: zh2_2API,
-        ['v2_3_0']: zh2_3API,
-        ['v2_4_0']: zh2_4API,
-        ['v2_5_0']: zh2_5API,
-        ['v2_6_0']: zh2_6API,
-        ['v2_7_0']: zh2_7API,
+        ['1_8_0']:zh1_8Api,
+        ['1_9_0']:zh1_9Api,
+        ['1_10_0']: zh1_10Api,
+        ['2_0_0']: zh2_0API,
+        ['2_1_0']: zh2_1API,
+        ['2_2_0']: zh2_2API,
+        ['2_3_0']: zh2_3API,
+        ['2_4_0']: zh2_4API,
+        ['2_5_0']: zh2_5API,
+        ['2_6_0']: zh2_6API,
+        ['2_7_0']: zh2_7API,
         components: zhComponents,
     },
   },
   lng: SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-  fallbackNS: ['v1_8_0','v1_9_0','v1_10_0', 'v2_0_0', 'v2_1_0','v2_2_0', 'v2_3_0', 'v2_4_0','v2_5_0', 'v2_6_0', 'v2.7.0'],
+  fallbackNS: ['1_8_0','1_9_0','1_10_0', '2_0_0', '2_1_0','2_2_0', '2_3_0', '2_4_0','2_5_0', '2_6_0','2.7.0'],
   interpolation: {
     prefix: "{",
     suffix: "}",
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['v1_8_0', 'v1_9_0', 'v1_10_0','v2_0_0', 'v2_1_0', 'v2_2_0', 'v2_3_0', 'v2_4_0', 'v2_5_0','v2_6_0', 'v2_7_0', 'components'],
+  ns: ['1_8_0', '1_9_0', '1_10_0','2_0_0', '2_1_0', '2_2_0', '2_3_0', '2_4_0', '2_5_0','2_6_0', '2_7_0','components'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
