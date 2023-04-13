@@ -108,6 +108,7 @@ export default function DocsVersionDropdownNavbarItem({
     <DropdownNavbarItem
       {...props}
       mobile={mobile}
+      to={undefined}
       dropdownclassname={styles.dropdownULOverwrite}
       unHoverable={true}
       onClick={() => setActive(!active)}
@@ -119,7 +120,6 @@ export default function DocsVersionDropdownNavbarItem({
           <path fillRule="evenodd" clipRule="evenodd" d="M12.9497 6.58577L9.13134 10.4041C9.12486 10.4106 9.11843 10.417 9.11206 10.4234C8.72883 10.8066 8.53358 10.9994 8.30898 11.0724C8.10814 11.1376 7.89179 11.1376 7.69095 11.0724C7.46262 10.9982 7.26461 10.8002 6.86859 10.4041L3.05022 6.58577C2.65969 6.19524 2.65969 5.56208 3.05022 5.17156C3.44074 4.78103 4.07391 4.78103 4.46443 5.17155L7.99996 8.70709L11.5355 5.17156C11.926 4.78103 12.5592 4.78103 12.9497 5.17156C13.3402 5.56208 13.3402 6.19524 12.9497 6.58577Z" fill="#2C3852" fillOpacity="0.6"/>
         </svg>
       </>}
-      to={dropdownTo}
       items={completeItems}
       itemclassname={styles.versionItemOverwrite}
       className={clsx(styles.versionTitleOverwrite, {
