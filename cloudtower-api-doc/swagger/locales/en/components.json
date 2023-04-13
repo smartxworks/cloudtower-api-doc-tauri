@@ -76,5 +76,13 @@
   "Time": "Time: ",
   "Size": "Size: ",
   "Headers": "Headers: ",
-  "actualRequest": "Actual Request: "
+  "actualRequest": "Actual Request: ",
+  "lastVersion": "Latest Version",
+  "historyVersion": "History Version",
+  "copyright": "Copyright © 2023 SmartX Inc. All rights reserved",
+  "user_term": "Terms of Use",
+  "legal": "Legal",
+  "privacy": "Privacy",
+  "candidate": "End-User License Agreement",
+  "version_icu": "Version {version}"
 }

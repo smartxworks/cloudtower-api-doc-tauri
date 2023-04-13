@@ -28,6 +28,11 @@ const config = {
   i18n: {
     defaultLocale: "zh",
     locales: ["zh", "en"],
+    localeConfigs: {
+      zh: {
+        label: '简体中文',
+      },
+    }
   },
   onBrokenLinks: "log",
   presets: [
@@ -45,7 +50,10 @@ const config = {
         blog: false,
         pages: false,
         theme: {
-          customCss: [require.resolve("./swagger/overwrite.css")],
+          customCss: [
+            require.resolve("./swagger/overwrite.css"),
+            require.resolve('./custom.scss')
+          ],
         },
       }),
     ],
@@ -83,6 +91,7 @@ const config = {
         },
       };
     },
+    'docusaurus-plugin-sass'
   ],
 
   themeConfig:
@@ -91,7 +100,7 @@ const config = {
       navbar: {
         logo: {
           alt: "Smartx - Make IT simple",
-          src: "img/smartx.svg",
+          src: "img/smartx-developer-badge-zh-CN.svg",
         },
         items: [
           {
