@@ -75,5 +75,13 @@
   "Time": "时间： ",
   "Size": "大小： ",
   "Headers": "请求头： ",
-  "actualRequest": "实际请求："
+  "actualRequest": "实际请求：",
+  "lastVersion": "最新版本",
+  "historyVersion": "历史版本",
+  "copyright": "Copyright © 2023 SmartX Inc. 保留所有权利。",
+  "user_term": "使用条款",
+  "legal": "法律信息",
+  "privacy": "隐私政策",
+  "candidate": "最终用户许可协议",
+  "version_icu": "版本 {version}"
 }

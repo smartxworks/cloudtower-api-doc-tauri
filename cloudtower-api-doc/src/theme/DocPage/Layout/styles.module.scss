@@ -1,0 +1,26 @@
+.docPage {
+  display: flex;
+  width: 100%;
+  flex: 1 0;
+}
+
+.docsWrapper {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.breadcrumb {
+  height: 56px;
+  width: 100%;
+  z-index: 9;
+  top: 56px;
+  position: sticky;
+  z-index: 10;
+  background-color: aquamarine;
+}
+
+@media screen and (max-width: 996px) {
+  .breadcrumb {
+    top: 48px;
+  }
+}

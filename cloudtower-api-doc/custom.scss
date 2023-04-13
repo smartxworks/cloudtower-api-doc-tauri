@@ -1,0 +1,444 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0096ff;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-height: 56px * 2;
+  --ifm-color-content-secondary: rgba(44, 56, 82, 0.6);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #0096ff;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__link--active {
+  color: rgba(44, 56, 82, 0.6);
+}
+.navbar__link:hover {
+  color: #00122E;
+}
+
+.theme-doc-breadcrumbs,
+.pagination-nav__sublabel {
+  display: none;
+}
+
+.pagination-nav__label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.menu__link {
+  font-size: 14px;
+  color: #2a416b;
+  line-height: 22px;
+  padding-left: 8px;
+}
+
+.menu__link--active {
+  color: #0080ff;
+  border-radius: 6px;
+}
+
+.menu__list-item-collapsible {
+  display: flex;
+  align-items: center;
+}
+
+.menu__list-item-collapsible:hover {
+  background: rgba(0, 136, 255, 0.1);
+}
+
+.menu__link--sublist-caret:after {
+  content: unset;
+}
+
+.menu__link:hover {
+  color: #0080ff;
+}
+
+.menu__link:hover,
+.menu__caret:hover {
+  background: rgba(0, 136, 255, 0.1);
+}
+
+.navbar__item {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.right-sidebar {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.navbar-sidebar {
+  width: 100vw;
+  top: 48px + 1px;
+  transform: translate3d(0, 100%, 0);
+  box-shadow: none;
+}
+
+.navbar-sidebar__items--show-secondary {
+  transform: unset;
+}
+
+.navbar-sidebar__backdrop {
+  background-color: transparent;
+}
+
+.navbar-sidebar__item {
+  width: 100%;
+  padding: 0;
+}
+
+.rc-dropdown-hidden {
+  display: none;
+}
+
+.table-of-contents__link.toc-highlight {
+  border-radius: 6px;
+  padding: 4px 16px;
+  .table-of-contents__link--active {
+    color: #0080ff;
+  }
+  &:hover {
+    background: rgba(237, 241, 250, 0.6);
+    color: #2a416b;
+  }
+}
+
+.table-of-contents {
+  font-size: 14px;
+}
+
+/* markdown 正文样式 */
+html.docs-doc-id-download {
+  header {
+    h1 {
+      color: #235293;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 67px;
+    }
+    h2 {
+      color: #235293;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 46px;
+    }
+  }
+  .pagination-nav {
+    display: none;
+  }
+}
+
+html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
+  font-size: 14px;
+  line-height: 22px;
+  color: #00122e;
+
+  p,
+  a {
+    font-size: 14px;
+    line-height: 22px;
+    color: #00122e;
+  }
+
+  header {
+    h1 {
+      color: #235293;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 67px;
+    }
+    h2 {
+      color: #235293;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 46px;
+    }
+  }
+  h1 {
+    color: #0080ff;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #235293;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 12px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  li {
+    font-size: 14px;
+    line-height: 22px;
+    color: #00122e;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  a {
+    color: #377ef7;
+  }
+
+  /*
+ * Add the border, set border spacing etc
+ * The left width is 0 so cell border can be applied without doubling up.
+ */
+  table {
+    border: 1px solid rgba(211, 218, 235, 0.8);
+    border-left-width: 0;
+    border-top-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    width: 100%;
+    display: table;
+    box-shadow: inset 0px 1px 0px rgba(211, 218, 235, 0.6);
+  }
+
+  /*
+ * Add the border to table cell/header
+ */
+  table td,
+  table th {
+    border: none;
+    border-top: 1px solid rgba(211, 218, 235, 0.8);
+    border-left: 1px solid rgba(211, 218, 235, 0.8);
+  }
+
+  /*
+ * Remove the top border from the first header/cell
+ */
+  table tbody:first-child tr:first-child td,
+  table thead:first-child tr:first-child th {
+    border-top-width: 0;
+  }
+
+  /*
+ * Set the border radius for the first header/cell
+ */
+  table thead:first-child tr:first-child td:first-child,
+  table thead:first-child tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  /*
+ * Set the border radius for the last header/cell
+ */
+  table tbody:last-child tr:last-child td:first-child,
+  table tbody:last-child tr:last-child th:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  table td,
+  table th {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-list {
+  li {
+    a {
+      padding: 11px 16px !important;
+    }
+    .menu__list-item-collapsible {
+      padding-left: 16px;
+    }
+  }
+}
+
+.popup {
+  animation: popup 0.3s ease-out;
+}
+
+@keyframes popup {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-navbar-menu {
+  display: none;
+}
+
+.navbar__inner {
+  padding-right: 21px;
+}
+
+.pagination-nav {
+  border-top: 1px solid rgba(211, 218, 235, 0.8);
+
+  .pagination-nav__link {
+    border: none;
+    padding: 48px 64px;
+  }
+}
+
+.pagination-nav__label {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #2a416b;
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 11px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.586.55L6.404 4.37l.02.019c.383.383.575.578.648.803a1 1 0 0 1 0 .618c-.074.228-.272.426-.668.822L2.586 10.45a1 1 0 0 1-1.414-1.414L4.707 5.5 1.172 1.964A1 1 0 1 1 2.586.55z' fill='%230080FF'/%3E%3C/svg%3E");
+  margin-left: 12px;
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 11px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.414 10.45L1.596 6.63l-.02-.019c-.383-.383-.575-.578-.648-.803a1 1 0 0 1 0-.618c.074-.228.272-.426.668-.822L5.414.55a1 1 0 1 1 1.414 1.414L3.293 5.5l3.535 3.536a1 1 0 1 1-1.414 1.414z' fill='%230080FF'/%3E%3C/svg%3E");
+  margin-right: 12px;
+}
+
+@media screen and (max-width: 996px) {
+  .navbar__items {
+    width: 100%;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 0 18px 0 4px;
+    border-bottom: 0.5px solid rgba(225, 230, 241, 0.6);
+  }
+
+  .mobile-navbar-menu {
+    display: flex;
+  }
+
+  .pagination-nav {
+    border-top: 1px solid rgba(211, 218, 235, 0.8);
+  
+    .pagination-nav__link {
+      border: none;
+      padding: 40px 24px;
+    }
+  }
+}
+.container {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+@media screen and (min-width: 1280px) {
+  html:not(.docs-doc-id-download):not(.docs-doc-id-api) {
+    #left {
+      flex: 0 0 calc(2 / 12 * 100%);
+    }
+    #right {
+      position: fixed;
+      right: 0;
+      width: calc(2 / 12 * 100%);
+    }
+    #center {
+      max-width: 1040px;
+      flex: 0 0 calc(8 / 12 * 100%)
+    }
+  }
+  html.docs-doc-id-download {
+    #left {
+      flex: 0 0 calc(1 / 12 * 100%);
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 926px) {
+  html:not(.docs-doc-id-download):not(.docs-doc-id-api) {
+    #left {
+      display: none;
+    }
+    #right {
+      position: fixed;
+      right: 0;
+      width: calc(9 / 12 * 100%)
+    }
+    #center {
+      flex: 0 0 calc(9 / 12 * 100%)
+    }
+  }
+  html.docs-doc-id-download {
+    #left {
+      flex: 0 0 calc(1 / 12 * 100%);
+    }
+  }
+}
+
+.right-sidebar {
+  top: 0;
+}

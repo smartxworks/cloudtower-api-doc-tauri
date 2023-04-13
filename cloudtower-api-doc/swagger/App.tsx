@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import _, { cloneDeep } from "lodash";
 import { ProStore, RedocProRawOptions } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useDocsVersion } from "@docusaurus/theme-common";
 import { Badge } from "@redocly/reference-docs/lib/redoc-lib/src/common-elements";
 import i18next from "./i18n";
 import {
@@ -74,8 +73,8 @@ const Redoc = React.memo(RedocWrapper, (prev, next) => {
 });
 
 const App: React.FC = () => {
-  const { version } = useDocsVersion();
-  const { i18n } = useDocusaurusContext();
+  const { i18n, siteMetadata } = useDocusaurusContext();
+  const version = siteMetadata.docusaurusVersion;
   const [spec, setSpec] = useState<ISpec>();
   const [rawSpec, setRawSpec] = useState<ISpec>();
   const specRef = useRef<ISpec>(spec);
