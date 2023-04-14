@@ -910,7 +910,7 @@
       "description": ""
     },
     "/get-deploys-connection": {
-      "summary": "",
+      "summary": "Get the number of CloudTower",
       "description": ""
     },
     "/get-deploys": {
@@ -994,7 +994,7 @@
       "description": ""
     },
     "/get-global-settingses-connection": {
-      "summary": "",
+      "summary": "Get the number of CloudTower settings",
       "description": ""
     },
     "/get-global-settingses": {
@@ -1018,7 +1018,7 @@
       "description": ""
     },
     "/get-images-connector": {
-      "summary": "",
+      "summary": "Get images connector",
       "description": ""
     },
     "/get-ipmis": {
@@ -1074,7 +1074,7 @@
       "description": ""
     },
     "/get-licenses-connection": {
-      "summary": "",
+      "summary": "Get the number of licenses",
       "description": ""
     },
     "/get-licenses": {
@@ -1250,7 +1250,7 @@
       "description": ""
     },
     "/get-storage-policies-connector": {
-      "summary": "",
+      "summary": "Get storage policies connector",
       "description": ""
     },
     "/get-svt-images-connection": {

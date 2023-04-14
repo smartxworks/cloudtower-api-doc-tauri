@@ -473,7 +473,7 @@
       "description": ""
     },
     "/get-deploys-connection": {
-      "summary": "",
+      "summary": "获取 CloudTower 数量",
       "description": ""
     },
     "/get-deploys": {
@@ -557,7 +557,7 @@
       "description": ""
     },
     "/get-global-settingses-connection": {
-      "summary": "",
+      "summary": "获取 CloudTower 设置数量",
       "description": ""
     },
     "/get-global-settingses": {
@@ -581,7 +581,7 @@
       "description": ""
     },
     "/get-images-connector": {
-      "summary": "",
+      "summary": "获取 Images Connector",
       "description": ""
     },
     "/get-ipmis": {
@@ -637,7 +637,7 @@
       "description": ""
     },
     "/get-licenses-connection": {
-      "summary": "",
+      "summary": "获取使用许可数量",
       "description": ""
     },
     "/get-licenses": {
@@ -813,7 +813,7 @@
       "description": ""
     },
     "/get-storage-policies-connector": {
-      "summary": "",
+      "summary": "获取存储策略 Connector",
       "description": ""
     },
     "/get-svt-images-connection": {
