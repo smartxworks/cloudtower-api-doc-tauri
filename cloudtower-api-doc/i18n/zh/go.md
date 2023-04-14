@@ -3,27 +3,27 @@ import '../../swagger/utils/autoScroll';
 <header>
   <h1>CloudTower Go SDK</h1>
   <hr className="header-divider"/>
-  <h2>概览</h2>
 </header>
 
+# 概览
 Golang 环境下的 CloudTower SDK，适用于 golang 1.16 及以上版本
 
 - [源码地址](https://github.com/smartxworks/cloudtower-go-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-go-sdk/releases)
 
-# 安装
+## 安装
 
 ```shell
 go get github.com/smartxworks/cloudtower-go-sdk
 ```
 
-# 使用
+## 使用
 
 > 样例中使用了两个工具库 [pointy](https://github.com/openlyinc/pointy) 与 [go-funk](https://github.com/thoas/go-funk)，pointy 用于快速创建一个原始类型的指针，go-funk 则提供了一些工具方法，例如 `Map`、`Filter`、`Reduce` 等。
 
-## 创建实例
+### 创建实例
 
-## 创建 `ApiClient` 实例
+#### 创建 `ApiClient` 实例
 
 ```go
 import (
@@ -53,9 +53,9 @@ transport := httptransport.NewWithClient("192.168.29.157", "/v2/api", []string{"
 client := apiclient.New(transport, strfmt.Default)
 ```
 
-## 发送请求
+### 发送请求
 
-## 引入对应的 `client` 包
+#### 引入对应的 `client` 包
 
 > 根据不同用途的操作引入创建相关的 `client` 包
 
@@ -65,7 +65,7 @@ import (
 )
 ```
 
-## 鉴权
+#### 鉴权
 
 ```go
 import (
@@ -84,7 +84,7 @@ if err != nil {
 transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", *logRes.Payload.Data.Token)
 ```
 
-## 获取资源
+#### 获取资源
 
 ```go
 getVmParams := vm.NewGetVmsParams();
@@ -100,7 +100,7 @@ if err != nil {
 vms := vmsRes.Payload
 ```
 
-## 更新资源
+#### 更新资源
 
 > 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
 
@@ -154,9 +154,9 @@ if err != nil {
 }
 ```
 
-## 其他
+#### 其他
 
-### 设置返回信息的语言
+##### 设置返回信息的语言
 
 > 可以设置请求 params 中的 `ContentLanguage` 项设置返回值的语言，可选值为 `["en-US", "zh-CN"]`，默认值为 `en-US`，不在可选值范围内的语言会返回一个 HTTP 400 错误
 
@@ -177,11 +177,11 @@ getTaskZhParams.ContentLanguage = pointy.String("zh-CN")
 taskZhRes, err := client.Task.GetTasks(getTaskZhParams)
 ```
 
-# 操作示例
+## 操作示例
 
-## 获取虚拟机
+### 获取虚拟机
 
-## 获取所有虚拟机
+#### 获取所有虚拟机
 
 ```go
 package main
@@ -219,7 +219,7 @@ func getAllVms(
 }
 ```
 
-## 分页获取虚拟机
+#### 分页获取虚拟机
 
 ```go
 package main
@@ -263,7 +263,7 @@ func getVmsWithPagination(
 }
 ```
 
-## 获取所有已开机虚拟机
+#### 获取所有已开机虚拟机
 
 ```go
 package main
@@ -306,7 +306,7 @@ func getAllRunningVms(
 }
 ```
 
-## 获取名称或描述中包含特定字符串的虚拟机
+#### 获取名称或描述中包含特定字符串的虚拟机
 
 ```go
 package main
@@ -350,7 +350,7 @@ func getVmsMatchStr(
 }
 ```
 
-## 获取所有 vcpu > n 的虚拟机
+#### 获取所有 vcpu > n 的虚拟机
 
 ```go
 package main
@@ -394,9 +394,9 @@ func getVmshasNMoreCpuCore(
 }
 ```
 
-## 从模版创建虚拟机
+### 从模版创建虚拟机
 
-## 仅指定 id
+#### 仅指定 id
 
 ```go
 package main
@@ -461,7 +461,7 @@ func createVmFromTemplate(
 }
 ```
 
-## 配置与模版不同的网卡参数
+#### 配置与模版不同的网卡参数
 
 ```go
 package main
@@ -532,9 +532,9 @@ func createVmFromTemplate(
 }
 ```
 
-## 创建空白虚拟机
+### 创建空白虚拟机
 
-## 简单创建
+#### 简单创建
 
 ```go
 package main
@@ -615,9 +615,9 @@ func createVm(
 
 ```
 
-## 创建时配置虚拟盘
+#### 创建时配置虚拟盘
 
-### CD-ROM 加载 ISO
+##### CD-ROM 加载 ISO
 
 ```go
 package main
@@ -698,7 +698,7 @@ func createVm(
 }
 ```
 
-### 挂载虚拟卷为虚拟盘
+##### 挂载虚拟卷为虚拟盘
 
 ```go
 package main
@@ -780,7 +780,7 @@ func createVm(
 }
 ```
 
-### 挂载新增虚拟盘
+##### 挂载新增虚拟盘
 
 ```go
 package main
@@ -865,7 +865,7 @@ func createVm(
 }
 ```
 
-## 创建时配置虚拟网卡
+#### 创建时配置虚拟网卡
 
 ```go
 package main
@@ -950,9 +950,9 @@ func createVm(
 }
 ```
 
-## 编辑虚拟机
+### 编辑虚拟机
 
-## 编辑基本信息
+#### 编辑基本信息
 
 ```go
 package main
@@ -1021,9 +1021,9 @@ func updateVm(
 }
 ```
 
-## CD-ROM 编辑
+#### CD-ROM 编辑
 
-### 添加 CD-ROM
+##### 添加 CD-ROM
 
 ```go
 package main
@@ -1092,7 +1092,7 @@ func addVmCdRom(
 }
 ```
 
-### 删除 CD-ROM
+##### 删除 CD-ROM
 
 ```go
 package main
@@ -1155,9 +1155,9 @@ func removeVmCdRom(
 }
 ```
 
-## 虚拟卷操作
+#### 虚拟卷操作
 
-### 添加新虚拟卷
+##### 添加新虚拟卷
 
 ```go
 package main
@@ -1232,7 +1232,7 @@ func addVmDisk(
 }
 ```
 
-### 挂载已存在虚拟卷为虚拟盘
+##### 挂载已存在虚拟卷为虚拟盘
 
 ```go
 package main
@@ -1304,7 +1304,7 @@ func addVmDisk(
 }
 ```
 
-### 卸载虚拟盘
+##### 卸载虚拟盘
 
 ```go
 package main
@@ -1367,9 +1367,9 @@ func removeVmDisk(
 }
 ```
 
-## 网卡操作
+#### 网卡操作
 
-### 添加网卡
+##### 添加网卡
 
 ```go
 package main
@@ -1438,7 +1438,7 @@ func addVmNic(
 }
 ```
 
-### 编辑网卡
+##### 编辑网卡
 
 ```go
 package main
@@ -1503,7 +1503,7 @@ func updateVmNic(
 }
 ```
 
-### 移除网卡
+##### 移除网卡
 
 ```go
 package main
@@ -1567,9 +1567,9 @@ func removeVmNic(
 
 ```
 
-## 虚拟机迁移
+#### 虚拟机迁移
 
-### 迁移至指定主机
+##### 迁移至指定主机
 
 ```go
 package main
@@ -1634,7 +1634,7 @@ func migrateVmToHost(
 }
 ```
 
-### 自动调度到合适的主机
+##### 自动调度到合适的主机
 
 ```go
 package main
@@ -1695,11 +1695,11 @@ func migrateVmAutoSchedule(
 }
 ```
 
-## 虚拟机电源操作
+### 虚拟机电源操作
 
-## 虚拟机开机:
+#### 虚拟机开机:
 
-### 指定虚拟机开机，自动调度到合适的虚拟机
+##### 指定虚拟机开机，自动调度到合适的虚拟机
 
 ```go
 package main
@@ -1760,7 +1760,7 @@ func startVm(
 }
 ```
 
-### 批量虚拟机开机，自动调度到合适的虚拟机
+##### 批量虚拟机开机，自动调度到合适的虚拟机
 
 ```go
 package main
@@ -1835,7 +1835,7 @@ func startVmsByQuery(client *apiclient.Cloudtower,
 }
 ```
 
-### 开机至指定主机
+##### 开机至指定主机
 
 ```go
 package main
@@ -1900,9 +1900,9 @@ func startVmOnHost(
 }
 ```
 
-## 虚拟机关机
+#### 虚拟机关机
 
-### 指定虚拟机关机
+##### 指定虚拟机关机
 
 ```go
 package main
@@ -1963,7 +1963,7 @@ func shutdownVm(
 }
 ```
 
-### 批量虚拟机关机
+##### 批量虚拟机关机
 
 ```go
 package main
@@ -2038,7 +2038,7 @@ func shutdownVmsByQuery(client *apiclient.Cloudtower,
 }
 ```
 
-### 强制关机指定虚拟机
+##### 强制关机指定虚拟机
 
 ```go
 package main
@@ -2099,7 +2099,7 @@ func forceShutdownVm(
 }
 ```
 
-### 强制关机批量虚拟机
+##### 强制关机批量虚拟机
 
 ```go
 package main
@@ -2175,9 +2175,9 @@ func forceshutdownVmsByQuery(client *apiclient.Cloudtower,
 
 ```
 
-## 虚拟机重启
+#### 虚拟机重启
 
-### 重启指定虚拟机
+##### 重启指定虚拟机
 
 ```go
 package main
@@ -2238,7 +2238,7 @@ func restartVm(
 }
 ```
 
-### 重启批量虚拟机
+##### 重启批量虚拟机
 
 ```go
 package main
@@ -2312,7 +2312,7 @@ func restartVmsByQuery(client *apiclient.Cloudtower,
 }
 ```
 
-### 强制重启指定虚拟机
+##### 强制重启指定虚拟机
 
 ```go
 package main
@@ -2373,7 +2373,7 @@ func forceRestartVm(
 }
 ```
 
-### 强制重启批量虚拟机
+##### 强制重启批量虚拟机
 
 ```go
 package main
@@ -2447,9 +2447,9 @@ func forceRestartVmsByQuery(client *apiclient.Cloudtower,
 }
 ```
 
-## 虚拟机暂停
+#### 虚拟机暂停
 
-### 暂停指定虚拟机
+##### 暂停指定虚拟机
 
 ```go
 package main
@@ -2510,7 +2510,7 @@ func suspendVm(
 }
 ```
 
-### 暂停批量虚拟机
+##### 暂停批量虚拟机
 
 ```go
 package main
@@ -2586,9 +2586,9 @@ func suspendVmsByQuery(client *apiclient.Cloudtower,
 
 ```
 
-## 虚拟机恢复
+#### 虚拟机恢复
 
-### 恢复指定虚拟机
+##### 恢复指定虚拟机
 
 ```go
 package main
@@ -2649,7 +2649,7 @@ func resumeVm(
 }
 ```
 
-### 恢复批量虚拟机
+##### 恢复批量虚拟机
 
 ```go
 package main
@@ -2724,11 +2724,11 @@ func resumeVmsByQuery(client *apiclient.Cloudtower,
 
 ```
 
-## 删除虚拟机
+### 删除虚拟机
 
-## 回收站
+#### 回收站
 
-### 移入回收站
+##### 移入回收站
 
 ```go
 package main
@@ -2791,7 +2791,7 @@ func moveVmToRecycleBin(
 }
 ```
 
-### 从回收站恢复
+##### 从回收站恢复
 
 ```go
 package main
@@ -2854,7 +2854,7 @@ func recoverVmFromRecycleBin(
 }
 ```
 
-## 永久删除
+#### 永久删除
 
 ```go
 package main
@@ -2905,9 +2905,9 @@ func deleteVm(
 }
 ```
 
-# 场景示例
+## 场景示例
 
-## 虚拟机备份
+### 虚拟机备份
 
 ```go
 package main
@@ -3008,9 +3008,9 @@ func create_vm_snapshot(
 }
 ```
 
-## Dashboard 构建
+### Dashboard 构建
 
-## 定义工具方法
+#### 定义工具方法
 
 ```go
 import (
@@ -3052,7 +3052,7 @@ func formatUnit(base float64, units []string, step int32) string {
 }
 ```
 
-## 构建报警信息
+#### 构建报警信息
 
 ```go
 type AlertInfo struct {
@@ -3108,7 +3108,7 @@ func buildAlertInfo(client *apiclient.Cloudtower, clusterIds []string) (*AlertIn
 }
 ```
 
-## 构建硬盘信息
+#### 构建硬盘信息
 
 > 这里以机械硬盘为例
 
@@ -3178,7 +3178,7 @@ func buildHddInfo(client *apiclient.Cloudtower, clusterIds []string) (*DiskInfo,
 }
 ```
 
-## 构建性能指标
+#### 构建性能指标
 
 > 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
 
@@ -3322,7 +3322,7 @@ func buildMetricsInfo(client *apiclient.Cloudtower, clusters []*models.Cluster, 
 }
 ```
 
-## 构建 Dashboard
+#### 构建 Dashboard
 
 ```go
 type DashboardInfo struct {

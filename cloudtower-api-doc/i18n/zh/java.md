@@ -1,41 +1,40 @@
 import '../../swagger/utils/autoScroll';
 
-
 <header>
   <h1>CloudTower Java SDK</h1>
   <hr className="header-divider"/>
-  <h2>概览</h2>
 </header>
 
+# 概览
 Java 环境下的 CloudTower SDK，适用于 Java 1.8 及以上版本
 
 - [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-java-sdk/releases)
 
-# 安装
+## 安装
 
-- ## git 源码安装
+- ### git 源码安装
 
   ```shell
   git clone https://github.com/smartxworks/cloudtower-java-sdk.git
   mvn clean install
   ```
 
-- ## jar 包安装
+- ### jar 包安装
 
   ```shell
   # download jar and pom from release page
   mvn install:install-file -D"file=<path/to/jar>" -D"pomFile=<path/to/pom>"
   ```
 
-- ## 中央仓库
+- ### 中央仓库
   > 暂无
 
-# 使用
+## 使用
 
-## 创建实例
+### 创建实例
 
-## 创建 `ApiClient` 实例
+#### 创建 `ApiClient` 实例
 
 ```java
 ApiClient client = new ApiClient();
@@ -50,7 +49,7 @@ client.setBasePath("https://192.168.96.133/v2/api");
 client.setVerifyingSsl(false);
 ```
 
-## 创建对应的 API 实例
+#### 创建对应的 API 实例
 
 > 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。
 
@@ -58,7 +57,7 @@ client.setVerifyingSsl(false);
 VmApi vmApi = new VmApi(client);
 ```
 
-## 鉴权
+### 鉴权
 
 ```java
 // 通过 UserApi 中的 login 方法来获得 token。
@@ -70,15 +69,15 @@ WithTaskTokenString token = userApi.login(loginInput);
 ((ApiKeyAuth) client.getAuthentication("Authorization")).setApiKey(token.getData().getToken());
 ```
 
-## 发送请求
+### 发送请求
 
-## 获取资源
+#### 获取资源
 
 ```java
 List<Vm> vms = vmApi.getVms(new GetVmsRequestBody().first(1));
 ```
 
-## 更新资源
+#### 更新资源
 
 > 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
 
@@ -144,9 +143,9 @@ List<String> tasks = startedVms.stream().map(startedVm -> startedVm.getTaskId())
 TaskUtil.WaitTasks(tasks, client);
 ```
 
-## 其他
+#### 其他
 
-### 发送异步请求
+##### 发送异步请求
 
 > 上述请求的发送都是同步的请求，会堵塞当前进程。如果需要使用异步请求，可以使用 `${Api}Async` 配合 `ApiCallback` 来发送异步请求。
 
@@ -173,7 +172,7 @@ vmApi.getVmsAsync(
     });
 ```
 
-### 设置返回信息的语言
+##### 设置返回信息的语言
 
 > 可以通过设置/清除默认请求头来设定返回值的语言，可选值为 `["en-US", "zh-CN"]`，不在可选值范围内的语言会返回一个 HTTP 400 错误
 
@@ -192,11 +191,11 @@ client.addDefaultHeader("content-language", "fr-CA");
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 ```
 
-# 操作示例
+## 操作示例
 
-## 获取虚拟机
+### 获取虚拟机
 
-## 获取所有虚拟机
+#### 获取所有虚拟机
 
 ```java
 public class App {
@@ -215,7 +214,7 @@ public class App {
 }
 ```
 
-## 分页获取虚拟机
+#### 分页获取虚拟机
 
 ```java
 public class App {
@@ -235,7 +234,7 @@ public class App {
 }
 ```
 
-## 获取所有已开机虚拟机
+#### 获取所有已开机虚拟机
 
 ```java
 public class App {
@@ -256,7 +255,7 @@ public class App {
 }
 ```
 
-## 获取名称或描述中包含特定字符串的虚拟机
+#### 获取名称或描述中包含特定字符串的虚拟机
 
 ```java
 public class App {
@@ -277,7 +276,7 @@ public class App {
 }
 ```
 
-## 获取所有 vcpu > n 的虚拟机
+#### 获取所有 vcpu > n 的虚拟机
 
 ```java
 public class App {
@@ -298,9 +297,9 @@ public class App {
 }
 ```
 
-## 从模版创建虚拟机
+### 从模版创建虚拟机
 
-## 仅指定 id
+#### 仅指定 id
 
 ```java
 public class App {
@@ -336,7 +335,7 @@ public class App {
 }
 ```
 
-## 配置与模板不同的虚拟盘参数
+#### 配置与模板不同的虚拟盘参数
 
 ```java
 public class App {
@@ -396,7 +395,7 @@ public class App {
 }
 ```
 
-## 配置与模版不同的网卡参数
+#### 配置与模版不同的网卡参数
 
 ```java
 public class App {
@@ -436,9 +435,9 @@ public class App {
 }
 ```
 
-## 创建空白虚拟机
+### 创建空白虚拟机
 
-## 简单创建
+#### 简单创建
 
 ```java
 public class App {
@@ -482,9 +481,9 @@ public class App {
 }
 ```
 
-## 创建时配置虚拟盘
+#### 创建时配置虚拟盘
 
-### CD-ROM 加载 ISO
+##### CD-ROM 加载 ISO
 
 ```java
 public class App {
@@ -532,7 +531,7 @@ public class App {
 }
 ```
 
-### 挂载虚拟卷为虚拟盘
+##### 挂载虚拟卷为虚拟盘
 
 ```java
 public class App {
@@ -581,7 +580,7 @@ public class App {
 }
 ```
 
-### 挂载新增虚拟盘
+##### 挂载新增虚拟盘
 
 ```java
 public class App {
@@ -633,7 +632,7 @@ public class App {
 }
 ```
 
-## 创建时配置虚拟网卡
+#### 创建时配置虚拟网卡
 
 ```java
 public class App {
@@ -681,9 +680,9 @@ public class App {
 }
 ```
 
-## 编辑虚拟机
+### 编辑虚拟机
 
-## 编辑基本信息
+#### 编辑基本信息
 
 ```java
 public class App {
@@ -721,7 +720,7 @@ public class App {
 }
 ```
 
-## 编辑高级信息
+#### 编辑高级信息
 
 ```java
 public class App {
@@ -758,9 +757,9 @@ public class App {
 }
 ```
 
-## CD-ROM 编辑
+#### CD-ROM 编辑
 
-### 添加 CD-ROM
+##### 添加 CD-ROM
 
 ```java
 public class App {
@@ -797,7 +796,7 @@ public class App {
 }
 ```
 
-### 删除 CD-ROM
+##### 删除 CD-ROM
 
 ```java
 public class App {
@@ -830,9 +829,9 @@ public class App {
 }
 ```
 
-## 虚拟卷操作
+#### 虚拟卷操作
 
-### 添加新虚拟卷
+##### 添加新虚拟卷
 
 ```java
 public class App {
@@ -874,7 +873,7 @@ public class App {
 }
 ```
 
-### 挂载已存在虚拟卷为虚拟盘
+##### 挂载已存在虚拟卷为虚拟盘
 
 ```java
 public class App {
@@ -912,7 +911,7 @@ public class App {
 }
 ```
 
-### 卸载虚拟盘
+##### 卸载虚拟盘
 
 ```java
 public class App {
@@ -945,9 +944,9 @@ public class App {
 }
 ```
 
-## 网卡操作
+#### 网卡操作
 
-### 添加网卡
+##### 添加网卡
 
 ```java
 public class App {
@@ -981,7 +980,7 @@ public class App {
 }
 ```
 
-### 编辑网卡基本信息
+##### 编辑网卡基本信息
 
 ```java
 public class App {
@@ -1017,7 +1016,7 @@ public class App {
 }
 ```
 
-### 编辑网卡高级信息
+##### 编辑网卡高级信息
 
 ```java
 public class App {
@@ -1054,7 +1053,7 @@ public class App {
 }
 ```
 
-### 移除网卡
+##### 移除网卡
 
 ```java
 public class App {
@@ -1088,9 +1087,9 @@ public class App {
 }
 ```
 
-## 虚拟机迁移
+#### 虚拟机迁移
 
-### 迁移至指定主机
+##### 迁移至指定主机
 
 ```java
 public class App {
@@ -1123,7 +1122,7 @@ public class App {
 }
 ```
 
-### 自动调度到合适的主机
+##### 自动调度到合适的主机
 
 ```java
 public class App {
@@ -1156,11 +1155,11 @@ public class App {
 }
 ```
 
-## 虚拟机电源操作
+### 虚拟机电源操作
 
-## 虚拟机开机:
+#### 虚拟机开机:
 
-### 指定虚拟机开机，自动调度到合适的虚拟机
+##### 指定虚拟机开机，自动调度到合适的虚拟机
 
 ```java
 public class App {
@@ -1193,7 +1192,7 @@ public class App {
 }
 ```
 
-### 批量虚拟机开机，自动调度到合适的虚拟机
+##### 批量虚拟机开机，自动调度到合适的虚拟机
 
 ```java
 public class App {
@@ -1226,7 +1225,7 @@ public class App {
 }
 ```
 
-### 开机至指定主机
+##### 开机至指定主机
 
 ```java
 public class App {
@@ -1259,9 +1258,9 @@ public class App {
 }
 ```
 
-## 虚拟机关机
+#### 虚拟机关机
 
-### 指定虚拟机关机
+##### 指定虚拟机关机
 
 ```java
 public class App {
@@ -1293,7 +1292,7 @@ public class App {
 }
 ```
 
-### 批量虚拟机关机
+##### 批量虚拟机关机
 
 ```java
 public class App {
@@ -1325,7 +1324,7 @@ public class App {
 }
 ```
 
-### 强制关机指定虚拟机
+##### 强制关机指定虚拟机
 
 ```java
 public class App {
@@ -1357,7 +1356,7 @@ public class App {
 }
 ```
 
-### 强制关机批量虚拟机
+##### 强制关机批量虚拟机
 
 ```java
 public class App {
@@ -1389,9 +1388,9 @@ public class App {
 }
 ```
 
-## 虚拟机重启
+#### 虚拟机重启
 
-### 重启指定虚拟机
+##### 重启指定虚拟机
 
 ```java
 public class App {
@@ -1423,7 +1422,7 @@ public class App {
 }
 ```
 
-### 重启批量虚拟机
+##### 重启批量虚拟机
 
 ```java
 public class App {
@@ -1455,7 +1454,7 @@ public class App {
 }
 ```
 
-### 强制重启指定虚拟机
+##### 强制重启指定虚拟机
 
 ```java
 public class App {
@@ -1487,7 +1486,7 @@ public class App {
 }
 ```
 
-### 强制重启批量虚拟机
+##### 强制重启批量虚拟机
 
 ```java
 public class App {
@@ -1519,9 +1518,9 @@ public class App {
 }
 ```
 
-## 虚拟机暂停
+#### 虚拟机暂停
 
-### 暂停指定虚拟机
+##### 暂停指定虚拟机
 
 ```java
 public class App {
@@ -1553,7 +1552,7 @@ public class App {
 }
 ```
 
-### 暂停批量虚拟机
+##### 暂停批量虚拟机
 
 ```java
 public class App {
@@ -1585,9 +1584,9 @@ public class App {
 }
 ```
 
-## 虚拟机恢复
+#### 虚拟机恢复
 
-### 恢复指定虚拟机
+##### 恢复指定虚拟机
 
 ```java
 public class App {
@@ -1619,7 +1618,7 @@ public class App {
 }
 ```
 
-### 恢复批量虚拟机
+##### 恢复批量虚拟机
 
 ```java
 public class App {
@@ -1651,11 +1650,11 @@ public class App {
 }
 ```
 
-## 删除虚拟机
+### 删除虚拟机
 
-## 回收站
+#### 回收站
 
-### 移入回收站
+##### 移入回收站
 
 ```java
 public class App {
@@ -1688,7 +1687,7 @@ public class App {
 }
 ```
 
-### 从回收站恢复
+##### 从回收站恢复
 
 ```java
 public class App {
@@ -1721,7 +1720,7 @@ public class App {
 }
 ```
 
-## 永久删除
+#### 永久删除
 
 ```java
 public class App {
@@ -1747,9 +1746,9 @@ public class App {
 }
 ```
 
-# 场景示例
+## 场景示例
 
-## 虚拟机备份
+### 虚拟机备份
 
 ```java
 
@@ -1803,9 +1802,9 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
 }
 ```
 
-## Dashboard 构建
+### Dashboard 构建
 
-## 定义工具方法
+#### 定义工具方法
 
 ```java
 private static String[] byteUnits = new String[] { "B", "KiB", "MiB", "GiB", "TiB", "PiB" };
@@ -1828,7 +1827,7 @@ public static String formatUnit(double base, String[] units, int step) {
 }
 ```
 
-## 构建报警信息
+#### 构建报警信息
 
 ```java
 public class AlertInfo {
@@ -1870,7 +1869,7 @@ public AlertInfo buildAlerts(ApiClient client, List<String> clusterIds) throws A
 }
 ```
 
-## 构建硬盘信息
+#### 构建硬盘信息
 
 > 这里以机械硬盘为例
 
@@ -1916,7 +1915,7 @@ public DiskInfo buildHddDiskInfo(ApiClient client, List<String> clusterIds) thro
 }
 ```
 
-## 构建性能指标
+#### 构建性能指标
 
 > 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
 
@@ -2044,7 +2043,7 @@ public static MetricInfo buildMetricInfo(ApiClient client, List<Cluster> cluster
 }
 ```
 
-## 构建 Dashboard
+#### 构建 Dashboard
 
 ```java
 public class DashboardInfo {
