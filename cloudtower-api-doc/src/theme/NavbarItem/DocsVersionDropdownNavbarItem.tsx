@@ -79,7 +79,7 @@ export default function DocsVersionDropdownNavbarItem({
       />
     );
   }
-  const completeItems = React.useMemo(() => ([
+  const completeItems = [
     {
       type: 'html',
       value: `<span class="dropdown-subtitle">${i18next.t('components.lastVersion')}</span>`
@@ -94,7 +94,7 @@ export default function DocsVersionDropdownNavbarItem({
       value: `<span class="dropdown-subtitle">${i18next.t('components.historyVersion')}</span>`
     },
     ...items.slice(1)
-  ]).map(v => {
+  ].map(v => {
     if(v.label) {
       return {
         ...v,
@@ -102,8 +102,9 @@ export default function DocsVersionDropdownNavbarItem({
       }
     }
     return v;
-  }), [currentLocale]);
+  });
 
+  console.log(completeItems);
   return (
     <DropdownNavbarItem
       {...props}

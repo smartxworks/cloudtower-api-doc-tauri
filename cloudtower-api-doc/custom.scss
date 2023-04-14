@@ -407,8 +407,9 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
       width: calc(2 / 12 * 100%);
     }
     #center {
-      max-width: 1040px;
-      flex: 0 0 calc(8 / 12 * 100%)
+      // max-width: 1040px;
+      flex: 0 0 calc(8 / 12 * 100%);
+      padding-left: 64px;
     }
   }
   html.docs-doc-id-download {
@@ -426,10 +427,11 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
     #right {
       position: fixed;
       right: 0;
-      width: calc(9 / 12 * 100%)
+      width: calc(3 / 12 * 100%)
     }
     #center {
-      flex: 0 0 calc(9 / 12 * 100%)
+      flex: 0 0 calc(9 / 12 * 100%);
+      padding-left: 84px;
     }
   }
   html.docs-doc-id-download {
@@ -439,6 +441,28 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   }
 }
 
+
+@media screen and (max-width: 926px) and (min-width: 768px) {
+  html:not(.docs-doc-id-download):not(.docs-doc-id-api) {
+    #center {
+      padding:40px 84px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html:not(.docs-doc-id-download):not(.docs-doc-id-api) {
+    #center {
+      padding: 24px;
+    }
+  }
+}
+
+
 .right-sidebar {
   top: 0;
+}
+
+.col:has(#swagger-ui) {
+  max-width: 100% !important;
 }
