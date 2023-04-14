@@ -13,9 +13,6 @@ import type { Props } from "@theme/DocItem/Layout";
 
 import styles from "./styles.module.scss";
 
-/**
- * 决定目录是否在移动设备或桌面视图中呈现
- */
 function useDocTOC() {
   const { frontMatter, toc } = useDoc();
   const windowSize = useWindowSize();
@@ -40,7 +37,7 @@ function useDocTOC() {
 export default function DocItemLayout({ children }: Props): JSX.Element {
   const docTOC = useDocTOC();
   return (
-    <div className="row">
+    <div className="row" id={"doc-row"}>
       <div id="left"></div>
       <div id="center" className={clsx("col",!docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />

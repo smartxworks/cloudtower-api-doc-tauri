@@ -399,22 +399,19 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
 @media screen and (min-width: 1280px) {
   html:not(.docs-doc-id-download):not(.docs-doc-id-api) {
     #left {
-      flex: 0 0 calc(2 / 12 * 100%);
+      width: calc(2 / 12 * 100%);
     }
     #right {
-      position: fixed;
-      right: 0;
       width: calc(2 / 12 * 100%);
     }
     #center {
-      // max-width: 1040px;
-      flex: 0 0 calc(8 / 12 * 100%);
+      width: calc(8 / 12 * 100%);
       padding-left: 64px;
     }
   }
   html.docs-doc-id-download {
     #left {
-      flex: 0 0 calc(1 / 12 * 100%);
+      width: calc(1 / 12 * 100%);
     }
   }
 }
@@ -425,18 +422,16 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
       display: none;
     }
     #right {
-      position: fixed;
-      right: 0;
       width: calc(3 / 12 * 100%)
     }
     #center {
-      flex: 0 0 calc(9 / 12 * 100%);
+      width: calc(9 / 12 * 100%);
       padding-left: 84px;
     }
   }
   html.docs-doc-id-download {
     #left {
-      flex: 0 0 calc(1 / 12 * 100%);
+      width: calc(1 / 12 * 100%);
     }
   }
 }
@@ -465,4 +460,8 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
 
 .col:has(#swagger-ui) {
   max-width: 100% !important;
+}
+
+#doc-row {
+  flex-wrap: nowrap;
 }
