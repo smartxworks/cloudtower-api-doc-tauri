@@ -126,17 +126,17 @@ export const wrapSpecWithI18n = (
           schemaName: '',
          });
         const snippet = new httpSnippet({
-          method,
+          method: method.toUpperCase(),
           url: `http://YOUR_TOWER_URL/v2/api${p}`,
           headers: [
             { name: "Authorization", value: "YOUR_TOKEN" },
             {
-              name: "content-language",
+              name: "Content-Language",
               value: "en-US",
               comment: "en-US or zh-CN",
             },
             {
-              name: "content-type",
+              name: "Content-Type",
               value: meta
             }
           ],
