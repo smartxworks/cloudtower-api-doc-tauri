@@ -3,9 +3,9 @@ import '../../swagger/utils/autoScroll';
 <header>
   <h1>CloudTower API 通用指南</h1>
   <hr className="header-divider"/>
-  <h2>概览</h2>
 </header>
 
+# 概览
 欢迎使用 CloudTower API, 请仔细阅读通用指南。
 * CloudTower API 可以用于调用 CloudTower 内所管理的各类资源。
 * 此文档采用 OpenApi v3.0.0 规范书写。
@@ -13,7 +13,7 @@ import '../../swagger/utils/autoScroll';
 * CloudTower API 提供了极为灵活的请求参数类型，方便进行批量操作和条件查询，考虑到参数灵活性和使用上的便捷性，如 `GET` 具有请求限制等，所以一律使用了 `POST` 请求类型，发送 json 类型格式的数据。
 ​
 ​
-# 如何调用
+## 如何调用
 ​
 CloudTower API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或任何 HTTP 客户端进行调用。
 
@@ -34,7 +34,7 @@ CloudTower API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或�
 * Request samples: 调用示例面板，提供了 API 接口调用的 json 示例和 curl 示例代码。
 * Response samples: 返回示例面板，提供了 API 接口返回的示例
 ​
-# 鉴权
+## 鉴权
 > 除了登录以外，所有的请求都需要加上鉴权字段。
 
 ​
@@ -49,7 +49,7 @@ CloudTower API 通过在 headers 中传递 `Authorization` 字段进行鉴权，
 其中  `data.token` 是需要用到的鉴权字段，加入到 `header.Authorization ` 即可。
 * 如果通过 cURL 调用， 则加入 `-H 'Authorization: token-string'`。
 * 如果通过 swagger api 文档页面调用，则点击 `Authorization` 按钮，将`data.token` 填入到 `value` 中即可。
-# 分页查询
+## 分页查询
 | 字段名 |  类型 |  是否必填 |  解释 | 
 |  ----- |  :---: |  :-------: |  --- | 
 |  **after** |  string |  否 |  填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。| 
@@ -166,7 +166,7 @@ CloudTower API 通过在 headers 中传递 `Authorization` 字段进行鉴权，
  skip: 5,
 }
 ```
-# 异步任务
+## 异步任务
 CloudTower 在管理资源时，大多数时候会将实际的操作过程放入异步任务中执行。因此当一次涉及到创建、删除、修改的 API 返回结果后，其对应的实际操作可能还在执行中，该操作的状态将由对应的异步任务进行展示。
 ​
 为了保持 API 调用的简洁与一致，此类 API 会将其产生的异步任务 id 以 `{ task_id: string }` 的参数返回。
@@ -174,7 +174,7 @@ CloudTower 在管理资源时，大多数时候会将实际的操作过程放入
 获得 `task_id` 后可以进一步通过 `/get-tasks` 查询异步任务的状态和结果，具体参数类型请查看 `任务中心`。
  
 需要注意的是，在资源执行异步任务时，只有资源的 id 是可信稳定的，资源的其他字段及其关联资源的字段都有可能在异步任务中进行更改。如果需要对这些字段进行查询或其它操作，请在异步任务完成之后通过 id 再次进行操作。
-# 虚拟机备份 CloudTower API 示例
+## 虚拟机备份 CloudTower API 示例
 对虚拟机的备份分为两部分
 1. 虚拟机配置的备份，例如虚拟机名称、vcpu 数量等。
 2. 虚拟机业务数据的备份。在 SMTX OS 中，即虚拟机所使用的存储的备份。
@@ -201,13 +201,13 @@ CloudTower 在管理资源时，大多数时候会将实际的操作过程放入
       - ZBS volume
       
 ZBS volume 指最终的存储对象，使用 ZADP 可以与 ZBS volume 交互，完成数据的备份和恢复。
-## 获取所需虚拟机的基本信息。
+### 获取所需虚拟机的基本信息。
 以下示例通过虚拟机名称进行查询，也可以根据业务实际情况使用其他的筛选条件进行查询，完整的查询方式请参考 API 文档。
 通过虚拟机名称查询到对应虚拟机后，返回值中将包含 vm 的 id 和其他配置信息，如需对虚拟机配置信息进行备份，可以使用这一结果。
 
 <components.GetVm />
 
-## 创建虚拟机快照
+### 创建虚拟机快照
 备份业务数据时应该先创建虚拟机快照，再对快照包含的存储对象进行实际备份。
 虚拟机默认创建的是崩溃一致性快照。当虚拟机已安装并启动 VMTools 时，可以创建文件系统一致性快照，具体方式为 API body 中的 consistent_type 使用 FILE_SYSTEM_CONSISTENT。
 这步操作会返回 task_id，即该异步任务的 id。同时会返回 snapshot_id，即快照 id。
@@ -218,22 +218,22 @@ ZBS volume 指最终的存储对象，使用 ZADP 可以与 ZBS volume 交互，
 
 <components.GetTask />
 
-## 通过第二步的快照 id 查询快照。
+### 通过第二步的快照 id 查询快照。
 返回值中包含了我们寻找虚拟机快照与存储对象之间关联的必要信息。
 在返回值的 vm_disks 下为该快照包含的虚拟盘，type 为 DISK 表示对应一个卷，type 为 CD_ROM 可忽略。
 vm_disk 的 snapshot_local_id 即该快照对应的 LUN 快照名称。
 
 <components.GetVmSnapshot />
 
-## 通过 LUN 快照名称查询对应 LUN 快照。
+### 通过 LUN 快照名称查询对应 LUN 快照。
 通过 API 可以查询一组 LUN 快照名称对应的 LUN 快照信息。
 
 <components.GetLunSnapshot />
 
 每一个 LUN 快照的 local_id 字段即在 ZBS 中的标识符，可以通过 ZBS API 进行进一步交互。
 
-# 其他
-## 如何获取 VNC 信息
+## 其他
+### 如何获取 VNC 信息
 
 目前 CloudTower API 及相关 SDK 暂不提供获取 VNC 信息相关的 API。如果使用者需要获取 VNC 信息，打开虚拟机终端等相关操作的话，可以通过发送以下请求获取：
 
