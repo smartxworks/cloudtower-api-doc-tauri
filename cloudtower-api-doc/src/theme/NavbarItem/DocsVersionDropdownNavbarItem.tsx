@@ -104,7 +104,6 @@ export default function DocsVersionDropdownNavbarItem({
     return v;
   });
 
-  console.log(completeItems);
   return (
     <DropdownNavbarItem
       {...props}
