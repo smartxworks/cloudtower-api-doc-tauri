@@ -1,0 +1,13 @@
+{
+  "schemas": {
+    "VlanId": {}
+  },
+  "tags": [
+    {
+      "name": "ApiInfo",
+      "x-displayName": "",
+      "description": ""
+    }
+  ],
+  "paths": {}
+}
