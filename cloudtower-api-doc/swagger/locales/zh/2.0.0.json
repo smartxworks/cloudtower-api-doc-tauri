@@ -297,34 +297,34 @@
       "vm_templates_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "GetClusterMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "clusters": "集群查询条件",
       "metrics": "cluster_cpu_usage_percent: CPU 使用率（%）\ncluster_cpu_used_hz: CPU 使用频率（Hz）\ncluster_memory_usage_percent: 内存使用率 (%)\ncluster_memory_used_bytes: 内存使用量\ncluster_hdd_overall_size_bytes: 总 HDD 容量\ncluster_ssd_overall_size_bytes: 总 SSD 容量\nelf_cluster_vcpus_provisioned: 分配给虚拟机的逻辑核数\nelf_cluster_vcpus_provisioned_running: 分配给运行中（含暂停）虚拟机的逻辑核数\nelf_cluster_memory_provisioned_bytes: 分配给虚拟机的内存大小\nelf_cluster_memory_provisioned_running_bytes: 分配给运行中（含暂停）虚拟机的内存大小\nzbs_cluster_data_capacity_bytes: 总数据容量\nzbs_cluster_logical_size_bytes: 已分配数据空间（逻辑）\nzbs_cluster_provisioned_data_space_bytes: 已使用数据空间（物理）\nzbs_cluster_cache_capacity_bytes: 总缓存容量\nzbs_cluster_read_cache_hit_ratio: 缓存命中率 - 读\nzbs_cluster_write_cache_hit_ratio: 缓存命中率 - 写\nzbs_cluster_readwrite_cache_hit_ratio: 缓存命中率 - 总\nzbs_cluster_pending_migrate_bytes: 待迁移的数据量\nzbs_cluster_pending_recover_bytes: 待恢复的数据量\nzbs_cluster_migrate_speed_bps: 迁移的数据传输带宽\nzbs_cluster_recover_speed_bps: 恢复数据传输带宽\nzbs_cluster_readwrite_iops: IOPS-总\nzbs_cluster_read_iops: IOPS-读\nzbs_cluster_write_iops: IOPS-写\nzbs_cluster_read_write_iops: IOPS-读，写\nzbs_cluster_readwrite_speed_bps: I/O 带宽-总\nzbs_cluster_read_speed_bps: I/O 带宽-读\nzbs_cluster_write_speed_bps: I/O 带宽-写\nzbs_cluster_read_write_speed_bps: I/O 带宽-读，写\nzbs_cluster_avg_readwrite_latency_ns: I/O 平均延时-总\nzbs_cluster_avg_read_latency_ns: I/O 平均延时-读\nzbs_cluster_avg_write_latency_ns: I/O 平均延时-写\nzbs_cluster_avg_read_write_latency_ns: I/O 平均延时-读，写\nzbs_cluster_avg_readwrite_size_bytes: I/O 平均块大小-总\nzbs_cluster_avg_read_size_bytes: I/O 平均块大小-读\nzbs_cluster_avg_write_size_bytes: I/O 平均块大小-写\nzbs_cluster_avg_read_write_size_bytes: I/O 平均块大小-读，写\nzbs_timemachine_total_out_bandwidth_bps: 备份计划产生的跨站点发送带宽\nzbs_timemachine_total_in_bandwidth_bps: 备份计划产生的跨站点接收带宽"
     },
     "GetDiskMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "disks": "物理盘查询条件",
       "metrics": "host_disk_readwrite_iops: IOPS-总\nhost_disk_read_iops: IOPS-读\nhost_disk_write_iops: IOPS-写\nhost_disk_read_write_iops: IOPS-读，写\nhost_disk_readwrite_speed_bps: I/O 带宽-总\nhost_disk_read_speed_bps: I/O 带宽-读\nhost_disk_write_speed_bps: I/O 带宽-写\nhost_disk_read_write_speed_bps: I/O 带宽-读，写\nhost_disk_avg_readwrite_latency_ns: I/O 平均延时-总\nhost_disk_avg_read_latency_ns: I/O 平均延时-读\nhost_disk_avg_write_latency_ns: I/O 平均延时-写\nhost_disk_avg_read_write_latency_ns: I/O 平均延时-读，写\nhost_disk_avg_readwrite_size_bytes: I/O 平均块大小-总\nhost_disk_avg_read_size_bytes: I/O 平均块大小-读\nhost_disk_avg_write_size_bytes: I/O 平均块大小-写\nhost_disk_avg_read_write_size_bytes: I/O 平均块大小-读，写\nhost_disk_utilization_percent: 磁盘活动时间百分比 (Utilization)\nhost_disk_avg_readwrite_queue_length: I/O 等待队列长度"
     },
     "GetHostMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "主机查询条件",
       "metrics": "zbs_chunk_readwrite_iops: IOPS-总\nzbs_chunk_read_iops: IOPS-读\nzbs_chunk_write_iops: IOPS-写\nzbs_chunk_read_write_iops: IOPS-读，写\nzbs_chunk_readwrite_speed_bps: I/O 带宽-总\nzbs_chunk_read_speed_bps: I/O 带宽-读\nzbs_chunk_write_speed_bps: I/O 带宽-写\nzbs_chunk_read_write_speed_bps: I/O 带宽-读，写\nzbs_chunk_avg_readwrite_latency_ns: I/O 平均延时-总\nzbs_chunk_avg_read_latency_ns: I/O 平均延时-读\nzbs_chunk_avg_write_latency_ns: I/O 平均延时-写\nzbs_chunk_avg_read_write_latency_ns: I/O 平均延时-读，写\nzbs_chunk_avg_readwrite_size_bytes: I/O 平均块大小-总\nzbs_chunk_avg_read_size_bytes: I/O 平均块大小-读\nzbs_chunk_avg_write_size_bytes: I/O 平均块大小-写\nzbs_chunk_avg_read_write_size_bytes: I/O 平均块大小-读，写\nzbs_chunk_data_capacity_bytes: 总数据容量\nzbs_chunk_used_data_space_bytes: 已使用数据空间（物理）\nzbs_chunk_cache_capacity_bytes: 总缓存容量\nzbs_chunk_read_cache_hit_ratio: 缓存命中率 - 读\nzbs_chunk_write_cache_hit_ratio: 缓存命中率 - 写\nzbs_chunk_readwrite_cache_hit_ratio: 缓存命中率 - 总\nhost_hdd_overall_size_bytes: 总 HDD 容量\nhost_ssd_overall_size_bytes: 总 SSD 容量\nelf_host_vcpus_provisioned: 分配给虚拟机的逻辑核数\nelf_host_vcpus_provisioned_running: 分配给运行中（含暂停）虚拟机的逻辑核数\nelf_host_memory_provisioned_bytes: 分配给虚拟机的内存大小\nelf_host_memory_provisioned_running_bytes: 分配给运行中（含暂停）虚拟机的内存大小\nhost_cpu_temperature_celsius: CPU 温度\nhost_cpu_overall_usage_percent: CPU 使用率（%）\nhost_cpu_overall_used_hz: CPU 使用频率（Hz）\nhost_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nhost_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nhost_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nhost_memory_usage_percent: 内存使用率 (%)\nhost_memory_used_bytes: 内存使用量\nhost_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nhost_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nhost_memory_swap_size_bytes: 内存交换空间\nhost_memory_swap_used_bytes: 已使用的交换空间容量\nhost_memory_swap_usage_percent: 交换空间使用率（%）\nhost_network_ping_packet_loss_percent_management: 管理网络网口之间丢包率（%）\nhost_network_ping_packet_loss_percent_storage: 存储网络网口之间丢包率（%）\nhost_sys_partition_used_space_bytes: / 已使用空间大小\nhost_zbs_log_dir_used_space_bytes: /var/log/zbs 已使用空间大小\nhost_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
     },
     "GetHostNetworkMetricInput": {
       "hosts": "主机查询条件",
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "nics": "指定查询网口，若为空，则查询主机下的所有网口",
       "metrics": "host_network_receive_speed_bitps: 网口数据接收速度\nhost_network_transmit_speed_bitps: 网口数据发送速度\nhost_network_receive_packets: 网口收包总量\nhost_network_transmit_packets: 网口发包总量\nhost_network_receive_bytes: 网口数据接收总量\nhost_network_transmit_bytes: 网口数据发送总量"
     },
     "GetHostServiceMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "主机查询条件",
       "services": "选择需要查询的服务",
       "metrics": "host_service_cpu_usage_percent: 系统服务 CPU 使用率（%）\nhost_service_resident_memory_bytes: 系统服务常驻内存使用\nhost_service_shared_memory_bytes: 系统服务共享内存使用"
     },
     "GetLunMetricInput": {
-      "range": "指定查询时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "缺少，则查询 lun 所属集群下的所有主机",
       "luns": "Lun 卷查询条件",
       "metrics": "zbs_volume_readwrite_iops: IOPS-总\nzbs_volume_read_iops: IOPS-读\nzbs_volume_write_iops: IOPS-写\nzbs_volume_read_write_iops: IOPS-读，写\nzbs_volume_readwrite_speed_bps: I/O 带宽-总\nzbs_volume_read_speed_bps: I/O 带宽-读\nzbs_volume_write_speed_bps: I/O 带宽-写\nzbs_volume_read_write_speed_bps: I/O 带宽-读，写\nzbs_volume_readwrite_latency_ns: I/O 平均延时-总\nzbs_volume_read_latency_ns: I/O 平均延时-读\nzbs_volume_write_latency_ns: I/O 平均延时-写\nzbs_volume_read_write_latency_ns: I/O 平均延时-读，写\nzbs_volume_readwrite_size_bytes: I/O 平均块大小-总\nzbs_volume_read_size_bytes: I/O 平均块大小-读\nzbs_volume_write_size_bytes: I/O 平均块大小-写\nzbs_volume_read_write_size_bytes: I/O 平均块大小-读，写"
@@ -333,26 +333,26 @@
       "hosts": "缺少，则查询 namespace 所属集群下的所有主机",
       "nvmfNamespaces": "namespace 查询条件",
       "metrics": "zbs_volume_readwrite_iops: IOPS-总\nzbs_volume_read_iops: IOPS-读\nzbs_volume_write_iops: IOPS-写\nzbs_volume_read_write_iops: IOPS-读，写\nzbs_volume_readwrite_speed_bps: I/O 带宽-总\nzbs_volume_read_speed_bps: I/O 带宽-读\nzbs_volume_write_speed_bps: I/O 带宽-写\nzbs_volume_read_write_speed_bps: I/O 带宽-读，写\nzbs_volume_readwrite_latency_ns: I/O 平均延时-总\nzbs_volume_read_latency_ns: I/O 平均延时-读\nzbs_volume_write_latency_ns: I/O 平均延时-写\nzbs_volume_read_write_latency_ns: I/O 平均延时-读，写\nzbs_volume_readwrite_size_bytes: I/O 平均块大小-总\nzbs_volume_read_size_bytes: I/O 平均块大小-读\nzbs_volume_write_size_bytes: I/O 平均块大小-写\nzbs_volume_read_write_size_bytes: I/O 平均块大小-读，写",
-      "range": "指定查询的时间范围"
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)"
     },
     "GetSCVMDiskMetricInput": {
-      "range": "指定查询时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "disks": "物理盘查询条件",
       "metrics": "scvm_disk_readwrite_iops: IOPS-总\nscvm_disk_read_iops: IOPS-读\nscvm_disk_write_iops: IOPS-写\nscvm_disk_read_write_iops: IOPS-读，写\nscvm_disk_readwrite_speed_bps: I/O 带宽-总\nscvm_disk_read_speed_bps: I/O 带宽-读\nscvm_disk_write_speed_bps: I/O 带宽-写\nscvm_disk_read_write_speed_bps: I/O 带宽-读，写\nscvm_disk_avg_readwrite_latency_ns: I/O 平均延时-总\nscvm_disk_avg_read_latency_ns: I/O 平均延时-读\nscvm_disk_avg_write_latency_ns: I/O 平均延时-写\nscvm_disk_avg_read_write_latency_ns: I/O 平均延时-读，写\nscvm_disk_avg_readwrite_size_bytes: I/O 平均块大小-总\nscvm_disk_avg_read_size_bytes: I/O 平均块大小-读\nscvm_disk_avg_write_size_bytes: I/O 平均块大小-写\nscvm_disk_avg_read_write_size_bytes: I/O 平均块大小-读，写\nscvm_disk_utilization_percent: 磁盘活动时间百分比 (Utilization)\nscvm_disk_avg_readwrite_queue_length: I/O 等待队列长度"
     },
     "GetScvmMetricInput": {
-      "range": "指定查询时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "指定主机",
       "metrics": "scvm_cpu_overall_usage_percent: CPU 使用率（%）\nscvm_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nscvm_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nscvm_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nscvm_memory_usage_percent: 内存使用率 (%)\nscvm_memory_used_bytes: 内存使用量\nscvm_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nscvm_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nscvm_memory_swap_size_bytes: 内存交换空间\nscvm_memory_swap_used_bytes: 已使用的交换空间容量\nscvm_memory_swap_usage_percent: 交换空间使用率（%）\nscvm_sys_partition_used_space_bytes: / 已使用空间大小\nscvm_zbs_log_dir_used_space_bytes: /var/log/zbs 已使用空间大小\nscvm_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
     },
     "GetScvmNetworkInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "主机查询条件",
       "nics": "指定查询网口，若为空，则查询主机下的所有网口",
       "metrics": "scvm_network_receive_speed_bitps: 网口数据接收速度\nscvm_network_transmit_speed_bitps: 网口数据发送速度\nscvm_network_receive_packets: 网口收包总量\nscvm_network_transmit_packets: 网口发包总量\nscvm_network_receive_bytes: 网口数据接收总量\nscvm_network_transmit_bytes: 网口数据发送总量\nscvm_network_ping_packet_loss_percent: 网口之间丢包率（%）"
     },
     "GetScvmServiceMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "主机查询条件",
       "services": "选择需要查询的服务",
       "metrics": "scvm_service_cpu_usage_percent: 系统服务 CPU 使用率（%）\nscvm_service_resident_memory_bytes: 系统服务常驻内存使用\nscvm_service_shared_memory_bytes: 系统服务共享内存使用"
@@ -362,31 +362,31 @@
       "clusters": "集群查询条件",
       "enum": "* top:最高 \n* bottom: 最低",
       "n": "指定查询的资源个数",
-      "range": "指定查询的时间范围"
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)"
     },
     "GetVmMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "metrics": "elf_vm_cpu_overall_usage_percent: CPU 使用率（%）\nelf_vm_cpu_overall_used_hz: CPU 使用频率（Hz）\nelf_vm_memory_usage_percent: 内存使用率 (%)\nelf_vm_memory_used_bytes: 内存使用量\nelf_vm_disk_overall_readwrite_iops: IOPS-总\nelf_vm_disk_overall_read_iops: IOPS-读\nelf_vm_disk_overall_write_iops: IOPS-写\nelf_vm_disk_overall_read_write_iops: IOPS-读，写\nelf_vm_disk_overall_readwrite_speed_bps: I/O 带宽-总\nelf_vm_disk_overall_read_speed_bps: I/O 带宽-读\nelf_vm_disk_overall_write_speed_bps: I/O 带宽-写\nelf_vm_disk_overall_read_write_speed_bps: I/O 带宽-读，写\nelf_vm_disk_overall_avg_readwrite_latency_ns: I/O 平均延时-总\nelf_vm_disk_overall_avg_read_latency_ns: I/O 平均延时-读\nelf_vm_disk_overall_avg_write_latency_ns: I/O 平均延时-写\nelf_vm_disk_overall_avg_read_write_latency_ns: I/O 平均延时-读，写\nelf_vm_disk_overall_avg_readwrite_size_bytes: I/O 平均块大小-总\nelf_vm_disk_overall_avg_read_size_bytes: I/O 平均块大小-读\nelf_vm_disk_overall_avg_write_size_bytes: I/O 平均块大小-写\nelf_vm_disk_overall_avg_read_write_size_bytes: I/O 平均块大小-读，写\nvmware_vm_cpu_usage_average_percent: CPU 使用率（%）\nvmware_vm_cpu_usagemhz_average_hz: CPU 使用频率（Hz）\nvmware_vm_mem_usage_average_percent: 内存使用率 (%)\nvmware_vm_mem_active_average_bytes: 内存使用量\nvmware_vm_net_received_average_bps: 网口数据接收速度\nvmware_vm_net_transmitted_average_bps: 网口数据发送速度\nvmware_vm_net_packets_rx_summation: 网口收包总量\nvmware_vm_net_packets_tx_summation: 网口发包总量\nvmware_vm_net_dropped_rx_summation: 网口收包中 Dropped 的包\nvmware_vm_net_dropped_tx_summation: 网口发包中 Dropped 的包\nvmware_vm_net_errors_rx_summation: 网口收包中 Error 的包\nvmware_vm_net_errors_tx_summation: 网口发包中 Error 的包\nvmware_vm_storage_usage_on_datastore_committed_bytes: 存储空间使用（逻辑）\nvmware_vm_virtual_disk_number_read_averaged_average: 硬盘 IOPS-读\nvmware_vm_virtual_disk_number_write_averaged_average: 硬盘 IOPS-写\nvmware_vm_virtual_disk_read_average_bps: 硬盘 I/O 带宽-读\nvmware_vm_virtual_disk_write_average_bps: 硬盘 I/O 带宽-写\nvmware_vm_virtual_disk_throughput_usage_average_bps: 硬盘 I/O 带宽-总\nvmware_vm_virtual_disk_total_read_latency_average_ns: 硬盘 I/O 平均延时-读\nvmware_vm_virtual_disk_total_write_latency_average_ns: 硬盘 I/O 平均延时-写\nvmware_vm_virtual_disk_read_io_size_latest_bytes: 硬盘 I/O 平均块大小-读\nvmware_vm_virtual_disk_write_io_size_latest_bytes: 硬盘 I/O 平均块大小-写\nelf_vm_cpu_overall_steal_time_percent: CPU 就绪等待时间占比（%）",
       "vms": "虚拟机查询条件"
     },
     "GetVmNetWorkMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "metrics": "elf_vm_network_receive_packets: 网口收包总量\nelf_vm_network_transmit_packets: 网口发包总量\nelf_vm_network_receive_drop: 网口收包中 Dropped 的包\nelf_vm_network_transmit_drop: 网口发包中 Dropped 的包\nelf_vm_network_receive_errors: 网口收包中 Error 的包\nelf_vm_network_transmit_errors: 网口发包中 Error 的包\nelf_vm_network_receive_speed_bps: 网口数据接收速度\nelf_vm_network_transmit_speed_bps: 网口数据发送速度\nelf_vm_network_receive_bytes: 网口数据接收总量\nelf_vm_network_transmit_bytes: 网口数据发送总量",
       "nics": "缺少，则查询虚拟机下的所有虚拟网卡",
       "vms": "虚拟机查询条件"
     },
     "GetVmVolumeMetricInput": {
-      "range": "指定查询时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "metrics": "elf_vm_disk_readwrite_iops: IOPS-总\nelf_vm_disk_read_iops: IOPS-读\nelf_vm_disk_write_iops: IOPS-写\nelf_vm_disk_read_write_iops: IOPS-读，写\nelf_vm_disk_readwrite_speed_bps: I/O 带宽-总\nelf_vm_disk_read_speed_bps: I/O 带宽-读\nelf_vm_disk_write_speed_bps: I/O 带宽-写\nelf_vm_disk_read_write_speed_bps: I/O 带宽-读，写\nelf_vm_disk_avg_readwrite_latency_ns: I/O 平均延时-总\nelf_vm_disk_avg_read_latency_ns: I/O 平均延时-读\nelf_vm_disk_avg_write_latency_ns: I/O 平均延时-写\nelf_vm_disk_avg_read_write_latency_ns: I/O 平均延时-读，写\nelf_vm_disk_avg_readwrite_size_bytes: I/O 平均块大小-总\nelf_vm_disk_avg_read_size_bytes: I/O 平均块大小-读\nelf_vm_disk_avg_write_size_bytes: I/O 平均块大小-写\nelf_vm_disk_avg_read_write_size_bytes: I/O 平均块大小-读，写",
       "vmVolumes": "虚拟卷查询条件"
     },
     "GetWitnessMetricInput": {
-      "range": "指定查询时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "clusters": "集群查询条件",
       "metrics": "witness_cpu_overall_usage_percent: CPU 使用率（%）\nwitness_memory_usage_percent: 内存使用率 (%)"
     },
     "GetZoneMetricInput": {
-      "range": "指定查询的时间范围",
+      "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "enum": "* primary-to-secondary: 从优先可用域到次级可用域 \n* secondary-to-primary:  从次级可用域到优先可用域",
       "clusters": "集群查询条件",
       "metrics": "zbs_zone_cross_zone_data_speed_bps: 总数据传输\nzbs_zone_cross_zone_readwrite_speed_bps: I/O 流量\nzbs_zone_cross_zone_migrate_speed_bps: 数据迁移流量\nzbs_zone_cross_zone_recover_speed_bps: 数据恢复流量"

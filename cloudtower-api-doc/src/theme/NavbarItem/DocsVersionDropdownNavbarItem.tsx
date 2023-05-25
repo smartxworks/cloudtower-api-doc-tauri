@@ -103,7 +103,6 @@ export default function DocsVersionDropdownNavbarItem({
     }
     return v;
   });
-
   return (
     <DropdownNavbarItem
       {...props}

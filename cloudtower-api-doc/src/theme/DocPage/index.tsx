@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import {
   HtmlClassNameProvider,
@@ -15,6 +15,8 @@ import DocPageLayout from '@theme/DocPage/Layout';
 import NotFound from '@theme/NotFound';
 import SearchMetadata from '@theme/SearchMetadata';
 import type {Props} from '@theme/DocPage';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import i18next from '../../../swagger/i18n'
 
 function DocPageMetadata(props: Props): JSX.Element {
   const {versionMetadata} = props;
@@ -38,7 +40,11 @@ function DocPageMetadata(props: Props): JSX.Element {
 
 export default function DocPage(props: Props): JSX.Element {
   const {versionMetadata} = props;
+  const { i18n: { currentLocale } } = useDocusaurusContext();
   const currentDocRouteMetadata = useDocRouteMetadata(props);
+  useEffect(() => {
+    i18next.changeLanguage(currentLocale);
+  }, [])
   if (!currentDocRouteMetadata) {
     return <NotFound />;
   }

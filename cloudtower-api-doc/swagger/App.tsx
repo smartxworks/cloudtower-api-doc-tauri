@@ -80,7 +80,6 @@ const App: React.FC = () => {
   const [spec, setSpec] = useState<ISpec>();
   const [rawSpec, setRawSpec] = useState<ISpec>();
   const specRef = useRef<ISpec>(spec);
-
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
