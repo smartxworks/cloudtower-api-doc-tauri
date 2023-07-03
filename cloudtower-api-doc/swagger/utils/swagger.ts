@@ -11,6 +11,7 @@ import swaggerSpec2_5 from '../specs/2.5.0-swagger.json';
 import swaggerSpec2_6 from '../specs/2.6.0-swagger.json';
 import swaggerSpec2_7 from '../specs/2.7.0-swagger.json';
 import swaggerSpec2_8 from '../specs/2.8.0-swagger.json';
+import swaggerSpec2_9 from '../specs/2.9.0-swagger.json';
 
 export const specMap = {
   '1.8.0': swaggerSpec1_8,
@@ -25,6 +26,7 @@ export const specMap = {
   '2.6.0': swaggerSpec2_6,
   '2.7.0': swaggerSpec2_7,
   '2.8.0': swaggerSpec2_8,
+  '2.9.0': swaggerSpec2_9,
 }
 
 export enum SupportLanguage {
