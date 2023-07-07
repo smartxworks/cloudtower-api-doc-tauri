@@ -33,7 +33,7 @@
       "description": ""
     },
     "/clone-vm-template-from-vm": {
-      "summary": " 从虚拟机模板克隆虚拟机",
+      "summary": " 将虚拟机克隆为虚拟机模板",
       "description": ""
     },
     "/clone-vm": {
