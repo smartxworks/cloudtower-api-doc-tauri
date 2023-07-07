@@ -470,7 +470,7 @@
       "description": ""
     },
     "/clone-vm-template-from-vm": {
-      "summary": " Clone a virtual machine from the virtual machine template",
+      "summary": " Clone a virtual machine template from the virtual machine",
       "description": ""
     },
     "/clone-vm": {
