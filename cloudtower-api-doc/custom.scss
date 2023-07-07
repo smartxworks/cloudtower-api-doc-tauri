@@ -15,7 +15,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-navbar-height: 56px * 2;
+  --ifm-navbar-height: 56px;
   --ifm-color-content-secondary: rgba(44, 56, 82, 0.6);
 }
 
@@ -394,6 +394,13 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   padding: 0px;
 }
 
+.sidebar-wrapper {
+  padding: 0;
+  border-left: 1px solid rgba(211, 218, 235, 0.8);
+  width: 260px;
+  max-width: 260px;
+  padding-right: 20px;
+}
 
 
 @media screen and (min-width: 1280px) {
@@ -451,11 +458,6 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
       padding: 24px;
     }
   }
-}
-
-
-.right-sidebar {
-  top: 0;
 }
 
 .col:has(#swagger-ui) {

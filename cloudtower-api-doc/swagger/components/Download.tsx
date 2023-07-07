@@ -1,6 +1,5 @@
 import React from 'react';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import i18next from '../i18n';
 import { specMap } from '../utils';
 
 

@@ -4,7 +4,6 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
-const versions = require("./versions.json");
 
 if(!process.env.TAURI_ENV) {
   process.env = new Proxy(process.env, {
@@ -21,7 +20,7 @@ if(!process.env.TAURI_ENV) {
 const config = {
   title: "CloudTower API",
   url: "https://www.smartx.com/",
-  baseUrl: "/",
+  baseUrl: "/docs/",
   favicon: "img/favicon.ico",
   organizationName: "SmartX", // Usually your GitHub org/user name.
   projectName: "CloudTower APIs", // Usually your repo name.
@@ -41,14 +40,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: "/",
-          routeBasePath: "/",
-          // editUrl: "https://github.com/facebook/docusaurus/edit/main/website/",
-          lastVersion: versions[0],
-          includeCurrentVersion: false,
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebar-default.js'),
         },
         blog: false,
-        pages: false,
         theme: {
           customCss: [
             require.resolve("./swagger/overwrite.css"),
@@ -91,7 +86,7 @@ const config = {
         },
       };
     },
-    'docusaurus-plugin-sass'
+    'docusaurus-plugin-sass',
   ],
 
   themeConfig:
@@ -104,43 +99,12 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            label: "通用指南" 
+            label: "文档" ,
+            to: "/docs/getting-started/overview",
           },
           {
-            docId: "api",
-            type: "doc",
-            label: "CloudTower API",
-          },
-          {
-            label: "下载",
-            items: [
-              {
-                type: "doc",
-                docId: "download",
-                label: "概览"
-              },
-              {
-                type: "doc",
-                docId: "java-sdk",
-                label: "CloudTower Java SDK",
-              },
-              {
-                docId: "python-sdk",
-                type: "doc",
-                label: "CloudTower Python SDK"
-              },
-              {
-                docId: "go-sdk",
-                type: "doc",
-                label: "CloudTower Go SDK"
-              }
-            ]
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
+            to: "/docs/api",
+            label: "API 参考",
           },
           {
             type: "localeDropdown",
