@@ -1,4 +1,8 @@
-import '../../swagger/utils/autoScroll';
+---
+title: 'Dyte REST API Quickstart'
+sidebar_position: 1
+---
+
 
 <header>
   <h1>CloudTower API 通用指南</h1>
