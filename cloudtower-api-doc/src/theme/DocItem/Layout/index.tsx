@@ -10,6 +10,7 @@ import DocItemTOCMobile from "@theme/DocItem/TOC/Mobile";
 import DocItemTOCDesktop from "@theme/DocItem/TOC/Desktop";
 import DocItemContent from "@theme/DocItem/Content";
 import type { Props } from "@theme/DocItem/Layout";
+import DocBreadcrumbs from "@theme/DocBreadcrumbs";
 
 import styles from "./styles.module.scss";
 
@@ -37,19 +38,33 @@ function useDocTOC() {
 export default function DocItemLayout({ children }: Props): JSX.Element {
   const docTOC = useDocTOC();
   return (
-    <div className="row" id={"doc-row"}>
-      <div id="left"></div>
-      <div id="center" className={clsx("col",!docTOC.hidden && styles.docItemCol)}>
+    // <div className="row" id={"doc-row"}>
+    //   <div id="center" className={clsx("col",!docTOC.hidden && styles.docItemCol)}>
+    //     <DocVersionBanner />
+    //     <div className={styles.docItemContainer}>
+    //       <article>
+    //         <DocItemContent>{children}</DocItemContent>
+    //         <DocItemFooter />
+    //       </article>
+    //       <DocItemPaginator />
+    //     </div>
+    //   </div>
+
+    // </div>
+    <div className="row">
+      <div className={clsx("col", !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
+            <DocBreadcrumbs />
+            <DocVersionBadge />
             <DocItemContent>{children}</DocItemContent>
             <DocItemFooter />
           </article>
           <DocItemPaginator />
         </div>
       </div>
-      <div id="right">
+      <div className="col sidebar-wrapper col--3">
         <div className="right-sidebar">{docTOC.desktop}</div>
       </div>
     </div>

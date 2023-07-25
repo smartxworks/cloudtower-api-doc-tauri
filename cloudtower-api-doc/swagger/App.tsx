@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import _, { cloneDeep } from "lodash";
 import { ProStore, RedocProRawOptions } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import { Badge } from "@redocly/reference-docs/lib/redoc-lib/src/common-elements";
 import i18next from "./i18n";
 import {
@@ -15,6 +14,7 @@ import {
 import Redocly from "./redoc/Redoc";
 import { LOCAL_STORAGE_SERVERS_KEY } from "./redoc/Console/ServerDropdown";
 import { DeepSearchStore } from "./redoc/services/SearchStore";
+import { useLocation } from "@docusaurus/router";
 const REDOC_CLASS = "redoc-container";
 
 const ApiTag: React.FC<{
@@ -75,8 +75,8 @@ const Redoc = React.memo(RedocWrapper, (prev, next) => {
 
 const App: React.FC = () => {
   const { i18n } = useDocusaurusContext();
-  const activeVersion = useActiveVersion();
-  const version = activeVersion.name;
+  const { search } = useLocation();
+  const version = new URLSearchParams(search).get('version') || Object.keys(specMap)[0]
   const [spec, setSpec] = useState<ISpec>();
   const [rawSpec, setRawSpec] = useState<ISpec>();
   const specRef = useRef<ISpec>(spec);
