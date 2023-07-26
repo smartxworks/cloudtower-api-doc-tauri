@@ -79,7 +79,8 @@ const config = {
                 os: require.resolve("os-browserify/browser"),
                 tty: require.resolve("tty-browserify"),
                 fs: false,
-                http: require.resolve("stream-http")
+                http: require.resolve("stream-http"),
+                https: require.resolve("https-browserify")
               },
             },
           };
@@ -103,7 +104,7 @@ const config = {
             to: "/docs/getting-started/overview",
           },
           {
-            to: "/",
+            to: "/api",
             label: "API 参考",
           },
           {
