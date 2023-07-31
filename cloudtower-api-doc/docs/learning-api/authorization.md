@@ -1,6 +1,6 @@
 ---
 title: 鉴权
-sidebar_position: 21
+sidebar_position: 31
 ---
 import GetToken from '../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../code_blocks/GetTokenResponse.md'
