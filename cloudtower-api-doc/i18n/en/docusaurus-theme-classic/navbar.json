@@ -1,11 +1,8 @@
 { 
-  "item.label.通用指南": {
-    "message": "General Guide"
+  "item.label.API 参考": {
+    "message": "API Reference"
   },
-  "item.label.下载": {
-    "message": "Downloads"
-  },
-  "item.label.概览": {
-    "message": "Overview"
+  "item.label.文档": {
+    "message": "Docs"
   }
 }

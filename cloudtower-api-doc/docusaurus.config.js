@@ -40,7 +40,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/docs",
+          routeBasePath: "/",
           sidebarPath: require.resolve('./sidebar-default.js'),
         },
         blog: false,
@@ -101,7 +101,7 @@ const config = {
         items: [
           {
             label: "文档" ,
-            to: "/docs/getting-started/overview",
+            to: "/",
           },
           {
             to: "/api",

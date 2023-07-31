@@ -1,6 +1,7 @@
 ---
 title: 概览
-sidebar_position: 11
+sidebar_position: 1
+slug: /
 ---
 
 欢迎使用 CloudTower API, 请仔细阅读相关文档。

@@ -1,0 +1,20 @@
+{
+  "sidebar.tutorialSidebar.category.快速上手": {
+    "message": "Getting Started"
+  },
+  "sidebar.tutorialSidebar.category.学习 CloudTower API": {
+    "message": "Learning CloudTower API"
+  },
+  "sidebar.tutorialSidebar.category.查询": {
+    "message": "Query"
+  },
+  "sidebar.tutorialSidebar.category.变更": {
+    "message": "Mutation"
+  },
+  "sidebar.tutorialSidebar.category.案例演示": {
+    "message": "Show Cases"
+  },
+  "sidebar.tutorialSidebar.category.常见问题": {
+    "message": "FAQs"
+  }
+}

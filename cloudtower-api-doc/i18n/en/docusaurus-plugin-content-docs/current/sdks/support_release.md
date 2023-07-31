@@ -1,8 +1,9 @@
 ---
-title: 适配说明
+title: Support Release
 sidebar_position: 41
 ---
-import Download from '../../swagger/components/Download';
+
+import Download from '../../../../../swagger/components/Download';
 
 export const AddressWrapper = (props) => {
   const getUrl = (lng, version) => `https://github.com/smartxworks/cloudtower-${lng}-sdk/releases/tag/v${version}`
@@ -16,14 +17,14 @@ export const AddressWrapper = (props) => {
 }
 
 
-## 升级建议
-CloudTower API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 CloudTower 3.0.0 的话，同样可以向下支持 CloudTower 2.8.0。
-建议先升级 SDK 再升级 CloudTower。 
+## Upgrade Recommendations
+CloudTower API SDK supports backward compatibility. That is, if SDK 2.9.0 supports up to CloudTower 3.0.0, it can also support CloudTower 2.8.0 downwards.
+It is recommended to upgrade the SDK before upgrading the CloudTower.
 
-## 适配说明
-以下罗列了搭配 CloudTower 升级的配套版本。SDK 2.0 之后的版本都修复了较多问题，较为稳定，更推荐大家使用。如需使用 SDK 2.0 之前的版本，或者 SDK 自身的修复版本，可以到对应的 SDK github relase 页面进行查看。
+## Compatibility Notes
+The following are the compatible versions when upgrading with CloudTower. Versions after SDK 2.0 have fixed many issues and are more stable, so they are recommended for use. If you need to use versions before SDK 2.0 or the fixed version of the SDK itself, you can check the corresponding SDK GitHub release page.
 
-| SDK 版本 | 支持 CloudTower 版本 | SDK 发布日期 | 下载地址 |
+| SDK Version | Supported CloudTower Version | SDK Release Date | Download Address |
 | --- | --- | --- | --- |
 | 2.9.0 | 3.0.0 | 2023.07.03 | <AddressWrapper version="2.9.0"/>|
 | 2.8.0 | 2.8.0 | 2023.05.04 | <AddressWrapper version="2.8.0"/>|
@@ -34,4 +35,3 @@ CloudTower API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 CloudTower
 | 2.3.0 | 2.3.0 | 2022.09.05 | <AddressWrapper version="2.3.0" skip_node/>|
 | 2.2.0 | 2.2.0 | 2022.08.12 | <AddressWrapper version="2.2.0" skip_node/>|
 | 2.1.0 | 2.1.0 | 2022.07.08 | <AddressWrapper version="2.1.0" skip_node/>|
-
