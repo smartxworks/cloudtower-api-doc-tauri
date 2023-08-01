@@ -1,4 +1,4 @@
 ---
-title: 🚧 FAQs
+title: FAQs
 ---
 🚧 Writing
