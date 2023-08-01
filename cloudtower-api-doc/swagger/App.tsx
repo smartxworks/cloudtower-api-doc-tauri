@@ -50,7 +50,7 @@ const RedocWrapper: React.FC<{
             />
           ),
         },
-        routingBasePath: "api#",
+        routingBasePath: "api/#",
         pagination: "section",
         ctrlFHijack: false,
         expandDefaultServerVariables: true,
