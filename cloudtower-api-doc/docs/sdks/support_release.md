@@ -25,6 +25,7 @@ CloudTower API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 CloudTower
 
 | SDK 版本 | 支持 CloudTower 版本 | SDK 发布日期 | 下载地址 |
 | --- | --- | --- | --- |
+| 2.10.0 | 3.1.0 | 2023.08.01 | <AddressWrapper version="2.10.0"/>|
 | 2.9.0 | 3.0.0 | 2023.07.03 | <AddressWrapper version="2.9.0"/>|
 | 2.8.0 | 2.8.0 | 2023.05.04 | <AddressWrapper version="2.8.0"/>|
 | 2.7.0 | 2.7.0 | 2023.03.22 | <AddressWrapper version="2.7.0"/>|
