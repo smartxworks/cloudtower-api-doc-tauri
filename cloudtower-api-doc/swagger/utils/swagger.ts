@@ -13,6 +13,7 @@ import swaggerSpec2_6 from '../specs/2.6.0-swagger.json';
 import swaggerSpec2_7 from '../specs/2.7.0-swagger.json';
 import swaggerSpec2_8 from '../specs/2.8.0-swagger.json';
 import swaggerSpec3_0 from '../specs/3.0.0-swagger.json';
+import swaggerSpec3_1 from '../specs/3.1.0-swagger.json';
 
 import swaggerSpecExample1_8 from "../examples/1.8.0-swagger-examples.json";
 import swaggerSpecExample1_9 from '../examples/1.9.0-swagger-examples.json';
@@ -27,9 +28,10 @@ import swaggerSpecExample2_6 from '../examples/2.6.0-swagger-examples.json';
 import swaggerSpecExample2_7 from '../examples/2.7.0-swagger-examples.json';
 import swaggerSpecExample2_8 from '../examples/2.8.0-swagger-examples.json';
 import swaggerSpecExample3_0 from '../examples/3.0.0-swagger-examples.json';
-
+import swaggerSpecExample3_1 from '../examples/3.1.0-swagger-examples.json';
 
 export const specMap = {
+  '3.1.0': swaggerSpec3_1,
   '3.0.0': swaggerSpec3_0,
   '2.8.0': swaggerSpec2_8,
   '2.7.0': swaggerSpec2_7,
@@ -46,6 +48,7 @@ export const specMap = {
 }
 
 export const exampleMap = {
+  '3.1.0': swaggerSpecExample3_1,
   '3.0.0': swaggerSpecExample3_0,
   '2.8.0': swaggerSpecExample2_8,
   '2.7.0': swaggerSpecExample2_7,

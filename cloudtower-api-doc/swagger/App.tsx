@@ -32,7 +32,7 @@ const ApiTag: React.FC<{
   );
   return <Badge type="secondary">{findRawTags(operationId)}</Badge>;
 };
-const RedocWrapper: React.FC<{
+const Redoc: React.FC<{
   spec: ISpec;
   rawSpec: ISpec;
   onInit: RedocProRawOptions["hooks"]["onInit"];
@@ -66,12 +66,12 @@ const RedocWrapper: React.FC<{
   );
 };
 
-const Redoc = React.memo(RedocWrapper, (prev, next) => {
-  return (
-    JSON.stringify({ tags: prev.spec?.tags, servers: prev.spec?.servers }) ===
-    JSON.stringify({ tags: next.spec?.tags, servers: next.spec?.servers })
-  );
-});
+// const Redoc = React.memo(RedocWrapper, (prev, next) => {
+//   return (
+//     JSON.stringify({ tags: prev.spec?.tags, servers: prev.spec?.servers }) ===
+//     JSON.stringify({ tags: next.spec?.tags, servers: next.spec?.servers })
+//   );
+// });
 
 const App: React.FC = () => {
   const { i18n } = useDocusaurusContext();

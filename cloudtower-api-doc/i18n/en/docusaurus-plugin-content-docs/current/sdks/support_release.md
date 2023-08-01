@@ -26,6 +26,7 @@ The following are the compatible versions when upgrading with CloudTower. Versio
 
 | SDK Version | Supported CloudTower Version | SDK Release Date | Download Address |
 | --- | --- | --- | --- |
+| 2.10.0 | 3.1.0 | 2023.08.01 | <AddressWrapper version="2.10.0"/>|
 | 2.9.0 | 3.0.0 | 2023.07.03 | <AddressWrapper version="2.9.0"/>|
 | 2.8.0 | 2.8.0 | 2023.05.04 | <AddressWrapper version="2.8.0"/>|
 | 2.7.0 | 2.7.0 | 2023.03.22 | <AddressWrapper version="2.7.0"/>|

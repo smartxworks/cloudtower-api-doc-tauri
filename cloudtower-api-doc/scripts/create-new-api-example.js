@@ -15,6 +15,7 @@ const fs = require("fs");
 const path = require("path");
 const _ = require("lodash");
 const httpSnippet = require("httpsnippet");
+const { program } = require('commander');
 
 const genSchemaExample = (params) => {
   const { schema, schemaName, spec, field } = params;
@@ -208,22 +209,21 @@ const traveseSpec = async (specPath) => {
   return example;
 };
 
-const main = async () => {
-  await Promise.all(
-    fs
-      .readdirSync(path.resolve(__dirname, "../swagger/specs"))
-      .map(async (f) => {
-        const filePath = path.join(__dirname, "../swagger/specs", f);
-        const { version } = require(filePath).info;
-        const examplePath = path.join(
-          __dirname,
-          "../swagger/examples",
-          `${version}-swagger-examples.json`
-        );
-        const examples = await traveseSpec(filePath);
-        fs.writeFileSync(examplePath, JSON.stringify(examples, null, 2));
-      })
+const main = async (version) => {
+  const filePath = path.join(__dirname, "../swagger/specs", `${version}-swagger.json`);
+  const examplePath = path.join(
+    __dirname,
+    "../swagger/examples",
+    `${version}-swagger-examples.json`
   );
+  const examples = await traveseSpec(filePath);
+  fs.writeFileSync(examplePath, JSON.stringify(examples, null, 2));
 };
 
-main();
+
+
+program
+  .requiredOption('-v --version <char>')
+program.parse();
+main(program.opts().version);
+

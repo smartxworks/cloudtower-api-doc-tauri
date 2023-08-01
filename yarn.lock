@@ -6738,6 +6738,7 @@ __metadata:
     "@types/httpsnippet": ^1.23.1
     "@types/lodash": ^4.14.176
     clsx: ^1.1.1
+    commander: ^11.0.0
     core-js: ^3.21.1
     cross-env: ^7.0.3
     docusaurus-plugin-sass: ^0.2.3
@@ -6914,6 +6915,13 @@ __metadata:
   version: 1.0.8
   resolution: "comma-separated-tokens@npm:1.0.8"
   checksum: 0adcb07174fa4d08cf0f5c8e3aec40a36b5ff0c2c720e5e23f50fe02e6789d1d00a67036c80e0c1e1539f41d3e7f0101b074039dd833b4e4a59031b659d6ca0d
+  languageName: node
+  linkType: hard
+
+"commander@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "commander@npm:11.0.0"
+  checksum: 6621954e1e1d078b4991c1f5bbd9439ad37aa7768d6ab4842de1dbd4d222c8a27e1b8e62108b3a92988614af45031d5bb2a2aaa92951f4d0c934d1a1ac564bb4
   languageName: node
   linkType: hard
 
