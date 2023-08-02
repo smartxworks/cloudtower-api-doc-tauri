@@ -2343,7 +2343,7 @@
   "tags": [
     {
       "name": "SecurityGroup",
-      "x-displayName": "",
+      "x-displayName": "Security Group",
       "description": ""
     },
     {
@@ -2353,74 +2353,74 @@
     },
     {
       "name": "Ovf",
-      "x-displayName": "",
+      "x-displayName": "OVF",
       "description": ""
     },
     {
       "name": "VmExportFile",
-      "x-displayName": "",
+      "x-displayName": "VM Export File",
       "description": ""
     }
   ],
   "paths": {
     "/create-security-group": {
-      "summary": "",
+      "summary": "Create Security Group",
       "description": ""
     },
     "/delete-security-group": {
-      "summary": "",
+      "summary": "Delete Security Group",
       "description": ""
     },
     "/update-security-group": {
-      "summary": "",
+      "summary": "Update Security Group",
       "description": ""
     },
     "/create-security-policy": {
-      "summary": "",
+      "summary": "Create Security Group",
       "description": ""
     },
     "/delete-security-policy": {
-      "summary": "",
+      "summary": "Delete Security Policy",
       "description": ""
     },
     "/update-security-policy": {
-      "summary": "",
+      "summary": "Update Security Policy",
       "description": ""
     },
     "/upload-elf-file": {
-      "summary": "",
+      "summary": "Upload VMDK File",
       "description": ""
     },
     "/parse-ovf": {
-      "summary": "",
+      "summary": "Parse OVF File",
       "description": ""
     },
     "/get-export-file-download-links": {
-      "summary": "",
+      "summary": "Get Download Links of Export Files",
       "description": ""
     },
     "/export-vm": {
-      "summary": "",
+      "summary": "Export VM",
       "description": ""
     },
     "/import-vm": {
-      "summary": "",
+      "summary": "Import VM",
       "description": ""
     },
     "/get-security-groups": {
-      "summary": "",
+      "summary": "Get Security Groups",
       "description": ""
     },
     "/get-security-groups-connection": {
-      "summary": "",
+      "summary": "Get Count of Security Groups",
       "description": ""
     },
     "/get-vm-export-files": {
-      "summary": "",
+      "summary": "Get VMDK Files",
       "description": ""
     },
     "/get-vm-export-files-connection": {
-      "summary": "",
+      "summary": "Get Count of VMDK Files",
       "description": ""
     }
   }

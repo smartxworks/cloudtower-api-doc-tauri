@@ -278,15 +278,15 @@
   ],
   "paths": {
     "/create-alert-notifier": {
-      "summary": "",
+      "summary":"Create Alert Notifiers",
       "description": ""
     },
     "/update-many-alert-notifiers": {
-      "summary": "",
+      "summary": "Update Alert Notifiers",
       "description": ""
     },
     "/delete-alert-notifier": {
-      "summary": "",
+      "summary": "Delete Alert Notifiers",
       "description": ""
     }
   }
