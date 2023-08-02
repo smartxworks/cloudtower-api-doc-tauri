@@ -46,7 +46,9 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "VmSnapshot",
       "VmTemplate",
       "VmVolume",
-      "VmVolumeSnapshot"
+      "VmVolumeSnapshot",
+      "Ovf",
+      "VmExportFile"
     ]
   },
   {
@@ -125,7 +127,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "EverouteLicense",
       "EveroutePackage",
       "IsolationPolicy",
-      "SecurityPolicy"
+      "SecurityPolicy",
+      "SecurityGroup"
     ]
   },
   {

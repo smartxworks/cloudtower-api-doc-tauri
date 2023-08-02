@@ -536,15 +536,15 @@
   ],
   "paths": {
     "/create-alert-notifier": {
-      "summary": "",
+      "summary": "创建报警通知",
       "description": ""
     },
     "/update-many-alert-notifiers": {
-      "summary": "",
+      "summary": "更新报警通知",
       "description": ""
     },
     "/delete-alert-notifier": {
-      "summary": "",
+      "summary": "删除报警通知",
       "description": ""
     }
   }
