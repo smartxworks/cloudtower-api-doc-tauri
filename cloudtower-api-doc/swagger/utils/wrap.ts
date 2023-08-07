@@ -1,9 +1,10 @@
 import _ from "lodash";
 import { OpenAPIV3 } from "openapi-types";
 import i18next, { ApiDoc } from "../i18n";
-import { ISpec, exampleMap } from "./swagger";
+import { ISpec  } from "./swagger";
 import { describeSchema } from "./describe";
 import { tagsGroup } from './constant';
+import swaggerSpecExample from '../examples/swagger-examples.json';
 
 
 const replaceTags = (tag:string) => {
@@ -21,7 +22,6 @@ export const wrapSpecWithI18n = (
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
-  const examples = exampleMap[version];
   const tags = new Set<string>();
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${version.split('.').join('_')}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
@@ -30,7 +30,7 @@ export const wrapSpecWithI18n = (
     const { description, summary } = apiDoc;
     operationObj .description = description;
     operationObj .summary = summary;
-    const example = examples[p];
+    const example = swaggerSpecExample [p] || {};
     if(example) {
       operationObj["x-codeSamples"] = [
         {

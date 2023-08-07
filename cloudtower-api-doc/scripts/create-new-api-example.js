@@ -3,13 +3,13 @@ const {
   parsePythonCommonDef,
 } = require("sdk-example-generator/dist/helper/python");
 const { parseGoCommonDef } = require("sdk-example-generator/dist/helper/go");
-// const {
-//   parseJavaCommonDef,
-// } = require("sdk-example-generator/dist/helper/java");
+const {
+  parseJavaCommonDef,
+} = require("sdk-example-generator/dist/helper/java");
 const {
   goTemplate,
   pythonTemplate,
-  // javaTemplate,
+  javaTemplate,
 } = require("sdk-example-generator/dist/helper/hbs");
 const fs = require("fs");
 const path = require("path");
@@ -120,15 +120,15 @@ async function genSnippet(specPath, input) {
   const commonDef = await parser.parse(input);
   const pythonDef = parsePythonCommonDef(commonDef);
   const goDef = parseGoCommonDef(commonDef);
-  // const javaDef = parseJavaCommonDef(commonDef);
+  const javaDef = parseJavaCommonDef(commonDef);
   const pythonFile = pythonTemplate(pythonDef);
   const goFile = goTemplate(goDef);
-  // const javaFile = javaTemplate(javaDef)
+  const javaFile = javaTemplate(javaDef)
 
   return {
     python: pythonFile,
     go: goFile,
-    // java: javaFile,
+    java: javaFile,
   };
 }
 
@@ -136,14 +136,14 @@ const excludePaths = [
   // "/create-vds-with-migrate-vlan",
   // "/create-vds-with-access-vlan",
 
-  "/delete-log-collection",
-  "/force-stop-log-collection",
-  "/create-log-collection",
-  "/update-alert-notifier",
-  "/move-node-topo",
-  "/create-nvmf-subsystem",
-  "/update-nvmf-subsystem",
-  "/delete-nvmf-subsystem",
+  // "/delete-log-collection",
+  // "/force-stop-log-collection",
+  // "/create-log-collection",
+  // "/update-alert-notifier",
+  // "/move-node-topo",
+  // "/create-nvmf-subsystem",
+  // "/update-nvmf-subsystem",
+  // "/delete-nvmf-subsystem",
 ];
 const traveseSpec = async (specPath) => {
   const example = {};
@@ -214,7 +214,7 @@ const main = async (version) => {
   const examplePath = path.join(
     __dirname,
     "../swagger/examples",
-    `${version}-swagger-examples.json`
+    `swagger-examples.json`
   );
   const examples = await traveseSpec(filePath);
   fs.writeFileSync(examplePath, JSON.stringify(examples, null, 2));
