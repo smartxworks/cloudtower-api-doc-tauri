@@ -6,6 +6,8 @@ sidebar_position: 12
 Here is an example using curl to obtain a list of all virtual machines in the environment. You can copy the code to your local environment. In order to process JSON data, we use the jq tool in the example. Please make sure that curl and jq are installed in your local environment.
 You can execute the following script by running `./test.sh -u <username> -p <password> -e <endpoint>`.
 
+<Tabs>
+<TabItem value="shell" label="Shell">
 
 ```bash
 #!/bin/bash
@@ -60,9 +62,13 @@ curl \
 
 ```
 
+</TabItem>
+</Tabs>
+
+
 如果希望使用 sdk，可以参考：
 
-- [go](/docs/sdks/go)
-- [typescript](https://github.com/smartxworks/cloudtower-node-sdk)
-- [python](/docs/sdks/python)
-- [java](/docs/sdks/java)
+- [Go SDK](/en/sdks/go)
+- [Python SDK](/en/sdks/python)
+- [Java SDK](/en/sdks/java)
+- [Node SDK](https://github.com/smartxworks/cloudtower-node-sdk)

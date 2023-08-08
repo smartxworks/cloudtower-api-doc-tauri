@@ -2,9 +2,14 @@
 title: 快速开始
 sidebar_position: 12
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 这里我们以 curl 为例，做一个简单的样例，用于获取环境内所有虚拟机的列表，可以复制代码到本地环境内使用。为处理 json 数据，在样例中我们使用了 jq 工具，请确保本地环境中已经预装了 curl 与 jq。
 可以通过 `./test.sh -u <username> -p <password> -e <endpoint>` 执行下面的脚本。
+
+<Tabs>
+<TabItem value="shell" label="Shell">
 
 ```bash
 #!/bin/bash
@@ -58,10 +63,13 @@ curl \
     -d '{"where":}' $endpoint/v2/api/get-vms | jq ".data.vms"
 
 ```
+</TabItem>
+</Tabs>
+
 
 如果希望使用 sdk，可以参考：
 
-- [go](/docs/sdks/go)
-- [typescript](https://github.com/smartxworks/cloudtower-node-sdk)
-- [python](/docs/sdks/python)
-- [java](/docs/sdks/java)
+- [Go SDK](/sdks/go)
+- [Python SDK](/sdks/python)
+- [Java SDK](/sdks/java)
+- [Node SDK](https://github.com/smartxworks/cloudtower-node-sdk)
