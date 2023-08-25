@@ -344,7 +344,7 @@ yargsInteractive()
   });
 
 const getSwaggerFile = (v) => {
-  return require(path.resolve(__dirname, `../swagger/specs/${v}-swagger.json`))
+  return require(path.resolve(__dirname, `../static/specs/${v}-swagger.json`))
 }
 
 const replaceTags = (tag) => {

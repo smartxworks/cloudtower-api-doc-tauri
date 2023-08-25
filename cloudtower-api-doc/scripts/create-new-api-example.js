@@ -210,7 +210,7 @@ const traveseSpec = async (specPath) => {
 };
 
 const main = async (version) => {
-  const filePath = path.join(__dirname, "../swagger/specs", `${version}-swagger.json`);
+  const filePath = path.join(__dirname, "../static/specs", `${version}-swagger.json`);
   const examplePath = path.join(
     __dirname,
     "../swagger/examples",

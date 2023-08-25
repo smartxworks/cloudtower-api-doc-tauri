@@ -21,6 +21,7 @@ const config = {
   title: "CloudTower API",
   url: "https://www.smartx.com/",
   baseUrl: "/",
+  staticDirectories: ["static"],
   favicon: "img/favicon.ico",
   organizationName: "SmartX", // Usually your GitHub org/user name.
   projectName: "CloudTower APIs", // Usually your repo name.
