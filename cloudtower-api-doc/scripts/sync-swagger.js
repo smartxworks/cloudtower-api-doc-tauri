@@ -11,7 +11,7 @@ const sync = (v) => {
   const fileUrl = new url.URL(v.replace('v', ''), SCHEMA_URL);
   const fileName = `${v}-swagger.json`;
   console.log(fileName);
-  const filePath = path.resolve(__dirname, `../swagger/specs/${fileName}`)
+  const filePath = path.resolve(__dirname, `../static/specs/${fileName}`)
   http.get(fileUrl.href, function(response) {
     let content = '';
     response.on('data', (chunk) => content += chunk);
