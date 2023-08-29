@@ -14,9 +14,11 @@ import swaggerSpec2_7 from '../../static/specs/2.7.0-swagger.json';
 import swaggerSpec2_8 from '../../static/specs/2.8.0-swagger.json';
 import swaggerSpec3_0 from '../../static/specs/3.0.0-swagger.json';
 import swaggerSpec3_1 from '../../static/specs/3.1.0-swagger.json';
+import swaggerSpec3_2 from '../../static/specs/3.2.0-swagger.json';
 
 
 export const specMap = {
+  '3.2.0': swaggerSpec3_2,
   '3.1.0': swaggerSpec3_1,
   '3.0.0': swaggerSpec3_0,
   '2.8.0': swaggerSpec2_8,

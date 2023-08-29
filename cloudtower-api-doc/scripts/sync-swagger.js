@@ -6,9 +6,9 @@ const path = require('path');
 const { program } = require('commander');
 
 
-const SCHEMA_URL = `http://192.168.28.9/schema/v3/`
+const SCHEMA_URL = `http://tower.smartx.com/v2/api/swagger3`
 const sync = (v) => {
-  const fileUrl = new url.URL(v.replace('v', ''), SCHEMA_URL);
+  const fileUrl = new url.URL(SCHEMA_URL);
   const fileName = `${v}-swagger.json`;
   console.log(fileName);
   const filePath = path.resolve(__dirname, `../static/specs/${fileName}`)
