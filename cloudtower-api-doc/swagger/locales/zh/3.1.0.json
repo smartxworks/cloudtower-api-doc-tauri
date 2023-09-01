@@ -259,17 +259,17 @@
       "vms_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "AlertNotifier": {
-      "clusters": "",
+      "clusters": "应用对象",
       "disabled": "是否禁用",
       "email_from": "发件地址",
       "email_tos": "收件地址",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段，标识资源操作状态",
       "id": "唯一标识 ID",
       "language_code": "语言",
-      "name": "",
+      "name": "名称",
       "notice_severities": "报警等级",
       "security_mode": "安全模式",
-      "smtp_server_config": "",
+      "smtp_server_config": "SMTP 服务配置",
       "smtp_server_host": "SMTP 服务器主机 IP",
       "smtp_server_port": "SMTP 服务器主机端口",
       "username": "用户名"
@@ -491,30 +491,30 @@
       "email_tos": "收件地址",
       "email_from": "发件地址",
       "disabled": "是否禁用",
-      "smtp_server_id": "",
-      "name": "",
-      "clusters": "",
-      "id": ""
+      "smtp_server_id": "报警通知使用的 SMTP 配置",
+      "name": "报警通知的名称",
+      "clusters": "报警通知配置关联的集群",
+      "id": "被更新的报警通知配置的id，如果不传递则会更改第一个（为保证api兼容性，正常情况下需要传递）"
     },
     "AlertNotifierCreationParams": {
-      "notice_severities": "",
-      "language_code": "",
-      "email_tos": "",
-      "email_from": "",
-      "disabled": "",
-      "smtp_server_id": "",
-      "name": "",
-      "clusters": ""
+      "notice_severities": "报警通知需发送的等级",
+      "language_code": "报警通知邮件内容语言",
+      "email_tos": "报警通知邮件接收方地址",
+      "email_from": "报警通知邮件发送地址",
+      "disabled": "报警通知是否启用",
+      "smtp_server_id": "报警通知使用的 SMTP 配置",
+      "name": "报警通知的名称",
+      "clusters": "报警通知配置关联的集群"
     },
     "AlertNotifierManyUpdationParams": {
-      "notice_severities": "",
-      "language_code": "",
-      "email_tos": "",
-      "email_from": "",
-      "disabled": "",
-      "smtp_server_id": "",
-      "name": "",
-      "where": ""
+      "notice_severities": "报警通知需发送的等级",
+      "language_code": "报警通知邮件内容语言",
+      "email_tos": "报警通知邮件接收方地址",
+      "email_from": "报警通知邮件发送地址",
+      "disabled": "报警通知是否启用",
+      "smtp_server_id": "报警通知使用的 SMTP 配置",
+      "name": "报警通知的名称",
+      "where": "被更新的报警通知配置的 query 条件。"
     },
     "DeleteAlertNotifier": {
       "id": "资源 id"

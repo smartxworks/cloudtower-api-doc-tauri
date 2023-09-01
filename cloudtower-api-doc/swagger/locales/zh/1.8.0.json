@@ -1,475 +1,475 @@
 {
   "paths": {
     "/add-labels-to-resources": {
-      "summary": " 关联标签",
+      "summary": "关联标签",
       "description": ""
     },
     "/add-vm-cd-rom": {
-      "summary": " 添加 CD-ROM",
+      "summary": "添加 CD-ROM",
       "description": ""
     },
     "/add-vm-disk": {
-      "summary": " 添加虚拟盘",
+      "summary": "添加虚拟盘",
       "description": ""
     },
     "/add-vm-nic": {
-      "summary": " 添加虚拟网卡",
+      "summary": "添加虚拟网卡",
       "description": ""
     },
     "/add-vm-to-folder": {
-      "summary": " 移动虚拟机至虚拟机分组",
+      "summary": "移动虚拟机至虚拟机分组",
       "description": ""
     },
     "/clone-iscsi-lun-from-snapshot": {
-      "summary": " 从快照克隆 LUN",
+      "summary": "从快照克隆 LUN",
       "description": ""
     },
     "/clone-nvmf-namespace-from-snapshot": {
-      "summary": " 从快照克隆 NVMe namespace",
+      "summary": "从快照克隆 NVMe namespace",
       "description": ""
     },
     "/clone-snapshot-group": {
-      "summary": " 快照计划克隆本地快照组",
+      "summary": "快照计划克隆本地快照组",
       "description": ""
     },
     "/clone-vm-template-from-vm": {
-      "summary": " 将虚拟机克隆为虚拟机模板",
+      "summary": "将虚拟机克隆为虚拟机模板",
       "description": ""
     },
     "/clone-vm": {
-      "summary": " 克隆虚拟机",
+      "summary": "克隆虚拟机",
       "description": ""
     },
     "/connect-cluster": {
-      "summary": " 关联集群",
+      "summary": "关联集群",
       "description": ""
     },
     "/convert-vm-template-from-vm": {
-      "summary": " 将虚拟机转换为虚拟机模板",
+      "summary": "将虚拟机转换为虚拟机模板",
       "description": ""
     },
     "/convert-vm-template-to-vm": {
-      "summary": " 将虚拟机模板转换为虚拟机",
+      "summary": "将虚拟机模板转换为虚拟机",
       "description": ""
     },
     "/create-brick-topo": {
-      "summary": " 创建机箱",
+      "summary": "创建机箱",
       "description": ""
     },
     "/create-cluster-recycle-bin-setting": {
-      "summary": " 创建集群回收站设置",
+      "summary": "创建集群回收站设置",
       "description": ""
     },
     "/create-consistency-group": {
-      "summary": " 创建一致性组",
+      "summary": "创建一致性组",
       "description": ""
     },
     "/create-consistency-snapshot-group": {
-      "summary": " 创建一致性快照",
+      "summary": "创建一致性快照",
       "description": ""
     },
     "/create-datacenter": {
-      "summary": " 创建数据中心",
+      "summary": "创建数据中心",
       "description": ""
     },
     "/create-entity-filter": {
-      "summary": " 创建资源优化规则",
+      "summary": "创建资源优化规则",
       "description": ""
     },
     "/create-graph": {
-      "summary": " 创建监控图表",
+      "summary": "创建监控图表",
       "description": ""
     },
     "/create-host": {
-      "summary": " 添加主机",
+      "summary": "添加主机",
       "description": ""
     },
     "/create-iscsi-lun-snapshot": {
-      "summary": " 创建 LUN 快照",
+      "summary": "创建 LUN 快照",
       "description": ""
     },
     "/create-iscsi-lun": {
-      "summary": " 创建 LUN",
+      "summary": "创建 LUN",
       "description": ""
     },
     "/create-iscsi-target": {
-      "summary": " 创建 iSCSI Target",
+      "summary": "创建 iSCSI Target",
       "description": ""
     },
     "/create-label": {
-      "summary": " 创建标签",
+      "summary": "创建标签",
       "description": ""
     },
     "/create-namespace-group": {
-      "summary": " 创建 Namespace Group",
+      "summary": "创建 Namespace Group",
       "description": ""
     },
     "/create-nfs-export": {
-      "summary": " 创建 NFS Export",
+      "summary": "创建 NFS Export",
       "description": ""
     },
     "/create-nvmf-namespace-snapshot": {
-      "summary": " 创建 NVMe namespace 快照",
+      "summary": "创建 NVMe namespace 快照",
       "description": ""
     },
     "/create-nvmf-namespace": {
-      "summary": " 创建 NVMe namespace",
+      "summary": "创建 NVMe namespace",
       "description": ""
     },
     "/create-nvmf-subsystem": {
-      "summary": " 创建 NVMe Subsystem",
+      "summary": "创建 NVMe Subsystem",
       "description": ""
     },
     "/create-organization": {
-      "summary": " 创建组织",
+      "summary": "创建组织",
       "description": ""
     },
     "/create-rack-topo": {
-      "summary": " 创建机架",
+      "summary": "创建机架",
       "description": ""
     },
     "/create-report-template": {
-      "summary": " 创建报表模板",
+      "summary": "创建报表模板",
       "description": ""
     },
     "/create-role": {
-      "summary": " 创建角色",
+      "summary": "创建角色",
       "description": ""
     },
     "/create-snapshot-plan": {
-      "summary": " 创建快照计划",
+      "summary": "创建快照计划",
       "description": ""
     },
     "/create-snmp-transport": {
-      "summary": " 创建 SNMP 传输",
+      "summary": "创建 SNMP 传输",
       "description": ""
     },
     "/create-snmp-trap-receiver": {
-      "summary": " 添加 SNMP 陷阱接收端",
+      "summary": "添加 SNMP 陷阱接收端",
       "description": ""
     },
     "/create-user": {
-      "summary": " 创建用户",
+      "summary": "创建用户",
       "description": ""
     },
     "/create-vds-with-access-vlan": {
-      "summary": " 创建接入网络",
+      "summary": "创建接入网络",
       "description": ""
     },
     "/create-vds-with-migrate-vlan": {
-      "summary": " 创建迁移网络",
+      "summary": "创建迁移网络",
       "description": ""
     },
     "/create-vds": {
-      "summary": " 创建虚拟分布式交换机",
+      "summary": "创建虚拟分布式交换机",
       "description": ""
     },
     "/create-view": {
-      "summary": " 创建监控视图",
+      "summary": "创建监控视图",
       "description": ""
     },
     "/create-vm-folder": {
-      "summary": " 创建虚拟机分组",
+      "summary": "创建虚拟机分组",
       "description": ""
     },
     "/create-vm-from-template": {
-      "summary": " 从模板创建虚拟机",
+      "summary": "从模板创建虚拟机",
       "description": ""
     },
     "/create-vm-placement-group": {
-      "summary": " 创建虚拟机放置组",
+      "summary": "创建虚拟机放置组",
       "description": ""
     },
     "/create-vm-snapshot": {
-      "summary": " 创建虚拟机快照",
+      "summary": "创建虚拟机快照",
       "description": ""
     },
     "/create-vm-vlan": {
-      "summary": " 创建 VLAN",
+      "summary": "创建 VLAN",
       "description": ""
     },
     "/create-vm-volume": {
-      "summary": " 创建虚拟卷",
+      "summary": "创建虚拟卷",
       "description": ""
     },
     "/create-vm": {
-      "summary": " 创建虚拟机",
+      "summary": "创建虚拟机",
       "description": ""
     },
     "/delete-brick-topo": {
-      "summary": " 删除机箱",
+      "summary": "删除机箱",
       "description": ""
     },
     "/delete-cluster-recycle-bin-setting": {
-      "summary": " 删除集群回收站设置",
+      "summary": "删除集群回收站设置",
       "description": ""
     },
     "/delete-cluster": {
-      "summary": " 移除集群",
+      "summary": "移除集群",
       "description": ""
     },
     "/delete-consistency-group": {
-      "summary": " 删除一致性组",
+      "summary": "删除一致性组",
       "description": ""
     },
     "/delete-consistency-snapshot-group": {
-      "summary": " 删除一致性快照",
+      "summary": "删除一致性快照",
       "description": ""
     },
     "/delete-datacenter": {
-      "summary": " 删除数据中心",
+      "summary": "删除数据中心",
       "description": ""
     },
     "/delete-elf-image": {
-      "summary": " 删除 ISO 映像",
+      "summary": "删除 ISO 映像",
       "description": ""
     },
     "/delete-entity-filter": {
-      "summary": " 删除资源优化规则",
+      "summary": "删除资源优化规则",
       "description": ""
     },
     "/delete-graph": {
-      "summary": " 删除监控图表",
+      "summary": "删除监控图表",
       "description": ""
     },
     "/delete-iscsi-lun-snapshot": {
-      "summary": " 删除 LUN 快照",
+      "summary": "删除 LUN 快照",
       "description": ""
     },
     "/delete-iscsi-lun": {
-      "summary": " 删除 LUN",
+      "summary": "删除 LUN",
       "description": ""
     },
     "/delete-iscsi-target": {
-      "summary": " 删除 iSCSI Target",
+      "summary": "删除 iSCSI Target",
       "description": ""
     },
     "/delete-label": {
-      "summary": " 删除标签",
+      "summary": "删除标签",
       "description": ""
     },
     "/delete-namespace-group": {
-      "summary": " 删除 Namespace Group",
+      "summary": "删除 Namespace Group",
       "description": ""
     },
     "/delete-nfs-export": {
-      "summary": " 删除 NFS Export",
+      "summary": "删除 NFS Export",
       "description": ""
     },
     "/delete-nvmf-namespace-snapshot": {
-      "summary": " 删除 NVMe namespace 快照",
+      "summary": "删除 NVMe namespace 快照",
       "description": ""
     },
     "/delete-nvmf-namespace": {
-      "summary": " 删除 NVMe namespace",
+      "summary": "删除 NVMe namespace",
       "description": ""
     },
     "/delete-nvmf-subsystem": {
-      "summary": " 删除 NVMe Subsystem",
+      "summary": "删除 NVMe Subsystem",
       "description": ""
     },
     "/delete-organization": {
-      "summary": " 删除组织",
+      "summary": "删除组织",
       "description": ""
     },
     "/delete-rack-topo": {
-      "summary": " 删除机架",
+      "summary": "删除机架",
       "description": ""
     },
     "/delete-report-template": {
-      "summary": " 删除报表模板",
+      "summary": "删除报表模板",
       "description": ""
     },
     "/delete-role": {
-      "summary": " 删除角色",
+      "summary": "删除角色",
       "description": ""
     },
     "/delete-snapshot-group": {
-      "summary": " 快照计划手动删除快照组",
+      "summary": "快照计划手动删除快照组",
       "description": ""
     },
     "/delete-snapshot-plan": {
-      "summary": " 删除快照计划",
+      "summary": "删除快照计划",
       "description": ""
     },
     "/delete-snmp-transport": {
-      "summary": " 删除 SNMP 传输",
+      "summary": "删除 SNMP 传输",
       "description": ""
     },
     "/delete-snmp-trap-receiver": {
-      "summary": " 删除 SNMP 陷阱接收端",
+      "summary": "删除 SNMP 陷阱接收端",
       "description": ""
     },
     "/delete-user": {
-      "summary": " 删除用户",
+      "summary": "删除用户",
       "description": ""
     },
     "/delete-vds": {
-      "summary": " 删除虚拟分布式交换机",
+      "summary": "删除虚拟分布式交换机",
       "description": ""
     },
     "/delete-view": {
-      "summary": " 删除监控视图",
+      "summary": "删除监控视图",
       "description": ""
     },
     "/delete-vm-folder": {
-      "summary": " 删除虚拟机分组",
+      "summary": "删除虚拟机分组",
       "description": ""
     },
     "/delete-vm-placement-group": {
-      "summary": " 删除虚拟机放置组",
+      "summary": "删除虚拟机放置组",
       "description": ""
     },
     "/delete-vm-snapshot": {
-      "summary": " 删除虚拟机快照",
+      "summary": "删除虚拟机快照",
       "description": ""
     },
     "/delete-vm-template": {
-      "summary": " 删除虚拟机模板",
+      "summary": "删除虚拟机模板",
       "description": ""
     },
     "/delete-vm-vlan": {
-      "summary": " 删除 VLAN",
+      "summary": "删除 VLAN",
       "description": ""
     },
     "/delete-vm-volume": {
-      "summary": " 删除虚拟卷",
+      "summary": "删除虚拟卷",
       "description": ""
     },
     "/delete-vm": {
-      "summary": " 删除虚拟机",
+      "summary": "删除虚拟机",
       "description": ""
     },
     "/execute-snapshot-plan": {
-      "summary": " 立即执行快照计划",
+      "summary": "立即执行快照计划",
       "description": ""
     },
     "/force-restart-vm": {
-      "summary": " 虚拟机强制重启",
+      "summary": "虚拟机强制重启",
       "description": ""
     },
     "/generate-from-report-template": {
-      "summary": " 生成报表",
+      "summary": "生成报表",
       "description": ""
     },
     "/get-alert-notifiers-connection": {
-      "summary": " 获取报警通知数量",
+      "summary": "获取报警通知数量",
       "description": ""
     },
     "/get-alert-notifiers": {
-      "summary": " 获取报警通知",
+      "summary": "获取报警通知",
       "description": ""
     },
     "/get-alert-rules-connection": {
-      "summary": " 获取特例报警规则数量",
+      "summary": "获取特例报警规则数量",
       "description": ""
     },
     "/get-alert-rules": {
-      "summary": " 获取特例报警规则",
+      "summary": "获取特例报警规则",
       "description": ""
     },
     "/get-alerts-connection": {
-      "summary": " 获取报警数量",
+      "summary": "获取报警数量",
       "description": ""
     },
     "/get-alerts": {
-      "summary": " 获取报警",
+      "summary": "获取报警",
       "description": ""
     },
     "/get-applications-connection": {
-      "summary": " 获取高级监控应用",
+      "summary": "获取高级监控应用",
       "description": ""
     },
     "/get-applications": {
-      "summary": " 获取高级监控",
+      "summary": "获取高级监控",
       "description": ""
     },
     "/get-brick-topoes-connection": {
-      "summary": " 获取机箱数量",
+      "summary": "获取机箱数量",
       "description": ""
     },
     "/get-brick-topoes": {
-      "summary": " 获取机箱",
+      "summary": "获取机箱",
       "description": ""
     },
     "/get-cluster-images-connection": {
-      "summary": " 获取集群镜像数量",
+      "summary": "获取集群镜像数量",
       "description": ""
     },
     "/get-cluster-images": {
-      "summary": " 获取集群镜像",
+      "summary": "获取集群镜像",
       "description": ""
     },
     "/get-cluster-settingses-connection": {
-      "summary": " 获取集群设置数量",
+      "summary": "获取集群设置数量",
       "description": ""
     },
     "/get-cluster-settingses": {
-      "summary": " 获取集群设置",
+      "summary": "获取集群设置",
       "description": ""
     },
     "/get-cluster-topoes-connection": {
-      "summary": " 获取集群拓扑数量",
+      "summary": "获取集群拓扑数量",
       "description": ""
     },
     "/get-cluster-topoes": {
-      "summary": " 获取集群拓扑",
+      "summary": "获取集群拓扑",
       "description": ""
     },
     "/get-cluster-upgrade-histories-connection": {
-      "summary": " 获取集群升级进度数量",
+      "summary": "获取集群升级进度数量",
       "description": ""
     },
     "/get-cluster-upgrade-histories": {
-      "summary": " 获取集群升级进度",
+      "summary": "获取集群升级进度",
       "description": ""
     },
     "/get-clusters-connection": {
-      "summary": " 获取集群数量",
+      "summary": "获取集群数量",
       "description": ""
     },
     "/get-clusters": {
-      "summary": " 获取集群",
+      "summary": "获取集群",
       "description": ""
     },
     "/get-consistency-group-snapshots-connection": {
-      "summary": " 获取一致性组快照数量",
+      "summary": "获取一致性组快照数量",
       "description": ""
     },
     "/get-consistency-group-snapshots": {
-      "summary": " 获取一致性组快照",
+      "summary": "获取一致性组快照",
       "description": ""
     },
     "/get-consistency-groups-connection": {
-      "summary": " 获取一致性组数量",
+      "summary": "获取一致性组数量",
       "description": ""
     },
     "/get-consistency-groups": {
-      "summary": " 获取一致性组",
+      "summary": "获取一致性组",
       "description": ""
     },
     "/get-content-library-images-connection": {
-      "summary": " 获取内容库 ISO 映像数量",
+      "summary": "获取内容库 ISO 映像数量",
       "description": ""
     },
     "/get-content-library-images": {
-      "summary": " 获取内容库 ISO 映像",
+      "summary": "获取内容库 ISO 映像",
       "description": ""
     },
     "/get-content-library-vm-templates-connection": {
-      "summary": " 获取内容库虚拟机模板数量",
+      "summary": "获取内容库虚拟机模板数量",
       "description": ""
     },
     "/get-content-library-vm-templates": {
-      "summary": " 获取内容库虚拟机模板",
+      "summary": "获取内容库虚拟机模板",
       "description": ""
     },
     "/get-datacenters-connection": {
-      "summary": " 获取数据中心数量",
+      "summary": "获取数据中心数量",
       "description": ""
     },
     "/get-datacenters": {
-      "summary": " 获取数据中心",
+      "summary": "获取数据中心",
       "description": ""
     },
     "/get-deploys-connection": {
@@ -477,83 +477,83 @@
       "description": ""
     },
     "/get-deploys": {
-      "summary": " 获取 CloudTower",
+      "summary": "获取 CloudTower",
       "description": ""
     },
     "/get-discover-hosts": {
-      "summary": " 获取发现主机",
+      "summary": "获取发现主机",
       "description": ""
     },
     "/get-disks-connection": {
-      "summary": " 获取硬盘数量",
+      "summary": "获取硬盘数量",
       "description": ""
     },
     "/get-disks": {
-      "summary": " 获取硬盘",
+      "summary": "获取硬盘",
       "description": ""
     },
     "/get-elf-data-stores-connection": {
-      "summary": " 获取系统存储对象数量",
+      "summary": "获取系统存储对象数量",
       "description": ""
     },
     "/get-elf-data-stores": {
-      "summary": " 获取系统存储对象",
+      "summary": "获取系统存储对象",
       "description": ""
     },
     "/get-elf-images-connection": {
-      "summary": " 获取 ISO 映像数量",
+      "summary": "获取 ISO 映像数量",
       "description": ""
     },
     "/get-elf-images": {
-      "summary": " 获取 ISO 映像",
+      "summary": "获取 ISO 映像",
       "description": ""
     },
     "/get-elf-storage-policies-connection": {
-      "summary": " 获取存储策略数量",
+      "summary": "获取存储策略数量",
       "description": ""
     },
     "/get-elf-storage-policies": {
-      "summary": " 获取存储策略",
+      "summary": "获取存储策略",
       "description": ""
     },
     "/get-entity-filters-connection": {
-      "summary": " 获取资源优化数量",
+      "summary": "获取资源优化数量",
       "description": ""
     },
     "/get-entity-filters": {
-      "summary": " 获取资源优化",
+      "summary": "获取资源优化",
       "description": ""
     },
     "/get-everoute-clusters-connection": {
-      "summary": " 获取 Everoute 集群数量",
+      "summary": "获取 Everoute 集群数量",
       "description": ""
     },
     "/get-everoute-clusters": {
-      "summary": " 获取 Everoute 集群",
+      "summary": "获取 Everoute 集群",
       "description": ""
     },
     "/get-everoute-licenses-connection": {
-      "summary": " 获取 Everoute 使用许可数量",
+      "summary": "获取 Everoute 使用许可数量",
       "description": ""
     },
     "/get-everoute-licenses": {
-      "summary": " 获取 Everoute 使用许可",
+      "summary": "获取 Everoute 使用许可",
       "description": ""
     },
     "/get-everoute-packages-connection": {
-      "summary": " 获取 Everoute 安装包数量",
+      "summary": "获取 Everoute 安装包数量",
       "description": ""
     },
     "/get-everoute-packages": {
-      "summary": " 获取 Everoute 安装包",
+      "summary": "获取 Everoute 安装包",
       "description": ""
     },
     "/get-global-alert-rules-connection": {
-      "summary": " 获取全局报警规则数量",
+      "summary": "获取全局报警规则数量",
       "description": ""
     },
     "/get-global-alert-rules": {
-      "summary": " 获取全局报警规则",
+      "summary": "获取全局报警规则",
       "description": ""
     },
     "/get-global-settingses-connection": {
@@ -561,23 +561,23 @@
       "description": ""
     },
     "/get-global-settingses": {
-      "summary": " 获取 CloudTower 设置",
+      "summary": "获取 CloudTower 设置",
       "description": ""
     },
     "/get-graphs-connection": {
-      "summary": " 获取监控图表数量",
+      "summary": "获取监控图表数量",
       "description": ""
     },
     "/get-graphs": {
-      "summary": " 获取监控图表",
+      "summary": "获取监控图表",
       "description": ""
     },
     "/get-hosts-connection": {
-      "summary": " 获取主机数量",
+      "summary": "获取主机数量",
       "description": ""
     },
     "/get-hosts": {
-      "summary": " 获取主机",
+      "summary": "获取主机",
       "description": ""
     },
     "/get-images-connector": {
@@ -585,55 +585,55 @@
       "description": ""
     },
     "/get-ipmis": {
-      "summary": " 获取 IPMI 信息",
+      "summary": "获取 IPMI 信息",
       "description": ""
     },
     "/get-iscsi-connections-connection": {
-      "summary": " 获取活跃链接数量",
+      "summary": "获取活跃链接数量",
       "description": ""
     },
     "/get-iscsi-connections": {
-      "summary": " 获取活跃链接",
+      "summary": "获取活跃链接",
       "description": ""
     },
     "/get-iscsi-lun-snapshots-connection": {
-      "summary": " 获取 LUN 快照数量",
+      "summary": "获取 LUN 快照数量",
       "description": ""
     },
     "/get-iscsi-lun-snapshots": {
-      "summary": " 获取 LUN 快照",
+      "summary": "获取 LUN 快照",
       "description": ""
     },
     "/get-iscsi-luns-connection": {
-      "summary": " 获取 LUN 数量",
+      "summary": "获取 LUN 数量",
       "description": ""
     },
     "/get-iscsi-luns": {
-      "summary": " 获取 LUN",
+      "summary": "获取 LUN",
       "description": ""
     },
     "/get-iscsi-targets-connection": {
-      "summary": " 获取 ISCSI 对象数量",
+      "summary": "获取 ISCSI 对象数量",
       "description": ""
     },
     "/get-iscsi-targets": {
-      "summary": " 获取 ISCSI 对象",
+      "summary": "获取 ISCSI 对象",
       "description": ""
     },
     "/get-isolation-policies-connection": {
-      "summary": " 获取隔离策略数量",
+      "summary": "获取隔离策略数量",
       "description": ""
     },
     "/get-isolation-policies": {
-      "summary": " 获取隔离策略",
+      "summary": "获取隔离策略",
       "description": ""
     },
     "/get-labels-connection": {
-      "summary": " 获取标签数量",
+      "summary": "获取标签数量",
       "description": ""
     },
     "/get-labels": {
-      "summary": " 获取标签",
+      "summary": "获取标签",
       "description": ""
     },
     "/get-licenses-connection": {
@@ -641,175 +641,175 @@
       "description": ""
     },
     "/get-licenses": {
-      "summary": " 获取使用许可",
+      "summary": "获取使用许可",
       "description": ""
     },
     "/get-log-collections-connection": {
-      "summary": " 获取日志采集数量",
+      "summary": "获取日志采集数量",
       "description": ""
     },
     "/get-log-collections": {
-      "summary": " 获取日志采集",
+      "summary": "获取日志采集",
       "description": ""
     },
     "/get-migrate-transmitters-connection": {
-      "summary": " 获取传输代理数量",
+      "summary": "获取传输代理数量",
       "description": ""
     },
     "/get-migrate-transmitters": {
-      "summary": " 获取传输代理",
+      "summary": "获取传输代理",
       "description": ""
     },
     "/get-namespace-groups-connection": {
-      "summary": " 获取 Namespace Group 数量",
+      "summary": "获取 Namespace Group 数量",
       "description": ""
     },
     "/get-namespace-groups": {
-      "summary": " 获取 Namespace Group",
+      "summary": "获取 Namespace Group",
       "description": ""
     },
     "/get-nfs-exports-connection": {
-      "summary": " 获取 NFS Export 数量",
+      "summary": "获取 NFS Export 数量",
       "description": ""
     },
     "/get-nfs-exports": {
-      "summary": " 获取 NFS Export",
+      "summary": "获取 NFS Export",
       "description": ""
     },
     "/get-nfs-inodes-connection": {
-      "summary": " 获取 NFS 文件数量",
+      "summary": "获取 NFS 文件数量",
       "description": ""
     },
     "/get-nfs-inodes": {
-      "summary": " 获取 NFS 文件",
+      "summary": "获取 NFS 文件",
       "description": ""
     },
     "/get-nics-connection": {
-      "summary": " 获取网口数量",
+      "summary": "获取网口数量",
       "description": ""
     },
     "/get-nics": {
-      "summary": " 获取网口",
+      "summary": "获取网口",
       "description": ""
     },
     "/get-node-topoes-connection": {
-      "summary": " 获取主机拓扑数量",
+      "summary": "获取主机拓扑数量",
       "description": ""
     },
     "/get-node-topoes": {
-      "summary": " 获取主机拓扑",
+      "summary": "获取主机拓扑",
       "description": ""
     },
     "/get-nvmf-namespace-snapshots-connection": {
-      "summary": " 获取 NVMe namespace 快照数量",
+      "summary": "获取 NVMe namespace 快照数量",
       "description": ""
     },
     "/get-nvmf-namespace-snapshots": {
-      "summary": " 获取 NVMe namespace 快照",
+      "summary": "获取 NVMe namespace 快照",
       "description": ""
     },
     "/get-nvmf-namespaces-connection": {
-      "summary": " 获取 NVMe namespace 数量",
+      "summary": "获取 NVMe namespace 数量",
       "description": ""
     },
     "/get-nvmf-namespaces": {
-      "summary": " 获取 NVMe namespace",
+      "summary": "获取 NVMe namespace",
       "description": ""
     },
     "/get-nvmf-subsystems-connection": {
-      "summary": " 获取 NVMe subsystem 数量",
+      "summary": "获取 NVMe subsystem 数量",
       "description": ""
     },
     "/get-nvmf-subsystems": {
-      "summary": " 获取 NVMe subsystem",
+      "summary": "获取 NVMe subsystem",
       "description": ""
     },
     "/get-organizations-connection": {
-      "summary": " 获取组织数量",
+      "summary": "获取组织数量",
       "description": ""
     },
     "/get-organizations": {
-      "summary": " 获取组织",
+      "summary": "获取组织",
       "description": ""
     },
     "/get-pmem-dimms-connection": {
-      "summary": " 获取 PMem DIMM 数量",
+      "summary": "获取 PMem DIMM 数量",
       "description": ""
     },
     "/get-pmem-dimms": {
-      "summary": " 获取 PMem DIMM",
+      "summary": "获取 PMem DIMM",
       "description": ""
     },
     "/get-rack-topoes-connection": {
-      "summary": " 获取机架数量",
+      "summary": "获取机架数量",
       "description": ""
     },
     "/get-rack-topoes": {
-      "summary": " 获取机架",
+      "summary": "获取机架",
       "description": ""
     },
     "/get-report-tasks-connection": {
-      "summary": " 获取报表定时生成计划数量",
+      "summary": "获取报表定时生成计划数量",
       "description": ""
     },
     "/get-report-tasks": {
-      "summary": " 获取报表定时生成计划",
+      "summary": "获取报表定时生成计划",
       "description": ""
     },
     "/get-report-templates-connection": {
-      "summary": " 获取报表模板数量",
+      "summary": "获取报表模板数量",
       "description": ""
     },
     "/get-report-templates": {
-      "summary": " 获取报表模板",
+      "summary": "获取报表模板",
       "description": ""
     },
     "/get-security-policies-connection": {
-      "summary": " 获取安全策略数量",
+      "summary": "获取安全策略数量",
       "description": ""
     },
     "/get-security-policies": {
-      "summary": " 获取安全策略",
+      "summary": "获取安全策略",
       "description": ""
     },
     "/get-snapshot-groups-connection": {
-      "summary": " 获取快照组数量",
+      "summary": "获取快照组数量",
       "description": ""
     },
     "/get-snapshot-groups": {
-      "summary": " 获取快照组",
+      "summary": "获取快照组",
       "description": ""
     },
     "/get-snapshot-plan-tasks-connection": {
-      "summary": " 获取快照计划执行记录数量",
+      "summary": "获取快照计划执行记录数量",
       "description": ""
     },
     "/get-snapshot-plan-tasks": {
-      "summary": " 获取快照计划执行记录",
+      "summary": "获取快照计划执行记录",
       "description": ""
     },
     "/get-snapshot-plans-connection": {
-      "summary": " 获取快照计划数量",
+      "summary": "获取快照计划数量",
       "description": ""
     },
     "/get-snapshot-plans": {
-      "summary": " 获取快照计划",
+      "summary": "获取快照计划",
       "description": ""
     },
     "/get-snmp-transports-connection": {
-      "summary": " 获取 SNMP 传输数量",
+      "summary": "获取 SNMP 传输数量",
       "description": ""
     },
     "/get-snmp-transports": {
-      "summary": " 获取 SNMP 传输",
+      "summary": "获取 SNMP 传输",
       "description": ""
     },
     "/get-snmp-trap-receivers-connection": {
-      "summary": " 获取 SNMP 陷阱接收端数量",
+      "summary": "获取 SNMP 陷阱接收端数量",
       "description": ""
     },
     "/get-snmp-trap-receivers": {
-      "summary": " 获取 SNMP 陷阱接收端",
+      "summary": "获取 SNMP 陷阱接收端",
       "description": ""
     },
     "/get-storage-policies-connector": {
@@ -817,507 +817,507 @@
       "description": ""
     },
     "/get-svt-images-connection": {
-      "summary": " 获取虚拟机工具 ISO 映像数量",
+      "summary": "获取虚拟机工具 ISO 映像数量",
       "description": ""
     },
     "/get-svt-images": {
-      "summary": " 获取虚拟机工具 ISO 映像",
+      "summary": "获取虚拟机工具 ISO 映像",
       "description": ""
     },
     "/get-system-audit-logs-connection": {
-      "summary": " 获取系统事件数量",
+      "summary": "获取系统事件数量",
       "description": ""
     },
     "/get-system-audit-logs": {
-      "summary": " 获取系统事件",
+      "summary": "获取系统事件",
       "description": ""
     },
     "/get-tasks-connection": {
-      "summary": " 获取任务数量",
+      "summary": "获取任务数量",
       "description": ""
     },
     "/get-tasks": {
-      "summary": " 获取任务",
+      "summary": "获取任务",
       "description": ""
     },
     "/get-upload-tasks-connection": {
-      "summary": " 获取上传任务数量",
+      "summary": "获取上传任务数量",
       "description": ""
     },
     "/get-upload-tasks": {
-      "summary": " 获取上传任务",
+      "summary": "获取上传任务",
       "description": ""
     },
     "/get-usb-devices-connection": {
-      "summary": " 获取 USB 设备数量",
+      "summary": "获取 USB 设备数量",
       "description": ""
     },
     "/get-usb-devices": {
-      "summary": " 获取 USB 设备",
+      "summary": "获取 USB 设备",
       "description": ""
     },
     "/get-user-audit-logs-connection": {
-      "summary": " 获取用户事件数量",
+      "summary": "获取用户事件数量",
       "description": ""
     },
     "/get-user-audit-logs": {
-      "summary": " 获取用户事件",
+      "summary": "获取用户事件",
       "description": ""
     },
     "/get-user-role-nexts-connection": {
-      "summary": " 获取角色数量",
+      "summary": "获取角色数量",
       "description": ""
     },
     "/get-user-role-nexts": {
-      "summary": " 获取角色",
+      "summary": "获取角色",
       "description": ""
     },
     "/get-users-connection": {
-      "summary": " 获取用户数量",
+      "summary": "获取用户数量",
       "description": ""
     },
     "/get-users": {
-      "summary": " 获取用户",
+      "summary": "获取用户",
       "description": ""
     },
     "/get-vcenter-accounts-connection": {
-      "summary": " 获取 vCenter 账户数量",
+      "summary": "获取 vCenter 账户数量",
       "description": ""
     },
     "/get-vcenter-accounts": {
-      "summary": " 获取 vCenter 账户",
+      "summary": "获取 vCenter 账户",
       "description": ""
     },
     "/get-vdses-connection": {
-      "summary": " 获取虚拟分布式交换机数量",
+      "summary": "获取虚拟分布式交换机数量",
       "description": ""
     },
     "/get-vdses": {
-      "summary": " 获取虚拟分布式交换机",
+      "summary": "获取虚拟分布式交换机",
       "description": ""
     },
     "/get-views-connection": {
-      "summary": " 获取监控视图数量",
+      "summary": "获取监控视图数量",
       "description": ""
     },
     "/get-views": {
-      "summary": " 获取监控视图",
+      "summary": "获取监控视图",
       "description": ""
     },
     "/get-vlans-connection": {
-      "summary": " 获取网络数量",
+      "summary": "获取网络数量",
       "description": ""
     },
     "/get-vlans": {
-      "summary": " 获取网络",
+      "summary": "获取网络",
       "description": ""
     },
     "/get-vm-disks-connection": {
-      "summary": " 获取虚拟盘数量",
+      "summary": "获取虚拟盘数量",
       "description": ""
     },
     "/get-vm-disks": {
-      "summary": " 获取虚拟盘",
+      "summary": "获取虚拟盘",
       "description": ""
     },
     "/get-vm-entity-filter-results-connection": {
-      "summary": " 获取资源优化分析结果数量",
+      "summary": "获取资源优化分析结果数量",
       "description": ""
     },
     "/get-vm-entity-filter-results": {
-      "summary": " 获取资源优化分析结果",
+      "summary": "获取资源优化分析结果",
       "description": ""
     },
     "/get-vm-folders-connection": {
-      "summary": " 获取虚拟机分组数量",
+      "summary": "获取虚拟机分组数量",
       "description": ""
     },
     "/get-vm-folders": {
-      "summary": " 获取虚拟机分组",
+      "summary": "获取虚拟机分组",
       "description": ""
     },
     "/get-vm-nics-connection": {
-      "summary": " 获取虚拟网卡数量",
+      "summary": "获取虚拟网卡数量",
       "description": ""
     },
     "/get-vm-nics": {
-      "summary": " 获取虚拟网卡",
+      "summary": "获取虚拟网卡",
       "description": ""
     },
     "/get-vm-placement-groups-connection": {
-      "summary": " 获取虚拟机放置组数量",
+      "summary": "获取虚拟机放置组数量",
       "description": ""
     },
     "/get-vm-placement-groups": {
-      "summary": " 获取虚拟机放置组",
+      "summary": "获取虚拟机放置组",
       "description": ""
     },
     "/get-vm-snapshots-connection": {
-      "summary": " 获取虚拟机快照数量",
+      "summary": "获取虚拟机快照数量",
       "description": ""
     },
     "/get-vm-snapshots": {
-      "summary": " 获取虚拟机快照",
+      "summary": "获取虚拟机快照",
       "description": ""
     },
     "/get-vm-templates-connection": {
-      "summary": " 获取集群虚拟机模板数量",
+      "summary": "获取集群虚拟机模板数量",
       "description": ""
     },
     "/get-vm-templates": {
-      "summary": " 获取集群虚拟机模板",
+      "summary": "获取集群虚拟机模板",
       "description": ""
     },
     "/get-vm-volumes-connection": {
-      "summary": " 获取虚拟卷数量",
+      "summary": "获取虚拟卷数量",
       "description": ""
     },
     "/get-vm-volumes": {
-      "summary": " 获取虚拟卷",
+      "summary": "获取虚拟卷",
       "description": ""
     },
     "/get-vms-connection": {
-      "summary": " 获取虚拟机数量",
+      "summary": "获取虚拟机数量",
       "description": ""
     },
     "/get-vms": {
-      "summary": " 获取虚拟机",
+      "summary": "获取虚拟机",
       "description": ""
     },
     "/get-vsphere-esxi-accounts-connection": {
-      "summary": " 获取 vSphere 账号数量",
+      "summary": "获取 vSphere 账号数量",
       "description": ""
     },
     "/get-vsphere-esxi-accounts": {
-      "summary": " 获取 vSphere 账号",
+      "summary": "获取 vSphere 账号",
       "description": ""
     },
     "/get-witness-services": {
-      "summary": " 获取仲裁节点服务",
+      "summary": "获取仲裁节点服务",
       "description": ""
     },
     "/get-witnesses-connection": {
-      "summary": " 获取仲裁节点数量",
+      "summary": "获取仲裁节点数量",
       "description": ""
     },
     "/get-witnesses": {
-      "summary": " 获取仲裁节点",
+      "summary": "获取仲裁节点",
       "description": ""
     },
     "/get-zone-topoes-connection": {
-      "summary": " 获取可用域拓扑",
+      "summary": "获取可用域拓扑",
       "description": ""
     },
     "/get-zone-topoes": {
-      "summary": " 获取可用域拓扑",
+      "summary": "获取可用域拓扑",
       "description": ""
     },
     "/get-zones-connection": {
-      "summary": " 获取可用域数量",
+      "summary": "获取可用域数量",
       "description": ""
     },
     "/get-zones": {
-      "summary": " 获取可用域",
+      "summary": "获取可用域",
       "description": ""
     },
     "/install-vmtools": {
-      "summary": " 安装虚拟机工具",
+      "summary": "安装虚拟机工具",
       "description": ""
     },
     "/keep-snapshot-group": {
-      "summary": " 保留本地快照组",
+      "summary": "保留本地快照组",
       "description": ""
     },
     "/login": {
-      "summary": " 登录",
+      "summary": "登录",
       "description": ""
     },
     "/migrate-vm": {
-      "summary": " 迁移虚拟机",
+      "summary": "迁移虚拟机",
       "description": ""
     },
     "/mount-disk": {
-      "summary": " 物理盘挂载",
+      "summary": "物理盘挂载",
       "description": ""
     },
     "/mount-usb-device": {
-      "summary": " 挂载 USB 设备",
+      "summary": "挂载 USB 设备",
       "description": ""
     },
     "/move-brick-topo": {
-      "summary": " 移动机箱",
+      "summary": "移动机箱",
       "description": ""
     },
     "/move-node-topo": {
-      "summary": " 移动主机",
+      "summary": "移动主机",
       "description": ""
     },
     "/move-vm-to-recycle": {
-      "summary": " 将虚拟机移至回收站",
+      "summary": "将虚拟机移至回收站",
       "description": ""
     },
     "/poweroff-vm": {
-      "summary": " 虚拟机强制关机",
+      "summary": "虚拟机强制关机",
       "description": ""
     },
     "/rebuild-vm-from-snapshot": {
-      "summary": " 从快照重建虚拟机",
+      "summary": "从快照重建虚拟机",
       "description": ""
     },
     "/recover-vm-from-recycle": {
-      "summary": " 从回收站恢复虚拟机",
+      "summary": "从回收站恢复虚拟机",
       "description": ""
     },
     "/remove-labels-from-resources": {
-      "summary": " 取消关联标签",
+      "summary": "取消关联标签",
       "description": ""
     },
     "/remove-vm-cd-rom": {
-      "summary": " 移除 CD-ROM",
+      "summary": "移除 CD-ROM",
       "description": ""
     },
     "/remove-vm-disk": {
-      "summary": " 移除虚拟盘",
+      "summary": "移除虚拟盘",
       "description": ""
     },
     "/remove-vm-from-folder": {
-      "summary": " 将虚拟机从虚拟机分组中移出",
+      "summary": "将虚拟机从虚拟机分组中移出",
       "description": ""
     },
     "/remove-vm-nic": {
-      "summary": " 移除虚拟网卡",
+      "summary": "移除虚拟网卡",
       "description": ""
     },
     "/resolve-alert": {
-      "summary": " 标记报警为已解决",
+      "summary": "标记报警为已解决",
       "description": ""
     },
     "/restart-vm": {
-      "summary": " 虚拟机重启",
+      "summary": "虚拟机重启",
       "description": ""
     },
     "/resume-snapshot-plan": {
-      "summary": " 继续快照计划",
+      "summary": "继续快照计划",
       "description": ""
     },
     "/resume-vm": {
-      "summary": " 恢复虚拟机",
+      "summary": "恢复虚拟机",
       "description": ""
     },
     "/rollback-consistency-snapshot-group": {
-      "summary": " 回滚一致性快照",
+      "summary": "回滚一致性快照",
       "description": ""
     },
     "/rollback-iscsi-lun-from-snapshot": {
-      "summary": " 回滚 LUN",
+      "summary": "回滚 LUN",
       "description": ""
     },
     "/rollback-nvmf-namespace-from-snapshot": {
-      "summary": " 从快照回滚 NVMe namespace",
+      "summary": "从快照回滚 NVMe namespace",
       "description": ""
     },
     "/rollback-snapshot-group": {
-      "summary": " 快照计划回滚本地快照组",
+      "summary": "快照计划回滚本地快照组",
       "description": ""
     },
     "/rollback-vm": {
-      "summary": " 虚拟机回滚",
+      "summary": "虚拟机回滚",
       "description": ""
     },
     "/shutdown-vm": {
-      "summary": " 虚拟机关机",
+      "summary": "虚拟机关机",
       "description": ""
     },
     "/start-vm": {
-      "summary": " 虚拟机开机",
+      "summary": "虚拟机开机",
       "description": ""
     },
     "/suspend-snapshot-plan": {
-      "summary": " 暂停快照计划",
+      "summary": "暂停快照计划",
       "description": ""
     },
     "/suspend-vm": {
-      "summary": " 虚拟机暂停",
+      "summary": "虚拟机暂停",
       "description": ""
     },
     "/trigger-disk-blink": {
-      "summary": " 物理盘闪灯",
+      "summary": "物理盘闪灯",
       "description": ""
     },
     "/unmount-disk": {
-      "summary": " 物理盘卸载",
+      "summary": "物理盘卸载",
       "description": ""
     },
     "/unmount-usb-device": {
-      "summary": " 卸载 USB 设备",
+      "summary": "卸载 USB 设备",
       "description": ""
     },
     "/update-brick-topo": {
-      "summary": " 更新机箱",
+      "summary": "更新机箱",
       "description": ""
     },
     "/update-cluster-license": {
-      "summary": " 更新集群证书",
+      "summary": "更新集群证书",
       "description": ""
     },
     "/update-cluster-recycle-bin-setting": {
-      "summary": " 更新集群回收站设置",
+      "summary": "更新集群回收站设置",
       "description": ""
     },
     "/update-cluster": {
-      "summary": " 更新集群",
+      "summary": "更新集群",
       "description": ""
     },
     "/update-consistency-group": {
-      "summary": " 更新一致性组",
+      "summary": "更新一致性组",
       "description": ""
     },
     "/update-customize-alert-rule": {
-      "summary": " 更新特例报警规则",
+      "summary": "更新特例报警规则",
       "description": ""
     },
     "/update-datacenter": {
-      "summary": " 更新数据中心",
+      "summary": "更新数据中心",
       "description": ""
     },
     "/update-elf-image": {
-      "summary": " 更新 ISO 映像",
+      "summary": "更新 ISO 映像",
       "description": ""
     },
     "/update-entity-filter": {
-      "summary": " 更新资源优化规则",
+      "summary": "更新资源优化规则",
       "description": ""
     },
     "/update-global-alert-rule": {
-      "summary": " 更新全局报警规则",
+      "summary": "更新全局报警规则",
       "description": ""
     },
     "/update-global-recycle-bin-setting": {
-      "summary": " 更新回收站设置",
+      "summary": "更新回收站设置",
       "description": ""
     },
     "/update-graph": {
-      "summary": " 更新监控图表",
+      "summary": "更新监控图表",
       "description": ""
     },
     "/update-host": {
-      "summary": " 更新主机",
+      "summary": "更新主机",
       "description": ""
     },
     "/update-iscsi-lun": {
-      "summary": " 更新 LUN",
+      "summary": "更新 LUN",
       "description": ""
     },
     "/update-iscsi-target": {
-      "summary": " 更新 iSCSI Target",
+      "summary": "更新 iSCSI Target",
       "description": ""
     },
     "/update-label": {
-      "summary": " 更新标签",
+      "summary": "更新标签",
       "description": ""
     },
     "/update-license": {
-      "summary": " 更新使用许可",
+      "summary": "更新使用许可",
       "description": ""
     },
     "/update-management-vlan": {
-      "summary": " 更新管理网络",
+      "summary": "更新管理网络",
       "description": ""
     },
     "/update-migration-vlan": {
-      "summary": " 更新迁移网络",
+      "summary": "更新迁移网络",
       "description": ""
     },
     "/update-namespace-group": {
-      "summary": " 更新 Namespace Group",
+      "summary": "更新 Namespace Group",
       "description": ""
     },
     "/update-nfs-export": {
-      "summary": " 更新 NFS Export",
+      "summary": "更新 NFS Export",
       "description": ""
     },
     "/update-nic": {
-      "summary": " 更新网口",
+      "summary": "更新网口",
       "description": ""
     },
     "/update-nvmf-namespace": {
-      "summary": " 更新 NVMe namespace",
+      "summary": "更新 NVMe namespace",
       "description": ""
     },
     "/update-nvmf-subsystem": {
-      "summary": " 更新 NVMe subsystem",
+      "summary": "更新 NVMe subsystem",
       "description": ""
     },
     "/update-organization": {
-      "summary": " 更新组织",
+      "summary": "更新组织",
       "description": ""
     },
     "/update-rack-topo": {
-      "summary": " 更新机架",
+      "summary": "更新机架",
       "description": ""
     },
     "/update-report-template": {
-      "summary": " 更新报表模板",
+      "summary": "更新报表模板",
       "description": ""
     },
     "/update-role": {
-      "summary": " 更新角色",
+      "summary": "更新角色",
       "description": ""
     },
     "/update-snapshot-plan": {
-      "summary": " 更新快照计划",
+      "summary": "更新快照计划",
       "description": ""
     },
     "/update-snmp-transport": {
-      "summary": " 更新 SNMP 传输",
+      "summary": "更新 SNMP 传输",
       "description": ""
     },
     "/update-snmp-trap-receiver": {
-      "summary": " 编辑 SNMP 陷阱接收端",
+      "summary": "编辑 SNMP 陷阱接收端",
       "description": ""
     },
     "/update-user": {
-      "summary": " 更新用户",
+      "summary": "更新用户",
       "description": ""
     },
     "/update-vds": {
-      "summary": " 更新虚拟分布式交换机",
+      "summary": "更新虚拟分布式交换机",
       "description": ""
     },
     "/update-view": {
-      "summary": " 更新监控视图",
+      "summary": "更新监控视图",
       "description": ""
     },
     "/update-vm-basic-info": {
-      "summary": " 更新虚拟机的基本信息",
+      "summary": "更新虚拟机的基本信息",
       "description": ""
     },
     "/update-vm-disk": {
-      "summary": " 更新虚拟盘",
+      "summary": "更新虚拟盘",
       "description": ""
     },
     "/update-vm-folder": {
-      "summary": " 更新虚拟机分组",
+      "summary": "更新虚拟机分组",
       "description": ""
     },
     "/update-vm-nic": {
-      "summary": " 更新虚拟网卡",
+      "summary": "更新虚拟网卡",
       "description": ""
     },
     "/update-vm-placement-group": {
-      "summary": " 更新虚拟机放置组",
+      "summary": "更新虚拟机放置组",
       "description": ""
     },
     "/update-vm-template": {
-      "summary": " 更新虚拟机模板",
+      "summary": "更新虚拟机模板",
       "description": ""
     },
     "/update-vm-vlan": {
-      "summary": " 更新 VLAN",
+      "summary": "更新 VLAN",
       "description": ""
     },
     "/upload-elf-image": {
-      "summary": " 上传 ISO 映像",
+      "summary": "上传 ISO 映像",
       "description": ""
     }
   },
@@ -7613,7 +7613,7 @@
       "bps_rd_max_length": "仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
       "bps_rd_max": "限制 LUN 的突发读流量的 BPS 在设置值以下",
       "bps_max_length": "仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
-      "bps_max": " 限制 LUN 的突发读写流量的 BPS 在设置值以下",
+      "bps_max": "限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
       "iops_wr_max": "限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
@@ -8117,7 +8117,7 @@
       "bps_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
       "bps_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
-      "iops_wr_max": " Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
+      "iops_wr_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
       "iops_rd_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读流量的 IOPS 在设置值以下",
       "iops_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
@@ -10413,7 +10413,7 @@
       "local_updated_at": "更新时间",
       "name": "名称",
       "nfs_export": "关联 NFS Export",
-      "parent_id": " NFS 父级 ID",
+      "parent_id": "NFS 父级 ID",
       "shared_size": "共享容量(字节)",
       "snapshot_num": "所属快照统计数量",
       "unique_size": "独占容量(字节)"
@@ -10496,20 +10496,20 @@
       "nfs_export": "关联 NFS Export",
       "NOT": "不符合所有筛选条件",
       "OR": "符合一项或多项筛选条件",
-      "parent_id": " NFS 父级 ID",
-      "parent_id_contains": " NFS 父级 ID包含指定字符",
-      "parent_id_ends_with": " NFS 父级 ID已指定字符结尾",
-      "parent_id_gt": " NFS 父级 ID大于指定数值",
-      "parent_id_gte": " NFS 父级 ID大于或等于指定数值",
-      "parent_id_in": " NFS 父级 ID在指定范围中",
-      "parent_id_lt": " NFS 父级 ID小于指定字符",
-      "parent_id_lte": " NFS 父级 ID小于或等于指定字符",
-      "parent_id_not": " NFS 父级 ID不等于指定数值",
-      "parent_id_not_contains": " NFS 父级 ID不包含指定字符",
-      "parent_id_not_ends_with": " NFS 父级 ID不已指定字符结尾",
-      "parent_id_not_in": " NFS 父级 ID不在指定范围中",
-      "parent_id_not_starts_with": " NFS 父级 ID不已指定字符开始",
-      "parent_id_starts_with": " NFS 父级 ID已指定字符开始",
+      "parent_id": "NFS 父级 ID",
+      "parent_id_contains": "NFS 父级 ID包含指定字符",
+      "parent_id_ends_with": "NFS 父级 ID已指定字符结尾",
+      "parent_id_gt": "NFS 父级 ID大于指定数值",
+      "parent_id_gte": "NFS 父级 ID大于或等于指定数值",
+      "parent_id_in": "NFS 父级 ID在指定范围中",
+      "parent_id_lt": "NFS 父级 ID小于指定字符",
+      "parent_id_lte": "NFS 父级 ID小于或等于指定字符",
+      "parent_id_not": "NFS 父级 ID不等于指定数值",
+      "parent_id_not_contains": "NFS 父级 ID不包含指定字符",
+      "parent_id_not_ends_with": "NFS 父级 ID不已指定字符结尾",
+      "parent_id_not_in": "NFS 父级 ID不在指定范围中",
+      "parent_id_not_starts_with": "NFS 父级 ID不已指定字符开始",
+      "parent_id_starts_with": "NFS 父级 ID已指定字符开始",
       "shared_size": "共享容量(字节)",
       "shared_size_gt": "共享容量(字节)大于指定数值",
       "shared_size_gte": "共享容量(字节)大于或等于指定数值",
@@ -11426,7 +11426,7 @@
       "iops_wr": "写 IOPS",
       "iops_wr_max": "突发写流量的 IOPS",
       "iops_wr_max_length": "突发写流量的时长",
-      "ip_whitelist": " 逗号分隔的 IPv4 地址或子网的列表",
+      "ip_whitelist": "逗号分隔的 IPv4 地址或子网的列表",
       "labels": "关联集群",
       "local_id": "UUID",
       "name": "名称",
@@ -11461,7 +11461,7 @@
       "iops": "Subsystem 内部 NS 限速的默认值，将限制 NS 的总 IOPS 在设置值以下",
       "description": "",
       "nqn_whitelist": "逗号分隔的 NQN 列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host NQN 处于列表中时，允许 host 连接到 subsystem",
-      "ip_whitelist": " 逗号分隔的 IPv4 地址或子网的列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host 的 IPv4 地址处于列表中时，允许 host 连接到 subsystem"
+      "ip_whitelist": "逗号分隔的 IPv4 地址或子网的列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host 的 IPv4 地址处于列表中时，允许 host 连接到 subsystem"
     },
     "NvmfSubsystemConnection": {
       "aggregate": ""
@@ -11679,20 +11679,20 @@
       "iops_wr_max_not_in": "突发写流量的 IOPS不在指定范围中",
       "iops_wr_not": "写 IOPS不等于指定数值",
       "iops_wr_not_in": "写 IOPS不在指定范围中",
-      "ip_whitelist": " 逗号分隔的 IPv4 地址或子网的列表",
-      "ip_whitelist_contains": " 逗号分隔的 IPv4 地址或子网的列表包含指定字符",
-      "ip_whitelist_ends_with": " 逗号分隔的 IPv4 地址或子网的列表已指定字符结尾",
-      "ip_whitelist_gt": " 逗号分隔的 IPv4 地址或子网的列表大于指定数值",
-      "ip_whitelist_gte": " 逗号分隔的 IPv4 地址或子网的列表大于或等于指定数值",
-      "ip_whitelist_in": " 逗号分隔的 IPv4 地址或子网的列表在指定范围中",
-      "ip_whitelist_lt": " 逗号分隔的 IPv4 地址或子网的列表小于指定字符",
-      "ip_whitelist_lte": " 逗号分隔的 IPv4 地址或子网的列表小于或等于指定字符",
-      "ip_whitelist_not": " 逗号分隔的 IPv4 地址或子网的列表不等于指定数值",
-      "ip_whitelist_not_contains": " 逗号分隔的 IPv4 地址或子网的列表不包含指定字符",
-      "ip_whitelist_not_ends_with": " 逗号分隔的 IPv4 地址或子网的列表不已指定字符结尾",
-      "ip_whitelist_not_in": " 逗号分隔的 IPv4 地址或子网的列表不在指定范围中",
-      "ip_whitelist_not_starts_with": " 逗号分隔的 IPv4 地址或子网的列表不已指定字符开始",
-      "ip_whitelist_starts_with": " 逗号分隔的 IPv4 地址或子网的列表已指定字符开始",
+      "ip_whitelist": "逗号分隔的 IPv4 地址或子网的列表",
+      "ip_whitelist_contains": "逗号分隔的 IPv4 地址或子网的列表包含指定字符",
+      "ip_whitelist_ends_with": "逗号分隔的 IPv4 地址或子网的列表已指定字符结尾",
+      "ip_whitelist_gt": "逗号分隔的 IPv4 地址或子网的列表大于指定数值",
+      "ip_whitelist_gte": "逗号分隔的 IPv4 地址或子网的列表大于或等于指定数值",
+      "ip_whitelist_in": "逗号分隔的 IPv4 地址或子网的列表在指定范围中",
+      "ip_whitelist_lt": "逗号分隔的 IPv4 地址或子网的列表小于指定字符",
+      "ip_whitelist_lte": "逗号分隔的 IPv4 地址或子网的列表小于或等于指定字符",
+      "ip_whitelist_not": "逗号分隔的 IPv4 地址或子网的列表不等于指定数值",
+      "ip_whitelist_not_contains": "逗号分隔的 IPv4 地址或子网的列表不包含指定字符",
+      "ip_whitelist_not_ends_with": "逗号分隔的 IPv4 地址或子网的列表不已指定字符结尾",
+      "ip_whitelist_not_in": "逗号分隔的 IPv4 地址或子网的列表不在指定范围中",
+      "ip_whitelist_not_starts_with": "逗号分隔的 IPv4 地址或子网的列表不已指定字符开始",
+      "ip_whitelist_starts_with": "逗号分隔的 IPv4 地址或子网的列表已指定字符开始",
       "labels_every": "返回关联资源全都符合相关筛选条件的资源",
       "labels_none": "返回关联资源不符合相关筛选条件的资源",
       "labels_some": "返回关联资源一项或多项符合相关筛选条件的资源",
@@ -15034,7 +15034,7 @@
       "cloud_init.networks.ip_address": "IPv4 地址，仅当 type 不是 ipv4_dhcp 时有效",
       "cloud_init.networks": "网卡网络配置信息列表",
       "cloud_init.nameservers": "Name Server 地址列表，最多只允许配置 3 个 nameserver",
-      "cloud_init.default_user_password": " 为 cloud-init 默认用户设置的密码。Windows 下默认为 Admin 用户。Linux 下默认为 root 用户",
+      "cloud_init.default_user_password": "为 cloud-init 默认用户设置的密码。Windows 下默认为 Admin 用户。Linux 下默认为 root 用户",
       "cloud_init": "cloud-init 配置",
       "is_full_copy": "是否为完全拷贝",
       "template_id": "虚拟机模板 ID",

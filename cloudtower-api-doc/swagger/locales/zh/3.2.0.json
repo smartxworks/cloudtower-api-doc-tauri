@@ -265,18 +265,18 @@
       "enum": ""
     },
     "VmNicQosTraffic": {
-      "rate_limit_unit": "",
-      "rate_limit": "",
-      "burst_unit": "",
-      "burst": "",
-      "enabled": ""
+      "rate_limit_unit": "带宽限制单位",
+      "rate_limit": "带宽限制，默认单位为 bit per second",
+      "burst_unit": "爆发流量单位",
+      "burst": "爆发流量限制，默认单位为bit",
+      "enabled": "是否启用"
     },
     "VmNicQosOption": {
-      "egress": "",
-      "ingress": ""
+      "egress": "出流量配置",
+      "ingress": "入流量配置"
     },
     "VmNicParams": {
-      "qos": "",
+      "qos": "Qos 参数配置",
       "subnet_mask": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的子网掩码。",
       "gateway": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的网关。",
       "ip_address": "可为 DHCP 网络中的网卡设置一个固定 IP。或者当VM内部的虚拟机工具运行时，用来指定设置静态IP的地址。",
@@ -289,73 +289,73 @@
       "local_id": "UUID"
     },
     "VmUpdateNicQosOptionsParams": {
-      "data.qos": "",
+      "data.qos": "定义 Qos 参数",
       "data": "",
-      "where": ""
+      "where": "筛选需要更新的虚拟网卡"
     },
     "VmImportNicParams": {
-      "subnet_mask": "",
-      "gateway": "",
-      "ip_address": "",
-      "nic_id": "",
-      "connect_vlan_id": "",
-      "mirror": "",
-      "model": "",
-      "enabled": "",
-      "mac_address": "",
-      "local_id": ""
+      "subnet_mask": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的子网掩码。",
+      "gateway": "网关",
+      "ip_address": "IP 地址",
+      "nic_id": "关联网卡 ID",
+      "connect_vlan_id": "关联 VLAN 的唯一标识",
+      "mirror": "是否启动镜像流量模式（port mirroring）",
+      "model": "型号",
+      "enabled": "是否启用",
+      "mac_address": "mac 地址",
+      "local_id": "UUID"
     },
     "ContentLibraryVmTemplateExportParams": {
       "where": ""
     },
     "ContentLibraryVmdkCdromModify": {
-      "enabled": "",
-      "removed": "",
-      "boot": "",
-      "index": ""
+      "enabled": "更新挂载内容库镜像的 id",
+      "removed": "是否需要移除该虚拟光驱",
+      "boot": "修改虚拟光驱的启动顺序，最终启动顺序按照传递的 boot 来排序，如果并没有按顺序传递 boot，启动顺序和 boot 可能会不对其",
+      "index": "ovf 中虚拟光驱的顺序，用于指定需要修改的虚拟光驱"
     },
     "ContentLibraryVmdkCdromMount": {
-      "enabled": "",
-      "boot": ""
+      "enabled": "是否启用",
+      "boot": "启动顺序"
     },
     "ContentLibraryVmTemplateOvfDiskOperate": {
-      "mount_new_cd_roms": "",
-      "modify_cd_roms": "",
-      "modify_vmdk_disks": ""
+      "mount_new_cd_roms": "挂载新的 CD-ROM",  
+      "modify_cd_roms": "修改 CD-ROM",
+      "modify_vmdk_disks": "修改 VMDK 磁盘"
     },
     "ContentLibraryImportVmNic": {
-      "mirror": "",
-      "model": "",
-      "enabled": ""
+      "mirror": "是否启动镜像流量模式（port mirroring）",
+      "model": "型号",
+      "enabled": "是否启用"
     },
     "ContentLibraryVmTemplateImportParams": {
-      "vm_nics": "",
-      "disk_operate": "",
-      "ha": "",
-      "memory_unit": "",
-      "memory": "",
-      "vcpu": "",
-      "cpu_cores": "",
-      "cpu_sockets": "",
-      "description": "",
-      "name": "",
-      "upload_tasks": "",
-      "parsed_ovf": "",
-      "cluster_id": ""
+      "vm_nics": "网卡信息",
+      "disk_operate": "盘信息",
+      "ha": "是否高可用",
+      "memory_unit": "内存单位",
+      "memory": "内存，默认单位为 byte",
+      "vcpu": "vCPU",
+      "cpu_cores": "CPU 核数",
+      "cpu_sockets": "CPU 插槽",
+      "description": "描述",
+      "name": "名称",
+      "upload_tasks": "上传任务",
+      "parsed_ovf": "解析的ovf文件包信息，可以通过 parse-ovf api 解析",
+      "cluster_id": "导入内容库模板的集群"
     },
     "VmVolumeExportFileType": {
       "enum": ""
     },
     "ExportVmVolumeParams": {
-      "data.type": "",
+      "data.type": "指定导出的类型，支持 'QCOW2' | 'RAW'",
       "data": "",
       "where": ""
     },
     "ImportVmVolumeParams": {
-      "upload_task_id": "",
-      "name": "",
-      "storage_policy": "",
-      "cluster_id": ""
+      "upload_task_id": "预先上传 ovf 文件的 uploadTask",
+      "name": "卷名",
+      "storage_policy": "指定卷的存储策略",
+      "cluster_id": "指定卷被导入的集群"
     }
   },
   "tags": [
@@ -367,23 +367,23 @@
   ],
   "paths": {
     "/update-vm-nic-qos-option": {
-      "summary": "",
+      "summary": "更新虚拟机网卡 Qos 选项",
       "description": ""
     },
     "/export-content-library-vm-template": {
-      "summary": "",
+      "summary": "导出虚拟机模板",
       "description": ""
     },
     "/import-content-library-vm-template": {
-      "summary": "",
+      "summary": "导入虚拟机模板",
       "description": ""
     },
     "/export-vm-volume": {
-      "summary": "",
+      "summary": "导出虚拟卷",
       "description": ""
     },
     "/import-vm-volume": {
-      "summary": "",
+      "summary": "导入虚拟卷",
       "description": ""
     }
   }

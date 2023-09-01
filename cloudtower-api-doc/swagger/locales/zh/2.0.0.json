@@ -5,111 +5,111 @@
       "description": ""
     },
     "/convert-content-library-vm-template-from-vm": {
-      "summary": " 虚拟机转化为内容库虚拟机模板",
+      "summary": "虚拟机转化为内容库虚拟机模板",
       "description": ""
     },
     "/delete-content-library-image": {
-      "summary": " 删除内容库 ISO 映像",
+      "summary": "删除内容库 ISO 映像",
       "description": ""
     },
     "/delete-content-library-vm-template": {
-      "summary": " 删除内容库模板",
+      "summary": "删除内容库模板",
       "description": ""
     },
     "/distribute-content-library-image-clusters": {
-      "summary": " 分发内容库 ISO 映像至新的集群",
+      "summary": "分发内容库 ISO 映像至新的集群",
       "description": ""
     },
     "/distribute-content-library-vm-template-clusters": {
-      "summary": " 分发内容库虚拟机模板至新的集群",
+      "summary": "分发内容库虚拟机模板至新的集群",
       "description": ""
     },
     "/get-cluster-metrics": {
-      "summary": " 获取集群性能指标",
+      "summary": "获取集群性能指标",
       "description": ""
     },
     "/get-disk-metrics": {
-      "summary": " 获取物理盘性能指标",
+      "summary": "获取物理盘性能指标",
       "description": ""
     },
     "/get-host-metrics": {
-      "summary": " 获取主机性能指标",
+      "summary": "获取主机性能指标",
       "description": ""
     },
     "/get-host-network-metrics": {
-      "summary": " 查询指定主机网络性能指标",
+      "summary": "查询指定主机网络性能指标",
       "description": ""
     },
     "/get-host-service-metrics": {
-      "summary": " 查询指定主机服务性能指标",
+      "summary": "查询指定主机服务性能指标",
       "description": ""
     },
     "/get-lun-metrics": {
-      "summary": " 查询指定 LUN 的性能指标",
+      "summary": "查询指定 LUN 的性能指标",
       "description": ""
     },
     "/get-nvmf-namespace-metrics": {
-      "summary": " 查询指定 NVMe Namespace 的性能指标",
+      "summary": "查询指定 NVMe Namespace 的性能指标",
       "description": ""
     },
     "/get-scvm-disk-metrics": {
-      "summary": " 查询指定 VMware 主机硬盘性能指标",
+      "summary": "查询指定 VMware 主机硬盘性能指标",
       "description": ""
     },
     "/get-scvm-metrics": {
-      "summary": " 查询指定 VMware 主机性能指标",
+      "summary": "查询指定 VMware 主机性能指标",
       "description": ""
     },
     "/get-scvm-network-metrics": {
-      "summary": " 查询指定 VMware 主机网络性能指标",
+      "summary": "查询指定 VMware 主机网络性能指标",
       "description": ""
     },
     "/get-scvm-service-metrics": {
-      "summary": " 查询指定 VMwaree 主机服务性能指标",
+      "summary": "查询指定 VMwaree 主机服务性能指标",
       "description": ""
     },
     "/get-top-n-metrics-in-clusters": {
-      "summary": " 查询TOP-N性能指标",
+      "summary": "查询TOP-N性能指标",
       "description": ""
     },
     "/get-vm-metrics": {
-      "summary": " 查询指定虚拟机性能指标",
+      "summary": "查询指定虚拟机性能指标",
       "description": ""
     },
     "/get-vm-network-metrics": {
-      "summary": " 查询指定虚拟网卡的性能指标",
+      "summary": "查询指定虚拟网卡的性能指标",
       "description": ""
     },
     "/get-vm-volume-metrics": {
-      "summary": " 查询指定虚拟卷的性能指标",
+      "summary": "查询指定虚拟卷的性能指标",
       "description": ""
     },
     "/get-witness-metrics": {
-      "summary": " 查询指定双活集群仲裁节点性能指标",
+      "summary": "查询指定双活集群仲裁节点性能指标",
       "description": ""
     },
     "/get-zone-metrics": {
-      "summary": " 查询指定双活集群可用域性能指标",
+      "summary": "查询指定双活集群可用域性能指标",
       "description": ""
     },
     "/remove-content-library-image-clusters": {
-      "summary": " 移除内容库 ISO 映像存储集群",
+      "summary": "移除内容库 ISO 映像存储集群",
       "description": ""
     },
     "/remove-content-library-vm-template-clusters": {
-      "summary": " 移除内容库虚拟机模板存储集群",
+      "summary": "移除内容库虚拟机模板存储集群",
       "description": ""
     },
     "/update-content-library-image": {
-      "summary": " 编辑内容库 ISO 映像",
+      "summary": "编辑内容库 ISO 映像",
       "description": ""
     },
     "/update-content-library-vm-template": {
-      "summary": " 编辑内容库虚拟机模板",
+      "summary": "编辑内容库虚拟机模板",
       "description": ""
     },
     "/upload-content-library-image": {
-      "summary": " 上传内容库 ISO 映像",
+      "summary": "上传内容库 ISO 映像",
       "description": ""
     }
   },
