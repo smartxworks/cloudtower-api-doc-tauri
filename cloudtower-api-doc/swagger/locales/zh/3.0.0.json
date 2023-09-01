@@ -1278,18 +1278,18 @@
       "user": ""
     },
     "CloudTowerApplication": {
-      "entityAsyncStatus": "",
-      "id": "",
-      "instanceStatuses": "",
-      "name": "",
-      "package": "",
-      "placementSituation": "",
-      "placementVerb": "",
-      "resourceVersion": "",
-      "state": "",
-      "targetPackage": "",
-      "user": "",
-      "vmSpec": ""
+      "entityAsyncStatus": "内部字段",
+      "id": "唯一标识 ID",
+      "instanceStatuses": "应用所在虚拟机状态",
+      "name": "名称",
+      "package": "安装包",
+      "placementSituation": "instance vm 放置组规则，是否放置在同一台主机",
+      "placementVerb": "配置放置组规则为必须还是优先",
+      "resourceVersion": "资源版本",
+      "state": "应用状态",
+      "targetPackage": "升级用安装包的id",
+      "user": "所属用户",
+      "vmSpec": "部署 application 的 spec"
     },
     "UserWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -1434,7 +1434,7 @@
     "ClusterSettings": {
       "cluster": "关联集群",
       "default_ha": "高可用（HA）",
-      "default_storage_policy": "",
+      "default_storage_policy": "默认存储策略",
       "enabled_iscsi": "是否将该集群的分布式块存储服务通过 iSCSI 协议提供给其他计算端使用。",
       "id": "唯一标识",
       "vm_recycle_bin": "回收站设置"
@@ -1454,7 +1454,7 @@
       "cpu_vendor": "CPU 供应商",
       "data_ip": "存储 IP",
       "disks": "物理盘",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "failure_data_space": "失效空间",
       "hdd_data_capacity": "HDD 总容量",
       "hdd_disk_count": "HDD 盘数",
@@ -1536,7 +1536,7 @@
     "Nic": {
       "driver": "驱动",
       "driver_state": "驱动转台",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "gateway_ip": "网关 IP",
       "host": "关联主机",
       "ibdev": "IB 设备",
@@ -1563,28 +1563,28 @@
       "vds": "关联虚拟机交换机"
     },
     "NestedLabelGroup": {
-      "labels": ""
+      "labels": "关联标签"
     },
     "SecurityGroup": {
-      "description": "",
-      "everoute_cluster": "",
-      "id": "",
-      "isolation_policies": "",
-      "label_groups": "",
-      "name": "",
-      "security_policies": "",
-      "vms": ""
+      "description": "描述",
+      "everoute_cluster": "所属 Everoute 服务",
+      "id": "唯一标识 ID",
+      "isolation_policies": "隔离策略",
+      "label_groups": "标签组",
+      "name": "名称",
+      "security_policies": "安全策略",
+      "vms": "全部成员"
     },
     "WithTask_SecurityGroup_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "SecurityGroupCreateParams": {
-      "vms": "",
-      "label_groups": "",
-      "description": "",
-      "everoute_cluster_id": "",
-      "name": ""
+      "vms": "需要绑定的虚拟机",
+      "label_groups": "需要绑定的标签组",
+      "description": "描述",
+      "everoute_cluster_id": "Everoute 集群 id",
+      "name": "唯一标识"
     },
     "DeleteSecurityGroup": {
       "id": "资源 id"
@@ -1654,10 +1654,10 @@
       "where": ""
     },
     "SecurityGroupUpdateParams": {
-      "label_groups": "",
-      "vms": "",
-      "description": "",
-      "name": ""
+      "label_groups": "要绑定的标签组",
+      "vms": "要绑定的虚拟机",
+      "description": "安全组描述",
+      "name": "安全组名称"
     },
     "SecurityGroupUpdateBody": {
       "data": "",
@@ -1668,38 +1668,38 @@
       "data": "资源"
     },
     "SecurityPolicyApplyToInputTarget": {
-      "security_groups": "",
-      "label_groups": ""
+      "security_groups": "security_groups 应用到安全组",
+      "label_groups": "根据标签组查询虚拟机，应用到虚拟机上。组内标签以交集筛选虚拟机，组间虚拟机选择为并集"
     },
     "SecurityPolicyApplyToInput": {
-      "communicable": "",
-      "target": ""
+      "communicable": "默认为 false。一个安全策略中会包含多个虚拟机，指定虚拟机之前是否允许通信。如果是允许，不收其他安全策略影响。如果是不允许，则受其他安全策略控制",
+      "target": "应用安全策略的虚拟机"
     },
     "IPSecurityPolicy": {
-      "except_ip_block": "",
-      "ip_block": ""
+      "except_ip_block": "流量黑名单，基于白名单排除",
+      "ip_block": "流量白名单"
     },
     "SecurityPolicyIngressEgressInputTarget": {
-      "security_groups": "",
-      "ips": "",
-      "label_groups": ""
+      "security_groups": "根据标签组查询虚拟机，应用到虚拟机上。组内标签以交集筛选虚拟机，组间虚拟机选择为并集",
+      "ips": "ips ip 设置特定 IP 为白名单",
+      "label_groups": "security_groups 设置安全组下的机器为白名单"
     },
     "NetworkPolicyRulePortInput": {
-      "protocol": "",
-      "port": ""
+      "protocol": "网络协议。填 ICMP 时， port 不生效",
+      "port": "指定端口"
     },
     "SecurityPolicyIngressEgressInput": {
-      "ports": "",
-      "target": ""
+      "ports": "根据条件查找虚拟机，将安全策略应用到虚拟机上",
+      "target": "端口控制"
     },
     "SecurityPolicyCreateParams": {
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "everoute_cluster_id": "",
-      "description": "",
-      "name": ""
+      "ingress": "入流量控制的配置",
+      "egress": "出流量控制的配置",
+      "apply_to": "应用到哪些虚拟机，或者标签上",
+      "policy_mode": "策略模式。WORK 表示立刻生效，MONITOR 不会立即生效，需要改为 WORK 才会生效",
+      "everoute_cluster_id": "Everoute 集群 Id",
+      "description": "安全策略描述",
+      "name": "安全策略名称，不可重复"
     },
     "DeleteSecurityPolicy": {
       "id": "资源 id"
@@ -1712,10 +1712,10 @@
       "where": ""
     },
     "SecurityPolicyUpdateParams": {
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": ""
+      "ingress": "入流量控制的配置",
+      "egress": "出流量控制的配置",
+      "apply_to": "应用到哪些虚拟机，或者标签上",
+      "policy_mode": "策略模式。WORK 表示立刻生效，MONITOR 不会立即生效，需要改为 WORK 才会生效。"
     },
     "SecurityPolicyUpdateBody": {
       "data": "",
@@ -1724,7 +1724,7 @@
     "UsbDevice": {
       "binded": "是否绑定",
       "description": "描述",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "host": "所属主机",
       "id": "唯一标识",
       "local_created_at": "创建时间",
@@ -1738,8 +1738,8 @@
       "vm": "挂载虚拟机"
     },
     "User": {
-      "auth_config_id": "",
-      "display_username": "",
+      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置",
+      "display_username": "用户名，用于展示",
       "email_address": "电子邮箱",
       "id": "唯一标识",
       "internal": "是否为内部创建",
@@ -1752,7 +1752,7 @@
       "role": "角色",
       "roles": "角色",
       "source": "创建来源",
-      "username": "用户名"
+      "username": "用户名，和 display_usenrame + auth_config_id 一起，唯一值"
     },
     "MfaType": {
       "enum": ""
@@ -1761,13 +1761,13 @@
       "username": "用户名",
       "source": "创建来源",
       "password": "密码",
-      "mfa_type": "",
-      "auth_config_id": ""
+      "mfa_type": "MFA 类型",
+      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置"
     },
     "UserCreationParams": {
-      "auth_config_id": "",
-      "ldap_dn": "",
-      "source": "",
+      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置",
+      "ldap_dn": "LDAP DN",
+      "source": "创建来源，目前仅支持内部用户通过 API 创建 LDAP 用户",
       "mobile_phone": "手机号码",
       "email_address": "电子邮箱",
       "internal": "是否为内部创建",
@@ -1780,7 +1780,7 @@
       "cluster": "虚拟卷快照所在集群",
       "createAt": "虚拟卷快照创建时间",
       "description": "虚拟卷快照描述",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "id": "虚拟卷快照唯一标识",
       "local_created_at": "虚拟卷快照在数据库中的创建时间",
       "local_id": "UUID",
@@ -1799,12 +1799,12 @@
       "id": "唯一标识",
       "labels": "关联标签",
       "local_id": "UUID",
-      "mode_type": "",
+      "mode_type": "VLAN 类型",
       "name": "名称",
-      "network_ids": "",
-      "qos_max_bandwidth": "",
-      "qos_min_bandwidth": "",
-      "qos_priority": "",
+      "network_ids": "VLAN ID。mode_type 为 Trunk 时生效，支持多个范围，例如区间 ‘0-100’，或者单个 VLAN ID ’1’,  默认为 ’0-4095’。",
+      "qos_max_bandwidth": "QoS策略限制最大宽带。默认单位为 Bps。最大值为 40000000 MBps",
+      "qos_min_bandwidth": "QoS策略预留宽带。最大值为 40000000 MBps。",
+      "qos_priority": "QoS策略优先级， 0-100。默认单位为 Bps。最大值为 40000000 MBps。",
       "subnetmask": "子网掩码",
       "type": "类型",
       "vds": "所属虚拟机交换机",
@@ -1941,7 +1941,7 @@
       "cluster": "所属集群",
       "description": "描述",
       "elf_storage_policy": "存储策略",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "guest_size_usage": "内部使用率",
       "guest_used_size": "内部使用量",
       "id": "唯一标识",
@@ -1959,64 +1959,64 @@
       "vm_disks": "关联虚拟盘"
     },
     "VmVlanCreationParams": {
-      "qos_burst_unit": "",
-      "qos_burst": "",
-      "qos_max_bandwidth_unit": "",
-      "qos_max_bandwidth": "",
-      "qos_min_bandwidth_unit": "",
-      "qos_min_bandwidth": "",
-      "qos_priority": "",
-      "mode_type": "",
-      "network_ids": "",
+      "qos_burst_unit": "QoS策略突发通信量上限指定单位",
+      "qos_burst": "QoS策略突发通信量上限。 默认单位为 B。最大值为 40000000 MB。",
+      "qos_max_bandwidth_unit": "QoS策略预留宽带指定单位。",
+      "qos_max_bandwidth": "QoS策略限制最大宽带。默认单位为 Bps。最大值为 40000000 MBps",
+      "qos_min_bandwidth_unit": "QoS策略预留宽带指定单位。",
+      "qos_min_bandwidth": "QoS策略预留宽带。最大值为 40000000 MBps。",
+      "qos_priority": "QoS策略优先级， 0-100。默认单位为 Bps。最大值为 40000000 MBps。",
+      "mode_type": "Vlan 类型，目前仅支持 Access, Trunk。默认为 Access 类型。",
+      "network_ids": "VLAN ID。mode_type 为 Trunk 时生效，支持多个范围，例如区间 ‘0-100’，或者单个 VLAN ID ’1’,  默认为 ’0-4095’。",
       "vds_id": "所属虚拟机交换机 ID",
       "vlan_id": "VLAN ID。 可接受的值是：0-4095",
       "name": "名称"
     },
     "VmVlanUpdationParams": {
-      "data.qos_burst_unit": "",
-      "data.qos_burst": "",
-      "data.qos_max_bandwidth_unit": "",
-      "data.qos_max_bandwidth": "",
-      "data.qos_min_bandwidth_unit": "",
-      "data.qos_min_bandwidth": "",
-      "data.qos_priority": "",
-      "data.mode_type": "",
-      "data.network_ids": "",
+      "data.qos_burst_unit": "QoS策略突发通信量上限指定单位",
+      "data.qos_burst": "QoS策略突发通信量上限。 默认单位为 B。最大值为 40000000 MB。",
+      "data.qos_max_bandwidth_unit": "QoS策略预留宽带指定单位。",
+      "data.qos_max_bandwidth": "QoS策略限制最大宽带。默认单位为 Bps。最大值为 40000000 MBps",
+      "data.qos_min_bandwidth_unit": "QoS策略预留宽带指定单位。",
+      "data.qos_min_bandwidth": "QoS策略预留宽带。最大值为 40000000 MBps。",
+      "data.qos_priority": "QoS策略优先级， 0-100。默认单位为 Bps。最大值为 40000000 MBps。",
+      "data.mode_type": "Vlan 类型，目前仅支持 Access, Trunk。默认为 Access 类型。",
+      "data.network_ids": "VLAN ID。mode_type 为 Trunk 时生效，支持多个范围，例如区间 ‘0-100’，或者单个 VLAN ID ’1’,  默认为 ’0-4095’。",
       "data.vlan_id": "VLAN ID",
       "data.name": "名称",
       "data": "",
       "where": ""
     },
     "OvfCpu": {
-      "sockets": "",
-      "cores": ""
+      "sockets": "插槽",
+      "cores": "核"
     },
     "OvfNic": {
-      "mac": ""
+      "mac": "mac 地址"
     },
     "OvfDisk": {
-      "size": "",
-      "type": "",
-      "bus": "",
-      "name": ""
+      "size": "盘大小，单位为 byte",
+      "type": "类型",
+      "bus": "总线",
+      "name": "名称"
     },
     "ParsedOVF": {
-      "firmware": "",
-      "disks": "",
-      "nics": "",
-      "memory": "",
-      "cpu": "",
-      "vcpu": "",
-      "description": "",
-      "name": ""
+      "firmware": "固件类型",
+      "disks": "盘",
+      "nics": "网卡",
+      "memory": "内存，单位为 byte",
+      "cpu": "CPU",
+      "vcpu": "vCPU",
+      "description": "描述",
+      "name": "名称"
     },
     "ExportFileDownloadLinks": {
-      "link": "",
-      "filename": ""
+      "link": "下载地址，是一个相对路径，使用 tower 地址加上该路径即可下载对应文件",
+      "filename": "文件名"
     },
     "VmExportFileWhereUniqueInput": {
-      "data_port_id": "",
-      "id": ""
+      "data_port_id": "端口 ID",
+      "id": "唯一标识"
     },
     "GetExportFileDownloadLinksParams": {
       "where": ""
@@ -2125,92 +2125,92 @@
       "enum": ""
     },
     "VmExportFileFile": {
-      "md5": "",
-      "fileSize": "",
-      "fileSecret": "",
-      "fileUUID": "",
-      "type": "",
-      "fileName": ""
+      "md5": "md5",
+      "fileSize": "文件大小，默认单位为 byte",
+      "fileSecret": "文件密钥",
+      "fileUUID": "文件  UUID",
+      "type": "文件类型",
+      "fileName": "文件名称"
     },
     "VmExportFile": {
-      "content_library_vm_template": "",
-      "createdAt": "",
-      "damaged": "",
-      "data_port_id": "",
-      "entityAsyncStatus": "",
-      "files": "",
-      "id": "",
-      "storage_cluster_id": "",
-      "type": "",
-      "vm": "",
-      "vm_volume": ""
+      "content_library_vm_template": "关联的内容库模板",
+      "createdAt": "创建时间",
+      "damaged": "是否损坏",
+      "data_port_id": "端口 ID",
+      "entityAsyncStatus": "内部字段",
+      "files": "关联文件",
+      "id": "唯一标识 ID",
+      "storage_cluster_id": "存储集群 ID",
+      "type": "文件类型",
+      "vm": "关联虚拟机",
+      "vm_volume": "关联虚拟卷"
     },
     "WithTask_VmExportFile_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VmExportParamsData": {
-      "keep_mac": "",
-      "type": ""
+      "keep_mac": "mac 地址与原虚拟机保持一致",
+      "type": "文件类型"
     },
     "VmExportParams": {
       "data": "",
       "where": ""
     },
     "VmdkDiskModify": {
-      "elf_storage_policy": "",
-      "bus": "",
-      "volume_name": "",
-      "boot": "",
-      "vmdk_name": ""
+      "elf_storage_policy": "存储策略",
+      "bus": "总线",
+      "volume_name": "虚拟卷名称",
+      "boot": "启动顺序",
+      "vmdk_name": "VMDK 名称"
     },
     "VmdkCdromModify": {
-      "removed": "",
-      "content_library_image_id": "",
-      "elf_image_id": "",
-      "boot": "",
-      "index": ""
+      "removed": "是否需要移除该虚拟光驱",
+      "content_library_image_id": "更新挂载内容库镜像的 id",
+      "elf_image_id": "更新挂载镜像的 id",
+      "boot": "修改虚拟光驱的启动顺序，最终启动顺序按照传递的 boot 来排序，如果并没有按顺序传递 boot，启动顺序和 boot 可能会不对其",
+      "index": "ovf 中虚拟光驱的顺序，用于指定需要修改的虚拟光驱"
     },
     "OvfDiskOperate": {
-      "new_disks": "",
-      "modify_cd_roms": "",
-      "modify_vmdk_disks": ""
+      "new_disks": "挂载新盘",
+      "modify_cd_roms": "对 ovf 存在的 cdrom 做出修改",
+      "modify_vmdk_disks": "对 ovf 中存在的 vmdk_disk 做修改"
     },
     "VmImportParams": {
-      "max_bandwidth_policy": "",
-      "max_bandwidth_unit": "",
-      "max_bandwidth": "",
-      "max_iops_policy": "",
-      "max_iops": "",
-      "io_policy": "",
-      "vcpu": "",
-      "status": "",
-      "ha": "",
-      "vm_nics": "",
-      "disk_operate": "",
-      "memory_unit": "",
-      "memory": "",
-      "cpu_cores": "",
-      "cpu_sockets": "",
-      "guest_os_type": "",
-      "folder_id": "",
-      "description": "",
-      "name": "",
-      "host_id": "",
-      "cluster_id": "",
-      "upload_tasks": "",
-      "owner_id": "",
-      "parsed_ovf": ""
+      "max_bandwidth_policy": "虚拟机的最大带宽策略",
+      "max_bandwidth_unit": "虚拟机的最大带宽单位",
+      "max_bandwidth": "虚拟机的最大带宽",
+      "max_iops_policy": "虚拟机的最大 iops 策略",
+      "max_iops": "虚拟机的最大 iops",
+      "io_policy": "虚拟机的 IO 策略",
+      "vcpu": "虚拟机总核心数",
+      "status": "虚拟机开机时的状态",
+      "ha": "是否开启高可用",
+      "vm_nics": "配置虚拟机的网卡",
+      "disk_operate": "是否对虚拟机的虚拟盘做出更改",
+      "memory_unit": "虚拟机内存单位",
+      "memory": "虚拟机内存大小，默认单位 byte",
+      "cpu_cores": "虚拟机 cpu 核数",
+      "cpu_sockets": "虚拟机 cpu 插槽数",
+      "guest_os_type": "虚拟机宿主机系统",
+      "folder_id": "虚拟机所在组",
+      "description": "虚拟机的描述",
+      "name": "虚拟机的名字",
+      "host_id": "指定虚拟机创建的主机，为空则自动调度",
+      "cluster_id": "指定虚拟机创建的集群",
+      "upload_tasks": "指定上传 vmdk_file 的 uploadTask 的 id",
+      "owner_id": "指定虚拟机所有者",
+      "parsed_ovf": "通过 parseOvf 得到的 ovf 信"
     },
     "AlertNotifier": {
-      "clusters": "",
+      "clusters": "应用集群",
       "disabled": "是否禁用",
       "email_from": "发件地址",
       "email_tos": "收件地址",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "内部字段",
       "id": "唯一标识 ID",
       "language_code": "语言",
-      "name": "",
+      "name": "名称",
       "notice_severities": "报警等级",
       "security_mode": "安全模式",
       "smtp_server_host": "SMTP 服务器主机 IP",

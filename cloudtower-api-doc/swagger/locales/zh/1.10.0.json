@@ -1,32 +1,32 @@
 {
   "paths": {
     "/create-root-user": {
-      "summary": " 创建初始用户",
-      "description": " 用于创建第一个用户，固定用户名为 root 以及角色为 root。"
+      "summary": "创建初始用户",
+      "description": "用于创建第一个用户，固定用户名为 root 以及角色为 root。"
     },
     "/eject-iso-from-vm-cd-rom": {
-      "summary": " 用于卸载选中 cd-rom 的镜像",
+      "summary": "用于卸载选中 cd-rom 的镜像",
       "description": ""
     },
     "/expand-vm-disk": {
-      "summary": " 虚拟盘扩容",
-      "description": " 虚拟盘将被扩容至指定大小"
+      "summary": "虚拟盘扩容",
+      "description": "虚拟盘将被扩容至指定大小"
     },
     "/toggle-vm-cd-rom-disable": {
-      "summary": " 设置 CD-ROM 的启用状态",
+      "summary": "设置 CD-ROM 的启用状态",
       "description": ""
     },
     "/update-vm-advanced-options": {
-      "summary": " 更新虚拟机高级设置",
-      "description": " 用于更新虚拟机高级设置，包括 windows 优化，CPU 模型兼容性，虚拟机时钟，虚拟机显卡类型"
+      "summary": "更新虚拟机高级设置",
+      "description": "用于更新虚拟机高级设置，包括 windows 优化，CPU 模型兼容性，虚拟机时钟，虚拟机显卡类型"
     },
     "/update-vm-nic-advance-info": {
-      "summary": " 更新虚拟网卡高级信息",
-      "description": " 用于更新虚拟机网卡中不常被更新的数据，其中 nic_id 只有当网卡模型为 sr-iov 时才能更新，另外不支持更新网卡模型"
+      "summary": "更新虚拟网卡高级信息",
+      "description": "用于更新虚拟机网卡中不常被更新的数据，其中 nic_id 只有当网卡模型为 sr-iov 时才能更新，另外不支持更新网卡模型"
     },
     "/update-vm-nic-basic-info": {
-      "summary": " 更新虚拟网卡基本信息",
-      "description": " 用于更新虚拟机网卡的基础信息，这部分信息更改频率大于其他类型，但是需要虚拟机工具的支持，在虚拟机工具未安装、运行时，执行可能有 bug。"
+      "summary": "更新虚拟网卡基本信息",
+      "description": "用于更新虚拟机网卡的基础信息，这部分信息更改频率大于其他类型，但是需要虚拟机工具的支持，在虚拟机工具未安装、运行时，执行可能有 bug。"
     }
   },
   "schemas": {
@@ -3803,7 +3803,7 @@
       "bps_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
       "bps_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
-      "iops_wr_max": " Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
+      "iops_wr_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
       "iops_rd_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读流量的 IOPS 在设置值以下",
       "iops_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
@@ -3937,7 +3937,7 @@
       "cloud_init.hostname": "主机名称。Windows 主机名只能包含字母（a-z，A-Z）、数字（0-9）和连字符（-），不能含有空格或者句号(.)。且不能完全是数字。Linux 下主机名可以指定为 FQDN。",
       "cloud_init.networks": "网卡网络配置信息列表",
       "cloud_init.nameservers": "Name Server 地址列表，最多只允许配置 3 个 nameserver",
-      "cloud_init.default_user_password": " 为 cloud-init 默认用户设置的密码。Windows 下默认为 Admin 用户。Linux 下默认为 root 用户",
+      "cloud_init.default_user_password": "为 cloud-init 默认用户设置的密码。Windows 下默认为 Admin 用户。Linux 下默认为 root 用户",
       "cloud_init": "cloud-init 配置",
       "is_full_copy": "是否为完全拷贝",
       "template_id": "虚拟机模板 ID",

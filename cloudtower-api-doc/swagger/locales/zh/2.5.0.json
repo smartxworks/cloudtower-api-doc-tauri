@@ -287,7 +287,7 @@
       "bps_max_unit": "指定传入的 bps_max 所属单位",
       "bps_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
-      "iops_wr_max": " Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
+      "iops_wr_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
       "iops_rd_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读流量的 IOPS 在设置值以下",
       "iops_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",

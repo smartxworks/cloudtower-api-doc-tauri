@@ -149,7 +149,7 @@
       "bps_max_unit": "指定传入的 bps_max 所属单位",
       "bps_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
-      "iops_wr_max": " Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
+      "iops_wr_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
       "iops_rd_max": "Target 内部 LUN 限速的默认值，将限制 LUN 的突发读流量的 IOPS 在设置值以下",
       "iops_max_length": "Target 内部 LUN 限速的默认值，仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
@@ -183,7 +183,7 @@
       "bps_rd_max": "限制 LUN 的突发读流量的 BPS 在设置值以下",
       "bps_max_length": "仅当指定了 LUN 突发读写流量的 IOPS 限速时生效，将限制突发读写流量的时长在设置值以下, 单位是秒",
       "bps_max_unit": "指定传入的 bps_max 的所属单位",
-      "bps_max": " 限制 LUN 的突发读写流量的 BPS 在设置值以下",
+      "bps_max": "限制 LUN 的突发读写流量的 BPS 在设置值以下",
       "iops_wr_max_length": "仅当指定了 LUN 突发写流量的 IOPS 限速时生效，将限制突发写流量的时长在设置值以下, 单位是秒",
       "iops_wr_max": "限制 LUN 的突发写流量的 IOPS 在设置值以下",
       "iops_rd_max_length": "仅当指定了 LUN 突发读流量的 IOPS 限速时生效，将限制突发读流量的时长在设置值以下, 单位是秒",
@@ -292,7 +292,7 @@
       "iops": "Subsystem 内部 NS 限速的默认值，将限制 NS 的总 IOPS 在设置值以下",
       "description": "描述",
       "nqn_whitelist": "逗号分隔的 NQN 列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host NQN 处于列表中时，允许 host 连接到 subsystem",
-      "ip_whitelist": " 逗号分隔的 IPv4 地址或子网的列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host 的 IPv4 地址处于列表中时，允许 host 连接到 subsystem"
+      "ip_whitelist": "逗号分隔的 IPv4 地址或子网的列表，或者为通配符字符串 '*/*'。仅当白名单为通配符或者 host 的 IPv4 地址处于列表中时，允许 host 连接到 subsystem"
     },
     "NvmfSubsystemCreationParams": {
       "replica_num": "Subsystem 内 NS 的默认副本数",
@@ -697,17 +697,17 @@
       "name": "名称"
     },
     "CloudTowerApplication": {
-      "id": "",
-      "instanceStatuses": "",
-      "name": "",
-      "package": "",
-      "placementSituation": "",
-      "placementVerb": "",
-      "resourceVersion": "",
-      "state": "",
-      "targetPackage": "",
-      "user": "",
-      "vmSpec": ""
+      "entityAsyncStatus": "内部字段",
+      "id": "唯一标识 ID",
+      "name": "名称",
+      "package": "安装包",
+      "placementSituation": "instance vm 放置组规则，是否放置在同一台主机",
+      "placementVerb": "配置放置组规则为必须还是优先",
+      "resourceVersion": "资源版本",
+      "state": "应用状态",
+      "targetPackage": "升级用安装包的id",
+      "user": "所属用户",
+      "vmSpec": "部署 application 的 spec"
     },
     "ApplicationVmSpecEnv": {
       "value": "环境变量的 value",
