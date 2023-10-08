@@ -100375,6 +100375,7 @@
     },
     "/create-vm-from-template": {
       "post": {
+        "deprecated": true,
         "operationId": "CreateVmFromTemplate",
         "responses": {
           "200": {
