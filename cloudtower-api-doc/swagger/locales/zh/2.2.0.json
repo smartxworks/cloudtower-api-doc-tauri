@@ -29,7 +29,7 @@
   "tags": [],
   "paths": {
     "/create-vm-from-content-library-template": {
-      "summary": "内容库模版创建虚拟机",
+      "summary": "内容库模板创建虚拟机",
       "description": ""
     }
   }
