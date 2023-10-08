@@ -174,7 +174,7 @@
     },
     "/create-vm-from-template": {
       "summary": "从模板创建虚拟机",
-      "description": ""
+      "description": "**警告：** 虚拟机模板已 Cloudtower 界面上移除，除非有特殊需要，否则请不要使用使用模板创建虚拟机 API 来创建虚拟机，请使用内容库模板。"
     },
     "/create-vm-placement-group": {
       "summary": "创建虚拟机放置组",

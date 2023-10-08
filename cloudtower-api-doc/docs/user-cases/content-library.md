@@ -1,12 +1,12 @@
 ---
-title: 模板创建虚拟机
+title: 内容库模板创建虚拟机
 sidebar_position: 41
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## 模板创建虚拟机
+## 内容库模板创建虚拟机
 
 通过内容库模板创建一台虚拟机，内容通过内容库模板设置。
 
@@ -75,9 +75,149 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
 
 </TabItem>
 
+<TabItem value="java" label="Java">
+
+```java
+package com.smartx.com;
+​
+import com.smartx.tower.ApiClient;
+import com.smartx.tower.ApiException;
+import com.smartx.tower.ClientUtil;
+import com.smartx.tower.TaskUtil;
+import com.smartx.tower.api.ClusterApi;
+import com.smartx.tower.api.ContentLibraryVmTemplateApi;
+import com.smartx.tower.api.VmApi;
+import com.smartx.tower.model.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+​
+public class App {
+        public static void main(String[] args) throws ApiException, IOException {
+                ApiClient client = new ApiClient();
+                client.setBasePath("http://tower.smartx.com/v2/api");
+                ClientUtil.login("username", "root", client);
+​
+                ClusterApi clusterApi = new ClusterApi(client);
+                ContentLibraryVmTemplateApi contentLibraryVmTemplateApi = new ContentLibraryVmTemplateApi(client);
+                VmApi vmApi = new VmApi(client);
+                GetClustersRequestBody getClustersParams = new GetClustersRequestBody()
+                                .where(new ClusterWhereInput()
+                                                .name("cluster_name"));
+                List<Cluster> clusters = clusterApi.getClusters(getClustersParams);
+                GetContentLibraryVmTemplatesRequestBody getTemplatesParams = new GetContentLibraryVmTemplatesRequestBody()
+                                .where(new ContentLibraryVmTemplateWhereInput()
+                                                .name("template_name"));
+                List<ContentLibraryVmTemplate> templates = contentLibraryVmTemplateApi
+                                .getContentLibraryVmTemplates(getTemplatesParams);
+                List<VmCreateVmFromContentLibraryTemplateParams> createVmParams = new ArrayList<>();
+                createVmParams.add(new VmCreateVmFromContentLibraryTemplateParams()
+                                .templateId(templates.get(0).getId())
+                                .clusterId(clusters.get(0).getId())
+                                .name("vm_name")
+                                .isFullCopy(false));
+                List<WithTaskVm> vms = vmApi.createVmFromContentLibraryTemplate(createVmParams);
+                List<String> taskIds = vms.stream().map(withTaskObj -> withTaskObj.getTaskId())
+                                .collect(Collectors.toList());
+                TaskUtil.WaitTasks(taskIds, client);
+        }
+}
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+​
+import (
+	"context"
+	"fmt"
+	"time"
+​
+	"github.com/openlyinc/pointy"
+	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/content_library_vm_template"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	"github.com/thoas/go-funk"
+)
+​
+func main() {
+	client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
+		Host:     "tower.smartx.com",
+		BasePath: "v2/api",
+		Schemes:  []string{"http"},
+	}, apiclient.UserConfig{
+		Name:     "Name",
+		Password: "Password",
+		Source:   models.UserSourceLOCAL,
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cluster_api := client.Cluster
+	content_library_vm_template_api := client.ContentLibraryVMTemplate
+	vm_api := client.VM
+	get_clusters_params := cluster.NewGetClustersParams()
+	get_clusters_params.RequestBody = &models.GetClustersRequestBody{
+		Where: &models.ClusterWhereInput{
+			Name: pointy.String("cluster_name"),
+		},
+	}
+	rawClusters, err := cluster_api.GetClusters(get_clusters_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	clusters := rawClusters.Payload
+	get_templates_params := content_library_vm_template.NewGetContentLibraryVMTemplatesParams()
+	get_templates_params.RequestBody = &models.GetContentLibraryVMTemplatesRequestBody{
+		Where: &models.ContentLibraryVMTemplateWhereInput{
+			Name: pointy.String("template_name"),
+		},
+	}
+	rawTemplates, err := content_library_vm_template_api.GetContentLibraryVMTemplates(get_templates_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	templates := rawTemplates.Payload
+	create_vm_params := vm.NewCreateVMFromContentLibraryTemplateParams()
+	create_vm_params.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
+		{
+			TemplateID: templates[0].ID,
+			ClusterID:  clusters[0].ID,
+			Name:       pointy.String("vm_name"),
+			IsFullCopy: pointy.Bool(false),
+		},
+	}
+	rawVms, err := vm_api.CreateVMFromContentLibraryTemplate(create_vm_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	vms := rawVms.Payload
+	err = utils.WaitTasks(context.Background(), client, funk.Map(vms, func(withTaskObj *models.WithTaskVM) string {
+		return *withTaskObj.TaskID
+	}).([]string), 1*time.Second)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+```
+
+</TabItem>
+
 </Tabs>
 
-## 模板创建虚拟机并编辑虚拟机盘
+## 内容库模板创建虚拟机并编辑虚拟机盘
 
 通过内容库模板创建一台虚拟机，配置虚拟机的磁盘。
 
@@ -90,7 +230,7 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
 
 返回值为被创建的虚拟机
 
-通过模板创建虚拟机时，如果希望对原有的磁盘进行任何修改，可以通过 disk_operate 参数进行配置
+通过内容库模板创建虚拟机时，如果希望对原有的磁盘进行任何修改，可以通过 disk_operate 参数进行配置
 disk_operate 参数的类型是 VmDiskOperate，它是一个字典，包含以下字段：
 - remove_disks 由于删除指定index的磁盘
 - modify_disks 修改现有磁盘的配置，目前仅支持修改总线，如果有其他修改可以通过，删除原有盘
@@ -194,6 +334,198 @@ def create_vm_from_template_modify_disk_example():
     create_vm_from_template_modify_disk("template-name", "cluster-name", "vm-name", disk_operate)
 ```
 </TabItem>
+<TabItem value="java" label="Java">
+
+```java
+package com.smartx.com;
+​
+import com.smartx.tower.ApiClient;
+import com.smartx.tower.ApiException;
+import com.smartx.tower.ClientUtil;
+import com.smartx.tower.TaskUtil;
+import com.smartx.tower.api.ClusterApi;
+import com.smartx.tower.api.ContentLibraryVmTemplateApi;
+import com.smartx.tower.api.VmApi;
+import com.smartx.tower.model.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+​
+public class App {
+    public static void main(String[] args) throws ApiException, IOException {
+        ApiClient client = new ApiClient();
+        client.setBasePath("http://tower.smartx.com/v2/api");
+        ClientUtil.login("username", "root", client);
+​
+        ClusterApi clusterApi = new ClusterApi(client);
+        ContentLibraryVmTemplateApi contentLibraryVmTemplateApi = new ContentLibraryVmTemplateApi(client);
+        VmApi vmApi = new VmApi(client);
+        GetClustersRequestBody getClustersParams = new GetClustersRequestBody()
+                .where(new ClusterWhereInput()
+                        .name("cluster_name"));
+        List<Cluster> clusters = clusterApi.getClusters(getClustersParams);
+        GetContentLibraryVmTemplatesRequestBody getTemplatesParams = new GetContentLibraryVmTemplatesRequestBody()
+                .where(new ContentLibraryVmTemplateWhereInput()
+                        .name("template_name"));
+        List<ContentLibraryVmTemplate> templates = contentLibraryVmTemplateApi
+                .getContentLibraryVmTemplates(getTemplatesParams);
+        List<VmCreateVmFromContentLibraryTemplateParams> createVmParams = new ArrayList<>();
+        createVmParams.add(new VmCreateVmFromContentLibraryTemplateParams()
+                .templateId(templates.get(0).getId())
+                .clusterId(clusters.get(0).getId())
+                .name("vm_name")
+                .isFullCopy(false)
+                .diskOperate(new VmDiskOperate()
+                        .removeDisks(new VmDiskOperateRemoveDisks()
+                                .addDiskIndexItem(0))
+                        .newDisks(new VmDiskParams()
+                                .addMountCdRomsItem(new VmCdRomParams()
+                                        .boot(2)
+                                        .contentLibraryImageId(""))
+                                .addMountDisksItem(new MountDisksParams()
+                                        .boot(3)
+                                        .bus(Bus.fromValue("VIRTIO"))
+                                        .vmVolumeId("cljm6x2g1405g0958tp3zkhvh"))
+                                .addMountNewCreateDisksItem(
+                                        new MountNewCreateDisksParams()
+                                                .boot(4)
+                                                .bus(Bus.fromValue(
+                                                        "VIRTIO"))
+                                                .vmVolume(new MountNewCreateDisksParamsVmVolume()
+                                                        .name("test")
+                                                        .size(10737418240L)
+                                                        .elfStoragePolicy(
+                                                                VmVolumeElfStoragePolicyType
+                                                                        .fromValue("REPLICA_2_THIN_PROVISION")))))));
+        List<WithTaskVm> vms = vmApi.createVmFromContentLibraryTemplate(createVmParams);
+        List<String> taskIds = vms.stream().map(withTaskObj -> withTaskObj.getTaskId())
+                .collect(Collectors.toList());
+        TaskUtil.WaitTasks(taskIds, client);
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+​
+import (
+	"context"
+	"fmt"
+	"time"
+​
+	"github.com/openlyinc/pointy"
+	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/content_library_vm_template"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	"github.com/thoas/go-funk"
+)
+​
+func main() {
+	client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
+		Host:     "tower.smartx.com",
+		BasePath: "v2/api",
+		Schemes:  []string{"http"},
+	}, apiclient.UserConfig{
+		Name:     "Name",
+		Password: "Password",
+		Source:   models.UserSourceLOCAL,
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cluster_api := client.Cluster
+	content_library_vm_template_api := client.ContentLibraryVMTemplate
+	vm_api := client.VM
+	get_clusters_params := cluster.NewGetClustersParams()
+	get_clusters_params.RequestBody = &models.GetClustersRequestBody{
+		Where: &models.ClusterWhereInput{
+			Name: pointy.String("cluster_name"),
+		},
+	}
+	rawClusters, err := cluster_api.GetClusters(get_clusters_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	clusters := rawClusters.Payload
+	get_templates_params := content_library_vm_template.NewGetContentLibraryVMTemplatesParams()
+	get_templates_params.RequestBody = &models.GetContentLibraryVMTemplatesRequestBody{
+		Where: &models.ContentLibraryVMTemplateWhereInput{
+			Name: pointy.String("template_name"),
+		},
+	}
+	rawTemplates, err := content_library_vm_template_api.GetContentLibraryVMTemplates(get_templates_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	templates := rawTemplates.Payload
+	create_vm_params := vm.NewCreateVMFromContentLibraryTemplateParams()
+	create_vm_params.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
+		{
+			TemplateID: templates[0].ID,
+			ClusterID:  clusters[0].ID,
+			Name:       pointy.String("vm_name"),
+			IsFullCopy: pointy.Bool(false),
+			DiskOperate: &models.VMDiskOperate{
+				RemoveDisks: &models.VMDiskOperateRemoveDisks{
+					DiskIndex: []int32{0},
+				},
+				NewDisks: &models.VMDiskParams{
+					MountCdRoms: []*models.VMCdRomParams{
+						{
+							Boot:                  pointy.Int32(2),
+							ContentLibraryImageID: pointy.String(""),
+						},
+					},
+					MountDisks: []*models.MountDisksParams{
+						{
+							Boot:       pointy.Int32(3),
+							Bus:        models.BusVIRTIO.Pointer(),
+							VMVolumeID: pointy.String("cljm6x2g1405g0958tp3zkhvh"),
+						},
+					},
+					MountNewCreateDisks: []*models.MountNewCreateDisksParams{
+						{
+							Boot: pointy.Int32(4),
+							Bus:  models.BusVIRTIO.Pointer(),
+							VMVolume: &models.MountNewCreateDisksParamsVMVolume{
+								Name:             pointy.String("test"),
+								Size:             pointy.Int64(10737418240),
+								ElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),
+							},
+						},
+					},
+				},
+			},
+		},
+	}
+	rawVms, err := vm_api.CreateVMFromContentLibraryTemplate(create_vm_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	vms := rawVms.Payload
+	err = utils.WaitTasks(context.Background(), client, funk.Map(vms, func(withTaskObj *models.WithTaskVM) string {
+		return *withTaskObj.TaskID
+	}).([]string), 1*time.Second)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+```
+
+</TabItem>
 </Tabs>
 
 ## 通过内容库模板创建并编辑虚拟网卡
@@ -286,6 +618,155 @@ def create_vm_from_template_modified_nic_example():
     create_vm_from_template_modified_nic("template_name", "cluster_name", "vm_name", nic_params)
 ```
 </TabItem>
+<TabItem label="Java" value="java">
+
+```java
+package com.smartx.com;
+​
+import com.smartx.tower.ApiClient;
+import com.smartx.tower.ApiException;
+import com.smartx.tower.ClientUtil;
+import com.smartx.tower.TaskUtil;
+import com.smartx.tower.api.ClusterApi;
+import com.smartx.tower.api.ContentLibraryVmTemplateApi;
+import com.smartx.tower.api.VmApi;
+import com.smartx.tower.model.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+​
+public class App {
+    public static void main(String[] args) throws ApiException, IOException {
+        ApiClient client = new ApiClient();
+        client.setBasePath("http://tower.smartx.com/v2/api");
+        ClientUtil.login("username", "root", client);
+​
+        ClusterApi clusterApi = new ClusterApi(client);
+        ContentLibraryVmTemplateApi contentLibraryVmTemplateApi = new ContentLibraryVmTemplateApi(client);
+        VmApi vmApi = new VmApi(client);
+        GetClustersRequestBody getClustersParams = new GetClustersRequestBody()
+                .where(new ClusterWhereInput()
+                        .name("cluster_name"));
+        List<Cluster> clusters = clusterApi.getClusters(getClustersParams);
+        GetContentLibraryVmTemplatesRequestBody getTemplatesParams = new GetContentLibraryVmTemplatesRequestBody()
+                .where(new ContentLibraryVmTemplateWhereInput()
+                        .name("template_name"));
+        List<ContentLibraryVmTemplate> templates = contentLibraryVmTemplateApi
+                .getContentLibraryVmTemplates(getTemplatesParams);
+        List<VmCreateVmFromContentLibraryTemplateParams> createVmParams = new ArrayList<>();
+        createVmParams.add(new VmCreateVmFromContentLibraryTemplateParams()
+                .templateId(templates.get(0).getId())
+                .clusterId(clusters.get(0).getId())
+                .name("vm_name")
+                .isFullCopy(false)
+                .addVmNicsItem(new VmNicParams()
+                        .connectVlanId("vlan_id")
+                        .enabled(true)
+                        .model(VmNicModel.fromValue("VIRTIO"))));
+        List<WithTaskVm> vms = vmApi.createVmFromContentLibraryTemplate(createVmParams);
+        List<String> taskIds = vms.stream().map(withTaskObj -> withTaskObj.getTaskId()).collect(Collectors.toList());
+        TaskUtil.WaitTasks(taskIds, client);
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+​
+import (
+	"context"
+	"fmt"
+	"time"
+​
+	"github.com/openlyinc/pointy"
+	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/content_library_vm_template"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	"github.com/thoas/go-funk"
+)
+​
+func main() {
+	client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
+		Host:     "tower.smartx.com",
+		BasePath: "v2/api",
+		Schemes:  []string{"http"},
+	}, apiclient.UserConfig{
+		Name:     "Name",
+		Password: "Password",
+		Source:   models.UserSourceLOCAL,
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cluster_api := client.Cluster
+	content_library_vm_template_api := client.ContentLibraryVMTemplate
+	vm_api := client.VM
+	get_clusters_params := cluster.NewGetClustersParams()
+	get_clusters_params.RequestBody = &models.GetClustersRequestBody{
+		Where: &models.ClusterWhereInput{
+			Name: pointy.String("cluster_name"),
+		},
+	}
+	rawClusters, err := cluster_api.GetClusters(get_clusters_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	clusters := rawClusters.Payload
+	get_templates_params := content_library_vm_template.NewGetContentLibraryVMTemplatesParams()
+	get_templates_params.RequestBody = &models.GetContentLibraryVMTemplatesRequestBody{
+		Where: &models.ContentLibraryVMTemplateWhereInput{
+			Name: pointy.String("template_name"),
+		},
+	}
+	rawTemplates, err := content_library_vm_template_api.GetContentLibraryVMTemplates(get_templates_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	templates := rawTemplates.Payload
+	create_vm_params := vm.NewCreateVMFromContentLibraryTemplateParams()
+	create_vm_params.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
+		{
+			TemplateID: templates[0].ID,
+			ClusterID:  clusters[0].ID,
+			Name:       pointy.String("vm_name"),
+			IsFullCopy: pointy.Bool(false),
+			VMNics: []*models.VMNicParams{
+				{
+					ConnectVlanID: pointy.String("vlan_id"),
+					Enabled:       pointy.Bool(true),
+					Model:         models.VMNicModelVIRTIO.Pointer(),
+				},
+			},
+		},
+	}
+	rawVms, err := vm_api.CreateVMFromContentLibraryTemplate(create_vm_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	vms := rawVms.Payload
+	err = utils.WaitTasks(context.Background(), client, funk.Map(vms, func(withTaskObj *models.WithTaskVM) string {
+		return *withTaskObj.TaskID
+	}).([]string), 1*time.Second)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+```
+</TabItem>
+
 </Tabs>
 
 
@@ -306,7 +787,7 @@ cloud_init 配置项是 TemplateCloudInit 类型，是一个字典，包含以�
 - nameservers: dns 服务地址，是一个字符串列表，最多支持配置3个
 - networks: 网络配置，一个字典列表
     - ip_address: ip 地址，配置静态地址后必填
-    - net_mask: 子网，配置静态地址后必填
+    - netmask: 子网，配置静态地址后必填
     - nic_index: 配置网卡的顺序，以 0 为起始
     - routes: 静态路由配置，一个字典列表
         - gateway: 网关地址
@@ -383,7 +864,7 @@ def create_vm_from_template_with_cloudinit_example():
         "networks": [
             {
                 "ip_address": "192.168.20.1",
-                "net_mask": "255.255.240.0",
+                "netmask": "255.255.240.0",
                 "nic_index": 0,
                 "routes": [
                     {
@@ -401,6 +882,177 @@ def create_vm_from_template_with_cloudinit_example():
         "user_data": "user_data"
     }
     create_vm_from_template_with_cloudinit("template_name", "cluster_name", "vm_name", cloud_init)
+```
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+package com.smartx.com;
+​
+import com.smartx.tower.ApiClient;
+import com.smartx.tower.ApiException;
+import com.smartx.tower.ClientUtil;
+import com.smartx.tower.TaskUtil;
+import com.smartx.tower.api.ClusterApi;
+import com.smartx.tower.api.ContentLibraryVmTemplateApi;
+import com.smartx.tower.api.VmApi;
+import com.smartx.tower.model.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+​
+public class App {
+    public static void main(String[] args) throws ApiException, IOException {
+        ApiClient client = new ApiClient();
+        client.setBasePath("http://tower.smartx.com/v2/api");
+        ClientUtil.login("username", "root", client);
+​
+        ClusterApi clusterApi = new ClusterApi(client);
+        ContentLibraryVmTemplateApi contentLibraryVmTemplateApi = new ContentLibraryVmTemplateApi(client);
+        VmApi vmApi = new VmApi(client);
+        GetClustersRequestBody getClustersParams = new GetClustersRequestBody()
+                .where(new ClusterWhereInput()
+                        .name("cluster_name"));
+        List<Cluster> clusters = clusterApi.getClusters(getClustersParams);
+        GetContentLibraryVmTemplatesRequestBody getTemplatesParams = new GetContentLibraryVmTemplatesRequestBody()
+                .where(new ContentLibraryVmTemplateWhereInput()
+                        .name("template_name"));
+        List<ContentLibraryVmTemplate> templates = contentLibraryVmTemplateApi
+                .getContentLibraryVmTemplates(getTemplatesParams);
+        List<VmCreateVmFromContentLibraryTemplateParams> createVmParams = new ArrayList<>();
+        createVmParams.add(new VmCreateVmFromContentLibraryTemplateParams()
+                .templateId(templates.get(0).getId())
+                .clusterId(clusters.get(0).getId())
+                .name("vm_name")
+                .isFullCopy(false)
+                .cloudInit(new TemplateCloudInit()
+                        .defaultUserPassword("password")
+                        .addNameserversItem("114.114.114.114")
+                        .addNetworksItem(new CloudInitNetWork()
+                                .ipAddress("192.168.20.1")
+                                .netmask("255.255.240.0")
+                                .nicIndex(0)
+                                .addRoutesItem(new CloudInitNetWorkRoute()
+                                        .gateway("192.168.16.1")
+                                        .network("0.0.0.0")
+                                        .netmask("0.0.0.0")))
+                        .hostname("test")
+                        .addPublicKeysItem("key_content")
+                        .userData("user_data")));
+        List<WithTaskVm> vms = vmApi.createVmFromContentLibraryTemplate(createVmParams);
+        List<String> taskIds = vms.stream().map(withTaskObj -> withTaskObj.getTaskId()).collect(Collectors.toList());
+        TaskUtil.WaitTasks(taskIds, client);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+​
+import (
+	"context"
+	"fmt"
+	"time"
+​
+	"github.com/openlyinc/pointy"
+	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/content_library_vm_template"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	"github.com/thoas/go-funk"
+)
+​
+func main() {
+	client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
+		Host:     "tower.smartx.com",
+		BasePath: "v2/api",
+		Schemes:  []string{"http"},
+	}, apiclient.UserConfig{
+		Name:     "Name",
+		Password: "Password",
+		Source:   models.UserSourceLOCAL,
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cluster_api := client.Cluster
+	content_library_vm_template_api := client.ContentLibraryVMTemplate
+	vm_api := client.VM
+	get_clusters_params := cluster.NewGetClustersParams()
+	get_clusters_params.RequestBody = &models.GetClustersRequestBody{
+		Where: &models.ClusterWhereInput{
+			Name: pointy.String("cluster_name"),
+		},
+	}
+	rawClusters, err := cluster_api.GetClusters(get_clusters_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	clusters := rawClusters.Payload
+	get_templates_params := content_library_vm_template.NewGetContentLibraryVMTemplatesParams()
+	get_templates_params.RequestBody = &models.GetContentLibraryVMTemplatesRequestBody{
+		Where: &models.ContentLibraryVMTemplateWhereInput{
+			Name: pointy.String("template_name"),
+		},
+	}
+	rawTemplates, err := content_library_vm_template_api.GetContentLibraryVMTemplates(get_templates_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	templates := rawTemplates.Payload
+	create_vm_params := vm.NewCreateVMFromContentLibraryTemplateParams()
+	create_vm_params.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
+		{
+			TemplateID: templates[0].ID,
+			ClusterID:  clusters[0].ID,
+			Name:       pointy.String("vm_name"),
+			IsFullCopy: pointy.Bool(false),
+			CloudInit: &models.TemplateCloudInit{
+				DefaultUserPassword: pointy.String("password"),
+				Nameservers:         []string{"114.114.114.114"},
+				Networks: []*models.CloudInitNetWork{
+					{
+						IPAddress: pointy.String("192.168.20.1"),
+						Netmask:   pointy.String("255.255.240.0"),
+						NicIndex:  pointy.Int32(0),
+						Routes: []*models.CloudInitNetWorkRoute{
+							{
+								Gateway: pointy.String("192.168.16.1"),
+								Network: pointy.String("0.0.0.0"),
+								Netmask: pointy.String("0.0.0.0"),
+							},
+						},
+					},
+				},
+				Hostname:   pointy.String("test"),
+				PublicKeys: []string{"key_content"},
+				UserData:   pointy.String("user_data"),
+			},
+		},
+	}
+	rawVms, err := vm_api.CreateVMFromContentLibraryTemplate(create_vm_params)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	vms := rawVms.Payload
+	err = utils.WaitTasks(context.Background(), client, funk.Map(vms, func(withTaskObj *models.WithTaskVM) string {
+		return *withTaskObj.TaskID
+	}).([]string), 1*time.Second)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
 ```
 </TabItem>
 </Tabs>
