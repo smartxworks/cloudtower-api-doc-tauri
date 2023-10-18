@@ -9,6 +9,8 @@ const {
 } = require("./describe");
 
 const versions = [
+  "3.3.0",
+  "3.2.0",
   '3.1.0',
   '3.0.0',
   '2.8.0',
@@ -52,7 +54,7 @@ const getPrevVersion = (v) => {
 const getSwaggerPath = (v) =>
   nodePath.resolve(
     process.cwd(),
-    nodePath.join('cloudtower-api-doc', 'swagger', 'specs',  `${v}-swagger.json`)   
+    nodePath.join('cloudtower-api-doc', 'static', 'specs',  `${v}-swagger.json`)   
   );
 
 const getVersionedPath =(version, isEn) => {
