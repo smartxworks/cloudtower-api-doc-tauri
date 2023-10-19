@@ -15,7 +15,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 18
       - name: get version
         run: echo "TAG_VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: create release
@@ -42,7 +42,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v1
       with:
-        node-version: 16
+        node-version: 18
     - name: install Rust stable
       uses: actions-rs/toolchain@v1
       with:

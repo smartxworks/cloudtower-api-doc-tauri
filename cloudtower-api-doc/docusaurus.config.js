@@ -5,16 +5,6 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
 
-if(!process.env.TAURI_ENV) {
-  process.env = new Proxy(process.env, {
-    get(target, prop) {
-      if(prop === 'NODE_ENV') {
-        return 'development'
-      }
-      return typeof target[prop] === 'function' ? target[prop].bind(target) : target[prop]
-    }
-  })
-}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -89,6 +79,7 @@ const config = {
       };
     },
     'docusaurus-plugin-sass',
+    'docusaurus2-dotenv'
   ],
 
   themeConfig:

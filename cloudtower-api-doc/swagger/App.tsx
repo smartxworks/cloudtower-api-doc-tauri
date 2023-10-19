@@ -82,13 +82,16 @@ const App: React.FC = () => {
   const specRef = useRef<ISpec>(spec);
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
-    const swaggerSpec: ISpec = _.cloneDeep(specMap[lastVersion]);
-    setRawSpec(swaggerSpec);
-    i18next.changeLanguage(i18n.currentLocale);
-    const newSpec = splitSchema(
-      wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version)
-    );
-    setSpec(newSpec);
+    specMap[lastVersion].then(data => {
+      const swaggerSpec: ISpec = _.cloneDeep(data.default);
+      setRawSpec(swaggerSpec);
+      i18next.changeLanguage(i18n.currentLocale);
+      const newSpec = splitSchema(
+        wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version)
+      );
+      setSpec(newSpec);
+    })
+
   }, [version, i18n.currentLocale]);
 
   useEffect(() => {
