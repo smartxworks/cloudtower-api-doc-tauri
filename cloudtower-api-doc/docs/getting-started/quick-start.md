@@ -13,54 +13,38 @@ import TabItem from '@theme/TabItem';
 
 ```bash
 #!/bin/bash
-for arg in "$@"; do
-    index=$(echo $arg | cut -f1 -d=)
-    val=$(echo $arg | cut -f2 -d=)
-    case $index in
-    --username) ;&
-    -u)
-        # 登陆 cloudtower 的用户名
-        username=$val
-        ;;
-    --password) ;&
-    -p)
-        # 登陆 cloudtower 的密码
-        password=$val
-        ;;
-    --endpoint) ;&
-    -e)
-        # cloudtower api 的地址，举例 http://tower.smartx.com
-        endpoint=$val
-        ;;
-    *) ;;
+while getopts u:p:e: flag
+do
+    case "${flag}" in
+        u) username=${OPTARG};;
+        p) password=${OPTARG};;
+        e) endpoint=${OPTARG};;
     esac
 done
 
 if [ -z "$username" ]; then
-    echo "username is required"
+    echo "-u username is required"
     exit 1
 fi
 if [ -z "$password" ]; then
-    echo "password is required"
+    echo "-p password is required"
     exit 1
 fi
 if [ -z "$endpoint" ]; then
-    echo "endpoint is required"
+    echo "-e endpoint is required"
     exit 1
 fi
 
+
 # 通过 /v2/api/login 进行登录，并获取 token
-token = curl \
-    -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"username":"'$username'","password":"'$password'","source":"LOCAL"}' $endpoint/v2/api/login | jq ".data.token" -r
+token=$(curl -X POST -H "Content-Type: application/json" -d '{"username":"'$username'","password":"'$password'","source":"LOCAL"}' $endpoint/v2/api/login | jq -r ".data.token")
 
 # 通过 Authorization header 携带 token 并为请求完成鉴权, 通过 /v2/api/get-vms 来获取虚拟机列表
 curl \
     -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: $token" \
-    -d '{"where":}' $endpoint/v2/api/get-vms | jq ".data.vms"
+    -d '{"where":{}}' http://192.168.27.57/v2/api/get-vms | jq ".[]"
 
 ```
 </TabItem>
