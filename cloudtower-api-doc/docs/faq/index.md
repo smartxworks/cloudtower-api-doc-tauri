@@ -93,7 +93,7 @@ title: 常见问题
         "gateway":"192.168.1.1"
     }
 }
-
+````
 ## ResourceLockedError
 
 虽然 cloudtower api 对外表现的形式是命令式的 api，实际上对集群进行操作的时候，会将命令式的 api 转化为声明式的 api，这样当重复操作一些资源的时候，可能会产生脏数据的冲突。
