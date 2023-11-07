@@ -1,0 +1,11 @@
+{
+  "schemas": {},
+  "tags": [
+    {
+      "name": "ApiInfo",
+      "x-displayName": "",
+      "description": ""
+    }
+  ],
+  "paths": {}
+}

@@ -10,7 +10,6 @@ const SCHEMA_URL = `http://tower.smartx.com/v2/api/swagger3`
 const sync = (v) => {
   const fileUrl = new url.URL(SCHEMA_URL);
   const fileName = `${v}-swagger.json`;
-  console.log(fileName);
   const filePath = path.resolve(__dirname, `../static/specs/${fileName}`)
   http.get(fileUrl.href, function(response) {
     let content = '';
