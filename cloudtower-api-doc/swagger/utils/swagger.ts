@@ -1,6 +1,7 @@
 import { OpenAPIV3 } from 'openapi-types';
 
 export const specMap = {
+  '3.4.0': import('../../static/specs/3.4.0-swagger.json'),
   '3.3.0': import('../../static/specs/3.3.0-swagger.json'),
   '3.2.0': import('../../static/specs/3.2.0-swagger.json'),
   '3.1.0': import('../../static/specs/3.1.0-swagger.json'),
