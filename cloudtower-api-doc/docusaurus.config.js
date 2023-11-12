@@ -45,6 +45,42 @@ const config = {
     ],
   ],
   plugins: [
+    (context, options) => {
+      return {
+        name: 'docusaurus-plugin',
+        injectHtmlTags({ content }) {
+          return {
+            headTags: [
+              {
+                tagName: 'link',
+                attributes: {
+                  rel: 'stylesheet',
+                  href: '/pagefind/pagefind-ui.css',
+                },
+              },
+            ],
+            preBodyTags: [
+              {
+                tagName: 'script',
+                attributes: {
+                  charset: 'utf-8',
+                  src: '/pagefind/pagefind-ui.js',
+                },
+              },
+            ],
+            postBodyTags: [
+              `
+              <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#pagefind-search", showSubResults: true });
+                  });
+              </script>
+              `
+            ],
+          };
+        },
+      };
+    },
     (context, opts) => {
       return {
         name: "overwrite-config",
@@ -53,7 +89,7 @@ const config = {
             ...(!process.env.TAURI_ENV && {
               output: {
                 ...config.output,
-                filename: '[name].[contenthash:8].js' ,
+                filename: '[name].[contenthash:8].js',
                 chunkFilename: '[name].[contenthash:8].js',
               },
             }),
@@ -65,7 +101,7 @@ const config = {
             resolve: {
               fallback: {
                 stream: require.resolve("stream-browserify"),
-                util:  require.resolve("util/"),
+                util: require.resolve("util/"),
                 path: require.resolve("path-browserify"),
                 os: require.resolve("os-browserify/browser"),
                 tty: require.resolve("tty-browserify"),
@@ -92,12 +128,16 @@ const config = {
         },
         items: [
           {
-            label: "文档" ,
+            label: "文档",
             to: "/",
           },
           {
             to: "/api",
             label: "API 参考",
+          },
+          {
+            to: "/search",
+            label: "搜索"
           },
           {
             type: "docsVersionDropdown",
