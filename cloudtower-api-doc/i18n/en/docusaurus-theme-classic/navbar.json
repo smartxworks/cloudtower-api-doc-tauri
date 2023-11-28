@@ -2,6 +2,12 @@
   "item.label.API 参考": {
     "message": "API Reference"
   },
+  "item.label.下载": {
+    "message": "Download"
+  },
+  "item.label.桌面端": {
+    "message": "Desktop App"
+  },
   "item.label.文档": {
     "message": "Docs"
   }
