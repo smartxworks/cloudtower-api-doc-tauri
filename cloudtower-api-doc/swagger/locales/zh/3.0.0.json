@@ -1,5 +1,8 @@
 {
   "schemas": {
+    "UserSource": {
+      "enum": "创建来源。当用户为 tower 平台创建用户时，须指定 source 为 LOCAL\n* LDAP: LDAP （已弃用）\n* LOCAL: tower 平台创建\n* AUTHN: 外部认证源"
+    },
     "HostWhereInput": {
       "access_ip": "接入 IP",
       "access_ip_contains": "接入 IP包含指定字符",
