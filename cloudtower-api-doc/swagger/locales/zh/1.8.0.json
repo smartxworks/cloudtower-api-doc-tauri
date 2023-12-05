@@ -185,7 +185,7 @@
       "description": ""
     },
     "/create-vm-vlan": {
-      "summary": "创建 VLAN",
+      "summary": "创建虚拟机网络",
       "description": ""
     },
     "/create-vm-volume": {
@@ -329,7 +329,7 @@
       "description": ""
     },
     "/delete-vm-vlan": {
-      "summary": "删除 VLAN",
+      "summary": "删除虚拟机网络",
       "description": ""
     },
     "/delete-vm-volume": {

@@ -60,6 +60,7 @@ import zh3_4API from './locales/zh/3.4.0.json';
 import en3_4API from './locales/en/3.4.0.json';
 
 
+export const fallbackNS = ['3_4_0','3_3_0', '3_2_0', '3_1_0', '3_0_0', '2_8_0', '2_7_0', '2_6_0', '2_5_0', '2_4_0', '2_3_0', '2_2_0', '2_1_0', '2_0_0', '1_10_0', '1_9_0', '1_8_0'];
 export type ApiDoc = {
   summary: string;
   description: string;
@@ -113,7 +114,7 @@ i18next.init({
   lng: SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-  fallbackNS: ['1_8_0','1_9_0','1_10_0', '2_0_0', '2_1_0','2_2_0', '2_3_0', '2_4_0','2_5_0', '2_6_0','2_7_0', '2_8_0', '3_0_0', '3_1_0', '3_2_0', '3_3_0', '3_4_0'],
+  fallbackNS,
   interpolation: {
     prefix: "{",
     suffix: "}",

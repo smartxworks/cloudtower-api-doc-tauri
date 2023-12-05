@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { OpenAPIV3 } from "openapi-types";
-import i18next, { ApiDoc } from "../i18n";
+import i18next, { ApiDoc, fallbackNS } from "../i18n";
 import { ISpec  } from "./swagger";
 import { describeSchema } from "./describe";
 import { tagsGroup } from './constant';
@@ -15,6 +15,14 @@ const replaceTags = (tag:string) => {
   return tag;
 }
 
+const getNs = (version: string) => {
+  return version.split('.').join('_');
+}
+
+const getFallbackNS = (version: string) => {
+  return fallbackNS.slice(fallbackNS.indexOf(getNs(version)))
+}
+
 export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
@@ -23,8 +31,11 @@ export const wrapSpecWithI18n = (
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
   const tags = new Set<string>();
+  const ns = getNs(version);
+  const fallbackNS = getFallbackNS(version);
+  i18next.options.fallbackNS = fallbackNS;
   Object.keys(paths).forEach((p) => {
-    const apiDoc = i18next.t(`${version.split('.').join('_')}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
+    const apiDoc = i18next.t(`${ns}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
     const method = Object.keys(paths[p])[0]
     const operationObj = paths[p][method] as OpenAPIV3.OperationObject;
     const { description, summary } = apiDoc;
@@ -71,7 +82,7 @@ export const wrapSpecWithI18n = (
   });
   // handle schemas
   Object.keys(components.schemas).forEach((s) => {
-    const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
+    const schema = i18next.t(`${ns}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
     describeSchema({
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
@@ -82,7 +93,7 @@ export const wrapSpecWithI18n = (
   });
   // handle security schemas
   Object.keys(components.securitySchemes).forEach((s) => {
-    const schema = i18next.t(`${version.split('.').join('_')}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
+    const schema = i18next.t(`${ns}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
     _.set(cloneSpec, ["components","securitySchemes", s, "description"], schema['description']);
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });
