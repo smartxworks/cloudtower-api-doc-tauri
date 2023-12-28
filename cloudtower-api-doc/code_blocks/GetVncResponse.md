@@ -2,10 +2,11 @@
 {
   "data": {
     "vnc": {
-      "vm_uuid": "75d75e5d-88df-4f16-bfce-230974bba855",
-      "host_ip": "192.168.17.102",
-      "cluster_ip": "192.168.17.97",
-      "raw_token": "8dcad47b9b084be6b97903e805b38386",
+      "raw_token": "a97ee2b12ee54742a2358b155c091de6",
+      "token": "U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g==",
+      "vm_uuid": "56ee1229-9f37-4fd3-94e0-8e2202b15052",
+      "cluster_ip": "172.20.128.106",
+      "host_ip": "172.20.128.104"
     }
   }
 }
