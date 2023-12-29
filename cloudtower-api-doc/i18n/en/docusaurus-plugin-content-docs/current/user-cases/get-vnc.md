@@ -27,21 +27,37 @@ To use the link, you can refer to how [react-vnc](https://github.com/roerohan/re
 
 Specific examples:
 
-Take the return value above as an example. If we want to connect directly, we will finally build a URL like this:
+Assuming we receive a return like this:
 
 ```
-wss://172.20.128.106/websockify/?uuid=56ee1229-9f37-4fd3-94e0-8e2202b15052&token=a97ee2b12ee54742a2358b155c091de6&host=172.20.128.104
+{
+  "data": {
+    "vnc": {
+      "raw_token": "1a2bc3d4567e89f0a1b2c3d4e5f6a7b8",
+      "token": "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=",
+      "vm_uuid": "00000000-0000-0000-0000-000000000000",
+      "cluster_ip": "192.168.5.2",
+      "host_ip": "192.168.5.4"
+    }
+  }
+}
 ```
 
-If we want to forward through CloudTower, we need to process the token first:
+If we want to connect directly, we will finally construct a URL like this:
 
 ```
-token = "U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g=="
-encodeURIComponent(token) = "U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g%3D%3D"
+wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-Assuming that the CloudTower address is 172.20.128.127, the final URL is constructed as follows:
+If we want to forward through CloudTower, we need to process the token first. Assuming our token is MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo= (obtained by base64 encryption based on 123456789abcdefghijklmnopqrstuvwxyz), we need to escape characters such as /, +, and =.
 
 ```
-wss://172.20.128.127/websockify/?token=U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g%3D%3D&uuid=56ee1229-9f37-4fd3-94e0-8e2202b15052&host=172.20.128.104
+token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
+encodeURIComponent(token) = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D"
+```
+
+Assuming the CloudTower address is 192.168.5.1, we will finally construct a URL like this:
+
+```
+wss://192.168.5.1/websockify/?token=MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D&uuid=00000000-0000-0000-0000-000000000000&host=192.168.5.4
 ```
