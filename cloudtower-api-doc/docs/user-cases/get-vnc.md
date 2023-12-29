@@ -20,7 +20,7 @@ import GetVncResponse from '../../code_blocks/GetVncResponse.md'
 
 <FormatVnc />
 
-或者可以选择使用 `token`, `vm_uuid` 和 `host_ip`以构建通过 CloudTower 转发的 noVnc 链接，由于 token 中可能包含一部分不能包含在 URL 的字符，例如 `/`，`+` 等，需要转移成十六进制数字：
+或者可以选择使用 `token`, `vm_uuid` 和 `host_ip`以构建通过 CloudTower 转发的 noVnc 链接，由于 token 是一个被 base64 处理后的字符串，因此中可能包含一部分不能包含在 URL 的字符，例如 `/`，`+`，`=` 等，需要转移成十六进制数字：
 
 <FormatVncProxy />
 
@@ -28,21 +28,37 @@ import GetVncResponse from '../../code_blocks/GetVncResponse.md'
 
 具体示例：
 
-以上文拿到的返回值举例，如果希望直连，我们最后会构建出这样的一个 URL
+假设我们接收到了这样的一个返回：
 
 ```
-wss://172.20.128.106/websockify/?uuid=56ee1229-9f37-4fd3-94e0-8e2202b15052&token=a97ee2b12ee54742a2358b155c091de6&host=172.20.128.104
+{
+  "data": {
+    "vnc": {
+      "raw_token": "1a2bc3d4567e89f0a1b2c3d4e5f6a7b8",
+      "token": "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=",
+      "vm_uuid": "00000000-0000-0000-0000-000000000000",
+      "cluster_ip": "192.168.5.2",
+      "host_ip": "192.168.5.4"
+    }
+  }
+}
 ```
 
-如果希望通过 CloudTower 转发，我们需要先处理 token
+如果希望直连，我们最后会构建出这样的一个 URL
 
 ```
-token = "U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g=="
-encodeURIComponent(token) = "U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g%3D%3D"
+wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-假设 CloudTower 地址是 172.20.128.127，最后构建出这样的一个 URL
+如果希望通过 CloudTower 转发，我们需要先处理 token，假设我们的 token 是 `MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=` （基于 `123456789abcdefghijklmnopqrstuvwxyz` base64 加密获得），我们需要将 `/`，`+`，`=` 等字符转义。
 
 ```
-wss://172.20.128.127/websockify/?token=U2FsdGVkX19Tb5CKbhxb1UiuFLFHg2nrPM2UxEHRjsLwfQTPuh780R03iJCB4EEmlRS0i2WZTK5Spb4yokCz3g%3D%3D&uuid=56ee1229-9f37-4fd3-94e0-8e2202b15052&host=172.20.128.104
+token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
+encodeURIComponent(token) = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D"
+```
+
+假设 CloudTower 地址是 192.168.5.1 URL 最后会是：
+
+```
+wss://192.168.5.1/websockify/?token=MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D&uuid=00000000-0000-0000-0000-000000000000&host=192.168.5.4
 ```
