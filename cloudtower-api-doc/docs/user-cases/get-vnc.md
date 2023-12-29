@@ -20,7 +20,7 @@ import GetVncResponse from '../../code_blocks/GetVncResponse.md'
 
 <FormatVnc />
 
-或者可以选择使用 `token`, `vm_uuid` 和 `host_ip`以构建通过 CloudTower 转发的 noVnc 链接，由于 token 是一个被 base64 处理后的字符串，因此中可能包含一部分不能包含在 URL 的字符，例如 `/`，`+`，`=` 等，需要转移成十六进制数字：
+或者可以选择使用 `token`, `vm_uuid` 和 `host_ip`以构建通过 CloudTower 转发的 noVnc 链接，由于 token 是一个被 base64 处理后的字符串，因此中可能包含一部分不能包含在 URL 的字符，例如 `/`，`+`，`=` 等，需要转义成十六进制数字：
 
 <FormatVncProxy />
 
