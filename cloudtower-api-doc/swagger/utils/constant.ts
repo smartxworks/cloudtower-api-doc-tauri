@@ -75,7 +75,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "Ipmi",
       "NodeTopo",
       "PmemDimm",
-      "UsbDevice"
+      "UsbDevice",
+      "GpuDevice"
     ]
   },
   {

@@ -191,16 +191,22 @@ const traveseSpec = async (specPath) => {
             }),
           };
           if (!excludePaths.includes(p)) {
-            const sdkSnippet = await genSnippet(specPath, {
-              path: p,
-              input: exampleValue,
-              returnName: "resp",
-              paramName: "params",
-            });
-            example[p] = {
-              ...example[p],
-              ...sdkSnippet,
-            };
+            // try {
+              const sdkSnippet = await genSnippet(specPath, {
+                path: p,
+                input: exampleValue,
+                returnName: "resp",
+                paramName: "params",
+              });
+              example[p] = {
+                ...example[p],
+                ...sdkSnippet,
+              };
+            // } catch(err) {
+            //   console.log(example[p])
+            //   console.error('generate example for failed!', p, err)
+            // }
+     
           }
         }
       }
