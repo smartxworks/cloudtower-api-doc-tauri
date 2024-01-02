@@ -6761,7 +6761,7 @@ __metadata:
     react-dom: ^17.0.2
     redoc: ^2.0.0-rc.67
     sass: ^1.62.0
-    sdk-example-generator: ^0.1.1
+    sdk-example-generator: ^0.1.2
     stream-browserify: ^3.0.0
     stream-http: ^3.2.0
     styled-components: ^5.3.3
@@ -14445,9 +14445,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sdk-example-generator@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "sdk-example-generator@npm:0.1.1"
+"sdk-example-generator@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "sdk-example-generator@npm:0.1.2"
   dependencies:
     "@apidevtools/swagger-parser": ^10.1.0
     "@metrichor/jmespath": ^0.3.1
@@ -14455,7 +14455,7 @@ __metadata:
     jmespath: ^0.16.0
     lodash: ^4.17.21
     openapi-types: ^12.1.3
-  checksum: 49d969946089ad2189fd219b44f62c876f730b30ab3448d72a6898fb0efe547065078554cf97f28cac1b8a56085919619e721152f6542af2f8e8c31c93d6e064
+  checksum: 21bd1a0c7313a8240e87ff711f839a789c169e2c228c16dd58679977f2e5e19e0fee2993fc6b5e9db1019b636e51b4b7c303a737fc72efc4a53b5111960903d9
   languageName: node
   linkType: hard
 
