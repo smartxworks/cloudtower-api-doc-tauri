@@ -174,7 +174,7 @@ alerts = alert_api.get_alerts(
 > The language of the returned information can also be set by setting the keyword parameter `content_language` of the request.
 
 ```python
-from cloudtower.api.user_api import AlertApi
+from cloudtower.api.alert_api import AlertApi
 
 alert_api = AlertApi(api_client)
 # The message, solution, cause, impact in the alerts obtained at this time will be converted into Chinese descriptions.

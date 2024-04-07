@@ -175,7 +175,7 @@ alerts = alert_api.get_alerts(
 > 也可以通过设置请求的关键字参数 `content_language` 来设置返回信息的语言。
 
 ```python
-from cloudtower.api.user_api import AlertApi
+from cloudtower.api.alert_api import AlertApi
 
 alert_api = AlertApi(api_client)
 # 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为中文描述。
