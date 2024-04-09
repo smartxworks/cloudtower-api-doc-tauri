@@ -220,6 +220,22 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
     ]
   },
   {
+    name: "VirtualPrivateCloudNetwork",
+    tags: [
+      "VirtualPrivateCloud",
+      "VirtualPrivateCloudSubnet",
+      "VirtualPrivateCloudRouteTable",
+      "VirtualPrivateCloudSecurityGroup",
+      "VirtualPrivateCloudSecurityPolicy",
+      "VirtualPrivateCloudIsolationPolicy",
+      "VirtualPrivateCloudNatGateway",
+      "VirtualPrivateCloudRouterGateway",
+      "VirtualPrivateCloudFloatingIp",
+      "VirtualPrivateCloudClusterBinding",
+      "VirtualPrivateCloudExternalSubnet"
+    ]
+  },
+  {
     "name": "Other",
     "tags": [
       "ApiInfo"

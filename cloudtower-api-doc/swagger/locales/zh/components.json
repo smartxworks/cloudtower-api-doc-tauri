@@ -16,7 +16,6 @@
   "expand": "展开",
   "show": "显示",
   "send": "发送",
-
   "servers": "服务",
   "filter_placeholder": "通过标签， API，API 描述过滤，通过空格进行多个过滤",
   "parameters": "参数",
@@ -34,7 +33,7 @@
   "defaultValue": "默认值",
   "availableValue": "可选值",
   "availableAuthorizations": "可用权限",
-  "close":"关闭",
+  "close": "关闭",
   "logout": "登出",
   "in": "于",
   "value": "值",
@@ -83,5 +82,6 @@
   "legal": "法律信息",
   "privacy": "隐私政策",
   "candidate": "最终用户许可协议",
-  "version_icu": "版本 {version}"
+  "version_icu": "版本 {version}",
+  "VirtualPrivateCloudNetwork": "虚拟专有云网络"
 }
