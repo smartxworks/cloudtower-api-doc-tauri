@@ -10861,175 +10861,175 @@
   ],
   "paths": {
     "/create-virtual-private-cloud-floating-ip": {
-      "summary": "",
+      "summary": "分配浮动 IP",
       "description": ""
     },
     "/delete-virtual-private-cloud-floating-ip": {
-      "summary": "",
+      "summary": "释放浮动 IP",
       "description": ""
     },
     "/create-virtual-private-cloud-nat-gateway": {
-      "summary": "",
+      "summary": "创建 NAT 网关",
       "description": ""
     },
     "/update-virtual-private-cloud-nat-gateway": {
-      "summary": "",
+      "summary": "更新 NAT 网关",
       "description": ""
     },
     "/delete-virtual-private-cloud-nat-gateway": {
-      "summary": "",
+      "summary": "删除 NAT 网关",
       "description": ""
     },
     "/create-virtual-private-cloud-route-table": {
-      "summary": "",
+      "summary": "创建路由表",
       "description": ""
     },
     "/update-virtual-private-cloud-route-table": {
-      "summary": "",
+      "summary": "更新路由表",
       "description": ""
     },
     "/delete-virtual-private-cloud-route-table": {
-      "summary": "",
+      "summary": "删除路由表",
       "description": ""
     },
     "/create-virtual-private-cloud-router-gateway": {
-      "summary": "",
+      "summary": "创建路由网关",
       "description": ""
     },
     "/update-virtual-private-cloud-router-gateway": {
-      "summary": "",
+      "summary": "更新路由网关",
       "description": ""
     },
     "/delete-virtual-private-cloud-router-gateway": {
-      "summary": "",
+      "summary": "删除路由网关",
       "description": ""
     },
     "/create-virtual-private-cloud-security-group": {
-      "summary": "",
+      "summary": "创建 VPC 安全组",
       "description": ""
     },
     "/update-virtual-private-cloud-security-group": {
-      "summary": "",
+      "summary": "更新 VPC 安全组",
       "description": ""
     },
     "/delete-virtual-private-cloud-security-group": {
-      "summary": "",
+      "summary": "删除 VPC 安全组",
       "description": ""
     },
     "/create-virtual-private-cloud-security-policy": {
-      "summary": "",
+      "summary": "创建 VPC 安全策略",
       "description": ""
     },
     "/delete-virtual-private-cloud-security-policy": {
-      "summary": "",
+      "summary": "删除 VPC 安全策略",
       "description": ""
     },
     "/update-virtual-private-cloud-security-policy": {
-      "summary": "",
+      "summary": "更新 VPC 安全策略",
       "description": ""
     },
     "/create-virtual-private-cloud-subnet": {
-      "summary": "",
+      "summary": "创建子网",
       "description": ""
     },
     "/update-virtual-private-cloud-subnet": {
-      "summary": "",
+      "summary": "更新子网",
       "description": ""
     },
     "/delete-virtual-private-cloud-subnet": {
-      "summary": "",
+      "summary": "删除子网",
       "description": ""
     },
     "/create-virtual-private-cloud": {
-      "summary": "",
+      "summary": "创建 VPC",
       "description": ""
     },
     "/update-virtual-private-cloud": {
-      "summary": "",
+      "summary": "更新 VPC",
       "description": ""
     },
     "/delete-virtual-private-cloud": {
-      "summary": "",
+      "summary": "删除 VPC",
       "description": ""
     },
     "/get-virtual-private-cloud-cluster-bindings": {
-      "summary": "",
+      "summary": "获取 VPC 关联集群",
       "description": ""
     },
     "/get-virtual-private-cloud-cluster-bindings-connection": {
-      "summary": "",
+      "summary": "获取 VPC 关联集群数量",
       "description": ""
     },
     "/get-virtual-private-cloud-external-subnets": {
-      "summary": "",
+      "summary": "获取外部子网",
       "description": ""
     },
     "/get-virtual-private-cloud-external-subnets-connection": {
-      "summary": "",
+      "summary": "获取外部子网数量",
       "description": ""
     },
     "/get-virtual-private-cloud-floating-ips": {
-      "summary": "",
+      "summary": "获取浮动 IP",
       "description": ""
     },
     "/get-virtual-private-cloud-floating-ips-connection": {
-      "summary": "",
+      "summary": "获取浮动 IP 数量",
       "description": ""
     },
     "/get-virtual-private-cloud-nat-gateways": {
-      "summary": "",
+      "summary": "获取 NAT 网关",
       "description": ""
     },
     "/get-virtual-private-cloud-nat-gateways-connection": {
-      "summary": "",
+      "summary": "获取 NAT 网关数量",
       "description": ""
     },
     "/get-virtual-private-cloud-route-tables": {
-      "summary": "",
+      "summary": "获取路由表",
       "description": ""
     },
     "/get-virtual-private-cloud-route-tables-connection": {
-      "summary": "",
+      "summary": "获取路由表数量",
       "description": ""
     },
     "/get-virtual-private-cloud-router-gateways": {
-      "summary": "",
+      "summary": "创建路由网关",
       "description": ""
     },
     "/get-virtual-private-cloud-router-gateways-connection": {
-      "summary": "",
+      "summary": "创建路由网关数量",
       "description": ""
     },
     "/get-virtual-private-cloud-security-groups": {
-      "summary": "",
+      "summary": "获取 VPC 安全组",
       "description": ""
     },
     "/get-virtual-private-cloud-security-groups-connection": {
-      "summary": "",
+      "summary": "获取 VPC 安全组数量",
       "description": ""
     },
     "/get-virtual-private-cloud-security-policies": {
-      "summary": "",
+      "summary": "获取 VPC 安全策略",
       "description": ""
     },
     "/get-virtual-private-cloud-security-policies-connection": {
-      "summary": "",
+      "summary": "获取 VPC 安全策略数量",
       "description": ""
     },
     "/get-virtual-private-cloud-subnets": {
-      "summary": "",
+      "summary": "获取子网",
       "description": ""
     },
     "/get-virtual-private-cloud-subnets-connection": {
-      "summary": "",
+      "summary": "获取子网数量",
       "description": ""
     },
     "/get-virtual-private-clouds": {
-      "summary": "",
+      "summary": "获取 VPC",
       "description": ""
     },
     "/get-virtual-private-clouds-connection": {
-      "summary": "",
+      "summary": "获取 VPC 数量",
       "description": ""
     }
   }
