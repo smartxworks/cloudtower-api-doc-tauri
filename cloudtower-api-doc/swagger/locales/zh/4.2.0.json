@@ -2184,7 +2184,7 @@
       "vpc_peering": ""
     },
     "VirtualPrivateCloudRouteNextHopType": {
-      "enum": ""
+      "enum": "* ROUTER_GATEWAY: 表示下一跳类型为路由网关\n* NAT_GATEWAY: 表示下一跳类型为 NAT 网关\n* VPC_PEERING: 表示下一跳类型为对等连接（此版本不支持）\n* UNKNOWN: 为无效下一跳类型"
     },
     "VirtualPrivateCloudRouterGatewayWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -2829,9 +2829,9 @@
       "entityAsyncStatus": "",
       "external_ip": "分配的 IP 地址",
       "external_subnet": "关联的外部子网",
-      "id": "资源的 tower id",
-      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
-      "vpc": "所属 vpc"
+      "id": "资源的唯一标识",
+      "local_id": "资源的 UUID",
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudFloatingIp_": {
       "task_id": "异步任务 id。",
@@ -2840,7 +2840,7 @@
     "VirtualPrivateCloudFloatingIpCreationParams": {
       "external_ip": "分配的 IP 地址",
       "external_subnet_id": "关联的外部子网 id",
-      "vpc_id": "关联的 vpc 的 id"
+      "vpc_id": "关联的 VPC 的 id"
     },
     "DeleteVirtualPrivateCloudFloatingIp": {
       "id": "资源 id"
@@ -2864,10 +2864,10 @@
       "entityAsyncStatus": "",
       "external_ip": "转换地址",
       "external_subnet": "所属外部子网",
-      "id": "资源的 tower id",
-      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "id": "资源的唯一标识",
+      "local_id": "资源的 UUID",
       "name": "名称",
-      "vpc": "所属 vpc"
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudNatGateway_": {
       "task_id": "异步任务 id。",
@@ -2884,7 +2884,7 @@
       "dnat_rules": "DNAT 规则",
       "enable_dnat": "是否开启 DNAT",
       "enable_snat": "是否开启 SNAT",
-      "vpc_id": "所属 vpc 的 id",
+      "vpc_id": "所属 VPC 的 id",
       "name": "名称"
     },
     "VirtualPrivateCloudNatGatewayUpdationParams": {
@@ -10039,15 +10039,15 @@
       "name": "名称"
     },
     "VirtualPrivateCloudRouteTable": {
-      "default_for_vpc": "是否为 vpc 的默认路由表",
+      "default_for_vpc": "是否为 VPC 的默认路由表",
       "description": "描述",
       "entityAsyncStatus": "",
-      "id": "资源的 tower id",
-      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "id": "资源的唯一标识",
+      "local_id": "资源的 UUID",
       "name": "名称",
       "routes": "路由规则",
       "subnets": "关联的子网",
-      "vpc": "所属 vpc"
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudRouteTable_": {
       "task_id": "异步任务 id。",
@@ -10060,7 +10060,7 @@
     },
     "VirtualPrivateCloudRouteTableCreationParams": {
       "routes": "路由规则",
-      "vpc_id": "所属 vpc 的 id",
+      "vpc_id": "所属 VPC 的 id",
       "description": "描述",
       "name": "名称"
     },
@@ -10082,46 +10082,46 @@
       "where": ""
     },
     "NestedVpcRouterGatewayRuleType": {
-      "dst": "",
-      "nexthop": ""
+      "dst": "目标地址",
+      "nexthop": "下一跳地址"
     },
     "VirtualPrivateCloudRouterGateway": {
-      "associated_subnets": "",
+      "associated_subnets": "关联的 VPC 子网",
       "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nexthop_ip": "",
-      "rules": "",
-      "vpc": ""
+      "external_ip": "外部接口",
+      "external_subnet": "关联的外部子网",
+      "id": "资源的唯一标识",
+      "local_id": "资源的 UUID",
+      "name": "名称",
+      "nexthop_ip": "下一跳地址",
+      "rules": "路由规则",
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudRouterGateway_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VirtualPrivateCloudRouterGatewayRuleInputType": {
-      "dst": "",
-      "nexthop": ""
+      "dst": "目标地址",
+      "nexthop": "下一跳地址，留空则自动分配外部子网的默认网关作为下一跳地址"
     },
     "VirtualPrivateCloudRouterGatewayCreationParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
+      "rules": "路由规则",
+      "associated_subnets_ids": "关联的 VPC 子网的 id 组成的字符串数组",
+      "external_ip": "外部接口",
       "external_subnet_id": "",
-      "vpc_id": "",
-      "name": ""
+      "vpc_id": "所属 VPC 的 id",
+      "name": "名称"
     },
     "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
-      "name": ""
+      "rules": "路由规则",
+      "associated_subnets_ids": "关联的 VPC 子网的 id 组成的字符串数组",
+      "external_ip": "外部接口",
+      "name": "名称"
     },
     "VirtualPrivateCloudRouterGatewayUpdationParams": {
-      "data": "",
-      "where": ""
+      "data": "用于更新指定路由网关的数据",
+      "where": "用于更新指定路由网关的查询条件"
     },
     "DeleteVirtualPrivateCloudRouterGateway": {
       "id": "资源 id"
@@ -10401,26 +10401,26 @@
       "where": ""
     },
     "NestedVpcSubnetIpPooType": {
-      "end": "",
-      "start": ""
+      "end": "子网的 IP 地址池的结束 IP",
+      "start": "子网的 IP 地址池的起始 IP"
     },
     "NestedVirtualPrivateCloudRouteTable": {
       "id": "唯一标识",
       "name": "名称"
     },
     "VirtualPrivateCloudSubnet": {
-      "cidr": "子网 cidr 块",
+      "cidr": "子网 CIDR 块",
       "description": "描述",
       "entityAsyncStatus": "",
       "gateway": "子网默认网关",
-      "id": "资源的 tower id",
-      "ip_pools": "子网的 ip 地址池",
-      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "id": "资源的唯一标识",
+      "ip_pools": "子网的 IP 地址池",
+      "local_id": "资源的 UUID",
       "name": "名称",
       "route_table": "关联路由表",
-      "total_ip_count": "全部 ip 数量",
-      "unused_ip_count": "未使用 ip 数量",
-      "vpc": "所属 vpc"
+      "total_ip_count": "全部 IP 数量",
+      "unused_ip_count": "未使用 IP 数量",
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudSubnet_": {
       "task_id": "异步任务 id。",
@@ -10432,18 +10432,18 @@
     },
     "VirtualPrivateCloudSubnetCreationParams": {
       "route_table_id": "关联路由表 id",
-      "ip_pools": "子网的 ip 地址池",
+      "ip_pools": "子网的 IP 地址池",
       "gateway": "子网默认网关",
-      "cidr": "子网 cidr 块",
-      "vpc_id": "所属 vpc 的 id",
+      "cidr": "子网 CIDR 块",
+      "vpc_id": "所属 VPC 的 id",
       "description": "描述",
       "name": "名称"
     },
     "VirtualPrivateCloudSubnetUpdateDataParams": {
       "route_table_id": "关联路由表 id",
-      "ip_pools": "子网的 ip 地址池",
+      "ip_pools": "子网的 IP 地址池",
       "gateway": "子网默认网关",
-      "cidr": "子网 cidr 块",
+      "cidr": "子网 CIDR 块",
       "description": "描述",
       "name": "名称"
     },
@@ -10473,10 +10473,10 @@
       "associate_external_subnet_num": "关联外部子网数量",
       "description": "描述",
       "entityAsyncStatus": "",
-      "id": "资源的 tower id",
-      "isolation_policies": "",
-      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
-      "mtu": "vpc 的 MTU",
+      "id": "资源的唯一标识",
+      "isolation_policies": "关联的 VPC 隔离策略",
+      "local_id": "资源的 UUID",
+      "mtu": "VPC 的 MTU",
       "name": "名称",
       "route_tables": "关联的路由表",
       "security_groups": "关联的 VPC 安全组",
@@ -10488,13 +10488,13 @@
       "data": "资源"
     },
     "VirtualPrivateCloudCreationParams": {
-      "mtu": "vpc 的 MTU",
+      "mtu": "VPC 的 MTU",
       "vpc_service_id": "所属服务 id",
       "description": "描述",
       "name": "名称"
     },
     "VirtualPrivateCloudUpdateDataParams": {
-      "mtu": "vpc 的 MTU",
+      "mtu": "VPC 的 MTU",
       "description": "描述",
       "name": "名称"
     },
@@ -11181,11 +11181,11 @@
       "description": ""
     },
     "/get-virtual-private-cloud-router-gateways": {
-      "summary": "创建路由网关",
+      "summary": "获取路由网关",
       "description": ""
     },
     "/get-virtual-private-cloud-router-gateways-connection": {
-      "summary": "创建路由网关数量",
+      "summary": "获取路由网关数量",
       "description": ""
     },
     "/get-virtual-private-cloud-security-groups": {
