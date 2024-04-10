@@ -3086,181 +3086,6 @@
       "selector_ids": "",
       "type": ""
     },
-    "VirtualPrivateCloudSecurityPolicy": {
-      "apply_to": "",
-      "description": "",
-      "egress": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "ingress": "",
-      "local_id": "",
-      "name": "",
-      "policy_mode": "",
-      "vpc": ""
-    },
-    "WithTask_VirtualPrivateCloudSecurityPolicy_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudSecurityPolicyApplyInput": {
-      "security_group_id": "",
-      "communicable": ""
-    },
-    "VirtualPrivateCloudNetworkPolicyRulePortInput": {
-      "protocol": "",
-      "port": ""
-    },
-    "VirtualPrivateCloudNetworkPolicyRuleInput": {
-      "type": "",
-      "selector_ids": "",
-      "security_group_id": "",
-      "ports": "",
-      "ip_block": "",
-      "except_ip_block": ""
-    },
-    "VirtualPrivateCloudSecurityPolicyCreateParams": {
-      "egress": "",
-      "ingress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
-    },
-    "DeleteVirtualPrivateCloudSecurityPolicy": {
-      "id": "资源 id"
-    },
-    "WithTask_DeleteVirtualPrivateCloudSecurityPolicy_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudSecurityPolicyDeleteParams": {
-      "where": ""
-    },
-    "VirtualPrivateCloudSecurityPolicyUpdateParams": {
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudSecurityPolicyUpdateBody": {
-      "data": "",
-      "where": ""
-    },
-    "NestedVpcSubnetIpPooType": {
-      "end": "",
-      "start": ""
-    },
-    "NestedVirtualPrivateCloudRouteTable": {
-      "id": "唯一标识",
-      "name": "名称"
-    },
-    "VirtualPrivateCloudSubnet": {
-      "cidr": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "gateway": "",
-      "id": "",
-      "ip_pools": "",
-      "local_id": "",
-      "name": "",
-      "route_table": "",
-      "total_ip_count": "",
-      "unused_ip_count": "",
-      "vpc": ""
-    },
-    "WithTask_VirtualPrivateCloudSubnet_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudSubnetIpPoolParams": {
-      "end": "",
-      "start": ""
-    },
-    "VirtualPrivateCloudSubnetCreationParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudSubnetUpdateDataParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudSubnetUpdationParams": {
-      "data": "",
-      "where": ""
-    },
-    "DeleteVirtualPrivateCloudSubnet": {
-      "id": "资源 id"
-    },
-    "WithTask_DeleteVirtualPrivateCloudSubnet_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudSubnetDeletionParams": {
-      "where": ""
-    },
-    "NestedVirtualPrivateCloudIsolationPolicy": {
-      "id": "唯一标识",
-      "vm": ""
-    },
-    "NestedVirtualPrivateCloudSecurityPolicy": {
-      "id": "唯一标识",
-      "name": "名称"
-    },
-    "VirtualPrivateCloud": {
-      "associate_external_subnet_num": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "isolation_policies": "",
-      "local_id": "",
-      "mtu": "",
-      "name": "",
-      "route_tables": "",
-      "security_groups": "",
-      "security_policies": "",
-      "subnets": ""
-    },
-    "WithTask_VirtualPrivateCloud_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudCreationParams": {
-      "mtu": "",
-      "vpc_service_id": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudUpdateDataParams": {
-      "mtu": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudUpdationParams": {
-      "data": "",
-      "where": ""
-    },
-    "DeleteVirtualPrivateCloud": {
-      "id": "资源 id"
-    },
-    "WithTask_DeleteVirtualPrivateCloud_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudDeletionParams": {
-      "where": ""
-    },
     "NfsInode": {
       "assigned_size": "分配容量(字节)",
       "entityAsyncStatus": "内部字段",
@@ -10511,6 +10336,181 @@
       "type_in": "",
       "type_not": "",
       "type_not_in": ""
+    },
+    "VirtualPrivateCloudSecurityPolicy": {
+      "apply_to": "",
+      "description": "",
+      "egress": "",
+      "entityAsyncStatus": "",
+      "id": "",
+      "ingress": "",
+      "local_id": "",
+      "name": "",
+      "policy_mode": "",
+      "vpc": ""
+    },
+    "WithTask_VirtualPrivateCloudSecurityPolicy_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudSecurityPolicyApplyInput": {
+      "security_group_id": "",
+      "communicable": ""
+    },
+    "VirtualPrivateCloudNetworkPolicyRulePortInput": {
+      "protocol": "",
+      "port": ""
+    },
+    "VirtualPrivateCloudNetworkPolicyRuleInput": {
+      "type": "",
+      "selector_ids": "",
+      "security_group_id": "",
+      "ports": "",
+      "ip_block": "",
+      "except_ip_block": ""
+    },
+    "VirtualPrivateCloudSecurityPolicyCreateParams": {
+      "egress": "",
+      "ingress": "",
+      "apply_to": "",
+      "policy_mode": "",
+      "vpc_id": "",
+      "description": "",
+      "name": ""
+    },
+    "DeleteVirtualPrivateCloudSecurityPolicy": {
+      "id": "资源 id"
+    },
+    "WithTask_DeleteVirtualPrivateCloudSecurityPolicy_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudSecurityPolicyDeleteParams": {
+      "where": ""
+    },
+    "VirtualPrivateCloudSecurityPolicyUpdateParams": {
+      "ingress": "",
+      "egress": "",
+      "apply_to": "",
+      "policy_mode": "",
+      "description": "",
+      "name": ""
+    },
+    "VirtualPrivateCloudSecurityPolicyUpdateBody": {
+      "data": "",
+      "where": ""
+    },
+    "NestedVpcSubnetIpPooType": {
+      "end": "",
+      "start": ""
+    },
+    "NestedVirtualPrivateCloudRouteTable": {
+      "id": "唯一标识",
+      "name": "名称"
+    },
+    "VirtualPrivateCloudSubnet": {
+      "cidr": "",
+      "description": "",
+      "entityAsyncStatus": "",
+      "gateway": "",
+      "id": "",
+      "ip_pools": "",
+      "local_id": "",
+      "name": "",
+      "route_table": "",
+      "total_ip_count": "",
+      "unused_ip_count": "",
+      "vpc": ""
+    },
+    "WithTask_VirtualPrivateCloudSubnet_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudSubnetIpPoolParams": {
+      "end": "",
+      "start": ""
+    },
+    "VirtualPrivateCloudSubnetCreationParams": {
+      "route_table_id": "",
+      "ip_pools": "",
+      "gateway": "",
+      "cidr": "",
+      "vpc_id": "",
+      "description": "",
+      "name": ""
+    },
+    "VirtualPrivateCloudSubnetUpdateDataParams": {
+      "route_table_id": "",
+      "ip_pools": "",
+      "gateway": "",
+      "cidr": "",
+      "description": "",
+      "name": ""
+    },
+    "VirtualPrivateCloudSubnetUpdationParams": {
+      "data": "",
+      "where": ""
+    },
+    "DeleteVirtualPrivateCloudSubnet": {
+      "id": "资源 id"
+    },
+    "WithTask_DeleteVirtualPrivateCloudSubnet_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudSubnetDeletionParams": {
+      "where": ""
+    },
+    "NestedVirtualPrivateCloudIsolationPolicy": {
+      "id": "唯一标识",
+      "vm": ""
+    },
+    "NestedVirtualPrivateCloudSecurityPolicy": {
+      "id": "唯一标识",
+      "name": "名称"
+    },
+    "VirtualPrivateCloud": {
+      "associate_external_subnet_num": "关联外部子网数量",
+      "description": "描述",
+      "entityAsyncStatus": "",
+      "id": "资源的 tower id",
+      "isolation_policies": "",
+      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "mtu": "vpc 的 MTU",
+      "name": "名称",
+      "route_tables": "关联的路由表",
+      "security_groups": "关联的 VPC 安全组",
+      "security_policies": "关联的 VPC 安全策略",
+      "subnets": "关联的子网"
+    },
+    "WithTask_VirtualPrivateCloud_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudCreationParams": {
+      "mtu": "vpc 的 MTU",
+      "vpc_service_id": "所属服务 id",
+      "description": "描述",
+      "name": "名称"
+    },
+    "VirtualPrivateCloudUpdateDataParams": {
+      "mtu": "vpc 的 MTU",
+      "description": "描述",
+      "name": "名称"
+    },
+    "VirtualPrivateCloudUpdationParams": {
+      "data": "",
+      "where": ""
+    },
+    "DeleteVirtualPrivateCloud": {
+      "id": "资源 id"
+    },
+    "WithTask_DeleteVirtualPrivateCloud_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudDeletionParams": {
+      "where": ""
     },
     "ElfStoragePolicyWhereInput": {
       "AND": "符合所有的筛选条件",
