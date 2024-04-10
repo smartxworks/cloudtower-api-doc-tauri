@@ -10409,18 +10409,18 @@
       "name": "名称"
     },
     "VirtualPrivateCloudSubnet": {
-      "cidr": "",
-      "description": "",
+      "cidr": "子网 cidr 块",
+      "description": "描述",
       "entityAsyncStatus": "",
-      "gateway": "",
-      "id": "",
-      "ip_pools": "",
-      "local_id": "",
-      "name": "",
-      "route_table": "",
-      "total_ip_count": "",
-      "unused_ip_count": "",
-      "vpc": ""
+      "gateway": "子网默认网关",
+      "id": "资源的 tower id",
+      "ip_pools": "子网的 ip 地址池",
+      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "name": "名称",
+      "route_table": "关联路由表",
+      "total_ip_count": "全部 ip 数量",
+      "unused_ip_count": "未使用 ip 数量",
+      "vpc": "所属 vpc"
     },
     "WithTask_VirtualPrivateCloudSubnet_": {
       "task_id": "异步任务 id。",
@@ -10431,21 +10431,21 @@
       "start": ""
     },
     "VirtualPrivateCloudSubnetCreationParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "route_table_id": "关联路由表 id",
+      "ip_pools": "子网的 ip 地址池",
+      "gateway": "子网默认网关",
+      "cidr": "子网 cidr 块",
+      "vpc_id": "所属 vpc 的 id",
+      "description": "描述",
+      "name": "名称"
     },
     "VirtualPrivateCloudSubnetUpdateDataParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "description": "",
-      "name": ""
+      "route_table_id": "关联路由表 id",
+      "ip_pools": "子网的 ip 地址池",
+      "gateway": "子网默认网关",
+      "cidr": "子网 cidr 块",
+      "description": "描述",
+      "name": "名称"
     },
     "VirtualPrivateCloudSubnetUpdationParams": {
       "data": "",
