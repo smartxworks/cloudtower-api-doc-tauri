@@ -2853,48 +2853,48 @@
       "where": ""
     },
     "NestedVpcDnatRuleType": {
-      "port": "",
-      "target_ip": "",
-      "target_port": ""
+      "port": "转换地址端口号",
+      "target_ip": "内部目标地址",
+      "target_port": "内部目标地址端口号"
     },
     "VirtualPrivateCloudNatGateway": {
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
+      "dnat_rules": "DNAT 规则",
+      "enable_dnat": "是否开启 DNAT",
+      "enable_snat": "是否开启 SNAT",
       "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "vpc": ""
+      "external_ip": "转换地址",
+      "external_subnet": "所属外部子网",
+      "id": "资源的 tower id",
+      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "name": "名称",
+      "vpc": "所属 vpc"
     },
     "WithTask_VirtualPrivateCloudNatGateway_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VirtualPrivateCloudDnatRuleParams": {
-      "target_port": "",
-      "port": "",
-      "target_ip": ""
+      "target_port": "内部目标地址",
+      "port": "转换地址端口号",
+      "target_ip": "内部目标地址端口号"
     },
     "VirtualPrivateCloudNatGatewayCreationParams": {
-      "external_ip": "",
-      "external_subnet_id": "",
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
-      "vpc_id": "",
-      "name": ""
+      "external_ip": "转换地址",
+      "external_subnet_id": "所属外部子网 id",
+      "dnat_rules": "DNAT 规则",
+      "enable_dnat": "是否开启 DNAT",
+      "enable_snat": "是否开启 SNAT",
+      "vpc_id": "所属 vpc 的 id",
+      "name": "名称"
     },
     "VirtualPrivateCloudNatGatewayUpdationParams": {
-      "data.external_ip": "",
-      "data.dnat_rules": "",
-      "data.enable_dnat": "",
-      "data.enable_snat": "",
-      "data.name": "",
-      "data": "",
-      "where": ""
+      "data.external_ip": "转换地址",
+      "data.dnat_rules": "DNAT 规则",
+      "data.enable_dnat": "是否开启 DNAT",
+      "data.enable_snat": "是否开启 SNAT",
+      "data.name": "名称",
+      "data": "用于更新指定 NAT 网关的数据",
+      "where": "用于更新指定 NAT 网关的查询条件"
     },
     "DeleteVirtualPrivateCloudNatGateway": {
       "id": "资源 id"
