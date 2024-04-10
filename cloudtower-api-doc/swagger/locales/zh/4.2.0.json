@@ -2903,111 +2903,6 @@
       "task_id": "异步任务 id。",
       "data": "资源"
     },
-    "VirtualPrivateCloudNatGatewayDeletionParams": {
-      "where": ""
-    },
-    "NestedVirtualPrivateCloudRoute": {
-      "destination": "",
-      "id": "唯一标识",
-      "next_hop_local_id": "",
-      "next_hop_type": ""
-    },
-    "NestedVirtualPrivateCloudSubnet": {
-      "id": "唯一标识",
-      "name": "名称"
-    },
-    "VirtualPrivateCloudRouteTable": {
-      "default_for_vpc": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "routes": "",
-      "subnets": "",
-      "vpc": ""
-    },
-    "WithTask_VirtualPrivateCloudRouteTable_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudRouteParams": {
-      "destination": "",
-      "next_hop_local_id": "",
-      "next_hop_type": ""
-    },
-    "VirtualPrivateCloudRouteTableCreationParams": {
-      "routes": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudRouteTableUpdationParams": {
-      "data.routes": "",
-      "data.description": "",
-      "data.name": "",
-      "data": "",
-      "where": ""
-    },
-    "DeleteVirtualPrivateCloudRouteTable": {
-      "id": "资源 id"
-    },
-    "WithTask_DeleteVirtualPrivateCloudRouteTable_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudRouteTableDeletionParams": {
-      "where": ""
-    },
-    "NestedVpcRouterGatewayRuleType": {
-      "dst": "",
-      "nexthop": ""
-    },
-    "VirtualPrivateCloudRouterGateway": {
-      "associated_subnets": "",
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nexthop_ip": "",
-      "rules": "",
-      "vpc": ""
-    },
-    "WithTask_VirtualPrivateCloudRouterGateway_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
-    "VirtualPrivateCloudRouterGatewayRuleInputType": {
-      "dst": "",
-      "nexthop": ""
-    },
-    "VirtualPrivateCloudRouterGatewayCreationParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
-      "external_subnet_id": "",
-      "vpc_id": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudRouterGatewayUpdationParams": {
-      "data": "",
-      "where": ""
-    },
-    "DeleteVirtualPrivateCloudRouterGateway": {
-      "id": "资源 id"
-    },
-    "WithTask_DeleteVirtualPrivateCloudRouterGateway_": {
-      "task_id": "异步任务 id。",
-      "data": "资源"
-    },
     "VirtualPrivateCloudRouterGatewayDeletionParams": {
       "where": ""
     },
@@ -10129,6 +10024,111 @@
       "zbs_version_not_in": "",
       "zbs_version_not_starts_with": "",
       "zbs_version_starts_with": ""
+    },
+    "VirtualPrivateCloudNatGatewayDeletionParams": {
+      "where": ""
+    },
+    "NestedVirtualPrivateCloudRoute": {
+      "destination": "目标地址",
+      "id": "唯一标识",
+      "next_hop_local_id": "下一跳实例的 local_id",
+      "next_hop_type": "下一跳类型"
+    },
+    "NestedVirtualPrivateCloudSubnet": {
+      "id": "唯一标识",
+      "name": "名称"
+    },
+    "VirtualPrivateCloudRouteTable": {
+      "default_for_vpc": "是否为 vpc 的默认路由表",
+      "description": "描述",
+      "entityAsyncStatus": "",
+      "id": "资源的 tower id",
+      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "name": "名称",
+      "routes": "路由规则",
+      "subnets": "关联的子网",
+      "vpc": "所属 vpc"
+    },
+    "WithTask_VirtualPrivateCloudRouteTable_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudRouteParams": {
+      "destination": "目标地址",
+      "next_hop_local_id": "下一跳实例的 local_id",
+      "next_hop_type": "下一跳类型"
+    },
+    "VirtualPrivateCloudRouteTableCreationParams": {
+      "routes": "路由规则",
+      "vpc_id": "所属 vpc 的 id",
+      "description": "描述",
+      "name": "名称"
+    },
+    "VirtualPrivateCloudRouteTableUpdationParams": {
+      "data.routes": "路由规则",
+      "data.description": "描述",
+      "data.name": "名称",
+      "data": "用来更新指定路由表的数据",
+      "where": "用来更新指定路由表的查询条件"
+    },
+    "DeleteVirtualPrivateCloudRouteTable": {
+      "id": "资源 id"
+    },
+    "WithTask_DeleteVirtualPrivateCloudRouteTable_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudRouteTableDeletionParams": {
+      "where": ""
+    },
+    "NestedVpcRouterGatewayRuleType": {
+      "dst": "",
+      "nexthop": ""
+    },
+    "VirtualPrivateCloudRouterGateway": {
+      "associated_subnets": "",
+      "entityAsyncStatus": "",
+      "external_ip": "",
+      "external_subnet": "",
+      "id": "",
+      "local_id": "",
+      "name": "",
+      "nexthop_ip": "",
+      "rules": "",
+      "vpc": ""
+    },
+    "WithTask_VirtualPrivateCloudRouterGateway_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
+    },
+    "VirtualPrivateCloudRouterGatewayRuleInputType": {
+      "dst": "",
+      "nexthop": ""
+    },
+    "VirtualPrivateCloudRouterGatewayCreationParams": {
+      "rules": "",
+      "associated_subnets_ids": "",
+      "external_ip": "",
+      "external_subnet_id": "",
+      "vpc_id": "",
+      "name": ""
+    },
+    "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
+      "rules": "",
+      "associated_subnets_ids": "",
+      "external_ip": "",
+      "name": ""
+    },
+    "VirtualPrivateCloudRouterGatewayUpdationParams": {
+      "data": "",
+      "where": ""
+    },
+    "DeleteVirtualPrivateCloudRouterGateway": {
+      "id": "资源 id"
+    },
+    "WithTask_DeleteVirtualPrivateCloudRouterGateway_": {
+      "task_id": "异步任务 id。",
+      "data": "资源"
     },
     "ClusterUpgradeHistoryWhereInput": {
       "AND": "符合所有的筛选条件",
