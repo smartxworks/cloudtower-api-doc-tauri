@@ -2827,20 +2827,20 @@
     },
     "VirtualPrivateCloudFloatingIp": {
       "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "vpc": ""
+      "external_ip": "分配的 IP 地址",
+      "external_subnet": "关联的外部子网",
+      "id": "资源的 tower id",
+      "local_id": "资源 local_id,vpc 服务所保存的资源 id",
+      "vpc": "所属 vpc"
     },
     "WithTask_VirtualPrivateCloudFloatingIp_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VirtualPrivateCloudFloatingIpCreationParams": {
-      "external_ip": "",
-      "external_subnet_id": "",
-      "vpc_id": ""
+      "external_ip": "分配的 IP 地址",
+      "external_subnet_id": "关联的外部子网 id",
+      "vpc_id": "关联的 vpc 的 id"
     },
     "DeleteVirtualPrivateCloudFloatingIp": {
       "id": "资源 id"
