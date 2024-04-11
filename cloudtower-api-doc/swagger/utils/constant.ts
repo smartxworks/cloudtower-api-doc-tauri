@@ -1,38 +1,25 @@
-export const tagsGroup:{name: string, tags:string[]}[] = [
+export const tagsGroup: { name: string; tags: string[] }[] = [
   {
-    name: 'ClusterManagement',
+    name: "ClusterManagement",
     tags: [
       "Cluster",
       "ClusterSettings",
       "SnmpTransport",
       "SnmpTrapReceiver",
-      "MigrateTransmitter"
-    ]
+      "MigrateTransmitter",
+    ],
   },
   {
     name: "MetroXClusterManagement",
-    tags: [
-      "Witness",
-      "WitnessService",
-      "Zone",
-      "ZoneTopo",
-    ]
+    tags: ["Witness", "WitnessService", "Zone", "ZoneTopo"],
   },
   {
     name: "VmwareManagement",
-    tags: [
-      "VcenterAccount",
-      "VsphereEsxiAccount"
-    ]
+    tags: ["VcenterAccount", "VsphereEsxiAccount"],
   },
   {
     name: "AlertManagement",
-    tags: [
-      "AlertNotifier",
-      "Alert",
-      "GlobalAlertRule",
-      "AlertRule"
-    ]
+    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule"],
   },
   {
     name: "VmManagement",
@@ -48,8 +35,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "VmVolume",
       "VmVolumeSnapshot",
       "Ovf",
-      "VmExportFile"
-    ]
+      "VmExportFile",
+    ],
   },
   {
     name: "CloudTowerSetting",
@@ -60,8 +47,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "Deploy",
       "GlobalSettings",
       "License",
-      "SvtImage"
-    ]
+      "SvtImage",
+    ],
   },
   {
     name: "HardwareManagement",
@@ -76,8 +63,8 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "NodeTopo",
       "PmemDimm",
       "UsbDevice",
-      "GpuDevice"
-    ]
+      "GpuDevice",
+    ],
   },
   {
     name: "StorageManagement",
@@ -97,106 +84,60 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "NvmfNamespace",
       "NvmfNamespaceSnapshot",
       "NvmfSubsystem",
-      "StoragePolicyConector"
-    ]
+      "StoragePolicyConector",
+    ],
   },
   {
     name: "SharedManagement",
-    tags: [
-      "ContentLibraryImage",
-      "ContentLibraryVmTemplate"
-    ]
+    tags: ["ContentLibraryImage", "ContentLibraryVmTemplate"],
   },
   {
     name: "DatacneterAndOrgManagement",
-    tags: [
-      "Datacenter",
-      "Organization"
-    ]
+    tags: ["Datacenter", "Organization"],
   },
   {
     name: "EntityFileterManagement",
-    tags: [
-      "EntityFilter",
-      "VmEntityFilterResult"
-    ]
+    tags: ["EntityFilter", "VmEntityFilterResult"],
   },
   {
     name: "ErManagement",
-    tags: [
-      "EverouteCluster",
-      "EverouteLicense",
-      "EveroutePackage",
-      "IsolationPolicy",
-      "SecurityPolicy",
-      "SecurityGroup"
-    ]
+    tags: ["EverouteCluster", "EverouteLicense", "EveroutePackage", "V2EverouteLicense"],
   },
   {
     name: "MonitorManagement",
-    tags: [
-      "Graph",
-      "View",
-      "Metrics"
-    ]
+    tags: ["Graph", "View", "Metrics"],
   },
   {
     name: "LabelManagement",
-    tags: [
-      "Label"
-    ]
+    tags: ["Label"],
   },
   {
     name: "LogManagement",
-    tags: [
-      "LogCollection",
-      "LogServiceConfig"
-    ]
+    tags: ["LogCollection", "LogServiceConfig"],
   },
   {
     name: "NetworkManagement",
-    tags: [
-      "Nic",
-      "Vds",
-      "Vlan"
-    ]
+    tags: ["Nic", "Vds", "Vlan"],
   },
   {
     name: "ReportManagement",
-    tags: [
-      "ReportTask",
-      "ReportTemplate",
-      "TableReporter"
-    ]
+    tags: ["ReportTask", "ReportTemplate", "TableReporter"],
   },
   {
     name: "SnapshotManagement",
-    tags: [
-      "SnapshotGroup",
-      "SnapshotPlan",
-      "SnapshotPlanTask"
-    ]
+    tags: ["SnapshotGroup", "SnapshotPlan", "SnapshotPlanTask"],
   },
   {
     name: "AuditManagement",
-    tags: [
-      "SystemAuditLog",
-      "UserAuditLog"
-    ]
+    tags: ["SystemAuditLog", "UserAuditLog"],
   },
   {
     name: "TaskManagement",
-    tags:[
-      "Task",
-      "UploadTask"
-    ]
+    tags: ["Task", "UploadTask"],
   },
   {
     name: "UserManagement",
-    tags:[
-      "UserRoleNext",
-      "User"
-    ]
+    tags: ["UserRoleNext", "User"],
   },
   {
     name: "BackupManagement",
@@ -209,15 +150,16 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "BackupRestorePoint",
       "BackupService",
       "BackupStoreRepository",
-      "BackupTargetExecution"
-    ]
+      "BackupTargetExecution",
+    ],
   },
   {
     name: "CloudTowerApplicationManagement",
-    tags: [
-      "CloudTowerApplication",
-      "CloudTowerApplicationPackage"
-    ]
+    tags: ["CloudTowerApplication", "CloudTowerApplicationPackage"],
+  },
+  {
+    name: "DistributedFirewall",
+    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup"],
   },
   {
     name: "VirtualPrivateCloudNetwork",
@@ -232,13 +174,11 @@ export const tagsGroup:{name: string, tags:string[]}[] = [
       "VirtualPrivateCloudRouterGateway",
       "VirtualPrivateCloudFloatingIp",
       "VirtualPrivateCloudClusterBinding",
-      "VirtualPrivateCloudExternalSubnet"
-    ]
+      "VirtualPrivateCloudExternalSubnet",
+    ],
   },
   {
-    "name": "Other",
-    "tags": [
-      "ApiInfo"
-    ]
-  }
+    name: "Other",
+    tags: ["ApiInfo"],
+  },
 ];
