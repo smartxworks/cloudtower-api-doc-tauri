@@ -11221,11 +11221,11 @@
       "description": ""
     },
     "/get-v2-everoute-licenses": {
-      "summary": "",
+      "summary": "获取 V2 版本 Everoute 使用许可",
       "description": ""
     },
     "/get-v-2-everoute-licenses-connection": {
-      "summary": "",
+      "summary": "获取 V2 版本 Everoute 使用许可数量",
       "description": ""
     }
   }

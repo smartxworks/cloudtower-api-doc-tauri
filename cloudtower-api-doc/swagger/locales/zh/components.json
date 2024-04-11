@@ -48,7 +48,7 @@
   "SharedManagement": "共享内容管理",
   "DatacneterAndOrgManagement": "数据中心与组织管理",
   "EntityFileterManagement": "资源优化管理",
-  "ErManagement": "网络与安全",
+  "ErManagement": "Everoute 运维管理",
   "MonitorManagement": "监控分析",
   "LabelManagement": "资源标签管理",
   "LogManagement": "日志管理",
@@ -83,5 +83,6 @@
   "privacy": "隐私政策",
   "candidate": "最终用户许可协议",
   "version_icu": "版本 {version}",
-  "VirtualPrivateCloudNetwork": "虚拟专有云网络"
+  "VirtualPrivateCloudNetwork": "虚拟专有云网络",
+  "DistributedFirewall": "分布式防火墙"
 }
