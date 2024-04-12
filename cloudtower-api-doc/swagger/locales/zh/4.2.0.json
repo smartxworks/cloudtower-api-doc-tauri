@@ -2505,7 +2505,7 @@
       "vpc": ""
     },
     "VirtualPrivateCloudSecurityPolicyMode": {
-      "enum": ""
+      "enum": "* MONITOR: 不生效\n* WORK: 立即生效"
     },
     "VirtualPrivateCloudNicSnapshotWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -2957,29 +2957,29 @@
       "name": "名称"
     },
     "NestedVirtualPrivateCloudSecurityPolicyApply": {
-      "communicable": "",
-      "security_group": "",
-      "security_group_id": ""
+      "communicable": "策略对象是否可以互相通信",
+      "security_group": "VPC 安全组",
+      "security_group_id": "VPC 安全组 id"
     },
     "VirtualPrivateCloudNetworkPolicyRulePortProtocol": {
-      "enum": ""
+      "enum": "* TCP: TCP 协议\n* UDP: UDP 协议\n* ICMP: ICMP 协议"
     },
     "NestedVirtualPrivateCloudNetworkPolicyRulePort": {
-      "port": "",
-      "protocol": ""
+      "port": "端口号",
+      "protocol": "协议类型"
     },
     "VirtualPrivateCloudNetworkPolicyRuleType": {
-      "enum": ""
+      "enum": "* ALL: 流量全允许\n* IP_BLOCK: IP 地址类型白名单\n* SELECTOR: 标签类型白名单\n* SECURITY_GROUP: 安全组类型白名单"
     },
     "NestedVirtualPrivateCloudNetworkPolicyRule": {
-      "except_ip_block": "",
-      "ip_block": "",
-      "ports": "",
-      "security_group": "",
-      "security_group_id": "",
-      "selector": "",
-      "selector_ids": "",
-      "type": ""
+      "except_ip_block": "排除 IP 地址，白名单类型为 IP 地址时配置生效",
+      "ip_block": "IP 地址，白名单类型为 IP 地址时配置生效",
+      "ports": "协议配置",
+      "security_group": "安全组",
+      "security_group_id": "VPC 安全组 id，白名单类型为安全组时配置生效",
+      "selector": "标签",
+      "selector_ids": "标签 id 集合，白名单类型为标签时配置生效",
+      "type": "白名单类型"
     },
     "NfsInode": {
       "assigned_size": "分配容量(字节)",
@@ -10338,45 +10338,45 @@
       "type_not_in": ""
     },
     "VirtualPrivateCloudSecurityPolicy": {
-      "apply_to": "",
-      "description": "",
-      "egress": "",
+      "apply_to": "策略对象集合",
+      "description": "描述",
+      "egress": "出流量白名单配置",
       "entityAsyncStatus": "",
-      "id": "",
-      "ingress": "",
-      "local_id": "",
-      "name": "",
-      "policy_mode": "",
-      "vpc": ""
+      "id": "资源的唯一标识",
+      "ingress": "入流量白名单配置",
+      "local_id": "资源的 UUID",
+      "name": "名称",
+      "policy_mode": "策略生效模式",
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudSecurityPolicy_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "VirtualPrivateCloudSecurityPolicyApplyInput": {
-      "security_group_id": "",
-      "communicable": ""
+      "security_group_id": "VPC 安全组 id",
+      "communicable": "策略对象是否可以互相通信"
     },
     "VirtualPrivateCloudNetworkPolicyRulePortInput": {
-      "protocol": "",
-      "port": ""
+      "protocol": "协议类型",
+      "port": "端口号"
     },
     "VirtualPrivateCloudNetworkPolicyRuleInput": {
-      "type": "",
-      "selector_ids": "",
-      "security_group_id": "",
-      "ports": "",
-      "ip_block": "",
-      "except_ip_block": ""
+      "type": "白名单类型",
+      "selector_ids": "标签 id 集合，白名单类型为标签时配置生效",
+      "security_group_id": "VPC 安全组 id，白名单类型为安全组时配置生效",
+      "ports": "协议配置",
+      "ip_block": "IP 地址，白名单类型为 IP 地址时配置生效",
+      "except_ip_block": "排除 IP 地址，白名单类型为 IP 地址时配置生效"
     },
     "VirtualPrivateCloudSecurityPolicyCreateParams": {
-      "egress": "",
-      "ingress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "egress": "出流量白名单配置",
+      "ingress": "入流量白名单配置",
+      "apply_to": "策略对象集合",
+      "policy_mode": "策略生效模式",
+      "vpc_id": "所属 VPC 的 id",
+      "description": "描述",
+      "name": "名称"
     },
     "DeleteVirtualPrivateCloudSecurityPolicy": {
       "id": "资源 id"
@@ -10386,19 +10386,19 @@
       "data": "资源"
     },
     "VirtualPrivateCloudSecurityPolicyDeleteParams": {
-      "where": ""
+      "where": "用于删除指定 VPC 安全安全策略的查询条件"
     },
     "VirtualPrivateCloudSecurityPolicyUpdateParams": {
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "description": "",
-      "name": ""
+      "ingress": "入流量白名单配置",
+      "egress": "出流量白名单配置",
+      "apply_to": "策略对象集合",
+      "policy_mode": "策略生效模式",
+      "description": "描述",
+      "name": "名称"
     },
     "VirtualPrivateCloudSecurityPolicyUpdateBody": {
-      "data": "",
-      "where": ""
+      "data": "用于更新指定 VPC 安全策略的数据",
+      "where": "用于删除指定 VPC 安全安全策略的查询条件"
     },
     "NestedVpcSubnetIpPooType": {
       "end": "子网的 IP 地址池的结束 IP",
