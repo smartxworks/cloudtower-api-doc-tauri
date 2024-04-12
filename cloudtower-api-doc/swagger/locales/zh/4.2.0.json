@@ -2563,8 +2563,8 @@
     },
     "NestedLabel": {
       "id": "唯一标识",
-      "key": "",
-      "value": ""
+      "key": "标签的 key",
+      "value": "标签的 value"
     },
     "Vm": {
       "clock_offset": "虚拟机时钟",
@@ -2907,40 +2907,40 @@
       "where": ""
     },
     "NestedVirtualPrivateCloudLabelGroup": {
-      "labels": ""
+      "labels": "关联标签集合"
     },
     "VirtualPrivateCloudSecurityGroup": {
-      "default_for_vpc": "",
-      "description": "",
+      "default_for_vpc": "是否为 VPC 的默认安全组",
+      "description": "描述",
       "entityAsyncStatus": "",
-      "id": "",
-      "label_groups": "",
-      "local_id": "",
-      "name": "",
-      "vms": "",
-      "vpc": ""
+      "id": "资源的唯一标识",
+      "label_groups": "标签组",
+      "local_id": "资源的 UUID",
+      "name": "名称",
+      "vms": "关联虚拟机集合",
+      "vpc": "所属 VPC"
     },
     "WithTask_VirtualPrivateCloudSecurityGroup_": {
       "task_id": "异步任务 id。",
       "data": "资源"
     },
     "LabelGroup": {
-      "label_ids": ""
+      "label_ids": "关联标签 id 集合"
     },
     "VirtualPrivateCloudSecurityGroupCreationParams": {
-      "vm_ids": "",
-      "label_groups": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "vm_ids": "关联虚拟机 id 集合",
+      "label_groups": "标签组",
+      "vpc_id": "所属 VPC 的 id",
+      "description": "描述",
+      "name": "名称"
     },
     "VirtualPrivateCloudSecurityGroupUpdationParams": {
-      "data.vm_ids": "",
-      "data.label_groups": "",
-      "data.description": "",
-      "data.name": "",
-      "data": "",
-      "where": ""
+      "data.vm_ids": "关联虚拟机 id 集合",
+      "data.label_groups": "标签组",
+      "data.description": "描述",
+      "data.name": "名称",
+      "data": "用于更新指定 VPC 安全组的数据",
+      "where": "用于更新指定 VPC 安全组的查询条件"
     },
     "DeleteVirtualPrivateCloudSecurityGroup": {
       "id": "资源 id"
@@ -2950,7 +2950,7 @@
       "data": "资源"
     },
     "VirtualPrivateCloudSecurityGroupDeletionParams": {
-      "where": ""
+      "where": "用于删除指定 VPC 安全组的查询条件"
     },
     "NestedVirtualPrivateCloudSecurityGroup": {
       "id": "唯一标识",
