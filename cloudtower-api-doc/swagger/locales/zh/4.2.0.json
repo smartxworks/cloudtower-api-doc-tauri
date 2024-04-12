@@ -3098,35 +3098,35 @@
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "NestedVirtualPrivateCloudFloatingIp": {
-      "external_ip": "",
+      "external_ip": "分配的 IP 地址",
       "id": "唯一标识"
     },
     "NestedVirtualPrivateCloudNatGateway": {
-      "external_ip": "",
+      "external_ip": "转换地址",
       "id": "唯一标识",
       "name": "名称"
     },
     "NestedVirtualPrivateCloudRouterGateway": {
-      "external_ip": "",
+      "external_ip": "外部接口",
       "id": "唯一标识",
       "name": "名称"
     },
     "VirtualPrivateCloudExternalSubnet": {
-      "cidr": "",
-      "description": "",
+      "cidr": "CIDR 块",
+      "description": "描述",
       "entityAsyncStatus": "",
-      "floating_ip_cidr": "",
-      "floating_ips": "",
-      "gateway": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nat_gateway_cidr": "",
-      "nat_gateways": "",
-      "router_gateway_cidr": "",
-      "router_gateways": "",
-      "vlan": "",
-      "vpc": ""
+      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
+      "floating_ips": "关联浮动 IP 集合",
+      "gateway": "默认网关地址",
+      "id": "资源的唯一标识",
+      "local_id": "资源的 UUID",
+      "name": "名称",
+      "nat_gateway_cidr": "从 CIDR 块中指定的 NAT 网关地址块",
+      "nat_gateways": "关联 NAT 网关集合",
+      "router_gateway_cidr": "从 CIDR 块中指定的路由网关地址块",
+      "router_gateways": "关联路由网关集合",
+      "vlan": "虚拟机网络",
+      "vpc": "所属 VPC"
     },
     "VirtualPrivateCloudExternalSubnetOrderByInput": {
       "enum": "按照指定方式排列放回数据"
