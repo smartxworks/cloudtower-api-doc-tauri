@@ -3022,12 +3022,12 @@
       "vpc_nic": ""
     },
     "VirtualPrivateCloudClusterBinding": {
-      "cluster": "",
+      "cluster": "关联集群",
       "entityAsyncStatus": "",
-      "id": "",
-      "mtu": "",
-      "vds": "",
-      "vlan_id": ""
+      "id": "资源的唯一标识",
+      "mtu": "VPC 系统网络的 MTU",
+      "vds": "关联虚拟分布式交换机",
+      "vlan_id": "VLAN 的唯一标识"
     },
     "VirtualPrivateCloudClusterBindingOrderByInput": {
       "enum": "按照指定方式排列放回数据"
