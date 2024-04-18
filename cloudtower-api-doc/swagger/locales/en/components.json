@@ -50,7 +50,7 @@
   "SharedManagement": "Shared Content Management",
   "DatacneterAndOrgManagement": "Datacenter And Organization Management",
   "EntityFileterManagement": "Resource Optimization Management",
-  "ErManagement": "Network and Security",
+  "ErManagement": "Everoute Operation And Management",
   "MonitorManagement": "Monitoring",
   "LabelManagement": "Resource Label Management",
   "LogManagement": "Log Management",
@@ -84,5 +84,7 @@
   "legal": "Legal",
   "privacy": "Privacy",
   "candidate": "End-User License Agreement",
-  "version_icu": "Version {version}"
+  "version_icu": "Version {version}",
+  "VirtualPrivateCloudNetwork": "VPC Networking",
+  "DistributedFirewall": "Distributed Firewall"
 }
