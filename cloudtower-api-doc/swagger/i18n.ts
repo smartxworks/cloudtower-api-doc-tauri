@@ -59,13 +59,14 @@ import en3_3API from './locales/en/3.3.0.json';
 import zh3_4API from './locales/zh/3.4.0.json';
 import en3_4API from './locales/en/3.4.0.json';
 
-
-
 import zh4_0API from './locales/zh/4.0.0.json';
 import en4_0API from './locales/en/4.0.0.json';
 
+import zh4_1API from './locales/zh/4.1.0.json';
+import en4_1API from './locales/en/4.1.0.json';
 
-export const fallbackNS = ['4_0_0','3_4_0','3_3_0', '3_2_0', '3_1_0', '3_0_0', '2_8_0', '2_7_0', '2_6_0', '2_5_0', '2_4_0', '2_3_0', '2_2_0', '2_1_0', '2_0_0', '1_10_0', '1_9_0', '1_8_0'];
+
+export const fallbackNS = ['4_1_0','4_0_0','3_4_0','3_3_0', '3_2_0', '3_1_0', '3_0_0', '2_8_0', '2_7_0', '2_6_0', '2_5_0', '2_4_0', '2_3_0', '2_2_0', '2_1_0', '2_0_0', '1_10_0', '1_9_0', '1_8_0'];
 export type ApiDoc = {
   summary: string;
   description: string;
@@ -94,6 +95,7 @@ i18next.init({
         ['3_3_0']: en3_3API,
         ['3_4_0']: en3_4API,
         ['4_0_0']: en4_0API,
+        ['4_1_0']: en4_1API,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -115,6 +117,7 @@ i18next.init({
         ['3_3_0']: zh3_3API,
         ['3_4_0']: zh3_4API,
         ['4_0_0']: zh4_0API,
+        ['4_1_0']: zh4_1API,
         components: zhComponents,
     },
   },
@@ -128,7 +131,7 @@ i18next.init({
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['1_8_0', '1_9_0', '1_10_0','2_0_0', '2_1_0', '2_2_0', '2_3_0', '2_4_0', '2_5_0','2_6_0', '2_7_0','2_8_0', '3_0_0', '3_1_0','3_2_0', '3_3_0', '3_4_0', '4_0_0', 'components'],
+  ns: ['1_8_0', '1_9_0', '1_10_0','2_0_0', '2_1_0', '2_2_0', '2_3_0', '2_4_0', '2_5_0','2_6_0', '2_7_0','2_8_0', '3_0_0', '3_1_0','3_2_0', '3_3_0', '3_4_0', '4_0_0', '4_1_0','components'],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
