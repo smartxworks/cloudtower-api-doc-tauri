@@ -6,11 +6,14 @@
     "errors.ErrorResponse": {
       "apiVersion": "",
       "code": "",
+      "continue": "",
       "details": "",
       "kind": "",
       "message": "",
-      "metadata": "",
       "reason": "",
+      "remainingItemCount": "",
+      "resourceVersion": "",
+      "selfLink": "",
       "status": ""
     },
     "instance.connectivityResponse": {
@@ -21,14 +24,844 @@
       "protocol": "",
       "success": ""
     },
-    "instance.labelSets": {},
     "intstr.IntOrString": {
       "intVal": "",
       "strVal": "",
       "type": ""
     },
     "intstr.Type": {},
-    "k8s_io_api_core_v1.ConditionStatus": {}
+    "k8s_io_api_core_v1.ConditionStatus": {},
+    "instance.labelSets": {},
+    "license.License": {
+      "license_type": "",
+      "max_socket_num": "",
+      "max_vcpu_num": "",
+      "period": "",
+      "product_name": "",
+      "serial": "",
+      "sign_date": "",
+      "software_edition": ""
+    },
+    "license.licenseCode": {
+      "code": ""
+    },
+    "resource.Quantity": {
+      "Format": ""
+    },
+    "restful.Info": {
+      "message": ""
+    },
+    "runtime.RawExtension": {},
+    "sigs.k8s.io_cluster-api_api_v1beta1.APIEndpoint": {
+      "host": "",
+      "port": ""
+    },
+    "sigs.k8s.io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint": {
+      "advertiseAddress": "",
+      "bindPort": ""
+    },
+    "v1.Duration": {
+      "time.Duration": ""
+    },
+    "v1.FieldsV1": {},
+    "v1.LabelSelector": {
+      "matchExpressions": "",
+      "matchLabels": ""
+    },
+    "v1.LabelSelectorRequirement": {
+      "key": "",
+      "operator": "",
+      "values": ""
+    },
+    "v1.ManagedFieldsEntry": {
+      "apiVersion": "",
+      "fieldsType": "",
+      "fieldsV1": "",
+      "manager": "",
+      "operation": "",
+      "subresource": "",
+      "time": ""
+    },
+    "v1.ObjectReference": {
+      "apiVersion": "",
+      "fieldPath": "",
+      "kind": "",
+      "name": "",
+      "namespace": "",
+      "resourceVersion": "",
+      "uid": ""
+    },
+    "v1.OwnerReference": {
+      "apiVersion": "",
+      "blockOwnerDeletion": "",
+      "controller": "",
+      "kind": "",
+      "name": "",
+      "uid": ""
+    },
+    "v1.SecretReference": {
+      "name": "",
+      "namespace": ""
+    },
+    "v1.StatusCause": {
+      "field": "",
+      "message": "",
+      "reason": ""
+    },
+    "v1.StatusDetails": {
+      "causes": "",
+      "group": "",
+      "kind": "",
+      "name": "",
+      "retryAfterSeconds": "",
+      "uid": ""
+    },
+    "v1.Taint": {
+      "effect": "",
+      "key": "",
+      "timeAdded": "",
+      "value": ""
+    },
+    "v1.TypedObjectReference": {
+      "apiGroup": "",
+      "kind": "",
+      "name": "",
+      "namespace": ""
+    },
+    "v1alpha1.Addon": {
+      "annotations": "",
+      "apiVersion": "",
+      "creationTimestamp": "",
+      "deletionGracePeriodSeconds": "",
+      "deletionTimestamp": "",
+      "finalizers": "",
+      "generateName": "",
+      "generation": "",
+      "kind": "",
+      "labels": "",
+      "managedFields": "",
+      "name": "",
+      "namespace": "",
+      "ownerReferences": "",
+      "resourceVersion": "",
+      "selfLink": "",
+      "spec": "",
+      "status": "",
+      "uid": ""
+    },
+    "v1alpha1.AddonDataValues": {
+      "secretRef": "",
+      "yaml": ""
+    },
+    "v1alpha1.AddonList": {
+      "apiVersion": "",
+      "continue": "",
+      "kind": "",
+      "remainingItemCount": "",
+      "resourceVersion": "",
+      "selfLink": ""
+    },
+    "v1alpha1.AddonPackage": {
+      "name": "",
+      "version": ""
+    },
+    "v1alpha1.AddonSpec": {
+      "config": "",
+      "package": "",
+      "paused": ""
+    },
+    "v1alpha1.AddonStatus": {
+      "failureMessage": "",
+      "phase": "",
+      "ready": "",
+      "version": ""
+    },
+    "v1alpha1.AddonsStatus": {
+      "details": "",
+      "progress": "",
+      "readyCount": "",
+      "totalCount": ""
+    },
+    "v1alpha1.AgentComponentsConfig": {
+      "enabled": "",
+      "hostConfigAgent": ""
+    },
+    "v1alpha1.CNIConfig": {
+      "config": "",
+      "ecpConfig": "",
+      "name": "",
+      "version": ""
+    },
+    "v1alpha1.CSIAddonConfig": {
+      "config": "",
+      "name": "",
+      "version": ""
+    },
+    "v1alpha1.CSIConfig": {
+      "elf": "",
+      "stub": "",
+      "zbs": ""
+    },
+    "v1alpha1.CertManagerComponentsConfig": {
+      "certManager": "",
+      "enabled": ""
+    },
+    "v1alpha1.CertManagerSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.CloudProviderSpec": {
+      "cloudtower": "",
+      "ksph": "",
+      "name": ""
+    },
+    "v1alpha1.CloudTowerConnect": {
+      "authMode": "",
+      "password": "",
+      "server": "",
+      "skipTLSVerify": "",
+      "username": ""
+    },
+    "v1alpha1.CloudTowerServer": {
+      "secretRef": "",
+      "spec": ""
+    },
+    "v1alpha1.CloudTowerSpec": {
+      "cloudtowerServer": "",
+      "elfCluster": "",
+      "elfVlan": "",
+      "vmTemplate": "",
+      "zbsVip": ""
+    },
+    "v1alpha1.ClusterAutoscalerConfig": {
+      "clusterAutoscaler": "",
+      "enabled": ""
+    },
+    "v1alpha1.ClusterAutoscalerSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.ClusterConfigurationSpec": {
+      "autoResourceReserved": "",
+      "caCerts": "",
+      "certificatesExpiryDays": "",
+      "customImageRegistry": "",
+      "kubernetes": "",
+      "nodeDrainTimeout": "",
+      "nodeVolumeDetachTimeout": "",
+      "operation": "",
+      "proxy": "",
+      "security": "",
+      "skipCreateEverouteNetworkPolicy": "",
+      "skipTLSVerify": "",
+      "timezone": ""
+    },
+    "v1alpha1.ClusterResources": {
+      "controlPlane": "",
+      "total": "",
+      "workers": ""
+    },
+    "v1alpha1.ClusterTopology": {
+      "controlPlane": "",
+      "workers": ""
+    },
+    "v1alpha1.ComponentsConfig": {
+      "agents": "",
+      "certManager": "",
+      "clusterAutoscaler": "",
+      "ecpadapter": "",
+      "externaldns": "",
+      "gpu": "",
+      "ingress": "",
+      "loadbalancer": "",
+      "logging": "",
+      "monitoring": ""
+    },
+    "v1alpha1.ContourSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.ControlPlaneGroup": {
+      "autoResourceReserved": "",
+      "cloudProvider": "",
+      "machineHealthCheck": "",
+      "name": "",
+      "nodeAutoscaler": "",
+      "nodeConfig": "",
+      "nodeDrainTimeout": "",
+      "nodeVolumeDetachTimeout": "",
+      "placementGroup": "",
+      "replicas": "",
+      "rolloutBefore": ""
+    },
+    "v1alpha1.ECPAdapterConfig": {
+      "ecpadapter": "",
+      "enabled": ""
+    },
+    "v1alpha1.ECPAdapterSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.ECPConfig": {
+      "fakeIP": "",
+      "ippools": "",
+      "uplink": "",
+      "uplinkIP": ""
+    },
+    "v1alpha1.ECPIPPool": {
+      "cidr": "",
+      "end": "",
+      "except": "",
+      "gateway": "",
+      "name": "",
+      "start": "",
+      "subnet": ""
+    },
+    "v1alpha1.ElasticCurator": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.ElasticSearchSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.EventExporter": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.ExternalDNSConfig": {
+      "enabled": "",
+      "externaldns": ""
+    },
+    "v1alpha1.ExternalDNSSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.FailureDetails": {
+      "causes": ""
+    },
+    "v1alpha1.FluentBitSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.GPUComponentsConfig": {
+      "enabled": "",
+      "nvidiaGPUOperator": ""
+    },
+    "v1alpha1.GPUPassthroughDeviceSpec": {
+      "count": "",
+      "model": ""
+    },
+    "v1alpha1.HostConfigAgentSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.IngressComponentsConfig": {
+      "contour": "",
+      "enabled": ""
+    },
+    "v1alpha1.KibanaSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.KubePrometheusSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.KubeSmartCluster": {
+      "annotations": "",
+      "apiVersion": "",
+      "creationTimestamp": "",
+      "deletionGracePeriodSeconds": "",
+      "deletionTimestamp": "",
+      "finalizers": "",
+      "generateName": "",
+      "generation": "",
+      "kind": "",
+      "labels": "",
+      "managedFields": "",
+      "name": "",
+      "namespace": "",
+      "ownerReferences": "",
+      "resourceVersion": "",
+      "selfLink": "",
+      "spec": "",
+      "status": "",
+      "uid": ""
+    },
+    "v1alpha1.KubeSmartClusterList": {
+      "apiVersion": "",
+      "continue": "",
+      "kind": "",
+      "remainingItemCount": "",
+      "resourceVersion": "",
+      "selfLink": ""
+    },
+    "v1alpha1.KubeSmartClusterSpec": {
+      "cloudProvider": "",
+      "clusterConfiguration": "",
+      "components": "",
+      "controlPlaneEndpoint": "",
+      "network": "",
+      "paused": "",
+      "platform": "",
+      "storage": "",
+      "topology": "",
+      "version": ""
+    },
+    "v1alpha1.KubeSmartClusterStatus": {
+      "addons": "",
+      "addonsReady": "",
+      "clusterInfraType": "",
+      "conditions": "",
+      "controlPlaneAvailable": "",
+      "controlPlaneReady": "",
+      "controlPlanes": "",
+      "csiNames": "",
+      "failureDetails": "",
+      "failureMessage": "",
+      "failureReason": "",
+      "kappControllerPodReady": "",
+      "kubeconfigRef": "",
+      "nodesReady": "",
+      "operation": "",
+      "packageManagerReady": "",
+      "phase": "",
+      "platform": "",
+      "ready": "",
+      "requiredNetworkPorts": "",
+      "resources": "",
+      "serverUrl": "",
+      "sksOriginalVersion": "",
+      "sksVersion": "",
+      "sksYttManifestsVersion": "",
+      "version": "",
+      "vipClaim": "",
+      "vmTemplate": "",
+      "workers": "",
+      "workersReady": ""
+    },
+    "v1alpha1.KubeSmartPhysicalHostSpec": {
+      "fileServerURL": "",
+      "instanceLabelSelector": "",
+      "instanceObjectSelector": ""
+    },
+    "v1alpha1.KubernetesConfiguration": {
+      "controlPlane": "",
+      "kubeletConfiguration": "",
+      "workers": ""
+    },
+    "v1alpha1.LoadBalancerComponentsConfig": {
+      "enabled": "",
+      "metallb": ""
+    },
+    "v1alpha1.LoggingComponentsConfig": {
+      "elasticcurator": "",
+      "elasticsearch": "",
+      "enabled": "",
+      "eventexporter": "",
+      "fluentbit": "",
+      "kibana": "",
+      "loggingoperator": ""
+    },
+    "v1alpha1.LoggingOperatorSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.MachineHealthCheck": {
+      "maxUnhealthy": "",
+      "nodeStartupTimeout": "",
+      "remediationTemplate": "",
+      "unhealthyConditions": "",
+      "unhealthyRange": ""
+    },
+    "v1alpha1.MetalLBSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.MonitoringComponentsConfig": {
+      "enabled": "",
+      "kubeprometheus": ""
+    },
+    "v1alpha1.NVIDIAGPUOperatorSpec": {
+      "config": "",
+      "disabled": "",
+      "version": ""
+    },
+    "v1alpha1.Network": {
+      "devices": "",
+      "ipPoolRef": "",
+      "nameservers": ""
+    },
+    "v1alpha1.NetworkConfig": {
+      "apiServerPort": "",
+      "cni": "",
+      "ipPoolRef": "",
+      "managementNetworkInterface": "",
+      "pods": "",
+      "serviceDomain": "",
+      "services": ""
+    },
+    "v1alpha1.NetworkDevice": {
+      "ipAddrs": "",
+      "ipPoolRefs": "",
+      "macAddr": "",
+      "netmask": "",
+      "networkType": "",
+      "routes": "",
+      "tag": "",
+      "vlan": ""
+    },
+    "v1alpha1.NetworkDeviceRoute": {
+      "gateway": "",
+      "netmask": "",
+      "network": ""
+    },
+    "v1alpha1.NodeAutoscaler": {
+      "maxSize": "",
+      "minSize": ""
+    },
+    "v1alpha1.NodeConfig": {
+      "cloneMode": "",
+      "cpuCores": "",
+      "diskSizeGB": "",
+      "gpuDevices": "",
+      "memoryMB": "",
+      "network": "",
+      "vgpuDevices": "",
+      "vmTemplate": ""
+    },
+    "v1alpha1.NodesStatus": {
+      "observedCount": "",
+      "progress": "",
+      "readyCount": "",
+      "totalCount": ""
+    },
+    "v1alpha1.ObjectKey": {
+      "name": "",
+      "namespace": ""
+    },
+    "v1alpha1.OperationConfiguration": {
+      "createClusterTimeout": "",
+      "rollbackClusterTimeout": "",
+      "updateClusterTimeout": "",
+      "upgradeClusterTimeout": ""
+    },
+    "v1alpha1.OperationStatus": {
+      "phase": "",
+      "startTime": "",
+      "timeout": "",
+      "type": ""
+    },
+    "v1alpha1.PlacementGroup": {
+      "name": ""
+    },
+    "v1alpha1.Platform": {
+      "architecture": ""
+    },
+    "v1alpha1.ProtocolPort": {
+      "note": "",
+      "port": "",
+      "protocol": ""
+    },
+    "v1alpha1.ProxyConfiguration": {
+      "http": "",
+      "https": "",
+      "noProxy": ""
+    },
+    "v1alpha1.RequiredNetworkPorts": {
+      "clusterInterConnection": ""
+    },
+    "v1alpha1.Resources": {
+      "cpuCore": "",
+      "cpuSocket": "",
+      "cpuThread": "",
+      "gpu": "",
+      "memory": "",
+      "vcpu": "",
+      "vgpu": ""
+    },
+    "v1alpha1.SecurityConfiguration": {
+      "sshAuthorizedPublicKey": "",
+      "sshPassword": "",
+      "trustedImageRegistries": ""
+    },
+    "v1alpha1.StorageConfig": {
+      "csi": ""
+    },
+    "v1alpha1.TimezoneConfiguration": {
+      "name": ""
+    },
+    "v1alpha1.TrustedImageRegistry": {
+      "caCerts": "",
+      "desc": "",
+      "skipTLSVerify": "",
+      "uri": ""
+    },
+    "v1alpha1.VGPUDeviceSpec": {
+      "count": "",
+      "type": ""
+    },
+    "v1alpha1.VIPClaim": {
+      "ipClaimName": "",
+      "ipPoolName": "",
+      "ipPoolNamespace": ""
+    },
+    "v1alpha1.WorkerGroup": {
+      "autoResourceReserved": "",
+      "cloudProvider": "",
+      "machineHealthCheck": "",
+      "name": "",
+      "nodeAutoscaler": "",
+      "nodeConfig": "",
+      "nodeDrainTimeout": "",
+      "nodeVolumeDetachTimeout": "",
+      "placementGroup": "",
+      "replicas": "",
+      "rolloutStrategy": ""
+    },
+    "v1beta1.APIServer": {
+      "certSANs": "",
+      "extraArgs": "",
+      "extraVolumes": "",
+      "timeoutForControlPlane": ""
+    },
+    "v1beta1.BootstrapToken": {
+      "description": "",
+      "expires": "",
+      "groups": "",
+      "token": "",
+      "ttl": "",
+      "usages": ""
+    },
+    "v1beta1.BootstrapTokenDiscovery": {
+      "apiServerEndpoint": "",
+      "caCertHashes": "",
+      "token": "",
+      "unsafeSkipCAVerification": ""
+    },
+    "v1beta1.BootstrapTokenString": {},
+    "v1beta1.ClusterConfiguration": {
+      "apiServer": "",
+      "apiVersion": "",
+      "certificatesDir": "",
+      "clusterName": "",
+      "controlPlaneEndpoint": "",
+      "controllerManager": "",
+      "dns": "",
+      "etcd": "",
+      "featureGates": "",
+      "imageRepository": "",
+      "kind": "",
+      "kubernetesVersion": "",
+      "networking": "",
+      "scheduler": ""
+    },
+    "v1beta1.Condition": {
+      "lastTransitionTime": "",
+      "message": "",
+      "reason": "",
+      "severity": "",
+      "status": "",
+      "type": ""
+    },
+    "v1beta1.ContainerLinuxConfig": {
+      "additionalConfig": "",
+      "strict": ""
+    },
+    "v1beta1.ControlPlaneComponent": {
+      "extraArgs": "",
+      "extraVolumes": ""
+    },
+    "v1beta1.DNS": {
+      "imageRepository": "",
+      "imageTag": ""
+    },
+    "v1beta1.Discovery": {
+      "bootstrapToken": "",
+      "file": "",
+      "timeout": "",
+      "tlsBootstrapToken": ""
+    },
+    "v1beta1.DiskSetup": {
+      "filesystems": "",
+      "partitions": ""
+    },
+    "v1beta1.Etcd": {
+      "external": "",
+      "local": ""
+    },
+    "v1beta1.ExternalEtcd": {
+      "caFile": "",
+      "certFile": "",
+      "endpoints": "",
+      "keyFile": ""
+    },
+    "v1beta1.File": {
+      "append": "",
+      "content": "",
+      "contentFrom": "",
+      "encoding": "",
+      "owner": "",
+      "path": "",
+      "permissions": ""
+    },
+    "v1beta1.FileDiscovery": {
+      "kubeConfigPath": ""
+    },
+    "v1beta1.FileSource": {
+      "secret": ""
+    },
+    "v1beta1.Filesystem": {
+      "device": "",
+      "extraOpts": "",
+      "filesystem": "",
+      "label": "",
+      "overwrite": "",
+      "partition": "",
+      "replaceFS": ""
+    },
+    "v1beta1.HostPathMount": {
+      "hostPath": "",
+      "mountPath": "",
+      "name": "",
+      "pathType": "",
+      "readOnly": ""
+    },
+    "v1beta1.IgnitionSpec": {
+      "containerLinuxConfig": ""
+    },
+    "v1beta1.InitConfiguration": {
+      "apiVersion": "",
+      "bootstrapTokens": "",
+      "kind": "",
+      "localAPIEndpoint": "",
+      "nodeRegistration": "",
+      "patches": "",
+      "skipPhases": ""
+    },
+    "v1beta1.JoinConfiguration": {
+      "apiVersion": "",
+      "caCertPath": "",
+      "controlPlane": "",
+      "discovery": "",
+      "kind": "",
+      "nodeRegistration": "",
+      "patches": "",
+      "skipPhases": ""
+    },
+    "v1beta1.JoinControlPlane": {
+      "localAPIEndpoint": ""
+    },
+    "v1beta1.KubeadmConfigSpec": {
+      "clusterConfiguration": "",
+      "diskSetup": "",
+      "files": "",
+      "format": "",
+      "ignition": "",
+      "initConfiguration": "",
+      "joinConfiguration": "",
+      "mounts": "",
+      "ntp": "",
+      "postKubeadmCommands": "",
+      "preKubeadmCommands": "",
+      "useExperimentalRetryJoin": "",
+      "users": "",
+      "verbosity": ""
+    },
+    "v1beta1.LocalEtcd": {
+      "dataDir": "",
+      "extraArgs": "",
+      "imageRepository": "",
+      "imageTag": "",
+      "peerCertSANs": "",
+      "serverCertSANs": ""
+    },
+    "v1beta1.MachineDeploymentStrategy": {
+      "rollingUpdate": "",
+      "type": ""
+    },
+    "v1beta1.MachineRollingUpdateDeployment": {
+      "deletePolicy": "",
+      "maxSurge": "",
+      "maxUnavailable": ""
+    },
+    "v1beta1.NTP": {
+      "enabled": "",
+      "servers": ""
+    },
+    "v1beta1.NetworkRanges": {
+      "cidrBlocks": ""
+    },
+    "v1beta1.Networking": {
+      "dnsDomain": "",
+      "podSubnet": "",
+      "serviceSubnet": ""
+    },
+    "v1beta1.NodeRegistrationOptions": {
+      "criSocket": "",
+      "ignorePreflightErrors": "",
+      "imagePullPolicy": "",
+      "kubeletExtraArgs": "",
+      "name": "",
+      "taints": ""
+    },
+    "v1beta1.Partition": {
+      "device": "",
+      "layout": "",
+      "overwrite": "",
+      "tableType": ""
+    },
+    "v1beta1.PasswdSource": {
+      "secret": ""
+    },
+    "v1beta1.Patches": {
+      "directory": ""
+    },
+    "v1beta1.RolloutBefore": {
+      "certificatesExpiryDays": ""
+    },
+    "v1beta1.SecretFileSource": {
+      "key": "",
+      "name": ""
+    },
+    "v1beta1.SecretPasswdSource": {
+      "key": "",
+      "name": ""
+    },
+    "v1beta1.UnhealthyCondition": {
+      "status": "",
+      "timeout": "",
+      "type": ""
+    },
+    "v1beta1.User": {
+      "gecos": "",
+      "groups": "",
+      "homeDir": "",
+      "inactive": "",
+      "lockPassword": "",
+      "name": "",
+      "passwd": "",
+      "passwdFrom": "",
+      "primaryGroup": "",
+      "shell": "",
+      "sshAuthorizedKeys": "",
+      "sudo": ""
+    }
   },
   "tags": [
     {
