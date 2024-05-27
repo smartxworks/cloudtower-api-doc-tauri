@@ -1,0 +1,732 @@
+{
+  "components": {
+    "schemas": {
+      "cluster.KubeConfig": {
+        "properties": {
+          "data": { "description": "Base64 encoded string", "type": "string" }
+        },
+        "type": "object"
+      },
+      "errors.ErrorResponse": {
+        "properties": {
+          "apiVersion": {
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+            "type": "string"
+          },
+          "code": {
+            "description": "Suggested HTTP return code for this status, 0 if not set.",
+            "type": "integer"
+          },
+          "details": { "$ref": "#/components/schemas/v1.StatusDetails" },
+          "kind": {
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+            "type": "string"
+          },
+          "message": {
+            "description": "A human-readable description of the status of this operation.",
+            "type": "string"
+          },
+          "metadata": { "$ref": "#/components/schemas/v1.ListMeta" },
+          "reason": { "$ref": "#/components/schemas/v1.StatusReason" },
+          "status": {
+            "description": "Status of the operation.\nOne of: \"Success\" or \"Failure\".\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "instance.connectivityResponse": {
+        "properties": {
+          "connectable": { "description": "检查结果", "type": "boolean" },
+          "host": { "type": "string" },
+          "message": { "description": "附加消息", "type": "string" },
+          "port": { "type": "integer" },
+          "protocol": {
+            "type": "string",
+            "x-enum-varnames": [
+              "ProtocolTCP",
+              "ProtocolUDP",
+              "ProtocolIPIP",
+              "ProtocolICMP",
+              "ProtocolSSH",
+              "ProtocolHTTP"
+            ]
+          },
+          "success": { "description": "是否执行成功", "type": "boolean" }
+        },
+        "type": "object"
+      },
+      "instance.labelSets": {
+        "additionalProperties": {
+          "items": { "type": "string" },
+          "type": "array"
+        },
+        "type": "object"
+      },
+      "intstr.IntOrString": {
+        "description": "The maximum number of machines that can be scheduled above the\ndesired number of machines.\nValue can be an absolute number (ex: 5) or a percentage of\ndesired machines (ex: 10%).\nThis can not be 0 if MaxUnavailable is 0.\nAbsolute number is calculated from percentage by rounding up.\nDefaults to 1.\nExample: when this is set to 30%, the new MachineSet can be scaled\nup immediately when the rolling update starts, such that the total\nnumber of old and new machines do not exceed 130% of desired\nmachines. Once old machines have been killed, new MachineSet can\nbe scaled up further, ensuring that total number of machines running\nat any time during the update is at most 130% of desired machines.",
+        "properties": {
+          "intVal": { "type": "integer" },
+          "strVal": { "type": "string" },
+          "type": { "$ref": "#/components/schemas/intstr.Type" }
+        },
+        "type": "object"
+      },
+      "intstr.Type": {
+        "type": "integer",
+        "x-enum-comments": {
+          "Int": "The IntOrString holds an int.",
+          "String": "The IntOrString holds a string."
+        },
+        "x-enum-varnames": ["Int", "String"]
+      },
+      "k8s_io_api_core_v1.ConditionStatus": {
+        "description": "+kubebuilder:validation:Type=string"
+      }
+    }
+  },
+  "info": {
+    "contact": { "name": "SmartX Inc.", "url": "https://www.smartx.com/" },
+    "description": "This is the doc for SKS REST API.",
+    "termsOfService": "http://swagger.io/terms/",
+    "title": "SKS REST API",
+    "version": "1.0"
+  },
+  "externalDocs": { "description": "", "url": "" },
+  "paths": {
+    "/api/v1/servers/connectivity-probes/:namespace/:name": {
+      "post": {
+        "operationId": "instances/connectivity-probes",
+        "parameters": [
+          {
+            "description": "serverInstance object on namespace name",
+            "in": "query",
+            "name": "namespace",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "description": "ServerInstance object name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/instance.connectivityResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "406": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Acceptable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Network connectivity probe on serverInstance.",
+        "tags": ["instances"]
+      }
+    },
+    "/api/v1/servers/labels": {
+      "get": {
+        "operationId": "instances/jobs",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/instance.labelSets" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get all Ready ServiceInstance label sets.",
+        "tags": ["instances"]
+      }
+    },
+    "/api/v1/servers/prepare-environment": {
+      "get": {
+        "operationId": "instances/commands",
+        "requestBody": {
+          "content": { "text/plain": { "schema": { "type": "string" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": { "schema": { "type": "string" } },
+              "text/plain": { "schema": { "type": "string" } }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Download prepare environment command.",
+        "tags": ["instances"]
+      }
+    },
+    "/clusters": {
+      "get": {
+        "operationId": "ListClusters",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to all namespaces if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterList"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get all workload clusters.",
+        "tags": ["clusters"]
+      },
+      "post": {
+        "operationId": "CreateCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+              }
+            }
+          },
+          "description": "KubeSmartCluster spec",
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Create a workload cluster",
+        "tags": ["clusters"]
+      }
+    },
+    "/clusters/:cluster": {
+      "delete": {
+        "operationId": "DeleteCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": "Whether to delete a cluster forcefully. Default to false if not specified.",
+            "in": "query",
+            "name": "force",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": { "schema": { "type": "object" } }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Delete a workload cluster.",
+        "tags": ["clusters"]
+      },
+      "get": {
+        "operationId": "GetCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get a workload cluster.",
+        "tags": ["clusters"]
+      },
+      "put": {
+        "operationId": "UpdateCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+              }
+            }
+          },
+          "description": "KubeSmartCluster spec",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Update a workload cluster.",
+        "tags": ["clusters"]
+      }
+    },
+    "/clusters/:cluster/addons": {
+      "get": {
+        "operationId": "listClusterAddons",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/v1alpha1.AddonList" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get addons of a workload cluster.",
+        "tags": ["clusters"]
+      }
+    },
+    "/clusters/:cluster/kubeconfig": {
+      "get": {
+        "operationId": "GetClusterKubeconfig",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/cluster.KubeConfig" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get the kubeconfig of a workload cluster.",
+        "tags": ["clusters"]
+      }
+    },
+    "/clusters/{cluster}/proxy/{k8s_url}": {
+      "delete": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      },
+      "get": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      },
+      "head": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      },
+      "patch": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      },
+      "post": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      },
+      "put": {
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}.",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": null,
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "tags": ["workload clusters"]
+      }
+    },
+    "/compatibility/versions": {
+      "get": {
+        "operationId": "compatibleSKSVersion",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "items": { "type": "string" }, "type": "array" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get the current SKS compatible sksVersion list",
+        "tags": ["upgrade"]
+      }
+    },
+    "/compatibility/vm-templates": {
+      "get": {
+        "operationId": "compatibleVmTemplate",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "type": "object" } } }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "items": { "type": "string" }, "type": "array" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get Compatible vm template sks Version List",
+        "tags": ["upgrade"]
+      }
+    },
+    "/healthz": {
+      "get": {
+        "operationId": "GetHealth",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/restful.Info" }
+              }
+            },
+            "description": "{\"message\": \"healthy\"}"
+          }
+        },
+        "summary": "Check service health.",
+        "tags": ["healthz"]
+      }
+    },
+    "/licenses/validate": {
+      "post": {
+        "operationId": "validateLicense",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/license.licenseCode" }
+            }
+          },
+          "description": "Issued by the license code",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/license.License" }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Validate and parse license code.",
+        "tags": ["license"]
+      }
+    }
+  },
+  "openapi": "3.1.0"
+}

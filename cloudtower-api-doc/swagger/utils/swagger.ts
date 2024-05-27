@@ -23,6 +23,11 @@ export const specMap = {
 }
 
 
+export const sksSpecMap = {
+  '1.4.0': import('../../static/sks-specs/1.4.0-swagger.json'),
+}
+
+
 export enum SupportLanguage {
   zh = "zh",
   en = "en",

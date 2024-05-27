@@ -15,24 +15,25 @@ const replaceTags = (tag:string) => {
   return tag;
 }
 
-const getNs = (version: string) => {
-  return version.split('.').join('_');
+const getNs = (version: string, product?:string) => {
+  return `${product ? product + '_' : ''}${version.split('.').join('_')}`;
 }
 
-const getFallbackNS = (version: string) => {
-  return fallbackNS.slice(fallbackNS.indexOf(getNs(version)))
+const getFallbackNS = (version: string, product) => {
+  return fallbackNS.slice(fallbackNS.indexOf(getNs(version, product)))
 }
 
 export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
-  version: string
+  version: string,
+  product?: string,
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
   const tags = new Set<string>();
-  const ns = getNs(version);
-  const fallbackNS = getFallbackNS(version);
+  const ns = getNs(version, product);
+  const fallbackNS = getFallbackNS(version, product);
   i18next.options.fallbackNS = fallbackNS;
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${ns}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;

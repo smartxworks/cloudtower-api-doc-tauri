@@ -1,0 +1,115 @@
+{
+  "schemas": {
+    "cluster.KubeConfig": {
+      "data": ""
+    },
+    "errors.ErrorResponse": {
+      "apiVersion": "",
+      "code": "",
+      "details": "",
+      "kind": "",
+      "message": "",
+      "metadata": "",
+      "reason": "",
+      "status": ""
+    },
+    "instance.connectivityResponse": {
+      "connectable": "",
+      "host": "",
+      "message": "",
+      "port": "",
+      "protocol": "",
+      "success": ""
+    },
+    "instance.labelSets": {},
+    "intstr.IntOrString": {
+      "intVal": "",
+      "strVal": "",
+      "type": ""
+    },
+    "intstr.Type": {},
+    "k8s_io_api_core_v1.ConditionStatus": {}
+  },
+  "tags": [
+    {
+      "name": "instances",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "clusters",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "workload clusters",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "upgrade",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "healthz",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "license",
+      "x-displayName": "",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/v1/servers/connectivity-probes/:namespace/:name": {
+      "summary": "",
+      "description": ""
+    },
+    "/api/v1/servers/labels": {
+      "summary": "",
+      "description": ""
+    },
+    "/api/v1/servers/prepare-environment": {
+      "summary": "",
+      "description": ""
+    },
+    "/clusters": {
+      "summary": "",
+      "description": ""
+    },
+    "/clusters/:cluster": {
+      "summary": "",
+      "description": ""
+    },
+    "/clusters/:cluster/addons": {
+      "summary": "",
+      "description": ""
+    },
+    "/clusters/:cluster/kubeconfig": {
+      "summary": "",
+      "description": ""
+    },
+    "/clusters/{cluster}/proxy/{k8s_url}": {
+      "summary": "",
+      "description": ""
+    },
+    "/compatibility/versions": {
+      "summary": "",
+      "description": ""
+    },
+    "/compatibility/vm-templates": {
+      "summary": "",
+      "description": ""
+    },
+    "/healthz": {
+      "summary": "",
+      "description": ""
+    },
+    "/licenses/validate": {
+      "summary": "",
+      "description": ""
+    }
+  }
+}
