@@ -40,8 +40,9 @@ export const wrapSpecWithI18n = (
     const method = Object.keys(paths[p])[0]
     const operationObj = paths[p][method] as OpenAPIV3.OperationObject;
     const { description, summary } = apiDoc;
-    operationObj .description = description;
-    operationObj .summary = summary;
+    const { description: originDes, summary: originSum } = operationObj;
+    operationObj.description = description || originDes;
+    operationObj.summary =  summary || originSum;
     const example = swaggerSpecExample [p] || {};
     if(example) {
       operationObj["x-codeSamples"] = [
@@ -88,7 +89,8 @@ export const wrapSpecWithI18n = (
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
       describeFn: ({ prefix, path }) => {
-        _.set(cloneSpec, [...prefix, "description"], schema[path]);
+        const originDes = _.get(cloneSpec, [...prefix, 'description']);
+        _.set(cloneSpec, [...prefix, "description"], schema[path] || originDes);
       },
     });
   });

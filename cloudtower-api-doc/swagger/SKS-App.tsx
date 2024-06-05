@@ -8,7 +8,7 @@ import {
   ISpec,
   sksSpecMap as specMap,
   overwriteSchemaTitle,
-  // wrapSpecWithI18n,
+  wrapSpecWithI18n,
 } from "./utils";
 import Redocly from "./redoc/Redoc";
 import { LOCAL_STORAGE_SERVERS_KEY } from "./redoc/Console/ServerDropdown";
@@ -78,7 +78,7 @@ const App: React.FC = () => {
       const swaggerSpec: ISpec = _.cloneDeep(data.default);
       setRawSpec(swaggerSpec);
       i18next.changeLanguage(i18n.currentLocale);
-      setSpec(swaggerSpec);
+      setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version));
     })
 
   }, [version, i18n.currentLocale]);
