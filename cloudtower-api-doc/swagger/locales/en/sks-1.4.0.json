@@ -6,14 +6,11 @@
     "errors.ErrorResponse": {
       "apiVersion": "",
       "code": "",
-      "continue": "",
       "details": "",
       "kind": "",
       "message": "",
+      "metadata": "",
       "reason": "",
-      "remainingItemCount": "",
-      "resourceVersion": "",
-      "selfLink": "",
       "status": ""
     },
     "instance.connectivityResponse": {
@@ -24,14 +21,18 @@
       "protocol": "",
       "success": ""
     },
+    "instance.labelSets": {},
     "intstr.IntOrString": {
       "intVal": "",
       "strVal": "",
       "type": ""
     },
-    "intstr.Type": {},
-    "k8s_io_api_core_v1.ConditionStatus": {},
-    "instance.labelSets": {},
+    "intstr.Type": {
+      "enum": ""
+    },
+    "k8s_io_api_core_v1.ConditionStatus": {
+      "enum": ""
+    },
     "license.License": {
       "license_type": "",
       "max_socket_num": "",
@@ -42,36 +43,57 @@
       "sign_date": "",
       "software_edition": ""
     },
+    "license.LicenseType": {
+      "enum": ""
+    },
+    "license.SoftwareEdition": {
+      "enum": ""
+    },
     "license.licenseCode": {
       "code": ""
     },
     "resource.Quantity": {
-      "Format": ""
+      "enum": ""
     },
     "restful.Info": {
       "message": ""
     },
     "runtime.RawExtension": {},
-    "sigs.k8s.io_cluster-api_api_v1beta1.APIEndpoint": {
+    "sigs_k8s_io_cluster-api_api_v1beta1.APIEndpoint": {
       "host": "",
       "port": ""
     },
-    "sigs.k8s.io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint": {
+    "sigs_k8s_io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint": {
       "advertiseAddress": "",
       "bindPort": ""
+    },
+    "v1.CauseType": {
+      "enum": ""
     },
     "v1.Duration": {
       "time.Duration": ""
     },
     "v1.FieldsV1": {},
+    "v1.HostPathType": {
+      "enum": ""
+    },
     "v1.LabelSelector": {
       "matchExpressions": "",
       "matchLabels": ""
+    },
+    "v1.LabelSelectorOperator": {
+      "enum": ""
     },
     "v1.LabelSelectorRequirement": {
       "key": "",
       "operator": "",
       "values": ""
+    },
+    "v1.ListMeta": {
+      "continue": "",
+      "remainingItemCount": "",
+      "resourceVersion": "",
+      "selfLink": ""
     },
     "v1.ManagedFieldsEntry": {
       "apiVersion": "",
@@ -81,6 +103,29 @@
       "operation": "",
       "subresource": "",
       "time": ""
+    },
+    "v1.ManagedFieldsOperationType": {
+      "enum": ""
+    },
+    "v1.NodeConditionType": {
+      "enum": ""
+    },
+    "v1.ObjectMeta": {
+      "annotations": "",
+      "creationTimestamp": "",
+      "deletionGracePeriodSeconds": "",
+      "deletionTimestamp": "",
+      "finalizers": "",
+      "generateName": "",
+      "generation": "",
+      "labels": "",
+      "managedFields": "",
+      "name": "",
+      "namespace": "",
+      "ownerReferences": "",
+      "resourceVersion": "",
+      "selfLink": "",
+      "uid": ""
     },
     "v1.ObjectReference": {
       "apiVersion": "",
@@ -116,11 +161,17 @@
       "retryAfterSeconds": "",
       "uid": ""
     },
+    "v1.StatusReason": {
+      "enum": ""
+    },
     "v1.Taint": {
       "effect": "",
       "key": "",
       "timeAdded": "",
       "value": ""
+    },
+    "v1.TaintEffect": {
+      "enum": ""
     },
     "v1.TypedObjectReference": {
       "apiGroup": "",
@@ -129,25 +180,11 @@
       "namespace": ""
     },
     "v1alpha1.Addon": {
-      "annotations": "",
       "apiVersion": "",
-      "creationTimestamp": "",
-      "deletionGracePeriodSeconds": "",
-      "deletionTimestamp": "",
-      "finalizers": "",
-      "generateName": "",
-      "generation": "",
       "kind": "",
-      "labels": "",
-      "managedFields": "",
-      "name": "",
-      "namespace": "",
-      "ownerReferences": "",
-      "resourceVersion": "",
-      "selfLink": "",
+      "metadata": "",
       "spec": "",
-      "status": "",
-      "uid": ""
+      "status": ""
     },
     "v1alpha1.AddonDataValues": {
       "secretRef": "",
@@ -155,11 +192,8 @@
     },
     "v1alpha1.AddonList": {
       "apiVersion": "",
-      "continue": "",
       "kind": "",
-      "remainingItemCount": "",
-      "resourceVersion": "",
-      "selfLink": ""
+      "metadata": ""
     },
     "v1alpha1.AddonPackage": {
       "name": "",
@@ -176,6 +210,9 @@
       "ready": "",
       "version": ""
     },
+    "v1alpha1.AddonType": {
+      "enum": ""
+    },
     "v1alpha1.AddonsStatus": {
       "details": "",
       "progress": "",
@@ -185,6 +222,9 @@
     "v1alpha1.AgentComponentsConfig": {
       "enabled": "",
       "hostConfigAgent": ""
+    },
+    "v1alpha1.Architecture": {
+      "enum": ""
     },
     "v1alpha1.CNIConfig": {
       "config": "",
@@ -211,10 +251,16 @@
       "disabled": "",
       "version": ""
     },
+    "v1alpha1.CloneMode": {
+      "enum": ""
+    },
     "v1alpha1.CloudProviderSpec": {
       "cloudtower": "",
       "ksph": "",
       "name": ""
+    },
+    "v1alpha1.CloudTowerAuthMode": {
+      "enum": ""
     },
     "v1alpha1.CloudTowerConnect": {
       "authMode": "",
@@ -257,6 +303,12 @@
       "skipCreateEverouteNetworkPolicy": "",
       "skipTLSVerify": "",
       "timezone": ""
+    },
+    "v1alpha1.ClusterInfraType": {
+      "enum": ""
+    },
+    "v1alpha1.ClusterOperation": {
+      "enum": ""
     },
     "v1alpha1.ClusterResources": {
       "controlPlane": "",
@@ -381,33 +433,19 @@
       "version": ""
     },
     "v1alpha1.KubeSmartCluster": {
-      "annotations": "",
       "apiVersion": "",
-      "creationTimestamp": "",
-      "deletionGracePeriodSeconds": "",
-      "deletionTimestamp": "",
-      "finalizers": "",
-      "generateName": "",
-      "generation": "",
       "kind": "",
-      "labels": "",
-      "managedFields": "",
-      "name": "",
-      "namespace": "",
-      "ownerReferences": "",
-      "resourceVersion": "",
-      "selfLink": "",
+      "metadata": "",
       "spec": "",
-      "status": "",
-      "uid": ""
+      "status": ""
     },
     "v1alpha1.KubeSmartClusterList": {
       "apiVersion": "",
-      "continue": "",
       "kind": "",
-      "remainingItemCount": "",
-      "resourceVersion": "",
-      "selfLink": ""
+      "metadata": ""
+    },
+    "v1alpha1.KubeSmartClusterPhase": {
+      "enum": ""
     },
     "v1alpha1.KubeSmartClusterSpec": {
       "cloudProvider": "",
@@ -531,6 +569,12 @@
       "netmask": "",
       "network": ""
     },
+    "v1alpha1.NetworkTag": {
+      "enum": ""
+    },
+    "v1alpha1.NetworkType": {
+      "enum": ""
+    },
     "v1alpha1.NodeAutoscaler": {
       "maxSize": "",
       "minSize": ""
@@ -577,6 +621,9 @@
       "note": "",
       "port": "",
       "protocol": ""
+    },
+    "v1alpha1.ProtocolType": {
+      "enum": ""
     },
     "v1alpha1.ProxyConfiguration": {
       "http": "",
@@ -679,6 +726,12 @@
       "status": "",
       "type": ""
     },
+    "v1beta1.ConditionSeverity": {
+      "enum": ""
+    },
+    "v1beta1.ConditionType": {
+      "enum": ""
+    },
     "v1beta1.ContainerLinuxConfig": {
       "additionalConfig": "",
       "strict": ""
@@ -700,6 +753,9 @@
     "v1beta1.DiskSetup": {
       "filesystems": "",
       "partitions": ""
+    },
+    "v1beta1.Encoding": {
+      "enum": ""
     },
     "v1beta1.Etcd": {
       "external": "",
@@ -734,6 +790,9 @@
       "overwrite": "",
       "partition": "",
       "replaceFS": ""
+    },
+    "v1beta1.Format": {
+      "enum": ""
     },
     "v1beta1.HostPathMount": {
       "hostPath": "",
@@ -794,6 +853,9 @@
     "v1beta1.MachineDeploymentStrategy": {
       "rollingUpdate": "",
       "type": ""
+    },
+    "v1beta1.MachineDeploymentStrategyType": {
+      "enum": ""
     },
     "v1beta1.MachineRollingUpdateDeployment": {
       "deletePolicy": "",
@@ -865,32 +927,32 @@
   },
   "tags": [
     {
-      "name": "instances",
+      "name": "Instance",
       "x-displayName": "",
       "description": ""
     },
     {
-      "name": "clusters",
+      "name": "Cluster",
       "x-displayName": "",
       "description": ""
     },
     {
-      "name": "workload clusters",
+      "name": "Workload Cluster",
       "x-displayName": "",
       "description": ""
     },
     {
-      "name": "upgrade",
+      "name": "SKS Version",
       "x-displayName": "",
       "description": ""
     },
     {
-      "name": "healthz",
+      "name": "Healthz",
       "x-displayName": "",
       "description": ""
     },
     {
-      "name": "license",
+      "name": "License",
       "x-displayName": "",
       "description": ""
     }

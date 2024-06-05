@@ -19,7 +19,7 @@
     "/api/v1/servers/connectivity-probes/:namespace/:name": {
       "post": {
         "tags": [
-          "Instances"
+          "Instance"
         ],
         "summary": "Network connectivity probe on serverInstance.",
         "operationId": "instances/connectivity-probes",
@@ -103,9 +103,9 @@
     "/api/v1/servers/labels": {
       "get": {
         "tags": [
-          "Instances"
+          "Instance"
         ],
-        "summary": "Get all Ready ServiceInstance label sets.",
+        "summary": "Get ready ServiceInstance label sets.",
         "operationId": "instances/jobs",
         "responses": {
           "200": {
@@ -134,7 +134,7 @@
     "/api/v1/servers/prepare-environment": {
       "get": {
         "tags": [
-          "Instances"
+          "Instance"
         ],
         "summary": "Download prepare environment command.",
         "operationId": "instances/commands",
@@ -165,9 +165,9 @@
     "/clusters": {
       "get": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
-        "summary": "Get all workload clusters.",
+        "summary": "Get workload clusters.",
         "operationId": "ListClusters",
         "parameters": [
           {
@@ -204,7 +204,7 @@
       },
       "post": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Create a workload cluster",
         "operationId": "CreateCluster",
@@ -257,7 +257,7 @@
     "/clusters/:cluster": {
       "get": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Get a workload cluster.",
         "operationId": "GetCluster",
@@ -296,7 +296,7 @@
       },
       "put": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Update a workload cluster.",
         "operationId": "UpdateCluster",
@@ -347,7 +347,7 @@
       },
       "delete": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Delete a workload cluster.",
         "operationId": "DeleteCluster",
@@ -390,7 +390,7 @@
     "/clusters/:cluster/addons": {
       "get": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Get addons of a workload cluster.",
         "operationId": "listClusterAddons",
@@ -431,7 +431,7 @@
     "/clusters/:cluster/kubeconfig": {
       "get": {
         "tags": [
-          "Clusters"
+          "Cluster"
         ],
         "summary": "Get the kubeconfig of a workload cluster.",
         "operationId": "GetClusterKubeconfig",
@@ -472,7 +472,7 @@
     "/clusters/{cluster}/proxy/{k8s_url}": {
       "get": {
         "tags": [
-          "Workload Clusters"
+          "Workload Cluster"
         ],
         "summary": "Proxy all requests to the workload kubernetes cluster.",
         "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}. Support any HTTP method of the proxied API (GET, POST, DELETE, PUT, PATCH, etc.)",
@@ -875,7 +875,22 @@
         "type": "object",
         "properties": {
           "Format": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "DecimalExponent",
+              "BinarySI",
+              "DecimalSI"
+            ],
+            "x-enum-varnames": [
+              "DecimalExponent",
+              "BinarySI",
+              "DecimalSI"
+            ],
+            "x-enum-comments": {
+              "BinarySI": "e.g., 12Mi (12 * 2^20)",
+              "DecimalExponent": "e.g., 12e6",
+              "DecimalSI": "e.g., 12M  (12 * 10^6)"
+            }
           }
         }
       },
@@ -2533,6 +2548,33 @@
           }
         }
       },
+      "v1alpha1.KubeSmartClusterPhase": {
+        "type": "string",
+        "enum": [
+          "Creating",
+          "Failed",
+          "Running",
+          "Ready",
+          "Paused",
+          "Updating",
+          "Upgrading",
+          "Rollbacking",
+          "Deleting",
+          "Deleted"
+        ],
+        "x-enum-varnames": [
+          "KubeSmartClusterPhaseCreating",
+          "KubeSmartClusterPhaseFailed",
+          "KubeSmartClusterPhaseRunning",
+          "KubeSmartClusterPhaseReady",
+          "KubeSmartClusterPhasePaused",
+          "KubeSmartClusterPhaseUpdating",
+          "KubeSmartClusterPhaseUpgrading",
+          "KubeSmartClusterPhaseRollbacking",
+          "KubeSmartClusterPhaseDeleting",
+          "KubeSmartClusterPhaseDeleted"
+        ]
+      },
       "v1alpha1.KubeSmartClusterSpec": {
         "type": "object",
         "properties": {
@@ -3298,8 +3340,13 @@
         "type": "object",
         "properties": {
           "phase": {
-            "type": "string",
-            "description": "Phase represents the current operation phase of the cluster."
+            "type": "object",
+            "description": "Phase represents the current operation phase of the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterPhase"
+              }
+            ]
           },
           "startTime": {
             "type": "string",
