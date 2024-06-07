@@ -99,7 +99,7 @@ i18next.init({
         ['3_4_0']: en3_4API,
         ['4_0_0']: en4_0API,
         ['4_1_0']: en4_1API,
-        ['sks_1_4_0']: [sksen1_4],
+        ['sks_1_4_0']: sksen1_4,
         components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -122,7 +122,7 @@ i18next.init({
         ['3_4_0']: zh3_4API,
         ['4_0_0']: zh4_0API,
         ['4_1_0']: zh4_1API,
-        ['sks_1_4_0']: [skszh1_4],
+        ['sks_1_4_0']: skszh1_4,
         components: zhComponents,
     },
   },

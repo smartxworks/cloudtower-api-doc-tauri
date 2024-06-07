@@ -78,7 +78,7 @@ const App: React.FC = () => {
       const swaggerSpec: ISpec = _.cloneDeep(data.default);
       setRawSpec(swaggerSpec);
       i18next.changeLanguage(i18n.currentLocale);
-      setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version));
+      setSpec(wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version, 'sks'));
     })
 
   }, [version, i18n.currentLocale]);

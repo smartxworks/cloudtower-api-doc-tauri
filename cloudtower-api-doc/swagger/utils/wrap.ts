@@ -27,7 +27,7 @@ export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
   version: string,
-  product?: string,
+  product?: 'sks',
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
@@ -76,11 +76,13 @@ export const wrapSpecWithI18n = (
       }
     }
     cloneSpec.paths[p][method] = operationObj;
-    operationObj.tags = operationObj.tags?.map(tag => {
-      const replaceTag = replaceTags(tag);
-      tags.add(replaceTag);
-      return replaceTag;
-    })
+    if(!product) {
+      operationObj.tags = operationObj.tags?.map(tag => {
+        const replaceTag = replaceTags(tag);
+        tags.add(replaceTag);
+        return replaceTag;
+      })
+    }
   });
   // handle schemas
   Object.keys(components.schemas).forEach((s) => {
@@ -101,11 +103,16 @@ export const wrapSpecWithI18n = (
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });
 
-  cloneSpec.tags = Array.from(tags).map(tag => ({
-    name: tag,
-    "x-displayName": i18next.t(`components.${tag}`),
-    description: ""
-  }));
+  if(!product) { 
+    cloneSpec.tags = Array.from(tags).map(tag => ({
+      name: tag,
+      "x-displayName": i18next.t(`components.${tag}`),
+      description: ""
+    }));
+  } else {
+    cloneSpec.tags = i18next.t(`${ns}.tags`, {lng: language, returnObjects: true }) as OpenAPIV3.TagObject[];
+  }
+
   return cloneSpec;
 };
 
