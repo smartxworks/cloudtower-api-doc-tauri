@@ -19,15 +19,15 @@
     "/api/v1/servers/connectivity-probes/:namespace/:name": {
       "post": {
         "tags": [
-          "Instance"
+          "Server Instance"
         ],
-        "summary": "Network connectivity probe on serverInstance.",
+        "summary": "Network connectivity probe on ServiceInstance.",
         "operationId": "instances/connectivity-probes",
         "parameters": [
           {
             "name": "namespace",
             "in": "query",
-            "description": "serverInstance object on namespace name",
+            "description": "ServiceInstance object on namespace name",
             "required": true,
             "schema": {
               "type": "string"
@@ -103,7 +103,7 @@
     "/api/v1/servers/labels": {
       "get": {
         "tags": [
-          "Instance"
+          "Server Instance"
         ],
         "summary": "Get ready ServiceInstance label sets.",
         "operationId": "instances/jobs",
@@ -134,7 +134,7 @@
     "/api/v1/servers/prepare-environment": {
       "get": {
         "tags": [
-          "Instance"
+          "Server Instance"
         ],
         "summary": "Download prepare environment command.",
         "operationId": "instances/commands",

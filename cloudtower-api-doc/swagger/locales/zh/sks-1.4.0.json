@@ -21,7 +21,6 @@
       "protocol": "",
       "success": ""
     },
-    "instance.labelSets": {},
     "intstr.IntOrString": {
       "intVal": "",
       "strVal": "",
@@ -58,7 +57,6 @@
     "restful.Info": {
       "message": ""
     },
-    "runtime.RawExtension": {},
     "sigs_k8s_io_cluster-api_api_v1beta1.APIEndpoint": {
       "host": "",
       "port": ""
@@ -73,7 +71,6 @@
     "v1.Duration": {
       "time.Duration": ""
     },
-    "v1.FieldsV1": {},
     "v1.HostPathType": {
       "enum": ""
     },
@@ -701,7 +698,6 @@
       "token": "",
       "unsafeSkipCAVerification": ""
     },
-    "v1beta1.BootstrapTokenString": {},
     "v1beta1.ClusterConfiguration": {
       "apiServer": "",
       "apiVersion": "",
@@ -923,38 +919,42 @@
       "shell": "",
       "sshAuthorizedKeys": "",
       "sudo": ""
-    }
+    },
+    "instance.labelSets": {},
+    "runtime.RawExtension": {},
+    "v1.FieldsV1": {},
+    "v1beta1.BootstrapTokenString": {}
   },
   "tags": [
     {
-      "name": "Instance",
-      "x-displayName": "裸金属机器实例",
-      "description": "裸金属机器实例"
-    },
-    {
       "name": "Cluster",
       "x-displayName": "集群",
-      "description": "集群"
+      "description": ""
     },
     {
       "name": "Workload Cluster",
       "x-displayName": "工作负载集群",
-      "description": "工作负载集群"
+      "description": ""
     },
     {
       "name": "SKS Version",
       "x-displayName": "SKS 版本",
-      "description": "SKS 版本"
+      "description": ""
     },
     {
       "name": "Healthz",
-      "x-displayName": "服务可用",
-      "description": "服务可用"
+      "x-displayName": "健康检查",
+      "description": ""
     },
     {
       "name": "License",
       "x-displayName": "软件许可",
-      "description": "软件许可"
+      "description": ""
+    },
+    {
+      "name": "Server Instance",
+      "x-displayName": "物理机",
+      "description": ""
     }
   ],
   "paths": {
@@ -963,7 +963,7 @@
       "description": ""
     },
     "/api/v1/servers/labels": {
-      "summary": "",
+      "summary": "获取物理机标签",
       "description": ""
     },
     "/api/v1/servers/prepare-environment": {
@@ -971,39 +971,39 @@
       "description": ""
     },
     "/clusters": {
-      "summary": "",
+      "summary": "获取集群",
       "description": ""
     },
     "/clusters/:cluster": {
-      "summary": "",
+      "summary": "获取一个集群",
       "description": ""
     },
     "/clusters/:cluster/addons": {
-      "summary": "",
+      "summary": "获取集群的插件",
       "description": ""
     },
     "/clusters/:cluster/kubeconfig": {
-      "summary": "",
+      "summary": "获取集群的 KubeConfig",
       "description": ""
     },
     "/clusters/{cluster}/proxy/{k8s_url}": {
-      "summary": "",
-      "description": ""
+      "summary": "代理转发工作负载集群请求",
+      "description": "请求 uri 格式为 /api/v1/clusters/{cluster}/proxy/{k8s_url}。支持代理所有类型的 HTTP 方法（GET、POST、DELETE、PUT、PATCH 等）"
     },
     "/compatibility/versions": {
-      "summary": "",
+      "summary": "获取当前 SKS 版本兼容的 SKS 版本",
       "description": ""
     },
     "/compatibility/vm-templates": {
-      "summary": "",
+      "summary": "获取当前 SKS 版本兼容的节点虚拟机模板",
       "description": ""
     },
     "/healthz": {
-      "summary": "",
+      "summary": "返回服务当前健康状况",
       "description": ""
     },
     "/licenses/validate": {
-      "summary": "",
+      "summary": "验证软件许可码",
       "description": ""
     }
   }

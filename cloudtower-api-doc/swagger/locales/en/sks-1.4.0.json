@@ -21,7 +21,6 @@
       "protocol": "",
       "success": ""
     },
-    "instance.labelSets": {},
     "intstr.IntOrString": {
       "intVal": "",
       "strVal": "",
@@ -58,7 +57,6 @@
     "restful.Info": {
       "message": ""
     },
-    "runtime.RawExtension": {},
     "sigs_k8s_io_cluster-api_api_v1beta1.APIEndpoint": {
       "host": "",
       "port": ""
@@ -73,7 +71,6 @@
     "v1.Duration": {
       "time.Duration": ""
     },
-    "v1.FieldsV1": {},
     "v1.HostPathType": {
       "enum": ""
     },
@@ -701,7 +698,6 @@
       "token": "",
       "unsafeSkipCAVerification": ""
     },
-    "v1beta1.BootstrapTokenString": {},
     "v1beta1.ClusterConfiguration": {
       "apiServer": "",
       "apiVersion": "",
@@ -923,7 +919,11 @@
       "shell": "",
       "sshAuthorizedKeys": "",
       "sudo": ""
-    }
+    },
+    "instance.labelSets": {},
+    "runtime.RawExtension": {},
+    "v1.FieldsV1": {},
+    "v1beta1.BootstrapTokenString": {}
   },
   "tags": [
     {
@@ -953,6 +953,11 @@
     },
     {
       "name": "License",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "Server Instance",
       "x-displayName": "",
       "description": ""
     }
