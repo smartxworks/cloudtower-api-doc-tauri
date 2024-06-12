@@ -102314,7 +102314,7 @@
   },
   "info": {
     "title": "CloudTower APIs",
-    "version": "2.3.0",
+    "version": "4.1.0",
     "description": "cloudtower operation API and SDK"
   },
   "openapi": "3.0.0",
