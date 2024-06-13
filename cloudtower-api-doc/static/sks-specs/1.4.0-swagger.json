@@ -1,0 +1,4891 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SKS REST API",
+    "description": "This is the doc for SKS REST API.",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "SmartX Inc.",
+      "url": "https://www.smartx.com/"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/v1/servers/connectivity-probes/:namespace/:name": {
+      "post": {
+        "tags": [
+          "Server Instance"
+        ],
+        "summary": "Network connectivity probe on ServiceInstance.",
+        "operationId": "instances/connectivity-probes",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "ServiceInstance object on namespace name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "ServerInstance object name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/instance.connectivityResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/servers/labels": {
+      "get": {
+        "tags": [
+          "Server Instance"
+        ],
+        "summary": "Get ready ServiceInstance label sets.",
+        "operationId": "instances/jobs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/instance.labelSets"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/servers/prepare-environment": {
+      "get": {
+        "tags": [
+          "Server Instance"
+        ],
+        "summary": "Download prepare environment command.",
+        "operationId": "instances/commands",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clusters": {
+      "get": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Get workload clusters.",
+        "operationId": "ListClusters",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to all namespaces if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Create a workload cluster",
+        "operationId": "CreateCluster",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "KubeSmartCluster spec",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "cluster"
+      }
+    },
+    "/clusters/:cluster": {
+      "get": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Get a workload cluster.",
+        "operationId": "GetCluster",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Update a workload cluster.",
+        "operationId": "UpdateCluster",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "KubeSmartCluster spec",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "cluster"
+      },
+      "delete": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Delete a workload cluster.",
+        "operationId": "DeleteCluster",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Whether to delete a cluster forcefully. Default to false if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clusters/:cluster/addons": {
+      "get": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Get addons of a workload cluster.",
+        "operationId": "listClusterAddons",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1alpha1.AddonList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clusters/:cluster/kubeconfig": {
+      "get": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "Get the kubeconfig of a workload cluster.",
+        "operationId": "GetClusterKubeconfig",
+        "parameters": [
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cluster.KubeConfig"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clusters/{cluster}/proxy/{k8s_url}": {
+      "get": {
+        "tags": [
+          "Workload Cluster"
+        ],
+        "summary": "Proxy all requests to the workload kubernetes cluster.",
+        "description": "The request uri format is like /api/v1/clusters/{cluster}/proxy/{k8s_url}. Support any HTTP method of the proxied API (GET, POST, DELETE, PUT, PATCH, etc.)",
+        "operationId": "ProxyRequestToWorkloadCluster",
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "description": "The cluster ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "k8s_url",
+            "in": "path",
+            "description": "The url of the proxied kubernetes API.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "namespace",
+            "in": "query",
+            "description": "The namespace name. Default to default namespace if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compatibility/versions": {
+      "get": {
+        "tags": [
+          "SKS Version"
+        ],
+        "summary": "Get the current SKS compatible sksVersion list",
+        "operationId": "compatibleSKSVersion",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compatibility/vm-templates": {
+      "get": {
+        "tags": [
+          "SKS Version"
+        ],
+        "summary": "Get Compatible vm template sks Version List",
+        "operationId": "compatibleVmTemplate",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "tags": [
+          "Healthz"
+        ],
+        "summary": "Check service health.",
+        "operationId": "GetHealth",
+        "responses": {
+          "200": {
+            "description": "{\"message\": \"healthy\"}",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/restful.Info"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/licenses/validate": {
+      "post": {
+        "tags": [
+          "License"
+        ],
+        "summary": "Validate and parse license code.",
+        "operationId": "validateLicense",
+        "requestBody": {
+          "description": "Issued by the license code",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/license.licenseCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/license.License"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors.ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "code"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "cluster.KubeConfig": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "description": "Base64 encoded string"
+          }
+        }
+      },
+      "errors.ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Suggested HTTP return code for this status, 0 if not set."
+          },
+          "details": {
+            "type": "object",
+            "description": "Extended data associated with the reason.  Each reason may define its\nown extended details. This field is optional and the data returned\nis not guaranteed to conform to any schema except that defined by\nthe reason type.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.StatusDetails"
+              }
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "message": {
+            "type": "string",
+            "description": "A human-readable description of the status of this operation."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Standard list metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.ListMeta"
+              }
+            ]
+          },
+          "reason": {
+            "type": "object",
+            "description": "A machine-readable description of why this operation is in the\n\"Failure\" status. If this value is empty there\nis no information available. A Reason clarifies an HTTP status\ncode but does not override it.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.StatusReason"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the operation.\nOne of: \"Success\" or \"Failure\".\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
+          }
+        }
+      },
+      "instance.connectivityResponse": {
+        "type": "object",
+        "properties": {
+          "connectable": {
+            "type": "boolean",
+            "description": "检查结果"
+          },
+          "host": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "description": "附加消息"
+          },
+          "port": {
+            "type": "integer"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/v1alpha1.ProtocolType"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "是否执行成功"
+          }
+        }
+      },
+      "instance.labelSets": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "intstr.IntOrString": {
+        "type": "object",
+        "properties": {
+          "intVal": {
+            "type": "integer"
+          },
+          "strVal": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/intstr.Type"
+          }
+        }
+      },
+      "intstr.Type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ],
+        "x-enum-comments": {
+          "Int": "The IntOrString holds an int.",
+          "String": "The IntOrString holds a string."
+        },
+        "x-enum-varnames": [
+          "Int",
+          "String"
+        ]
+      },
+      "k8s_io_api_core_v1.ConditionStatus": {
+        "type": "string",
+        "enum": [
+          "True",
+          "False",
+          "Unknown"
+        ],
+        "x-enum-varnames": [
+          "ConditionTrue",
+          "ConditionFalse",
+          "ConditionUnknown"
+        ]
+      },
+      "license.License": {
+        "type": "object",
+        "properties": {
+          "license_type": {
+            "type": "object",
+            "description": "The license type.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/license.LicenseType"
+              }
+            ]
+          },
+          "max_socket_num": {
+            "type": "integer",
+            "description": "the max allow machine cpu socket num."
+          },
+          "max_vcpu_num": {
+            "type": "integer",
+            "description": "The max allowed vcpu num."
+          },
+          "period": {
+            "type": "integer",
+            "description": "The license valid period in unit second."
+          },
+          "product_name": {
+            "type": "string",
+            "description": "The product_name must be SKS."
+          },
+          "serial": {
+            "type": "string",
+            "description": "The serial number of the product instance."
+          },
+          "sign_date": {
+            "type": "integer",
+            "description": "The license signed date."
+          },
+          "software_edition": {
+            "type": "object",
+            "description": "The software edition.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/license.SoftwareEdition"
+              }
+            ]
+          }
+        }
+      },
+      "license.LicenseType": {
+        "type": "integer",
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "x-enum-varnames": [
+          "LicenseType_TRIAL",
+          "LicenseType_PERPETUAL",
+          "LicenseType_SUBSCRIPTION"
+        ]
+      },
+      "license.SoftwareEdition": {
+        "type": "integer",
+        "enum": [
+          1,
+          2
+        ],
+        "x-enum-varnames": [
+          "SoftwareEdition_STANDARD",
+          "SoftwareEdition_ENTERPRISE"
+        ]
+      },
+      "license.licenseCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "resource.Quantity": {
+        "type": "object",
+        "properties": {
+          "Format": {
+            "type": "string",
+            "enum": [
+              "DecimalExponent",
+              "BinarySI",
+              "DecimalSI"
+            ],
+            "x-enum-varnames": [
+              "DecimalExponent",
+              "BinarySI",
+              "DecimalSI"
+            ],
+            "x-enum-comments": {
+              "BinarySI": "e.g., 12Mi (12 * 2^20)",
+              "DecimalExponent": "e.g., 12e6",
+              "DecimalSI": "e.g., 12M  (12 * 10^6)"
+            }
+          }
+        }
+      },
+      "restful.Info": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "runtime.RawExtension": {
+        "type": "object"
+      },
+      "sigs_k8s_io_cluster-api_api_v1beta1.APIEndpoint": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string",
+            "description": "The hostname on which the API server is serving."
+          },
+          "port": {
+            "type": "integer",
+            "description": "The port on which the API server is serving."
+          }
+        }
+      },
+      "sigs_k8s_io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint": {
+        "type": "object",
+        "properties": {
+          "advertiseAddress": {
+            "type": "string",
+            "description": "AdvertiseAddress sets the IP address for the API server to advertise."
+          },
+          "bindPort": {
+            "type": "integer",
+            "description": "BindPort sets the secure port for the API Server to bind to.\nDefaults to 6443."
+          }
+        }
+      },
+      "v1.CauseType": {
+        "type": "string",
+        "enum": [
+          "FieldValueNotFound",
+          "FieldValueRequired",
+          "FieldValueDuplicate",
+          "FieldValueInvalid",
+          "FieldValueNotSupported",
+          "FieldValueForbidden",
+          "FieldValueTooLong",
+          "FieldValueTooMany",
+          "InternalError",
+          "FieldValueTypeInvalid",
+          "UnexpectedServerResponse",
+          "FieldManagerConflict",
+          "ResourceVersionTooLarge"
+        ],
+        "x-enum-varnames": [
+          "CauseTypeFieldValueNotFound",
+          "CauseTypeFieldValueRequired",
+          "CauseTypeFieldValueDuplicate",
+          "CauseTypeFieldValueInvalid",
+          "CauseTypeFieldValueNotSupported",
+          "CauseTypeForbidden",
+          "CauseTypeTooLong",
+          "CauseTypeTooMany",
+          "CauseTypeInternal",
+          "CauseTypeTypeInvalid",
+          "CauseTypeUnexpectedServerResponse",
+          "CauseTypeFieldManagerConflict",
+          "CauseTypeResourceVersionTooLarge"
+        ]
+      },
+      "v1.Duration": {
+        "type": "object",
+        "properties": {
+          "time.Duration": {
+            "type": "integer",
+            "x-enum-varnames": [
+              "minDuration",
+              "maxDuration",
+              "Nanosecond",
+              "Microsecond",
+              "Millisecond",
+              "Second",
+              "Minute",
+              "Hour"
+            ]
+          }
+        }
+      },
+      "v1.FieldsV1": {
+        "type": "object"
+      },
+      "v1.HostPathType": {
+        "type": "string",
+        "enum": [
+          "",
+          "DirectoryOrCreate",
+          "Directory",
+          "FileOrCreate",
+          "File",
+          "Socket",
+          "CharDevice",
+          "BlockDevice"
+        ],
+        "x-enum-varnames": [
+          "HostPathUnset",
+          "HostPathDirectoryOrCreate",
+          "HostPathDirectory",
+          "HostPathFileOrCreate",
+          "HostPathFile",
+          "HostPathSocket",
+          "HostPathCharDev",
+          "HostPathBlockDev"
+        ]
+      },
+      "v1.LabelSelector": {
+        "type": "object",
+        "properties": {
+          "matchExpressions": {
+            "type": "array",
+            "description": "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
+            "items": {
+              "$ref": "#/components/schemas/v1.LabelSelectorRequirement"
+            }
+          },
+          "matchLabels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels\nmap is equivalent to an element of matchExpressions, whose key field is \"key\", the\noperator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+          }
+        }
+      },
+      "v1.LabelSelectorOperator": {
+        "type": "string",
+        "enum": [
+          "In",
+          "NotIn",
+          "Exists",
+          "DoesNotExist"
+        ],
+        "x-enum-varnames": [
+          "LabelSelectorOpIn",
+          "LabelSelectorOpNotIn",
+          "LabelSelectorOpExists",
+          "LabelSelectorOpDoesNotExist"
+        ]
+      },
+      "v1.LabelSelectorRequirement": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "key is the label key that the selector applies to."
+          },
+          "operator": {
+            "type": "object",
+            "description": "operator represents a key's relationship to a set of values.\nValid operators are In, NotIn, Exists and DoesNotExist.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.LabelSelectorOperator"
+              }
+            ]
+          },
+          "values": {
+            "type": "array",
+            "description": "values is an array of string values. If the operator is In or NotIn,\nthe values array must be non-empty. If the operator is Exists or DoesNotExist,\nthe values array must be empty. This array is replaced during a strategic\nmerge patch.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1.ListMeta": {
+        "type": "object",
+        "properties": {
+          "continue": {
+            "type": "string",
+            "description": "continue may be set if the user set a limit on the number of items returned, and indicates that\nthe server has more data available. The value is opaque and may be used to issue another request\nto the endpoint that served this list to retrieve the next set of available objects. Continuing a\nconsistent list may not be possible if the server configuration has changed or more than a few\nminutes have passed. The resourceVersion field returned when using this continue value will be\nidentical to the value in the first response, unless you have received this token from an error\nmessage."
+          },
+          "remainingItemCount": {
+            "type": "integer",
+            "description": "remainingItemCount is the number of subsequent items in the list which are not included in this\nlist response. If the list request contained label or field selectors, then the number of\nremaining items is unknown and the field will be left unset and omitted during serialization.\nIf the list is complete (either because it is not chunking or because this is the last chunk),\nthen there are no more remaining items and this field will be left unset and omitted during\nserialization.\nServers older than v1.15 do not set this field.\nThe intended use of the remainingItemCount is *estimating* the size of a collection. Clients\nshould not rely on the remainingItemCount to be set or to be exact."
+          },
+          "resourceVersion": {
+            "type": "string",
+            "description": "String that identifies the server's internal version of this object that\ncan be used by clients to determine when objects have changed.\nValue must be treated as opaque by clients and passed unmodified back to the server.\nPopulated by the system.\nRead-only.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
+          },
+          "selfLink": {
+            "type": "string",
+            "description": "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system."
+          }
+        }
+      },
+      "v1.ManagedFieldsEntry": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the version of this resource that this field set\napplies to. The format is \"group/version\" just like the top-level\nAPIVersion field. It is necessary to track the version of a field\nset because it cannot be automatically converted."
+          },
+          "fieldsType": {
+            "type": "string",
+            "description": "FieldsType is the discriminator for the different fields format and version.\nThere is currently only one possible value: \"FieldsV1\""
+          },
+          "fieldsV1": {
+            "type": "object",
+            "description": "FieldsV1 holds the first JSON version format as described in the \"FieldsV1\" type.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.FieldsV1"
+              }
+            ]
+          },
+          "manager": {
+            "type": "string",
+            "description": "Manager is an identifier of the workflow managing these fields."
+          },
+          "operation": {
+            "type": "object",
+            "description": "Operation is the type of operation which lead to this ManagedFieldsEntry being created.\nThe only valid values for this field are 'Apply' and 'Update'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.ManagedFieldsOperationType"
+              }
+            ]
+          },
+          "subresource": {
+            "type": "string",
+            "description": "Subresource is the name of the subresource used to update that object, or\nempty string if the object was updated through the main resource. The\nvalue of this field is used to distinguish between managers, even if they\nshare the same name. For example, a status update will be distinct from a\nregular update using the same manager name.\nNote that the APIVersion field is not related to the Subresource field and\nit always corresponds to the version of the main resource."
+          },
+          "time": {
+            "type": "string",
+            "description": "Time is the timestamp of when the ManagedFields entry was added. The\ntimestamp will also be updated if a field is added, the manager\nchanges any of the owned fields value or removes a field. The\ntimestamp does not update when a field is removed from the entry\nbecause another manager took it over."
+          }
+        }
+      },
+      "v1.ManagedFieldsOperationType": {
+        "type": "string",
+        "enum": [
+          "Apply",
+          "Update"
+        ],
+        "x-enum-varnames": [
+          "ManagedFieldsOperationApply",
+          "ManagedFieldsOperationUpdate"
+        ]
+      },
+      "v1.NodeConditionType": {
+        "type": "string",
+        "enum": [
+          "Ready",
+          "MemoryPressure",
+          "DiskPressure",
+          "PIDPressure",
+          "NetworkUnavailable"
+        ],
+        "x-enum-varnames": [
+          "NodeReady",
+          "NodeMemoryPressure",
+          "NodeDiskPressure",
+          "NodePIDPressure",
+          "NodeNetworkUnavailable"
+        ]
+      },
+      "v1.ObjectMeta": {
+        "type": "object",
+        "properties": {
+          "annotations": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Annotations is an unstructured key value map stored with a resource that may be\nset by external tools to store and retrieve arbitrary metadata. They are not\nqueryable and should be preserved when modifying objects.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations"
+          },
+          "creationTimestamp": {
+            "type": "string",
+            "description": "CreationTimestamp is a timestamp representing the server time when this object was\ncreated. It is not guaranteed to be set in happens-before order across separate operations.\nClients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system.\nRead-only.\nNull for lists.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
+          },
+          "deletionGracePeriodSeconds": {
+            "type": "integer",
+            "description": "Number of seconds allowed for this object to gracefully terminate before\nit will be removed from the system. Only set when deletionTimestamp is also set.\nMay only be shortened.\nRead-only."
+          },
+          "deletionTimestamp": {
+            "type": "string",
+            "description": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This\nfield is set by the server when a graceful deletion is requested by the user, and is not\ndirectly settable by a client. The resource is expected to be deleted (no longer visible\nfrom resource lists, and not reachable by name) after the time in this field, once the\nfinalizers list is empty. As long as the finalizers list contains items, deletion is blocked.\nOnce the deletionTimestamp is set, this value may not be unset or be set further into the\nfuture, although it may be shortened or the resource may be deleted prior to this time.\nFor example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react\nby sending a graceful termination signal to the containers in the pod. After that 30 seconds,\nthe Kubelet will send a hard termination signal (SIGKILL) to the container and after cleanup,\nremove the pod from the API. In the presence of network partitions, this object may still\nexist after this timestamp, until an administrator or automated process can determine the\nresource is fully terminated.\nIf not set, graceful deletion of the object has not been requested.\n\nPopulated by the system when a graceful deletion is requested.\nRead-only.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
+          },
+          "finalizers": {
+            "type": "array",
+            "description": "Must be empty before the object is deleted from the registry. Each entry\nis an identifier for the responsible component that will remove the entry\nfrom the list. If the deletionTimestamp of the object is non-nil, entries\nin this list can only be removed.\nFinalizers may be processed and removed in any order.  Order is NOT enforced\nbecause it introduces significant risk of stuck finalizers.\nfinalizers is a shared field, any actor with permission can reorder it.\nIf the finalizer list is processed in order, then this can lead to a situation\nin which the component responsible for the first finalizer in the list is\nwaiting for a signal (field value, external system, or other) produced by a\ncomponent responsible for a finalizer later in the list, resulting in a deadlock.\nWithout enforced ordering finalizers are free to order amongst themselves and\nare not vulnerable to ordering changes in the list.\n+patchStrategy=merge",
+            "items": {
+              "type": "string"
+            }
+          },
+          "generateName": {
+            "type": "string",
+            "description": "GenerateName is an optional prefix, used by the server, to generate a unique\nname ONLY IF the Name field has not been provided.\nIf this field is used, the name returned to the client will be different\nthan the name passed. This value will also be combined with a unique suffix.\nThe provided value has the same validation rules as the Name field,\nand may be truncated by the length of the suffix required to make the value\nunique on the server.\n\nIf this field is specified and the generated name exists, the server will return a 409.\n\nApplied only if Name is not specified.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency"
+          },
+          "generation": {
+            "type": "integer",
+            "description": "A sequence number representing a specific generation of the desired state.\nPopulated by the system. Read-only."
+          },
+          "labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Map of string keys and values that can be used to organize and categorize\n(scope and select) objects. May match selectors of replication controllers\nand services.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels"
+          },
+          "managedFields": {
+            "type": "array",
+            "description": "ManagedFields maps workflow-id and version to the set of fields\nthat are managed by that workflow. This is mostly for internal\nhousekeeping, and users typically shouldn't need to set or\nunderstand this field. A workflow can be the user's name, a\ncontroller's name, or the name of a specific apply path like\n\"ci-cd\". The set of fields is always in the version that the\nworkflow used when modifying the object.\n",
+            "items": {
+              "$ref": "#/components/schemas/v1.ManagedFieldsEntry"
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Name must be unique within a namespace. Is required when creating resources, although\nsome resources may allow a client to request the generation of an appropriate name\nautomatically. Name is primarily intended for creation idempotence and configuration\ndefinition.\nCannot be updated.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace defines the space within which each name must be unique. An empty namespace is\nequivalent to the \"default\" namespace, but \"default\" is the canonical representation.\nNot all objects are required to be scoped to a namespace - the value of this field for\nthose objects will be empty.\n\nMust be a DNS_LABEL.\nCannot be updated.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces"
+          },
+          "ownerReferences": {
+            "type": "array",
+            "description": "List of objects depended by this object. If ALL objects in the list have\nbeen deleted, this object will be garbage collected. If this object is managed by a controller,\nthen an entry in this list will point to this controller, with the controller field set to true.\nThere cannot be more than one managing controller.\n+patchMergeKey=uid\n+patchStrategy=merge",
+            "items": {
+              "$ref": "#/components/schemas/v1.OwnerReference"
+            }
+          },
+          "resourceVersion": {
+            "type": "string",
+            "description": "An opaque value that represents the internal version of this object that can\nbe used by clients to determine when objects have changed. May be used for optimistic\nconcurrency, change detection, and the watch operation on a resource or set of resources.\nClients must treat these values as opaque and passed unmodified back to the server.\nThey may only be valid for a particular resource or set of resources.\n\nPopulated by the system.\nRead-only.\nValue must be treated as opaque by clients and .\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
+          },
+          "selfLink": {
+            "type": "string",
+            "description": "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system."
+          },
+          "uid": {
+            "type": "string",
+            "description": "UID is the unique in time and space value for this object. It is typically generated by\nthe server on successful creation of a resource and is not allowed to change on PUT\noperations.\n\nPopulated by the system.\nRead-only.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+          }
+        }
+      },
+      "v1.ObjectReference": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "API version of the referent."
+          },
+          "fieldPath": {
+            "type": "string",
+            "description": "If referring to a piece of an object instead of an entire object, this string\nshould contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].\nFor example, if the object reference is to a container within a pod, this would take on a value like:\n\"spec.containers{name}\" (where \"name\" refers to the name of the container that triggered\nthe event) or if no container name is specified \"spec.containers[2]\" (container with\nindex 2 in this pod). This syntax is chosen only to have some well-defined way of\nreferencing a part of an object.\nTODO: this design is not final and this field is subject to change in the future."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
+          },
+          "resourceVersion": {
+            "type": "string",
+            "description": "Specific resourceVersion to which this reference is made, if any.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
+          },
+          "uid": {
+            "type": "string",
+            "description": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids"
+          }
+        }
+      },
+      "v1.OwnerReference": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "API version of the referent."
+          },
+          "blockOwnerDeletion": {
+            "type": "boolean",
+            "description": "If true, AND if the owner has the \"foregroundDeletion\" finalizer, then\nthe owner cannot be deleted from the key-value store until this\nreference is removed.\nSee https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion\nfor how the garbage collector interacts with this field and enforces the foreground deletion.\nDefaults to false.\nTo set this field, a user needs \"delete\" permission of the owner,\notherwise 422 (Unprocessable Entity) will be returned."
+          },
+          "controller": {
+            "type": "boolean",
+            "description": "If true, this reference points to the managing controller."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names"
+          },
+          "uid": {
+            "type": "string",
+            "description": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+          }
+        }
+      },
+      "v1.SecretReference": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name is unique within a namespace to reference a secret resource."
+          },
+          "namespace": {
+            "type": "string",
+            "description": "namespace defines the space within which the secret name must be unique."
+          }
+        }
+      },
+      "v1.StatusCause": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "description": "The field of the resource that has caused this error, as named by its JSON\nserialization. May include dot and postfix notation for nested attributes.\nArrays are zero-indexed.  Fields may appear more than once in an array of\ncauses due to fields having multiple errors.\nOptional.\n\nExamples:\n  \"name\" - the field \"name\" on the current resource\n  \"items[0].name\" - the field \"name\" on the first array entry in \"items\""
+          },
+          "message": {
+            "type": "string",
+            "description": "A human-readable description of the cause of the error.  This field may be\npresented as-is to a reader."
+          },
+          "reason": {
+            "type": "object",
+            "description": "A machine-readable description of the cause of the error. If this value is\nempty there is no information available.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.CauseType"
+              }
+            ]
+          }
+        }
+      },
+      "v1.StatusDetails": {
+        "type": "object",
+        "properties": {
+          "causes": {
+            "type": "array",
+            "description": "The Causes array includes more details associated with the StatusReason\nfailure. Not all StatusReasons may provide detailed causes.",
+            "items": {
+              "$ref": "#/components/schemas/v1.StatusCause"
+            }
+          },
+          "group": {
+            "type": "string",
+            "description": "The group attribute of the resource associated with the status StatusReason."
+          },
+          "kind": {
+            "type": "string",
+            "description": "The kind attribute of the resource associated with the status StatusReason.\nOn some operations may differ from the requested resource Kind.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name attribute of the resource associated with the status StatusReason\n(when there is a single name which can be described)."
+          },
+          "retryAfterSeconds": {
+            "type": "integer",
+            "description": "If specified, the time in seconds before the operation should be retried. Some errors may indicate\nthe client must take an alternate action - for those errors this field may indicate how long to wait\nbefore taking the alternate action."
+          },
+          "uid": {
+            "type": "string",
+            "description": "UID of the resource.\n(when there is a single resource which can be described).\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+          }
+        }
+      },
+      "v1.StatusReason": {
+        "type": "string",
+        "enum": [
+          "",
+          "Unauthorized",
+          "Forbidden",
+          "NotFound",
+          "AlreadyExists",
+          "Conflict",
+          "Gone",
+          "Invalid",
+          "ServerTimeout",
+          "Timeout",
+          "TooManyRequests",
+          "BadRequest",
+          "MethodNotAllowed",
+          "NotAcceptable",
+          "RequestEntityTooLarge",
+          "UnsupportedMediaType",
+          "InternalError",
+          "Expired",
+          "ServiceUnavailable"
+        ],
+        "x-enum-varnames": [
+          "StatusReasonUnknown",
+          "StatusReasonUnauthorized",
+          "StatusReasonForbidden",
+          "StatusReasonNotFound",
+          "StatusReasonAlreadyExists",
+          "StatusReasonConflict",
+          "StatusReasonGone",
+          "StatusReasonInvalid",
+          "StatusReasonServerTimeout",
+          "StatusReasonTimeout",
+          "StatusReasonTooManyRequests",
+          "StatusReasonBadRequest",
+          "StatusReasonMethodNotAllowed",
+          "StatusReasonNotAcceptable",
+          "StatusReasonRequestEntityTooLarge",
+          "StatusReasonUnsupportedMediaType",
+          "StatusReasonInternalError",
+          "StatusReasonExpired",
+          "StatusReasonServiceUnavailable"
+        ]
+      },
+      "v1.Taint": {
+        "type": "object",
+        "properties": {
+          "effect": {
+            "type": "object",
+            "description": "Required. The effect of the taint on pods\nthat do not tolerate the taint.\nValid effects are NoSchedule, PreferNoSchedule and NoExecute.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.TaintEffect"
+              }
+            ]
+          },
+          "key": {
+            "type": "string",
+            "description": "Required. The taint key to be applied to a node."
+          },
+          "timeAdded": {
+            "type": "string",
+            "description": "TimeAdded represents the time at which the taint was added.\nIt is only written for NoExecute taints."
+          },
+          "value": {
+            "type": "string",
+            "description": "The taint value corresponding to the taint key."
+          }
+        }
+      },
+      "v1.TaintEffect": {
+        "type": "string",
+        "enum": [
+          "NoSchedule",
+          "PreferNoSchedule",
+          "NoExecute"
+        ],
+        "x-enum-varnames": [
+          "TaintEffectNoSchedule",
+          "TaintEffectPreferNoSchedule",
+          "TaintEffectNoExecute"
+        ]
+      },
+      "v1.TypedObjectReference": {
+        "type": "object",
+        "properties": {
+          "apiGroup": {
+            "type": "string",
+            "description": "APIGroup is the group for the resource being referenced.\nIf APIGroup is not specified, the specified Kind must be in the core API group.\nFor any other third-party types, APIGroup is required."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is the type of resource being referenced"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name is the name of resource being referenced"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace is the namespace of resource being referenced\nNote that when a namespace is specified, a gateway.networking.k8s.io/ReferenceGrant object is required in the referent namespace to allow that namespace's owner to accept the reference. See the ReferenceGrant documentation for details.\n(Alpha) This field requires the CrossNamespaceVolumeDataSource feature gate to be enabled.\n+featureGate=CrossNamespaceVolumeDataSource"
+          }
+        }
+      },
+      "v1alpha1.Addon": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/v1.ObjectMeta"
+          },
+          "spec": {
+            "$ref": "#/components/schemas/v1alpha1.AddonSpec"
+          },
+          "status": {
+            "$ref": "#/components/schemas/v1alpha1.AddonStatus"
+          }
+        }
+      },
+      "v1alpha1.AddonDataValues": {
+        "type": "object",
+        "properties": {
+          "secretRef": {
+            "type": "object",
+            "description": "SecretRef specifies the secret which stores yaml for the addon configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.SecretReference"
+              }
+            ]
+          },
+          "yaml": {
+            "type": "string",
+            "description": "Yaml is the inline yaml for the addon configuration."
+          }
+        }
+      },
+      "v1alpha1.AddonList": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.Addon"
+            }
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/v1.ListMeta"
+          }
+        }
+      },
+      "v1alpha1.AddonPackage": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "description": "Name is the addon package name.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonType"
+              }
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is the addon package version."
+          }
+        }
+      },
+      "v1alpha1.AddonSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "type": "object",
+            "description": "Config is the addon configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+              }
+            ]
+          },
+          "package": {
+            "type": "object",
+            "description": "Package is the addon package to install in a KubeSmartCluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonPackage"
+              }
+            ]
+          },
+          "paused": {
+            "type": "boolean",
+            "description": "Paused can be used to prevent controllers from processing this addon and all its associated objects."
+          }
+        }
+      },
+      "v1alpha1.AddonStatus": {
+        "type": "object",
+        "properties": {
+          "failureMessage": {
+            "type": "string",
+            "description": "FailureMessage indicates that there is a fatal problem reconciling the\nstate, and will be set to a descriptive error message."
+          },
+          "phase": {
+            "type": "string",
+            "description": "Phase represents the current phase of cluster actuation.\nE.g. Pending, Running, Terminating, Failed etc."
+          },
+          "ready": {
+            "type": "boolean",
+            "description": "Ready indicates whether the addon is installed successfully."
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is the applied addon package version."
+          }
+        }
+      },
+      "v1alpha1.AddonType": {
+        "type": "string",
+        "enum": [
+          "stub-cni",
+          "stub-csi",
+          "calico",
+          "cert-manager",
+          "ecp",
+          "everoute-cni",
+          "ecp-adapter",
+          "smtx-zbs-csi",
+          "smtx-elf-csi",
+          "logging-operator",
+          "elasticsearch",
+          "elasticcurator",
+          "fluent-bit",
+          "kibana",
+          "kube-prometheus",
+          "metallb",
+          "contour",
+          "external-dns",
+          "k8tz",
+          "cluster-autoscaler",
+          "event-exporter",
+          "nvidia-gpu-operator",
+          "host-config-agent"
+        ],
+        "x-enum-varnames": [
+          "AddonTypeStubCNI",
+          "AddonTypeStubCSI",
+          "AddonTypeCalico",
+          "AddonTypeCertManager",
+          "AddonTypeECP",
+          "AddonTypeEverouteCNI",
+          "AddonTypeECPAdapter",
+          "AddonTypeSMTXZBSCSI",
+          "AddonTypeSMTXELFCSI",
+          "AddonTypeLoggingOperator",
+          "AddonTypeElasticSearch",
+          "AddonTypeElasticCurator",
+          "AddonTypeFluentBit",
+          "AddonTypeKibana",
+          "AddonTypeKubePrometheus",
+          "AddonTypeMetallb",
+          "AddonTypeContour",
+          "AddonTypeExternalDNS",
+          "AddonTypeK8TZ",
+          "AddonTypeClusterAutoscaler",
+          "AddonTypeEventExporter",
+          "AddonTypeNVIDIAGPUOperator",
+          "AddonTypeHostConfigAgent"
+        ]
+      },
+      "v1alpha1.AddonsStatus": {
+        "type": "object",
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/v1alpha1.AddonStatus"
+            },
+            "description": "Details is the detail status of all addons."
+          },
+          "progress": {
+            "type": "string",
+            "description": "Progress is ReadyCount/TotalCount for indicating the progress of addons creation."
+          },
+          "readyCount": {
+            "type": "integer",
+            "description": "Total number of addons in Ready status."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "Total number of expected addons."
+          }
+        }
+      },
+      "v1alpha1.AgentComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "hostConfigAgent": {
+            "$ref": "#/components/schemas/v1alpha1.HostConfigAgentSpec"
+          }
+        }
+      },
+      "v1alpha1.Architecture": {
+        "type": "string",
+        "enum": [
+          "AArch64",
+          "x86_64"
+        ],
+        "x-enum-varnames": [
+          "ArchitectureAARCH64",
+          "ArchitectureX8664"
+        ]
+      },
+      "v1alpha1.CNIConfig": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "type": "object",
+            "description": "AddonConfig is the CNI configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+              }
+            ]
+          },
+          "ecpConfig": {
+            "type": "object",
+            "description": "ECPConfig is the ECP CNI configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ECPConfig"
+              }
+            ]
+          },
+          "name": {
+            "type": "object",
+            "description": "Name is the CNI name, e.g. calico, ecp, everoute-cni, stub-cni, etc.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonType"
+              }
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is the CNI version."
+          }
+        }
+      },
+      "v1alpha1.CSIAddonConfig": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "type": "object",
+            "description": "AddonConfig is the CSI addon configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+              }
+            ]
+          },
+          "name": {
+            "type": "object",
+            "description": "Name is the CSI addon name.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonType"
+              }
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is the CSI addon version."
+          }
+        }
+      },
+      "v1alpha1.CSIConfig": {
+        "type": "object",
+        "properties": {
+          "elf": {
+            "type": "object",
+            "description": "ELF CSI.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CSIAddonConfig"
+              }
+            ]
+          },
+          "stub": {
+            "type": "object",
+            "description": "Stub CSI for satisfying the addon dependency.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CSIAddonConfig"
+              }
+            ]
+          },
+          "zbs": {
+            "type": "object",
+            "description": "ZBS CSI.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CSIAddonConfig"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.CertManagerComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "certManager": {
+            "$ref": "#/components/schemas/v1alpha1.CertManagerSpec"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "v1alpha1.CertManagerSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.CloneMode": {
+        "type": "string",
+        "enum": [
+          "FullClone",
+          "FastClone"
+        ],
+        "x-enum-varnames": [
+          "FullClone",
+          "FastClone"
+        ]
+      },
+      "v1alpha1.CloudProviderSpec": {
+        "type": "object",
+        "properties": {
+          "cloudtower": {
+            "type": "object",
+            "description": "CloudTower specifies the CloudTower server information.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudTowerSpec"
+              }
+            ]
+          },
+          "ksph": {
+            "type": "object",
+            "description": "KubeSmartPhysicalHost specifies the configuration for KubeSmartPhysicalHost.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartPhysicalHostSpec"
+              }
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Name is the name of the cloud provider used for this cluster.\nIt can be cloudtower, ksph, etc."
+          }
+        }
+      },
+      "v1alpha1.CloudTowerAuthMode": {
+        "type": "string",
+        "enum": [
+          "LOCAL",
+          "LDAP"
+        ],
+        "x-enum-varnames": [
+          "CloudTowerAuthLocal",
+          "CloudTowerAuthLDAP"
+        ]
+      },
+      "v1alpha1.CloudTowerConnect": {
+        "type": "object",
+        "properties": {
+          "authMode": {
+            "type": "object",
+            "description": "AuthMode is the authentication mode of CloudTower server.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudTowerAuthMode"
+              }
+            ]
+          },
+          "password": {
+            "type": "string",
+            "description": "Password is the password for authenticating the CloudTower server."
+          },
+          "server": {
+            "type": "string",
+            "description": "Server is the URI for CloudTower server API."
+          },
+          "skipTLSVerify": {
+            "type": "boolean",
+            "description": "SkipTLSVerify indicates whether to skip verification for the TLS certificate of the CloudTower server."
+          },
+          "username": {
+            "type": "string",
+            "description": "Username is the username for authenticating the CloudTower server."
+          }
+        }
+      },
+      "v1alpha1.CloudTowerServer": {
+        "type": "object",
+        "properties": {
+          "secretRef": {
+            "type": "object",
+            "description": "read config from secret",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.SecretReference"
+              }
+            ]
+          },
+          "spec": {
+            "$ref": "#/components/schemas/v1alpha1.CloudTowerConnect"
+          }
+        }
+      },
+      "v1alpha1.CloudTowerSpec": {
+        "type": "object",
+        "properties": {
+          "cloudtowerServer": {
+            "type": "object",
+            "description": "CloudTower server connection information",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudTowerServer"
+              }
+            ]
+          },
+          "elfCluster": {
+            "type": "string",
+            "description": "ElfCluster is the id of ELF cluster managed by the CloudTower server in which the VMs will be created."
+          },
+          "elfVlan": {
+            "type": "string",
+            "description": "ElfVlan is the VLAN id in the CloudTower server."
+          },
+          "vmTemplate": {
+            "type": "string",
+            "description": "VMTemplate is the name or id of VM template in the Tower Content Library from which the VMs are cloned."
+          },
+          "zbsVip": {
+            "type": "string",
+            "description": "ZBS cluster VIP."
+          }
+        }
+      },
+      "v1alpha1.ClusterAutoscalerConfig": {
+        "type": "object",
+        "properties": {
+          "clusterAutoscaler": {
+            "$ref": "#/components/schemas/v1alpha1.ClusterAutoscalerSpec"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "v1alpha1.ClusterAutoscalerSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.ClusterConfigurationSpec": {
+        "type": "object",
+        "properties": {
+          "autoResourceReserved": {
+            "type": "boolean",
+            "description": "AutoResourceReserved specifies whether to automatically configure resource reservations."
+          },
+          "caCerts": {
+            "type": "string"
+          },
+          "certificatesExpiryDays": {
+            "type": "integer",
+            "description": "CertificatesExpiryDays indicates a rollout needs to be performed if the\ncertificates of the ControlPlane machine will expire within the specified days.\nIf this value is nil, the default certificatesExpiryDays will be used instead.\nDefaults to 30 days."
+          },
+          "customImageRegistry": {
+            "type": "string"
+          },
+          "kubernetes": {
+            "$ref": "#/components/schemas/v1alpha1.KubernetesConfiguration"
+          },
+          "nodeDrainTimeout": {
+            "type": "object",
+            "description": "NodeDrainTimeout is the total amount of time that the controller will spend on draining a node.\nThe default value is 0, meaning that the node can be drained without any time limitations.\nNOTE: NodeDrainTimeout is different from `kubectl drain --timeout`",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "nodeVolumeDetachTimeout": {
+            "type": "object",
+            "description": "NodeVolumeDetachTimeout is the total amount of time that the controller will spend on waiting for all volumes to be detached.\nIf this value is nil, the default NodeVolumeDetachTimeout will be used instead.\nDefaults to 5 minutes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "operation": {
+            "$ref": "#/components/schemas/v1alpha1.OperationConfiguration"
+          },
+          "proxy": {
+            "$ref": "#/components/schemas/v1alpha1.ProxyConfiguration"
+          },
+          "security": {
+            "$ref": "#/components/schemas/v1alpha1.SecurityConfiguration"
+          },
+          "skipCreateEverouteNetworkPolicy": {
+            "type": "boolean",
+            "description": "SkipCreateEverouteNetworkPolicy specifies whether to skip automatic creation of the Everoute network policies for the cluster to allow cluster nodes inter connection."
+          },
+          "skipTLSVerify": {
+            "type": "boolean"
+          },
+          "timezone": {
+            "$ref": "#/components/schemas/v1alpha1.TimezoneConfiguration"
+          }
+        }
+      },
+      "v1alpha1.ClusterInfraType": {
+        "type": "string",
+        "enum": [
+          "VM",
+          "PHYSICAL",
+          "HYBRID"
+        ],
+        "x-enum-varnames": [
+          "ClusterInfraTypeVirtualMachine",
+          "ClusterInfraTypePhysicalHost",
+          "ClusterInfraTypeHybrid"
+        ]
+      },
+      "v1alpha1.ClusterOperation": {
+        "type": "string",
+        "enum": [
+          "Upgrade",
+          "Scale",
+          "Create",
+          "Update",
+          "Rollback"
+        ],
+        "x-enum-varnames": [
+          "OperationUpgrade",
+          "OperationScale",
+          "OperationCreate",
+          "OperationUpdate",
+          "OperationRollback"
+        ]
+      },
+      "v1alpha1.ClusterResources": {
+        "type": "object",
+        "properties": {
+          "controlPlane": {
+            "type": "object",
+            "description": "ControlPlane is the resources allocated to the control plane.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Resources"
+              }
+            ]
+          },
+          "total": {
+            "type": "object",
+            "description": "Total is the total resources allocated to the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Resources"
+              }
+            ]
+          },
+          "workers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/v1alpha1.Resources"
+            },
+            "description": "Workers is the resources map allocated to all worker groups."
+          }
+        }
+      },
+      "v1alpha1.ClusterTopology": {
+        "type": "object",
+        "properties": {
+          "controlPlane": {
+            "type": "object",
+            "description": "ControlPlaneGroup is the node group for ControlPlane nodes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ControlPlaneGroup"
+              }
+            ]
+          },
+          "workers": {
+            "type": "array",
+            "description": "WorkerGroups are the node groups for Worker nodes.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.WorkerGroup"
+            }
+          }
+        }
+      },
+      "v1alpha1.ComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "agents": {
+            "$ref": "#/components/schemas/v1alpha1.AgentComponentsConfig"
+          },
+          "certManager": {
+            "$ref": "#/components/schemas/v1alpha1.CertManagerComponentsConfig"
+          },
+          "clusterAutoscaler": {
+            "$ref": "#/components/schemas/v1alpha1.ClusterAutoscalerConfig"
+          },
+          "ecpadapter": {
+            "$ref": "#/components/schemas/v1alpha1.ECPAdapterConfig"
+          },
+          "externaldns": {
+            "$ref": "#/components/schemas/v1alpha1.ExternalDNSConfig"
+          },
+          "gpu": {
+            "$ref": "#/components/schemas/v1alpha1.GPUComponentsConfig"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/v1alpha1.IngressComponentsConfig"
+          },
+          "loadbalancer": {
+            "$ref": "#/components/schemas/v1alpha1.LoadBalancerComponentsConfig"
+          },
+          "logging": {
+            "$ref": "#/components/schemas/v1alpha1.LoggingComponentsConfig"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/v1alpha1.MonitoringComponentsConfig"
+          }
+        }
+      },
+      "v1alpha1.ContourSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.ControlPlaneGroup": {
+        "type": "object",
+        "properties": {
+          "autoResourceReserved": {
+            "type": "boolean",
+            "description": "AutoResourceReserved specifies whether to automatically configure resource reservations."
+          },
+          "cloudProvider": {
+            "type": "object",
+            "description": "CloudProvider specifies the IaaS Cloud Provider configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudProviderSpec"
+              }
+            ]
+          },
+          "machineHealthCheck": {
+            "type": "object",
+            "description": "MachineHealthCheck defines a MachineHealthCheck for this node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.MachineHealthCheck"
+              }
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Name is the name of this node group."
+          },
+          "nodeAutoscaler": {
+            "type": "object",
+            "description": "NodeAutoscaler specifies the autoscaler configuration for node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodeAutoscaler"
+              }
+            ]
+          },
+          "nodeConfig": {
+            "type": "object",
+            "description": "NodeConfig specifies the node configuration, such as cpu/memory/disk, etc.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodeConfig"
+              }
+            ]
+          },
+          "nodeDrainTimeout": {
+            "type": "object",
+            "description": "NodeDrainTimeout is the total amount of time that the controller will spend on draining a node.\nIf this value is nil, the default NodeDrainTimeout will be used instead.\nDefaults to 5 minutes.\nNOTE: NodeDrainTimeout is different from `kubectl drain --timeout`",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "nodeVolumeDetachTimeout": {
+            "type": "object",
+            "description": "NodeVolumeDetachTimeout is the total amount of time that the controller will spend on waiting for all volumes to be detached.\nIf this value is nil, the default NodeVolumeDetachTimeout will be used instead.\nDefaults to 5 minutes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "placementGroup": {
+            "type": "object",
+            "description": "PlacementGroup specifies the placement group configuration for node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.PlacementGroup"
+              }
+            ]
+          },
+          "replicas": {
+            "type": "integer",
+            "description": "Replicas is the number of nodes in this node group."
+          },
+          "rolloutBefore": {
+            "type": "object",
+            "description": "RolloutBefore is a field to indicate a rollout should be performed\nif the specified criteria is met.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.RolloutBefore"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.ECPAdapterConfig": {
+        "type": "object",
+        "properties": {
+          "ecpadapter": {
+            "$ref": "#/components/schemas/v1alpha1.ECPAdapterSpec"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "v1alpha1.ECPAdapterSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.ECPConfig": {
+        "type": "object",
+        "properties": {
+          "fakeIP": {
+            "type": "string",
+            "description": "ECP internal gateway any don't conflict"
+          },
+          "ippools": {
+            "type": "array",
+            "description": "IP pools for pods",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.ECPIPPool"
+            }
+          },
+          "uplink": {
+            "type": "string",
+            "description": "The NIC name"
+          },
+          "uplinkIP": {
+            "type": "string",
+            "description": "The NIC IP/Prefix"
+          }
+        }
+      },
+      "v1alpha1.ECPIPPool": {
+        "type": "object",
+        "properties": {
+          "cidr": {
+            "type": "string",
+            "description": "CIDR for Pod network segment"
+          },
+          "end": {
+            "type": "string",
+            "description": "End is the end ip of an ip range, required Start"
+          },
+          "except": {
+            "type": "array",
+            "description": "Except is IP net string array, e.g. [192.168.1.0/24, 192.168.2.1/32], when allocate ip to Pod, ip in Except won't be allocated",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gateway": {
+            "type": "string",
+            "description": "Subnet gateway"
+          },
+          "name": {
+            "type": "string",
+            "description": "IP pool name"
+          },
+          "start": {
+            "type": "string",
+            "description": "Start is the start ip of an ip range, required End"
+          },
+          "subnet": {
+            "type": "string",
+            "description": "CIDR entire subnet and default to `CIDR`"
+          }
+        }
+      },
+      "v1alpha1.ElasticCurator": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.ElasticSearchSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.EventExporter": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.ExternalDNSConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "externaldns": {
+            "$ref": "#/components/schemas/v1alpha1.ExternalDNSSpec"
+          }
+        }
+      },
+      "v1alpha1.ExternalDNSSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.FailureDetails": {
+        "type": "object",
+        "properties": {
+          "causes": {
+            "type": "array",
+            "description": "Causes represents all causes of FailureReason, possibly more than one.",
+            "items": {
+              "$ref": "#/components/schemas/v1.StatusCause"
+            }
+          }
+        }
+      },
+      "v1alpha1.FluentBitSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.GPUComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "nvidiaGPUOperator": {
+            "$ref": "#/components/schemas/v1alpha1.NVIDIAGPUOperatorSpec"
+          }
+        }
+      },
+      "v1alpha1.GPUPassthroughDeviceSpec": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Count is the number of GPU. Defaults to 1."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model is the model name of a physical GPU, e.g. 'A16'."
+          }
+        }
+      },
+      "v1alpha1.HostConfigAgentSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.IngressComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "contour": {
+            "$ref": "#/components/schemas/v1alpha1.ContourSpec"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "v1alpha1.KibanaSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.KubePrometheusSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.KubeSmartCluster": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/v1.ObjectMeta"
+          },
+          "spec": {
+            "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterSpec"
+          },
+          "status": {
+            "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterStatus"
+          }
+        }
+      },
+      "v1alpha1.KubeSmartClusterList": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.KubeSmartCluster"
+            }
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/v1.ListMeta"
+          }
+        }
+      },
+      "v1alpha1.KubeSmartClusterPhase": {
+        "type": "string",
+        "enum": [
+          "Creating",
+          "Failed",
+          "Running",
+          "Ready",
+          "Paused",
+          "Updating",
+          "Upgrading",
+          "Rollbacking",
+          "Deleting",
+          "Deleted"
+        ],
+        "x-enum-varnames": [
+          "KubeSmartClusterPhaseCreating",
+          "KubeSmartClusterPhaseFailed",
+          "KubeSmartClusterPhaseRunning",
+          "KubeSmartClusterPhaseReady",
+          "KubeSmartClusterPhasePaused",
+          "KubeSmartClusterPhaseUpdating",
+          "KubeSmartClusterPhaseUpgrading",
+          "KubeSmartClusterPhaseRollbacking",
+          "KubeSmartClusterPhaseDeleting",
+          "KubeSmartClusterPhaseDeleted"
+        ]
+      },
+      "v1alpha1.KubeSmartClusterSpec": {
+        "type": "object",
+        "properties": {
+          "cloudProvider": {
+            "type": "object",
+            "description": "CloudProvider specifies the IaaS Cloud Provider configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudProviderSpec"
+              }
+            ]
+          },
+          "clusterConfiguration": {
+            "type": "object",
+            "description": "ClusterConfiguration specifies the general configuration of the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ClusterConfigurationSpec"
+              }
+            ]
+          },
+          "components": {
+            "type": "object",
+            "description": "Components specify the configuration of cluster components.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ComponentsConfig"
+              }
+            ]
+          },
+          "controlPlaneEndpoint": {
+            "type": "object",
+            "description": "ControlPlaneEndpoint specifies the endpoint used to communicate with the control plane.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/sigs_k8s_io_cluster-api_api_v1beta1.APIEndpoint"
+              }
+            ]
+          },
+          "network": {
+            "type": "object",
+            "description": "Network specifies the general network configuration for the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NetworkConfig"
+              }
+            ]
+          },
+          "paused": {
+            "type": "boolean",
+            "description": "Paused can be used to prevent controllers from processing the Cluster and all its associated objects."
+          },
+          "platform": {
+            "type": "object",
+            "description": "Platform contains the CPU architecture information of underlying infrastructure.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Platform"
+              }
+            ]
+          },
+          "storage": {
+            "type": "object",
+            "description": "Storage specifies the general storage configuration for the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.StorageConfig"
+              }
+            ]
+          },
+          "topology": {
+            "type": "object",
+            "description": "Topology defines the node groups for the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ClusterTopology"
+              }
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Version specifies the K8s version for the cluster."
+          }
+        }
+      },
+      "v1alpha1.KubeSmartClusterStatus": {
+        "type": "object",
+        "properties": {
+          "addons": {
+            "type": "object",
+            "description": "Addons stores the status of addons.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.AddonsStatus"
+              }
+            ]
+          },
+          "addonsReady": {
+            "type": "boolean",
+            "description": "AddonsReady indicates whether all cluster addons are in Ready state."
+          },
+          "clusterInfraType": {
+            "type": "object",
+            "description": "ClusterInfraType records the cloud infrastructure type for the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ClusterInfraType"
+              }
+            ]
+          },
+          "conditions": {
+            "type": "array",
+            "description": "Conditions defines current service state of the KubeSmartCluster.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.Condition"
+            }
+          },
+          "controlPlaneAvailable": {
+            "type": "boolean",
+            "description": "ControlPlaneAvailable indicates that the first control plane instance has completed the kubeadm init operation\nand so the control plane is available and an API server instance is ready for processing requests. It doesn't require CNI is installed."
+          },
+          "controlPlaneReady": {
+            "type": "boolean",
+            "description": "ControlPlaneReady indicates whether the ControlPlane nodes are in Ready state. It means CNI is installed."
+          },
+          "controlPlanes": {
+            "type": "object",
+            "description": "ControlPlanes stores the status of ControlPlane nodes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodesStatus"
+              }
+            ]
+          },
+          "csiNames": {
+            "type": "string",
+            "description": "CSINames is the names of installed CSI."
+          },
+          "failureDetails": {
+            "type": "object",
+            "description": "FailureDetails indicates more details associated with the FailureReason.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.FailureDetails"
+              }
+            ]
+          },
+          "failureMessage": {
+            "type": "string",
+            "description": "FailureMessage indicates that there is a fatal problem reconciling the\nstate, and will be set to a descriptive error message."
+          },
+          "failureReason": {
+            "type": "string",
+            "description": "FailureReason indicates that there is a fatal problem reconciling the\nstate, and will be set to a token value suitable for\nprogrammatic interpretation."
+          },
+          "kappControllerPodReady": {
+            "type": "boolean",
+            "description": "KappControllerPodReady indicates whether kapp-controller pod is ready."
+          },
+          "kubeconfigRef": {
+            "type": "object",
+            "description": "KubeconfigRef is a reference to cluster kubeconfig secret.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.SecretReference"
+              }
+            ]
+          },
+          "nodesReady": {
+            "type": "boolean",
+            "description": "NodesReady indicates whether all ControlPlane and Worker nodes are in Ready state."
+          },
+          "operation": {
+            "type": "object",
+            "description": "OperationStatus defines the status of cluster current operation.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.OperationStatus"
+              }
+            ]
+          },
+          "packageManagerReady": {
+            "type": "boolean",
+            "description": "PackageManagerReady indicates whether kapp-controller is ready and PackageRepository is reconciled.\nAddons can be installed only after PackageManagerReady is true because kapp-controller is the addon package manager."
+          },
+          "phase": {
+            "type": "string",
+            "description": "Phase represents the current operation phase of the cluster.\nE.g. Creating, Running, Updating, Upgrading, Deleting, Failed etc."
+          },
+          "platform": {
+            "type": "object",
+            "description": "Platform contains the CPU architecture information of underlying infrastructure.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Platform"
+              }
+            ]
+          },
+          "ready": {
+            "type": "boolean",
+            "description": "Ready indicates whether the cluster is ready for use. It means all nodes and addons are ready."
+          },
+          "requiredNetworkPorts": {
+            "type": "object",
+            "description": "RequiredNetworkPorts is indicates the network protocols and ports that required in the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.RequiredNetworkPorts"
+              }
+            ]
+          },
+          "resources": {
+            "type": "object",
+            "description": "ClusterResources records the resources(CPU/Memory/GPU/vGPU) allocated for the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ClusterResources"
+              }
+            ]
+          },
+          "serverUrl": {
+            "type": "string",
+            "description": "ServerURL is the URL of the created K8s cluster API Server."
+          },
+          "sksOriginalVersion": {
+            "type": "string",
+            "description": "SKSOriginalVersion is the SKS controller version for the cluster when it's created."
+          },
+          "sksVersion": {
+            "type": "string",
+            "description": "SKSVersion is the SKS controller version for the cluster."
+          },
+          "sksYttManifestsVersion": {
+            "type": "string",
+            "description": "SKSYttManifestsVersion is the ytt manifests version for the cluster."
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is the Kubernetes version for the cluster when the cluster was created/updated successfully."
+          },
+          "vipClaim": {
+            "type": "object",
+            "description": "VIPClaim stores the allocation status of VIP.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.VIPClaim"
+              }
+            ]
+          },
+          "vmTemplate": {
+            "type": "string",
+            "description": "VMTemplate is id of VM template from which the VMs are cloned when the cluster was created/updated successfully."
+          },
+          "workers": {
+            "type": "object",
+            "description": "Workers stores the status of Worker nodes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodesStatus"
+              }
+            ]
+          },
+          "workersReady": {
+            "type": "boolean",
+            "description": "WorkersReady indicates whether all Worker nodes are in Ready state."
+          }
+        }
+      },
+      "v1alpha1.KubeSmartPhysicalHostSpec": {
+        "type": "object",
+        "properties": {
+          "fileServerURL": {
+            "type": "string",
+            "description": "FileServerURL specifies the address of the file server."
+          },
+          "instanceLabelSelector": {
+            "type": "object",
+            "description": "InstanceLabelSelector specifies matching criteria for labels on ServerInstance.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.LabelSelector"
+              }
+            ]
+          },
+          "instanceObjectSelector": {
+            "type": "array",
+            "description": "InstanceObjectSelector specifies a list of ServerInstances to explicitly use.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.ObjectKey"
+            }
+          }
+        }
+      },
+      "v1alpha1.KubernetesConfiguration": {
+        "type": "object",
+        "properties": {
+          "controlPlane": {
+            "$ref": "#/components/schemas/v1beta1.KubeadmConfigSpec"
+          },
+          "kubeletConfiguration": {
+            "$ref": "#/components/schemas/runtime.RawExtension"
+          },
+          "workers": {
+            "$ref": "#/components/schemas/v1beta1.KubeadmConfigSpec"
+          }
+        }
+      },
+      "v1alpha1.LoadBalancerComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "metallb": {
+            "$ref": "#/components/schemas/v1alpha1.MetalLBSpec"
+          }
+        }
+      },
+      "v1alpha1.LoggingComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "elasticcurator": {
+            "$ref": "#/components/schemas/v1alpha1.ElasticCurator"
+          },
+          "elasticsearch": {
+            "$ref": "#/components/schemas/v1alpha1.ElasticSearchSpec"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "eventexporter": {
+            "$ref": "#/components/schemas/v1alpha1.EventExporter"
+          },
+          "fluentbit": {
+            "$ref": "#/components/schemas/v1alpha1.FluentBitSpec"
+          },
+          "kibana": {
+            "$ref": "#/components/schemas/v1alpha1.KibanaSpec"
+          },
+          "loggingoperator": {
+            "$ref": "#/components/schemas/v1alpha1.LoggingOperatorSpec"
+          }
+        }
+      },
+      "v1alpha1.LoggingOperatorSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.MachineHealthCheck": {
+        "type": "object",
+        "properties": {
+          "maxUnhealthy": {
+            "type": "object",
+            "description": "Any further remediation is only allowed if at most \"MaxUnhealthy\" machines selected by\n\"selector\" are not healthy.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/intstr.IntOrString"
+              }
+            ]
+          },
+          "nodeStartupTimeout": {
+            "type": "object",
+            "description": "Machines older than this duration without a node will be considered to have\nfailed and will be remediated.\nIf you wish to disable this feature, set the value explicitly to 0.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "remediationTemplate": {
+            "type": "object",
+            "description": "RemediationTemplate is a reference to a remediation template\nprovided by an infrastructure provider.\n\nThis field is completely optional, when filled, the MachineHealthCheck controller\ncreates a new object from the template referenced and hands off remediation of the machine to\na controller that lives outside of Cluster API.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.ObjectReference"
+              }
+            ]
+          },
+          "unhealthyConditions": {
+            "type": "array",
+            "description": "UnhealthyConditions contains a list of the conditions that determine\nwhether a node is considered unhealthy. The conditions are combined in a\nlogical OR, i.e. if any of the conditions is met, the node is unhealthy.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.UnhealthyCondition"
+            }
+          },
+          "unhealthyRange": {
+            "type": "string",
+            "description": "Any further remediation is only allowed if the number of machines selected by \"selector\" as not healthy\nis within the range of \"UnhealthyRange\". Takes precedence over MaxUnhealthy.\nEg. \"[3-5]\" - This means that remediation will be allowed only when:\n(a) there are at least 3 unhealthy machines (and)\n(b) there are at most 5 unhealthy machines"
+          }
+        }
+      },
+      "v1alpha1.MetalLBSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.MonitoringComponentsConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "kubeprometheus": {
+            "$ref": "#/components/schemas/v1alpha1.KubePrometheusSpec"
+          }
+        }
+      },
+      "v1alpha1.NVIDIAGPUOperatorSpec": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/v1alpha1.AddonDataValues"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.Network": {
+        "type": "object",
+        "properties": {
+          "devices": {
+            "type": "array",
+            "description": "Devices is the list of network devices used by the node.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.NetworkDevice"
+            }
+          },
+          "ipPoolRef": {
+            "type": "object",
+            "description": "IPPoolRef refers to an IPPool object.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.TypedObjectReference"
+              }
+            ]
+          },
+          "nameservers": {
+            "type": "array",
+            "description": "Nameservers is a list of IPv4 and/or IPv6 addresses used as DNS nameservers.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1alpha1.NetworkConfig": {
+        "type": "object",
+        "properties": {
+          "apiServerPort": {
+            "type": "integer",
+            "description": "APIServerPort specifies the port the API Server should bind to.\nDefaults to 6443."
+          },
+          "cni": {
+            "type": "object",
+            "description": "CNI specifies CNI configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CNIConfig"
+              }
+            ]
+          },
+          "ipPoolRef": {
+            "type": "object",
+            "description": "IPPoolRef refers to an IPPool object.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.TypedObjectReference"
+              }
+            ]
+          },
+          "managementNetworkInterface": {
+            "type": "string",
+            "description": "ManagementNetworkInterface specifies the management network inferface name in the cluster VM. It varies in different OSes, e.g. 'eth0' in CentOS 7.9 and 'ens4' in Rocky Linux 8.6."
+          },
+          "pods": {
+            "type": "object",
+            "description": "The network ranges from which Pod networks are allocated.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.NetworkRanges"
+              }
+            ]
+          },
+          "serviceDomain": {
+            "type": "string",
+            "description": "Domain name for services."
+          },
+          "services": {
+            "type": "object",
+            "description": "The network ranges from which service VIPs are allocated.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.NetworkRanges"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.NetworkDevice": {
+        "type": "object",
+        "properties": {
+          "ipAddrs": {
+            "type": "array",
+            "description": "IPAddrs is a list of one or more IPv4 and/or IPv6 addresses to assign\nto this device.\nRequired when DHCP4 and DHCP6 are both false.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ipPoolRefs": {
+            "type": "array",
+            "description": "IPPoolRefs refers to IPPool objects.",
+            "items": {
+              "$ref": "#/components/schemas/v1.TypedObjectReference"
+            }
+          },
+          "macAddr": {
+            "type": "string",
+            "description": "MACAddr is the MAC address used by this device.\nIt is generally a good idea to omit this field and allow a MAC address\nto be generated."
+          },
+          "netmask": {
+            "type": "string",
+            "description": "Netmask is the subnet mask used by this device.\nRequired when DHCP4 is false."
+          },
+          "networkType": {
+            "type": "object",
+            "description": "NetworkType is the VM network type, default IPV4_DHCP",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NetworkType"
+              }
+            ]
+          },
+          "routes": {
+            "type": "array",
+            "description": "Required when DHCP4 is false.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.NetworkDeviceRoute"
+            }
+          },
+          "tag": {
+            "type": "object",
+            "description": "The network device tag",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NetworkTag"
+              }
+            ]
+          },
+          "vlan": {
+            "type": "string",
+            "description": "Vlan is the virtual LAN used by the node."
+          }
+        }
+      },
+      "v1alpha1.NetworkDeviceRoute": {
+        "type": "object",
+        "properties": {
+          "gateway": {
+            "type": "string",
+            "description": "Gateway is the IPv4 gateway used by this route."
+          },
+          "netmask": {
+            "type": "string",
+            "description": "Netmask is the subnet mask used by this route."
+          },
+          "network": {
+            "type": "string",
+            "description": "Network is the route network address."
+          }
+        }
+      },
+      "v1alpha1.NetworkTag": {
+        "type": "string",
+        "enum": [
+          "default",
+          "storage",
+          "ecp"
+        ],
+        "x-enum-varnames": [
+          "NetworkTagDefault",
+          "NetworkTagStorage",
+          "NetworkTagECP"
+        ]
+      },
+      "v1alpha1.NetworkType": {
+        "type": "string",
+        "enum": [
+          "NONE",
+          "IPV4",
+          "IPV4_DHCP"
+        ],
+        "x-enum-varnames": [
+          "NetworkTypeNone",
+          "NetworkTypeIPV4",
+          "NetworkTypeIPV4DHCP"
+        ]
+      },
+      "v1alpha1.NodeAutoscaler": {
+        "type": "object",
+        "properties": {
+          "maxSize": {
+            "type": "integer",
+            "description": "MaxSize specifies the maximum number of nodes for the node group.\nThe autoscaler will not scale the group above this number."
+          },
+          "minSize": {
+            "type": "integer",
+            "description": "MinSize specifies the minimum number of nodes for the node group.\nThe autoscaler will not scale the group below this number."
+          }
+        }
+      },
+      "v1alpha1.NodeConfig": {
+        "type": "object",
+        "properties": {
+          "cloneMode": {
+            "type": "object",
+            "description": "CloneMode is the clone type of the node.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloneMode"
+              }
+            ]
+          },
+          "cpuCores": {
+            "type": "integer",
+            "description": "CPUCores is the number of cpu cores of the node."
+          },
+          "diskSizeGB": {
+            "type": "integer",
+            "description": "DiskSizeGB is the system disk size of the node."
+          },
+          "gpuDevices": {
+            "type": "array",
+            "description": "GPUDevices is the list of physical GPUs used by the virtual machine.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.GPUPassthroughDeviceSpec"
+            }
+          },
+          "memoryMB": {
+            "type": "integer",
+            "description": "MemoryMB is the memory size of the node."
+          },
+          "network": {
+            "type": "object",
+            "description": "Network is the network configuration of the node.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Network"
+              }
+            ]
+          },
+          "vgpuDevices": {
+            "type": "array",
+            "description": "VGPUDevices is the list of virtual GPUs used by the virtual machine.",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.VGPUDeviceSpec"
+            }
+          },
+          "vmTemplate": {
+            "type": "string",
+            "description": "VMTemplate is id of VM template from which the VMs are cloned."
+          }
+        }
+      },
+      "v1alpha1.NodesStatus": {
+        "type": "object",
+        "properties": {
+          "observedCount": {
+            "type": "integer",
+            "description": "Total number of obverserd replicas. These replicas can be in Ready status or scaling up/down.\nThis is finally to be equal to the replica count defined in spec field."
+          },
+          "progress": {
+            "type": "string",
+            "description": "Progress is ReadyCount/TotalCount for indicating the progress of nodes creation."
+          },
+          "readyCount": {
+            "type": "integer",
+            "description": "Total number of nodes in Ready status."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "Total number of expected nodes."
+          }
+        }
+      },
+      "v1alpha1.ObjectKey": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name is unique within a namespace to reference a object resource."
+          },
+          "namespace": {
+            "type": "string",
+            "description": "namespace defines the space within which the object name must be unique."
+          }
+        }
+      },
+      "v1alpha1.OperationConfiguration": {
+        "type": "object",
+        "properties": {
+          "createClusterTimeout": {
+            "type": "object",
+            "description": "CreateClusterTimeout is the total amount of time that the create cluster operation spend on.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "rollbackClusterTimeout": {
+            "type": "object",
+            "description": "RollbackClusterTimeout is the total amount of time that the rollback cluster operation spend on.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "updateClusterTimeout": {
+            "type": "object",
+            "description": "UpdateClusterTimeout is the total amount of time that the update cluster operation spend on.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "upgradeClusterTimeout": {
+            "type": "object",
+            "description": "UpgradeClusterTimeout is the total amount of time that the upgrade cluster operation spend on.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.OperationStatus": {
+        "type": "object",
+        "properties": {
+          "phase": {
+            "type": "object",
+            "description": "Phase represents the current operation phase of the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.KubeSmartClusterPhase"
+              }
+            ]
+          },
+          "startTime": {
+            "type": "string",
+            "description": "StartTime is the time when the operation started."
+          },
+          "timeout": {
+            "type": "object",
+            "description": "Timeout is the maximum amount of time that the operation can take.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "type": {
+            "type": "object",
+            "description": "Type is operation type, e.g. Create, Update, etc..",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.ClusterOperation"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.PlacementGroup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name is the name of this placement group"
+          }
+        }
+      },
+      "v1alpha1.Platform": {
+        "type": "object",
+        "properties": {
+          "architecture": {
+            "type": "object",
+            "description": "+kubebuilder:validation:Enum=x86_64;AArch64",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.Architecture"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.ProtocolPort": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/v1alpha1.ProtocolType"
+          }
+        }
+      },
+      "v1alpha1.ProtocolType": {
+        "type": "string",
+        "enum": [
+          "TCP",
+          "UDP",
+          "IPIP",
+          "ICMP",
+          "SSH",
+          "HTTP"
+        ],
+        "x-enum-varnames": [
+          "ProtocolTCP",
+          "ProtocolUDP",
+          "ProtocolIPIP",
+          "ProtocolICMP",
+          "ProtocolSSH",
+          "ProtocolHTTP"
+        ]
+      },
+      "v1alpha1.ProxyConfiguration": {
+        "type": "object",
+        "properties": {
+          "http": {
+            "type": "string"
+          },
+          "https": {
+            "type": "string"
+          },
+          "noProxy": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.RequiredNetworkPorts": {
+        "type": "object",
+        "properties": {
+          "clusterInterConnection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.ProtocolPort"
+            }
+          }
+        }
+      },
+      "v1alpha1.Resources": {
+        "type": "object",
+        "properties": {
+          "cpuCore": {
+            "type": "integer",
+            "description": "CPUCore is the total number of CPU cores of the physical machine node."
+          },
+          "cpuSocket": {
+            "type": "integer",
+            "description": "CPUSocket is the total number of CPU sockets of the physical machine node.\nIt represents the number of CPU sockets on the infrastructure cluster when the cluster/node group runs on virtual machine.\nIt represents the number of CPU sockets on the physical machine when the cluster/node group runs on physical machine."
+          },
+          "cpuThread": {
+            "type": "integer",
+            "description": "CPUThread is the total number of CPU threads of the physical machine node."
+          },
+          "gpu": {
+            "type": "integer",
+            "description": "GPU is the total number of physical GPUs."
+          },
+          "memory": {
+            "type": "object",
+            "description": "Memory is the total amount of memory.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/resource.Quantity"
+              }
+            ]
+          },
+          "vcpu": {
+            "type": "integer",
+            "description": "VCPU is the total number of vCPUs of the virtual machine node."
+          },
+          "vgpu": {
+            "type": "integer",
+            "description": "VGPU is the total number of virtual GPUs."
+          }
+        }
+      },
+      "v1alpha1.SecurityConfiguration": {
+        "type": "object",
+        "properties": {
+          "sshAuthorizedPublicKey": {
+            "type": "string"
+          },
+          "sshPassword": {
+            "type": "string"
+          },
+          "trustedImageRegistries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v1alpha1.TrustedImageRegistry"
+            }
+          }
+        }
+      },
+      "v1alpha1.StorageConfig": {
+        "type": "object",
+        "properties": {
+          "csi": {
+            "type": "object",
+            "description": "CSI specifies CSI configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CSIConfig"
+              }
+            ]
+          }
+        }
+      },
+      "v1alpha1.TimezoneConfiguration": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name is the timezone name, e.g. \"Asia/Shanghai\".\nRefer to https://en.wikipedia.org/wiki/List_of_tz_database_time_zones."
+          }
+        }
+      },
+      "v1alpha1.TrustedImageRegistry": {
+        "type": "object",
+        "properties": {
+          "caCerts": {
+            "type": "string",
+            "description": "CaCerts is the base64 encoded CA certificates of the image registry server."
+          },
+          "desc": {
+            "type": "string",
+            "description": "Description is the descriptive information of the image registry server."
+          },
+          "skipTLSVerify": {
+            "type": "boolean",
+            "description": "SkipTLSVerify is the flag to skip TLS certificate verification for the image registry server."
+          },
+          "uri": {
+            "type": "string",
+            "description": "URI is the URI of the image registry server.\ne.g. 192.168.100.100, registry.example.com, 192.168.100.100:8443, registry.example.com:8443/project, http://192.168.100.100, https://192.168.100.100"
+          }
+        }
+      },
+      "v1alpha1.VGPUDeviceSpec": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Count is the number of vGPU. Defaults to 1."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type is the type name of a virtual GPU, e.g. 'NVIDIA A16-16A'."
+          }
+        }
+      },
+      "v1alpha1.VIPClaim": {
+        "type": "object",
+        "properties": {
+          "ipClaimName": {
+            "type": "string"
+          },
+          "ipPoolName": {
+            "type": "string"
+          },
+          "ipPoolNamespace": {
+            "type": "string"
+          }
+        }
+      },
+      "v1alpha1.WorkerGroup": {
+        "type": "object",
+        "properties": {
+          "autoResourceReserved": {
+            "type": "boolean",
+            "description": "AutoResourceReserved specifies whether to automatically configure resource reservations."
+          },
+          "cloudProvider": {
+            "type": "object",
+            "description": "CloudProvider specifies the IaaS Cloud Provider configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.CloudProviderSpec"
+              }
+            ]
+          },
+          "machineHealthCheck": {
+            "type": "object",
+            "description": "MachineHealthCheck defines a MachineHealthCheck for this node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.MachineHealthCheck"
+              }
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Name is the name of this node group."
+          },
+          "nodeAutoscaler": {
+            "type": "object",
+            "description": "NodeAutoscaler specifies the autoscaler configuration for node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodeAutoscaler"
+              }
+            ]
+          },
+          "nodeConfig": {
+            "type": "object",
+            "description": "NodeConfig specifies the node configuration, such as cpu/memory/disk, etc.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.NodeConfig"
+              }
+            ]
+          },
+          "nodeDrainTimeout": {
+            "type": "object",
+            "description": "NodeDrainTimeout is the total amount of time that the controller will spend on draining a node.\nIf this value is nil, the default NodeDrainTimeout will be used instead.\nDefaults to 5 minutes.\nNOTE: NodeDrainTimeout is different from `kubectl drain --timeout`",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "nodeVolumeDetachTimeout": {
+            "type": "object",
+            "description": "NodeVolumeDetachTimeout is the total amount of time that the controller will spend on waiting for all volumes to be detached.\nIf this value is nil, the default NodeVolumeDetachTimeout will be used instead.\nDefaults to 5 minutes.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "placementGroup": {
+            "type": "object",
+            "description": "PlacementGroup specifies the placement group configuration for node group.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1alpha1.PlacementGroup"
+              }
+            ]
+          },
+          "replicas": {
+            "type": "integer",
+            "description": "Replicas is the number of nodes in this node group."
+          },
+          "rolloutStrategy": {
+            "type": "object",
+            "description": "RolloutStrategy defines the strategy to replace existing machines with new ones.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.MachineDeploymentStrategy"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.APIServer": {
+        "type": "object",
+        "properties": {
+          "certSANs": {
+            "type": "array",
+            "description": "CertSANs sets extra Subject Alternative Names for the API Server signing cert.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extraArgs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "ExtraArgs is an extra set of flags to pass to the control plane component.\nTODO: This is temporary and ideally we would like to switch all components to\nuse ComponentConfig + ConfigMaps."
+          },
+          "extraVolumes": {
+            "type": "array",
+            "description": "ExtraVolumes is an extra set of host volumes, mounted to the control plane component.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.HostPathMount"
+            }
+          },
+          "timeoutForControlPlane": {
+            "type": "object",
+            "description": "TimeoutForControlPlane controls the timeout that we use for API server to appear",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.BootstrapToken": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description sets a human-friendly message why this token exists and what it's used\nfor, so other administrators can know its purpose."
+          },
+          "expires": {
+            "type": "string",
+            "description": "Expires specifies the timestamp when this token expires. Defaults to being set\ndynamically at runtime based on the TTL. Expires and TTL are mutually exclusive."
+          },
+          "groups": {
+            "type": "array",
+            "description": "Groups specifies the extra groups that this token will authenticate as when/if\nused for authentication",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token": {
+            "type": "object",
+            "description": "Token is used for establishing bidirectional trust between nodes and control-planes.\nUsed for joining nodes in the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.BootstrapTokenString"
+              }
+            ]
+          },
+          "ttl": {
+            "type": "object",
+            "description": "TTL defines the time to live for this token. Defaults to 24h.\nExpires and TTL are mutually exclusive.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "usages": {
+            "type": "array",
+            "description": "Usages describes the ways in which this token can be used. Can by default be used\nfor establishing bidirectional trust, but that can be changed here.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.BootstrapTokenDiscovery": {
+        "type": "object",
+        "properties": {
+          "apiServerEndpoint": {
+            "type": "string",
+            "description": "APIServerEndpoint is an IP or domain name to the API server from which info will be fetched."
+          },
+          "caCertHashes": {
+            "type": "array",
+            "description": "CACertHashes specifies a set of public key pins to verify\nwhen token-based discovery is used. The root CA found during discovery\nmust match one of these values. Specifying an empty set disables root CA\npinning, which can be unsafe. Each hash is specified as \"<type>:<value>\",\nwhere the only currently supported type is \"sha256\". This is a hex-encoded\nSHA-256 hash of the Subject Public Key Info (SPKI) object in DER-encoded\nASN.1. These hashes can be calculated using, for example, OpenSSL:\nopenssl x509 -pubkey -in ca.crt openssl rsa -pubin -outform der 2>&/dev/null | openssl dgst -sha256 -hex",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token": {
+            "type": "string",
+            "description": "Token is a token used to validate cluster information\nfetched from the control-plane."
+          },
+          "unsafeSkipCAVerification": {
+            "type": "boolean",
+            "description": "UnsafeSkipCAVerification allows token-based discovery\nwithout CA verification via CACertHashes. This can weaken\nthe security of kubeadm since other nodes can impersonate the control-plane."
+          }
+        }
+      },
+      "v1beta1.BootstrapTokenString": {
+        "type": "object"
+      },
+      "v1beta1.ClusterConfiguration": {
+        "type": "object",
+        "properties": {
+          "apiServer": {
+            "type": "object",
+            "description": "APIServer contains extra settings for the API server control plane component",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.APIServer"
+              }
+            ]
+          },
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "certificatesDir": {
+            "type": "string",
+            "description": "CertificatesDir specifies where to store or look for all required certificates.\nNB: if not provided, this will default to `/etc/kubernetes/pki`"
+          },
+          "clusterName": {
+            "type": "string",
+            "description": "The cluster name"
+          },
+          "controlPlaneEndpoint": {
+            "type": "string",
+            "description": "ControlPlaneEndpoint sets a stable IP address or DNS name for the control plane; it\ncan be a valid IP address or a RFC-1123 DNS subdomain, both with optional TCP port.\nIn case the ControlPlaneEndpoint is not specified, the AdvertiseAddress + BindPort\nare used; in case the ControlPlaneEndpoint is specified but without a TCP port,\nthe BindPort is used.\nPossible usages are:\ne.g. In a cluster with more than one control plane instances, this field should be\nassigned the address of the external load balancer in front of the\ncontrol plane instances.\ne.g.  in environments with enforced node recycling, the ControlPlaneEndpoint\ncould be used for assigning a stable DNS to the control plane.\nNB: This value defaults to the first value in the Cluster object status.apiEndpoints array."
+          },
+          "controllerManager": {
+            "type": "object",
+            "description": "ControllerManager contains extra settings for the controller manager control plane component",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ControlPlaneComponent"
+              }
+            ]
+          },
+          "dns": {
+            "type": "object",
+            "description": "DNS defines the options for the DNS add-on installed in the cluster.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.DNS"
+              }
+            ]
+          },
+          "etcd": {
+            "type": "object",
+            "description": "Etcd holds configuration for etcd.\nNB: This value defaults to a Local (stacked) etcd",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Etcd"
+              }
+            ]
+          },
+          "featureGates": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "FeatureGates enabled by the user."
+          },
+          "imageRepository": {
+            "type": "string",
+            "description": "ImageRepository sets the container registry to pull images from.\n* If not set, the default registry of kubeadm will be used, i.e.\n  * registry.k8s.io (new registry): >= v1.22.17, >= v1.23.15, >= v1.24.9, >= v1.25.0\n  * k8s.gcr.io (old registry): all older versions\n  Please note that when imageRepository is not set we don't allow upgrades to\n  versions >= v1.22.0 which use the old registry (k8s.gcr.io). Please use\n  a newer patch version with the new registry instead (i.e. >= v1.22.17,\n  >= v1.23.15, >= v1.24.9, >= v1.25.0).\n* If the version is a CI build (kubernetes version starts with `ci/` or `ci-cross/`)\n `gcr.io/k8s-staging-ci-images` will be used as a default for control plane components\n  and for kube-proxy, while `registry.k8s.io` will be used for all the other images."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "kubernetesVersion": {
+            "type": "string",
+            "description": "KubernetesVersion is the target version of the control plane.\nNB: This value defaults to the Machine object spec.version"
+          },
+          "networking": {
+            "type": "object",
+            "description": "Networking holds configuration for the networking topology of the cluster.\nNB: This value defaults to the Cluster object spec.clusterNetwork.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Networking"
+              }
+            ]
+          },
+          "scheduler": {
+            "type": "object",
+            "description": "Scheduler contains extra settings for the scheduler control plane component",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ControlPlaneComponent"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.Condition": {
+        "type": "object",
+        "properties": {
+          "lastTransitionTime": {
+            "type": "string",
+            "description": "Last time the condition transitioned from one status to another.\nThis should be when the underlying condition changed. If that is not known, then using the time when\nthe API field changed is acceptable."
+          },
+          "message": {
+            "type": "string",
+            "description": "A human readable message indicating details about the transition.\nThis field may be empty."
+          },
+          "reason": {
+            "type": "string",
+            "description": "The reason for the condition's last transition in CamelCase.\nThe specific API may choose whether or not this field is considered a guaranteed API.\nThis field may not be empty."
+          },
+          "severity": {
+            "type": "object",
+            "description": "Severity provides an explicit classification of Reason code, so the users or machines can immediately\nunderstand the current situation and act accordingly.\nThe Severity field MUST be set only when Status=False.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ConditionSeverity"
+              }
+            ]
+          },
+          "status": {
+            "type": "object",
+            "description": "Status of the condition, one of True, False, Unknown.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/k8s_io_api_core_v1.ConditionStatus"
+              }
+            ]
+          },
+          "type": {
+            "type": "object",
+            "description": "Type of condition in CamelCase or in foo.example.com/CamelCase.\nMany .condition.type values are consistent across resources like Available, but because arbitrary conditions\ncan be useful (see .node.status.conditions), the ability to deconflict is important.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ConditionType"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.ConditionSeverity": {
+        "type": "string",
+        "enum": [
+          "Error",
+          "Warning",
+          "Info",
+          ""
+        ],
+        "x-enum-varnames": [
+          "ConditionSeverityError",
+          "ConditionSeverityWarning",
+          "ConditionSeverityInfo",
+          "ConditionSeverityNone"
+        ]
+      },
+      "v1beta1.ConditionType": {
+        "type": "string",
+        "enum": [
+          "Ready",
+          "InfrastructureReady",
+          "VariablesReconciled",
+          "ControlPlaneInitialized",
+          "ControlPlaneReady",
+          "BootstrapReady",
+          "DrainingSucceeded",
+          "PreDrainDeleteHookSucceeded",
+          "PreTerminateDeleteHookSucceeded",
+          "VolumeDetachSucceeded",
+          "HealthCheckSucceeded",
+          "OwnerRemediated",
+          "ExternalRemediationTemplateAvailable",
+          "ExternalRemediationRequestAvailable",
+          "NodeHealthy",
+          "RemediationAllowed",
+          "Available",
+          "MachinesCreated",
+          "MachinesReady",
+          "Resized",
+          "TopologyReconciled",
+          "RefVersionsUpToDate"
+        ],
+        "x-enum-varnames": [
+          "ReadyCondition",
+          "InfrastructureReadyCondition",
+          "ClusterClassVariablesReconciledCondition",
+          "ControlPlaneInitializedCondition",
+          "ControlPlaneReadyCondition",
+          "BootstrapReadyCondition",
+          "DrainingSucceededCondition",
+          "PreDrainDeleteHookSucceededCondition",
+          "PreTerminateDeleteHookSucceededCondition",
+          "VolumeDetachSucceededCondition",
+          "MachineHealthCheckSucceededCondition",
+          "MachineOwnerRemediatedCondition",
+          "ExternalRemediationTemplateAvailableCondition",
+          "ExternalRemediationRequestAvailableCondition",
+          "MachineNodeHealthyCondition",
+          "RemediationAllowedCondition",
+          "MachineDeploymentAvailableCondition",
+          "MachinesCreatedCondition",
+          "MachinesReadyCondition",
+          "ResizedCondition",
+          "TopologyReconciledCondition",
+          "ClusterClassRefVersionsUpToDateCondition"
+        ]
+      },
+      "v1beta1.ContainerLinuxConfig": {
+        "type": "object",
+        "properties": {
+          "additionalConfig": {
+            "type": "string",
+            "description": "AdditionalConfig contains additional configuration to be merged with the Ignition\nconfiguration generated by the bootstrapper controller. More info: https://coreos.github.io/ignition/operator-notes/#config-merging\n\nThe data format is documented here: https://kinvolk.io/docs/flatcar-container-linux/latest/provisioning/cl-config/"
+          },
+          "strict": {
+            "type": "boolean",
+            "description": "Strict controls if AdditionalConfig should be strictly parsed. If so, warnings are treated as errors."
+          }
+        }
+      },
+      "v1beta1.ControlPlaneComponent": {
+        "type": "object",
+        "properties": {
+          "extraArgs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "ExtraArgs is an extra set of flags to pass to the control plane component.\nTODO: This is temporary and ideally we would like to switch all components to\nuse ComponentConfig + ConfigMaps."
+          },
+          "extraVolumes": {
+            "type": "array",
+            "description": "ExtraVolumes is an extra set of host volumes, mounted to the control plane component.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.HostPathMount"
+            }
+          }
+        }
+      },
+      "v1beta1.DNS": {
+        "type": "object",
+        "properties": {
+          "imageRepository": {
+            "type": "string",
+            "description": "ImageRepository sets the container registry to pull images from.\nif not set, the ImageRepository defined in ClusterConfiguration will be used instead."
+          },
+          "imageTag": {
+            "type": "string",
+            "description": "ImageTag allows to specify a tag for the image.\nIn case this value is set, kubeadm does not change automatically the version of the above components during upgrades."
+          }
+        }
+      },
+      "v1beta1.Discovery": {
+        "type": "object",
+        "properties": {
+          "bootstrapToken": {
+            "type": "object",
+            "description": "BootstrapToken is used to set the options for bootstrap token based discovery\nBootstrapToken and File are mutually exclusive",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.BootstrapTokenDiscovery"
+              }
+            ]
+          },
+          "file": {
+            "type": "object",
+            "description": "File is used to specify a file or URL to a kubeconfig file from which to load cluster information\nBootstrapToken and File are mutually exclusive",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.FileDiscovery"
+              }
+            ]
+          },
+          "timeout": {
+            "type": "object",
+            "description": "Timeout modifies the discovery timeout",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.Duration"
+              }
+            ]
+          },
+          "tlsBootstrapToken": {
+            "type": "string",
+            "description": "TLSBootstrapToken is a token used for TLS bootstrapping.\nIf .BootstrapToken is set, this field is defaulted to .BootstrapToken.Token, but can be overridden.\nIf .File is set, this field **must be set** in case the KubeConfigFile does not contain any other authentication information"
+          }
+        }
+      },
+      "v1beta1.DiskSetup": {
+        "type": "object",
+        "properties": {
+          "filesystems": {
+            "type": "array",
+            "description": "Filesystems specifies the list of file systems to setup.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.Filesystem"
+            }
+          },
+          "partitions": {
+            "type": "array",
+            "description": "Partitions specifies the list of the partitions to setup.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.Partition"
+            }
+          }
+        }
+      },
+      "v1beta1.Encoding": {
+        "type": "string",
+        "enum": [
+          "base64",
+          "gzip",
+          "gzip+base64"
+        ],
+        "x-enum-varnames": [
+          "Base64",
+          "Gzip",
+          "GzipBase64"
+        ]
+      },
+      "v1beta1.Etcd": {
+        "type": "object",
+        "properties": {
+          "external": {
+            "type": "object",
+            "description": "External describes how to connect to an external etcd cluster\nLocal and External are mutually exclusive",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ExternalEtcd"
+              }
+            ]
+          },
+          "local": {
+            "type": "object",
+            "description": "Local provides configuration knobs for configuring the local etcd instance\nLocal and External are mutually exclusive",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.LocalEtcd"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.ExternalEtcd": {
+        "type": "object",
+        "properties": {
+          "caFile": {
+            "type": "string",
+            "description": "CAFile is an SSL Certificate Authority file used to secure etcd communication.\nRequired if using a TLS connection."
+          },
+          "certFile": {
+            "type": "string",
+            "description": "CertFile is an SSL certification file used to secure etcd communication.\nRequired if using a TLS connection."
+          },
+          "endpoints": {
+            "type": "array",
+            "description": "Endpoints of etcd members. Required for ExternalEtcd.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "keyFile": {
+            "type": "string",
+            "description": "KeyFile is an SSL key file used to secure etcd communication.\nRequired if using a TLS connection."
+          }
+        }
+      },
+      "v1beta1.File": {
+        "type": "object",
+        "properties": {
+          "append": {
+            "type": "boolean",
+            "description": "Append specifies whether to append Content to existing file if Path exists."
+          },
+          "content": {
+            "type": "string",
+            "description": "Content is the actual content of the file."
+          },
+          "contentFrom": {
+            "type": "object",
+            "description": "ContentFrom is a referenced source of content to populate the file.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.FileSource"
+              }
+            ]
+          },
+          "encoding": {
+            "type": "object",
+            "description": "Encoding specifies the encoding of the file contents.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Encoding"
+              }
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner specifies the ownership of the file, e.g. \"root:root\"."
+          },
+          "path": {
+            "type": "string",
+            "description": "Path specifies the full path on disk where to store the file."
+          },
+          "permissions": {
+            "type": "string",
+            "description": "Permissions specifies the permissions to assign to the file, e.g. \"0640\"."
+          }
+        }
+      },
+      "v1beta1.FileDiscovery": {
+        "type": "object",
+        "properties": {
+          "kubeConfigPath": {
+            "type": "string",
+            "description": "KubeConfigPath is used to specify the actual file path or URL to the kubeconfig file from which to load cluster information"
+          }
+        }
+      },
+      "v1beta1.FileSource": {
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "object",
+            "description": "Secret represents a secret that should populate this file.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.SecretFileSource"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.Filesystem": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "Device specifies the device name"
+          },
+          "extraOpts": {
+            "type": "array",
+            "description": "ExtraOpts defined extra options to add to the command for creating the file system.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filesystem": {
+            "type": "string",
+            "description": "Filesystem specifies the file system type."
+          },
+          "label": {
+            "type": "string",
+            "description": "Label specifies the file system label to be used. If set to None, no label is used."
+          },
+          "overwrite": {
+            "type": "boolean",
+            "description": "Overwrite defines whether or not to overwrite any existing filesystem.\nIf true, any pre-existing file system will be destroyed. Use with Caution."
+          },
+          "partition": {
+            "type": "string",
+            "description": "Partition specifies the partition to use. The valid options are: \"auto|any\", \"auto\", \"any\", \"none\", and <NUM>, where NUM is the actual partition number."
+          },
+          "replaceFS": {
+            "type": "string",
+            "description": "ReplaceFS is a special directive, used for Microsoft Azure that instructs cloud-init to replace a file system of <FS_TYPE>.\nNOTE: unless you define a label, this requires the use of the 'any' partition directive."
+          }
+        }
+      },
+      "v1beta1.Format": {
+        "type": "string",
+        "enum": [
+          "cloud-config",
+          "ignition"
+        ],
+        "x-enum-varnames": [
+          "CloudConfig",
+          "Ignition"
+        ]
+      },
+      "v1beta1.HostPathMount": {
+        "type": "object",
+        "properties": {
+          "hostPath": {
+            "type": "string",
+            "description": "HostPath is the path in the host that will be mounted inside\nthe pod."
+          },
+          "mountPath": {
+            "type": "string",
+            "description": "MountPath is the path inside the pod where hostPath will be mounted."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the volume inside the pod template."
+          },
+          "pathType": {
+            "type": "object",
+            "description": "PathType is the type of the HostPath.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.HostPathType"
+              }
+            ]
+          },
+          "readOnly": {
+            "type": "boolean",
+            "description": "ReadOnly controls write access to the volume"
+          }
+        }
+      },
+      "v1beta1.IgnitionSpec": {
+        "type": "object",
+        "properties": {
+          "containerLinuxConfig": {
+            "type": "object",
+            "description": "ContainerLinuxConfig contains CLC specific configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ContainerLinuxConfig"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.InitConfiguration": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "bootstrapTokens": {
+            "type": "array",
+            "description": "BootstrapTokens is respected at `kubeadm init` time and describes a set of Bootstrap Tokens to create.\nThis information IS NOT uploaded to the kubeadm cluster configmap, partly because of its sensitive nature",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.BootstrapToken"
+            }
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "localAPIEndpoint": {
+            "type": "object",
+            "description": "LocalAPIEndpoint represents the endpoint of the API server instance that's deployed on this control plane node\nIn HA setups, this differs from ClusterConfiguration.ControlPlaneEndpoint in the sense that ControlPlaneEndpoint\nis the global endpoint for the cluster, which then loadbalances the requests to each individual API server. This\nconfiguration object lets you customize what IP/DNS name and port the local API server advertises it's accessible\non. By default, kubeadm tries to auto-detect the IP of the default interface and use that, but in case that process\nfails you may set the desired value here.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/sigs_k8s_io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint"
+              }
+            ]
+          },
+          "nodeRegistration": {
+            "type": "object",
+            "description": "NodeRegistration holds fields that relate to registering the new control-plane node to the cluster.\nWhen used in the context of control plane nodes, NodeRegistration should remain consistent\nacross both InitConfiguration and JoinConfiguration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.NodeRegistrationOptions"
+              }
+            ]
+          },
+          "patches": {
+            "type": "object",
+            "description": "Patches contains options related to applying patches to components deployed by kubeadm during\n\"kubeadm init\". The minimum kubernetes version needed to support Patches is v1.22",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Patches"
+              }
+            ]
+          },
+          "skipPhases": {
+            "type": "array",
+            "description": "SkipPhases is a list of phases to skip during command execution.\nThe list of phases can be obtained with the \"kubeadm init --help\" command.\nThis option takes effect only on Kubernetes >=1.22.0.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.JoinConfiguration": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
+          },
+          "caCertPath": {
+            "type": "string",
+            "description": "CACertPath is the path to the SSL certificate authority used to\nsecure comunications between node and control-plane.\nDefaults to \"/etc/kubernetes/pki/ca.crt\".\nTODO: revisit when there is defaulting from k/k"
+          },
+          "controlPlane": {
+            "type": "object",
+            "description": "ControlPlane defines the additional control plane instance to be deployed on the joining node.\nIf nil, no additional control plane instance will be deployed.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.JoinControlPlane"
+              }
+            ]
+          },
+          "discovery": {
+            "type": "object",
+            "description": "Discovery specifies the options for the kubelet to use during the TLS Bootstrap process\nTODO: revisit when there is defaulting from k/k",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Discovery"
+              }
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+          },
+          "nodeRegistration": {
+            "type": "object",
+            "description": "NodeRegistration holds fields that relate to registering the new control-plane node to the cluster.\nWhen used in the context of control plane nodes, NodeRegistration should remain consistent\nacross both InitConfiguration and JoinConfiguration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.NodeRegistrationOptions"
+              }
+            ]
+          },
+          "patches": {
+            "type": "object",
+            "description": "Patches contains options related to applying patches to components deployed by kubeadm during\n\"kubeadm join\". The minimum kubernetes version needed to support Patches is v1.22",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Patches"
+              }
+            ]
+          },
+          "skipPhases": {
+            "type": "array",
+            "description": "SkipPhases is a list of phases to skip during command execution.\nThe list of phases can be obtained with the \"kubeadm init --help\" command.\nThis option takes effect only on Kubernetes >=1.22.0.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.JoinControlPlane": {
+        "type": "object",
+        "properties": {
+          "localAPIEndpoint": {
+            "type": "object",
+            "description": "LocalAPIEndpoint represents the endpoint of the API server instance to be deployed on this node.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/sigs_k8s_io_cluster-api_bootstrap_kubeadm_api_v1beta1.APIEndpoint"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.KubeadmConfigSpec": {
+        "type": "object",
+        "properties": {
+          "clusterConfiguration": {
+            "type": "object",
+            "description": "ClusterConfiguration along with InitConfiguration are the configurations necessary for the init command",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.ClusterConfiguration"
+              }
+            ]
+          },
+          "diskSetup": {
+            "type": "object",
+            "description": "DiskSetup specifies options for the creation of partition tables and file systems on devices.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.DiskSetup"
+              }
+            ]
+          },
+          "files": {
+            "type": "array",
+            "description": "Files specifies extra files to be passed to user_data upon creation.",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.File"
+            }
+          },
+          "format": {
+            "type": "object",
+            "description": "Format specifies the output format of the bootstrap data",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.Format"
+              }
+            ]
+          },
+          "ignition": {
+            "type": "object",
+            "description": "Ignition contains Ignition specific configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.IgnitionSpec"
+              }
+            ]
+          },
+          "initConfiguration": {
+            "type": "object",
+            "description": "InitConfiguration along with ClusterConfiguration are the configurations necessary for the init command",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.InitConfiguration"
+              }
+            ]
+          },
+          "joinConfiguration": {
+            "type": "object",
+            "description": "JoinConfiguration is the kubeadm configuration for the join command",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.JoinConfiguration"
+              }
+            ]
+          },
+          "mounts": {
+            "type": "array",
+            "description": "Mounts specifies a list of mount points to be setup.",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "ntp": {
+            "type": "object",
+            "description": "NTP specifies NTP configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.NTP"
+              }
+            ]
+          },
+          "postKubeadmCommands": {
+            "type": "array",
+            "description": "PostKubeadmCommands specifies extra commands to run after kubeadm runs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "preKubeadmCommands": {
+            "type": "array",
+            "description": "PreKubeadmCommands specifies extra commands to run before kubeadm runs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "useExperimentalRetryJoin": {
+            "type": "boolean",
+            "description": "UseExperimentalRetryJoin replaces a basic kubeadm command with a shell\nscript with retries for joins.\n\nThis is meant to be an experimental temporary workaround on some environments\nwhere joins fail due to timing (and other issues). The long term goal is to add retries to\nkubeadm proper and use that functionality.\n\nThis will add about 40KB to userdata\n\nFor more information, refer to https://github.com/kubernetes-sigs/cluster-api/pull/2763#discussion_r397306055.\n\nDeprecated: This experimental fix is no longer needed and this field will be removed in a future release.\nWhen removing also remove from staticcheck exclude-rules for SA1019 in golangci.yml"
+          },
+          "users": {
+            "type": "array",
+            "description": "Users specifies extra users to add",
+            "items": {
+              "$ref": "#/components/schemas/v1beta1.User"
+            }
+          },
+          "verbosity": {
+            "type": "integer",
+            "description": "Verbosity is the number for the kubeadm log level verbosity.\nIt overrides the `--v` flag in kubeadm commands."
+          }
+        }
+      },
+      "v1beta1.LocalEtcd": {
+        "type": "object",
+        "properties": {
+          "dataDir": {
+            "type": "string",
+            "description": "DataDir is the directory etcd will place its data.\nDefaults to \"/var/lib/etcd\"."
+          },
+          "extraArgs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "ExtraArgs are extra arguments provided to the etcd binary\nwhen run inside a static pod."
+          },
+          "imageRepository": {
+            "type": "string",
+            "description": "ImageRepository sets the container registry to pull images from.\nif not set, the ImageRepository defined in ClusterConfiguration will be used instead."
+          },
+          "imageTag": {
+            "type": "string",
+            "description": "ImageTag allows to specify a tag for the image.\nIn case this value is set, kubeadm does not change automatically the version of the above components during upgrades."
+          },
+          "peerCertSANs": {
+            "type": "array",
+            "description": "PeerCertSANs sets extra Subject Alternative Names for the etcd peer signing cert.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "serverCertSANs": {
+            "type": "array",
+            "description": "ServerCertSANs sets extra Subject Alternative Names for the etcd server signing cert.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.MachineDeploymentStrategy": {
+        "type": "object",
+        "properties": {
+          "rollingUpdate": {
+            "type": "object",
+            "description": "Rolling update config params. Present only if\nMachineDeploymentStrategyType = RollingUpdate.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.MachineRollingUpdateDeployment"
+              }
+            ]
+          },
+          "type": {
+            "type": "object",
+            "description": "Type of deployment. Allowed values are RollingUpdate and OnDelete.\nThe default is RollingUpdate.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.MachineDeploymentStrategyType"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.MachineDeploymentStrategyType": {
+        "type": "string",
+        "enum": [
+          "RollingUpdate",
+          "OnDelete"
+        ],
+        "x-enum-varnames": [
+          "RollingUpdateMachineDeploymentStrategyType",
+          "OnDeleteMachineDeploymentStrategyType"
+        ]
+      },
+      "v1beta1.MachineRollingUpdateDeployment": {
+        "type": "object",
+        "properties": {
+          "deletePolicy": {
+            "type": "string",
+            "description": "DeletePolicy defines the policy used by the MachineDeployment to identify nodes to delete when downscaling.\nValid values are \"Random, \"Newest\", \"Oldest\"\nWhen no value is supplied, the default DeletePolicy of MachineSet is used"
+          },
+          "maxSurge": {
+            "type": "object",
+            "description": "The maximum number of machines that can be scheduled above the\ndesired number of machines.\nValue can be an absolute number (ex: 5) or a percentage of\ndesired machines (ex: 10%).\nThis can not be 0 if MaxUnavailable is 0.\nAbsolute number is calculated from percentage by rounding up.\nDefaults to 1.\nExample: when this is set to 30%, the new MachineSet can be scaled\nup immediately when the rolling update starts, such that the total\nnumber of old and new machines do not exceed 130% of desired\nmachines. Once old machines have been killed, new MachineSet can\nbe scaled up further, ensuring that total number of machines running\nat any time during the update is at most 130% of desired machines.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/intstr.IntOrString"
+              }
+            ]
+          },
+          "maxUnavailable": {
+            "type": "object",
+            "description": "The maximum number of machines that can be unavailable during the update.\nValue can be an absolute number (ex: 5) or a percentage of desired\nmachines (ex: 10%).\nAbsolute number is calculated from percentage by rounding down.\nThis can not be 0 if MaxSurge is 0.\nDefaults to 0.\nExample: when this is set to 30%, the old MachineSet can be scaled\ndown to 70% of desired machines immediately when the rolling update\nstarts. Once new machines are ready, old MachineSet can be scaled\ndown further, followed by scaling up the new MachineSet, ensuring\nthat the total number of machines available at all times\nduring the update is at least 70% of desired machines.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/intstr.IntOrString"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.NTP": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Enabled specifies whether NTP should be enabled"
+          },
+          "servers": {
+            "type": "array",
+            "description": "Servers specifies which NTP servers to use",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.NetworkRanges": {
+        "type": "object",
+        "properties": {
+          "cidrBlocks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1beta1.Networking": {
+        "type": "object",
+        "properties": {
+          "dnsDomain": {
+            "type": "string",
+            "description": "DNSDomain is the dns domain used by k8s services. Defaults to \"cluster.local\"."
+          },
+          "podSubnet": {
+            "type": "string",
+            "description": "PodSubnet is the subnet used by pods.\nIf unset, the API server will not allocate CIDR ranges for every node.\nDefaults to a comma-delimited string of the Cluster object's spec.clusterNetwork.services.cidrBlocks if that is set"
+          },
+          "serviceSubnet": {
+            "type": "string",
+            "description": "ServiceSubnet is the subnet used by k8s services.\nDefaults to a comma-delimited string of the Cluster object's spec.clusterNetwork.pods.cidrBlocks, or\nto \"10.96.0.0/12\" if that's unset."
+          }
+        }
+      },
+      "v1beta1.NodeRegistrationOptions": {
+        "type": "object",
+        "properties": {
+          "criSocket": {
+            "type": "string",
+            "description": "CRISocket is used to retrieve container runtime info. This information will be annotated to the Node API object, for later re-use"
+          },
+          "ignorePreflightErrors": {
+            "type": "array",
+            "description": "IgnorePreflightErrors provides a slice of pre-flight errors to be ignored when the current node is registered.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "imagePullPolicy": {
+            "type": "string",
+            "description": "ImagePullPolicy specifies the policy for image pulling\nduring kubeadm \"init\" and \"join\" operations. The value of\nthis field must be one of \"Always\", \"IfNotPresent\" or\n\"Never\". Defaults to \"IfNotPresent\". This can be used only\nwith Kubernetes version equal to 1.22 and later."
+          },
+          "kubeletExtraArgs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "KubeletExtraArgs passes through extra arguments to the kubelet. The arguments here are passed to the kubelet command line via the environment file\nkubeadm writes at runtime for the kubelet to source. This overrides the generic base-level configuration in the kubelet-config-1.X ConfigMap\nFlags have higher priority when parsing. These values are local and specific to the node kubeadm is executing on."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name is the `.Metadata.Name` field of the Node API object that will be created in this `kubeadm init` or `kubeadm join` operation.\nThis field is also used in the CommonName field of the kubelet's client certificate to the API server.\nDefaults to the hostname of the node if not provided."
+          },
+          "taints": {
+            "type": "array",
+            "description": "Taints specifies the taints the Node API object should be registered with. If this field is unset, i.e. nil, in the `kubeadm init` process\nit will be defaulted to []v1.Taint{'node-role.kubernetes.io/master=\"\"'}. If you don't want to taint your control-plane node, set this field to an\nempty slice, i.e. `taints: []` in the YAML file. This field is solely used for Node registration.",
+            "items": {
+              "$ref": "#/components/schemas/v1.Taint"
+            }
+          }
+        }
+      },
+      "v1beta1.Partition": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "Device is the name of the device."
+          },
+          "layout": {
+            "type": "boolean",
+            "description": "Layout specifies the device layout.\nIf it is true, a single partition will be created for the entire device.\nWhen layout is false, it means don't partition or ignore existing partitioning."
+          },
+          "overwrite": {
+            "type": "boolean",
+            "description": "Overwrite describes whether to skip checks and create the partition if a partition or filesystem is found on the device.\nUse with caution. Default is 'false'."
+          },
+          "tableType": {
+            "type": "string",
+            "description": "TableType specifies the tupe of partition table. The following are supported:\n'mbr': default and setups a MS-DOS partition table\n'gpt': setups a GPT partition table"
+          }
+        }
+      },
+      "v1beta1.PasswdSource": {
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "object",
+            "description": "Secret represents a secret that should populate this password.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.SecretPasswdSource"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.Patches": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string",
+            "description": "Directory is a path to a directory that contains files named \"target[suffix][+patchtype].extension\".\nFor example, \"kube-apiserver0+merge.yaml\" or just \"etcd.json\". \"target\" can be one of\n\"kube-apiserver\", \"kube-controller-manager\", \"kube-scheduler\", \"etcd\". \"patchtype\" can be one\nof \"strategic\" \"merge\" or \"json\" and they match the patch formats supported by kubectl.\nThe default \"patchtype\" is \"strategic\". \"extension\" must be either \"json\" or \"yaml\".\n\"suffix\" is an optional string that can be used to determine which patches are applied\nfirst alpha-numerically.\nThese files can be written into the target directory via KubeadmConfig.Files which\nspecifies additional files to be created on the machine, either with content inline or\nby referencing a secret."
+          }
+        }
+      },
+      "v1beta1.RolloutBefore": {
+        "type": "object",
+        "properties": {
+          "certificatesExpiryDays": {
+            "type": "integer",
+            "description": "CertificatesExpiryDays indicates a rollout needs to be performed if the\ncertificates of the machine will expire within the specified days."
+          }
+        }
+      },
+      "v1beta1.SecretFileSource": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Key is the key in the secret's data map for this value."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the secret in the KubeadmBootstrapConfig's namespace to use."
+          }
+        }
+      },
+      "v1beta1.SecretPasswdSource": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Key is the key in the secret's data map for this value."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the secret in the KubeadmBootstrapConfig's namespace to use."
+          }
+        }
+      },
+      "v1beta1.UnhealthyCondition": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "object",
+            "description": "+kubebuilder:validation:Type=string",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/k8s_io_api_core_v1.ConditionStatus"
+              }
+            ]
+          },
+          "timeout": {
+            "$ref": "#/components/schemas/v1.Duration"
+          },
+          "type": {
+            "type": "object",
+            "description": "+kubebuilder:validation:Type=string",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1.NodeConditionType"
+              }
+            ]
+          }
+        }
+      },
+      "v1beta1.User": {
+        "type": "object",
+        "properties": {
+          "gecos": {
+            "type": "string",
+            "description": "Gecos specifies the gecos to use for the user"
+          },
+          "groups": {
+            "type": "string",
+            "description": "Groups specifies the additional groups for the user"
+          },
+          "homeDir": {
+            "type": "string",
+            "description": "HomeDir specifies the home directory to use for the user"
+          },
+          "inactive": {
+            "type": "boolean",
+            "description": "Inactive specifies whether to mark the user as inactive"
+          },
+          "lockPassword": {
+            "type": "boolean",
+            "description": "LockPassword specifies if password login should be disabled"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name specifies the user name"
+          },
+          "passwd": {
+            "type": "string",
+            "description": "Passwd specifies a hashed password for the user"
+          },
+          "passwdFrom": {
+            "type": "object",
+            "description": "PasswdFrom is a referenced source of passwd to populate the passwd.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/v1beta1.PasswdSource"
+              }
+            ]
+          },
+          "primaryGroup": {
+            "type": "string",
+            "description": "PrimaryGroup specifies the primary group for the user"
+          },
+          "shell": {
+            "type": "string",
+            "description": "Shell specifies the user's shell"
+          },
+          "sshAuthorizedKeys": {
+            "type": "array",
+            "description": "SSHAuthorizedKeys specifies a list of ssh authorized keys for the user",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sudo": {
+            "type": "string",
+            "description": "Sudo specifies a sudo role for the user"
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

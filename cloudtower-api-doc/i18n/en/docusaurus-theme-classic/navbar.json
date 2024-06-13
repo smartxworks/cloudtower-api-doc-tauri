@@ -1,6 +1,9 @@
 { 
-  "item.label.API 参考": {
-    "message": "API Reference"
+  "item.label.CloudTower API 参考": {
+    "message": "CloudTower API Reference"
+  },
+  "item.label.SKS API 参考": {
+    "message": "SKS API Reference"
   },
   "item.label.下载": {
     "message": "Download"

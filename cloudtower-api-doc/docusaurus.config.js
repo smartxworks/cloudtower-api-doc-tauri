@@ -97,7 +97,11 @@ const config = {
           },
           {
             to: "/api",
-            label: "API 参考",
+            label: "CloudTower API 参考",
+          },
+          {
+            to: "/sks-api",
+            label: "SKS API 参考",
           },
           {
             type: "docsVersionDropdown",

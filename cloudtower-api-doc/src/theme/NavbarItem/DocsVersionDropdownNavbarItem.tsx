@@ -3,7 +3,7 @@ import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import clsx from 'clsx';
 import i18next from '../../../swagger/i18n';
-import { specMap } from '../../../swagger/utils/swagger';
+import { specMap, sksSpecMap } from '../../../swagger/utils/swagger';
 import styles from './styles.module.scss'
 import { useLocation } from '@docusaurus/router';
 
@@ -17,12 +17,14 @@ export default function DocsVersionDropdownNavbarItem({
   ...props
 }) {
   const versions = Object.keys(specMap);
+  const sksVersions = Object.keys(sksSpecMap);
   const [ active, setActive ] = useState(false)
   const { search, pathname, hash } = useLocation();
   const searchParams = new URLSearchParams(search);
   const currentVersion = searchParams.get('version') || versions[0];
   const versionLinks = useMemo(() => {
-    return versions.map((version) => {
+    const vs = pathname === '/api' ? versions : sksVersions
+    return vs.map((version) => {
       searchParams.set('version', version);
       return {
         label: version,
@@ -30,7 +32,7 @@ export default function DocsVersionDropdownNavbarItem({
         isActive: () => version === currentVersion,
       };
     })
-  }, [ versions, currentVersion]);
+  }, [ versions,, sksVersions, currentVersion]);
 
   const items = [
     ...dropdownItemsBefore,
@@ -42,8 +44,8 @@ export default function DocsVersionDropdownNavbarItem({
       <DefaultNavbarItem
         {...props}
         mobile={mobile}
-        label={"dropdown-label"}
-        to={"xx"}
+        label={i18next.t('components.version_icu', {version: items[0].label})}
+        to={items[0].to}
         isActive={dropdownActiveClassDisabled ? () => false : undefined}
       />
     );

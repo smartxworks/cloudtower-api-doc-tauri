@@ -8,7 +8,7 @@ const {
   getLocalesFile,
 } = require("./describe");
 
-const versions = [
+const towerVersions = [
   '4.0.0',
   '3.4.0',
   "3.3.0",
@@ -29,63 +29,48 @@ const versions = [
   '1.8.0'
 ];
 
+const sksVersions = [
+  '1.4.0'
+]
+
+const versionMap = {
+  sks: sksVersions,
+  tower: towerVersions
+}
 yargsInteractive()
   .usage("$0 <command> [args]")
   .help("help")
   .alias("help", "h")
   .interactive({
     interactive: { default: true },
+    product: {
+      description: "Provide which product you want to create, sks or tower",
+      type: "input"
+    },
     version: {
       description: "Provide swagger json file version",
       type: "input",
     },
   })
   .then((result) => {
-    const { version } = result;
-    createNewApiLocales(version);
-    // createNewApiDoc(version);
+    const { version, product } = result;
+    createNewApiLocales(version, product);
   });
 
 
-const getPrevVersion = (v) => {
-  if(versions.indexOf(v) < 0) {
-    return versions[0]
-  }
-  return versions[versions.indexOf(v) + 1];
-}
-const getSwaggerPath = (v) =>
+
+const getSwaggerPath = (v, prefix) =>
   nodePath.resolve(
     process.cwd(),
-    nodePath.join('cloudtower-api-doc', 'static', 'specs',  `${v}-swagger.json`)   
+    nodePath.join('cloudtower-api-doc', 'static', `${prefix}specs`,  `${v}-swagger.json`)   
   );
 
-const getVersionedPath =(version, isEn) => {
-  let versionedPath = nodePath.join('versioned_docs', `version-${version}`);
-  if(isEn) {
-    versionedPath = nodePath.join('i18n', 'en', 'docusaurus-plugin-content-docs', `version-${version}`)
-  } 
-  return nodePath.resolve(process.cwd(), nodePath.join('cloudtower-api-doc', versionedPath))
-}
 
-const createNewApiDoc = async (version) => {
-  const prevVersion = getPrevVersion(version);
-  const pMap = (await import("p-map")).default;
-  await pMap(['zh', 'en'], async (lng) => {
-    const versiondPath = getVersionedPath(version, lng === 'en');
-    const prevVersionPath = getVersionedPath(prevVersion, lng === 'en');
-    fsExtra.copySync(prevVersionPath, versiondPath);
-    fsExtra.readdirSync(versiondPath).forEach(file => {
-      if(file === 'download.md') {
-        const completePath = nodePath.join(versiondPath, file);
-        fsExtra.writeFileSync(completePath, fsExtra.readFileSync(completePath, 'utf-8').replaceAll(prevVersion, version), 'utf-8')
-      }
-    })
-  })
-}
-
-const createNewApiLocales = async (version) => {
+const createNewApiLocales = async (version, product) => {
+  const prefix = product === 'tower' ? '' : `${product}-`
   const traverPreviousVersion = async (current_version, onGetDiffSpec) => {
     let early_break = false;
+    const versions = versionMap[product];
     let versionIndex = versions.findIndex((v) => v === current_version) + 1;
     versionIndex = versions.findIndex((v) => v === current_version) + 1;
     while (!early_break && versionIndex < versions.length) {
@@ -95,7 +80,7 @@ const createNewApiLocales = async (version) => {
     }
   };
 
-  const specAbsolutePath = getSwaggerPath(version);
+  const specAbsolutePath = getSwaggerPath(version, prefix);
   const pMap = (await import("p-map")).default;
   if (!fsExtra.statSync(specAbsolutePath).isFile()) {
     throw new Error(
@@ -108,7 +93,7 @@ const createNewApiLocales = async (version) => {
     const spec = require(specAbsolutePath);
     const { paths, components } = spec;
     const tags = new Set();
-    const outputLocalesPath = getLocalesFile(lng, version);
+    const outputLocalesPath = getLocalesFile(lng, `${prefix}${version}`);
     const locales = fsExtra.existsSync(outputLocalesPath) ? require(outputLocalesPath) : {
       schemas: {},
       tags: [],
@@ -118,7 +103,7 @@ const createNewApiLocales = async (version) => {
       let diffSchema;
       let previousVersion;
       await traverPreviousVersion(version, async (previous) => {
-        const previousLocales = require(getLocalesFile(lng, previous));
+        const previousLocales = require(getLocalesFile(lng, `${prefix}${previous}`));
         diffSchema = previousLocales.schemas[schemaName]
         if(diffSchema) {
           previousVersion = previous;
@@ -149,7 +134,7 @@ const createNewApiLocales = async (version) => {
       }
       let diffContent;
       await traverPreviousVersion(version, async (previous) => {
-        const previousLocales = require(getLocalesFile(lng, previous));
+        const previousLocales = require(getLocalesFile(lng, `${prefix}${previous}`));
         diffContent = previousLocales.paths[api];
         return diffContent;
       });
@@ -162,7 +147,7 @@ const createNewApiLocales = async (version) => {
       };
     });
     await traverPreviousVersion(version, async (previous) => {
-      const previousSpec = require(getSwaggerPath(previous));
+      const previousSpec = require(getSwaggerPath(previous, prefix));
       await pMap(Object.keys(previousSpec.paths), async (api) => {
         const tagList = _.get(previousSpec, ['paths', api, 'post', 'tags'])
         tagList &&

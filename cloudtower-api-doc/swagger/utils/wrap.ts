@@ -15,32 +15,34 @@ const replaceTags = (tag:string) => {
   return tag;
 }
 
-const getNs = (version: string) => {
-  return version.split('.').join('_');
+const getNs = (version: string, product?:string) => {
+  return `${product ? product + '_' : ''}${version.split('.').join('_')}`;
 }
 
-const getFallbackNS = (version: string) => {
-  return fallbackNS.slice(fallbackNS.indexOf(getNs(version)))
+const getFallbackNS = (version: string, product) => {
+  return fallbackNS.slice(fallbackNS.indexOf(getNs(version, product)))
 }
 
 export const wrapSpecWithI18n = (
   spec: ISpec,
   language: string,
-  version: string
+  version: string,
+  product?: 'sks',
 ) => {
   const cloneSpec = _.cloneDeep(spec);
   const { components, paths } = cloneSpec;
   const tags = new Set<string>();
-  const ns = getNs(version);
-  const fallbackNS = getFallbackNS(version);
+  const ns = getNs(version, product);
+  const fallbackNS = getFallbackNS(version, product);
   i18next.options.fallbackNS = fallbackNS;
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${ns}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
     const method = Object.keys(paths[p])[0]
     const operationObj = paths[p][method] as OpenAPIV3.OperationObject;
     const { description, summary } = apiDoc;
-    operationObj .description = description;
-    operationObj .summary = summary;
+    const { description: originDes, summary: originSum } = operationObj;
+    operationObj.description = description || originDes;
+    operationObj.summary =  summary || originSum;
     const example = swaggerSpecExample [p] || {};
     if(example) {
       operationObj["x-codeSamples"] = [
@@ -74,11 +76,13 @@ export const wrapSpecWithI18n = (
       }
     }
     cloneSpec.paths[p][method] = operationObj;
-    operationObj.tags = operationObj.tags?.map(tag => {
-      const replaceTag = replaceTags(tag);
-      tags.add(replaceTag);
-      return replaceTag;
-    })
+    if(!product) {
+      operationObj.tags = operationObj.tags?.map(tag => {
+        const replaceTag = replaceTags(tag);
+        tags.add(replaceTag);
+        return replaceTag;
+      })
+    }
   });
   // handle schemas
   Object.keys(components.schemas).forEach((s) => {
@@ -87,7 +91,8 @@ export const wrapSpecWithI18n = (
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
       describeFn: ({ prefix, path }) => {
-        _.set(cloneSpec, [...prefix, "description"], schema[path]);
+        const originDes = _.get(cloneSpec, [...prefix, 'description']);
+        _.set(cloneSpec, [...prefix, "description"], schema[path] || originDes);
       },
     });
   });
@@ -98,11 +103,16 @@ export const wrapSpecWithI18n = (
     _.set(cloneSpec, ["components","securitySchemes", s, "x-displayName"], schema['name']);
   });
 
-  cloneSpec.tags = Array.from(tags).map(tag => ({
-    name: tag,
-    "x-displayName": i18next.t(`components.${tag}`),
-    description: ""
-  }));
+  if(!product) { 
+    cloneSpec.tags = Array.from(tags).map(tag => ({
+      name: tag,
+      "x-displayName": i18next.t(`components.${tag}`),
+      description: ""
+    }));
+  } else {
+    cloneSpec.tags = i18next.t(`${ns}.tags`, {lng: language, returnObjects: true }) as OpenAPIV3.TagObject[];
+  }
+
   return cloneSpec;
 };
 

@@ -18,6 +18,6 @@ CloudTower API 可以用于调用 CloudTower 内所管理的各类资源。我�
 
 ## 更多
 
-我们提供了较多常见且丰富的 SDK 调用示例，您可以到 `案例演示` 该章节下进一步熟悉。同时，具体的 API 接口、字段说明等可以查看 [API 参考](https://code.smartx.com/api/) 页面。
+我们提供了较多常见且丰富的 SDK 调用示例，您可以到 `案例演示` 该章节下进一步熟悉。同时，具体的 API 接口、字段说明等可以查看 [CloudTower API 参考](https://code.smartx.com/api/) 页面。
 
 感谢您选择 CloudTower API。如果您有任何疑问或需要帮助，请随时联系我们。
