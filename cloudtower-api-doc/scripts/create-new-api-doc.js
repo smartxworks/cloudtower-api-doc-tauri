@@ -9,6 +9,7 @@ const {
 } = require("./describe");
 
 const versions = [
+  '4.2.0',
   '4.0.0',
   '3.4.0',
   "3.3.0",
@@ -56,14 +57,14 @@ const getPrevVersion = (v) => {
 const getSwaggerPath = (v) =>
   nodePath.resolve(
     process.cwd(),
-    nodePath.join('cloudtower-api-doc', 'static', 'specs',  `${v}-swagger.json`)   
+    nodePath.join('cloudtower-api-doc', 'static', 'specs',  `${v}-swagger.json`)
   );
 
 const getVersionedPath =(version, isEn) => {
   let versionedPath = nodePath.join('versioned_docs', `version-${version}`);
   if(isEn) {
     versionedPath = nodePath.join('i18n', 'en', 'docusaurus-plugin-content-docs', `version-${version}`)
-  } 
+  }
   return nodePath.resolve(process.cwd(), nodePath.join('cloudtower-api-doc', versionedPath))
 }
 
