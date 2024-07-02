@@ -83601,6 +83601,7 @@
           }
         },
         "required": [
+          "mtu",
           "vpc_service_id",
           "name"
         ],
