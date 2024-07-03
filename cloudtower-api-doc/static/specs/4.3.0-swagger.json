@@ -24058,6 +24058,30 @@
             "type": "string",
             "nullable": true
           },
+          "iscsi_luns_every": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IscsiLunWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "iscsi_luns_none": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IscsiLunWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "iscsi_luns_some": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IscsiLunWhereInput"
+              }
+            ],
+            "nullable": true
+          },
           "labels_every": {
             "allOf": [
               {
@@ -55307,6 +55331,13 @@
           "id": {
             "type": "string"
           },
+          "iscsi_luns": {
+            "items": {
+              "$ref": "#/components/schemas/NestedIscsiLun"
+            },
+            "type": "array",
+            "nullable": true
+          },
           "labels": {
             "items": {
               "$ref": "#/components/schemas/NestedLabel"
@@ -82003,6 +82034,14 @@
           },
           "name": {
             "type": "string"
+          },
+          "nat_gateway_cidr": {
+            "type": "string",
+            "nullable": true
+          },
+          "router_gateway_cidr": {
+            "type": "string",
+            "nullable": true
           }
         },
         "required": [
@@ -120940,7 +120979,11 @@
         "tags": [
           "LogCollection"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -121036,7 +121079,11 @@
         "tags": [
           "LogCollection"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -121129,7 +121176,11 @@
         "tags": [
           "LogCollection"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -130647,7 +130698,11 @@
         "tags": [
           "User"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": []
       }
     },
@@ -159664,7 +159719,11 @@
         "tags": [
           "AlertNotifier"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -159757,7 +159816,11 @@
         "tags": [
           "AlertNotifier"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -159850,7 +159913,11 @@
         "tags": [
           "AlertNotifier"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -159943,7 +160010,11 @@
         "tags": [
           "AlertNotifier"
         ],
-        "security": [],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
         "parameters": [],
         "requestBody": {
           "required": true,
