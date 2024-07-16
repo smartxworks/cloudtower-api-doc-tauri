@@ -1,7 +1,7 @@
 {
   "schemas": {
     "CommonHeader": {
-      "x-tower-request-id": ""
+      "x-tower-request-id": "请求记录 ID，可以通过 /v2/trace/${requestId} 来查询这次请求的实际参数"
     },
     "VmWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -2619,8 +2619,7 @@
       "snapshot_plan": "所属快照计划",
       "snapshots": "虚拟机快照",
       "status": "电池状态",
-      "unique_logical_size": "",
-      "unique_size": "独占容量",
+      "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能",      "unique_size": "独占容量",
       "usb_devices": "关联 USB 设备",
       "vcpu": "vCPU",
       "video_type": "显卡",
@@ -2699,16 +2698,16 @@
       "clock_offset": "虚拟机时钟"
     },
     "ShutdownVmID": {
-      "vm_uuid": ""
+      "vm_uuid": "具体需要关机的虚拟机的 UUID"
     },
     "EnterMaintenanceModeResult": {
-      "shutdownVms": "",
-      "done": ""
+      "shutdownVms": "需要关机的虚拟机",
+      "done": "该主机是否可以操作进入维护模式"
     },
     "ExitMaintenanceModeResult": {
-      "offlineMigrateVms": "",
-      "liveMigrateVms": "",
-      "shutDownVms": ""
+      "offlineMigrateVms": "需要离线迁移回来的虚拟机 UUID",
+      "liveMigrateVms": "需要迁移回来的虚拟机 UUID",
+      "shutDownVms": "需要关机的虚拟机"
     },
     "IscsiLun": {
       "allowed_initiators": "initiator 的 iqn 列表",
@@ -2747,7 +2746,7 @@
       "stripe_num": "条带数",
       "stripe_size": "条带大小（字节）",
       "thin_provision": "是否为精简置备",
-      "unique_logical_size": "",
+      "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能。",
       "unique_size": "独占容量（字节）",
       "zbs_volume_id": "ZBS Volume UUID"
     },
@@ -2790,7 +2789,7 @@
       "stripe_num": "一个条带化组内的 Extent 数量",
       "stripe_size": "单个条带大小",
       "thin_provision": "是否为精简置备",
-      "unique_logical_size": "",
+      "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能",
       "unique_size": "独占容量，单位为字节",
       "zbs_volume_id": "ZBS Volume UUID"
     },
@@ -2812,7 +2811,7 @@
       "sharing": "是否为共享卷",
       "size": "分配容量（字节）",
       "type": "虚拟卷类型",
-      "unique_logical_size": "",
+      "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能",
       "unique_size": "独占容量，单位为字节",
       "vm_disks": "关联虚拟盘"
     },
@@ -2994,7 +2993,7 @@
       "parent_id": "NFS 父级 ID",
       "shared_size": "共享容量(字节)",
       "snapshot_num": "所属快照统计数量",
-      "unique_logical_size": "",
+      "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能",
       "unique_size": "独占容量(字节)"
     },
     "VmNic": {
@@ -3016,10 +3015,10 @@
       "nic": "物理网卡",
       "order": "排序",
       "subnet_mask": "子网掩码",
-      "type": "",
+      "type": "虚拟机网卡类型。\n* VLAN: 使用虚拟机网络的虚拟机网卡\n* VPC: 使用 VPC 的虚拟机网卡",
       "vlan": "VLAN",
       "vm": "设置/传输代理",
-      "vpc_nic": ""
+      "vpc_nic": "VPC 网卡"
     },
     "VirtualPrivateCloudClusterBinding": {
       "cluster": "关联集群",
