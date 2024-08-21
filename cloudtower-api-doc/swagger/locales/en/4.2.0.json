@@ -1159,7 +1159,7 @@
       "win_opt": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "",
+      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
       "id": "id",
       "name": "name"
     },

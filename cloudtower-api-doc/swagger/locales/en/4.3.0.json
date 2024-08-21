@@ -245,8 +245,8 @@
   ],
   "paths": {
     "/update-vm-vpc-nic": {
-      "summary": "",
-      "description": ""
+      "summary": "Update VM VPC NIC Information",
+      "description": "Used to update the VPC, subnet, floating IP, and IP address configuration of a VM's VPC NIC."
     }
   }
 }
