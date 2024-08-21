@@ -1,6 +1,7 @@
-import { OpenAPIV3 } from 'openapi-types';
+import { OpenAPIV3 } from "openapi-types";
 
 export const specMap = {
+  "4.4.0": import("../../static/specs/4.4.0-swagger.json"),
   '4.3.0': import('../../static/specs/4.3.0-swagger.json'),
   '4.2.0': import('../../static/specs/4.2.0-swagger.json'),
   '4.1.0': import('../../static/specs/4.1.0-swagger.json'),
@@ -30,4 +31,4 @@ export enum SupportLanguage {
   en = "en",
 }
 
-export type ISpec = OpenAPIV3.Document
+export type ISpec = OpenAPIV3.Document;
