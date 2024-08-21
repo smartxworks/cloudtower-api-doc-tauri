@@ -1357,11 +1357,11 @@
       "vm_templates": "关联虚拟机模板"
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "",
+      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
       "id": "唯一标识",
       "name": "名称",
-      "nat_gateway_cidr": "",
-      "router_gateway_cidr": ""
+      "nat_gateway_cidr": "从 CIDR 块中指定的 NAT 网关地址块",
+      "router_gateway_cidr": "从 CIDR 块中指定的路由网关地址块"
     }
   },
   "tags": [
