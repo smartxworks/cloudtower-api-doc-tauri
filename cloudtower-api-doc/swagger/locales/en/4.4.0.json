@@ -1,0 +1,104 @@
+{
+  "schemas": {
+    "WithTask_Vm-Array_": {
+      "task_id": "asynchronous task id ",
+      "data": "resources"
+    },
+    "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
+      "owner": "",
+      "gpu_devices": "",
+      "cloud_init": "",
+      "is_full_copy": "",
+      "max_bandwidth_policy": "",
+      "max_bandwidth_unit": "",
+      "max_bandwidth": "",
+      "max_iops_policy": "",
+      "max_iops": "",
+      "io_policy": "",
+      "vcpu": "",
+      "status": "",
+      "firmware": "",
+      "ha": "",
+      "pci_nics": "",
+      "vm_placement_group": "",
+      "vm_nics": "",
+      "disk_operate": "",
+      "memory_unit": "",
+      "memory": "",
+      "cpu_cores": "",
+      "cpu_sockets": "",
+      "guest_os_type": "",
+      "folder_id": "",
+      "description": "",
+      "name": "",
+      "host_id": "",
+      "cluster_id": ""
+    },
+    "VmCreateVmFromContentLibraryTemplateBatchParams": {
+      "vms": "",
+      "template_id": ""
+    },
+    "NestedTemplateVpcNic": {
+      "vpc_local_id": "",
+      "vpc_subnet_local_id": ""
+    },
+    "NestedTemplateNic": {
+      "enabled": "",
+      "index": "",
+      "ip_address": "",
+      "mac_address": "",
+      "mirror": "",
+      "model": "",
+      "type": "",
+      "vlan": "",
+      "vpc_nic": ""
+    },
+    "HostBatchCreateDiskInput": {
+      "type": "",
+      "size": "",
+      "function": "",
+      "drive": ""
+    },
+    "DisassociateSystemServiceFromObsServiceResultType": {
+      "enum": ""
+    },
+    "DisassociateSystemServiceFromObsServiceResult": {
+      "errorMessage": "",
+      "errorCode": "",
+      "result": ""
+    },
+    "WithTask_DisassociateSystemServiceFromObsServiceResult_": {
+      "task_id": "asynchronous task id ",
+      "data": "resources"
+    },
+    "ObservabilityConnectedSystemServiceType": {
+      "enum": ""
+    },
+    "DisassociateSystemServiceFromObsServiceParams": {
+      "system_service_type": "",
+      "system_service_id": ""
+    }
+  },
+  "tags": [
+    {
+      "name": "ApiInfo",
+      "x-displayName": "",
+      "description": ""
+    },
+    {
+      "name": "Observability",
+      "x-displayName": "",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/create-vm-from-content-library-template-batch": {
+      "summary": "batch create vm from content library vm template",
+      "description": "create multiple vm from one content library vm template"
+    },
+    "/disassociate-system-service-from-obs-service": {
+      "summary": "disassociate system service for observability service",
+      "description": "when remove system service from tower, active this api to clear it from observability service"
+    }
+  }
+}
