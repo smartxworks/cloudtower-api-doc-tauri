@@ -612,6 +612,26 @@
       "vm_templates_every": "返回关联资源全都符合相关筛选条件的资源",
       "vm_templates_none": "返回关联资源不符合相关筛选条件的资源",
       "vm_templates_some": "返回关联资源一项或多项符合相关筛选条件的资源"
+    },
+    "NestedSecurityGroup": {
+      "id": "唯一标识",
+      "name": "名称"
+    },
+    "NestedSecurityPolicyApply": {
+      "communicable": "",
+      "selector": "",
+      "selector_ids": "",
+      "security_group_id": "安全组 id",
+      "security_group": "安全组"
+    },
+    "NestedNetworkPolicyRule": {
+      "ip_block": "",
+      "ports": "",
+      "selector": "",
+      "selector_ids": "",
+      "type": "",
+      "security_group_id": "安全组 id",
+      "security_group": "安全组"
     }
   },
   "tags": [
