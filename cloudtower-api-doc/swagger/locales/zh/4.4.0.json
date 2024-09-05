@@ -5,38 +5,38 @@
       "data": "资源"
     },
     "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
-      "owner": "",
-      "gpu_devices": "",
+      "owner": "所属用户",
+      "gpu_devices": "关联 GPU 设备",
       "cloud_init": "",
-      "is_full_copy": "",
+      "is_full_copy": "是否完全拷贝",
       "max_bandwidth_policy": "",
       "max_bandwidth_unit": "",
-      "max_bandwidth": "",
+      "max_bandwidth": "最大带宽",
       "max_iops_policy": "",
-      "max_iops": "",
+      "max_iops": "最大 IOPS",
       "io_policy": "",
-      "vcpu": "",
+      "vcpu": "新建虚拟机的cpu总核心数，置空则会根据 cpu_sockets 和 cpu_cores 的赋值情况以及原模板的值自动生成",
       "status": "",
       "firmware": "",
-      "ha": "",
-      "pci_nics": "",
-      "vm_placement_group": "",
-      "vm_nics": "",
-      "disk_operate": "",
+      "ha": "是否启用高可用，如果置空则是用原模板的设置",
+      "pci_nics": "关联 PCI 网卡",
+      "vm_placement_group": "指定虚拟机放置组",
+      "vm_nics": "配置新建虚拟机的网卡，如果置空则按照原模板创建，如果原模板中的网卡并不位于当前集群，则会使用当前集群的默认网卡",
+      "disk_operate": "填入虚拟盘信息",
       "memory_unit": "",
-      "memory": "",
-      "cpu_cores": "",
-      "cpu_sockets": "",
+      "memory": "新建虚拟机的内存大小，以 byte 为单位，置空则是用原模板的大小",
+      "cpu_cores": "新建虚拟机的 CPU 每插槽核心数，置空则会根据 cpu_sockets 和 vcpu 的赋值情况以及原模板的值自动生成",
+      "cpu_sockets": "新建虚拟机的 CPU 插槽数，置空则会根据 cpu_cores 和 vcpu 的赋值情况以及原模板的值自动生成",
       "guest_os_type": "",
-      "folder_id": "",
-      "description": "",
-      "name": "",
-      "host_id": "",
-      "cluster_id": ""
+      "folder_id": "新建虚拟机将会被创建至指定虚拟机组",
+      "description": "新建虚拟机的描述",
+      "name": "新建虚拟机的名称",
+      "host_id": "创建至指定主机，留空则表示自动调度",
+      "cluster_id": "创建至指定集群"
     },
     "VmCreateVmFromContentLibraryTemplateBatchParams": {
-      "vms": "",
-      "template_id": ""
+      "vms": "虚拟机配置列表",
+      "template_id": "指定内容库模板 ID"
     },
     "NestedTemplateVpcNic": {
       "vpc_local_id": "",
@@ -2439,8 +2439,8 @@
   ],
   "paths": {
     "/create-vm-from-content-library-template-batch": {
-      "summary": "通过模板批量创建虚拟机",
-      "description": "通过模板批量创建虚拟机"
+      "summary": "批量从内容库模版创建虚拟机",
+      "description": "批量从内容库模版创建虚拟机"
     },
     "/disassociate-system-service-from-obs-service": {
       "summary": "从可观测性服务中移除系统服务",
