@@ -35,8 +35,8 @@
       "cluster_id": ""
     },
     "VmCreateVmFromContentLibraryTemplateBatchParams": {
-      "vms": "",
-      "template_id": ""
+      "vms": "VM config list",
+      "template_id": "Specify the content library template ID"
     },
     "NestedTemplateVpcNic": {
       "vpc_local_id": "",
@@ -1904,7 +1904,7 @@
   ],
   "paths": {
     "/create-vm-from-content-library-template-batch": {
-      "summary": "batch create vm from content library vm template",
+      "summary": "Batch create VMs from content library template",
       "description": "create multiple vm from one content library vm template"
     },
     "/disassociate-system-service-from-obs-service": {
