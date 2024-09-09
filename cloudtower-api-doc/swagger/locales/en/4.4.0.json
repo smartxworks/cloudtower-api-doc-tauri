@@ -1888,6 +1888,9 @@
     },
     "NestedVirtualPrivateCloudService": {
       "id": "id"
+    },
+    "SecurityPolicyFlowControlType": {
+      "enum": "* ALL: Allow access from all addresses.\n"
     }
   },
   "tags": [
