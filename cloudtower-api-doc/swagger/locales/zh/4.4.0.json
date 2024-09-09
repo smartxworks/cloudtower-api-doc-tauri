@@ -2423,6 +2423,9 @@
     },
     "NestedVirtualPrivateCloudService": {
       "id": "唯一标识"
+    },
+    "SecurityPolicyFlowControlType": {
+      "enum": "* ALL: 允许所有地址进行访问\n"
     }
   },
   "tags": [
