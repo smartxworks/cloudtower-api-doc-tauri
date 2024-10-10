@@ -1868,7 +1868,7 @@
   "paths": {
     "/create-vm-from-content-library-template-batch": {
       "summary": "Batch create VMs from content library template",
-      "description": ""
+      "description": "* Support from 3.4.4"
     }
   }
 }

@@ -1868,7 +1868,7 @@
   "paths": {
     "/create-vm-from-content-library-template-batch": {
       "summary": "批量从内容库模版创建虚拟机",
-      "description": ""
+      "description": "* 从 3.4.4 开始支持"
     }
   }
 }
