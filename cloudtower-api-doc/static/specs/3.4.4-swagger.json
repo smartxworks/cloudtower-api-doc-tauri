@@ -64601,7 +64601,7 @@
           "MANAGE_AUDIT_LOG",
           "MANAGE_ALERT_EMAIL_SETTING",
           "MANAGE_SMTP_SERVER",
-          "MANAGE_CLUSTER_UPGRADE",
+          "MANAGE_UPGRADE_CENTER",
           "MANAGE_VM_RECYCLE_BIN_SETTING",
           "MANAGE_REPORT",
           "MANAGE_SHARING_VM_TOOLS",
@@ -64659,6 +64659,7 @@
           "MANAGE_REPLICATION_PLAN",
           "MANAGE_REPLICATION_TASK",
           "MANAGE_REPLICATION_FAULT_TASK",
+          "MANAGE_REPLICA_OBJECT",
           "MANAGE_CLUSTER_PRIORITIZED",
           "SMTX_INSPECTOR"
         ],
@@ -68295,6 +68296,3649 @@
         ],
         "type": "object"
       },
+      "UploadTaskWhereInput": {
+        "properties": {
+          "AND": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTaskWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "NOT": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTaskWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "OR": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTaskWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "chunk_size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_gt": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_gte": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_in": {
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "chunk_size_lt": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_lte": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_not": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chunk_size_not_in": {
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "current_chunk": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_gt": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_gte": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_in": {
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "current_chunk_lt": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_lte": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_not": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "current_chunk_not_in": {
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "finished_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "finished_at_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "finished_at_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "resource_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UploadResourceType"
+              }
+            ],
+            "nullable": true
+          },
+          "resource_type_in": {
+            "items": {
+              "$ref": "#/components/schemas/UploadResourceType"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "resource_type_not": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UploadResourceType"
+              }
+            ],
+            "nullable": true
+          },
+          "resource_type_not_in": {
+            "items": {
+              "$ref": "#/components/schemas/UploadResourceType"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_gt": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_gte": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_in": {
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "size_lt": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_lte": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_not": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "size_not_in": {
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "started_at_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "started_at_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UploadTaskStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "status_in": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTaskStatus"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "status_not": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UploadTaskStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "status_not_in": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTaskStatus"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "updatedAt_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CancelUploadTaskParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UploadTaskWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "UsbDevice": {
+        "properties": {
+          "binded": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "host": {
+            "$ref": "#/components/schemas/NestedHost"
+          },
+          "id": {
+            "type": "string"
+          },
+          "local_created_at": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status": {
+            "$ref": "#/components/schemas/UsbDeviceStatus"
+          },
+          "usb_type": {
+            "type": "string"
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVm"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vm": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedVm"
+              }
+            ],
+            "nullable": true,
+            "deprecated": true
+          }
+        },
+        "required": [
+          "binded",
+          "description",
+          "host",
+          "id",
+          "local_created_at",
+          "local_id",
+          "manufacturer",
+          "name",
+          "size",
+          "status",
+          "usb_type"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_UsbDevice_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/UsbDevice"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "UsbDeviceMountParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "vms": {
+                "$ref": "#/components/schemas/VmWhereInput"
+              },
+              "vm_id": {
+                "type": "string",
+                "deprecated": true
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UsbDeviceWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "UsbDeviceUnmountParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "vms": {
+                "$ref": "#/components/schemas/VmWhereInput"
+              }
+            },
+            "required": [
+              "vms"
+            ],
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UsbDeviceWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "UsbDeviceOrderByInput": {
+        "enum": [
+          "binded_ASC",
+          "binded_DESC",
+          "description_ASC",
+          "description_DESC",
+          "entityAsyncStatus_ASC",
+          "entityAsyncStatus_DESC",
+          "id_ASC",
+          "id_DESC",
+          "local_created_at_ASC",
+          "local_created_at_DESC",
+          "local_id_ASC",
+          "local_id_DESC",
+          "manufacturer_ASC",
+          "manufacturer_DESC",
+          "name_ASC",
+          "name_DESC",
+          "size_ASC",
+          "size_DESC",
+          "status_ASC",
+          "status_DESC",
+          "usb_type_ASC",
+          "usb_type_DESC"
+        ],
+        "type": "string"
+      },
+      "GetUsbDevicesRequestBody": {
+        "properties": {
+          "after": {
+            "type": "string",
+            "nullable": true
+          },
+          "before": {
+            "type": "string",
+            "nullable": true
+          },
+          "first": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "orderBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UsbDeviceOrderByInput"
+              }
+            ],
+            "nullable": true
+          },
+          "skip": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "where": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UsbDeviceWhereInput"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "LoginResponse": {
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "type": "object"
+      },
+      "WithTask_LoginResponse_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/LoginResponse"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "MfaType": {
+        "enum": [
+          "Mail"
+        ],
+        "type": "string"
+      },
+      "LoginInput": {
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "source": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserSource"
+              }
+            ],
+            "nullable": true
+          },
+          "password": {
+            "type": "string"
+          },
+          "mfa_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MfaType"
+              }
+            ],
+            "nullable": true
+          },
+          "auth_config_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object"
+      },
+      "NestedPasswordReoverQaItem": {
+        "properties": {
+          "question": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedPasswordRecoverQa": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/NestedPasswordReoverQaItem"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedUserRoleNext": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "User": {
+        "properties": {
+          "auth_config_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "display_username": {
+            "type": "string"
+          },
+          "email_address": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "internal": {
+            "type": "boolean"
+          },
+          "ldap_dn": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile_phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "password_expired": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "password_recover_qa": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedPasswordRecoverQa"
+              }
+            ],
+            "nullable": true
+          },
+          "password_updated_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            ],
+            "nullable": true
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/NestedUserRoleNext"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "source": {
+            "$ref": "#/components/schemas/UserSource"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "display_username",
+          "id",
+          "internal",
+          "name",
+          "source",
+          "username"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_User_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "UserCreationParams": {
+        "properties": {
+          "auth_config_id": {
+            "type": "string"
+          },
+          "ldap_dn": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/UserSource"
+          },
+          "mobile_phone": {
+            "type": "string"
+          },
+          "email_address": {
+            "type": "string"
+          },
+          "internal": {
+            "type": "boolean"
+          },
+          "role_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role_id",
+          "name",
+          "username"
+        ],
+        "type": "object"
+      },
+      "UserUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "internal": {
+                "type": "boolean"
+              },
+              "mobile_phone": {
+                "type": "string",
+                "nullable": true
+              },
+              "email_address": {
+                "type": "string",
+                "nullable": true
+              },
+              "role_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteUser": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteUser_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteUser"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "UserDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UserWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "RootUserCreationParams": {
+        "properties": {
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "password"
+        ],
+        "type": "object"
+      },
+      "VcenterAccount": {
+        "properties": {
+          "cluster": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedCluster"
+              }
+            ],
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "is_valid": {
+            "type": "boolean"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "ip",
+          "is_valid",
+          "local_id",
+          "port",
+          "username"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VcenterAccount_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VcenterAccount"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "CreateVcenterAccountParamsData": {
+        "properties": {
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "cluster_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "port",
+          "password",
+          "username",
+          "ip",
+          "cluster_id"
+        ],
+        "type": "object"
+      },
+      "CreateVcenterAccountParams": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateVcenterAccountParamsData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VcenterAccountWhereUniqueInput": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateVcenterAccountParamsData": {
+        "properties": {
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "port",
+          "password",
+          "username",
+          "ip"
+        ],
+        "type": "object"
+      },
+      "UpdateVcenterAccountParams": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateVcenterAccountParamsData"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VcenterAccountWhereUniqueInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "Vds": {
+        "properties": {
+          "bond_mode": {
+            "type": "string"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "everoute_cluster": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedEverouteCluster"
+              }
+            ],
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "internal": {
+            "type": "boolean"
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nics": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNic"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "ovsbr_name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/NetworkType"
+          },
+          "vlans": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVlan"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vlans_num": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "work_mode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "bond_mode",
+          "cluster",
+          "id",
+          "internal",
+          "local_id",
+          "name",
+          "ovsbr_name",
+          "type",
+          "vlans_num"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_Vds_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Vds"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VdsCreationParams": {
+        "properties": {
+          "nic_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "work_mode": {
+            "type": "string"
+          },
+          "bond_mode": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nic_ids",
+          "cluster_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "VdsCreationWithMigrateVlanParams": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VdsCreationParams"
+          },
+          {
+            "properties": {
+              "vlan": {
+                "properties": {
+                  "extra_ip": {
+                    "items": {
+                      "properties": {
+                        "management_ip": {
+                          "type": "string"
+                        },
+                        "host_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "management_ip",
+                        "host_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "subnetmask": {
+                    "type": "string"
+                  },
+                  "gateway_subnetmask": {
+                    "type": "string"
+                  },
+                  "gateway_ip": {
+                    "type": "string"
+                  },
+                  "vlan_id": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                },
+                "required": [
+                  "extra_ip",
+                  "subnetmask",
+                  "vlan_id"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "vlan"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "VdsCreationWithMAccessVlanParams": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VdsCreationParams"
+          },
+          {
+            "properties": {
+              "vlan": {
+                "properties": {
+                  "extra_ip": {
+                    "items": {
+                      "properties": {
+                        "management_ip": {
+                          "type": "string"
+                        },
+                        "host_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "management_ip",
+                        "host_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "subnetmask": {
+                    "type": "string"
+                  },
+                  "gateway_subnetmask": {
+                    "type": "string"
+                  },
+                  "gateway_ip": {
+                    "type": "string"
+                  },
+                  "vlan_id": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                },
+                "required": [
+                  "extra_ip",
+                  "subnetmask",
+                  "vlan_id"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "vlan"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "VdsUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "nicIds": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "work_mode": {
+                "type": "string"
+              },
+              "bond_mode": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VdsWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteVds": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVds_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVds"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VdsDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VdsWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "NestedGraph": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "View": {
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "graphs": {
+            "items": {
+              "$ref": "#/components/schemas/NestedGraph"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "time_span": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "time_unit": {
+            "$ref": "#/components/schemas/TimeUnit"
+          }
+        },
+        "required": [
+          "cluster",
+          "id",
+          "local_id",
+          "name",
+          "time_span",
+          "time_unit"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_View_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/View"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "ViewCreationParams": {
+        "properties": {
+          "time_unit": {
+            "$ref": "#/components/schemas/TimeUnit"
+          },
+          "time_span": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "time_unit",
+          "time_span",
+          "cluster_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "ViewUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "time_unit": {
+                "$ref": "#/components/schemas/TimeUnit"
+              },
+              "time_span": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/ViewWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteView": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteView_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteView"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "ViewDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/ViewWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "Vlan": {
+        "properties": {
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "gateway_ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "gateway_subnetmask": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "mode_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VlanModeType"
+              }
+            ],
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "network_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "qos_max_bandwidth": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "qos_min_bandwidth": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "qos_priority": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "subnetmask": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/NetworkType"
+          },
+          "vds": {
+            "$ref": "#/components/schemas/NestedVds"
+          },
+          "vlan_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vm_nics": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVmNic"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "local_id",
+          "name",
+          "network_ids",
+          "type",
+          "vds",
+          "vlan_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_Vlan_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Vlan"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VlanId": {
+        "type": "integer",
+        "format": "int32",
+        "minimum": 0,
+        "maximum": 4095
+      },
+      "Priority": {
+        "type": "number",
+        "format": "double",
+        "minimum": 0
+      },
+      "VmVlanCreationParams": {
+        "properties": {
+          "qos_burst_unit": {
+            "$ref": "#/components/schemas/ByteUnit"
+          },
+          "qos_burst": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "qos_max_bandwidth_unit": {
+            "$ref": "#/components/schemas/BPSUnit"
+          },
+          "qos_max_bandwidth": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "qos_min_bandwidth_unit": {
+            "$ref": "#/components/schemas/BPSUnit"
+          },
+          "qos_min_bandwidth": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "qos_priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "mode_type": {
+            "$ref": "#/components/schemas/VlanModeType"
+          },
+          "network_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "vds_id": {
+            "type": "string"
+          },
+          "vlan_id": {
+            "$ref": "#/components/schemas/VlanId"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "vds_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "VmVlanUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "qos_burst_unit": {
+                "$ref": "#/components/schemas/ByteUnit"
+              },
+              "qos_burst": {
+                "type": "integer",
+                "format": "int64",
+                "nullable": true
+              },
+              "qos_max_bandwidth_unit": {
+                "$ref": "#/components/schemas/BPSUnit"
+              },
+              "qos_max_bandwidth": {
+                "type": "integer",
+                "format": "int64",
+                "nullable": true
+              },
+              "qos_min_bandwidth_unit": {
+                "$ref": "#/components/schemas/BPSUnit"
+              },
+              "qos_min_bandwidth": {
+                "type": "integer",
+                "format": "int64",
+                "nullable": true
+              },
+              "qos_priority": {
+                "$ref": "#/components/schemas/Priority"
+              },
+              "mode_type": {
+                "$ref": "#/components/schemas/VlanModeType"
+              },
+              "network_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "vlan_id": {
+                "$ref": "#/components/schemas/VlanId"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VlanWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "ExtraIp": {
+        "properties": {
+          "management_ip": {
+            "type": "string"
+          },
+          "host_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "management_ip",
+          "host_id"
+        ],
+        "type": "object"
+      },
+      "ManagementVlanUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "extra_ip": {
+                "items": {
+                  "$ref": "#/components/schemas/ExtraIp"
+                },
+                "type": "array"
+              },
+              "subnetmask": {
+                "type": "string"
+              },
+              "gateway_ip": {
+                "type": "string"
+              },
+              "vlan_id": {
+                "$ref": "#/components/schemas/VlanId"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VlanWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "MigrationVlanUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "extra_ip": {
+                "items": {
+                  "$ref": "#/components/schemas/ExtraIp"
+                },
+                "type": "array"
+              },
+              "subnetmask": {
+                "type": "string"
+              },
+              "gateway_ip": {
+                "type": "string"
+              },
+              "vlan_id": {
+                "$ref": "#/components/schemas/VlanId"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VlanWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteVlan": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVlan_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVlan"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VlanDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VlanWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmFolder": {
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "id": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "vm_num": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVm"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmFolder_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmFolder"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmFolderCreationParams": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cluster_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "VmFolderUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VmFolderWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteVmFolder": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmFolder_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmFolder"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmFolderDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmFolderWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmPlacementGroup": {
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "description": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "local_created_at": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "local_updated_at": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "vm_host_must_enabled": {
+            "type": "boolean"
+          },
+          "vm_host_must_host_uuids": {
+            "items": {
+              "$ref": "#/components/schemas/NestedHost"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vm_host_must_policy": {
+            "type": "boolean"
+          },
+          "vm_host_prefer_enabled": {
+            "type": "boolean"
+          },
+          "vm_host_prefer_host_uuids": {
+            "items": {
+              "$ref": "#/components/schemas/NestedHost"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vm_host_prefer_policy": {
+            "type": "boolean"
+          },
+          "vm_vm_policy": {
+            "$ref": "#/components/schemas/VmVmPolicy"
+          },
+          "vm_vm_policy_enabled": {
+            "type": "boolean"
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVm"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster",
+          "description",
+          "enabled",
+          "id",
+          "local_created_at",
+          "local_id",
+          "local_updated_at",
+          "name",
+          "vm_host_must_enabled",
+          "vm_host_must_policy",
+          "vm_host_prefer_enabled",
+          "vm_host_prefer_policy",
+          "vm_vm_policy",
+          "vm_vm_policy_enabled"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmPlacementGroup_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmPlacementGroup"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmPlacementGroupCreationParams": {
+        "properties": {
+          "vm_vm_policy": {
+            "$ref": "#/components/schemas/VmVmPolicy"
+          },
+          "vm_host_prefer_enabled": {
+            "type": "boolean"
+          },
+          "vm_host_must_policy": {
+            "type": "boolean"
+          },
+          "vm_host_must_enabled": {
+            "type": "boolean"
+          },
+          "vm_host_prefer_policy": {
+            "type": "boolean"
+          },
+          "vm_vm_policy_enabled": {
+            "type": "boolean"
+          },
+          "vms": {
+            "$ref": "#/components/schemas/VmWhereInput"
+          },
+          "prefer_hosts": {
+            "$ref": "#/components/schemas/HostWhereInput"
+          },
+          "must_hosts": {
+            "$ref": "#/components/schemas/HostWhereInput"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "cluster_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "enabled",
+          "cluster_id"
+        ],
+        "type": "object"
+      },
+      "VmPlacementGroupUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "vm_vm_policy": {
+                "$ref": "#/components/schemas/VmVmPolicy"
+              },
+              "vms": {
+                "$ref": "#/components/schemas/VmWhereInput"
+              },
+              "prefer_hosts": {
+                "$ref": "#/components/schemas/HostWhereInput"
+              },
+              "must_hosts": {
+                "$ref": "#/components/schemas/HostWhereInput"
+              },
+              "vm_host_prefer_enabled": {
+                "type": "boolean"
+              },
+              "vm_host_must_policy": {
+                "type": "boolean"
+              },
+              "vm_host_must_enabled": {
+                "type": "boolean"
+              },
+              "vm_host_prefer_policy": {
+                "type": "boolean"
+              },
+              "vm_vm_policy_enabled": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VmPlacementGroupWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteVmPlacementGroup": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmPlacementGroup_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmPlacementGroup"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmPlacementGroupDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmPlacementGroupWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "NestedSnapshotGroup": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedFrozenDisks": {
+        "properties": {
+          "boot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bus": {
+            "$ref": "#/components/schemas/Bus"
+          },
+          "disabled": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "disk_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "elf_image_local_id": {
+            "type": "string"
+          },
+          "image_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "key": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max_bandwidth": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "max_bandwidth_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "max_iops": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max_iops_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "path": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "snapshot_local_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "storage_policy_uuid": {
+            "type": "string"
+          },
+          "svt_image_local_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/VmDiskType"
+          },
+          "vm_volume_local_id": {
+            "type": "string"
+          },
+          "vm_volume_snapshot_uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "vm_volume_template_uuid": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "boot",
+          "bus",
+          "elf_image_local_id",
+          "index",
+          "path",
+          "size",
+          "storage_policy_uuid",
+          "svt_image_local_id",
+          "type",
+          "vm_volume_local_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedFrozenVlan": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "vds_ovs": {
+            "type": "string"
+          },
+          "vlan_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vlan_local_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "vds_ovs",
+          "vlan_id",
+          "vlan_local_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedFrozenNic": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "gateway": {
+            "type": "string"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ip_address": {
+            "type": "string"
+          },
+          "mac_address": {
+            "type": "string"
+          },
+          "mirror": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "model": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmNicModel"
+              }
+            ],
+            "nullable": true
+          },
+          "subnet_mask": {
+            "type": "string"
+          },
+          "vlan": {
+            "$ref": "#/components/schemas/NestedFrozenVlan"
+          }
+        },
+        "required": [
+          "gateway",
+          "index",
+          "ip_address",
+          "mac_address",
+          "subnet_mask",
+          "vlan"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "VmSnapshot": {
+        "properties": {
+          "clock_offset": {
+            "$ref": "#/components/schemas/VmClockOffset"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "consistent_type": {
+            "$ref": "#/components/schemas/ConsistentType"
+          },
+          "cpu": {
+            "$ref": "#/components/schemas/NestedCpu"
+          },
+          "cpu_model": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "firmware": {
+            "$ref": "#/components/schemas/VmFirmware"
+          },
+          "ha": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "io_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoPolicy"
+              }
+            ],
+            "nullable": true
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_created_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "max_bandwidth": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "max_bandwidth_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "max_iops": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max_iops_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "memory": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "snapshot_group": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedSnapshotGroup"
+              }
+            ],
+            "nullable": true
+          },
+          "vcpu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vm": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedVm"
+              }
+            ],
+            "nullable": true
+          },
+          "vm_disks": {
+            "items": {
+              "$ref": "#/components/schemas/NestedFrozenDisks"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vm_nics": {
+            "items": {
+              "$ref": "#/components/schemas/NestedFrozenNic"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "win_opt": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "clock_offset",
+          "cluster",
+          "consistent_type",
+          "cpu",
+          "cpu_model",
+          "description",
+          "firmware",
+          "ha",
+          "id",
+          "local_id",
+          "memory",
+          "name",
+          "size",
+          "vcpu",
+          "win_opt"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmSnapshot_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmSnapshot"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmSnapshotCreationParamsData": {
+        "properties": {
+          "consistent_type": {
+            "$ref": "#/components/schemas/ConsistentType"
+          },
+          "name": {
+            "type": "string"
+          },
+          "vm_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "vm_id"
+        ],
+        "type": "object"
+      },
+      "VmSnapshotCreationParams": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/VmSnapshotCreationParamsData"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "DeleteVmSnapshot": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmSnapshot_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmSnapshot"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmSnapshotDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmSnapshotWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "NestedTemplateNic": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ip_address": {
+            "type": "string",
+            "nullable": true
+          },
+          "mac_address": {
+            "type": "string",
+            "nullable": true
+          },
+          "mirror": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "model": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmNicModel"
+              }
+            ],
+            "nullable": true
+          },
+          "vlan": {
+            "$ref": "#/components/schemas/NestedFrozenVlan"
+          }
+        },
+        "required": [
+          "index",
+          "vlan"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "VmTemplate": {
+        "properties": {
+          "clock_offset": {
+            "$ref": "#/components/schemas/VmClockOffset"
+          },
+          "cloud_init_supported": {
+            "type": "boolean"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "content_library_vm_template": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedContentLibraryVmTemplate"
+              }
+            ],
+            "nullable": true
+          },
+          "cpu": {
+            "$ref": "#/components/schemas/NestedCpu"
+          },
+          "cpu_model": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "firmware": {
+            "$ref": "#/components/schemas/VmFirmware"
+          },
+          "ha": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "io_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoPolicy"
+              }
+            ],
+            "nullable": true
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_created_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "max_bandwidth": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "max_bandwidth_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "max_iops": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max_iops_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmDiskIoRestrictType"
+              }
+            ],
+            "nullable": true
+          },
+          "memory": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vcpu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "video_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "vm_disks": {
+            "items": {
+              "$ref": "#/components/schemas/NestedFrozenDisks"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vm_nics": {
+            "items": {
+              "$ref": "#/components/schemas/NestedTemplateNic"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "win_opt": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "clock_offset",
+          "cloud_init_supported",
+          "cluster",
+          "cpu",
+          "cpu_model",
+          "description",
+          "firmware",
+          "ha",
+          "id",
+          "local_id",
+          "memory",
+          "name",
+          "size",
+          "vcpu",
+          "win_opt"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmTemplate_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmTemplate"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmTemplateCreationParams": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "cloud_init_supported": {
+            "type": "boolean"
+          },
+          "vm_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cloud_init_supported",
+          "vm_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "VmTemplateUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "cloud_init_supported": {
+                "type": "boolean"
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VmTemplateWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteVmTemplate": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmTemplate_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmTemplate"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmTemplateDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmTemplateWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmVolumeSnapshot": {
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "createAt": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string"
+          },
+          "elf_storage_policy": {
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_created_at": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "shared_size": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "size": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/VmVolumeSnapshotType"
+          },
+          "unique_size": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "vm_volume": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedVmVolume"
+              }
+            ],
+            "nullable": true
+          },
+          "volume_sharing": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "volume_size": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "zbs_snapshot_uuid": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster",
+          "description",
+          "elf_storage_policy",
+          "id",
+          "local_created_at",
+          "local_id",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmVolumeSnapshot_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmVolumeSnapshot"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmVolumeSnapshotCreationParams": {
+        "properties": {
+          "volume_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "volume_id",
+          "description",
+          "name"
+        ],
+        "type": "object"
+      },
+      "DeleteVmVolumeSnapshot": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmVolumeSnapshot_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmVolumeSnapshot"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmVolumeSnapshotDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmVolumeSnapshotWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmVolume": {
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/NestedCluster"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "elf_storage_policy": {
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "guest_size_usage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "guest_used_size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_created_at": {
+            "type": "string"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "lun": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedIscsiLun"
+              }
+            ],
+            "nullable": true
+          },
+          "mounting": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "sharing": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmVolumeType"
+              }
+            ],
+            "nullable": true
+          },
+          "unique_size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "vm_disks": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVmDisk"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster",
+          "elf_storage_policy",
+          "id",
+          "local_created_at",
+          "local_id",
+          "mounting",
+          "name",
+          "path",
+          "sharing",
+          "size"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VmVolume_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VmVolume"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmVolumeCreationParams": {
+        "properties": {
+          "elf_storage_policy": {
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+          },
+          "size_unit": {
+            "$ref": "#/components/schemas/ByteUnit"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sharing": {
+            "type": "boolean"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "elf_storage_policy",
+          "size",
+          "sharing",
+          "cluster_id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "DeleteVmVolume": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteVmVolume_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteVmVolume"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmVolumeDeletionParamsEffect": {
+        "properties": {
+          "include_snapshots": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "VmVolumeDeletionParams": {
+        "properties": {
+          "effect": {
+            "$ref": "#/components/schemas/VmVolumeDeletionParamsEffect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VmVolumeWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "VmVolumeRebuildParams": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "volume_snapshot_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "volume_snapshot_id"
+        ],
+        "type": "object"
+      },
+      "VmVolumeRollbackParams": {
+        "properties": {
+          "volume_snapshot_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "volume_snapshot_id"
+        ],
+        "type": "object"
+      },
+      "VmVolumeWhereUniqueInput": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CloneVmVolumeParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmVolumeWhereUniqueInput"
+          },
+          "data": {
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "where",
+          "data"
+        ],
+        "type": "object"
+      },
+      "UpdateVmVolumeParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/VmVolumeWhereInput"
+          },
+          "data": {
+            "properties": {
+              "size_unit": {
+                "$ref": "#/components/schemas/ByteUnit"
+              },
+              "size": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "where",
+          "data"
+        ],
+        "type": "object"
+      },
+      "VmVolumeExportFileType": {
+        "type": "string",
+        "enum": [
+          "QCOW2",
+          "RAW"
+        ]
+      },
+      "ExportVmVolumeParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/VmVolumeExportFileType"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/VmVolumeWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "ImportVmVolumeParams": {
+        "properties": {
+          "upload_task_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "storage_policy": {
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+          },
+          "cluster_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "upload_task_id",
+          "name",
+          "storage_policy",
+          "cluster_id"
+        ],
+        "type": "object"
+      },
+      "VsphereEsxiAccount": {
+        "properties": {
+          "host": {
+            "$ref": "#/components/schemas/NestedHost"
+          },
+          "id": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "is_valid": {
+            "type": "boolean"
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "host",
+          "id",
+          "ip",
+          "is_valid",
+          "local_id",
+          "port",
+          "username"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_VsphereEsxiAccount-Array_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/VsphereEsxiAccount"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "UpdateVsphereEsxiAccountParamsData": {
+        "properties": {
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "esxi_account_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "ip",
+          "esxi_account_id"
+        ],
+        "type": "object"
+      },
+      "UpdateVsphereEsxiAccountParams": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/UpdateVsphereEsxiAccountParamsData"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
       "ColumnConfig": {
         "properties": {
           "name": {
@@ -68828,78 +72472,6 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/NicWhereInput"
-              }
-            ],
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "UsbDeviceOrderByInput": {
-        "enum": [
-          "binded_ASC",
-          "binded_DESC",
-          "description_ASC",
-          "description_DESC",
-          "entityAsyncStatus_ASC",
-          "entityAsyncStatus_DESC",
-          "id_ASC",
-          "id_DESC",
-          "local_created_at_ASC",
-          "local_created_at_DESC",
-          "local_id_ASC",
-          "local_id_DESC",
-          "manufacturer_ASC",
-          "manufacturer_DESC",
-          "name_ASC",
-          "name_DESC",
-          "size_ASC",
-          "size_DESC",
-          "status_ASC",
-          "status_DESC",
-          "usb_type_ASC",
-          "usb_type_DESC"
-        ],
-        "type": "string"
-      },
-      "GetUsbDevicesRequestBody": {
-        "properties": {
-          "after": {
-            "type": "string",
-            "nullable": true
-          },
-          "before": {
-            "type": "string",
-            "nullable": true
-          },
-          "first": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "orderBy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UsbDeviceOrderByInput"
-              }
-            ],
-            "nullable": true
-          },
-          "skip": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "where": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UsbDeviceWhereInput"
               }
             ],
             "nullable": true
@@ -73366,3577 +76938,6 @@
           "filter",
           "columns",
           "name"
-        ],
-        "type": "object"
-      },
-      "UploadTaskWhereInput": {
-        "properties": {
-          "AND": {
-            "items": {
-              "$ref": "#/components/schemas/UploadTaskWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "NOT": {
-            "items": {
-              "$ref": "#/components/schemas/UploadTaskWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "OR": {
-            "items": {
-              "$ref": "#/components/schemas/UploadTaskWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "chunk_size": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_gt": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_gte": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_in": {
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "chunk_size_lt": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_lte": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_not": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "chunk_size_not_in": {
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "current_chunk": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_gt": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_gte": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_in": {
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "current_chunk_lt": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_lte": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_not": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "current_chunk_not_in": {
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "finished_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "finished_at_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "finished_at_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "resource_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UploadResourceType"
-              }
-            ],
-            "nullable": true
-          },
-          "resource_type_in": {
-            "items": {
-              "$ref": "#/components/schemas/UploadResourceType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "resource_type_not": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UploadResourceType"
-              }
-            ],
-            "nullable": true
-          },
-          "resource_type_not_in": {
-            "items": {
-              "$ref": "#/components/schemas/UploadResourceType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_gt": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_gte": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_in": {
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "size_lt": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_lte": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_not": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "size_not_in": {
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "started_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "started_at_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "started_at_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "status": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UploadTaskStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "status_in": {
-            "items": {
-              "$ref": "#/components/schemas/UploadTaskStatus"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "status_not": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UploadTaskStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "status_not_in": {
-            "items": {
-              "$ref": "#/components/schemas/UploadTaskStatus"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "updatedAt": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "updatedAt_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedAt_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "CancelUploadTaskParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/UploadTaskWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "UsbDevice": {
-        "properties": {
-          "binded": {
-            "type": "boolean"
-          },
-          "description": {
-            "type": "string"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "host": {
-            "$ref": "#/components/schemas/NestedHost"
-          },
-          "id": {
-            "type": "string"
-          },
-          "local_created_at": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "manufacturer": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "status": {
-            "$ref": "#/components/schemas/UsbDeviceStatus"
-          },
-          "usb_type": {
-            "type": "string"
-          },
-          "vms": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVm"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vm": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedVm"
-              }
-            ],
-            "nullable": true,
-            "deprecated": true
-          }
-        },
-        "required": [
-          "binded",
-          "description",
-          "host",
-          "id",
-          "local_created_at",
-          "local_id",
-          "manufacturer",
-          "name",
-          "size",
-          "status",
-          "usb_type"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_UsbDevice_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/UsbDevice"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "UsbDeviceMountParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "vms": {
-                "$ref": "#/components/schemas/VmWhereInput"
-              },
-              "vm_id": {
-                "type": "string",
-                "deprecated": true
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/UsbDeviceWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "UsbDeviceUnmountParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "vms": {
-                "$ref": "#/components/schemas/VmWhereInput"
-              }
-            },
-            "required": [
-              "vms"
-            ],
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/UsbDeviceWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "LoginResponse": {
-        "properties": {
-          "token": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "token"
-        ],
-        "type": "object"
-      },
-      "WithTask_LoginResponse_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/LoginResponse"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "MfaType": {
-        "enum": [
-          "Mail"
-        ],
-        "type": "string"
-      },
-      "LoginInput": {
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "source": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UserSource"
-              }
-            ],
-            "nullable": true
-          },
-          "password": {
-            "type": "string"
-          },
-          "mfa_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MfaType"
-              }
-            ],
-            "nullable": true
-          },
-          "auth_config_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "username",
-          "password"
-        ],
-        "type": "object"
-      },
-      "NestedPasswordReoverQaItem": {
-        "properties": {
-          "question": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "question"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedPasswordRecoverQa": {
-        "properties": {
-          "enabled": {
-            "type": "boolean"
-          },
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/NestedPasswordReoverQaItem"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "required": [
-          "enabled"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedUserRoleNext": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "User": {
-        "properties": {
-          "auth_config_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "display_username": {
-            "type": "string"
-          },
-          "email_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "internal": {
-            "type": "boolean"
-          },
-          "ldap_dn": {
-            "type": "string",
-            "nullable": true
-          },
-          "mobile_phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string"
-          },
-          "password_expired": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "password_recover_qa": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedPasswordRecoverQa"
-              }
-            ],
-            "nullable": true
-          },
-          "password_updated_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "role": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UserRole"
-              }
-            ],
-            "nullable": true
-          },
-          "roles": {
-            "items": {
-              "$ref": "#/components/schemas/NestedUserRoleNext"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "source": {
-            "$ref": "#/components/schemas/UserSource"
-          },
-          "username": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "display_username",
-          "id",
-          "internal",
-          "name",
-          "source",
-          "username"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_User_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/User"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "UserCreationParams": {
-        "properties": {
-          "auth_config_id": {
-            "type": "string"
-          },
-          "ldap_dn": {
-            "type": "string"
-          },
-          "source": {
-            "$ref": "#/components/schemas/UserSource"
-          },
-          "mobile_phone": {
-            "type": "string"
-          },
-          "email_address": {
-            "type": "string"
-          },
-          "internal": {
-            "type": "boolean"
-          },
-          "role_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "role_id",
-          "name",
-          "username"
-        ],
-        "type": "object"
-      },
-      "UserUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "internal": {
-                "type": "boolean"
-              },
-              "mobile_phone": {
-                "type": "string",
-                "nullable": true
-              },
-              "email_address": {
-                "type": "string",
-                "nullable": true
-              },
-              "role_id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/UserWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteUser": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteUser_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteUser"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "UserDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/UserWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "RootUserCreationParams": {
-        "properties": {
-          "password": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "password"
-        ],
-        "type": "object"
-      },
-      "VcenterAccount": {
-        "properties": {
-          "cluster": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedCluster"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          },
-          "is_valid": {
-            "type": "boolean"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "port": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "username": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "ip",
-          "is_valid",
-          "local_id",
-          "port",
-          "username"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VcenterAccount_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VcenterAccount"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "CreateVcenterAccountParamsData": {
-        "properties": {
-          "port": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "password": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          },
-          "cluster_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "port",
-          "password",
-          "username",
-          "ip",
-          "cluster_id"
-        ],
-        "type": "object"
-      },
-      "CreateVcenterAccountParams": {
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreateVcenterAccountParamsData"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VcenterAccountWhereUniqueInput": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "UpdateVcenterAccountParamsData": {
-        "properties": {
-          "port": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "password": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "port",
-          "password",
-          "username",
-          "ip"
-        ],
-        "type": "object"
-      },
-      "UpdateVcenterAccountParams": {
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/UpdateVcenterAccountParamsData"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VcenterAccountWhereUniqueInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "Vds": {
-        "properties": {
-          "bond_mode": {
-            "type": "string"
-          },
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "everoute_cluster": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedEverouteCluster"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "internal": {
-            "type": "boolean"
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "nics": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNic"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ovsbr_name": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/NetworkType"
-          },
-          "vlans": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVlan"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vlans_num": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "work_mode": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "bond_mode",
-          "cluster",
-          "id",
-          "internal",
-          "local_id",
-          "name",
-          "ovsbr_name",
-          "type",
-          "vlans_num"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_Vds_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/Vds"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VdsCreationParams": {
-        "properties": {
-          "nic_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "cluster_id": {
-            "type": "string"
-          },
-          "work_mode": {
-            "type": "string"
-          },
-          "bond_mode": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "nic_ids",
-          "cluster_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "VdsCreationWithMigrateVlanParams": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/VdsCreationParams"
-          },
-          {
-            "properties": {
-              "vlan": {
-                "properties": {
-                  "extra_ip": {
-                    "items": {
-                      "properties": {
-                        "management_ip": {
-                          "type": "string"
-                        },
-                        "host_id": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "management_ip",
-                        "host_id"
-                      ],
-                      "type": "object"
-                    },
-                    "type": "array"
-                  },
-                  "subnetmask": {
-                    "type": "string"
-                  },
-                  "gateway_subnetmask": {
-                    "type": "string"
-                  },
-                  "gateway_ip": {
-                    "type": "string"
-                  },
-                  "vlan_id": {
-                    "type": "integer",
-                    "format": "int32"
-                  }
-                },
-                "required": [
-                  "extra_ip",
-                  "subnetmask",
-                  "vlan_id"
-                ],
-                "type": "object"
-              }
-            },
-            "required": [
-              "vlan"
-            ],
-            "type": "object"
-          }
-        ]
-      },
-      "VdsCreationWithMAccessVlanParams": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/VdsCreationParams"
-          },
-          {
-            "properties": {
-              "vlan": {
-                "properties": {
-                  "extra_ip": {
-                    "items": {
-                      "properties": {
-                        "management_ip": {
-                          "type": "string"
-                        },
-                        "host_id": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "management_ip",
-                        "host_id"
-                      ],
-                      "type": "object"
-                    },
-                    "type": "array"
-                  },
-                  "subnetmask": {
-                    "type": "string"
-                  },
-                  "gateway_subnetmask": {
-                    "type": "string"
-                  },
-                  "gateway_ip": {
-                    "type": "string"
-                  },
-                  "vlan_id": {
-                    "type": "integer",
-                    "format": "int32"
-                  }
-                },
-                "required": [
-                  "extra_ip",
-                  "subnetmask",
-                  "vlan_id"
-                ],
-                "type": "object"
-              }
-            },
-            "required": [
-              "vlan"
-            ],
-            "type": "object"
-          }
-        ]
-      },
-      "VdsUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "nicIds": {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              },
-              "work_mode": {
-                "type": "string"
-              },
-              "bond_mode": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VdsWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteVds": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVds_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVds"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VdsDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VdsWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "NestedGraph": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "View": {
-        "properties": {
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "graphs": {
-            "items": {
-              "$ref": "#/components/schemas/NestedGraph"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "time_span": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "time_unit": {
-            "$ref": "#/components/schemas/TimeUnit"
-          }
-        },
-        "required": [
-          "cluster",
-          "id",
-          "local_id",
-          "name",
-          "time_span",
-          "time_unit"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_View_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/View"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "ViewCreationParams": {
-        "properties": {
-          "time_unit": {
-            "$ref": "#/components/schemas/TimeUnit"
-          },
-          "time_span": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "cluster_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "time_unit",
-          "time_span",
-          "cluster_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "ViewUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "time_unit": {
-                "$ref": "#/components/schemas/TimeUnit"
-              },
-              "time_span": {
-                "type": "integer",
-                "format": "int32"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/ViewWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteView": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteView_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteView"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "ViewDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/ViewWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "Vlan": {
-        "properties": {
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "gateway_ip": {
-            "type": "string",
-            "nullable": true
-          },
-          "gateway_subnetmask": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "mode_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VlanModeType"
-              }
-            ],
-            "nullable": true
-          },
-          "name": {
-            "type": "string"
-          },
-          "network_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "qos_max_bandwidth": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "qos_min_bandwidth": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "qos_priority": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "subnetmask": {
-            "type": "string",
-            "nullable": true
-          },
-          "type": {
-            "$ref": "#/components/schemas/NetworkType"
-          },
-          "vds": {
-            "$ref": "#/components/schemas/NestedVds"
-          },
-          "vlan_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "vm_nics": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVmNic"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "required": [
-          "id",
-          "local_id",
-          "name",
-          "network_ids",
-          "type",
-          "vds",
-          "vlan_id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_Vlan_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/Vlan"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VlanId": {
-        "type": "integer",
-        "format": "int32",
-        "minimum": 0,
-        "maximum": 4095
-      },
-      "Priority": {
-        "type": "number",
-        "format": "double",
-        "minimum": 0
-      },
-      "VmVlanCreationParams": {
-        "properties": {
-          "qos_burst_unit": {
-            "$ref": "#/components/schemas/ByteUnit"
-          },
-          "qos_burst": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "qos_max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit"
-          },
-          "qos_max_bandwidth": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "qos_min_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit"
-          },
-          "qos_min_bandwidth": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "qos_priority": {
-            "$ref": "#/components/schemas/Priority"
-          },
-          "mode_type": {
-            "$ref": "#/components/schemas/VlanModeType"
-          },
-          "network_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "vds_id": {
-            "type": "string"
-          },
-          "vlan_id": {
-            "$ref": "#/components/schemas/VlanId"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "vds_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "VmVlanUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "qos_burst_unit": {
-                "$ref": "#/components/schemas/ByteUnit"
-              },
-              "qos_burst": {
-                "type": "integer",
-                "format": "int64",
-                "nullable": true
-              },
-              "qos_max_bandwidth_unit": {
-                "$ref": "#/components/schemas/BPSUnit"
-              },
-              "qos_max_bandwidth": {
-                "type": "integer",
-                "format": "int64",
-                "nullable": true
-              },
-              "qos_min_bandwidth_unit": {
-                "$ref": "#/components/schemas/BPSUnit"
-              },
-              "qos_min_bandwidth": {
-                "type": "integer",
-                "format": "int64",
-                "nullable": true
-              },
-              "qos_priority": {
-                "$ref": "#/components/schemas/Priority"
-              },
-              "mode_type": {
-                "$ref": "#/components/schemas/VlanModeType"
-              },
-              "network_ids": {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              },
-              "vlan_id": {
-                "$ref": "#/components/schemas/VlanId"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VlanWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "ExtraIp": {
-        "properties": {
-          "management_ip": {
-            "type": "string"
-          },
-          "host_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "management_ip",
-          "host_id"
-        ],
-        "type": "object"
-      },
-      "ManagementVlanUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "extra_ip": {
-                "items": {
-                  "$ref": "#/components/schemas/ExtraIp"
-                },
-                "type": "array"
-              },
-              "subnetmask": {
-                "type": "string"
-              },
-              "gateway_ip": {
-                "type": "string"
-              },
-              "vlan_id": {
-                "$ref": "#/components/schemas/VlanId"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VlanWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "MigrationVlanUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "extra_ip": {
-                "items": {
-                  "$ref": "#/components/schemas/ExtraIp"
-                },
-                "type": "array"
-              },
-              "subnetmask": {
-                "type": "string"
-              },
-              "gateway_ip": {
-                "type": "string"
-              },
-              "vlan_id": {
-                "$ref": "#/components/schemas/VlanId"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VlanWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteVlan": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVlan_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVlan"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VlanDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VlanWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "VmFolder": {
-        "properties": {
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "id": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string"
-          },
-          "vm_num": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "vms": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVm"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster",
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmFolder_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmFolder"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmFolderCreationParams": {
-        "properties": {
-          "cluster_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "cluster_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "VmFolderUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name"
-            ],
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VmFolderWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteVmFolder": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmFolder_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmFolder"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmFolderDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmFolderWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "VmPlacementGroup": {
-        "properties": {
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "description": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "local_created_at": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "local_updated_at": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "vm_host_must_enabled": {
-            "type": "boolean"
-          },
-          "vm_host_must_host_uuids": {
-            "items": {
-              "$ref": "#/components/schemas/NestedHost"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vm_host_must_policy": {
-            "type": "boolean"
-          },
-          "vm_host_prefer_enabled": {
-            "type": "boolean"
-          },
-          "vm_host_prefer_host_uuids": {
-            "items": {
-              "$ref": "#/components/schemas/NestedHost"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vm_host_prefer_policy": {
-            "type": "boolean"
-          },
-          "vm_vm_policy": {
-            "$ref": "#/components/schemas/VmVmPolicy"
-          },
-          "vm_vm_policy_enabled": {
-            "type": "boolean"
-          },
-          "vms": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVm"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster",
-          "description",
-          "enabled",
-          "id",
-          "local_created_at",
-          "local_id",
-          "local_updated_at",
-          "name",
-          "vm_host_must_enabled",
-          "vm_host_must_policy",
-          "vm_host_prefer_enabled",
-          "vm_host_prefer_policy",
-          "vm_vm_policy",
-          "vm_vm_policy_enabled"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmPlacementGroup_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmPlacementGroup"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmPlacementGroupCreationParams": {
-        "properties": {
-          "vm_vm_policy": {
-            "$ref": "#/components/schemas/VmVmPolicy"
-          },
-          "vm_host_prefer_enabled": {
-            "type": "boolean"
-          },
-          "vm_host_must_policy": {
-            "type": "boolean"
-          },
-          "vm_host_must_enabled": {
-            "type": "boolean"
-          },
-          "vm_host_prefer_policy": {
-            "type": "boolean"
-          },
-          "vm_vm_policy_enabled": {
-            "type": "boolean"
-          },
-          "vms": {
-            "$ref": "#/components/schemas/VmWhereInput"
-          },
-          "prefer_hosts": {
-            "$ref": "#/components/schemas/HostWhereInput"
-          },
-          "must_hosts": {
-            "$ref": "#/components/schemas/HostWhereInput"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "cluster_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "enabled",
-          "cluster_id"
-        ],
-        "type": "object"
-      },
-      "VmPlacementGroupUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "vm_vm_policy": {
-                "$ref": "#/components/schemas/VmVmPolicy"
-              },
-              "vms": {
-                "$ref": "#/components/schemas/VmWhereInput"
-              },
-              "prefer_hosts": {
-                "$ref": "#/components/schemas/HostWhereInput"
-              },
-              "must_hosts": {
-                "$ref": "#/components/schemas/HostWhereInput"
-              },
-              "vm_host_prefer_enabled": {
-                "type": "boolean"
-              },
-              "vm_host_must_policy": {
-                "type": "boolean"
-              },
-              "vm_host_must_enabled": {
-                "type": "boolean"
-              },
-              "vm_host_prefer_policy": {
-                "type": "boolean"
-              },
-              "vm_vm_policy_enabled": {
-                "type": "boolean"
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "enabled": {
-                "type": "boolean"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VmPlacementGroupWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteVmPlacementGroup": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmPlacementGroup_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmPlacementGroup"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmPlacementGroupDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmPlacementGroupWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "NestedSnapshotGroup": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedFrozenDisks": {
-        "properties": {
-          "boot": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bus": {
-            "$ref": "#/components/schemas/Bus"
-          },
-          "disabled": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "disk_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "elf_image_local_id": {
-            "type": "string"
-          },
-          "image_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "index": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "key": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "max_bandwidth": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "max_bandwidth_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "max_iops": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "max_iops_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "path": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "snapshot_local_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "storage_policy_uuid": {
-            "type": "string"
-          },
-          "svt_image_local_id": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/VmDiskType"
-          },
-          "vm_volume_local_id": {
-            "type": "string"
-          },
-          "vm_volume_snapshot_uuid": {
-            "type": "string",
-            "nullable": true
-          },
-          "vm_volume_template_uuid": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "boot",
-          "bus",
-          "elf_image_local_id",
-          "index",
-          "path",
-          "size",
-          "storage_policy_uuid",
-          "svt_image_local_id",
-          "type",
-          "vm_volume_local_id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedFrozenVlan": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "vds_ovs": {
-            "type": "string"
-          },
-          "vlan_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "vlan_local_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "vds_ovs",
-          "vlan_id",
-          "vlan_local_id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedFrozenNic": {
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "gateway": {
-            "type": "string"
-          },
-          "index": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ip_address": {
-            "type": "string"
-          },
-          "mac_address": {
-            "type": "string"
-          },
-          "mirror": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "model": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmNicModel"
-              }
-            ],
-            "nullable": true
-          },
-          "subnet_mask": {
-            "type": "string"
-          },
-          "vlan": {
-            "$ref": "#/components/schemas/NestedFrozenVlan"
-          }
-        },
-        "required": [
-          "gateway",
-          "index",
-          "ip_address",
-          "mac_address",
-          "subnet_mask",
-          "vlan"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "VmSnapshot": {
-        "properties": {
-          "clock_offset": {
-            "$ref": "#/components/schemas/VmClockOffset"
-          },
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "consistent_type": {
-            "$ref": "#/components/schemas/ConsistentType"
-          },
-          "cpu": {
-            "$ref": "#/components/schemas/NestedCpu"
-          },
-          "cpu_model": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "firmware": {
-            "$ref": "#/components/schemas/VmFirmware"
-          },
-          "ha": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "io_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoPolicy"
-              }
-            ],
-            "nullable": true
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_created_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "max_bandwidth": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "max_bandwidth_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "max_iops": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "max_iops_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "memory": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "snapshot_group": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedSnapshotGroup"
-              }
-            ],
-            "nullable": true
-          },
-          "vcpu": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "vm": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedVm"
-              }
-            ],
-            "nullable": true
-          },
-          "vm_disks": {
-            "items": {
-              "$ref": "#/components/schemas/NestedFrozenDisks"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vm_nics": {
-            "items": {
-              "$ref": "#/components/schemas/NestedFrozenNic"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "win_opt": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "clock_offset",
-          "cluster",
-          "consistent_type",
-          "cpu",
-          "cpu_model",
-          "description",
-          "firmware",
-          "ha",
-          "id",
-          "local_id",
-          "memory",
-          "name",
-          "size",
-          "vcpu",
-          "win_opt"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmSnapshot_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmSnapshot"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmSnapshotCreationParamsData": {
-        "properties": {
-          "consistent_type": {
-            "$ref": "#/components/schemas/ConsistentType"
-          },
-          "name": {
-            "type": "string"
-          },
-          "vm_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "vm_id"
-        ],
-        "type": "object"
-      },
-      "VmSnapshotCreationParams": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/VmSnapshotCreationParamsData"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "DeleteVmSnapshot": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmSnapshot_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmSnapshot"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmSnapshotDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmSnapshotWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "NestedTemplateNic": {
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "index": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ip_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "mac_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "mirror": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "model": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmNicModel"
-              }
-            ],
-            "nullable": true
-          },
-          "vlan": {
-            "$ref": "#/components/schemas/NestedFrozenVlan"
-          }
-        },
-        "required": [
-          "index",
-          "vlan"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "VmTemplate": {
-        "properties": {
-          "clock_offset": {
-            "$ref": "#/components/schemas/VmClockOffset"
-          },
-          "cloud_init_supported": {
-            "type": "boolean"
-          },
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "content_library_vm_template": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedContentLibraryVmTemplate"
-              }
-            ],
-            "nullable": true
-          },
-          "cpu": {
-            "$ref": "#/components/schemas/NestedCpu"
-          },
-          "cpu_model": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "firmware": {
-            "$ref": "#/components/schemas/VmFirmware"
-          },
-          "ha": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "io_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoPolicy"
-              }
-            ],
-            "nullable": true
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_created_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "max_bandwidth": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "max_bandwidth_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "max_iops": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "max_iops_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmDiskIoRestrictType"
-              }
-            ],
-            "nullable": true
-          },
-          "memory": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "vcpu": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "video_type": {
-            "type": "string",
-            "nullable": true
-          },
-          "vm_disks": {
-            "items": {
-              "$ref": "#/components/schemas/NestedFrozenDisks"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vm_nics": {
-            "items": {
-              "$ref": "#/components/schemas/NestedTemplateNic"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "win_opt": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "clock_offset",
-          "cloud_init_supported",
-          "cluster",
-          "cpu",
-          "cpu_model",
-          "description",
-          "firmware",
-          "ha",
-          "id",
-          "local_id",
-          "memory",
-          "name",
-          "size",
-          "vcpu",
-          "win_opt"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmTemplate_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmTemplate"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmTemplateCreationParams": {
-        "properties": {
-          "cluster_id": {
-            "type": "string"
-          },
-          "cloud_init_supported": {
-            "type": "boolean"
-          },
-          "vm_id": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "cloud_init_supported",
-          "vm_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "VmTemplateUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "cloud_init_supported": {
-                "type": "boolean"
-              },
-              "description": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VmTemplateWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteVmTemplate": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmTemplate_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmTemplate"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmTemplateDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmTemplateWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "VmVolumeSnapshot": {
-        "properties": {
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "createAt": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string"
-          },
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_created_at": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "shared_size": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "size": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "type": {
-            "$ref": "#/components/schemas/VmVolumeSnapshotType"
-          },
-          "unique_size": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "vm_volume": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedVmVolume"
-              }
-            ],
-            "nullable": true
-          },
-          "volume_sharing": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "volume_size": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "zbs_snapshot_uuid": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster",
-          "description",
-          "elf_storage_policy",
-          "id",
-          "local_created_at",
-          "local_id",
-          "name",
-          "type"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmVolumeSnapshot_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmVolumeSnapshot"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmVolumeSnapshotCreationParams": {
-        "properties": {
-          "volume_id": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "volume_id",
-          "description",
-          "name"
-        ],
-        "type": "object"
-      },
-      "DeleteVmVolumeSnapshot": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmVolumeSnapshot_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmVolumeSnapshot"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmVolumeSnapshotDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmVolumeSnapshotWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "VmVolume": {
-        "properties": {
-          "cluster": {
-            "$ref": "#/components/schemas/NestedCluster"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "guest_size_usage": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "guest_used_size": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_created_at": {
-            "type": "string"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "lun": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedIscsiLun"
-              }
-            ],
-            "nullable": true
-          },
-          "mounting": {
-            "type": "boolean"
-          },
-          "name": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "sharing": {
-            "type": "boolean"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmVolumeType"
-              }
-            ],
-            "nullable": true
-          },
-          "unique_size": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "vm_disks": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVmDisk"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster",
-          "elf_storage_policy",
-          "id",
-          "local_created_at",
-          "local_id",
-          "mounting",
-          "name",
-          "path",
-          "sharing",
-          "size"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VmVolume_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/VmVolume"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmVolumeCreationParams": {
-        "properties": {
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "sharing": {
-            "type": "boolean"
-          },
-          "cluster_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "elf_storage_policy",
-          "size",
-          "sharing",
-          "cluster_id",
-          "name"
-        ],
-        "type": "object"
-      },
-      "DeleteVmVolume": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteVmVolume_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteVmVolume"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmVolumeDeletionParamsEffect": {
-        "properties": {
-          "include_snapshots": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "VmVolumeDeletionParams": {
-        "properties": {
-          "effect": {
-            "$ref": "#/components/schemas/VmVolumeDeletionParamsEffect"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VmVolumeWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "VmVolumeRebuildParams": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "volume_snapshot_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "description",
-          "volume_snapshot_id"
-        ],
-        "type": "object"
-      },
-      "VmVolumeRollbackParams": {
-        "properties": {
-          "volume_snapshot_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "volume_snapshot_id"
-        ],
-        "type": "object"
-      },
-      "VmVolumeWhereUniqueInput": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "CloneVmVolumeParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmVolumeWhereUniqueInput"
-          },
-          "data": {
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name"
-            ],
-            "type": "object"
-          }
-        },
-        "required": [
-          "where",
-          "data"
-        ],
-        "type": "object"
-      },
-      "UpdateVmVolumeParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/VmVolumeWhereInput"
-          },
-          "data": {
-            "properties": {
-              "size_unit": {
-                "$ref": "#/components/schemas/ByteUnit"
-              },
-              "size": {
-                "type": "integer",
-                "format": "int64"
-              },
-              "description": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "required": [
-          "where",
-          "data"
-        ],
-        "type": "object"
-      },
-      "VmVolumeExportFileType": {
-        "type": "string",
-        "enum": [
-          "QCOW2",
-          "RAW"
-        ]
-      },
-      "ExportVmVolumeParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/VmVolumeExportFileType"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/VmVolumeWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "ImportVmVolumeParams": {
-        "properties": {
-          "upload_task_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "cluster_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "upload_task_id",
-          "name",
-          "storage_policy",
-          "cluster_id"
-        ],
-        "type": "object"
-      },
-      "VsphereEsxiAccount": {
-        "properties": {
-          "host": {
-            "$ref": "#/components/schemas/NestedHost"
-          },
-          "id": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          },
-          "is_valid": {
-            "type": "boolean"
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "port": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "username": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "host",
-          "id",
-          "ip",
-          "is_valid",
-          "local_id",
-          "port",
-          "username"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_VsphereEsxiAccount-Array_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/VsphereEsxiAccount"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "UpdateVsphereEsxiAccountParamsData": {
-        "properties": {
-          "port": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "password": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          },
-          "esxi_account_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "username",
-          "ip",
-          "esxi_account_id"
-        ],
-        "type": "object"
-      },
-      "UpdateVsphereEsxiAccountParams": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/UpdateVsphereEsxiAccountParamsData"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "data"
         ],
         "type": "object"
       },
@@ -118300,119 +118301,6 @@
         }
       }
     },
-    "/export-csv": {
-      "post": {
-        "operationId": "ExportCSV",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string",
-                  "format": "byte"
-                }
-              }
-            },
-            "headers": {
-              "x-tower-request-id": {
-                "schema": {
-                  "type": "string"
-                },
-                "required": true
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "x-tower-request-id": {
-                "schema": {
-                  "type": "string"
-                },
-                "required": true
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "x-tower-request-id": {
-                "schema": {
-                  "type": "string"
-                },
-                "required": true
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "x-tower-request-id": {
-                "schema": {
-                  "type": "string"
-                },
-                "required": true
-              }
-            }
-          }
-        },
-        "tags": [
-          "TableReporter"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "default": "en-US",
-              "type": "string",
-              "enum": [
-                "zh-CN",
-                "en-US"
-              ]
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TableReporterParams"
-              }
-            }
-          }
-        }
-      }
-    },
     "/cancel-upload-task": {
       "post": {
         "operationId": "CancelUploadTask",
@@ -123962,6 +123850,119 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateVsphereEsxiAccountParams"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/export-csv": {
+      "post": {
+        "operationId": "ExportCSV",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            },
+            "headers": {
+              "x-tower-request-id": {
+                "schema": {
+                  "type": "string"
+                },
+                "required": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "x-tower-request-id": {
+                "schema": {
+                  "type": "string"
+                },
+                "required": true
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "x-tower-request-id": {
+                "schema": {
+                  "type": "string"
+                },
+                "required": true
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "x-tower-request-id": {
+                "schema": {
+                  "type": "string"
+                },
+                "required": true
+              }
+            }
+          }
+        },
+        "tags": [
+          "TableReporter"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "default": "en-US",
+              "type": "string",
+              "enum": [
+                "zh-CN",
+                "en-US"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableReporterParams"
               }
             }
           }
