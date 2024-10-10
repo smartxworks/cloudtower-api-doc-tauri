@@ -16,7 +16,6 @@
   "expand": "Expand all",
   "show": "show",
   "send": "Send",
-
   "server_placeholder": "add new server, http://YOUR_TOWER_URL/v2/api",
   "servers": "Servers",
   "filter_placeholder": "Filter By Tag, API, API Description.",
@@ -86,5 +85,6 @@
   "candidate": "End-User License Agreement",
   "version_icu": "Version {version}",
   "VirtualPrivateCloudNetwork": "VPC Networking",
-  "DistributedFirewall": "Distributed Firewall"
+  "DistributedFirewall": "Distributed Firewall",
+  "allVersions": "All Versions"
 }
