@@ -12562,11 +12562,11 @@
     },
     "SnapshotPlanCreationParams": {
       "vm_ids": "成员虚拟机 ID",
-      "execute_intervals": "执行间隔",
+      "execute_intervals": "执行间隔。结合 execute_intervals, 代表每周几/每月几号/每几分钟等意思。",
       "execute_plan_type": "执行计划类型",
       "exec_h_m": "执行时间",
-      "end_time": "结束时间",
-      "start_time": "开始时间",
+      "end_time": "结束时间。请输入符合日期类型的字符串，例如：2024-01-01T00:00:00.000Z",
+      "start_time": "开始时间。请输入符合日期类型的字符串，例如：2024-01-01T00:00:00.000Z",
       "remain_snapshot_num": "保留快照数",
       "cluster_id": "所属集群 ID",
       "name": "名称"
