@@ -105,28 +105,3 @@ export const wrapSpecWithI18n = (
   }));
   return cloneSpec;
 };
-
-
-export const splitSchema = (spec: ISpec,) => {
-  const cloneSpec = _.cloneDeep(spec);
-  const traveseSchema = (name: string, schemaContent: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject, properties_path: string[]) => {
-    if((schemaContent as OpenAPIV3.SchemaObject)?.type === 'object') {
-      Object.entries((schemaContent as OpenAPIV3.SchemaObject)?.properties || {}).forEach(([key, value]) => {
-        if(
-          ['AND', 'OR', 'NOT'].includes(key) ||
-          ((key.endsWith('_some') || key.endsWith('_every') || key.endsWith('none') && ((value as OpenAPIV3.SchemaObject).allOf?.[0] as OpenAPIV3.ReferenceObject)?.$ref?.endsWith('WhereInput')))
-        ) {
-          _.unset(cloneSpec, ['components', 'schemas', ...properties_path, 'properties', key]);
-        }
-        traveseSchema(key, value, properties_path.concat(['properties', key]));
-      })
-    } 
-  }
-  Object.entries(cloneSpec.components.schemas).forEach((
-    [ schemaName, schema ]
-  ) => {
-    const properties_path = [ schemaName ];
-    traveseSchema(schemaName, schema, properties_path);
-  })
-  return cloneSpec;
-}

@@ -8,7 +8,6 @@ import {
   ISpec,
   specMap,
   wrapSpecWithI18n,
-  splitSchema,
   overwriteSchemaTitle,
 } from "./utils";
 import Redocly from "./redoc/Redoc";
@@ -66,13 +65,6 @@ const Redoc: React.FC<{
   );
 };
 
-// const Redoc = React.memo(RedocWrapper, (prev, next) => {
-//   return (
-//     JSON.stringify({ tags: prev.spec?.tags, servers: prev.spec?.servers }) ===
-//     JSON.stringify({ tags: next.spec?.tags, servers: next.spec?.servers })
-//   );
-// });
-
 const App: React.FC = () => {
   const { i18n } = useDocusaurusContext();
   const { search } = useLocation();
@@ -86,9 +78,7 @@ const App: React.FC = () => {
       const swaggerSpec: ISpec = _.cloneDeep(data.default);
       setRawSpec(swaggerSpec);
       i18next.changeLanguage(i18n.currentLocale);
-      const newSpec = splitSchema(
-        wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version)
-      );
+      const newSpec = wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version);
       setSpec(newSpec);
     })
 
