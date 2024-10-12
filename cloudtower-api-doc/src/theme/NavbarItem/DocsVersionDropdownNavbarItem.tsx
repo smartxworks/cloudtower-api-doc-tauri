@@ -62,24 +62,25 @@ export default function DocsVersionDropdownNavbarItem({
       type: 'html',
       value: `<span class="dropdown-subtitle">${i18next.t('components.historyVersion')}</span>`
     },
-    ...items.slice(1),
-    // {
-    //   type: 'html',
-    //   value: "<hr class=\"dropdown-separator\">"
-    // },
-    // {
-    //   label: i18next.t('components.allVersions'),
-    //   href: "/sdks/support_release",
-    // }
+    ...items.slice(1, -16),
+    {
+      type: 'html',
+      value: "<hr class=\"dropdown-separator\">"
+    },
+    {
+      type: 'html',
+      value: `<span class="dropdown-subtitle">${i18next.t('components.archivedVersion')}</span>`
+    },
+    ...items.slice(-16),
   ].map(v => {
     if(v.label) {
       let label = v.label;
       if(v.label.startsWith('3.4')) {
         label = '3.4.x LTS'
       }
-      // if(v.href) {
-      //   return v;
-      // }
+      if(v.href) {
+        return v;
+      }
       return {
         ...v,
         label: i18next.t('components.version_icu', {version: label })
