@@ -246,3 +246,8 @@ div.menu__list-item-collapsible > a[aria-expanded=true]::after {
   transform: rotate(180deg);
   transition: transform var(--ifm-transition-fast) linear;
 }
+
+/* recursive label  */
+.sc-kqnjJL.sc-zjkyB.kMcpvW.kGqNFZ {
+  display: none;
+}
