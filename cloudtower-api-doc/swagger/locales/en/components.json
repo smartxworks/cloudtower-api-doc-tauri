@@ -16,7 +16,7 @@
   "expand": "Expand all",
   "show": "show",
   "send": "Send",
-  "server_placeholder": "add new server, http://YOUR_TOWER_URL/v2/api",
+  "server_placeholder": "add new server and press Enter to add, https://YOUR_TOWER_URL/v2/api",
   "servers": "Servers",
   "filter_placeholder": "Filter By Tag, API, API Description.",
   "parameters": "Parameters",
