@@ -86,5 +86,5 @@
   "version_icu": "Version {version}",
   "VirtualPrivateCloudNetwork": "VPC Networking",
   "DistributedFirewall": "Distributed Firewall",
-  "allVersions": "All Versions"
+  "archivedVersion": "Archived Versions"
 }
