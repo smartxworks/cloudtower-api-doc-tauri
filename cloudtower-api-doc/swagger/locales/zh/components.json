@@ -17,6 +17,7 @@
   "show": "显示",
   "send": "发送",
   "servers": "服务",
+  "server_placeholder": "输入新地址后回车新增, https://YOUR_TOWER_URL/v2/api",
   "filter_placeholder": "通过标签， API，API 描述过滤，通过空格进行多个过滤",
   "parameters": "参数",
   "download": "下载文件",

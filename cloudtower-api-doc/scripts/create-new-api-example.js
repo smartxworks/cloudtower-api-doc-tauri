@@ -164,7 +164,7 @@ const traveseSpec = async (specPath) => {
 
           const snippet = new httpSnippet({
             method: method.toUpperCase(),
-            url: `http://YOUR_TOWER_URL/v2/api${p}`,
+            url: `https://YOUR_TOWER_URL/v2/api${p}`,
             headers: [
               { name: "Authorization", value: "YOUR_TOKEN" },
               {
