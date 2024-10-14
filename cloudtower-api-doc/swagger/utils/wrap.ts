@@ -87,6 +87,20 @@ export const wrapSpecWithI18n = (
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
       describeFn: ({ prefix, path }) => {
+        const schemaObj = _.get(cloneSpec, prefix);
+        const type = schemaObj['type'];
+        if (type === "object") {
+          if(!schemaObj['properties']) {
+            _.set(cloneSpec, [...prefix, "title"], prefix[prefix.length - 1]);
+          } else {
+            Object.keys(schemaObj['properties']).forEach((key) => {
+              if(schemaObj['properties'][key]['allOf']) {
+                const allOfRef = schemaObj['properties'][key]['allOf'][0]['$ref'];
+                _.set(cloneSpec, [...prefix, "properties", key, "title"], allOfRef.split('/').pop());
+              }
+            })
+          }
+        }
         _.set(cloneSpec, [...prefix, "description"], schema[path]);
       },
     });
