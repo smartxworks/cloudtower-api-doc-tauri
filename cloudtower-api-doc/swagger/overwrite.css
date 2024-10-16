@@ -151,7 +151,7 @@ html[data-theme='dark'] input {
 
 
 @media (min-width: 1440px) {
-  .container:has(#swagger-ui) {
+  .container {
     max-width: none !important;
   }
 }
