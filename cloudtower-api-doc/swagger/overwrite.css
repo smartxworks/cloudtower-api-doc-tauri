@@ -251,3 +251,12 @@ div.menu__list-item-collapsible > a[aria-expanded=true]::after {
 .sc-kqnjJL.sc-zjkyB.kMcpvW.kGqNFZ {
   display: none;
 }
+/* request samples */
+div.sc-kHOZwM:has(>pre.sc-hOGkXu), div.sc-DtmNo:has( .redoc-json) {
+  height: 500px;
+  overflow: scroll;
+} 
+.sc-hmjpVf:has(.redoc-json) {
+  flex: unset;
+}
+

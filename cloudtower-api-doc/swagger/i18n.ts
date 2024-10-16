@@ -162,7 +162,7 @@ i18next.init({
   },
   lng: SupportLanguage.zh,
   updateMissing: true,
-  fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
+  fallbackLng: null,
   fallbackNS,
   interpolation: {
     prefix: "{",
