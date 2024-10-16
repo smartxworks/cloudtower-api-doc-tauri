@@ -11756,6 +11756,18 @@
       "type_not_in": "",
       "vm": "",
       "vm_volume": ""
+    },
+    "ShutdownVmID": {
+      "vm_uuid": ""
+    },
+    "EnterMaintenanceModeResult": {
+      "shutdownVms": "",
+      "done": ""
+    },
+    "ExitMaintenanceModeResult": {
+      "offlineMigrateVms": "",
+      "liveMigrateVms": "",
+      "shutDownVms": ""
     }
   },
   "tags": [
@@ -11822,6 +11834,5 @@
       "summary": "Update Task",
       "description": "Open only to system users"
     }
-    
   }
 }

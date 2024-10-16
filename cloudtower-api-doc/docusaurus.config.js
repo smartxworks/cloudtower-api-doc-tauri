@@ -108,8 +108,7 @@ const config = {
             label: "下载",
             position: "right",
             items: [
-              { label: "桌面端", href: "https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/app-v2.13.0"}
-            ]
+              { label: "桌面端", href: "https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/app-v2.18.0"}            ]
           },
           {
             type: "localeDropdown",
