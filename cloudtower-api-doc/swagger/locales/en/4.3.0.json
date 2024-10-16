@@ -174,11 +174,26 @@
       "vm_templates": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "",
+      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
       "id": "id",
       "name": "name",
       "nat_gateway_cidr": "",
       "router_gateway_cidr": ""
+    },
+    "NestedTemplateVpcNic": {
+      "vpc_local_id": "",
+      "vpc_subnet_local_id": ""
+    },
+    "NestedTemplateNic": {
+      "enabled": "",
+      "index": "",
+      "ip_address": "",
+      "mac_address": "",
+      "mirror": "",
+      "model": "",
+      "type": "",
+      "vlan": "",
+      "vpc_nic": ""
     }
   },
   "tags": [
