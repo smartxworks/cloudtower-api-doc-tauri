@@ -107,7 +107,7 @@ const Operation:React.FC<OperationProps> = observer((props) => {
           (
             <RightPanel data-cy="samples-block">
             { !store.options.pathInMiddlePanel && !isWebhook ? (<Endpoint operation={operation}/>) : null}
-            <RequestSamples operation={operation}/>
+            <RequestSamples operation={operation} defaultLanguage='payload'/>
             <ResponseSamples operation={operation}/>
             <CallbackSamples callbacks={operation.callbacks}/>
           </RightPanel>
