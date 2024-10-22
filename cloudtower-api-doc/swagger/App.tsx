@@ -9,6 +9,7 @@ import {
   specMap,
   wrapSpecWithI18n,
   overwriteSchemaTitle,
+  APIVersionToSDKVersionMap
 } from "./utils";
 import Redocly from "./redoc/Redoc";
 import { LOCAL_STORAGE_SERVERS_KEY } from "./redoc/Console/ServerDropdown";
@@ -83,6 +84,24 @@ const App: React.FC = () => {
     })
 
   }, [version, i18n.currentLocale]);
+
+  useEffect(() => {
+    const updateDownloadLinks = () => {
+      const desktopLink = document.getElementById('desktop-download-link');
+      const pdfLink = document.getElementById('pdf-download-link');
+      const sdkVersion = APIVersionToSDKVersionMap.get(version);
+      if (desktopLink && sdkVersion) {
+        (desktopLink as HTMLAnchorElement).href = `https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/app-v${sdkVersion}`;
+      }
+
+      if (pdfLink) {
+        (pdfLink as HTMLAnchorElement).href = `/pdfs/CloudTower-API-${version}-pdf.tar.gz`;
+        (pdfLink as HTMLAnchorElement).download = `CloudTower-API-${version}-pdf.tar.gz`;
+      }
+    };
+
+    updateDownloadLinks();
+  }, [version]);
 
   useEffect(() => {
     specRef.current = spec;

@@ -5,7 +5,6 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CloudTower API",
@@ -20,9 +19,9 @@ const config = {
     locales: ["zh", "en"],
     localeConfigs: {
       zh: {
-        label: '简体中文',
+        label: "简体中文",
       },
-    }
+    },
   },
   onBrokenLinks: "log",
   presets: [
@@ -32,13 +31,13 @@ const config = {
       ({
         docs: {
           routeBasePath: "/",
-          sidebarPath: require.resolve('./sidebar-default.js'),
+          sidebarPath: require.resolve("./sidebar-default.js"),
         },
         blog: false,
         theme: {
           customCss: [
             require.resolve("./swagger/overwrite.css"),
-            require.resolve('./custom.scss')
+            require.resolve("./custom.scss"),
           ],
         },
       }),
@@ -53,8 +52,8 @@ const config = {
             ...(!process.env.TAURI_ENV && {
               output: {
                 ...config.output,
-                filename: '[name].[contenthash:8].js' ,
-                chunkFilename: '[name].[contenthash:8].js',
+                filename: "[name].[contenthash:8].js",
+                chunkFilename: "[name].[contenthash:8].js",
               },
             }),
             plugins: [
@@ -65,21 +64,21 @@ const config = {
             resolve: {
               fallback: {
                 stream: require.resolve("stream-browserify"),
-                util:  require.resolve("util/"),
+                util: require.resolve("util/"),
                 path: require.resolve("path-browserify"),
                 os: require.resolve("os-browserify/browser"),
                 tty: require.resolve("tty-browserify"),
                 fs: false,
                 http: require.resolve("stream-http"),
-                https: require.resolve("https-browserify")
+                https: require.resolve("https-browserify"),
               },
             },
           };
         },
       };
     },
-    'docusaurus-plugin-sass',
-    'docusaurus2-dotenv'
+    "docusaurus-plugin-sass",
+    "docusaurus2-dotenv",
   ],
 
   themeConfig:
@@ -92,7 +91,7 @@ const config = {
         },
         items: [
           {
-            label: "文档" ,
+            label: "文档",
             to: "/",
           },
           {
@@ -108,7 +107,18 @@ const config = {
             label: "下载",
             position: "right",
             items: [
-              { label: "桌面端", href: "https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/v2.18.0"}            ]
+              { label: "桌面端", href: "https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/v2.18.0"},
+              // {
+              //   type: "html",
+              //   value:
+              //     "<a id='desktop-download-link' class='dropdown__link navLinkOverwrite_cloudtower-api-doc-src-theme-NavbarItem-styles-module' href='https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/app-v2.18.0' target='_blank'>Desktop</a>",
+              // },
+              // {
+              //   type: "html",
+              //   value:
+              //     "<a download='CloudTower-API-4.4.0-pdf.tar.gz' id='pdf-download-link' href='/pdfs/CloudTower-API-4.4.0-pdf.tar.gz' class='dropdown__link navLinkOverwrite_cloudtower-api-doc-src-theme-NavbarItem-styles-module'>PDF</a>",
+              // },
+            ],
           },
           {
             type: "localeDropdown",
@@ -123,13 +133,13 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['java']
+        additionalLanguages: ["java"],
       },
       colorMode: {
         disableSwitch: true,
         defaultMode: "light",
-      }
-    })
+      },
+    }),
 };
 
 module.exports = config;
