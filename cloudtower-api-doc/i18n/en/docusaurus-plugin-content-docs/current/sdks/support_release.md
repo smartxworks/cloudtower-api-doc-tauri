@@ -31,7 +31,8 @@ The following are the compatible versions when upgrading with CloudTower. Versio
 | 2.16.0 | 4.2.0,4.2.1,4.2.2 | 2024.07.16 | <AddressWrapper version="2.16.0" file_version="4.2.0" node_version="2.16.0"/>|
 | 2.15.1 | 4.1.0 | 2024.05.31 | <AddressWrapper version="2.15.1" file_version="4.1.0" node_version="2.15.0"/>|
 | 2.14.0 | 4.0.0 | 2024.01.02 | <AddressWrapper version="2.14.0" file_version="4.0.0"/>|
-| 2.13.1 | 3.4.0, 3.4.1, 3.4.2, 3.4.3,3.4.4 | 2024.10.10 | <AddressWrapper version="2.13.1" file_version="3.4.4"/>|
+| 2.13.1 | 3.4.4 | 2024.10.10 | <AddressWrapper version="2.13.1" file_version="3.4.4"/>|
+| 2.13.0 | 3.4.0, 3.4.1, 3.4.2, 3.4.3 | 2023.11.7 | <AddressWrapper version="2.13.0" file_version="3.4.0"/>|
 | 2.12.0 | 3.3.0 | 2023.10.19 | <AddressWrapper version="2.12.0" file_version="3.3.0"/>|
 | 2.11.0 | 3.2.0, 3.2.1 | 2023.09.01 | <AddressWrapper version="2.11.0" file_version="3.2.0"/>|
 | 2.10.0 | 3.1.0 | 2023.08.01 | <AddressWrapper version="2.10.0" file_version="3.1.0"/>|
