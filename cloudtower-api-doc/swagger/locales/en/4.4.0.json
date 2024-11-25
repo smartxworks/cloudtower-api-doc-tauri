@@ -2141,39 +2141,43 @@
       "description": "when remove system service from tower, active this api to clear it from observability service"
     },
     "/create-backup-plan": {
-      "summary": "",
+      "summary": "create backup plan",
       "description": ""
     },
     "/update-backup-plan": {
-      "summary": "",
+      "summary": "update backup plan",
       "description": ""
     },
     "/delete-backup-plan": {
-      "summary": "",
+      "summary": "delete backup plan",
       "description": ""
     },
     "/suspend-backup-plan": {
-      "summary": "",
+      "summary": "suspend backup plan",
       "description": ""
     },
     "/resume-backup-plan": {
-      "summary": "",
+      "summary": "resume backup plan",
       "description": ""
     },
     "/execute-backup-plan": {
-      "summary": "",
+      "summary": "execute backup plan",
       "description": ""
     },
     "/backup-rebuild-vm": {
-      "summary": "",
+      "summary": "backup rebuild vm",
       "description": ""
     },
     "/backup-restore-vm-in-place": {
-      "summary": "",
+      "summary": "backup restore vm in place",
       "description": ""
     },
     "/delete-backup-restore-point": {
-      "summary": "",
+      "summary": "delete backup restore point",
+      "description": ""
+    },
+    "/get-backup-restore-point-metadata": {
+      "summary": "get backup restore point metadata",
       "description": ""
     }
   }
