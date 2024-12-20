@@ -76,7 +76,11 @@ import en4_4API from "./locales/en/4.4.0.json";
 import zh4_4_1API from "./locales/zh/4.4.1.json";
 import en4_4_1API from "./locales/en/4.4.1.json";
 
+import zh4_5API from "./locales/zh/4.5.0.json";
+import en4_5API from "./locales/en/4.5.0.json";
+
 export const fallbackNS = [
+  "4_5_0",
   "4_4_1",
   "4_4_0",
   "4_3_0",
@@ -136,6 +140,7 @@ i18next.init({
       ["4_3_0"]: en4_3API,
       ["4_4_0"]: en4_4API,
       ["4_4_1"]: en4_4_1API,
+      ["4_5_0"]: en4_5API,
       components: enComponents,
     },
     [SupportLanguage.zh]: {
@@ -163,6 +168,7 @@ i18next.init({
       ["4_3_0"]: zh4_3API,
       ["4_4_0"]: zh4_4API,
       ["4_4_1"]: zh4_4_1API,
+      ["4_5_0"]: zh4_5API
       components: zhComponents,
     },
   },
@@ -203,6 +209,7 @@ i18next.init({
     "4_3_0",
     "4_4_0",
     "4_4_1",
+    '4_5_0',
     "components",
   ],
   nsSeparator: ".",
