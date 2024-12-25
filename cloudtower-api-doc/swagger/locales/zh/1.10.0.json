@@ -121,8 +121,8 @@
     },
     "CloudInitNetWorkRoute": {
       "network": "静态路由网络地址, 如果这里配置 0.0.0.0, 则优先按照用户设置来配置默认路由",
-      "netmask": "访问静态路由地址需经过的网关地址",
-      "gateway": "静态路由网络地址的子网掩码"
+      "netmask": "静态路由网络地址的子网掩码",
+      "gateway": "访问静态路由地址需经过的网关地址"
     },
     "Cluster": {
       "application_highest_version": "可升级高级监控版本",
