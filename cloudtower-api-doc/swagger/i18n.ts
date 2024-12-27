@@ -164,6 +164,8 @@ i18next.init({
   updateMissing: true,
   fallbackLng: null,
   fallbackNS,
+  returnEmptyString: false,
+  returnNull: false,
   interpolation: {
     prefix: "{",
     suffix: "}",
