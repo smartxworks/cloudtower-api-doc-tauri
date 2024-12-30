@@ -82,7 +82,6 @@ export const wrapSpecWithI18n = (
   });
   // handle schemas
   Object.keys(components.schemas).forEach((s) => {
-    const schema = i18next.t(`${ns}.schemas.${s}`, {lng: language, returnObjects: true}) as Record<string, string>;
     describeSchema({
       schema: components.schemas[s],
       prefix: ["components", "schemas", s],
@@ -97,11 +96,28 @@ export const wrapSpecWithI18n = (
               if(schemaObj['properties'][key]['allOf']) {
                 const allOfRef = schemaObj['properties'][key]['allOf'][0]['$ref'];
                 _.set(cloneSpec, [...prefix, "properties", key, "title"], allOfRef.split('/').pop());
+                const des = i18next.t(`${ns}.schemas.${s}.${key}`, {lng: language});
+                if(des) {
+                  _.set(cloneSpec, [...prefix, "properties", key, "description"], des);
+                }
               }
             })
           }
         }
-        _.set(cloneSpec, [...prefix, "description"], schema[path]);
+        const des = i18next.t(`${ns}.schemas.${s}${path ? `.${path}` : ''}`, {lng: language, returnObjects: true});
+        // not found schema description
+        if(typeof des === 'string' && des.includes(s)) { return }
+        if(typeof des === 'string') {
+          _.set(cloneSpec, [...prefix, "description"], des);
+        }
+        if(typeof des ==='object') {
+          Object.keys(des).forEach((key) => {
+            const keyPath = key.split('.').join('.properties.').split('.')
+            if(des![key]) {
+              _.set(cloneSpec, [...prefix, 'properties', ...keyPath, 'description'], des![key]);
+            }
+          })
+        }
       },
     });
   });
