@@ -55,25 +55,29 @@ import en3_3API from "./locales/en/3.3.0.json";
 import zh3_4API from "./locales/zh/3.4.0.json";
 import en3_4API from "./locales/en/3.4.0.json";
 
-import zh3_4_4API from './locales/zh/3.4.4.json';
-import en3_4_4API from './locales/en/3.4.4.json';
+import zh3_4_4API from "./locales/zh/3.4.4.json";
+import en3_4_4API from "./locales/en/3.4.4.json";
 
-import zh4_0API from './locales/zh/4.0.0.json';
-import en4_0API from './locales/en/4.0.0.json';
+import zh4_0API from "./locales/zh/4.0.0.json";
+import en4_0API from "./locales/en/4.0.0.json";
 
-import zh4_1API from './locales/zh/4.1.0.json';
-import en4_1API from './locales/en/4.1.0.json';
+import zh4_1API from "./locales/zh/4.1.0.json";
+import en4_1API from "./locales/en/4.1.0.json";
 
-import zh4_2API from './locales/zh/4.2.0.json';
-import en4_2API from './locales/en/4.2.0.json';
+import zh4_2API from "./locales/zh/4.2.0.json";
+import en4_2API from "./locales/en/4.2.0.json";
 
-import zh4_3API from './locales/zh/4.3.0.json';
-import en4_3API from './locales/en/4.3.0.json';
+import zh4_3API from "./locales/zh/4.3.0.json";
+import en4_3API from "./locales/en/4.3.0.json";
 
 import zh4_4API from "./locales/zh/4.4.0.json";
 import en4_4API from "./locales/en/4.4.0.json";
 
+import zh4_4_1API from "./locales/zh/4.4.1.json";
+import en4_4_1API from "./locales/en/4.4.1.json";
+
 export const fallbackNS = [
+  "4_4_1",
   "4_4_0",
   "4_3_0",
   "4_2_0",
@@ -108,56 +112,58 @@ export type ApiDoc = {
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
-        ['1_8_0']: en1_8API,
-        ['1_9_0']: en1_9API,
-        ['1_10_0']: en1_10Api,
-        ['2_0_0']: en2_0API,
-        ['2_1_0']: en2_1API,
-        ['2_2_0']: en2_2API,
-        ['2_3_0']: en2_3API,
-        ['2_4_0']: en2_4API,
-        ['2_5_0']: en2_5API,
-        ['2_6_0']: en2_6API,
-        ['2_7_0']: en2_7API,
-        ['2_8_0']: en2_8API,
-        ['3_0_0']: en3_0API,
-        ['3_1_0']: en3_1API,
-        ['3_2_0']: en3_2API,
-        ['3_3_0']: en3_3API,
-        ['3_4_0']: en3_4API,
-        ['3_4_4']: en3_4_4API,
-        ['4_0_0']: en4_0API,
-        ['4_1_0']: en4_1API,
-        ['4_2_0']: en4_2API,
-        ['4_3_0']: en4_3API,
-        ["4_4_0"]: en4_4API,
-        components: enComponents,
+      ["1_8_0"]: en1_8API,
+      ["1_9_0"]: en1_9API,
+      ["1_10_0"]: en1_10Api,
+      ["2_0_0"]: en2_0API,
+      ["2_1_0"]: en2_1API,
+      ["2_2_0"]: en2_2API,
+      ["2_3_0"]: en2_3API,
+      ["2_4_0"]: en2_4API,
+      ["2_5_0"]: en2_5API,
+      ["2_6_0"]: en2_6API,
+      ["2_7_0"]: en2_7API,
+      ["2_8_0"]: en2_8API,
+      ["3_0_0"]: en3_0API,
+      ["3_1_0"]: en3_1API,
+      ["3_2_0"]: en3_2API,
+      ["3_3_0"]: en3_3API,
+      ["3_4_0"]: en3_4API,
+      ["3_4_4"]: en3_4_4API,
+      ["4_0_0"]: en4_0API,
+      ["4_1_0"]: en4_1API,
+      ["4_2_0"]: en4_2API,
+      ["4_3_0"]: en4_3API,
+      ["4_4_0"]: en4_4API,
+      ["4_4_1"]: en4_4_1API,
+      components: enComponents,
     },
     [SupportLanguage.zh]: {
-        ['1_8_0']:zh1_8Api,
-        ['1_9_0']:zh1_9Api,
-        ['1_10_0']: zh1_10Api,
-        ['2_0_0']: zh2_0API,
-        ['2_1_0']: zh2_1API,
-        ['2_2_0']: zh2_2API,
-        ['2_3_0']: zh2_3API,
-        ['2_4_0']: zh2_4API,
-        ['2_5_0']: zh2_5API,
-        ['2_6_0']: zh2_6API,
-        ['2_7_0']: zh2_7API,
-        ['2_8_0']: zh2_8API,
-        ['3_0_0']: zh3_0API,
-        ['3_1_0']: zh3_1API,
-        ['3_2_0']: zh3_2API,
-        ['3_3_0']: zh3_3API,
-        ['3_4_0']: zh3_4API,
-        ['3_4_4']: zh3_4_4API,
-        ['4_0_0']: zh4_0API,
-        ['4_1_0']: zh4_1API,
-        ['4_2_0']: zh4_2API,
-        ['4_3_0']: zh4_3API,
-        ["4_4_0"]: zh4_4API,
-        components: zhComponents,
+      ["1_8_0"]: zh1_8Api,
+      ["1_9_0"]: zh1_9Api,
+      ["1_10_0"]: zh1_10Api,
+      ["2_0_0"]: zh2_0API,
+      ["2_1_0"]: zh2_1API,
+      ["2_2_0"]: zh2_2API,
+      ["2_3_0"]: zh2_3API,
+      ["2_4_0"]: zh2_4API,
+      ["2_5_0"]: zh2_5API,
+      ["2_6_0"]: zh2_6API,
+      ["2_7_0"]: zh2_7API,
+      ["2_8_0"]: zh2_8API,
+      ["3_0_0"]: zh3_0API,
+      ["3_1_0"]: zh3_1API,
+      ["3_2_0"]: zh3_2API,
+      ["3_3_0"]: zh3_3API,
+      ["3_4_0"]: zh3_4API,
+      ["3_4_4"]: zh3_4_4API,
+      ["4_0_0"]: zh4_0API,
+      ["4_1_0"]: zh4_1API,
+      ["4_2_0"]: zh4_2API,
+      ["4_3_0"]: zh4_3API,
+      ["4_4_0"]: zh4_4API,
+      ["4_4_1"]: zh4_4_1API,
+      components: zhComponents,
     },
   },
   lng: SupportLanguage.zh,
@@ -172,7 +178,33 @@ i18next.init({
     escapeValue: false,
   },
   keySeparator: false,
-  ns: ['1_8_0', '1_9_0', '1_10_0','2_0_0', '2_1_0', '2_2_0', '2_3_0', '2_4_0', '2_5_0','2_6_0', '2_7_0','2_8_0', '3_0_0', '3_1_0','3_2_0', '3_3_0', '3_4_0', '3_4_4', '4_0_0', '4_1_0', '4_2_0', '4_3_0', '4_4_0','components'],
+  ns: [
+    "1_8_0",
+    "1_9_0",
+    "1_10_0",
+    "2_0_0",
+    "2_1_0",
+    "2_2_0",
+    "2_3_0",
+    "2_4_0",
+    "2_5_0",
+    "2_6_0",
+    "2_7_0",
+    "2_8_0",
+    "3_0_0",
+    "3_1_0",
+    "3_2_0",
+    "3_3_0",
+    "3_4_0",
+    "3_4_4",
+    "4_0_0",
+    "4_1_0",
+    "4_2_0",
+    "4_3_0",
+    "4_4_0",
+    "4_4_1",
+    "components",
+  ],
   nsSeparator: ".",
   load: "currentOnly",
   react: {
