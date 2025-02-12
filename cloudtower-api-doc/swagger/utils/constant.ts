@@ -160,7 +160,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
   },
   {
     name: "DistributedFirewall",
-    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup"],
+    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup", "NetworkPolicyRuleService"],
   },
   {
     name: "VirtualPrivateCloudNetwork",
@@ -176,6 +176,9 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "VirtualPrivateCloudFloatingIp",
       "VirtualPrivateCloudClusterBinding",
       "VirtualPrivateCloudExternalSubnet",
+      "VirtualPrivateCloudExternalSubnetGroup",
+      "VirtualPrivateCloudEdgeGateway",
+      "VirtualPrivateCloudEdgeGatewayGroup"
     ],
   },
   {

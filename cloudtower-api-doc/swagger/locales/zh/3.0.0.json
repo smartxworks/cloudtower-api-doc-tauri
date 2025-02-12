@@ -1586,7 +1586,7 @@
       "vms": "需要绑定的虚拟机",
       "label_groups": "需要绑定的标签组",
       "description": "描述",
-      "everoute_cluster_id": "Everoute 集群 id",
+      "everoute_cluster_id": "Everoute 服务 ID",
       "name": "唯一标识"
     },
     "DeleteSecurityGroup": {
@@ -1700,7 +1700,7 @@
       "egress": "出流量控制的配置",
       "apply_to": "应用到哪些虚拟机，或者标签上",
       "policy_mode": "策略模式。WORK 表示立刻生效，MONITOR 不会立即生效，需要改为 WORK 才会生效",
-      "everoute_cluster_id": "Everoute 集群 Id",
+      "everoute_cluster_id": "Everoute 服务 ID",
       "description": "安全策略描述",
       "name": "安全策略名称，不可重复"
     },
