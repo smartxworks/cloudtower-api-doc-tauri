@@ -525,11 +525,11 @@
       "description": ""
     },
     "/get-everoute-clusters-connection": {
-      "summary": "获取 Everoute 集群数量",
+      "summary": "获取 Everoute 服务数量",
       "description": ""
     },
     "/get-everoute-clusters": {
-      "summary": "获取 Everoute 集群",
+      "summary": "获取 Everoute 服务",
       "description": ""
     },
     "/get-everoute-licenses-connection": {
@@ -8491,7 +8491,7 @@
     },
     "IsolationPolicy": {
       "egress": "出流量",
-      "everoute_cluster": "关联 关联 Everoute 服务",
+      "everoute_cluster": "关联 Everoute 服务",
       "id": "唯一标识",
       "ingress": "入流量",
       "labels": "关联标签",
@@ -8506,7 +8506,7 @@
     },
     "IsolationPolicyWhereInput": {
       "AND": "符合所有的筛选条件",
-      "everoute_cluster": "关联 关联 Everoute 服务",
+      "everoute_cluster": "关联 Everoute 服务",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -17826,7 +17826,7 @@
     },
     {
       "name": "EverouteCluster",
-      "x-displayName": "Everoute 集群",
+      "x-displayName": "Everoute 服务",
       "description": ""
     },
     {

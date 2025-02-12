@@ -1930,7 +1930,7 @@
     },
     "VirtualPrivateCloudCreationParams": {
       "mtu": "VPC 的 MTU",
-      "vpc_service_id": "所属服务 id",
+      "vpc_service_id": "所属 VPC 服务 id (通过 Everoute 服务获取)",
       "description": "描述",
       "name": "名称"
     },
