@@ -1333,8 +1333,8 @@
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "TaskCreationParams": {
-      "finished_at": "",
-      "started_at": "",
+      "finished_at": "结束时间",
+      "started_at": "开始时间",
       "steps": "步骤",
       "args": "任务参数",
       "key": "内部字段，为防止创建重复任务的特殊标识",
@@ -1348,8 +1348,8 @@
       "resource_type": "资源类型"
     },
     "TaskUpdateParams": {
-      "data.finished_at": "",
-      "data.started_at": "",
+      "data.finished_at": "结束时间",
+      "data.started_at": "开始时间",
       "data.resource_rollback_retry_count": "资源回滚的重试次数",
       "data.resource_rollback_error": "资源回滚的错误原因",
       "data.resource_rollbacked": "资源是否回滚结束",
@@ -1368,8 +1368,8 @@
       "data.resource_mutation": "资源变更信息",
       "data.resource_type": "资源类型",
       "data.description": "描述",
-      "data": "",
-      "where": ""
+      "data": "资源",
+      "where": "筛选条件"
     },
     "NtpServiceUrl": {
       "ntp_service_url": ""
