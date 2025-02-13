@@ -886,9 +886,9 @@
       "vpc": ""
     },
     "NestedTemplateVpcNic": {
-      "use_floating_ip": "",
-      "vpc_local_id": "",
-      "vpc_subnet_local_id": ""
+      "use_floating_ip": "是否使用浮动 IP",
+      "vpc_local_id": "VPC UUID",
+      "vpc_subnet_local_id": "VPC 子网 UUID"
     },
     "NestedTemplateConfig": {
       "cpu_exclusive_expected_enabled": "",
@@ -997,7 +997,7 @@
     "VirtualPrivateCloud": {
       "associate_external_subnet_num": "关联外部子网数量",
       "description": "描述",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "异步状态（内部字段）",
       "id": "资源的唯一标识",
       "isolation_policies": "关联的 VPC 隔离策略",
       "local_id": "资源的 UUID",
@@ -1007,7 +1007,7 @@
       "security_groups": "关联的 VPC 安全组",
       "security_policies": "关联的 VPC 安全策略",
       "subnets": "关联的子网",
-      "vpc_service": ""
+      "vpc_service": "所属 VPC 服务"
     },
     "NestedVirtualPrivateCloudServiceTepIpPool": {
       "display_name": "显示名称",
@@ -1023,7 +1023,7 @@
     },
     "VirtualPrivateCloudClusterBinding": {
       "cluster": "关联集群",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "异步状态（内部字段）",
       "id": "资源的唯一标识",
       "mtu": "VPC 系统网络的 MTU",
       "vds": "关联虚拟分布式交换机",
@@ -1034,7 +1034,7 @@
       "cidr": "CIDR 块",
       "description": "描述",
       "edge_gateway": "所属边缘网关",
-      "entityAsyncStatus": "",
+      "entityAsyncStatus": "异步状态（内部字段）",
       "exclusive": "是否非共享型外部子网",
       "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
       "floating_ips": "关联浮动 IP 集合",
@@ -1384,7 +1384,7 @@
       "global_whitelist": "全局白名单",
       "id": "唯一标识",
       "installed": "是否安装",
-      "load_balancer_service": "",
+      "load_balancer_service": "负载均衡服务",
       "name": "名称",
       "phase": "阶段",
       "status": "状态",
