@@ -168,7 +168,7 @@ i18next.init({
       ["4_3_0"]: zh4_3API,
       ["4_4_0"]: zh4_4API,
       ["4_4_1"]: zh4_4_1API,
-      ["4_5_0"]: zh4_5API
+      ["4_5_0"]: zh4_5API,
       components: zhComponents,
     },
   },
