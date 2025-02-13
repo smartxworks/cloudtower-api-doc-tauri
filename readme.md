@@ -30,7 +30,3 @@ run `yarn api:new`
 #### how to check document missing locales
 
 run `yarn api:scan`
-
-#### how to add new documents / markdown file
-
-please see: https://docs.google.com/document/d/1h9Wjd2yPfoAyZ-1dCa8IH5ltDK6kYglEzW-w4hu72pA/edit

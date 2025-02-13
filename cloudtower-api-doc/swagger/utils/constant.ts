@@ -181,4 +181,16 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
     name: "Other",
     tags: ["ApiInfo"],
   },
+  {
+    name: "Observability",
+    tags: ["Observability"]
+  }
 ];
+
+
+
+export const APIInfo = {
+  title: "CloudTower APIs",
+  version: "",
+  description: "cloudtower operation API and SDK"
+}

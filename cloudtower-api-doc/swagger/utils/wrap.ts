@@ -3,7 +3,7 @@ import { OpenAPIV3 } from "openapi-types";
 import i18next, { ApiDoc, fallbackNS } from "../i18n";
 import { ISpec  } from "./swagger";
 import { describeSchema } from "./describe";
-import { tagsGroup } from './constant';
+import { APIInfo, tagsGroup } from './constant';
 import swaggerSpecExample from '../examples/swagger-examples.json';
 
 
@@ -133,5 +133,8 @@ export const wrapSpecWithI18n = (
     "x-displayName": i18next.t(`components.${tag}`),
     description: ""
   }));
+
+  cloneSpec.info = APIInfo;
+  cloneSpec.info.version = version.split('_').join('.');
   return cloneSpec;
 };
