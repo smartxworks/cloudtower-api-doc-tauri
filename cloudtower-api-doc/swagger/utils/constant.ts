@@ -42,6 +42,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
     name: "CloudTowerSetting",
     tags: [
       "Application",
+      "Ntp",
       "ClusterImage",
       "ClusterUpgradeHistory",
       "Deploy",
