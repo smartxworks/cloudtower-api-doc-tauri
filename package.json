@@ -9,7 +9,7 @@
     "api:docx": "node ./cloudtower-api-doc/scripts/build-docs.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start  ./cloudtower-api-doc -p 3300",
-    "build": "docusaurus build  ./cloudtower-api-doc",
+    "build": "NODE_OPTIONS=--max-old-space-size=10248 docusaurus build  ./cloudtower-api-doc",
     "build:tauri": "cross-env TAURI_ENV=true docusaurus build ./cloudtower-api-doc",
     "serve": "docusaurus serve ./cloudtower-api-doc",
     "swizzle": "docusaurus swizzle -- @docusaurus/theme-classic  Footer ./cloudtower-api-doc",
