@@ -1295,41 +1295,41 @@
       "win_opt_not": ""
     },
     "ClusterStorageInfo": {
-      "allocable_storage_capacity": "",
-      "free_data_space": "",
-      "failure_data_space": "",
-      "used_data_space": "",
-      "total_data_capacity": "",
-      "storage_cluster": "",
-      "stretch": "",
-      "type": "",
-      "name": "",
-      "id": ""
+      "allocable_storage_capacity": "存储预估可分配大小",
+      "free_data_space": "空闲存储大小，单位为字节",
+      "failure_data_space": "失效存储大小，单位为字节",
+      "used_data_space": "已使用存储大小，单位为字节",
+      "total_data_capacity": "存储总容量大小，单位为字节",
+      "storage_cluster": "存储集群的存储信息",
+      "stretch": "是否双活",
+      "type": "集群类型",
+      "name": "集群名称",
+      "id": "资源 ID"
     },
     "AllocatableReplicaStorageCapacity": {
-      "capacity": "",
-      "replica_num": ""
+      "capacity": "基于对应副本数的可分配容量，单位为字节",
+      "replica_num": "副本数"
     },
     "AllocatableEcStorageCapacity": {
-      "capacity": "",
-      "m": "",
-      "k": ""
+      "capacity": "基于对应纠删码的可分配容量，单位为字节",
+      "m": "校验块数量",
+      "k": "数据块数量"
     },
     "AllocatableStorageCapacity": {
-      "ec": "",
-      "replica": ""
+      "ec": "基于纠删码配置的可分配容量",
+      "replica": "基于副本数的可分配容量"
     },
     "ReplicaNum": {},
     "ClusterStorageInfoEcConfig": {
-      "m": "",
-      "k": ""
+      "m": "校验块数量",
+      "k": "数据块数量"
     },
     "GetClusterStorageInfoEffect": {
-      "ec": "",
-      "replica": ""
+      "ec": "需要用于查询可分配容量的纠删码配置",
+      "replica": "需要用于查询可分配容量的副本数"
     },
     "GetClusterStorageInfoRequestBody": {
-      "effect": "",
+      "effect": "查询可分配容量的配置",
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "TaskCreationParams": {
@@ -1372,7 +1372,7 @@
       "where": "筛选条件"
     },
     "NtpServiceUrl": {
-      "ntp_service_url": ""
+      "ntp_service_url": "ntp 服务地址，使用逗号分隔"
     },
     "EverouteCluster": {
       "agent_elf_clusters": "代理 ELF 集群",
@@ -1410,12 +1410,12 @@
       "description": "清理系统服务的报警通知配置，目前包括：邮件通知配置、SNMP 陷阱配置、Webhook 通知配置"
     },
     "/get-cluster-storage-info": {
-      "summary": "",
-      "description": ""
+      "summary": "获取集群存储信息",
+      "description": "获取集群存储信息"
     },
     "/get-ntp-service-url": {
-      "summary": "",
-      "description": ""
+      "summary": "获取 ntp 服务地址",
+      "description": "获取 ntp 服务地址"
     }
   }
 }
