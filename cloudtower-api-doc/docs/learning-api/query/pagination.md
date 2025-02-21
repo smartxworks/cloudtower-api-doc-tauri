@@ -9,7 +9,7 @@ sidebar_position: 222
 
 ```json
 {
-  "orderBy": "VcpuDesc"
+  "orderBy": "vcpu_DESC"
 }
 ```
 
