@@ -8,7 +8,7 @@ const i18next = require('i18next');
 const converter = require('widdershins');
 const nodePandoc = require('node-pandoc');
 const { describeSchema } = require('./describe');
-const versions = require('../versions.json')
+const versions = require('./versions.json')
 
 const SupportLanguage = {
   zh: "zh",
@@ -17,39 +17,26 @@ const SupportLanguage = {
 
 const tagsGroup = [
   {
-    name: 'ClusterManagement',
+    name: "ClusterManagement",
     tags: [
       "Cluster",
       "ClusterSettings",
       "SnmpTransport",
       "SnmpTrapReceiver",
-      "MigrateTransmitter"
-    ]
+      "MigrateTransmitter",
+    ],
   },
   {
     name: "MetroXClusterManagement",
-    tags: [
-      "Witness",
-      "WitnessService",
-      "Zone",
-      "ZoneTopo",
-    ]
+    tags: ["Witness", "WitnessService", "Zone", "ZoneTopo"],
   },
   {
     name: "VmwareManagement",
-    tags: [
-      "VcenterAccount",
-      "VsphereEsxiAccount"
-    ]
+    tags: ["VcenterAccount", "VsphereEsxiAccount"],
   },
   {
     name: "AlertManagement",
-    tags: [
-      "AlertNotifier",
-      "Alert",
-      "GlobalAlertRule",
-      "AlertRule"
-    ]
+    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule"],
   },
   {
     name: "VmManagement",
@@ -63,20 +50,23 @@ const tagsGroup = [
       "VmSnapshot",
       "VmTemplate",
       "VmVolume",
-      "VmVolumeSnapshot"
-    ]
+      "VmVolumeSnapshot",
+      "Ovf",
+      "VmExportFile",
+    ],
   },
   {
     name: "CloudTowerSetting",
     tags: [
       "Application",
+      "Ntp",
       "ClusterImage",
       "ClusterUpgradeHistory",
       "Deploy",
       "GlobalSettings",
       "License",
-      "SvtImage"
-    ]
+      "SvtImage",
+    ],
   },
   {
     name: "HardwareManagement",
@@ -90,8 +80,9 @@ const tagsGroup = [
       "Ipmi",
       "NodeTopo",
       "PmemDimm",
-      "UsbDevice"
-    ]
+      "UsbDevice",
+      "GpuDevice",
+    ],
   },
   {
     name: "StorageManagement",
@@ -111,105 +102,60 @@ const tagsGroup = [
       "NvmfNamespace",
       "NvmfNamespaceSnapshot",
       "NvmfSubsystem",
-      "StoragePolicyConector"
-    ]
+      "StoragePolicyConector",
+    ],
   },
   {
     name: "SharedManagement",
-    tags: [
-      "ContentLibraryImage",
-      "ContentLibraryVmTemplate"
-    ]
+    tags: ["ContentLibraryImage", "ContentLibraryVmTemplate"],
   },
   {
     name: "DatacneterAndOrgManagement",
-    tags: [
-      "Datacenter",
-      "Organization"
-    ]
+    tags: ["Datacenter", "Organization"],
   },
   {
     name: "EntityFileterManagement",
-    tags: [
-      "EntityFilter",
-      "VmEntityFilterResult"
-    ]
+    tags: ["EntityFilter", "VmEntityFilterResult"],
   },
   {
     name: "ErManagement",
-    tags: [
-      "EverouteCluster",
-      "EverouteLicense",
-      "EveroutePackage",
-      "IsolationPolicy",
-      "SecurityPolicy"
-    ]
+    tags: ["EverouteCluster", "EverouteLicense", "EveroutePackage", "V2EverouteLicense"],
   },
   {
     name: "MonitorManagement",
-    tags: [
-      "Graph",
-      "View",
-      "Metrics"
-    ]
+    tags: ["Graph", "View", "Metrics"],
   },
   {
     name: "LabelManagement",
-    tags: [
-      "Label"
-    ]
+    tags: ["Label"],
   },
   {
     name: "LogManagement",
-    tags: [
-      "LogCollection",
-      "LogServiceConfig"
-    ]
+    tags: ["LogCollection", "LogServiceConfig"],
   },
   {
     name: "NetworkManagement",
-    tags: [
-      "Nic",
-      "Vds",
-      "Vlan"
-    ]
+    tags: ["Nic", "Vds", "Vlan"],
   },
   {
     name: "ReportManagement",
-    tags: [
-      "ReportTask",
-      "ReportTemplate",
-      "TableReporter"
-    ]
+    tags: ["ReportTask", "ReportTemplate", "TableReporter"],
   },
   {
     name: "SnapshotManagement",
-    tags: [
-      "SnapshotGroup",
-      "SnapshotPlan",
-      "SnapshotPlanTask"
-    ]
+    tags: ["SnapshotGroup", "SnapshotPlan", "SnapshotPlanTask"],
   },
   {
     name: "AuditManagement",
-    tags: [
-      "SystemAuditLog",
-      "UserAuditLog"
-    ]
+    tags: ["SystemAuditLog", "UserAuditLog"],
   },
   {
     name: "TaskManagement",
-    tags:[
-      "Task",
-      "UploadTask"
-    ]
+    tags: ["Task", "UploadTask"],
   },
   {
     name: "UserManagement",
-    tags:[
-      "UserRoleNext",
-      "User"
-    ]
+    tags: ["UserRoleNext", "User"],
   },
   {
     name: "BackupManagement",
@@ -222,14 +168,40 @@ const tagsGroup = [
       "BackupRestorePoint",
       "BackupService",
       "BackupStoreRepository",
-      "BackupTargetExecution"
-    ]
+      "BackupTargetExecution",
+    ],
   },
   {
-    "name": "Other",
-    "tags": [
-      "ApiInfo"
-    ]
+    name: "CloudTowerApplicationManagement",
+    tags: ["CloudTowerApplication", "CloudTowerApplicationPackage"],
+  },
+  {
+    name: "DistributedFirewall",
+    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup"],
+  },
+  {
+    name: "VirtualPrivateCloudNetwork",
+    tags: [
+      "VirtualPrivateCloud",
+      "VirtualPrivateCloudSubnet",
+      "VirtualPrivateCloudRouteTable",
+      "VirtualPrivateCloudSecurityGroup",
+      "VirtualPrivateCloudSecurityPolicy",
+      "VirtualPrivateCloudIsolationPolicy",
+      "VirtualPrivateCloudNatGateway",
+      "VirtualPrivateCloudRouterGateway",
+      "VirtualPrivateCloudFloatingIp",
+      "VirtualPrivateCloudClusterBinding",
+      "VirtualPrivateCloudExternalSubnet",
+    ],
+  },
+  {
+    name: "Other",
+    tags: ["ApiInfo"],
+  },
+  {
+    name: "Observability",
+    tags: ["Observability"]
   }
 ];
 
@@ -265,45 +237,177 @@ const initI18n = () => {
   const zh2_5API = require('../swagger/locales/zh/2.5.0.json');
   const en2_5API = require('../swagger/locales/en/2.5.0.json');
 
+  const zh2_6API = require('../swagger/locales/zh/2.6.0.json');
+  const en2_6API = require('../swagger/locales/en/2.6.0.json');
+
+  const zh2_7API = require('../swagger/locales/zh/2.7.0.json');
+  const en2_7API = require('../swagger/locales/en/2.7.0.json');
+
+  const zh2_8API = require('../swagger/locales/zh/2.8.0.json');
+  const en2_8API = require('../swagger/locales/en/2.8.0.json');
+
+  const zh3_0API = require('../swagger/locales/zh/3.0.0.json');
+  const en3_0API = require('../swagger/locales/en/3.0.0.json');
+
+  const zh3_1API = require('../swagger/locales/zh/3.1.0.json');
+  const en3_1API = require('../swagger/locales/en/3.1.0.json');
+
+  const zh3_2API = require('../swagger/locales/zh/3.2.0.json');
+  const en3_2API = require('../swagger/locales/en/3.2.0.json');
+
+  const zh3_3API = require('../swagger/locales/zh/3.3.0.json');
+  const en3_3API = require('../swagger/locales/en/3.3.0.json');
+
+  const zh3_4API = require('../swagger/locales/zh/3.4.0.json');
+  const en3_4API = require('../swagger/locales/en/3.4.0.json');
+
+  const zh3_4_4API = require('../swagger/locales/zh/3.4.4.json');
+  const en3_4_4API = require('../swagger/locales/en/3.4.4.json');
+
+  const zh4_0API = require('../swagger/locales/zh/4.0.0.json');
+  const en4_0API = require('../swagger/locales/en/4.0.0.json');
+
+  const zh4_1API = require('../swagger/locales/zh/4.1.0.json');
+  const en4_1API = require('../swagger/locales/en/4.1.0.json');
+
+  const zh4_2API = require('../swagger/locales/zh/4.2.0.json');
+  const en4_2API = require('../swagger/locales/en/4.2.0.json');
+
+  const zh4_3API = require('../swagger/locales/zh/4.3.0.json');
+  const en4_3API = require('../swagger/locales/en/4.3.0.json');
+
+  const zh4_4API = require('../swagger/locales/zh/4.4.0.json');
+  const en4_4API = require('../swagger/locales/en/4.4.0.json');
+
+  const zh4_4_1API = require('../swagger/locales/zh/4.4.1.json');
+  const en4_4_1API = require('../swagger/locales/en/4.4.1.json');
+
+  const zh4_5API = require('../swagger/locales/zh/4.5.0.json');
+  const en4_5API = require('../swagger/locales/en/4.5.0.json');
+
   i18next.init({
     resources: {
       [SupportLanguage.en]: {
-          ['1_8_0']: en1_8API,
-          ['1_9_0']: en1_9API,
-          ['1_10_0']: en1_10Api,
-          ['2_0_0']: en2_0API,
-          ['2_1_0']: en2_1API,
-          ['2_2_0']: en2_2API,
-          ['2_3_0']: en2_3API,
-          ['2_4_0']: en2_4API,
-          ['2_5_0']: en2_5API,
-          components: enComponents,
+        ["1_8_0"]: en1_8API,
+        ["1_9_0"]: en1_9API,
+        ["1_10_0"]: en1_10Api,
+        ["2_0_0"]: en2_0API,
+        ["2_1_0"]: en2_1API,
+        ["2_2_0"]: en2_2API,
+        ["2_3_0"]: en2_3API,
+        ["2_4_0"]: en2_4API,
+        ["2_5_0"]: en2_5API,
+        ["2_6_0"]: en2_6API,
+        ["2_7_0"]: en2_7API,
+        ["2_8_0"]: en2_8API,
+        ["3_0_0"]: en3_0API,
+        ["3_1_0"]: en3_1API,
+        ["3_2_0"]: en3_2API,
+        ["3_3_0"]: en3_3API,
+        ["3_4_0"]: en3_4API,
+        ["3_4_4"]: en3_4_4API,
+        ["4_0_0"]: en4_0API,
+        ["4_1_0"]: en4_1API,
+        ["4_2_0"]: en4_2API,
+        ["4_3_0"]: en4_3API,
+        ["4_4_0"]: en4_4API,
+        ["4_4_1"]: en4_4_1API,
+        ["4_5_0"]: en4_5API,
+        components: enComponents,
       },
       [SupportLanguage.zh]: {
-          ['1_8_0']:zh1_8Api,
-          ['1_9_0']:zh1_9Api,
-          ['1_10_0']: zh1_10Api,
-          ['2_0_0']: zh2_0API,
-          ['2_1_0']: zh2_1API,
-          ['2_2_0']: zh2_2API,
-          ['2_3_0']: zh2_3API,
-          ['2_4_0']: zh2_4API,
-          ['2_5_0']: zh2_5API,
-          components: zhComponents,
+        ["1_8_0"]: zh1_8Api,
+        ["1_9_0"]: zh1_9Api,
+        ["1_10_0"]: zh1_10Api,
+        ["2_0_0"]: zh2_0API,
+        ["2_1_0"]: zh2_1API,
+        ["2_2_0"]: zh2_2API,
+        ["2_3_0"]: zh2_3API,
+        ["2_4_0"]: zh2_4API,
+        ["2_5_0"]: zh2_5API,
+        ["2_6_0"]: zh2_6API,
+        ["2_7_0"]: zh2_7API,
+        ["2_8_0"]: zh2_8API,
+        ["3_0_0"]: zh3_0API,
+        ["3_1_0"]: zh3_1API,
+        ["3_2_0"]: zh3_2API,
+        ["3_3_0"]: zh3_3API,
+        ["3_4_0"]: zh3_4API,
+        ["3_4_4"]: zh3_4_4API,
+        ["4_0_0"]: zh4_0API,
+        ["4_1_0"]: zh4_1API,
+        ["4_2_0"]: zh4_2API,
+        ["4_3_0"]: zh4_3API,
+        ["4_4_0"]: zh4_4API,
+        ["4_4_1"]: zh4_4_1API,
+        ["4_5_0"]: zh4_5API,
+        components: zhComponents,
       },
     },
     lng: SupportLanguage.zh,
     updateMissing: true,
     fallbackLng: [SupportLanguage.en, SupportLanguage.zh],
-    fallbackNS: ['1_8_0','1_9_0','1_10_0', '2_0_0', '2_1_0','2_2_0', '2_3_0', '2_4_0', '2_5_0'],
+    fallbackNS: [
+      "4_5_0",
+      "4_4_1",
+      "4_4_0",
+      "4_3_0",
+      "4_2_0",
+      "4_1_0",
+      "4_0_0",
+      "3_4_4",
+      "3_4_0",
+      "3_3_0",
+      "3_2_0",
+      "3_1_0",
+      "3_0_0",
+      "2_8_0",
+      "2_7_0",
+      "2_6_0",
+      "2_5_0",
+      "2_4_0",
+      "2_3_0",
+      "2_2_0",
+      "2_1_0",
+      "2_0_0",
+      "1_10_0",
+      "1_9_0",
+      "1_8_0",
+    ],
     interpolation: {
       prefix: "{",
       suffix: "}",
       escapeValue: false,
     },
     keySeparator: false,
-    ns: ['1_8_0', '1_9_0', '1_10_0','2_0_0', '2_1_0', '2_2_0', '2_3_0', '2_4_0', '2_5_0','components'],
-    nsSeparator: ".",
+    ns: [
+      "1_8_0",
+      "1_9_0",
+      "1_10_0",
+      "2_0_0",
+      "2_1_0",
+      "2_2_0",
+      "2_3_0",
+      "2_4_0",
+      "2_5_0",
+      "2_6_0",
+      "2_7_0",
+      "2_8_0",
+      "3_0_0",
+      "3_1_0",
+      "3_2_0",
+      "3_3_0",
+      "3_4_0",
+      "3_4_4",
+      "4_0_0",
+      "4_1_0",
+      "4_2_0",
+      "4_3_0",
+      "4_4_0",
+      "4_4_1",
+      '4_5_0',
+      "components",
+    ],    nsSeparator: ".",
     load: "currentOnly",
     react: {
       bindI18n: "languageChanged addResource",
@@ -562,8 +666,8 @@ const buildDocs = (swagger, version, lng) => {
     maxDepth: 2,
   })
   .then(str => {
-    const filename = `CloudTower_API_DOC-${version}-${lng}`;
-    docIt(str, filename)
+    const filename = `CloudTower_API_DOC-${version}`;
+    docIt(str, filename, lng);
   })
   .catch(err => {
     console.error('err', err);
