@@ -1692,7 +1692,7 @@
       "port": "指定端口"
     },
     "SecurityPolicyIngressEgressInput": {
-      "ports": "根据条件查找虚拟机，将安全策略应用到虚拟机上",
+      "ports": "根据协议和端口筛选流量",
       "target": "端口控制"
     },
     "SecurityPolicyCreateParams": {
