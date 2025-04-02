@@ -6,6 +6,7 @@
     "api:sync": "node ./cloudtower-api-doc/scripts/sync-swagger.js",
     "api:new": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
     "api:new-example": "node ./cloudtower-api-doc/scripts/create-new-api-example.js",
+    "api:update": "node ./cloudtower-api-doc/scripts/update-api-doc.js",
     "api:docx": "node ./cloudtower-api-doc/scripts/build-docs.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start  ./cloudtower-api-doc -p 3300",
