@@ -1679,13 +1679,13 @@
       "target": "应用安全策略的虚拟机"
     },
     "IPSecurityPolicy": {
-      "except_ip_block": "流量黑名单，基于白名单排除",
+      "except_ip_block": "基于白名单排除",
       "ip_block": "流量白名单"
     },
     "SecurityPolicyIngressEgressInputTarget": {
-      "security_groups": "根据标签组查询虚拟机，应用到虚拟机上。组内标签以交集筛选虚拟机，组间虚拟机选择为并集",
-      "ips": "ips ip 设置特定 IP 为白名单",
-      "label_groups": "security_groups 设置安全组下的机器为白名单"
+      "security_groups": "设置安全组下的虚拟机为白名单",
+      "ips": "设置特定 IP 为白名单",
+      "label_groups": "设置标签组下的虚拟机为白名单。组内标签以交集筛选虚拟机，组间虚拟机选择为并集"
     },
     "NetworkPolicyRulePortInput": {
       "protocol": "网络协议。填 ICMP 时， port 不生效",

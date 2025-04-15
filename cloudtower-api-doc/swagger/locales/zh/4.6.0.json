@@ -1286,8 +1286,8 @@
       "target": "端口控制"
     },
     "NestedNetworkPolicyRule": {
-      "except_ip_block": "排除的 IP 地址白名单",
-      "ip_block": "IP 地址白名单",
+      "except_ip_block": "排除的 IP 地址白名单/黑名单",
+      "ip_block": "IP 地址白名单/黑名单",
       "ports": "端口",
       "security_group": "安全组",
       "security_group_id": "安全组 ID",
@@ -1510,7 +1510,7 @@
       "vpc": "所属 VPC"
     },
     "VirtualPrivateCloudNatGatewayCreationParams": {
-      "external_ips": "主备外部接口（手动指定，且主备配置不一致时需填写）",
+      "external_ips": "主备转换地址（手动指定，且主备配置不一致时需填写）",
       "external_ip": "转换地址（手动指定时需填写）",
       "external_subnet_group_id": "所属外部子网组的 id",
       "external_subnet_id": "所属外部子网的 id",
@@ -3962,6 +3962,15 @@
       "orderBy": "表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。",
       "skip": "可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。",
       "where": "条件查询，表示查询符合该条件的资源。"
+    },
+    "IPSecurityPolicy": {
+      "except_ip_block": "基于白名单/黑名单排除",
+      "ip_block": "流量白名单/黑名单"
+    },
+    "SecurityPolicyIngressEgressInputTarget": {
+      "security_groups": "设置安全组下的虚拟机为白名单/黑名单",
+      "ips": "设置特定 IP 为白名单/黑名单",
+      "label_groups": "设置标签组下的虚拟机为白名单/黑名单。组内标签以交集筛选虚拟机，组间虚拟机选择为并集"
     },
     "SecurityPolicyCreateParams": {
       "is_blocklist": "是否为拒绝策略",
