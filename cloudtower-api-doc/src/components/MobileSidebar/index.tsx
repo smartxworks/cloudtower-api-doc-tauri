@@ -3,7 +3,7 @@ import clsx from "clsx";
 import NavbarMobileSidebarSecondaryMenu from "@theme/Navbar/MobileSidebar/SecondaryMenu";
 import TOCItems from "@theme/TOCItems";
 import { useThemeConfig } from "@docusaurus/theme-common";
-import { useDoc } from "@docusaurus/theme-common/internal";
+import { useDoc } from "@docusaurus/plugin-content-docs/client";
 
 import styles from "./styles.module.scss";
 
