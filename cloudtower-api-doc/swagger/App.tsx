@@ -50,7 +50,7 @@ const Redoc: React.FC<{
           ),
         },
         routingBasePath: "api/#",
-        pagination: "section",
+        pagination: "item",
         ctrlFHijack: false,
         expandDefaultServerVariables: true,
         scrollYOffset: 60,

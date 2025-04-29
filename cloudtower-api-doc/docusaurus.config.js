@@ -9,6 +9,9 @@ const webpack = require("webpack");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  future: {
+    experimental_router: 'hash'
+  },
   title: "CloudTower API",
   url: "https://www.smartx.com/",
   baseUrl: "/",
