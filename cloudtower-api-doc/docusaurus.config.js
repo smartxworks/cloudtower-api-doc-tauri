@@ -1,13 +1,17 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const { themes } = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 const webpack = require("webpack");
 
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  future: {
+    experimental_router: 'hash'
+  },
   title: "CloudTower API",
   url: "https://www.smartx.com/",
   baseUrl: "/",
@@ -123,7 +127,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['java']
+        additionalLanguages: ['java', 'bash', 'diff', 'json']
       },
       colorMode: {
         disableSwitch: true,
