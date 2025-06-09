@@ -1638,50 +1638,50 @@
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "PciDeviceMdevState": {
-      "enum": ""
+      "enum": "* NOT_SUPPORT: 不支持\n* ENABLED：已启用\n* NOT_ENABLED：未启用"
     },
     "PciDevicePartitionState": {
-      "enum": ""
+      "enum": "* NOT_SUPPORT: 不支持\n* ENABLED：已启用\n* NOT_ENABLED：未启用"
     },
     "PciDeviceSriovState": {
-      "enum": ""
+      "enum": "* NOT_SUPPORT: 不支持\n* ENABLED：已启用\n* NOT_ENABLED：未启用"
     },
     "PciDeviceType": {
-      "enum": ""
+      "enum": "* HSM：加密控制器"
     },
     "PciDeviceUsage": {
-      "enum": ""
+      "enum": "* SRIOV_VF: SR-IOV 直通\n* PASS_THROUGH:PCI 直通\n* MDEV: MDEV 直通"
     },
     "PciDevice": {
-      "bus": "",
-      "bus_location": "",
-      "class_code": "",
-      "device_type": "",
-      "entityAsyncStatus": "",
-      "function_num": "",
-      "host": "",
-      "id": "",
-      "iommu_status": "",
-      "local_id": "",
-      "mdev_state": "",
-      "mdev_type_id": "",
-      "name": "",
-      "partitioning_state": "",
-      "product_id": "",
-      "slot": "",
-      "sriov_state": "",
-      "subsystem_product_id": "",
-      "subsystem_vendor_id": "",
-      "total_mdev_num": "",
-      "total_partitioning_num": "",
-      "total_vf_num": "",
-      "usage_type": "",
-      "used_mdev_num": "",
-      "used_partitioning_num": "",
-      "used_vf_num": "",
-      "user_usage": "",
-      "vendor_id": "",
-      "verdor_name": ""
+      "bus": "总线",
+      "bus_location": "总线 ID",
+      "class_code": "类 ID",
+      "device_type": "PCI 类型",
+      "entityAsyncStatus": "异步状态（内部字段）",
+      "function_num": "功能号",
+      "host": "关联主机",
+      "id": "唯一标识",
+      "iommu_status": "所属主机 IOMMU 状态",
+      "local_id": "UUID",
+      "mdev_state": "MDEV 状态",
+      "mdev_type_id": "MDEV 类型 ID",
+      "name": "名称",
+      "partitioning_state": "直通状态",
+      "product_id": "设备 ID",
+      "slot": "插槽",
+      "sriov_state": "SR-IOV 状态",
+      "subsystem_product_id": "子设备 ID",
+      "subsystem_vendor_id": "子供应商 ID",
+      "total_mdev_num": "MDEV 数量",
+      "total_partitioning_num": "设备切分数量",
+      "total_vf_num": "SR-IOV 直通 VF 数量",
+      "usage_type": "设备使用类型",
+      "used_mdev_num": "MDEV 已使用数量",
+      "used_partitioning_num": "设备切分已使用数量",
+      "used_vf_num": "SR-IOV 直通已使用 VF 数量",
+      "user_usage": "设备用途",
+      "vendor_id": "供应商 ID",
+      "verdor_name": "品牌"
     },
     "PciDeviceOrderByInput": {
       "enum": "按照指定方式排列放回数据"
@@ -4604,7 +4604,7 @@
       "enum": ""
     },
     "GetClusterStorageInfoRequestBody": {
-      "effect": "",
+      "effect": "指定需要获取存储类型的存储策略",
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "SecurityGroupWhereInput": {
