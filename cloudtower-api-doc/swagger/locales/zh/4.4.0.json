@@ -2249,7 +2249,7 @@
       "port": "指定端口"
     },
     "SecurityPolicyIngressEgressInput": {
-      "type": "",
+      "type": "类型",
       "ports": "根据协议和端口筛选流量",
       "target": "端口控制"
     },
@@ -2721,8 +2721,8 @@
       "enum": ""
     },
     "Vm": {
-      "backup_plans": "",
-      "bios_uuid": "",
+      "backup_plans": "关联的备份计划",
+      "bios_uuid": "BIOS uuid",
       "clock_offset": "虚拟机时钟",
       "cloud_init_supported": "是否支持 cloud-init",
       "cluster": "所属集群",

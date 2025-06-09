@@ -1440,11 +1440,11 @@
       "revision": ""
     },
     "ResourceChangeResponse": {
+      "currentRevision": "",
+      "compactRevision": "",
       "data": "",
       "error": "",
-      "ec": "",
-      "currentRevision": "",
-      "compactRevision": ""
+      "ec": ""
     },
     "SecurityPolicy": {
       "apply_to": "",
@@ -1459,6 +1459,10 @@
       "statistics": ""
     },
     "TaskCreationParams": {
+      "api_key_name": "",
+      "snapshot": "",
+      "status": "",
+      "id": "",
       "finished_at": "",
       "started_at": "",
       "steps": "",
@@ -1471,11 +1475,7 @@
       "user_id": "",
       "description": "",
       "resource_mutation": "",
-      "resource_type": "",
-      "api_key_name": "",
-      "snapshot": "",
-      "status": "",
-      "id": ""
+      "resource_type": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
       "edge_gateway": "",
@@ -2130,6 +2130,7 @@
       "ip_address": "",
       "status": "",
       "user_id": "",
+      "key": "",
       "message": "",
       "resource_type": "",
       "action": ""
@@ -2179,7 +2180,6 @@
       "parent_object_local_id": "",
       "parent_object_name": "",
       "tower_deploy_id": "",
-      "type": "",
       "zbs_volume_id": ""
     },
     "ReplicationPlanPeriod": {
@@ -2209,8 +2209,7 @@
       "tower_deploy_id": ""
     },
     "NestedReplicationService": {
-      "id": "id",
-      "name": "name"
+      "id": "id"
     },
     "ReplicationPlanType": {
       "enum": ""
@@ -2904,6 +2903,9 @@
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
+      "failover_executions_every": "",
+      "failover_executions_none": "",
+      "failover_executions_some": "",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -3117,6 +3119,8 @@
       "id_starts_with": "",
       "keep_snapshot": "",
       "keep_snapshot_not": "",
+      "keep_test_vm": "",
+      "keep_test_vm_not": "",
       "permanent_failover_execution": "",
       "phase": "",
       "phase_in": "",
@@ -3165,6 +3169,21 @@
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
       "external_cloudtower": "",
+      "failover_test_replica_group": "",
+      "failover_test_replica_group_contains": "",
+      "failover_test_replica_group_ends_with": "",
+      "failover_test_replica_group_gt": "",
+      "failover_test_replica_group_gte": "",
+      "failover_test_replica_group_in": "",
+      "failover_test_replica_group_lt": "",
+      "failover_test_replica_group_lte": "",
+      "failover_test_replica_group_not": "",
+      "failover_test_replica_group_not_contains": "",
+      "failover_test_replica_group_not_ends_with": "",
+      "failover_test_replica_group_not_in": "",
+      "failover_test_replica_group_not_starts_with": "",
+      "failover_test_replica_group_starts_with": "",
+      "failover_test_vm": "",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -3273,14 +3292,6 @@
       "replication_target_executions_every": "",
       "replication_target_executions_none": "",
       "replication_target_executions_some": "",
-      "resource_version": "",
-      "resource_version_gt": "",
-      "resource_version_gte": "",
-      "resource_version_in": "",
-      "resource_version_lt": "",
-      "resource_version_lte": "",
-      "resource_version_not": "",
-      "resource_version_not_in": "",
       "restore_points_every": "",
       "restore_points_none": "",
       "restore_points_some": "",
@@ -3703,6 +3714,8 @@
       "id_not_in": "",
       "id_not_starts_with": "",
       "id_starts_with": "",
+      "is_test_mode": "",
+      "is_test_mode_not": "",
       "replication_failover_target_executions_every": "",
       "replication_failover_target_executions_none": "",
       "replication_failover_target_executions_some": "",
@@ -4002,6 +4015,319 @@
       "task_id": "asynchronous task id ",
       "data.local_id": "",
       "data": "resources"
+    },
+    "VirtualPrivateCloudNicWhereInput": {
+      "AND": "All conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "entityAsyncStatus": "",
+      "entityAsyncStatus_in": "",
+      "entityAsyncStatus_not": "",
+      "entityAsyncStatus_not_in": "",
+      "floating_ip": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "local_id": "",
+      "local_id_contains": "",
+      "local_id_ends_with": "",
+      "local_id_gt": "",
+      "local_id_gte": "",
+      "local_id_in": "",
+      "local_id_lt": "",
+      "local_id_lte": "",
+      "local_id_not": "",
+      "local_id_not_contains": "",
+      "local_id_not_ends_with": "",
+      "local_id_not_in": "",
+      "local_id_not_starts_with": "",
+      "local_id_starts_with": "",
+      "snapshots_every": "",
+      "snapshots_none": "",
+      "snapshots_some": "",
+      "vm_nic": "",
+      "vpc": "",
+      "vpc_subnet": ""
+    },
+    "BackupRestoreExecutionNetworkMapping": {
+      "target": "",
+      "src_vlan_id": "",
+      "source": "",
+      "dst_vlan_id": "",
+      "enum": ""
+    },
+    "BackupRestoreExecutionNetworkInformation": {
+      "vpc_subnet_local_id": "",
+      "vpc_local_id": "",
+      "vlan_local_id": "",
+      "type": "",
+      "enum": ""
+    },
+    "SecurityGroupWhereInput": {
+      "vms_some": "",
+      "vms_none": "",
+      "vms_every": "",
+      "security_policies_some": "",
+      "security_policies_none": "",
+      "security_policies_every": "",
+      "name_starts_with": "",
+      "name_not_starts_with": "",
+      "name_not_in": "",
+      "name_not_ends_with": "",
+      "name_not_contains": "",
+      "name_not": "",
+      "name_lte": "",
+      "name_lt": "",
+      "name_in": "",
+      "name_gte": "",
+      "name_gt": "",
+      "name_ends_with": "",
+      "name_contains": "",
+      "name": "",
+      "member_type_not_in": "",
+      "member_type_not": "",
+      "member_type_in": "",
+      "member_type": "",
+      "isolation_policies_some": "",
+      "isolation_policies_none": "",
+      "isolation_policies_every": "",
+      "ips_starts_with": "",
+      "ips_not_starts_with": "",
+      "ips_not_in": "",
+      "ips_not_ends_with": "",
+      "ips_not_contains": "",
+      "ips_not": "",
+      "ips_lte": "",
+      "ips_lt": "",
+      "ips_in": "",
+      "ips_gte": "",
+      "ips_gt": "",
+      "ips_ends_with": "",
+      "ips_contains": "",
+      "ips": "",
+      "id_starts_with": "",
+      "id_not_starts_with": "",
+      "id_not_in": "",
+      "id_not_ends_with": "",
+      "id_not_contains": "",
+      "id_not": "",
+      "id_lte": "",
+      "id_lt": "",
+      "id_in": "",
+      "id_gte": "",
+      "id_gt": "",
+      "id_ends_with": "",
+      "id_contains": "",
+      "id": "",
+      "exclude_ips_starts_with": "",
+      "exclude_ips_not_starts_with": "",
+      "exclude_ips_not_in": "",
+      "exclude_ips_not_ends_with": "",
+      "exclude_ips_not_contains": "",
+      "exclude_ips_not": "",
+      "exclude_ips_lte": "",
+      "exclude_ips_lt": "",
+      "exclude_ips_in": "",
+      "exclude_ips_gte": "",
+      "exclude_ips_gt": "",
+      "exclude_ips_ends_with": "",
+      "exclude_ips_contains": "",
+      "exclude_ips": "",
+      "everoute_cluster": "",
+      "description_starts_with": "",
+      "description_not_starts_with": "",
+      "description_not_in": "",
+      "description_not_ends_with": "",
+      "description_not_contains": "",
+      "description_not": "",
+      "description_lte": "",
+      "description_lt": "",
+      "description_in": "",
+      "description_gte": "",
+      "description_gt": "",
+      "description_ends_with": "",
+      "description_contains": "",
+      "description": "",
+      "OR": "One or more conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "AND": "All conditions must return true."
+    },
+    "ResourceChangeLimit": {},
+    "SmtpServerWhereInput": {
+      "AND": "All conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "description": "",
+      "description_contains": "",
+      "description_ends_with": "",
+      "description_gt": "",
+      "description_gte": "",
+      "description_in": "",
+      "description_lt": "",
+      "description_lte": "",
+      "description_not": "",
+      "description_not_contains": "",
+      "description_not_ends_with": "",
+      "description_not_in": "",
+      "description_not_starts_with": "",
+      "description_starts_with": "",
+      "host": "",
+      "host_contains": "",
+      "host_ends_with": "",
+      "host_gt": "",
+      "host_gte": "",
+      "host_in": "",
+      "host_lt": "",
+      "host_lte": "",
+      "host_not": "",
+      "host_not_contains": "",
+      "host_not_ends_with": "",
+      "host_not_in": "",
+      "host_not_starts_with": "",
+      "host_starts_with": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "name": "",
+      "name_contains": "",
+      "name_ends_with": "",
+      "name_gt": "",
+      "name_gte": "",
+      "name_in": "",
+      "name_lt": "",
+      "name_lte": "",
+      "name_not": "",
+      "name_not_contains": "",
+      "name_not_ends_with": "",
+      "name_not_in": "",
+      "name_not_starts_with": "",
+      "name_starts_with": "",
+      "port": "",
+      "port_gt": "",
+      "port_gte": "",
+      "port_in": "",
+      "port_lt": "",
+      "port_lte": "",
+      "port_not": "",
+      "port_not_in": "",
+      "secure_mode": "",
+      "secure_mode_in": "",
+      "secure_mode_not": "",
+      "secure_mode_not_in": "",
+      "username": "",
+      "username_contains": "",
+      "username_ends_with": "",
+      "username_gt": "",
+      "username_gte": "",
+      "username_in": "",
+      "username_lt": "",
+      "username_lte": "",
+      "username_not": "",
+      "username_not_contains": "",
+      "username_not_ends_with": "",
+      "username_not_in": "",
+      "username_not_starts_with": "",
+      "username_starts_with": ""
+    },
+    "NestedReplicationPlan": {
+      "id": "id",
+      "name": "name"
+    },
+    "ReplicaVm": {
+      "createdAt": "",
+      "entityAsyncStatus": "",
+      "external_cloudtower": "",
+      "failover_test_object_descriptor": "",
+      "failover_test_replica_group": "",
+      "failover_test_vm": "",
+      "id": "",
+      "inbound": "",
+      "iscsi_lun": "",
+      "object_descriptor": "",
+      "origin_iscsi_lun": "",
+      "origin_object_descriptor": "",
+      "origin_vm": "",
+      "origin_vm_cluster_local_id": "",
+      "origin_vm_cluster_name": "",
+      "origin_vm_local_id": "",
+      "origin_vm_name": "",
+      "replica_group": "",
+      "replication_group": "",
+      "replication_plan": "",
+      "replication_service": "",
+      "replication_target_executions": "",
+      "restore_points": "",
+      "state": "",
+      "targets_deletable": "",
+      "type": "",
+      "updatedAt": "",
+      "vm": ""
+    },
+    "ReplicaVmOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
+    "GetReplicaVmsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateReplicaVm": {
+      "count": "count"
+    },
+    "ReplicaVmConnection": {
+      "aggregate": ""
+    },
+    "GetReplicaVmsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedVirtualPrivateCloudFloatingIp": {
+      "external_ip": "",
+      "external_ips": "",
+      "id": "id"
+    },
+    "NestedVirtualPrivateCloudNatGateway": {
+      "external_ip": "",
+      "external_ips": "",
+      "id": "id",
+      "name": "name"
+    },
+    "NestedVirtualPrivateCloudRouterGateway": {
+      "external_ip": "",
+      "external_ips": "",
+      "id": "id",
+      "name": "name"
     }
   },
   "tags": [
@@ -4057,158 +4383,111 @@
     },
     {
       "name": "ReplicationPlan",
-      "x-displayName": "",
+      "x-displayName": "replication plan",
       "description": ""
     },
     {
       "name": "SmtpServer",
       "x-displayName": "",
       "description": ""
+    },
+    {
+      "name": "ReplicaVm",
+      "x-displayName": "",
+      "description": ""
     }
   ],
   "paths": {
-    "/create-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/update-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/delete-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/suspend-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/resume-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/execute-backup-plan": {
-      "summary": "",
-      "description": ""
-    },
-    "/backup-rebuild-vm": {
-      "summary": "",
-      "description": ""
-    },
-    "/backup-restore-vm-in-place": {
-      "summary": "",
-      "description": ""
-    },
-    "/delete-backup-restore-point": {
-      "summary": "",
-      "description": ""
-    },
-    "/get-backup-restore-point-metadata": {
-      "summary": "",
-      "description": ""
-    },
-    "/get-cluster-storage-info": {
-      "summary": "",
-      "description": ""
-    },
-    "/create-vm-from-content-library-template-batch": {
-      "summary": "",
-      "description": ""
-    },
     "/create-isolation-policy": {
-      "summary": "",
+      "summary": "Create isolation policy",
       "description": ""
     },
     "/update-isolation-policy": {
-      "summary": "",
+      "summary": "Update isolation policy",
       "description": ""
     },
     "/delete-isolation-policy": {
-      "summary": "",
+      "summary": "Delete Isolation policy",
       "description": ""
     },
     "/create-network-policy-rule-service": {
-      "summary": "",
+      "summary": "Create service",
       "description": ""
     },
     "/update-network-policy-rule-service": {
-      "summary": "",
+      "summary": "Update service",
       "description": ""
     },
     "/delete-network-policy-rule-service": {
-      "summary": "",
-      "description": ""
-    },
-    "/get-ntp-service-url": {
-      "summary": "",
-      "description": ""
-    },
-    "/disassociate-system-service-from-obs-service": {
-      "summary": "",
-      "description": ""
-    },
-    "/clear-system-service-alert-notification-config": {
-      "summary": "",
+      "summary": "Delete service",
       "description": ""
     },
     "/resource-changes": {
-      "summary": "",
+      "summary": "Get resource changes",
       "description": ""
     },
     "/batch-create-virtual-private-cloud-floating-ips": {
-      "summary": "",
+      "summary": "Batch create floating IPs",
       "description": ""
     },
     "/get-network-policy-rule-services": {
-      "summary": "",
+      "summary": "Get services",
       "description": ""
     },
     "/get-network-policy-rule-services-connection": {
-      "summary": "",
+      "summary": "Get services count",
       "description": ""
     },
     "/get-pci-devices": {
-      "summary": "",
+      "summary": "Get PCI devices",
       "description": ""
     },
     "/get-virtual-private-cloud-edge-gateway-groups": {
-      "summary": "",
+      "summary": "Get edge gateway groups",
       "description": ""
     },
     "/get-virtual-private-cloud-edge-gateway-groups-connection": {
-      "summary": "",
+      "summary": "Get edge gateway groups count",
       "description": ""
     },
     "/get-virtual-private-cloud-edge-gateways": {
-      "summary": "",
+      "summary": "Get edge gateways",
       "description": ""
     },
     "/get-virtual-private-cloud-edge-gateways-connection": {
-      "summary": "",
+      "summary": "Get edge gateways count",
       "description": ""
     },
     "/get-virtual-private-cloud-external-subnet-groups": {
-      "summary": "",
+      "summary": "Get external subnet groups",
       "description": ""
     },
     "/get-virtual-private-cloud-external-subnet-groups-connection": {
-      "summary": "",
+      "summary": "Get external subnet groups count",
       "description": ""
     },
     "/get-replication-plans": {
-      "summary": "",
+      "summary": "Get replication plans",
       "description": ""
     },
     "/get-replication-plans-connection": {
-      "summary": "",
+      "summary": "Get replication plans count",
       "description": ""
     },
     "/get-smtp-servers": {
-      "summary": "",
+      "summary": "Get SMTP services",
       "description": ""
     },
     "/get-smtp-servers-connection": {
-      "summary": "",
+      "summary": "Get SMTP services count",
+      "description": ""
+    },
+    "/get-replica-vms": {
+      "summary": "Get replica VMs",
+      "description": ""
+    },
+    "/get-replica-vms-connection": {
+      "summary": "Get replica VMs count",
       "description": ""
     }
   }
