@@ -19,7 +19,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
   },
   {
     name: "AlertManagement",
-    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule"],
+    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule", "SmtpServer"],
   },
   {
     name: "VmManagement",
@@ -65,6 +65,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "PmemDimm",
       "UsbDevice",
       "GpuDevice",
+      "PciDevice"
     ],
   },
   {
@@ -152,6 +153,8 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "BackupService",
       "BackupStoreRepository",
       "BackupTargetExecution",
+      "ReplicationPlan",
+      "ReplicaVm"
     ],
   },
   {
@@ -160,7 +163,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
   },
   {
     name: "DistributedFirewall",
-    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup", "NetworkPolicyRuleService"],
+    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup", "NetworkPolicyRuleService",  "NetworkPolicyRuleService"],
   },
   {
     name: "VirtualPrivateCloudNetwork",
@@ -178,12 +181,15 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "VirtualPrivateCloudExternalSubnet",
       "VirtualPrivateCloudExternalSubnetGroup",
       "VirtualPrivateCloudEdgeGateway",
-      "VirtualPrivateCloudEdgeGatewayGroup"
+      "VirtualPrivateCloudEdgeGatewayGroup",
+      "VirtualPrivateCloudEdgeGatewayGroup",
+      "VirtualPrivateCloudEdgeGateway",
+      "VirtualPrivateCloudExternalSubnetGroup"
     ],
   },
   {
     name: "Other",
-    tags: ["ApiInfo"],
+    tags: ["ApiInfo", "Internal", "ResourceChange"],
   },
   {
     name: "Observability",
