@@ -1586,8 +1586,8 @@
       "vm_disks": "关联虚拟盘"
     },
     "NestedVpcGatewaysCommonExternalIpsType": {
-      "edge_gateway_id": "",
-      "external_ip": ""
+      "edge_gateway_id": "边缘网关的 id",
+      "external_ip": "IP 地址"
     },
     "NestedVirtualPrivateCloudEdgeGatewayGroup": {
       "id": "唯一标识",
@@ -4856,18 +4856,18 @@
     },
     "NestedVirtualPrivateCloudFloatingIp": {
       "external_ip": "分配的 IP 地址",
-      "external_ips": "",
+      "external_ips": "主备 IP 地址",
       "id": "唯一标识"
     },
     "NestedVirtualPrivateCloudNatGateway": {
       "external_ip": "转换地址",
-      "external_ips": "",
+      "external_ips": "主备转换地址",
       "id": "唯一标识",
       "name": "名称"
     },
     "NestedVirtualPrivateCloudRouterGateway": {
       "external_ip": "外部接口",
-      "external_ips": "",
+      "external_ips": "主备外部接口",
       "id": "唯一标识",
       "name": "名称"
     }
