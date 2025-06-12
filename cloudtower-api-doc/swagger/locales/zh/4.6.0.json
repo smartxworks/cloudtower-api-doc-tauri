@@ -1430,21 +1430,21 @@
       "where": ""
     },
     "ResourceChangeEvent": {
-      "prev_revision": "",
-      "created_at": "",
-      "new_value": "",
-      "old_value": "",
-      "resource_id": "",
-      "resource_type": "",
-      "action": "",
-      "revision": ""
+      "prev_revision": "当前资源上一次变更版本",
+      "created_at": "创建时间",
+      "new_value": "资源变更结果",
+      "old_value": "资源变更前数据",
+      "resource_id": "资源 id",
+      "resource_type": "资源类型",
+      "action": "操作类型",
+      "revision": "变更版本"
     },
     "ResourceChangeResponse": {
-      "currentRevision": "",
-      "compactRevision": "",
-      "data": "",
-      "error": "",
-      "ec": ""
+      "currentRevision": "当前版本（当前返回最新数据的版本号）",
+      "compactRevision": "清理点（此版本之前数据做过清理）",
+      "data": "变更数据",
+      "error": "错误信息",
+      "ec": "错误码"
     },
     "SecurityPolicy": {
       "apply_to": "作用范围",
