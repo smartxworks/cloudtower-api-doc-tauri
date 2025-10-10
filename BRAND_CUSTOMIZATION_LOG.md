@@ -243,6 +243,120 @@ feat: 替换 Logo 为 arcfra-logo 并添加 Developer 文字
 
 ---
 
+### 2. 全局字体样式定制
+
+**修改时间**: 2024年12月19日  
+**Commit ID**: `5b270d0`  
+**修改类型**: 样式优化
+
+#### 修改描述
+将网站的全局字体样式更新为 DM Sans 字体栈，提供更现代和一致的视觉体验。
+
+#### 具体改动
+
+##### 2.1 Google Fonts 导入
+**文件**: `cloudtower-api-doc/custom.scss`
+
+**新增内容**:
+```scss
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+```
+
+##### 2.2 CSS 变量定义
+**文件**: `cloudtower-api-doc/custom.scss`
+
+**新增 CSS 变量**:
+```scss
+:root {
+  /* Custom font family */
+  --ifm-font-family-base: 'DM Sans', 'InterVariable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+```
+
+##### 2.3 全局字体样式应用
+**文件**: `cloudtower-api-doc/custom.scss`
+
+**新增样式规则**:
+```scss
+/* Global font family override */
+html,
+body,
+#__docusaurus {
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+/* Apply font to specific components */
+.navbar,
+.navbar__item,
+.navbar__link,
+.menu__link,
+.menu__list-item,
+.table-of-contents__link,
+.pagination-nav__label,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown p,
+.markdown li,
+.markdown a,
+.footer,
+.footer a {
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+/* Code blocks should use monospace font */
+code,
+pre,
+.hljs,
+.token {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+}
+```
+
+#### 字体栈详情
+- **主字体**: DM Sans (Google Fonts)
+- **回退字体**: InterVariable, Inter
+- **系统字体**: -apple-system, BlinkMacSystemFont
+- **通用字体**: Segoe UI, Helvetica, Arial, sans-serif
+- **表情符号**: Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol
+
+#### 应用范围
+- ✅ 导航栏和菜单
+- ✅ 侧边栏和目录
+- ✅ 文档标题和内容
+- ✅ 页脚和链接
+- ✅ 分页导航
+- ✅ 保持代码块等宽字体
+
+#### Commit 信息
+```
+feat: 更新全局字体样式为 DM Sans 字体栈
+
+- 添加 Google Fonts DM Sans 字体导入
+- 设置自定义 CSS 变量 --ifm-font-family-base
+- 应用 DM Sans 字体栈到所有主要组件
+- 保持代码块使用等宽字体
+- 字体栈包含完整的回退方案
+```
+
+#### 文件变更统计
+- **修改文件**: 1 个
+  - `cloudtower-api-doc/custom.scss`
+- **代码行数变化**: +43 行
+
+#### 测试验证
+- ✅ 网站正常启动 (HTTP 200)
+- ✅ 字体正确加载和应用
+- ✅ 所有文本元素使用新字体
+- ✅ 代码块保持等宽字体
+- ✅ 无 linting 错误
+
+---
+
 ## 待完成项目
 
 ### 2. 颜色主题定制
