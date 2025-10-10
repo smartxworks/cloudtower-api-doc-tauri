@@ -22,5 +22,7 @@ yarn-error.log*
 
 **/miss/*.json
 
+# Brand customization log (local documentation)
+BRAND_CUSTOMIZATION_LOG.md
 
 CloudTower-API-doc_docx/*
