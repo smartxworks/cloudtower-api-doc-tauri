@@ -1,0 +1,61 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.8;
+}
+
+.developerLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.developerLink:hover {
+  opacity: 0.8;
+}
+
+.developerText {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 28.8px */
+  letter-spacing: -0.72px;
+  color: #0C2849;
+  white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .developerText {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+  }
+  
+  .logoContainer {
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .developerText {
+    font-size: 18px;
+    letter-spacing: -0.54px;
+  }
+  
+  .logoContainer {
+    gap: 6px;
+  }
+}

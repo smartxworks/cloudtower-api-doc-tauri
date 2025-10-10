@@ -4,6 +4,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import ThemedImage from '@theme/ThemedImage';
+import styles from './styles.module.css';
+
 function LogoThemedImage({logo, alt, imageClassName}) {
   const sources = {
     light: useBaseUrl(logo.src),
@@ -27,6 +29,7 @@ function LogoThemedImage({logo, alt, imageClassName}) {
     themedImage
   );
 }
+
 export default function Logo(props) {
   const {
     siteConfig: {title},
@@ -45,22 +48,33 @@ export default function Logo(props) {
   // Use logo alt text if provided (including empty string),
   // and provide a sensible fallback otherwise.
   const alt = logo?.alt ?? fallbackAlt;
+  
   return (
-    <Link
-      to={logoLink}
-      {...propsRest}
-      {...(logo?.target && {target: logo.target})}>
-      {logo && (
-        <LogoThemedImage
-          logo={{
-            ...logo,
-            src: `img/smartx-developer-badge-${currentLocale}.svg`
-          }}
-          alt={alt}
-          imageClassName={imageClassName}
-        />
-      )}
+    <div className={styles.logoContainer}>
+      <a
+        href="https://www.arcfra.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.logoLink}
+        {...propsRest}>
+        {logo && (
+          <LogoThemedImage
+            logo={{
+              ...logo,
+              src: `img/arcfra-logo-${currentLocale}.svg`
+            }}
+            alt={alt}
+            imageClassName={imageClassName}
+          />
+        )}
+      </a>
+      <Link
+        to={logoLink}
+        className={styles.developerLink}
+        {...(logo?.target && {target: logo.target})}>
+        <span className={styles.developerText}>Developer</span>
+      </Link>
       {navbarTitle != null && <b className={titleClassName}>{navbarTitle}</b>}
-    </Link>
+    </div>
   );
 }

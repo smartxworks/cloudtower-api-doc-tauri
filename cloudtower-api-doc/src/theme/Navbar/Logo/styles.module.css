@@ -1,8 +1,9 @@
 .logoOverwrite {
   padding: 0 16px;
-  width: 285px;
   height: 56px;
   margin-right: 8px;
+  display: flex;
+  align-items: center;
 }
 .logoOverwrite:hover {
   box-shadow: 0px 0px 4px -2px rgba(10, 37, 85, 0.18), 0px 8px 16px rgba(10, 37, 85, 0.18);
