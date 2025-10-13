@@ -10,11 +10,8 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
+        {/* Left side - Copyright and legal links */}
         <div className={styles.footerContainerLeft}>
-          {/* Removed brand logo */}
-        </div>
-
-        <div className={styles.footerContainerRight}>
           <div className={styles.footerContainerRightRow}>
             <span className={styles.copyright}>
               © 2025 Arcfra All rights reserved.
@@ -25,7 +22,10 @@ const Footer: React.FC = () => {
             <span className={styles.dot}>·</span>
             <a href="https://www.arcfra.com/cookies">Cookie Preferences</a>
           </div>
-          {/* Social media icons */}
+        </div>
+
+        {/* Right side - Social media icons */}
+        <div className={styles.footerContainerRight}>
           <div className={styles.socialIconsContainer}>
             <a 
               href="https://x.com/arcfra" 

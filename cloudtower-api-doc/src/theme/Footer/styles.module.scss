@@ -19,15 +19,8 @@
       display: flex;
       align-items: center;
       flex: 1;
-    }
-
-    .footerContainerRight {
       color: rgba(12, 40, 73, 0.5); /* Figma: fill_IQQY7U */
       user-select: none;
-      display: flex;
-      flex-direction: row; /* Figma: horizontal layout */
-      align-items: center;
-      gap: 32px; /* Figma: gap: 32px between text and social icons */
 
       a {
         color: rgba(12, 40, 73, 0.5); /* Figma: fill_IQQY7U */
@@ -38,6 +31,12 @@
           color: rgba(12, 40, 73, 0.8); /* Slightly darker on hover */
         }
       }
+    }
+
+    .footerContainerRight {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0; /* Prevent shrinking */
     }
   }
 
@@ -90,14 +89,15 @@
       gap: 24px; /* Reduced gap for mobile */
 
       .footerContainerLeft {
-        display: none; /* Hide empty left container on mobile */
+        display: flex;
+        justify-content: center;
+        width: 100%;
       }
 
       .footerContainerRight {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px; /* Gap between text and social icons on mobile */
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
       }
     }
 
