@@ -16,12 +16,17 @@
     .footerContainerLeft {
       display: flex;
       align-items: center;
+      flex: 1; /* Take up available space */
     }
 
     .footerContainerRight {
       color: rgba(44, 56, 82, 0.6);
       user-select: none;
       text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
 
       a {
         color: rgba(44, 56, 82, 0.6);
@@ -34,6 +39,37 @@
     }
   }
 
+  .footerContainerRightRow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .socialIconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
   .dot {
     color: rgba(0, 21, 64, 0.3);
     margin: 0 7px;
@@ -42,23 +78,30 @@
 
 @media screen and (max-width: 1024PX) {
   .footer {
-    height: 230px;
+    height: auto;
+    min-height: 120px;
 
     .footerContainer {
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
       height: 100%;
       padding: 20px;
+      gap: 16px;
 
       .footerContainerLeft {
-        margin-bottom: 10px;
+        display: none; /* Hide empty left container on mobile */
       }
 
       .footerContainerRight {
         text-align: center;
-        text-align: left;
+        align-items: center;
+        gap: 12px;
       }
+    }
+
+    .socialIconsContainer {
+      justify-content: center;
     }
   }
 }
