@@ -18,6 +18,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-height: 80px;
+  --ifm-color-content: #010C18;
   --ifm-color-content-primary: #010C18;
   --ifm-color-content-secondary: rgba(0, 42, 79, 0.70);
   
@@ -129,6 +130,11 @@
 
 .navbar__brand:hover {
   opacity: 0.7 !important;
+}
+
+/* Version Dropdown */
+.dropdown__link {
+  border-radius: 4px;
 }
 
 .theme-doc-breadcrumbs,
@@ -269,7 +275,7 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
     }
   }
   h1 {
-    color: #0080ff;
+    color: var(--ifm-color-primary);
     font-weight: 400;
     font-size: 24px;
     line-height: 34px;
