@@ -1,0 +1,64 @@
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0C2849;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.downloadButton:hover {
+  background-color: rgba(12, 40, 73, 0.05);
+  text-decoration: none;
+  color: #0C2849;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.buttonText {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0C2849;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .downloadButton {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .buttonText {
+    font-size: 14px;
+  }
+  
+  .iconContainer {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .iconContainer svg {
+    width: 14px;
+    height: 14px;
+  }
+}

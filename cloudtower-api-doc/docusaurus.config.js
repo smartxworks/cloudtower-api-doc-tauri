@@ -105,17 +105,8 @@ const config = {
             type: "docsVersionDropdown",
             position: "right",
           },
-          {
-            type: "dropdown",
-            label: "下载",
-            position: "right",
-            items: [
-              { label: "桌面端", href: "https://github.com/smartxworks/cloudtower-api-doc-tauri/releases/tag/v2.18.0"}            ]
-          },
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
+          // 下载按钮已移至自定义组件
+          // 语言切换已移除
         ],
       },
       footer: {
