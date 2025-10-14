@@ -137,6 +137,72 @@
   border-radius: 4px;
 }
 
+/* Download Button */
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0C2849;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: rgba(12, 40, 73, 0.05);
+  text-decoration: none;
+  color: #0C2849;
+}
+
+.download-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.download-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0C2849;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .download-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .download-text {
+    font-size: 14px;
+  }
+  
+  .download-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .download-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
 .theme-doc-breadcrumbs,
 .pagination-nav__sublabel {
   display: none;
