@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import DownloadButton from '@components/DownloadButton';
+import DownloadButton from '../../components/DownloadButton';
 
 export default function DownloadButtonNavbarItem({
   className,

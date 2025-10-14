@@ -11,7 +11,7 @@ import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
-import DownloadButtonNavbarItem from '@theme/NavbarItem/DownloadButtonNavbarItem';
+import DownloadButtonNavbarItem from '../NavbarItem/DownloadButtonNavbarItem';
 import styles from './styles.module.css';
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
