@@ -21,6 +21,9 @@
   --ifm-color-content: #010C18;
   --ifm-color-content-primary: #010C18;
   --ifm-color-content-secondary: rgba(0, 42, 79, 0.70);
+
+
+  --arcfra-neutral-10: rgba(0, 42, 79, 0.10);
   
   /* Custom font family */
   --ifm-font-family-base: 'DM Sans', 'InterVariable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -43,8 +46,9 @@
 /* 导航栏容器 - 精确匹配Figma */
 .navbar {
   padding: 16px 32px; /* Figma: layout_JGOLYZ padding: 16px 32px */
-  border-bottom: 1px solid rgba(12, 40, 73, 0.1); /* Figma: stroke_XEJGZ4 */
+  border-bottom: 1px solid var(--arcfra-neutral-10); /* Figma: stroke_XEJGZ4 */
   background: #FFFFFF; /* Figma: fill_PD6NIM */
+  box-shadow: none;
 }
 
 /* 导航栏内层容器 */
@@ -83,13 +87,16 @@
   line-height: 1.2; /* Figma: lineHeight: 1.2000000817435128em */
   letter-spacing: -0.03em; /* Figma: letterSpacing: -3% */
   color: var(--ifm-color-primary-darkest); /* Figma: fill_CO7U95 */
-  padding: 8px 12px; /* Figma: layout_QRNJ98 padding: 8px 12px */
   transition: all 0.2s ease;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px; /* Figma: layout_QRNJ98 gap: 4px */
+}
+
+.navbar__link.navbar__item {
+  padding: 8px 12px;
 }
 
 /* 导航栏链接悬停状态 - 精确匹配Hover状态 */
@@ -121,6 +128,7 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
+  padding: 0;
 }
 
 /* Arcfra Logo hover effect - 直接应用到 navbar__brand */
@@ -149,11 +157,10 @@
   border: none;
   text-decoration: none;
   transition: all 0.2s ease;
-  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.2;
-  color: #0C2849;
+  color: var(--ifm-color-primary-darkest);
   white-space: nowrap;
   cursor: pointer;
 }
@@ -161,7 +168,7 @@
 .download-button:hover {
   background-color: rgba(12, 40, 73, 0.05);
   text-decoration: none;
-  color: #0C2849;
+  color: var(--ifm-color-primary-darkest);
 }
 
 .download-icon {
@@ -173,13 +180,6 @@
   flex-shrink: 0;
 }
 
-.download-text {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.2;
-  color: #0C2849;
-}
 
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
