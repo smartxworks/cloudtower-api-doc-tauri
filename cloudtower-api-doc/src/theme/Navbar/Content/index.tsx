@@ -26,8 +26,7 @@ function NavbarItems({items}) {
             new Error(
               `A theme navbar item failed to render.
 Please double-check the following navbar item (themeConfig.navbar.items) of your Docusaurus config:
-${JSON.stringify(item, null, 2)}`,
-              {cause: error},
+${JSON.stringify(item, null, 2)}`
             )
           }>
           <NavbarItem className={clsx([
@@ -41,7 +40,7 @@ ${JSON.stringify(item, null, 2)}`,
 function NavbarContentLayout({left, right}) {
   return (
     <div className="navbar__inner">
-      <div className="navbar__items">{left}</div>
+      <div className="navbar__items navbar__items--left">{left}</div>
       <div className="navbar__items navbar__items--right">{right}</div>
     </div>
   );
@@ -58,7 +57,9 @@ export default function NavbarContent() {
         <>
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
-          <NavbarItems items={leftItems} />
+          <div className={styles.navPillsContainer}>
+            <NavbarItems items={leftItems} />
+          </div>
         </>
       }
       right={

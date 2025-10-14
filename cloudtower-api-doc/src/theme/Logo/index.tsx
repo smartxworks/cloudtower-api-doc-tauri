@@ -55,7 +55,7 @@ export default function Logo(props) {
         href="https://www.arcfra.com"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.logoLink}
+        className={props.className}
         {...propsRest}>
         {logo && (
           <LogoThemedImage

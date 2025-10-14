@@ -94,10 +94,12 @@ const config = {
           {
             label: "文档" ,
             to: "/",
+            activeBaseRegex: "^/$", // 只在完全匹配根路径时激活
           },
           {
             to: "/api",
             label: "API 参考",
+            activeBaseRegex: "^/api", // 只在匹配 /api 路径时激活
           },
           {
             type: "docsVersionDropdown",

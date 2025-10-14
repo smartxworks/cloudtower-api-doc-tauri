@@ -9,17 +9,17 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0096ff;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #0075FF; // Link or highlighted text color
+  --ifm-color-primary-dark: #1054A4; // Deep Blue
+  --ifm-color-primary-darkest: #0C2849; // Darker Blue
+  --ifm-color-primary-light: rgba(0, 121, 255, 0.3);
+  --ifm-color-primary-lighter: rgba(0, 121, 255, 0.1);
+  --ifm-color-primary-lightest: rgba(0, 121, 255, 0.05);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-navbar-height: 56px;
-  --ifm-color-content-secondary: rgba(44, 56, 82, 0.6);
+  --ifm-navbar-height: 80px;
+  --ifm-color-content-primary: #010C18;
+  --ifm-color-content-secondary: rgba(0, 42, 79, 0.70);
   
   /* Custom font family */
   --ifm-font-family-base: 'DM Sans', 'InterVariable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -37,11 +37,98 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.navbar__link--active {
-  color: rgba(44, 56, 82, 0.6);
+/* ===== 导航栏样式 - 完全基于Figma设计 ===== */
+
+/* 导航栏容器 - 精确匹配Figma */
+.navbar {
+  padding: 16px 32px; /* Figma: layout_JGOLYZ padding: 16px 32px */
+  border-bottom: 1px solid rgba(12, 40, 73, 0.1); /* Figma: stroke_XEJGZ4 */
+  background: #FFFFFF; /* Figma: fill_PD6NIM */
 }
+
+/* 导航栏内层容器 */
+.navbar__inner {
+  display: flex;
+  justify-content: space-between; /* Figma: layout_JGOLYZ justifyContent: space-between */
+  align-items: center;
+  width: 100%;
+  padding-inline: 32px;
+}
+
+/* 左侧区域 - Logo + Navigation Pills */
+.navbar__items--left {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Logo 和 Navigation Pills 容器之间的间距 */
+}
+
+/* 右侧区域 - Version Dropdown + Desktop Client Button */
+.navbar__items--right {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Figma: layout_EXFM2L gap: 12px */
+}
+
+.navbar__logo {
+  width: 88px;
+  height: 48px;
+  margin-right: 0;
+}
+
+/* 导航栏链接基础样式 - 精确匹配Navigation Pill */
+.navbar__link {
+  font-weight: 500; /* Figma: fontWeight: 500 */
+  font-size: 14px; /* Figma: fontSize: 14 */
+  line-height: 1.2; /* Figma: lineHeight: 1.2000000817435128em */
+  letter-spacing: -0.03em; /* Figma: letterSpacing: -3% */
+  color: var(--ifm-color-primary-darkest); /* Figma: fill_CO7U95 */
+  padding: 8px 12px; /* Figma: layout_QRNJ98 padding: 8px 12px */
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; /* Figma: layout_QRNJ98 gap: 4px */
+}
+
+/* 导航栏链接悬停状态 - 精确匹配Hover状态 */
 .navbar__link:hover {
-  color: #00122E;
+  color: var(--ifm-color-primary-darkest);
+  background-color: rgba(12, 40, 73, 0.05); /* Figma: fill_0D0098 */
+  text-decoration: none;
+}
+
+/* 导航栏链接激活状态 - 精确匹配Active状态 */
+.navbar__link--active {
+  color: var(--ifm-color-primary); /* Figma: fill_Q0ZG0A */
+  background-color: rgba(0, 117, 255, 0.05); /* Figma: fill_M4ET3Z */
+  text-decoration: none;
+}
+
+/* 导航栏项目间距 - 精确匹配Figma布局 */
+.navbar__items--right .navbar__item {
+  margin-left: 0; /* 使用gap而不是margin */
+}
+
+.navbar__items--left .navbar__item {
+  margin-right: 0; /* 使用gap而不是margin */
+}
+
+/* 导航栏项目基础样式 */
+.navbar__item {
+  font-size: 14px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* Arcfra Logo hover effect - 直接应用到 navbar__brand */
+.navbar__brand {
+  transition: opacity 0.2s ease-out !important;
+}
+
+.navbar__brand:hover {
+  opacity: 0.7 !important;
 }
 
 .theme-doc-breadcrumbs,
@@ -62,7 +149,7 @@
 }
 
 .menu__link--active {
-  color: #0080ff;
+  color: var(--ifm-color-primary);
   border-radius: 6px;
 }
 
@@ -80,7 +167,7 @@
 }
 
 .menu__link:hover {
-  color: #0080ff;
+  color: var(--ifm-color-primary);
 }
 
 .menu__link:hover,
@@ -88,10 +175,6 @@
   background: rgba(0, 136, 255, 0.1);
 }
 
-.navbar__item {
-  font-size: 14px;
-  white-space: nowrap;
-}
 
 .right-sidebar {
   position: sticky;
@@ -126,7 +209,7 @@
   border-radius: 6px;
   padding: 4px 16px;
   .table-of-contents__link--active {
-    color: #0080ff;
+    color: var(--ifm-color-primary);
   }
   &:hover {
     background: rgba(237, 241, 250, 0.6);
@@ -162,13 +245,13 @@ html.docs-doc-id-download {
 html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   font-size: 14px;
   line-height: 22px;
-  color: #00122e;
+  color: var(--ifm-color-content-primary);
 
   p,
   a {
     font-size: 14px;
     line-height: 22px;
-    color: #00122e;
+    color: var(--ifm-color-content-primary);
   }
 
   header {
@@ -227,7 +310,7 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   li {
     font-size: 14px;
     line-height: 22px;
-    color: #00122e;
+    color: var(--ifm-color-content-primary);
 
     p {
       margin: 0;
@@ -235,7 +318,7 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   }
 
   a {
-    color: #377ef7;
+    color: var(--ifm-color-primary);
   }
 
   /*
@@ -330,9 +413,7 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   display: none;
 }
 
-.navbar__inner {
-  padding-right: 21px;
-}
+
 
 .pagination-nav {
   border-top: 1px solid rgba(211, 218, 235, 0.8);
@@ -476,14 +557,15 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   flex-wrap: nowrap;
 }
 
-/* Global font family override */
+/* Global font family override - More comprehensive */
 html,
 body,
-#__docusaurus {
+#__docusaurus,
+* {
   font-family: var(--ifm-font-family-base) !important;
 }
 
-/* Apply font to specific components */
+/* Apply font to specific components with higher specificity */
 .navbar,
 .navbar__item,
 .navbar__link,
@@ -501,14 +583,135 @@ body,
 .markdown li,
 .markdown a,
 .footer,
-.footer a {
+.footer a,
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6,
+.theme-doc-markdown p,
+.theme-doc-markdown li,
+.theme-doc-markdown a,
+.theme-doc-markdown div,
+.theme-doc-markdown span,
+.theme-doc-markdown strong,
+.theme-doc-markdown em,
+.theme-doc-markdown blockquote,
+.theme-doc-markdown ul,
+.theme-doc-markdown ol,
+.theme-doc-markdown table,
+.theme-doc-markdown th,
+.theme-doc-markdown td,
+.theme-doc-markdown tr,
+.theme-doc-markdown thead,
+.theme-doc-markdown tbody,
+.theme-doc-markdown tfoot,
+.theme-doc-markdown caption,
+.theme-doc-markdown label,
+.theme-doc-markdown input,
+.theme-doc-markdown button,
+.theme-doc-markdown select,
+.theme-doc-markdown textarea,
+.theme-doc-markdown fieldset,
+.theme-doc-markdown legend,
+.theme-doc-markdown dl,
+.theme-doc-markdown dt,
+.theme-doc-markdown dd,
+.theme-doc-markdown address,
+.theme-doc-markdown cite,
+.theme-doc-markdown q,
+.theme-doc-markdown abbr,
+.theme-doc-markdown acronym,
+.theme-doc-markdown small,
+.theme-doc-markdown sub,
+.theme-doc-markdown sup,
+.theme-doc-markdown ins,
+.theme-doc-markdown del,
+.theme-doc-markdown s,
+.theme-doc-markdown strike,
+.theme-doc-markdown u,
+.theme-doc-markdown b,
+.theme-doc-markdown i,
+.theme-doc-markdown tt,
+.theme-doc-markdown kbd,
+.theme-doc-markdown samp,
+.theme-doc-markdown var,
+.theme-doc-markdown dfn,
+.theme-doc-markdown time,
+.theme-doc-markdown mark,
+.theme-doc-markdown ruby,
+.theme-doc-markdown rt,
+.theme-doc-markdown rp,
+.theme-doc-markdown bdi,
+.theme-doc-markdown bdo,
+.theme-doc-markdown wbr,
+.theme-doc-markdown details,
+.theme-doc-markdown summary,
+.theme-doc-markdown progress,
+.theme-doc-markdown meter,
+.theme-doc-markdown output,
+.theme-doc-markdown canvas,
+.theme-doc-markdown video,
+.theme-doc-markdown audio,
+.theme-doc-markdown source,
+.theme-doc-markdown track,
+.theme-doc-markdown embed,
+.theme-doc-markdown object,
+.theme-doc-markdown param,
+.theme-doc-markdown map,
+.theme-doc-markdown area,
+.theme-doc-markdown iframe,
+.theme-doc-markdown figure,
+.theme-doc-markdown figcaption,
+.theme-doc-markdown main,
+.theme-doc-markdown section,
+.theme-doc-markdown article,
+.theme-doc-markdown aside,
+.theme-doc-markdown header,
+.theme-doc-markdown nav,
+.theme-doc-markdown footer,
+.theme-doc-markdown hgroup,
+.theme-doc-markdown address,
+.theme-doc-markdown details,
+.theme-doc-markdown summary,
+.theme-doc-markdown menu,
+.theme-doc-markdown menuitem,
+.theme-doc-markdown dialog,
+.theme-doc-markdown datalist,
+.theme-doc-markdown keygen,
+.theme-doc-markdown output,
+.theme-doc-markdown progress,
+.theme-doc-markdown meter,
+.theme-doc-markdown details,
+.theme-doc-markdown summary,
+.theme-doc-markdown menu,
+.theme-doc-markdown menuitem,
+.theme-doc-markdown dialog,
+.theme-doc-markdown datalist,
+.theme-doc-markdown keygen,
+.theme-doc-markdown output,
+.theme-doc-markdown progress,
+.theme-doc-markdown meter {
   font-family: var(--ifm-font-family-base) !important;
 }
 
-/* Code blocks should use monospace font */
+/* Code blocks should use monospace font - Override the global font for code elements */
 code,
 pre,
 .hljs,
-.token {
+.token,
+.theme-doc-markdown code,
+.theme-doc-markdown pre,
+.theme-doc-markdown .hljs,
+.theme-doc-markdown .token,
+.markdown code,
+.markdown pre,
+.markdown .hljs,
+.markdown .token,
+* code,
+* pre,
+* .hljs,
+* .token {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
 }

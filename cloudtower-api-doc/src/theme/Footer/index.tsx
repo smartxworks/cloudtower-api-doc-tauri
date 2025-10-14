@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             </span>
             <a href="https://www.arcfra.com/privacy">Privacy</a>
             <span className={styles.dot}>·</span>
-            <a href="https://www.arcfra.com/terms">Terms</a>
+            <a href="https://www.arcfra.com/term">Terms</a>
             <span className={styles.dot}>·</span>
             <a href="https://www.arcfra.com/cookies">Cookie Preferences</a>
           </div>
