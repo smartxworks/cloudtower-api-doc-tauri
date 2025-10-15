@@ -154,6 +154,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "BackupStoreRepository",
       "BackupTargetExecution",
       "ReplicationPlan",
+      "ReplicationService",
       "ReplicaVm"
     ],
   },
