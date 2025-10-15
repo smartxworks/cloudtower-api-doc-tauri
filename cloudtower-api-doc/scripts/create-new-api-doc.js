@@ -23,45 +23,13 @@ yargsInteractive()
   .then((result) => {
     const { version } = result;
     createNewApiLocales(version);
-    // createNewApiDoc(version);
   });
 
-
-const getPrevVersion = (v) => {
-  if(versions.indexOf(v) < 0) {
-    return versions[0]
-  }
-  return versions[versions.indexOf(v) + 1];
-}
 const getSwaggerPath = (v) =>
   nodePath.resolve(
     process.cwd(),
     nodePath.join('cloudtower-api-doc', 'static', 'specs',  `${v}-swagger.json`)
   );
-
-const getVersionedPath =(version, isEn) => {
-  let versionedPath = nodePath.join('versioned_docs', `version-${version}`);
-  if(isEn) {
-    versionedPath = nodePath.join('i18n', 'en', 'docusaurus-plugin-content-docs', `version-${version}`)
-  }
-  return nodePath.resolve(process.cwd(), nodePath.join('cloudtower-api-doc', versionedPath))
-}
-
-const createNewApiDoc = async (version) => {
-  const prevVersion = getPrevVersion(version);
-  const pMap = (await import("p-map")).default;
-  await pMap(['zh', 'en'], async (lng) => {
-    const versiondPath = getVersionedPath(version, lng === 'en');
-    const prevVersionPath = getVersionedPath(prevVersion, lng === 'en');
-    fsExtra.copySync(prevVersionPath, versiondPath);
-    fsExtra.readdirSync(versiondPath).forEach(file => {
-      if(file === 'download.md') {
-        const completePath = nodePath.join(versiondPath, file);
-        fsExtra.writeFileSync(completePath, fsExtra.readFileSync(completePath, 'utf-8').replaceAll(prevVersion, version), 'utf-8')
-      }
-    })
-  })
-}
 
 const createNewApiLocales = async (version) => {
   const traverPreviousVersion = async (current_version, onGetDiffSpec) => {

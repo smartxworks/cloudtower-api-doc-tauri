@@ -15,7 +15,7 @@ const SupportLanguage = {
   en: "en",
 }
 
-const tagsGroup = [
+const tagsGroup =  [
   {
     name: "ClusterManagement",
     tags: [
@@ -36,7 +36,7 @@ const tagsGroup = [
   },
   {
     name: "AlertManagement",
-    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule"],
+    tags: ["AlertNotifier", "Alert", "GlobalAlertRule", "AlertRule", "SmtpServer"],
   },
   {
     name: "VmManagement",
@@ -82,6 +82,7 @@ const tagsGroup = [
       "PmemDimm",
       "UsbDevice",
       "GpuDevice",
+      "PciDevice"
     ],
   },
   {
@@ -169,6 +170,8 @@ const tagsGroup = [
       "BackupService",
       "BackupStoreRepository",
       "BackupTargetExecution",
+      "ReplicationPlan",
+      "ReplicaVm"
     ],
   },
   {
@@ -177,7 +180,7 @@ const tagsGroup = [
   },
   {
     name: "DistributedFirewall",
-    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup"],
+    tags: ["IsolationPolicy", "SecurityPolicy", "SecurityGroup", "NetworkPolicyRuleService",  "NetworkPolicyRuleService"],
   },
   {
     name: "VirtualPrivateCloudNetwork",
@@ -193,17 +196,23 @@ const tagsGroup = [
       "VirtualPrivateCloudFloatingIp",
       "VirtualPrivateCloudClusterBinding",
       "VirtualPrivateCloudExternalSubnet",
+      "VirtualPrivateCloudExternalSubnetGroup",
+      "VirtualPrivateCloudEdgeGateway",
+      "VirtualPrivateCloudEdgeGatewayGroup",
+      "VirtualPrivateCloudEdgeGatewayGroup",
+      "VirtualPrivateCloudEdgeGateway",
+      "VirtualPrivateCloudExternalSubnetGroup"
     ],
   },
   {
     name: "Other",
-    tags: ["ApiInfo"],
+    tags: ["ApiInfo", "Internal", "ResourceChange"],
   },
   {
     name: "Observability",
     tags: ["Observability"]
   }
-];
+];;
 
 const initI18n = () => {
   const enComponents = require('../swagger/locales/en/components.json');
