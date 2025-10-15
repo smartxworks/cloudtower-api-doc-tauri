@@ -7537,63 +7537,63 @@
   ],
   "paths": {
     "/enable-cluster-pin-in-performance": {
-      "summary": "",
+      "summary": "开启集群的常驻缓存",
       "description": ""
     },
     "/disable-cluster-pin-in-performance": {
-      "summary": "",
+      "summary": "关闭集群的常驻缓存",
       "description": ""
     },
     "/get-cluster-pin-in-performance-info": {
-      "summary": "",
+      "summary": "获取集群的常驻缓存信息",
       "description": ""
     },
     "/set-vm-disk-resident-in-cache": {
-      "summary": "",
+      "summary": "设置虚拟机磁盘常驻缓存的启用",
       "description": ""
     },
     "/update-nfs-inode": {
-      "summary": "",
-      "description": ""
+      "summary": "编辑 NFS 文件信息",
+      "description": "仅支持常驻缓存字段"
     },
     "/get-business-host-groups": {
-      "summary": "",
+      "summary": "获取业务主机组信息",
       "description": ""
     },
     "/get-business-host-groups-connection": {
-      "summary": "",
+      "summary": "获取业务主机组数量",
       "description": ""
     },
     "/get-business-hosts": {
-      "summary": "",
+      "summary": "获取业务主机信息",
       "description": ""
     },
     "/get-business-hosts-connection": {
-      "summary": "",
+      "summary": "获取业务主机数量",
       "description": ""
     },
     "/get-disk-pools": {
-      "summary": "",
+      "summary": "获取物理盘池信息",
       "description": ""
     },
     "/get-disk-pools-connection": {
-      "summary": "",
+      "summary": "获取物理盘池数量",
       "description": ""
     },
     "/get-ecp-licenses": {
-      "summary": "",
+      "summary": "获取 ECP 许可信息",
       "description": ""
     },
     "/get-ecp-licenses-connection": {
-      "summary": "",
+      "summary": "获取 ECP 许可数量",
       "description": ""
     },
     "/get-replication-services": {
-      "summary": "",
+      "summary": "获取复制服务信息",
       "description": ""
     },
     "/get-replication-services-connection": {
-      "summary": "",
+      "summary": "获取复制服务数量",
       "description": ""
     }
   }
