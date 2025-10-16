@@ -7,6 +7,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "SnmpTransport",
       "SnmpTrapReceiver",
       "MigrateTransmitter",
+      "EcpLicense"
     ],
   },
   {
@@ -59,6 +60,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "ClusterTopo",
       "DiscoveredHost",
       "Disk",
+      "DiskPool",
       "Host",
       "Ipmi",
       "NodeTopo",
@@ -155,7 +157,9 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "BackupTargetExecution",
       "ReplicationPlan",
       "ReplicationService",
-      "ReplicaVm"
+      "ReplicaVm",
+      "BusinessHostGroup",
+      "BusinessHost"
     ],
   },
   {
