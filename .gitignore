@@ -15,6 +15,7 @@ yarn-error.log*
 */build/*
 */dist/*
 .parcel-cache
+cloudtower-api-doc/static/specs/*
 
 .yarn/cache/*
 .docusaurus

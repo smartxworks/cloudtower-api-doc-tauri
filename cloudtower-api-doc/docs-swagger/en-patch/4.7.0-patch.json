@@ -1,0 +1,1533 @@
+{
+  "components": {
+    "schemas": {
+      "BusinessHost": {
+        "properties": {
+          "business_host_group": {
+            "description": ""
+          },
+          "cluster": {
+            "description": ""
+          },
+          "description": "",
+          "entityAsyncStatus": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "initiators": {
+            "description": ""
+          },
+          "iscsi_luns": {
+            "description": ""
+          },
+          "iscsi_targets": {
+            "description": ""
+          },
+          "labels": {
+            "description": ""
+          },
+          "local_id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          },
+          "nvmf_namespaces": {
+            "description": ""
+          },
+          "nvmf_subsystems": {
+            "description": ""
+          }
+        }
+      },
+      "BusinessHostGroup": {
+        "properties": {
+          "business_hosts": {
+            "description": ""
+          },
+          "cluster": {
+            "description": ""
+          },
+          "description": "",
+          "entityAsyncStatus": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "iscsi_luns": {
+            "description": ""
+          },
+          "iscsi_targets": {
+            "description": ""
+          },
+          "local_id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          },
+          "nvmf_namespaces": {
+            "description": ""
+          },
+          "nvmf_subsystems": {
+            "description": ""
+          }
+        }
+      },
+      "Cluster": {
+        "properties": {
+          "access_write_compress_enabled": {
+            "description": ""
+          },
+          "allocated_prioritized_space": {
+            "description": ""
+          },
+          "allocated_prioritized_space_usage": {
+            "description": ""
+          },
+          "commited_memory_bytes": {
+            "description": ""
+          },
+          "data_reduction_ratio": {
+            "description": ""
+          },
+          "data_reduction_saving": {
+            "description": ""
+          },
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "ecp_license": {
+            "description": ""
+          },
+          "enable_tiering": {
+            "description": ""
+          },
+          "logical_used_data_space": {
+            "description": ""
+          },
+          "no_performance_layer": {
+            "description": ""
+          },
+          "overall_efficiency": {
+            "description": ""
+          },
+          "perf_allocated_data_space": {
+            "description": ""
+          },
+          "perf_failure_data_space": {
+            "description": ""
+          },
+          "perf_total_data_capacity": {
+            "description": ""
+          },
+          "perf_used_data_space": {
+            "description": ""
+          },
+          "perf_valid_data_space": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          },
+          "replica_capacity_only": {
+            "description": ""
+          },
+          "total_prio_volume_size": {
+            "description": ""
+          },
+          "total_prio_volume_size_usage": {
+            "description": ""
+          },
+          "upgrade_for_tiering": {
+            "description": ""
+          },
+          "used_cache_space": {
+            "description": ""
+          },
+          "valid_cache_space": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterDeletionParams": {
+        "properties": {
+          "force": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterDisablePinInPerformanceParams": {
+        "properties": {
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterEnablePinInPerformanceDiskPoolType": {
+        "properties": {
+          "percentage": {
+            "description": ""
+          },
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterEnablePinInPerformanceHostType": {
+        "properties": {
+          "disk_pools": {
+            "description": ""
+          },
+          "percentage": {
+            "description": ""
+          },
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterEnablePinInPerformanceParams": {
+        "properties": {
+          "data": {
+            "description": "",
+            "properties": {
+              "cluster_default_prio_percentage": {
+                "description": ""
+              },
+              "hosts": {
+                "description": ""
+              }
+            }
+          },
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterPinInPerformanceInfo": {
+        "properties": {
+          "allocated_prioritized_space": {
+            "description": ""
+          },
+          "allocated_prioritized_space_usage": {
+            "description": ""
+          },
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "hosts": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          },
+          "pin_in_performance_enabled": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          },
+          "total_prio_volume_size": {
+            "description": ""
+          },
+          "total_prio_volume_size_usage": {
+            "description": ""
+          }
+        }
+      },
+      "ClusterSettings": {
+        "properties": {
+          "default_storage_policy_ec_k": {
+            "description": ""
+          },
+          "default_storage_policy_ec_m": {
+            "description": ""
+          },
+          "default_storage_policy_replica_num": {
+            "description": ""
+          },
+          "default_storage_policy_thin_provision": {
+            "description": ""
+          }
+        }
+      },
+      "DiskPool": {
+        "properties": {
+          "chunk_id": {
+            "description": ""
+          },
+          "chunk_ins_id": {
+            "description": ""
+          },
+          "data_space_usage": {
+            "description": ""
+          },
+          "dirty_cache_space": {
+            "description": ""
+          },
+          "dirty_cache_usage": {
+            "description": ""
+          },
+          "disks": {
+            "description": ""
+          },
+          "failure_cache_space": {
+            "description": ""
+          },
+          "failure_data_space": {
+            "description": ""
+          },
+          "hdd_disk_count": {
+            "description": ""
+          },
+          "host": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "labels": {
+            "description": ""
+          },
+          "local_id": {
+            "description": ""
+          },
+          "numa_node": {
+            "description": ""
+          },
+          "nvme_ssd_disk_count": {
+            "description": ""
+          },
+          "perf_allocated_data_space": {
+            "description": ""
+          },
+          "perf_failure_data_space": {
+            "description": ""
+          },
+          "perf_total_data_capacity": {
+            "description": ""
+          },
+          "perf_used_data_space": {
+            "description": ""
+          },
+          "perf_valid_data_space": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          },
+          "sata_or_sas_ssd_disk_count": {
+            "description": ""
+          },
+          "status": {
+            "description": ""
+          },
+          "total_cache_capacity": {
+            "description": ""
+          },
+          "total_data_capacity": {
+            "description": ""
+          },
+          "use_state": {
+            "description": ""
+          },
+          "used_cache_space": {
+            "description": ""
+          },
+          "used_data_space": {
+            "description": ""
+          },
+          "valid_cache_space": {
+            "description": ""
+          },
+          "valid_free_cache_space": {
+            "description": ""
+          }
+        }
+      },
+      "DiskPoolPinInPerformanceInfo": {
+        "properties": {
+          "id": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          }
+        }
+      },
+      "DiskPoolWhereUniqueInput": {
+        "properties": {
+          "id": {
+            "description": ""
+          },
+          "local_id": {
+            "description": ""
+          }
+        }
+      },
+      "EcpLicense": {
+        "properties": {
+          "cluster": {
+            "description": ""
+          },
+          "cluster_local_id": {
+            "description": ""
+          },
+          "ecp_edition": {
+            "description": ""
+          },
+          "expire_date": {
+            "description": ""
+          },
+          "has_metrox": {
+            "description": ""
+          },
+          "has_remote_backup": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "license_type": {
+            "description": ""
+          },
+          "max_core_num": {
+            "description": ""
+          },
+          "max_physical_data_capacity": {
+            "description": ""
+          },
+          "original_code": {
+            "description": ""
+          },
+          "product_name": {
+            "description": ""
+          },
+          "serial": {
+            "description": ""
+          },
+          "sign_date": {
+            "description": ""
+          },
+          "subscription_expire_date": {
+            "description": ""
+          },
+          "subscription_start_date": {
+            "description": ""
+          },
+          "vendor": {
+            "description": ""
+          },
+          "version": {
+            "description": ""
+          }
+        }
+      },
+      "Host": {
+        "properties": {
+          "allocated_prioritized_space": {
+            "description": ""
+          },
+          "allocated_prioritized_space_usage": {
+            "description": ""
+          },
+          "commited_memory_bytes": {
+            "description": ""
+          },
+          "connect_status": {
+            "description": ""
+          },
+          "disk_pools": {
+            "description": ""
+          },
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "merged_status": {
+            "description": ""
+          },
+          "perf_allocated_data_space": {
+            "description": ""
+          },
+          "perf_failure_data_space": {
+            "description": ""
+          },
+          "perf_total_data_capacity": {
+            "description": ""
+          },
+          "perf_used_data_space": {
+            "description": ""
+          },
+          "perf_valid_data_space": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          },
+          "used_cache_space": {
+            "description": ""
+          },
+          "valid_cache_space": {
+            "description": ""
+          },
+          "valid_free_cache_space": {
+            "description": ""
+          }
+        }
+      },
+      "HostBatchCreateDiskInput": {
+        "properties": {
+          "chunk_ins_id": {
+            "description": ""
+          }
+        }
+      },
+      "HostPinInPerformanceInfo": {
+        "properties": {
+          "allocated_prioritized_space": {
+            "description": ""
+          },
+          "allocated_prioritized_space_usage": {
+            "description": ""
+          },
+          "disk_pools": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          },
+          "planned_prioritized_space": {
+            "description": ""
+          },
+          "prio_space_percentage": {
+            "description": ""
+          },
+          "with_faster_ssd_as_cache": {
+            "description": ""
+          }
+        }
+      },
+      "HostWhereUniqueInput": {
+        "properties": {
+          "chunk_id": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "local_id": {
+            "description": ""
+          },
+          "node_topo_local_id": {
+            "description": ""
+          }
+        }
+      },
+      "ImportVmVolumeParams": {
+        "properties": {
+          "elf_ec_storage_policy": {
+            "description": "",
+            "properties": {
+              "ec_k": {
+                "description": ""
+              },
+              "ec_m": {
+                "description": ""
+              },
+              "thin_provision": {
+                "description": ""
+              }
+            }
+          },
+          "elf_replica_storage_policy": {
+            "description": ""
+          },
+          "storage_policy": {
+            "description": ""
+          }
+        }
+      },
+      "IscsiLun": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_host_is_same_with_parent": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "replication_plans": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          },
+          "snapshot_plans": {
+            "description": ""
+          }
+        }
+      },
+      "IscsiLunCommonParams": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_host_is_same_with_parent": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          }
+        }
+      },
+      "IscsiLunSnapshot": {
+        "properties": {
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          },
+          "snapshot_group": {
+            "description": ""
+          }
+        }
+      },
+      "IscsiTarget": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_adaptive": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "iscsi_connections": {
+            "description": ""
+          },
+          "iscsi_luns_num": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "IscsiTargetCommonParams": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_adaptive": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "MetricLabel": {
+        "properties": {
+          "_cid": {
+            "description": ""
+          }
+        }
+      },
+      "MigrateVmConfig": {
+        "properties": {
+          "elf_ec_storage_policy": {
+            "description": "",
+            "properties": {
+              "ec_k": {
+                "description": ""
+              },
+              "ec_m": {
+                "description": ""
+              },
+              "thin_provision": {
+                "description": ""
+              }
+            }
+          },
+          "elf_replica_storage_policy": {
+            "description": ""
+          },
+          "elf_storage_policy": {
+            "description": ""
+          }
+        }
+      },
+      "MountNewCreateDisksParams": {
+        "properties": {
+          "vm_volume": {
+            "description": "",
+            "properties": {
+              "elf_ec_storage_policy": {
+                "description": "",
+                "properties": {
+                  "ec_k": {
+                    "description": ""
+                  },
+                  "ec_m": {
+                    "description": ""
+                  },
+                  "thin_provision": {
+                    "description": ""
+                  }
+                }
+              },
+              "elf_replica_storage_policy": {
+                "description": ""
+              },
+              "elf_storage_policy": {
+                "description": ""
+              },
+              "resident_in_cache": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "NestedAggregateBusinessHost": {
+        "properties": {
+          "count": {
+            "description": ""
+          }
+        }
+      },
+      "NestedAggregateBusinessHostGroup": {
+        "properties": {
+          "count": {
+            "description": ""
+          }
+        }
+      },
+      "NestedAggregateDiskPool": {
+        "properties": {
+          "count": {
+            "description": ""
+          }
+        }
+      },
+      "NestedAggregateEcpLicense": {
+        "properties": {
+          "count": {
+            "description": ""
+          }
+        }
+      },
+      "NestedAggregateReplicationService": {
+        "properties": {
+          "count": {
+            "description": ""
+          }
+        }
+      },
+      "NestedBusinessHost": {
+        "properties": {
+          "id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          }
+        }
+      },
+      "NestedBusinessHostGroup": {
+        "properties": {
+          "id": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          }
+        }
+      },
+      "NestedContentLibraryVmTemplateDisk": {
+        "properties": {
+          "elf_storage_policy_ec_k": {
+            "description": ""
+          },
+          "elf_storage_policy_ec_m": {
+            "description": ""
+          },
+          "elf_storage_policy_replica_num": {
+            "description": ""
+          },
+          "elf_storage_policy_thin_provision": {
+            "description": ""
+          }
+        }
+      },
+      "NestedDiskPool": {
+        "properties": {
+          "id": {
+            "description": ""
+          }
+        }
+      },
+      "NestedEcpLicense": {
+        "properties": {
+          "id": {
+            "description": ""
+          }
+        }
+      },
+      "NestedFailoverExecution": {
+        "properties": {
+          "id": {
+            "description": ""
+          }
+        }
+      },
+      "NestedFrozenDisks": {
+        "properties": {
+          "resident_in_cache": {
+            "description": ""
+          }
+        }
+      },
+      "NestedInitiator": {
+        "properties": {
+          "chap_name": {
+            "description": ""
+          },
+          "chap_secret": {
+            "description": ""
+          },
+          "enable_chap": {
+            "description": ""
+          },
+          "identifier": {
+            "description": ""
+          },
+          "ips": {
+            "description": ""
+          }
+        }
+      },
+      "NestedPermanentFailoverExecution": {
+        "properties": {
+          "id": {
+            "description": ""
+          }
+        }
+      },
+      "NestedReplicationServiceNetwork": {
+        "properties": {
+          "gateway": {
+            "description": ""
+          },
+          "ip": {
+            "description": ""
+          },
+          "mask": {
+            "description": ""
+          },
+          "type": {
+            "description": ""
+          },
+          "vlanId": {
+            "description": ""
+          }
+        }
+      },
+      "NestedStoragePolicyConfig": {
+        "properties": {
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "NfsExport": {
+        "properties": {
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "NfsExportCreationParams": {
+        "properties": {
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "NfsExportUpdationParams": {
+        "properties": {
+          "data": {
+            "description": "",
+            "properties": {
+              "ec_k": {
+                "description": ""
+              },
+              "ec_m": {
+                "description": ""
+              },
+              "replica_num": {
+                "description": ""
+              },
+              "resiliency_type": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "NfsInode": {
+        "properties": {
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "NfsInodeUpdationParams": {
+        "properties": {
+          "data": {
+            "description": ""
+          },
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "NfsInodeUpdationParamsData": {
+        "properties": {
+          "prioritized": {
+            "description": ""
+          }
+        }
+      },
+      "NvmfNamespace": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_host_is_same_with_parent": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "downgraded_prioritized_space": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          },
+          "snapshot_plans": {
+            "description": ""
+          }
+        }
+      },
+      "NvmfNamespaceCommonParams": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_host_is_same_with_parent": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          }
+        }
+      },
+      "NvmfNamespaceSnapshot": {
+        "properties": {
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          },
+          "snapshot_group": {
+            "description": ""
+          }
+        }
+      },
+      "NvmfSubsystem": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_adaptive": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "iscsi_connections": {
+            "description": ""
+          },
+          "nvmf_namespaces_num": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "NvmfSubsystemCommonParams": {
+        "properties": {
+          "business_host_groups": {
+            "description": ""
+          },
+          "business_hosts": {
+            "description": ""
+          },
+          "configuration_adaptive": {
+            "description": ""
+          },
+          "configuration_method": {
+            "description": ""
+          },
+          "ec_k": {
+            "description": ""
+          },
+          "ec_m": {
+            "description": ""
+          },
+          "encrypt_method": {
+            "description": ""
+          },
+          "prioritized": {
+            "description": ""
+          },
+          "resiliency_type": {
+            "description": ""
+          }
+        }
+      },
+      "ReplicationService": {
+        "properties": {
+          "application": {
+            "description": ""
+          },
+          "createdAt": {
+            "description": ""
+          },
+          "description": "",
+          "entityAsyncStatus": {
+            "description": ""
+          },
+          "failover_executions": {
+            "description": ""
+          },
+          "id": {
+            "description": ""
+          },
+          "kube_config": {
+            "description": ""
+          },
+          "management_network": {
+            "description": ""
+          },
+          "max_failback_jobs": {
+            "description": ""
+          },
+          "max_failback_speed_limit": {
+            "description": ""
+          },
+          "max_replication_jobs": {
+            "description": ""
+          },
+          "max_replication_speed_limit": {
+            "description": ""
+          },
+          "max_retry_times": {
+            "description": ""
+          },
+          "name": {
+            "description": ""
+          },
+          "permanent_failover_execution": {
+            "description": ""
+          },
+          "replication_clusters": {
+            "description": ""
+          },
+          "replication_clusters_descriptor": {
+            "description": ""
+          },
+          "replication_network": {
+            "description": ""
+          },
+          "replication_plans": {
+            "description": ""
+          },
+          "retry_interval": {
+            "description": ""
+          },
+          "storage_network": {
+            "description": ""
+          },
+          "updatedAt": {
+            "description": ""
+          }
+        }
+      },
+      "Vm": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmCloneParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmCreateVmFromContentLibraryTemplateParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmCreateVmFromTemplateParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmCreationParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmRebuildParams": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmSetVmDiskResidentInCacheParams": {
+        "properties": {
+          "resident_in_cache": {
+            "description": ""
+          },
+          "where": {
+            "description": ""
+          }
+        }
+      },
+      "VmSnapshot": {
+        "properties": {
+          "ha_priority": {
+            "description": ""
+          }
+        }
+      },
+      "VmUpdateParams": {
+        "properties": {
+          "data": {
+            "description": "",
+            "properties": {
+              "ha_priority": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "VmVolume": {
+        "properties": {
+          "elf_storage_policy_ec_k": {
+            "description": ""
+          },
+          "elf_storage_policy_ec_m": {
+            "description": ""
+          },
+          "elf_storage_policy_replica_num": {
+            "description": ""
+          },
+          "elf_storage_policy_thin_provision": {
+            "description": ""
+          },
+          "resident_in_cache": {
+            "description": ""
+          }
+        }
+      },
+      "VmVolumeCreationParams": {
+        "properties": {
+          "elf_ec_storage_policy": {
+            "description": "",
+            "properties": {
+              "ec_k": {
+                "description": ""
+              },
+              "ec_m": {
+                "description": ""
+              },
+              "thin_provision": {
+                "description": ""
+              }
+            }
+          },
+          "elf_replica_storage_policy": {
+            "description": ""
+          },
+          "elf_storage_policy": {
+            "description": ""
+          },
+          "resident_in_cache": {
+            "description": ""
+          }
+        }
+      },
+      "VmVolumeSnapshot": {
+        "properties": {
+          "elf_storage_policy_ec_k": {
+            "description": ""
+          },
+          "elf_storage_policy_ec_m": {
+            "description": ""
+          },
+          "elf_storage_policy_replica_num": {
+            "description": ""
+          },
+          "elf_storage_policy_thin_provision": {
+            "description": ""
+          },
+          "resident_in_cache": {
+            "description": ""
+          }
+        }
+      },
+      "VmdkDiskModify": {
+        "properties": {
+          "elf_ec_storage_policy": {
+            "description": "",
+            "properties": {
+              "ec_k": {
+                "description": ""
+              },
+              "ec_m": {
+                "description": ""
+              },
+              "thin_provision": {
+                "description": ""
+              }
+            }
+          },
+          "elf_replica_storage_policy": {
+            "description": ""
+          },
+          "elf_storage_policy": {
+            "description": ""
+          }
+        }
+      },
+      "WithTask_ClusterPinInPerformanceInfo_": {
+        "properties": {
+          "data": {
+            "description": ""
+          },
+          "task_id": {
+            "description": ""
+          }
+        }
+      },
+      "WithTask_NfsInode_": {
+        "properties": {
+          "data": {
+            "description": ""
+          },
+          "task_id": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "description": "",
+    "title": "",
+    "version": "4.7.0"
+  },
+  "paths": {
+    "/disable-cluster-pin-in-performance": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/enable-cluster-pin-in-performance": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-business-host-groups": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-business-host-groups-connection": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-business-hosts": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-business-hosts-connection": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-cluster-pin-in-performance-info": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-disk-pools": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-disk-pools-connection": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-ecp-licenses": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-ecp-licenses-connection": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-replication-services": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/get-replication-services-connection": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/set-vm-disk-resident-in-cache": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    },
+    "/update-nfs-inode": {
+      "post": {
+        "description": "",
+        "summary": ""
+      }
+    }
+  }
+}

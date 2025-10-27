@@ -6741,6 +6741,7 @@ __metadata:
     commander: ^11.0.0
     core-js: ^3.21.1
     cross-env: ^7.0.3
+    deep-object-diff: ^1.1.9
     docusaurus-plugin-sass: ^0.2.3
     docusaurus2-dotenv: ^1.4.0
     fs-extra: ^10.0.1
@@ -7653,6 +7654,13 @@ __metadata:
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
   checksum: 7be7e5a8d468d6b10e6a67c3de828f55001b6eb515d014f7aeb9066ce36bd5717161eb47d6a0f7bed8a9083935b465bc163ee2581c8b128d29bf61092fdf57a7
+  languageName: node
+  linkType: hard
+
+"deep-object-diff@npm:^1.1.9":
+  version: 1.1.9
+  resolution: "deep-object-diff@npm:1.1.9"
+  checksum: ecd42455e4773f653595d28070295e7aaa8402db5f8ab21d0bec115a7cb4de5e207a5665514767da5f025c96597f1d3a0a4888aeb4dd49e03c996871a3aa05ef
   languageName: node
   linkType: hard
 
