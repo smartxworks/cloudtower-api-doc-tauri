@@ -88,7 +88,7 @@ const config = {
       navbar: {
         logo: {
           alt: "Smartx - Make IT simple",
-          src: "img/smartx-developer-badge-zh-CN.svg",
+          src: "img/developer-badge-zh.svg",
         },
         items: [
           {

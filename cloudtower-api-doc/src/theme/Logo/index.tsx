@@ -54,7 +54,7 @@ export default function Logo(props) {
         <LogoThemedImage
           logo={{
             ...logo,
-            src: `img/smartx-developer-badge-${currentLocale}.svg`
+            src: `img/developer-badge-${currentLocale}.svg`
           }}
           alt={alt}
           imageClassName={imageClassName}
