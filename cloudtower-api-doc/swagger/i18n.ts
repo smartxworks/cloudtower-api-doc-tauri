@@ -193,7 +193,7 @@ i18next.init({
       components: zhComponents,
     },
   },
-  lng: SupportLanguage.zh,
+  lng: process.env.DEFAULT_LNG || SupportLanguage.zh,
   updateMissing: true,
   fallbackLng: null,
   fallbackNS,
