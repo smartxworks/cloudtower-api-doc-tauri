@@ -78,7 +78,9 @@
   "actualRequest": "Actual Request: ",
   "lastVersion": "Latest Version",
   "historyVersion": "History Version",
-  "copyright": "Copyright © 2023 SmartX Inc. All rights reserved",
+  "copyright": "Copyright © {year} SmartX Inc. All rights reserved",
+
+  "developer": "Developer",
   "user_term": "Terms of Use",
   "legal": "Legal",
   "privacy": "Privacy",
@@ -86,5 +88,13 @@
   "version_icu": "Version {version}",
   "VirtualPrivateCloudNetwork": "VPC Networking",
   "DistributedFirewall": "Distributed Firewall",
-  "archivedVersion": "Archived Versions"
+  "archivedVersion": "Archived Versions",
+  "footer.developer": "Developer",
+  "footer.copyright": "Copyright © {year} SmartX Inc. All rights reserved.",
+  "footer.terms": "Terms of Use",
+  "footer.eula": "End User License Agreement",
+  "footer.privacy": "Privacy Policy",
+  "footer.legal": "Legal Information",
+  "footer.beian.mps": "Beijing Public Security Network Security Record No. 11010802027935",
+  "footer.beian.miit": "Beijing ICP License No. 14055327-2"
 }

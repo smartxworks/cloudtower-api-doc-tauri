@@ -44,6 +44,67 @@ const config = {
       }),
     ],
   ],
+  customFields: {
+    footer: {
+      left: {
+        items: [
+          {
+            type: 'logo',
+            src: 'img/footer-badge.svg'
+          },
+          {
+            type: 'logo-text',
+            i18nKey: 'developer'
+          }
+        ]
+      },
+      right: {
+        top: {
+          items: [
+            {
+              type: 'copyright',
+              i18nKey: 'copyright'
+            },
+            {
+              type: 'link',
+              href: 'https://www.smartx.com/legal/website-terms',
+              i18nKey: 'user_term'
+            },
+            {
+              type: 'link',
+              href: 'https://www.smartx.com/legal/end-user-license-agreement',
+              i18nKey: 'candidate'
+            },
+            {
+              type: 'link',
+              href: 'https://www.smartx.com/legal/privacy',
+              i18nKey: 'privacy'
+            },
+            {
+              type: 'link',
+              href: 'https://www.smartx.com/legal',
+              i18nKey: 'legal'
+            }
+          ]
+        },
+        bottom: {
+          items: [
+            {
+              type: 'link',
+              href: 'https://beian.mps.gov.cn',
+              i18nKey: 'beian_mps'
+            },
+            {
+              type: 'link',
+              href: 'https://beian.miit.gov.cn',
+              i18nKey: 'beian_miit'
+            }
+          ]
+        }
+      },
+      separator: '·' // 可以自定义为 '|', '•', '·' 等
+    },
+  },
   plugins: [
     (context, opts) => {
       return {
@@ -58,6 +119,9 @@ const config = {
               },
             }),
             plugins: [
+              new webpack.DefinePlugin({
+                ['process.env.DEFAULT_LNG']:  JSON.stringify('zh')
+              }),
               new webpack.ProvidePlugin({
                 process: "process/browser.js",
               }),
@@ -115,10 +179,6 @@ const config = {
             position: "right",
           },
         ],
-      },
-      footer: {
-        style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} SmartX Inc`,
       },
       prism: {
         theme: lightCodeTheme,
