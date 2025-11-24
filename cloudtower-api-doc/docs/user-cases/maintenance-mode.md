@@ -5,7 +5,6 @@ title: 维护模式
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 进入维护模式
 
 ## 执行维护模式预检查
 
@@ -85,7 +84,7 @@ public class App {
 
 其中 $HOST_ID 为需要进入维护模式的主机 id，返回结果如下
 
-```
+```json
 {
     "task_id" : "$TASK_ID"
 }
@@ -165,7 +164,7 @@ public class App {
 
 其中 $TASK_ID 可以从第一步中获取，返回结果如下
 
-```
+```json
 {
     "done": true,
     "shutdownVms": ["someVmId1","someVmId2"]
@@ -338,7 +337,7 @@ public class App {
 
 退出维护模式时，可以直接获取到检查结果。其中 $HOST_ID 是准备退出维护模式的主机 id。请求结果如下。
 
-```
+```json
 {
   "shutDownVms": [],
   "liveMigrateVms": [],

@@ -29,7 +29,7 @@ Specific examples:
 
 Assuming we receive a return like this:
 
-```
+```json
 {
   "data": {
     "vnc": {
@@ -45,19 +45,19 @@ Assuming we receive a return like this:
 
 If we want to connect directly, we will finally construct a URL like this:
 
-```
+```bash
 wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
 If we want to forward through CloudTower, we need to process the token first. Assuming our token is MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo= (obtained by base64 encryption based on 123456789abcdefghijklmnopqrstuvwxyz), we need to escape characters such as /, +, and =.
 
-```
+```bash
 token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
 encodeURIComponent(token) = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D"
 ```
 
 Assuming the CloudTower address is 192.168.5.1, we will finally construct a URL like this:
 
-```
+```bash
 wss://192.168.5.1/websockify/?token=MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D&uuid=00000000-0000-0000-0000-000000000000&host=192.168.5.4
 ```

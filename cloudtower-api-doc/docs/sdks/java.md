@@ -2,7 +2,6 @@
 title: Java
 ---
 
-# 概览
 Java 环境下的 CloudTower SDK，适用于 Java 1.8 及以上版本
 
 - [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)

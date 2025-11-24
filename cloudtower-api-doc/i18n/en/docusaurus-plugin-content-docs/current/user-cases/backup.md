@@ -1,7 +1,6 @@
 ---
 title: VM Backup
 ---
-# Virtual Machine Backup via the CloudTower API
 
 import GetVm from '../../../../../code_blocks/GetVm.md'
 import CreateVmSnapshot from '../../../../../code_blocks/CreateVmSnapshot.md'
@@ -9,7 +8,7 @@ import GetTask from '../../../../../code_blocks/GetTask.md'
 import GetVmSnapshot from '../../../../../code_blocks/GetVmSnapshot.md'
 import GetLunSnapshot from '../../../../../code_blocks/GetLunSnapshot.md'
 
-
+Virtual Machine Backup via the CloudTower API
 1. Backing up a virtual machine (VM) will include backing up the VM configurations such as the VM name and the number of vCPUs, and the data contained in the disks.
 2.Before any backup, you need first to understand the relations between VM resources as shown below:
 

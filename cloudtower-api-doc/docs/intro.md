@@ -1,10 +1,8 @@
 ---
-title: 概览
+title: 欢迎使用 CloudTower API
 sidebar_position: 1
 slug: /
 ---
-
-# 欢迎使用 CloudTower API
 
 感谢您使用 CloudTower API，请在使用前仔细阅读以下相关文档。
 

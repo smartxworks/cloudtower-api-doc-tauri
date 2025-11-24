@@ -2,8 +2,6 @@
 title: Go
 ---
 
-
-#  Overview
 The CloudTower SDK in the Golang environment is applicable to golang 1.16 or above. 
 
 - [Source COde](https://github.com/smartxworks/cloudtower-go-sdk)

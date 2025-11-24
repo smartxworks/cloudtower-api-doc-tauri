@@ -1,4 +1,4 @@
-```ssh
+```json
 {
  "task_id": "string",
  "data": {
