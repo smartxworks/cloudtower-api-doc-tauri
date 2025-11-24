@@ -1,4 +1,4 @@
-```ssh
+```bash
 curl -X 'POST' \
  'http://CLOUDTOWER_IP/v2/api/login' \
  -H 'accept: application/json' \

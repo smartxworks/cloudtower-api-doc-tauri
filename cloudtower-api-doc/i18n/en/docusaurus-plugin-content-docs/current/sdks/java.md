@@ -2,7 +2,6 @@
 title: Java
 ---
 
-# Overview
 The CloudTower SDK in Java for versions 1.8 and above
 
 - [Source Address](https://github.com/smartxworks/cloudtower-java-sdk)

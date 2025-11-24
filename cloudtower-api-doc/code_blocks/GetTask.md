@@ -1,4 +1,4 @@
-```ssh
+```bash
 curl --location --request POST 'http://CLOUDTOWER_IP/v2/api/get-tasks' \ --header 'Authorization: YOUR_TOKEN' \
 --header 'Content-Type: application/json' \
 --data-raw '{

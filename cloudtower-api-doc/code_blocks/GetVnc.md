@@ -1,4 +1,4 @@
-```sh
+```bash
 curl -X 'POST' \
  'http://CLOUDTOWER_API/api' \
  -H 'accept: application/json' \

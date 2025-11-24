@@ -1,10 +1,8 @@
 ---
-title: Overview
+title: Welcome to CloudTower API
 sidebar_position: 1
 slug: /
 ---
-
-# Welcome to CloudTower API
 
 Thank you for using CloudTower API. Please read the following documents carefully before use.
 
