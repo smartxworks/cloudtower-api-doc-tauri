@@ -6,7 +6,7 @@ import { Badge } from "@redocly/reference-docs/lib/redoc-lib/src/common-elements
 import i18next from "./i18n";
 import {
   ISpec,
-  specMap,
+  useSpecMap,
   wrapSpecWithI18n,
   overwriteSchemaTitle,
 } from "./utils";
@@ -68,6 +68,7 @@ const Redoc: React.FC<{
 const App: React.FC = () => {
   const { i18n } = useDocusaurusContext();
   const { search } = useLocation();
+  const specMap = useSpecMap();
   const version = new URLSearchParams(search).get('version') || Object.keys(specMap)[0]
   const [spec, setSpec] = useState<ISpec>();
   const [rawSpec, setRawSpec] = useState<ISpec>();
@@ -82,7 +83,7 @@ const App: React.FC = () => {
       setSpec(newSpec);
     })
 
-  }, [version, i18n.currentLocale]);
+  }, [version, i18n.currentLocale, specMap]);
 
   useEffect(() => {
     specRef.current = spec;
