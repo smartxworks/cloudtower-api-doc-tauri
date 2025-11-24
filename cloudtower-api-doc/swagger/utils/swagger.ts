@@ -1,6 +1,9 @@
 import { OpenAPIV3 } from "openapi-types";
+import { useMemo } from "react";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-export const specMap = {
+// 默认的 specMap 配置
+const defaultSpecMap = {
   "4.7.0": import("../../static/specs/4.7.0-swagger.json"),
   "4.6.2": import("../../static/specs/4.6.0-swagger.json"),
   "4.6.1": import("../../static/specs/4.6.0-swagger.json"),
@@ -14,23 +17,41 @@ export const specMap = {
   "4.1.0": import("../../static/specs/4.1.0-swagger.json"),
   "4.0.0": import("../../static/specs/4.0.0-swagger.json"),
   "3.4.4": import("../../static/specs/3.4.4-swagger.json"),
-  "3.3.0": import("../../static/specs/3.3.0-swagger.json"),
-  "3.2.0": import("../../static/specs/3.2.0-swagger.json"),
-  "3.1.0": import("../../static/specs/3.1.0-swagger.json"),
-  "3.0.0": import("../../static/specs/3.0.0-swagger.json"),
   "2.8.0": import("../../static/specs/2.8.0-swagger.json"),
-  "2.7.0": import("../../static/specs/2.7.0-swagger.json"),
-  "2.6.0": import("../../static/specs/2.6.0-swagger.json"),
-  "2.5.0": import("../../static/specs/2.5.0-swagger.json"),
-  "2.4.0": import("../../static/specs/2.4.0-swagger.json"),
-  "2.3.0": import("../../static/specs/2.3.0-swagger.json"),
-  "2.2.0": import("../../static/specs/2.2.0-swagger.json"),
-  "2.1.0": import("../../static/specs/2.1.0-swagger.json"),
-  "2.0.0": import("../../static/specs/2.0.0-swagger.json"),
-  "1.10.0": import("../../static/specs/1.10.0-swagger.json"),
-  "1.9.0": import("../../static/specs/1.9.0-swagger.json"),
-  "1.8.0": import("../../static/specs/1.8.0-swagger.json"),
 };
+
+/**
+ * Hook to get specMap, prioritizing customFields.specMap from docusaurus config,
+ * falling back to default specMap if not configured.
+ * 
+ * customFields.specMap 中的值可以是：
+ * - 字符串路径：会自动转换为动态 import
+ * - Promise（import() 调用）：直接使用
+ */
+export function useSpecMap() {
+  const { siteConfig: { customFields } } = useDocusaurusContext();
+  
+  return useMemo(() => {
+    // 优先使用 customFields 中的 specMap 配置
+    if (customFields?.specMap && typeof customFields.specMap === 'object') {
+      const customSpecMap = customFields.specMap as Record<string, string | Promise<any>>;
+      // 将字符串路径转换为动态 import，如果已经是 Promise 则直接使用
+      const processedSpecMap: Record<string, Promise<any>> = {};
+      for (const [key, value] of Object.entries(customSpecMap)) {
+        if (typeof value === 'string') {
+          // 如果是字符串路径，转换为动态 import
+          processedSpecMap[key] = import(value);
+        } else {
+          // 如果已经是 Promise，直接使用
+          processedSpecMap[key] = value;
+        }
+      }
+      return processedSpecMap;
+    }
+    // 如果没有配置，使用默认的 specMap
+    return defaultSpecMap;
+  }, [customFields]);
+}
 
 export enum SupportLanguage {
   zh = "zh",

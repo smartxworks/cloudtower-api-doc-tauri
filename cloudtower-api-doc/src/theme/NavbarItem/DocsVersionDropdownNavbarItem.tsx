@@ -3,7 +3,7 @@ import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import clsx from 'clsx';
 import i18next from '../../../swagger/i18n';
-import { specMap } from '../../../swagger/utils/swagger';
+import { useSpecMap } from '../../../swagger/utils/swagger';
 import styles from './styles.module.scss'
 import { useLocation } from '@docusaurus/router';
 
@@ -16,6 +16,7 @@ export default function DocsVersionDropdownNavbarItem({
   className,
   ...props
 }) {
+  const specMap = useSpecMap();
   const versions = Object.keys(specMap);
   const [ active, setActive ] = useState(false)
   const { search, pathname, hash } = useLocation();
@@ -48,6 +49,7 @@ export default function DocsVersionDropdownNavbarItem({
       />
     );
   }
+  const archiveIndex = items.findIndex(v => v.label.startsWith('3.4.4'));
   const completeItems = [
     {
       type: 'html',
@@ -62,7 +64,7 @@ export default function DocsVersionDropdownNavbarItem({
       type: 'html',
       value: `<span class="dropdown-subtitle">${i18next.t('components.historyVersion')}</span>`
     },
-    ...items.slice(1, -16),
+    ...items.slice(1, archiveIndex),
     {
       type: 'html',
       value: "<hr class=\"dropdown-separator\">"
@@ -71,12 +73,15 @@ export default function DocsVersionDropdownNavbarItem({
       type: 'html',
       value: `<span class="dropdown-subtitle">${i18next.t('components.archivedVersion')}</span>`
     },
-    ...items.slice(-16),
+    ...items.slice(archiveIndex),
   ].map(v => {
     if(v.label) {
       let label = v.label;
       if(v.label.startsWith('3.4')) {
         label = '3.4.x LTS'
+      }
+      if(v.label.startsWith('2.8.0')) {
+        label = '2.x'
       }
       if(v.href) {
         return v;

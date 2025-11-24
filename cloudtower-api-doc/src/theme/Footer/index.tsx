@@ -4,12 +4,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import i18next from '../../../swagger/i18n';
 
 interface FooterItem {
-  type: 'link' | 'text' | 'copyright' | 'logo' | 'logo-text';
+  type: 'link' | 'text' | 'copyright' | 'logo' | 'logo-text' | 'html';
   href?: string;
   i18nKey?: string;
   text?: string; // 如果没有 i18nKey，直接使用 text
   src?: string; // for logo
   alt?: string; // for logo
+  html?: string; // for html
 }
 
 interface FooterSection {
@@ -54,6 +55,14 @@ export default function Footer(): JSX.Element {
   const renderItem = (item: FooterItem, index: number, items: FooterItem[]): React.ReactNode => {
     const content = getText(item);
     
+    if (item.type === 'html') {
+      return (
+        <React.Fragment key={index}>
+          <div className="footer-html" dangerouslySetInnerHTML={{__html: item.html}} />
+        </React.Fragment>
+      );
+    }
+
     if (item.type === 'logo') {
       const logoUrl = item.src ? useBaseUrl(item.src) : null;
       return logoUrl ? (
