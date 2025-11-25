@@ -16,6 +16,7 @@
   --ifm-code-font-size: 95%;
   --ifm-footer-padding-vertical: 12px;
   --ifm-footer-padding-horizontal: 20px;
+  --ifm-spacing-horizontal: 0px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-height: 56px;
   --ifm-color-content-secondary: rgba(44, 56, 82, 0.6);
@@ -526,8 +527,4 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
 .footer-separator {
   color: rgba(0, 21, 64, .3);
   margin: 0 2px;
-}
-
-#__docusaurus .main-wrapper {
-  overflow: hidden;
 }
