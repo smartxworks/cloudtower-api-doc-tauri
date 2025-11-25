@@ -43,8 +43,7 @@ export default function DocsVersionDropdownNavbarItem({
       <DefaultNavbarItem
         {...props}
         mobile={mobile}
-        label={"dropdown-label"}
-        to={"xx"}
+        label={i18next.t('components.version_icu', {version: currentVersion })}
         isActive={dropdownActiveClassDisabled ? () => false : undefined}
       />
     );

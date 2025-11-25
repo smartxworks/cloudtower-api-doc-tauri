@@ -40,7 +40,7 @@ export function useSpecMap() {
       for (const [key, value] of Object.entries(customSpecMap)) {
         if (typeof value === 'string') {
           // 如果是字符串路径，转换为动态 import
-          processedSpecMap[key] = import(value);
+          processedSpecMap[key] = import(`../../static/${value}`);
         } else {
           // 如果已经是 Promise，直接使用
           processedSpecMap[key] = value;
