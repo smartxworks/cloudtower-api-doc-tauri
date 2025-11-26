@@ -2,6 +2,7 @@
   "name": "cloudtower-api-doc-tauri",
   "scripts": {
     "tauri": "tauri",
+    "sync:sdk:readme": "node ./cloudtower-api-doc/scripts/sync-sdk-readme.js",
     "api:scan": "node ./cloudtower-api-doc/scripts/scan-missing.js",
     "api:sync": "node ./cloudtower-api-doc/scripts/sync-swagger.js",
     "api:new": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
