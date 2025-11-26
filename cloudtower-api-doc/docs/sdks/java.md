@@ -4,12 +4,17 @@ title: Java
 
 Java 环境下的 CloudTower SDK，适用于 Java 1.8 及以上版本
 
+# Cloudtower Java SDK
+
+Java 环境下的 Cloudtower SDK，适用于 Java 1.8 及以上版本
+
 - [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-java-sdk/releases)
+- [通用指南](https://cloudtower-api-doc.vercel.app)
 
 ## 安装
 
-- ### git 源码安装
+- ### 源码安装
 
   ```shell
   git clone https://github.com/smartxworks/cloudtower-java-sdk.git
@@ -37,7 +42,7 @@ ApiClient client = new ApiClient();
 client.setBasePath("http://192.168.96.133/v2/api");
 ```
 
-> 如果需要使用 https，则需要安装证书，也可以选择忽略证书验证
+> 如果需要使用 https，可以选择忽略证书验证
 
 ```java
 ApiClient client = new ApiClient();
@@ -61,7 +66,7 @@ UserApi userApi = new UserApi(client);
 LoginInput loginInput = new LoginInput()
     .username("root")
     .password("!QAZ2wsx").source(UserSource.LOCAL);
-WithTaskTokenString token = userApi.login(loginInput);
+WithTaskLoginResponse token = userApi.login(loginInput);
 ((ApiKeyAuth) client.getAuthentication("Authorization")).setApiKey(token.getData().getToken());
 ```
 
@@ -185,6 +190,1568 @@ alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 client.addDefaultHeader("content-language", "fr-CA");
 // 此时将返回一个HTTP 400 错误
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
+```
+
+## 操作示例
+
+### 获取虚拟机
+
+#### 获取所有虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    List<Vm> vms = getAllVms(client);
+  }
+
+  public static List<Vm> getAllVms(ApiClient client) throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    return vmApi.getVms(new GetVmsRequestBody());
+  }
+}
+```
+
+#### 分页获取虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    List<Vm> vms = getVmsByPagination(client, 50, 100);
+  }
+
+  public static List<Vm> getVmsByPagination(ApiClient client, int from, int to) throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    GetVmsRequestBody body = new GetVmsRequestBody().skip(from - 1).first(to - from);
+    return vmApi.getVms(body);
+  }
+}
+```
+
+#### 获取所有已开机虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    List<Vm> vms = getAllRunningVms(client);
+  }
+
+  public static List<Vm> getAllRunningVms(ApiClient client) throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    VmWhereInput where = new VmWhereInput().status(VmStatus.RUNNING);
+    GetVmsRequestBody body = new GetVmsRequestBody().where(where);
+    return vmApi.getVms(body);
+  }
+}
+```
+
+#### 获取名称或描述中包含特定字符串的虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    List<Vm> vms = getVmsByNameMatching(client, "yinsw");
+  }
+
+  public static List<Vm> getVmsByNameMatching(ApiClient client, String matching) throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    VmWhereInput where = new VmWhereInput().nameContains(matching);
+    GetVmsRequestBody body = new GetVmsRequestBody().where(where);
+    return vmApi.getVms(body);
+  }
+}
+```
+
+#### 获取所有 vcpu > n 的虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    List<Vm> vms = getVmsHasNMoreCpuCore(client, 4);
+  }
+
+  public static List<Vm> getVmsHasNMoreCpuCore(ApiClient client, int n) throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    VmWhereInput where = new VmWhereInput().vcpuGt(n);
+    GetVmsRequestBody body = new GetVmsRequestBody().where(where);
+    return vmApi.getVms(body);
+  }
+}
+```
+
+### 从模版创建虚拟机
+
+#### 仅指定 id
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+
+    client.setBasePath("http://192.168.96.133/v2/api");
+    ClientUtil.login("username", "password", client);
+    List<Vm> vms = createVmFromTemplate(client, new VmCreateVmFromContentLibraryTemplateParams()
+        .clusterId("cluster_id")
+        .templateId("template_id")
+        .name("vm_name")
+        .isFullCopy(false));
+  }
+
+  public static List<Vm> createVmFromTemplate(ApiClient client, VmCreateVmFromContentLibraryTemplateParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreateVmFromContentLibraryTemplateParams> params = new ArrayList<VmCreateVmFromContentLibraryTemplateParams>(
+        1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVmFromContentLibraryTemplate(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 配置与模板不同的虚拟盘参数
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException, IOException {
+    ApiClient client = new ApiClient();
+
+    client.setBasePath("http://192.168.96.133/v2/api");
+    ClientUtil.login("username", "password", client);
+    VmDiskOperate diskOperate = new VmDiskOperate()
+        .removeDisks(
+            new VmDiskOperateRemoveDisks()
+                .addDiskIndexItem(1))
+        .newDisks(
+            new VmDiskParams()
+                .addMountCdRomsItem(
+                    new VmCdRomParams()
+                        .boot(3))
+                .addMountDisksItem(
+                    new MountDisksParams()
+                        .boot(1)
+                        .bus(Bus.VIRTIO)
+                        .vmVolumeId("vm_volume_id"))
+                .addMountNewCreateDisksItem(
+                    new MountNewCreateDisksParams()
+                        .vmVolume(
+                            new MountNewCreateDisksParamsVmVolume()
+                                .elfStoragePolicy(VmVolumeElfStoragePolicyType._2_THIN_PROVISION)
+                                .size(4L * 1024 * 1024 * 1024)
+                                .name("disk_name"))
+                        .boot(3)
+                        .bus(Bus.VIRTIO)));
+
+    List<Vm> vms = createVmFromTemplate(client, new VmCreateVmFromContentLibraryTemplateParams()
+        .clusterId("cluster_id")
+        .templateId("template_id")
+        .name("vm_name")
+        .isFullCopy(false)
+        .diskOperate(diskOperate));
+    // 处理 vms
+    System.out.println(vms);
+  }
+
+  public static List<Vm> createVmFromTemplate(ApiClient client, VmCreateVmFromContentLibraryTemplateParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreateVmFromContentLibraryTemplateParams> params = new ArrayList<VmCreateVmFromContentLibraryTemplateParams>(
+        1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVmFromContentLibraryTemplate(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 配置与模版不同的网卡参数
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    ClientUtil.login("username", "password", client);
+    VmNicParams nicParams = new VmNicParams()
+        .connectVlanId("nic_vlan_id") // 并非 vlan 的 vlan_id（0-4095） 而是 vlan 的 id（uuid）
+        .enabled(true)
+        .model(VmNicModel.E1000);
+    List<Vm> vms = createVmFromTemplate(client, new VmCreateVmFromContentLibraryTemplateParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .templateId("cl2k0tvpw04y608222h8so9ov")
+        .name("createFromVmTemplate")
+        .isFullCopy(false)
+        .addVmNicsItem(nicParams));
+  }
+
+  public static List<Vm> createVmFromTemplate(ApiClient client, VmCreateVmFromContentLibraryTemplateParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreateVmFromContentLibraryTemplateParams> params = new ArrayList<VmCreateVmFromContentLibraryTemplateParams>(
+        1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVmFromContentLibraryTemplate(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+### 创建空白虚拟机
+
+#### 简单创建
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    VmCreationParams param = new VmCreationParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .name("vm_name_2")
+        .ha(true)
+        .cpuCores(4)
+        .cpuSockets(4)
+        .memory(4L * 1024 * 1024 * 1024)
+        .vcpu(16)
+        .status(VmStatus.STOPPED)
+        .firmware(VmFirmware.BIOS)
+        .addVmNicsItem(new VmNicParams().connectVlanId("cl2k0msiz02wc08220d6m3bz5"))
+        .vmDisks(new VmDiskParams().addMountCdRomsItem(new VmCdRomParams().boot(0).index(0)));
+
+    List<Vm> vms = createVm(client, param);
+  }
+
+  public static List<Vm> createVm(ApiClient client, VmCreationParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreationParams> params = new ArrayList<VmCreationParams>(1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVm(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 创建时配置虚拟盘
+
+##### CD-ROM 加载 ISO
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    VmCreationParams param = new VmCreationParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .name("vm_name")
+        .ha(true)
+        .cpuCores(4)
+        .cpuSockets(4)
+        .memory(4L * 1024 * 1024 * 1024)
+        .vcpu(16)
+        .status(VmStatus.STOPPED)
+        .firmware(VmFirmware.BIOS)
+        .addVmNicsItem(new VmNicParams().connectVlanId("cl2k0msiz02wc08220d6m3bz5"))
+        .vmDisks(new VmDiskParams()
+            .addMountCdRomsItem(new VmCdRomParams()
+                .boot(0)
+                .index(0)
+                .elfImageId("cl2k1yswo0csh0822299yalwn")));
+
+    List<Vm> vms = createVm(client, param);
+  }
+
+  public static List<Vm> createVm(ApiClient client, VmCreationParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreationParams> params = new ArrayList<VmCreationParams>(1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVm(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 挂载虚拟卷为虚拟盘
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    VmCreationParams param = new VmCreationParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .name("vm_name")
+        .ha(true)
+        .cpuCores(4)
+        .cpuSockets(4)
+        .memory(4L * 1024 * 1024 * 1024)
+        .vcpu(16)
+        .status(VmStatus.STOPPED)
+        .firmware(VmFirmware.BIOS)
+        .addVmNicsItem(new VmNicParams().connectVlanId("cl2k0msiz02wc08220d6m3bz5"))
+        .vmDisks(new VmDiskParams()
+            .addMountDisksItem(new MountDisksParams()
+                .boot(0)
+                .index(0)
+                .bus(Bus.SCSI)
+                .vmVolumeId("cl2k1kohp08up08225yjgfpdz")));
+
+    List<Vm> vms = createVm(client, param);
+  }
+
+  public static List<Vm> createVm(ApiClient client, VmCreationParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreationParams> params = new ArrayList<VmCreationParams>(1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVm(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 挂载新增虚拟盘
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    VmCreationParams param = new VmCreationParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .name("vm_name")
+        .ha(true)
+        .cpuCores(4)
+        .cpuSockets(4)
+        .memory(4L * 1024 * 1024 * 1024)
+        .vcpu(16)
+        .status(VmStatus.STOPPED)
+        .firmware(VmFirmware.BIOS)
+        .addVmNicsItem(new VmNicParams().connectVlanId("cl2k0msiz02wc08220d6m3bz5"))
+        .vmDisks(new VmDiskParams()
+            .addMountNewCreateDisksItem(new MountNewCreateDisksParams()
+                .index(0)
+                .boot(0)
+                .bus(Bus.VIRTIO)
+                .vmVolume(new MountNewCreateDisksParamsVmVolume()
+                    .elfStoragePolicy(VmVolumeElfStoragePolicyType._2_THIN_PROVISION)
+                    .name("new_disk")
+                    .size(4L * 1024 * 1024 * 1024))));
+
+    List<Vm> vms = createVm(client, param);
+  }
+
+  public static List<Vm> createVm(ApiClient client, VmCreationParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreationParams> params = new ArrayList<VmCreationParams>(1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVm(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 创建时配置虚拟网卡
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+    VmCreationParams param = new VmCreationParams()
+        .clusterId("cl2k0mpoy026d0822xq6ctsim")
+        .name("vm_name")
+        .ha(true)
+        .cpuCores(4)
+        .cpuSockets(4)
+        .memory(4L * 1024 * 1024 * 1024)
+        .vcpu(16)
+        .status(VmStatus.STOPPED)
+        .firmware(VmFirmware.BIOS)
+        .addVmNicsItem(new VmNicParams()
+            .connectVlanId("cl2k0msiz02wc08220d6m3bz5")
+            .macAddress("00:0C:29:B7:D8:E0")
+            .model(VmNicModel.E1000))
+        .vmDisks(new VmDiskParams()
+            .addMountCdRomsItem(new VmCdRomParams().boot(0).index(0)));
+
+    List<Vm> vms = createVm(client, param);
+  }
+
+  public static List<Vm> createVm(ApiClient client, VmCreationParams param)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<VmCreationParams> params = new ArrayList<VmCreationParams>(1);
+    params.add(param);
+    List<WithTaskVm> withTaskVms = vmApi.createVm(params);
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+### 编辑虚拟机
+
+#### 编辑基本信息
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmUpdateParamsData data = new VmUpdateParamsData()
+        .cpuSockets(2)
+        .cpuCores(2)
+        .vcpu(4)
+        .memory(8L * 1024 * 1024 * 1024)
+        .name("new_name")
+        .description("new_description");
+    List<Vm> vms = updateVm(client, where, data);
+  }
+
+  public static List<Vm> updateVm(ApiClient client, VmWhereInput where, VmUpdateParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi.updateVm(new VmUpdateParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+### 编辑高级信息
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmUpdateAdvancedOptionsParamsData data = new VmUpdateAdvancedOptionsParamsData()
+        .clockOffset(VmClockOffset.LOCALTIME)
+        .cpuModel("Skylake-Server-IBRS")
+        .videoType(VmVideoType.VGA)
+        .windowsOptimize(true);
+    List<Vm> vms = updateVm(client, where, data);
+  }
+
+  public static List<Vm> updateVm(ApiClient client, VmWhereInput where, VmUpdateAdvancedOptionsParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .updateVmAdvancedOptions(new VmUpdateAdvancedOptionsParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### CD-ROM 编辑
+
+##### 添加 CD-ROM
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmAddCdRomParamsData data = new VmAddCdRomParamsData()
+        .addVmCdRomsItem(new VmCdRomParams()
+        .boot(0)
+        .index(0)
+        .elfImageId("cl2k1yswo0csh0822299yalwn"));
+    List<Vm> vms = addCdRom(client, where, data);
+  }
+
+  public static List<Vm> addCdRom(ApiClient client, VmWhereInput where, VmAddCdRomParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .addVmCdRom(new VmAddCdRomParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 删除 CD-ROM
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmRemoveCdRomParamsData data = new VmRemoveCdRomParamsData().addCdRomIdsItem("cl2k2v1fv0jvo0822dr73hd1n");
+    List<Vm> vms = deleteCdRom(client, where, data);
+  }
+
+  public static List<Vm> deleteCdRom(ApiClient client, VmWhereInput where, VmRemoveCdRomParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .removeVmCdRom(new VmRemoveCdRomParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟卷操作
+
+##### 添加新虚拟卷
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmAddDiskParamsData data = new VmAddDiskParamsData().vmDisks(new VmAddDiskParamsDataVmDisks()
+        .addMountNewCreateDisksItem(new MountNewCreateDisksParams()
+            .boot(0)
+            .index(0)
+            .bus(Bus.VIRTIO)
+            .vmVolume(
+                new MountNewCreateDisksParamsVmVolume()
+                    .elfStoragePolicy(VmVolumeElfStoragePolicyType._2_THIN_PROVISION)
+                    .name("new_mount_disk")
+                    .size(10L * 1024 * 1024 * 1024))));
+    List<Vm> vms = addDisk(client, where, data);
+  }
+
+  public static List<Vm> addDisk(ApiClient client, VmWhereInput where, VmAddDiskParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .addVmDisk(new VmAddDiskParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 挂载已存在虚拟卷为虚拟盘
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmAddDiskParamsData data = new VmAddDiskParamsData().vmDisks(new VmAddDiskParamsDataVmDisks()
+        .addMountDisksItem(new MountDisksParams()
+            .boot(0)
+            .index(0)
+            .bus(Bus.VIRTIO)
+            .vmVolumeId("cl2k37rex0maa0822ivcy2s9l")));
+    List<Vm> vms = mountDisk(client, where, data);
+  }
+
+  public static List<Vm> mountDisk(ApiClient client, VmWhereInput where, VmAddDiskParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .addVmDisk(new VmAddDiskParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 卸载虚拟盘
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmRemoveDiskParamsData data = new VmRemoveDiskParamsData().addDiskIdsItem("cl2k38qv70mna082283l646jl");
+    List<Vm> vms = removeDisk(client, where, data);
+  }
+
+  public static List<Vm> removeDisk(ApiClient client, VmWhereInput where, VmRemoveDiskParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .removeVmDisk(new VmRemoveDiskParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 网卡操作
+
+##### 添加网卡
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmAddNicParamsData data = new VmAddNicParamsData()
+        .addVmNicsItem(new VmNicParams().connectVlanId("cl2k1ohoq09si0822q648n9v8"));
+    List<Vm> vms = addVmNic(client, where, data);
+  }
+
+  public static List<Vm> addVmNic(ApiClient client, VmWhereInput where, VmAddNicParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .addVmNic(new VmAddNicParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 编辑网卡基本信息
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmNicWhereInput where = new VmNicWhereInput().id("cl2k3coie0ngx0822oz5wgubx");
+    VmUpdateNicBasicInfoParamsData data = new VmUpdateNicBasicInfoParamsData()
+        .subnetMask("255.255.240.0")
+        .ipAddress("192.168.10.114")
+        .gateway("192.168.31.215");
+    List<Vm> vms = updateVmNic(client, where, data);
+  }
+
+  public static List<Vm> updateVmNic(ApiClient client, VmNicWhereInput where, VmUpdateNicBasicInfoParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .updateVmNicBasicInfo(new VmUpdateNicBasicInfoParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 编辑网卡高级信息
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmNicWhereInput where = new VmNicWhereInput().id("cl2k3ill50oes0822f09n8ml6");
+    VmUpdateNicAdvanceInfoParamsData data = new VmUpdateNicAdvanceInfoParamsData()
+        .connectVlanId("cl2k0msiz02wc08220d6m3bz5")
+        .enabled(false)
+        .macAddress("00:0C:29:B7:D8:E0")
+        .mirror(true);
+    List<Vm> vms = updateVmNic(client, where, data);
+  }
+
+  public static List<Vm> updateVmNic(ApiClient client, VmNicWhereInput where, VmUpdateNicAdvanceInfoParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .updateVmNicAdvanceInfo(new VmUpdateNicAdvanceInfoParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 移除网卡
+
+```java
+
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmRemoveNicParamsData data = new VmRemoveNicParamsData()
+        .addNicIndexItem(1);
+    List<Vm> vms = removeVmNic(client, where, data);
+  }
+
+  public static List<Vm> removeVmNic(ApiClient client, VmWhereInput where, VmRemoveNicParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .removeVmNic(new VmRemoveNicParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟机迁移
+
+##### 迁移至指定主机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmStartParamsData data = new VmStartParamsData().hostId("cl2k0mq69027u0822q69zct7z");
+    List<Vm> vms = migrateVm(client, where, data);
+  }
+
+  public static List<Vm> migrateVm(ApiClient client, VmWhereInput where, VmStartParamsDatadata)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .migRateVm(new VmMigrateParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 自动调度到合适的主机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmStartParamsData data = null;
+    List<Vm> vms = migrateVm(client, where, data);
+  }
+
+  public static List<Vm> migrateVm(ApiClient client, VmWhereInput where, VmStartParamsDatadata)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .migRateVm(new VmMigrateParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+### 虚拟机电源操作
+
+#### 虚拟机开机:
+
+##### 指定虚拟机开机，自动调度到合适的虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmStartParamsData data = null;
+    List<Vm> vms = startVm(client, where, data);
+  }
+
+  public static List<Vm> startVm(ApiClient client, VmWhereInput where, VmStartParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .startVm(new VmStartParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 批量虚拟机开机，自动调度到合适的虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    VmStartParamsData data = null;
+    List<Vm> vms = startVm(client, where, data);
+  }
+
+  public static List<Vm> startVm(ApiClient client, VmWhereInput where, VmStartParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .startVm(new VmStartParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 开机至指定主机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    VmStartParamsData data = new VmStartParamsData().hostId("cl2k0mq69027u0822q69zct7z");
+    List<Vm> vms = startVm(client, where, data);
+  }
+
+  public static List<Vm> startVm(ApiClient client, VmWhereInput where, VmStartParamsData data)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .startVm(new VmStartParams().where(where).data(data));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟机关机
+
+##### 指定虚拟机关机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = shutdownVm(client, where);
+  }
+
+  public static List<Vm> shutdownVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .shutDownVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 批量虚拟机关机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = shutdownVm(client, where);
+  }
+
+  public static List<Vm> shutdownVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .shutDownVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 强制关机指定虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = powerOffVm(client, where);
+  }
+
+  public static List<Vm> powerOffVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .poweroffVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 强制关机批量虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = powerOffVm(client, where);
+  }
+
+  public static List<Vm> powerOffVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .poweroffVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟机重启
+
+##### 重启指定虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = restartVm(client, where);
+  }
+
+  public static List<Vm> restartVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .restartVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 重启批量虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = restartVm(client, where);
+  }
+
+  public static List<Vm> restartVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .restartVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 强制重启指定虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = forceRestartVm(client, where);
+  }
+
+  public static List<Vm> forceRestartVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .forceRestartVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 强制重启批量虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = forceRestartVm(client, where);
+  }
+
+  public static List<Vm> forceRestartVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .forceRestartVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟机暂停
+
+##### 暂停指定虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = suspendVm(client, where);
+  }
+
+  public static List<Vm> suspendVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .suspendVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 暂停批量虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = suspendVm(client, where);
+  }
+
+  public static List<Vm> suspendVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .suspendVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 虚拟机恢复
+
+##### 恢复指定虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = resumeVm(client, where);
+  }
+
+  public static List<Vm> resumeVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .resumeVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 恢复批量虚拟机
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().nameStartsWith("prefix");
+    List<Vm> vms = resumeVm(client, where);
+  }
+
+  public static List<Vm> resumeVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskVm> withTaskVms = vmApi
+        .resumeVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+### 删除虚拟机
+
+#### 回收站
+
+##### 移入回收站
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = moveVmToRecycleBin(client, where);
+    System.out.print(vms);
+  }
+
+  public static List<Vm> moveVmToRecycleBin(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskDeleteVm> withTaskVms = vmApi
+        .moveVmToRecycleBin(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+##### 从回收站恢复
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    List<Vm> vms = moveVmToRecycleBin(client, where);
+    System.out.print(vms);
+  }
+
+  public static List<Vm> moveVmToRecycleBin(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskDeleteVm> withTaskVms = vmApi
+        .recoverVmFromRecycleBin(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+    List<Vm> vms = vmApi
+        .getVms(
+            new GetVmsRequestBody()
+                .where(new VmWhereInput()
+                    .idIn(ids)));
+    return vms;
+  }
+}
+```
+
+#### 永久删除
+
+```java
+public class App {
+
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = new ApiClient();
+    client.setBasePath("http://192.168.96.133/v2/api");
+    client.setApiKey("token");
+
+    VmWhereInput where = new VmWhereInput().id("cl2k0njfl04480822fxjq5nns");
+    deleteVm(client, where);
+  }
+
+  public static void deleteVm(ApiClient client, VmWhereInput where)
+      throws ApiException {
+    VmApi vmApi = new VmApi(client);
+    List<WithTaskDeleteVm> withTaskVms = vmApi
+        .deleteVm(new VmOperateParams().where(where));
+    List<String> tasks = withTaskVms.stream().map(vms -> vms.getTaskId()).collect(Collectors.toList());
+    List<String> ids = withTaskVms.stream().map(vms -> vms.getData().getId()).collect(Collectors.toList());
+    TaskUtil.WaitTasks(tasks, client);
+  }
+}
 ```
 
 ## 场景示例
