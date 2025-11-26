@@ -201,11 +201,3 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
     tags: ["Observability"]
   }
 ];
-
-
-
-export const APIInfo = {
-  title: "CloudTower APIs",
-  version: "",
-  description: "cloudtower operation API and SDK"
-}
