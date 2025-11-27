@@ -1,0 +1,16 @@
+id: no-terminology-json
+language: json
+files:
+  - "**/*.json"
+ignores:
+  - node_modules
+
+rule:
+  kind: pair
+  has:
+    field: value
+    kind: string
+    matches: terminology
+
+message: no-terminology-json
+severity: error
