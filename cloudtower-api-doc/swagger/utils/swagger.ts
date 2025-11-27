@@ -62,4 +62,9 @@ export enum SupportLanguage {
   en = "en",
 }
 
+export const LngMap = {
+  [SupportLanguage.zh]: "zh-CN",
+  [SupportLanguage.en]: "en-US",
+}
+
 export type ISpec = OpenAPIV3.Document;

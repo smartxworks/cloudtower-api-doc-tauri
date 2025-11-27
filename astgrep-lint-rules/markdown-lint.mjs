@@ -132,6 +132,9 @@ function checkFile(filePath) {
                     { kind: 'code_fence_content' },
                 ],
                 regex: config.terminologyRegex,
+                not: {
+                    regex: `(?i)(^|[^a-zA-Z])(com.smartx.com|smartxworks)([^a-zA-Z]|$)`
+                }
             },
         });
         

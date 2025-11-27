@@ -4,6 +4,13 @@ files:
   - "**/*.json"
 ignores:
   - node_modules
+  - "**/terminology.json"
+  - "**/tauri.conf.json"
+  - "**/swagger-examples.json"
+  - "**/package.json"
+  - "**/package-lock.json"
+  - "**/static/specs/**.json"
+  - "**/tsconfig.json"
 
 rule:
   kind: pair
@@ -11,6 +18,11 @@ rule:
     field: value
     kind: string
     matches: terminology
+  not:
+    has:
+      field: key
+      kind: string
+      regex: metrics
 
 message: no-terminology-json
 severity: error
