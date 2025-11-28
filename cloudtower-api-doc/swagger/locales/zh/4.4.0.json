@@ -2070,8 +2070,8 @@
       "vm_name": "虚拟机名"
     },
     "EverouteCluster": {
-      "agent_elf_clusters": "代理 ELF 集群",
-      "agent_elf_vdses": "代理 ELF 虚拟机交换机",
+      "agent_elf_clusters": "代理 {VM_PRODUCT} 集群",
+      "agent_elf_vdses": "代理 {VM_PRODUCT} 虚拟机交换机",
       "controller_instances": "控制器实例",
       "controller_template": "控制器模板",
       "entityAsyncStatus": "内部字段",

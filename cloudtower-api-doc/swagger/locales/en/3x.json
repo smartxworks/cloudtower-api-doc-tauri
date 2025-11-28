@@ -77,7 +77,7 @@
     },
     {
       "name": "Deploy",
-      "x-displayName": "CloudTower",
+      "x-displayName": "{PRODUCT}",
       "description": ""
     },
     {
@@ -112,27 +112,27 @@
     },
     {
       "name": "EverouteCluster",
-      "x-displayName": "Everoute Cluster",
+      "x-displayName": "{NET_SECURITY} Cluster",
       "description": ""
     },
     {
       "name": "EverouteLicense",
-      "x-displayName": "Everoute License",
+      "x-displayName": "{NET_SECURITY} License",
       "description": ""
     },
     {
       "name": "EveroutePackage",
-      "x-displayName": "Everoute Installation Package",
+      "x-displayName": "{NET_SECURITY} Installation Package",
       "description": ""
     },
     {
       "name": "GlobalAlertRule",
-      "x-displayName": "CloudTower Alert Rule",
+      "x-displayName": "{PRODUCT} Alert Rule",
       "description": ""
     },
     {
       "name": "GlobalSettings",
-      "x-displayName": "CloudTower Settings",
+      "x-displayName": "{PRODUCT} Settings",
       "description": ""
     },
     {
@@ -910,11 +910,11 @@
       "description": ""
     },
     "/get-deploys-connection": {
-      "summary": "Get the number of CloudTower",
+      "summary": "Get the number of {PRODUCT}",
       "description": ""
     },
     "/get-deploys": {
-      "summary": " Get CloudTower",
+      "summary": " Get {PRODUCT}",
       "description": ""
     },
     "/get-discover-hosts": {
@@ -962,27 +962,27 @@
       "description": ""
     },
     "/get-everoute-clusters-connection": {
-      "summary": " Get the number of Everoute clusters",
+      "summary": " Get the number of {NET_SECURITY} clusters",
       "description": ""
     },
     "/get-everoute-clusters": {
-      "summary": " Get Everoute clusters",
+      "summary": " Get {NET_SECURITY} clusters",
       "description": ""
     },
     "/get-everoute-licenses-connection": {
-      "summary": " Get the number of Everoute licenses",
+      "summary": " Get the number of {NET_SECURITY} licenses",
       "description": ""
     },
     "/get-everoute-licenses": {
-      "summary": " Get Everoute licenses",
+      "summary": " Get {NET_SECURITY} licenses",
       "description": ""
     },
     "/get-everoute-packages-connection": {
-      "summary": " Get the number of Everoute installation packages",
+      "summary": " Get the number of {NET_SECURITY} installation packages",
       "description": ""
     },
     "/get-everoute-packages": {
-      "summary": " Get Everoute installation packages",
+      "summary": " Get {NET_SECURITY} installation packages",
       "description": ""
     },
     "/get-global-alert-rules-connection": {
@@ -994,11 +994,11 @@
       "description": ""
     },
     "/get-global-settingses-connection": {
-      "summary": "Get the number of CloudTower settings",
+      "summary": "Get the number of {PRODUCT} settings",
       "description": ""
     },
     "/get-global-settingses": {
-      "summary": " Get CloudTower settings",
+      "summary": " Get {PRODUCT} settings",
       "description": ""
     },
     "/get-graphs-connection": {
@@ -2114,39 +2114,39 @@
       "description": ""
     },
     "/upload-cloudtower-application-package": {
-      "summary": "Upload a CloudTower application package",
+      "summary": "Upload a {PRODUCT} application package",
       "description": ""
     },
     "/delete-cloudtower-application-package": {
-      "summary": "Delete CloudTower application packages",
+      "summary": "Delete {PRODUCT} application packages",
       "description": ""
     },
     "/deploy-cloudtower-application": {
-      "summary": "Deploy a CloudTower application",
+      "summary": "Deploy a {PRODUCT} application",
       "description": ""
     },
     "/upgrade-cloudtower-application": {
-      "summary": "Upgrade a CloudTower application",
+      "summary": "Upgrade a {PRODUCT} application",
       "description": ""
     },
     "/uninstall-cloudtower-application": {
-      "summary": "Uninstall CloudTower applications",
+      "summary": "Uninstall {PRODUCT} applications",
       "description": ""
     },
     "/get-cloudtower-application-packages": {
-      "summary": "Get CloudTower application packages",
+      "summary": "Get {PRODUCT} application packages",
       "description": ""
     },
     "/get-cloud-tower-application-packages-connection": {
-      "summary": "Get number of CloudTower application packages",
+      "summary": "Get number of {PRODUCT} application packages",
       "description": ""
     },
     "/get-cloudtower-applications": {
-      "summary": "Get CloudTower applications",
+      "summary": "Get {PRODUCT} applications",
       "description": ""
     },
     "/get-cloud-tower-applications-connection": {
-      "summary": "Get number of CloudTower applications",
+      "summary": "Get number of {PRODUCT} applications",
       "description": ""
     },
     "/get-meta-leader": {
@@ -3463,7 +3463,7 @@
       "zone_topoes_some": ""
     },
     "ClusterType": {
-      "enum": "* BLUESHARK: \n* SMTX_OS: \n* SMTX_ZBS:"
+      "enum": ""
     },
     "ClusterUpdationParams": {
       "data.secondary_zone_id": "",
@@ -5051,7 +5051,7 @@
       "aggregate": ""
     },
     "DiskFunction": {
-      "enum": "* CACHE: \n* DATA: \n* SMTX_SYSTEM:"
+      "enum": ""
     },
     "DiskHealthStatus": {
       "enum": "* HEALTHY: \n* SMART_FAILED: \n* SUBHEALTHY: \n* UNHEALTHY:"
@@ -8651,7 +8651,7 @@
       "iommu_not_in": ""
     },
     "Hypervisor": {
-      "enum": "* BLUESHARK: BLUESHARK\n* ELF: ELF\n* VMWARE: VMWARE\n* XENSERVER: XENSERVER"
+      "enum": ""
     },
     "ImageConnector": {
       "name": "",
@@ -17832,7 +17832,7 @@
       "data.memory_unit": ""
     },
     "VmUsage": {
-      "enum": "* EVEROUTE_CONTROLLER:"
+      "enum": ""
     },
     "VmVideoType": {
       "enum": "* CIRRUS: \n* QXL: \n* VGA: \n* VIRTIO:"

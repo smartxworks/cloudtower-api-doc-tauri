@@ -1,14 +1,14 @@
 ---
 title: VM Backup
 ---
-
+import Terminology from '@site/terminology.json'
 import GetVm from '../../../../../code_blocks/GetVm.md'
 import CreateVmSnapshot from '../../../../../code_blocks/CreateVmSnapshot.md'
 import GetTask from '../../../../../code_blocks/GetTask.md'
 import GetVmSnapshot from '../../../../../code_blocks/GetVmSnapshot.md'
 import GetLunSnapshot from '../../../../../code_blocks/GetLunSnapshot.md'
 
-Virtual Machine Backup via the CloudTower API
+<>Virtual Machine Backup via the {Terminology['en-US']['PRODUCT']} API</>
 1. Backing up a virtual machine (VM) will include backing up the VM configurations such as the VM name and the number of vCPUs, and the data contained in the disks.
 2.Before any backup, you need first to understand the relations between VM resources as shown below:
 
@@ -17,23 +17,23 @@ Virtual Machine Backup via the CloudTower API
   - Virtual Disk (Data Disk 1)
     - Virtual Volume
       - iSCSI LUN
-      - ZBS Volume
+      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
   - Virtual Disk (Data Disk 2)
     - Virtual Volume
       - iSCSI LUN
-      - ZBS Volume
+      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
 
 Similarly, when taking a snapshot of a virtual machine, the relations between VM resources are shown as below:
 - VM Snapshot
   - Virtual Disk (CD-ROM)
   - Virtual Disk (Data Disk 1)
     - iSCSI LUN Snapshot
-      - ZBS Volume
+      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
   - Virtual Disk (Data Disk 2)
     - iSCSI LUN Snapshot
-      - ZBS Volume
+      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
 
-The ZBS volume is where the data is ultimately stored. You can read data from or write data into the ZBS volume using ZADP to complete data backup and restore.  
+The <>{Terminology['en-US']['STORAGE_PRODUCT']}</> volume is where the data is ultimately stored. You can read data from or write data into the <>{Terminology['en-US']['STORAGE_PRODUCT']}</> volume using ZADP to complete data backup and restore.  
 
 ### Get VM Information
 You can obtain the VM information using the VM name. For details, refer to the following example. You can also use other filters to get the information you need. Please refer to the API documentation for details.
@@ -70,4 +70,4 @@ Through the API, you can query the LUN snapshot information corresponding to a g
 
 <GetLunSnapshot />
 
-The local_id field of each LUN snapshot is the identifier in ZBS and can be further interacted with through the ZBS API.
+The local_id field of each LUN snapshot is the identifier in <>{Terminology['en-US']['STORAGE_PRODUCT']}</> and can be further interacted with through the <>{Terminology['en-US']['STORAGE_PRODUCT']}</> API.

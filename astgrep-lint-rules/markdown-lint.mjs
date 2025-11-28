@@ -96,6 +96,35 @@ function collectFiles(dir, patterns) {
     return files;
 }
 
+// Allowed exceptions for terminology regex
+const allowedExceptions = [
+    'CLOUDTOWER_IP',
+    'com.smartx.com',
+    'smartxworks',
+    'ClusterType.SMTX_OS',
+    'from cloudtower',
+    'cloudtower_sdk',
+    'cloudtower-sdk',
+    'cloudtower-java-sdk',
+    'cloudtower-go-sdk',
+    'cloudtower-python',
+    'apiclient.Cloudtower',
+    'cloudtower-python-sdk',
+    'client.cloudtower'
+];
+
+// Function to escape special regex characters
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Function to build exception regex from array
+function buildExceptionRegex(exceptions) {
+    const escapedExceptions = exceptions.map(escapeRegex);
+    const pattern = escapedExceptions.join('|');
+    return `(?i)(^|[^a-zA-Z])(${pattern})([^a-zA-Z]|$)`;
+}
+
 // Function to format error output with colors
 function formatError(node, filePath, fileContent) {
     const range = node.range();
@@ -133,7 +162,7 @@ function checkFile(filePath) {
                 ],
                 regex: config.terminologyRegex,
                 not: {
-                    regex: `(?i)(^|[^a-zA-Z])(com.smartx.com|smartxworks)([^a-zA-Z]|$)`
+                    regex: buildExceptionRegex(allowedExceptions)
                 }
             },
         });
