@@ -1,0 +1,6 @@
+id: terminology
+language: json
+rule:
+  regex: (?i)(^|[^a-zA-Z{])(SmartX|SmartX Inc|SMTX|CloudTower|Everoute|Everoute 服务|SKS|sks-registry|sks-installer|SFS|ELF|SMTX ELF|ELF-FS|SMTX 虚拟机服务|SMTX OS|SMTX ZBS|ZBS|zbs-ntpd|zbs-metad|zbs-meta|zbs-node|/var/log/zbs|SMTX 系统盘|SMTX Kubernetes Service|SMTX 备份与容灾|EIC|everoute-agent|SMTX ELF CSI |SMTX ZBS CSI|ecp|SECP|EUC|榫卯®企业云平台|SMTX®Enterprise Cloud Platform|Everoute service|SMTX virtual machine services|SMTX system disk|SMTX Backup & Disaster Recovery|SMTX ELF CSI)([^a-zA-Z}]|$)
+  not:
+    regex: (?i)(^|[^a-zA-Z])(ZBS_SNAPSHOT_UUID|EVEROUTE_PACKAGE|ELF_IMAGE|ZBS_ZONE)([^a-zA-Z]|$)

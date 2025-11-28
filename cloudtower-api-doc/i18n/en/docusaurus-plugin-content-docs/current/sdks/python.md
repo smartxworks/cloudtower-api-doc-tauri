@@ -1,8 +1,9 @@
 ---
 title: Python
 ---
+import Terminology from '@site/terminology.json'
 
-The CloudTower SDK in Python for versions of 2.7, 3.4 and above.
+<>The {Terminology['en-US']['PRODUCT']} SDK in Python for versions of 2.7, 3.4 and above.</>
 
 - [Source Address](https://github.com/smartxworks/cloudtower-python-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-python-sdk/releases)
@@ -145,9 +146,9 @@ else:
 | 500        | An internal error of asynchronous task |
 
 #### Custom header
-
-> The cloudtower APIs support setting the language of the returned information by setting the content-language in the header. The optional values are `en-US` and `zh-CN`, and the default is `en-US`.
-
+<>
+> The {Terminology['en-US']['PRODUCT']} APIs support setting the language of the returned information by setting the content-language in the header. The optional values are `en-US` and `zh-CN`, and the default is `en-US`.
+</>
 ##### By using the `set_default_header` method of `ApiClient`
 
 > The default header information can be set using the `set_default_header` method of `ApiClient`.

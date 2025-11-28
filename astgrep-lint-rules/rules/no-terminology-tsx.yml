@@ -1,0 +1,101 @@
+id: no-terminology
+language: tsx
+files:
+  - "**/*.ts"
+  - "**/*.tsx"
+ignores:
+  - node_modules
+rule:
+  all:
+    - kind: string_fragment
+      matches: terminology
+    - not:
+        inside:
+          stopBy: end
+          any: 
+            # === 类型排除 ===
+            - kind: import_statement
+            - kind: export_statement
+              has:
+                any:
+                  - kind: export_clause
+                  - kind: string
+            - kind: literal_type
+
+            # === 枚举/常量 ===
+            - kind: enum_declaration
+              regex: \b(ROLE_ACTION|ServerErrorCode|EverouteErrorCode|ConnectorErrorCode)\b
+            - kind: variable_declarator
+              regex: \b(metricOption|formatAlerts|PRESET_HOST_FIREWALL_RULES)\b
+            - kind: function_declaration
+              regex: \baddProxy\b
+
+            # === 比较操作排除 ===
+            - pattern: $OBJ.type === $VALUE
+            - pattern: $OBJ.type !== $VALUE
+            - pattern: usage === $VALUE
+            - pattern: usage !== $VALUE
+            - pattern: $OBJ.usage == $VALUE
+            - pattern: key === $VALUE
+            - pattern: scope === $VALUE
+
+            # 排除 GraphQL 查询模板字符串 /
+            - kind: template_string
+              regex: \w*(query|mutation|subscription)\s+(\w+|\{)
+            - kind: string
+              regex: \w*(query|mutation|subscription)\s+(\w+|\{)
+
+            # 错误类型排除
+            - kind: new_expression
+              regex: \bError|ConnectorError\b
+
+            # 特定 key 指排除
+            - kind: pair
+              any:
+                - has:
+                    field: key
+                    regex: \b(key|workflowId|url|alertname|vm_usage|msg)\b
+                - all:
+                   - has:
+                       kind: property_identifier
+                       regex: \b(msg)\b
+                   - inside:
+                        stopBy:
+                          kind: call_expression
+                        kind: call_expression
+                        regex: \bnonRetryableServerError|retryableServerError\b
+                - all:
+                   - has:
+                       kind: property_identifier
+                       regex: \b(name|object|query_tmpl)\b
+                   - inside:
+                      stopBy: end
+                      kind: variable_declarator
+                      regex: \b(DEFAULT_GLOBAL_ALERT_RULES|ObsConnectedSystemServiceAlertRulesMap)\b
+          
+            # 特定调用排除
+            - pattern: AdminLogger.$FUNC($$$ARGS)
+            - pattern: i18next.$FUNC($$$ARGS)
+            - pattern: t($$$ARGS)
+            - pattern: t.$FUNC($$$ARGS)
+            - pattern: ResolverLogger.$FUNC($$$ARGS)
+            - pattern: ServiceLogger.$FUNC($$$ARGS)
+            - pattern: ConnectorLogger.$FUNC($$$ARGS)
+            - pattern: CronJobLogger.$FUNC($$$ARGS)
+            - pattern: MiscLogger.$FUNC($$$ARGS)
+            - pattern: WorkflowLogger.$FUNC($$$ARGS)
+            - pattern: logger.$FUNC($$$ARGS)
+            - pattern: CronJobLogger.$FUNC($$$ARGS)
+            - pattern: SyncEngineLogger.$FUNC($$$ARGS)
+            - pattern: retryableServerError($$$ARGS)
+            - pattern: nonRetryableServerError($$$ARGS)
+            - pattern: canUse($$$ARGS)
+            - kind: call_expression
+              has:
+                kind: await_expression
+                regex: \brequest\b
+            - kind: string
+              regex: \w+\.cloudtower-system\.svc(:\d+)? # ignore k8s namespace svc
+
+message: no-terminology
+severity: error

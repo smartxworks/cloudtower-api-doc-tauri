@@ -1,8 +1,9 @@
 ---
 title: Java
 ---
+import Terminology from '@site/terminology.json'
 
-The CloudTower SDK in Java for versions 1.8 and above
+<>The {Terminology['en-US']['PRODUCT']} SDK in Java for versions 1.8 and above</>
 
 - [Source Address](https://github.com/smartxworks/cloudtower-java-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-java-sdk/releases)

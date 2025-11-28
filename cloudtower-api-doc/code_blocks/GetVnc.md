@@ -1,6 +1,6 @@
 ```bash
 curl -X 'POST' \
- 'http://CLOUDTOWER_API/api' \
+ 'http://CLOUDTOWER_IP/api' \
  -H 'accept: application/json' \
  -H 'content-language: en-US' \
  -H 'Authorization: YOUR_TOKEN' \
