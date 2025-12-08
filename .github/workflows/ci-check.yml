@@ -1,0 +1,32 @@
+name: "CI Check"
+
+on:
+  pull_request:
+    branches: 
+      - '**'
+
+# Cancel prev CI if new commit come
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run Test on Node ${{ matrix.node }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+        timeout-minutes: 15
+      - name: Test
+        run: yarn test
+      - name: Build
+        run: yarn build
