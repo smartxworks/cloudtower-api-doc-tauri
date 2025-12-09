@@ -1,6 +1,7 @@
 import { OpenAPIV3 } from "openapi-types";
 import { useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useIsBrowser from "@docusaurus/useIsBrowser"
 
 // 默认的 specMap 配置
 const defaultSpecMap = {
@@ -30,8 +31,11 @@ const defaultSpecMap = {
  */
 export function useSpecMap() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
-  
+  const isBrowser = useIsBrowser();
   return useMemo(() => {
+    if (!isBrowser) {
+      return defaultSpecMap;
+    }
     // 优先使用 customFields 中的 specMap 配置
     if (customFields?.specMap && typeof customFields.specMap === 'object') {
       const customSpecMap = customFields.specMap as Record<string, string | Promise<any>>;
@@ -50,12 +54,17 @@ export function useSpecMap() {
     }
     // 如果没有配置，使用默认的 specMap
     return defaultSpecMap;
-  }, [customFields]);
+  }, [customFields, isBrowser]);
 }
 
 export enum SupportLanguage {
   zh = "zh",
   en = "en",
+}
+
+export const LngMap = {
+  [SupportLanguage.zh]: "zh-CN",
+  [SupportLanguage.en]: "en-US",
 }
 
 export type ISpec = OpenAPIV3.Document;

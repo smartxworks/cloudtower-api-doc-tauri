@@ -1,0 +1,12 @@
+id: no-terminology
+language: typescript
+ignores:
+  - node_modules
+  - .docusaurus
+  - build
+rule:
+  kind: string_fragment
+  matches: terminology
+
+message: no-terminology
+severity: error

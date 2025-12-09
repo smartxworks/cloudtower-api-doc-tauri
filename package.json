@@ -15,9 +15,10 @@
     "build:tauri": "cross-env TAURI_ENV=true docusaurus build ./cloudtower-api-doc",
     "serve": "docusaurus serve ./cloudtower-api-doc",
     "swizzle": "docusaurus swizzle -- @docusaurus/theme-classic  Footer ./cloudtower-api-doc",
-    "typecheck": "tsc",
     "test": "vitest",
-    "test:update-snapshots": "UPDATE_SNAPSHOTS=true npm test wrap.test.ts"
+    "test:update-snapshots": "UPDATE_SNAPSHOTS=true npm test wrap.test.ts",
+    "lint": "ast-grep scan -c astgrep-lint-rules/sgconfig.yml && node astgrep-lint-rules/markdown-lint.mjs",
+    "sync-terminology": "node astgrep-lint-rules/sync-terminology.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",
@@ -40,6 +41,9 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@ast-grep/cli": "^0.15.0",
+    "@ast-grep/lang-markdown": "^0.0.3",
+    "@ast-grep/napi": "^0.39.7",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.18.6",
     "@docusaurus/module-type-aliases": "2.4.0",
@@ -55,7 +59,7 @@
     "docusaurus2-dotenv": "^1.4.0",
     "fs-extra": "^10.0.1",
     "graphql": "^16.3.0",
-    "i18next": "^21.3.1",
+    "i18next": "^23",
     "micromark-extension-gfm-table": "^1.0.5",
     "node-pandoc": "^0.3.0",
     "openapi-types": "^10.0.0",

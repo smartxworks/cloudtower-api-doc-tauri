@@ -1,6 +1,8 @@
 import i18next from "i18next";
 import { OpenAPIV3 } from "openapi-types";
-import { SupportLanguage } from "./utils";
+import { set } from "lodash"
+import Terminlogy from "../terminology.json";
+import { LngMap, SupportLanguage } from "./utils";
 import enComponents from "./locales/en/components.json";
 import zhComponents from "./locales/zh/components.json";
 
@@ -60,6 +62,9 @@ export type ApiDoc = {
   responses: Record<string, string>;
 };
 
+const defaultLng = process.env.DEFAULT_LNG || SupportLanguage.zh;
+const defaultVariables = Terminlogy[LngMap[defaultLng]];
+
 i18next.init({
   resources: {
     [SupportLanguage.en]: {
@@ -97,7 +102,7 @@ i18next.init({
       components: zhComponents,
     },
   },
-  lng: process.env.DEFAULT_LNG || SupportLanguage.zh,
+  lng: defaultLng,
   updateMissing: true,
   fallbackLng: null,
   fallbackNS,
@@ -107,8 +112,10 @@ i18next.init({
     prefix: "{",
     suffix: "}",
     escapeValue: false,
+    defaultVariables
   },
-  keySeparator: false,
+  compatibilityJSON: "v3",
+  keySeparator: '.',
   ns: [
     "2_8_0",
     "3_4_4",
@@ -129,6 +136,11 @@ i18next.init({
   react: {
     bindI18n: "languageChanged addResource",
   },
+});
+
+
+i18next.on('languageChanged', (lng) => {
+  set(i18next.options?.interpolation ?? {}, 'defaultVariables', Terminlogy[LngMap[lng]]);
 });
 
 export default i18next;
