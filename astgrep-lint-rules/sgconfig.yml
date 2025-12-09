@@ -1,0 +1,11 @@
+# ast-grep configuration for documentation linting
+
+ruleDirs:
+  - ./rules
+
+utilDirs:
+  - ./utils
+
+# Output format
+outputStyle: rich
+color: always

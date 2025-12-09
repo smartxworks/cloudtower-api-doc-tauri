@@ -20,10 +20,15 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: install
+        run: yarn install
+      - name: lint
+        if: github.event_name == 'pull_request'
+        run: npm run lint
       - name: build
         env:
           NODE_OPTIONS: "--max-old-space-size=10240"
-        run: yarn && yarn build
+        run: yarn build
       - name: set up pr preview
         uses: amondnet/vercel-action@v25
         id: vercel-action-staging

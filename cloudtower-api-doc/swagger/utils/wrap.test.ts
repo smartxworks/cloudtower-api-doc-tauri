@@ -4,11 +4,16 @@ import i18next from '../i18n';
 
 // Mock swagger.ts 以避免 React/Docusaurus 依赖
 vi.mock('./swagger', () => {
+  const SupportLanguage = {
+    zh: 'zh',
+    en: 'en',
+  };
   return {
     ISpec: undefined, // 类型定义，实际不需要值
-    SupportLanguage: {
-      zh: 'zh',
-      en: 'en',
+    SupportLanguage,
+    LngMap: {
+      [SupportLanguage.zh]: 'zh-CN',
+      [SupportLanguage.en]: 'en-US',
     },
   };
 });
