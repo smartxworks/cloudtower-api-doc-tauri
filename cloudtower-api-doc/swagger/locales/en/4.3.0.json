@@ -1,19 +1,12 @@
 {
   "schemas": {
-    "VmNicParams": {
-      "vpc_nic": "VPC NIC related configuration",
-      "type": "VM NIC type",
-      "qos": "",
-      "subnet_mask": "",
-      "gateway": "",
-      "ip_address": "",
-      "nic_id": "",
-      "connect_vlan_id": "",
-      "mirror": "",
-      "model": "",
-      "enabled": "",
-      "mac_address": "",
-      "local_id": ""
+    "ContentLibraryImageWhereInput": {
+      "iscsi_luns_every": "",
+      "iscsi_luns_none": "",
+      "iscsi_luns_some": ""
+    },
+    "ContentLibraryImage": {
+      "iscsi_luns": ""
     },
     "VpcNicParams": {
       "ip_addresses": "IP address",
@@ -21,162 +14,24 @@
       "vpc_subnet_id": "VPC subnet ID, the unique identity of the associated VPC subnet",
       "vpc_id": "VPC ID, the unique identity of the associated VPC"
     },
+    "VmNicParams": {
+      "vpc_nic": "VPC NIC related configuration",
+      "type": "VM NIC type"
+    },
     "UpdateVpcNicPayloads": {
       "floating_ip_id": "Floating IP ID, the unique identity associated with the floating IP",
       "ip_addresses": "IP address",
       "vpc_subnet_id": "VPC subnet ID, the unique identity of the associated VPC subnet"
     },
     "VmUpdateNicParams": {
-      "data.vpc_nic": "VPC NIC related configuration",
-      "data.subnet_mask": "",
-      "data.gateway": "",
-      "data.ip_address": "",
-      "data.nic_id": "",
-      "data.connect_vlan_id": "",
-      "data.mirror": "",
-      "data.model": "",
-      "data.enabled": "",
-      "data.mac_address": "",
-      "data.nic_index": "",
-      "data": "",
-      "where": ""
+      "data.vpc_nic": "VPC NIC related configuration"
     },
     "VmUpdateVpcNicParams": {
       "data.vpc_nic": "VPC NIC related configuration",
       "data": "",
       "where": ""
     },
-    "NestedVirtualPrivateCloudNic": {
-      "floating_ip": "",
-      "id": "id",
-      "ip_addresses": "",
-      "local_id": "",
-      "vpc": "",
-      "vpc_subnet": ""
-    },
-    "ContentLibraryImageWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "clusters_every": "",
-      "clusters_none": "",
-      "clusters_some": "",
-      "createdAt": "",
-      "createdAt_gt": "",
-      "createdAt_gte": "",
-      "createdAt_in": "",
-      "createdAt_lt": "",
-      "createdAt_lte": "",
-      "createdAt_not": "",
-      "createdAt_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "elf_images_every": "",
-      "elf_images_none": "",
-      "elf_images_some": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "iscsi_luns_every": "",
-      "iscsi_luns_none": "",
-      "iscsi_luns_some": "",
-      "labels_every": "",
-      "labels_none": "",
-      "labels_some": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "path": "",
-      "path_contains": "",
-      "path_ends_with": "",
-      "path_gt": "",
-      "path_gte": "",
-      "path_in": "",
-      "path_lt": "",
-      "path_lte": "",
-      "path_not": "",
-      "path_not_contains": "",
-      "path_not_ends_with": "",
-      "path_not_in": "",
-      "path_not_starts_with": "",
-      "path_starts_with": "",
-      "size": "",
-      "size_gt": "",
-      "size_gte": "",
-      "size_in": "",
-      "size_lt": "",
-      "size_lte": "",
-      "size_not": "",
-      "size_not_in": "",
-      "vm_disks_every": "",
-      "vm_disks_none": "",
-      "vm_disks_some": "",
-      "vm_snapshots_every": "",
-      "vm_snapshots_none": "",
-      "vm_snapshots_some": "",
-      "vm_templates_every": "",
-      "vm_templates_none": "",
-      "vm_templates_some": ""
-    },
-    "ContentLibraryImage": {
-      "clusters": "",
-      "createdAt": "",
-      "description": "",
-      "elf_image_uuids": "",
-      "elf_images": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "iscsi_luns": "",
-      "labels": "",
-      "name": "",
-      "path": "",
-      "size": "",
-      "vm_disks": "",
-      "vm_snapshots": "",
-      "vm_templates": ""
-    },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
-      "id": "id",
-      "name": "name",
       "nat_gateway_cidr": "",
       "router_gateway_cidr": ""
     },
@@ -185,83 +40,201 @@
       "vpc_subnet_local_id": ""
     },
     "NestedTemplateNic": {
-      "enabled": "",
-      "index": "",
-      "ip_address": "",
-      "mac_address": "",
-      "mirror": "",
-      "model": "",
       "type": "",
-      "vlan": "",
       "vpc_nic": ""
+    },
+    "NestedVirtualPrivateCloudNic": {
+      "floating_ip": "",
+      "ip_addresses": "",
+      "local_id": "",
+      "vpc": "",
+      "vpc_subnet": ""
     }
   },
-  "tags": [
-    {
-      "name": "ApiInfo",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudFloatingIp",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudNatGateway",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudRouteTable",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudRouterGateway",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSecurityGroup",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSecurityPolicy",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSubnet",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloud",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "V2EverouteLicense",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudClusterBinding",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudExternalSubnet",
-      "x-displayName": "",
-      "description": ""
-    }
-  ],
   "paths": {
     "/update-vm-vpc-nic": {
       "summary": "Update VM VPC NIC Information",
       "description": "Used to update the VPC, subnet, floating IP, and IP address configuration of a VM's VPC NIC."
+    },
+    "/create-virtual-private-cloud-floating-ip": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-floating-ip": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-nat-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-nat-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-nat-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-route-table": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-route-table": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-route-table": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-router-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-router-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-router-gateway": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-group": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-group": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-group": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-policy": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-policy": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-policy": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-subnet": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-subnet": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-subnet": {
+      "summary": "",
+      "description": ""
+    },
+    "/create-virtual-private-cloud": {
+      "summary": "",
+      "description": ""
+    },
+    "/update-virtual-private-cloud": {
+      "summary": "",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-v2-everoute-licenses": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-v-2-everoute-licenses-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets-connection": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-clouds": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-virtual-private-clouds-connection": {
+      "summary": "",
+      "description": ""
     }
   }
 }
