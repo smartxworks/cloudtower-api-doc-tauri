@@ -6696,7 +6696,7 @@
     },
     {
       "name": "EcpLicense",
-      "x-displayName": "ECP license",
+      "x-displayName": "{EIC} license",
       "description": ""
     }
   ],

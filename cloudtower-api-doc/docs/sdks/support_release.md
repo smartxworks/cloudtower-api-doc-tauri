@@ -2,6 +2,7 @@
 title: 适配说明
 sidebar_position: 41
 ---
+import Terminology from '@site/terminology.json'
 import Download from '../../swagger/components/Download';
 
 export const AddressWrapper = (props) => {
@@ -17,13 +18,13 @@ export const AddressWrapper = (props) => {
 
 
 ## 升级建议
-CloudTower API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 CloudTower 3.0.0 的话，同样可以向下支持 CloudTower 2.8.0。
-建议先升级 SDK 再升级 CloudTower。 
+<>{Terminology['zh-CN']['PRODUCT']} API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 {Terminology['zh-CN']['PRODUCT']} 3.0.0 的话，同样可以向下支持 {Terminology['zh-CN']['PRODUCT']} 2.8.0。
+建议先升级 SDK 再升级 {Terminology['zh-CN']['PRODUCT']}。 </>
 
 ## 适配说明
-以下罗列了搭配 CloudTower 升级的配套版本。SDK 2.0 之后的版本都修复了较多问题，较为稳定，更推荐大家使用。如需使用 SDK 2.0 之前的版本，或者 SDK 自身的修复版本，可以到对应的 SDK github relase 页面进行查看。
+<>以下罗列了搭配 {Terminology['zh-CN']['PRODUCT']} 升级的配套版本。SDK 2.0 之后的版本都修复了较多问题，较为稳定，更推荐大家使用。如需使用 SDK 2.0 之前的版本，或者 SDK 自身的修复版本，可以到对应的 SDK github relase 页面进行查看。</>
 
-| SDK 版本 | 支持 CloudTower 版本 | SDK 发布日期 | 下载地址 |
+| SDK 版本 | 产品版本 | SDK 发布日期 | 下载地址 |
 | --- | --- | --- | --- |
 | 2.21.0 | 4.7.0 | 2025.10.14 | <AddressWrapper version="2.21.0" file_version="4.7.0"/>|
 | 2.20.0 | 4.6.x | 2025.06.09 | <AddressWrapper version="2.20.0" file_version="4.6.0"/>|

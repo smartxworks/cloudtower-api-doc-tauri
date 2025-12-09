@@ -1,10 +1,11 @@
 ---
 title: API Key 鉴权
 ---
+import Terminology from '@site/terminology.json'
 
 在默认环境中，使用用户名，密码登录后即可换回 token，可以正常使用 token 进行鉴权，但是在开启了双因子认证后，无法单纯通过用户名，密码换回 token，会需要一个额外的第二因子验证，而在 API 的业务场景中，执行是无交互的，无法进行第二因子验证。
 
-为了在此类环境下可以使用 CloudTower API，CloudTower 引入了 API Key ，以代替 token 进行鉴权。
+<>为了在此类环境下可以使用 {Terminology['zh-CN']['PRODUCT']} API，{Terminology['zh-CN']['PRODUCT']} 引入了 API Key ，以代替 token 进行鉴权。</>
 
 ### 签发 API Key
 
@@ -15,7 +16,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: $TOKEN" \
   --data-raw '{"query": "mutation createApiKey($name: String!) { createApiKey(data: { name: $name }) { id key roles { id preset }}}", "variables": {"name": "$NAME"}}' \
-  http://$CLOUDTOWER_DOMAIN/api/ | jq -r '.data.createApiKey.key'
+  http://$CLOUDTOWER_IP/api/ | jq -r '.data.createApiKey.key'
 
 ```
 
@@ -31,7 +32,7 @@ curl \
   -H "Content-Type: application/json" \
   -H "Authorization: $KEY" \
   --data-raw '{"where":{}}' \
-  http://$CLOUDTOWER_DOMAIN/v2/api/get-vms | jq ".[]"
+  http://CLOUDTOWER_IP/v2/api/get-vms | jq ".[]"
 ```
 
 ### 删除 API Key
@@ -43,7 +44,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: $TOKEN" \
   --data-raw '{"query": "mutation deleteApiKey($key: String!) { deleteApiKey(where: { key: $key }) { id } }", "variables": { "key": "$KEY" }}' \
-  http://$CLOUDTOWER_DOMAIN/api/
+  http://CLOUDTOWER_IP/api/
 ```
 
 执行后将会删除对应 key 的 API Key。

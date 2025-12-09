@@ -2,12 +2,13 @@
 title: Get VNC Information
 ---
 
+import Terminology from '@site/terminology.json'
 import FormatVnc from '../../../../../code_blocks/FormatVnc.md'
 import GetVnc from '../../../../../code_blocks/GetVnc.md'
 import GetVncResponse from '../../../../../code_blocks/GetVncResponse.md'
 import OpenVnc from '../../../../../code_blocks/OpenVnc.md'
 
-Currently, CloudTower API and related SDK do not provide APIs for obtaining VNC information. If users need to obtain VNC information or perform operations such as opening a virtual machine terminal, they can obtain it by sending the following request:
+<>Currently, {Terminology['en-US']['PRODUCT']} API and related SDK do not provide APIs for obtaining VNC information. If users need to obtain VNC information or perform operations such as opening a virtual machine terminal, they can obtain it by sending the following request:</>
 
 <GetVnc />
 
@@ -19,7 +20,7 @@ If the current environment can be directly connected to the cluster, you can cho
 
 <FormatVnc />
 
-Or you can choose to use `token`, `vm_uuid` and `host_ip` to build a noVnc URL forwarded through CloudTower. Since the token may contain some characters that cannot be included in the URL, such as `/`, `+`, etc., it needs to be converted into hexadecimal digits:
+<>Or you can choose to use <code>token</code>, <code>vm_uuid</code> and <code>host_ip</code> to build a noVnc URL forwarded through {Terminology['en-US']['PRODUCT']}. Since the token may contain some characters that cannot be included in the URL, such as <code>/</code>, <code>+</code>, etc., it needs to be converted into hexadecimal digits:</>
 
 <FormatVncProxy />
 
@@ -49,14 +50,14 @@ If we want to connect directly, we will finally construct a URL like this:
 wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-If we want to forward through CloudTower, we need to process the token first. Assuming our token is MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo= (obtained by base64 encryption based on 123456789abcdefghijklmnopqrstuvwxyz), we need to escape characters such as /, +, and =.
+<>If we want to forward through {Terminology['en-US']['PRODUCT']}, we need to process the token first. Assuming our token is <code>MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=</code> (obtained by base64 encryption based on <code>123456789abcdefghijklmnopqrstuvwxyz</code>), we need to escape characters such as <code>/</code>, <code>+</code> and <code>=</code>.</>
 
-```bash
+```typescript
 token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
 encodeURIComponent(token) = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D"
 ```
 
-Assuming the CloudTower address is 192.168.5.1, we will finally construct a URL like this:
+<>Assuming the {Terminology['en-US']['PRODUCT']} address is 192.168.5.1, we will finally construct a URL like this:</>
 
 ```bash
 wss://192.168.5.1/websockify/?token=MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D&uuid=00000000-0000-0000-0000-000000000000&host=192.168.5.4

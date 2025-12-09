@@ -619,7 +619,7 @@
       "AND": "符合所有的筛选条件",
       "NOT": "不符合所有筛选条件",
       "OR": "符合一项或多项筛选条件",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -654,7 +654,7 @@
     },
     "GetHostMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
-      "metrics": "<table><tr><td>zbs_chunk_readwrite_iops</td><td> IOPS-总</td></tr><tr><td>zbs_chunk_read_iops</td><td> IOPS-读</td></tr><tr><td>zbs_chunk_write_iops</td><td> IOPS-写</td></tr><tr><td>zbs_chunk_read_write_iops</td><td> IOPS-读，写</td></tr><tr><td>zbs_chunk_readwrite_speed_bps</td><td> I/O 带宽-总</td></tr><tr><td>zbs_chunk_read_speed_bps</td><td> I/O 带宽-读</td></tr><tr><td>zbs_chunk_write_speed_bps</td><td> I/O 带宽-写</td></tr><tr><td>zbs_chunk_read_write_speed_bps</td><td> I/O 带宽-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_latency_ns</td><td> I/O 平均延时-总</td></tr><tr><td>zbs_chunk_avg_read_latency_ns</td><td> I/O 平均延时-读</td></tr><tr><td>zbs_chunk_avg_write_latency_ns</td><td> I/O 平均延时-写</td></tr><tr><td>zbs_chunk_avg_read_write_latency_ns</td><td> I/O 平均延时-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_size_bytes</td><td> I/O 平均块大小-总</td></tr><tr><td>zbs_chunk_avg_read_size_bytes</td><td> I/O 平均块大小-读</td></tr><tr><td>zbs_chunk_avg_write_size_bytes</td><td> I/O 平均块大小-写</td></tr><tr><td>zbs_chunk_avg_read_write_size_bytes</td><td> I/O 平均块大小-读，写</td></tr><tr><td>zbs_chunk_data_capacity_bytes</td><td> 总数据容量</td></tr><tr><td>zbs_chunk_used_data_space_bytes</td><td> 已使用数据空间（物理）</td></tr><tr><td>zbs_chunk_cache_capacity_bytes</td><td> 总缓存容量</td></tr><tr><td>zbs_chunk_read_cache_hit_ratio</td><td> 缓存命中率 - 读</td></tr><tr><td>zbs_chunk_write_cache_hit_ratio</td><td> 缓存命中率 - 写</td></tr><tr><td>zbs_chunk_readwrite_cache_hit_ratio</td><td> 缓存命中率 - 总</td></tr><tr><td>host_hdd_overall_size_bytes</td><td> 总 HDD 容量</td></tr><tr><td>host_ssd_overall_size_bytes</td><td> 总 SSD 容量</td></tr><tr><td>elf_host_vcpus_provisioned</td><td> 分配给虚拟机的逻辑核数</td></tr><tr><td>elf_host_vcpus_provisioned_running</td><td> 分配给运行中（含暂停）虚拟机的逻辑核数</td></tr><tr><td>elf_host_memory_provisioned_bytes</td><td> 分配给虚拟机的内存大小</td></tr><tr><td>elf_host_memory_provisioned_running_bytes</td><td> 分配给运行中（含暂停）虚拟机的内存大小</td></tr><tr><td>host_cpu_temperature_celsius</td><td> CPU 温度</td></tr><tr><td>host_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>host_cpu_overall_used_hz</td><td> CPU 使用频率（Hz）</td></tr><tr><td>host_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>host_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>host_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>host_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>host_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>host_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>host_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>host_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>host_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>host_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_management</td><td> 管理网络网口之间丢包率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_storage</td><td> 存储网络网口之间丢包率（%）</td></tr><tr><td>host_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>host_zbs_log_dir_used_space_bytes</td><td> /var/log/zbs 已使用空间大小</td></tr><tr><td>host_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
+      "metrics": "<table><tr><td>zbs_chunk_readwrite_iops</td><td> IOPS-总</td></tr><tr><td>zbs_chunk_read_iops</td><td> IOPS-读</td></tr><tr><td>zbs_chunk_write_iops</td><td> IOPS-写</td></tr><tr><td>zbs_chunk_read_write_iops</td><td> IOPS-读，写</td></tr><tr><td>zbs_chunk_readwrite_speed_bps</td><td> I/O 带宽-总</td></tr><tr><td>zbs_chunk_read_speed_bps</td><td> I/O 带宽-读</td></tr><tr><td>zbs_chunk_write_speed_bps</td><td> I/O 带宽-写</td></tr><tr><td>zbs_chunk_read_write_speed_bps</td><td> I/O 带宽-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_latency_ns</td><td> I/O 平均延时-总</td></tr><tr><td>zbs_chunk_avg_read_latency_ns</td><td> I/O 平均延时-读</td></tr><tr><td>zbs_chunk_avg_write_latency_ns</td><td> I/O 平均延时-写</td></tr><tr><td>zbs_chunk_avg_read_write_latency_ns</td><td> I/O 平均延时-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_size_bytes</td><td> I/O 平均块大小-总</td></tr><tr><td>zbs_chunk_avg_read_size_bytes</td><td> I/O 平均块大小-读</td></tr><tr><td>zbs_chunk_avg_write_size_bytes</td><td> I/O 平均块大小-写</td></tr><tr><td>zbs_chunk_avg_read_write_size_bytes</td><td> I/O 平均块大小-读，写</td></tr><tr><td>zbs_chunk_data_capacity_bytes</td><td> 总数据容量</td></tr><tr><td>zbs_chunk_used_data_space_bytes</td><td> 已使用数据空间（物理）</td></tr><tr><td>zbs_chunk_cache_capacity_bytes</td><td> 总缓存容量</td></tr><tr><td>zbs_chunk_read_cache_hit_ratio</td><td> 缓存命中率 - 读</td></tr><tr><td>zbs_chunk_write_cache_hit_ratio</td><td> 缓存命中率 - 写</td></tr><tr><td>zbs_chunk_readwrite_cache_hit_ratio</td><td> 缓存命中率 - 总</td></tr><tr><td>host_hdd_overall_size_bytes</td><td> 总 HDD 容量</td></tr><tr><td>host_ssd_overall_size_bytes</td><td> 总 SSD 容量</td></tr><tr><td>elf_host_vcpus_provisioned</td><td> 分配给虚拟机的逻辑核数</td></tr><tr><td>elf_host_vcpus_provisioned_running</td><td> 分配给运行中（含暂停）虚拟机的逻辑核数</td></tr><tr><td>elf_host_memory_provisioned_bytes</td><td> 分配给虚拟机的内存大小</td></tr><tr><td>elf_host_memory_provisioned_running_bytes</td><td> 分配给运行中（含暂停）虚拟机的内存大小</td></tr><tr><td>host_cpu_temperature_celsius</td><td> CPU 温度</td></tr><tr><td>host_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>host_cpu_overall_used_hz</td><td> CPU 使用频率（Hz）</td></tr><tr><td>host_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>host_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>host_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>host_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>host_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>host_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>host_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>host_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>host_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>host_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_management</td><td> 管理网络网口之间丢包率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_storage</td><td> 存储网络网口之间丢包率（%）</td></tr><tr><td>host_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>host_zbs_log_dir_used_space_bytes</td><td> {STORAGE_LOG_PATH} 已使用空间大小</td></tr><tr><td>host_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
     },
     "GetHostNetworkMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
@@ -678,7 +678,7 @@
     },
     "GetScvmMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
-      "metrics": "<table><tr><td>scvm_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>scvm_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>scvm_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>scvm_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>scvm_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>scvm_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>scvm_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>scvm_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>scvm_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>scvm_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>scvm_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>scvm_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>scvm_zbs_log_dir_used_space_bytes</td><td> /var/log/zbs 已使用空间大小</td></tr><tr><td>scvm_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
+      "metrics": "<table><tr><td>scvm_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>scvm_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>scvm_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>scvm_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>scvm_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>scvm_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>scvm_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>scvm_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>scvm_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>scvm_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>scvm_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>scvm_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>scvm_zbs_log_dir_used_space_bytes</td><td> {STORAGE_LOG_PATH} 已使用空间大小</td></tr><tr><td>scvm_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
     },
     "GetScvmNetworkInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
@@ -994,7 +994,7 @@
       "description_not_in": "描述不在指定范围中",
       "description_not_starts_with": "描述不已指定字符开始",
       "description_starts_with": "描述已指定字符开始",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -1376,7 +1376,7 @@
     },
     "IsolationPolicy": {
       "egress": "出流量",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "ingress": "入流量",
       "labels": "关联标签",
@@ -1392,7 +1392,7 @@
       "egress": "出流量控制的配置",
       "mode": "隔离模式",
       "vm_id": "隔离虚拟机 ID",
-      "everoute_cluster_id": "Everoute 服务 ID"
+      "everoute_cluster_id": "{NET_SECURITY_SERVICE} ID"
     },
     "IsolationPolicyUpdateParams": {
       "ingress": "入流量控制的配置",
@@ -1517,7 +1517,7 @@
       "apply_to": "作用范围",
       "description": "描述",
       "egress": "出流量",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "ingress": "入流量",
       "is_blocklist": "是否为黑名单策略类型",
@@ -4049,7 +4049,7 @@
       "egress": "出流量控制的配置",
       "apply_to": "应用到哪些虚拟机，或者标签上",
       "policy_mode": "策略模式。WORK 表示立刻生效，MONITOR 不会立即生效，需要改为 WORK 才会生效",
-      "everoute_cluster_id": "Everoute 服务 ID",
+      "everoute_cluster_id": "{NET_SECURITY_SERVICE} ID",
       "description": "安全策略描述",
       "name": "安全策略名称，不可重复"
     },

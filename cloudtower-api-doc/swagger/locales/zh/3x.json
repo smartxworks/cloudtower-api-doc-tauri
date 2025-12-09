@@ -174,7 +174,7 @@
     },
     "/create-vm-from-template": {
       "summary": "从模板创建虚拟机",
-      "description": "**警告：** 虚拟机模板已 Cloudtower 界面上移除，除非有特殊需要，否则请不要使用使用模板创建虚拟机 API 来创建虚拟机，请使用内容库模板。"
+      "description": "**警告：** 虚拟机模板已 {PRODUCT} 界面上移除，除非有特殊需要，否则请不要使用使用模板创建虚拟机 API 来创建虚拟机，请使用内容库模板。"
     },
     "/create-vm-placement-group": {
       "summary": "创建虚拟机放置组",
@@ -473,11 +473,11 @@
       "description": ""
     },
     "/get-deploys-connection": {
-      "summary": "获取 CloudTower 数量",
+      "summary": "获取 {PRODUCT} 数量",
       "description": ""
     },
     "/get-deploys": {
-      "summary": "获取 CloudTower",
+      "summary": "获取 {PRODUCT}",
       "description": ""
     },
     "/get-discover-hosts": {
@@ -525,27 +525,27 @@
       "description": ""
     },
     "/get-everoute-clusters-connection": {
-      "summary": "获取 Everoute 服务数量",
+      "summary": "获取 {NET_SECURITY_SERVICE}数量",
       "description": ""
     },
     "/get-everoute-clusters": {
-      "summary": "获取 Everoute 服务",
+      "summary": "获取 {NET_SECURITY_SERVICE}",
       "description": ""
     },
     "/get-everoute-licenses-connection": {
-      "summary": "获取 Everoute 使用许可数量",
+      "summary": "获取 {NET_SECURITY} 使用许可数量",
       "description": ""
     },
     "/get-everoute-licenses": {
-      "summary": "获取 Everoute 使用许可",
+      "summary": "获取 {NET_SECURITY} 使用许可",
       "description": ""
     },
     "/get-everoute-packages-connection": {
-      "summary": "获取 Everoute 安装包数量",
+      "summary": "获取 {NET_SECURITY} 安装包数量",
       "description": ""
     },
     "/get-everoute-packages": {
-      "summary": "获取 Everoute 安装包",
+      "summary": "获取 {NET_SECURITY} 安装包",
       "description": ""
     },
     "/get-global-alert-rules-connection": {
@@ -557,11 +557,11 @@
       "description": ""
     },
     "/get-global-settingses-connection": {
-      "summary": "获取 CloudTower 设置数量",
+      "summary": "获取 {PRODUCT} 设置数量",
       "description": ""
     },
     "/get-global-settingses": {
-      "summary": "获取 CloudTower 设置",
+      "summary": "获取 {PRODUCT} 设置",
       "description": ""
     },
     "/get-graphs-connection": {
@@ -1761,11 +1761,11 @@
       "description": ""
     },
     "/upload-cloudtower-application-package": {
-      "summary": "上传一个 cloudtower application package",
+      "summary": "上传一个 {PRODUCT} application package",
       "description": ""
     },
     "/delete-cloudtower-application-package": {
-      "summary": "删除一个 cloudtower application package",
+      "summary": "删除一个 {PRODUCT} application package",
       "description": ""
     },
     "/deploy-cloudtower-application": {
@@ -1781,19 +1781,19 @@
       "description": ""
     },
     "/get-cloudtower-application-packages": {
-      "summary": "获取 cloudtower application package",
+      "summary": "获取 {PRODUCT} application package",
       "description": ""
     },
     "/get-cloud-tower-application-packages-connection": {
-      "summary": "获取 cloudtower application package 数量",
+      "summary": "获取 {PRODUCT} application package 数量",
       "description": ""
     },
     "/get-cloudtower-applications": {
-      "summary": "获取 cloudtower application",
+      "summary": "获取 {PRODUCT} application",
       "description": ""
     },
     "/get-cloud-tower-applications-connection": {
-      "summary": "cloudtower application 数量",
+      "summary": "{PRODUCT} application 数量",
       "description": ""
     },
     "/get-meta-leader": {
@@ -2730,7 +2730,7 @@
       "disconnected_reason": "最近一次失联原因",
       "dns": "DNS 服务器",
       "entityAsyncStatus": "内部字段",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "failure_data_space": "失效空间",
       "has_metrox": "是否支持双活",
       "has_remote_backup": "是否支持远程备份",
@@ -2836,7 +2836,7 @@
       "upgrade_from": "前版本",
       "upgrade_tool_version": "升级工具版本",
       "local_id": "UUID",
-      "zbs_version": "ZBS 版本"
+      "zbs_version": "{STORAGE_PRODUCT} 版本"
     },
     "ClusterImageConnection": {
       "aggregate": ""
@@ -2957,20 +2957,20 @@
       "local_id_not_in": "UUID不在指定范围中",
       "local_id_not_starts_with": "UUID不已指定字符开始",
       "local_id_starts_with": "UUID已指定字符开始",
-      "zbs_version": "ZBS 版本",
-      "zbs_version_contains": "ZBS 版本包含指定字符",
-      "zbs_version_ends_with": "ZBS 版本已指定字符结尾",
-      "zbs_version_gt": "ZBS 版本大于指定数值",
-      "zbs_version_gte": "ZBS 版本大于或等于指定数值",
-      "zbs_version_in": "ZBS 版本在指定范围中",
-      "zbs_version_lt": "ZBS 版本小于指定字符",
-      "zbs_version_lte": "ZBS 版本小于或等于指定字符",
-      "zbs_version_not": "ZBS 版本不等于指定数值",
-      "zbs_version_not_contains": "ZBS 版本不包含指定字符",
-      "zbs_version_not_ends_with": "ZBS 版本不已指定字符结尾",
-      "zbs_version_not_in": "ZBS 版本不在指定范围中",
-      "zbs_version_not_starts_with": "ZBS 版本不已指定字符开始",
-      "zbs_version_starts_with": "ZBS 版本已指定字符开始"
+      "zbs_version": "{STORAGE_PRODUCT} 版本",
+      "zbs_version_contains": "{STORAGE_PRODUCT} 版本包含指定字符",
+      "zbs_version_ends_with": "{STORAGE_PRODUCT} 版本已指定字符结尾",
+      "zbs_version_gt": "{STORAGE_PRODUCT} 版本大于指定数值",
+      "zbs_version_gte": "{STORAGE_PRODUCT} 版本大于或等于指定数值",
+      "zbs_version_in": "{STORAGE_PRODUCT} 版本在指定范围中",
+      "zbs_version_lt": "{STORAGE_PRODUCT} 版本小于指定字符",
+      "zbs_version_lte": "{STORAGE_PRODUCT} 版本小于或等于指定字符",
+      "zbs_version_not": "{STORAGE_PRODUCT} 版本不等于指定数值",
+      "zbs_version_not_contains": "{STORAGE_PRODUCT} 版本不包含指定字符",
+      "zbs_version_not_ends_with": "{STORAGE_PRODUCT} 版本不已指定字符结尾",
+      "zbs_version_not_in": "{STORAGE_PRODUCT} 版本不在指定范围中",
+      "zbs_version_not_starts_with": "{STORAGE_PRODUCT} 版本不已指定字符开始",
+      "zbs_version_starts_with": "{STORAGE_PRODUCT} 版本已指定字符开始"
     },
     "ClusterLicenseUpdationParams": {
       "data.license": "证书",
@@ -3110,7 +3110,7 @@
       "zone_topoes_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "ClusterType": {
-      "enum": "* BLUESHARK: Blueshark\n* SMTX_OS: SMTX OS\n* SMTX_ZBS: SMTX ZBS"
+      "enum": ""
     },
     "ClusterUpdationParams": {
       "data.secondary_zone_id": "次级可用域名 id",
@@ -3275,7 +3275,7 @@
       "entityAsyncStatus_in": "内部字段在指定范围中",
       "entityAsyncStatus_not": "内部字段不等于指定数值",
       "entityAsyncStatus_not_in": "内部字段不在指定范围中",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "failure_data_space": "失效空间",
       "failure_data_space_gt": "失效空间大于指定数值",
       "failure_data_space_gte": "失效空间大于或等于指定数值",
@@ -4698,7 +4698,7 @@
       "aggregate": ""
     },
     "DiskFunction": {
-      "enum": "* CACHE: 缓存盘\n* DATA: 数据盘 \n* SMTX_SYSTEM: SMTX 系统盘"
+      "enum": ""
     },
     "DiskHealthStatus": {
       "enum": "* HEALTHY: 健康\n* SMART_FAILED: S.M.A.R.T. 不通过\n* SUBHEALTHY: 亚健康\n* UNHEALTHY: 不健康"
@@ -5404,8 +5404,8 @@
       "enum": "* VM: 虚拟机"
     },
     "EverouteCluster": {
-      "agent_elf_clusters": "代理 ELF 集群",
-      "agent_elf_vdses": "代理 ELF 虚拟机交换机",
+      "agent_elf_clusters": "代理 {VM_PRODUCT} 集群",
+      "agent_elf_vdses": "代理 {VM_PRODUCT} 虚拟机交换机",
       "controller_instances": "控制器实例",
       "controller_template": "控制器模板",
       "global_default_action": "全局默认配置",
@@ -5495,7 +5495,7 @@
       "installed_not": "是否安装不等于指定数值"
     },
     "EverouteLicense": {
-      "cloud_tower": "CloudTower",
+      "cloud_tower": "{PRODUCT}",
       "expire_date": "失效日期",
       "id": "唯一标识",
       "license_serial": "软件许可序列号",
@@ -5515,7 +5515,7 @@
     },
     "EverouteLicenseWhereInput": {
       "AND": "符合所有的筛选条件",
-      "cloud_tower": "CloudTower",
+      "cloud_tower": "{PRODUCT}",
       "expire_date": "失效日期",
       "expire_date_gt": "失效日期大于指定数值",
       "expire_date_gte": "失效日期大于或等于指定数值",
@@ -7630,7 +7630,7 @@
     "Host": {
       "access_ip": "接入 IP",
       "allocatable_memory_bytes": "可分配内存",
-      "chunk_id": "主机在 zbs 中的 chunk id",
+      "chunk_id": "主机在 {STORAGE_PRODUCT} 中的 chunk id",
       "cluster": "所属集群",
       "compatible_cpu_models": "可兼容的 CPU 模型",
       "cpu_brand": "CPU 品牌",
@@ -7777,20 +7777,20 @@
       "allocatable_memory_bytes_not": "可分配内存不等于指定数值",
       "allocatable_memory_bytes_not_in": "可分配内存不在指定范围中",
       "AND": "符合所有的筛选条件",
-      "chunk_id": "主机在 zbs 中的 chunk id",
-      "chunk_id_contains": "主机在 zbs 中的 chunk id包含指定字符",
-      "chunk_id_ends_with": "主机在 zbs 中的 chunk id已指定字符结尾",
-      "chunk_id_gt": "主机在 zbs 中的 chunk id大于指定数值",
-      "chunk_id_gte": "主机在 zbs 中的 chunk id大于或等于指定数值",
-      "chunk_id_in": "主机在 zbs 中的 chunk id在指定范围中",
-      "chunk_id_lt": "主机在 zbs 中的 chunk id小于指定字符",
-      "chunk_id_lte": "主机在 zbs 中的 chunk id小于或等于指定字符",
-      "chunk_id_not": "主机在 zbs 中的 chunk id不等于指定数值",
-      "chunk_id_not_contains": "主机在 zbs 中的 chunk id不包含指定字符",
-      "chunk_id_not_ends_with": "主机在 zbs 中的 chunk id不已指定字符结尾",
-      "chunk_id_not_in": "主机在 zbs 中的 chunk id不在指定范围中",
-      "chunk_id_not_starts_with": "主机在 zbs 中的 chunk id不已指定字符开始",
-      "chunk_id_starts_with": "主机在 zbs 中的 chunk id已指定字符开始",
+      "chunk_id": "主机在 {STORAGE_PRODUCT} 中的 chunk id",
+      "chunk_id_contains": "主机在 {STORAGE_PRODUCT} 中的 chunk id包含指定字符",
+      "chunk_id_ends_with": "主机在 {STORAGE_PRODUCT} 中的 chunk id已指定字符结尾",
+      "chunk_id_gt": "主机在 {STORAGE_PRODUCT} 中的 chunk id大于指定数值",
+      "chunk_id_gte": "主机在 {STORAGE_PRODUCT} 中的 chunk id大于或等于指定数值",
+      "chunk_id_in": "主机在 {STORAGE_PRODUCT} 中的 chunk id在指定范围中",
+      "chunk_id_lt": "主机在 {STORAGE_PRODUCT} 中的 chunk id小于指定字符",
+      "chunk_id_lte": "主机在 {STORAGE_PRODUCT} 中的 chunk id小于或等于指定字符",
+      "chunk_id_not": "主机在 {STORAGE_PRODUCT} 中的 chunk id不等于指定数值",
+      "chunk_id_not_contains": "主机在 {STORAGE_PRODUCT} 中的 chunk id不包含指定字符",
+      "chunk_id_not_ends_with": "主机在 {STORAGE_PRODUCT} 中的 chunk id不已指定字符结尾",
+      "chunk_id_not_in": "主机在 {STORAGE_PRODUCT} 中的 chunk id不在指定范围中",
+      "chunk_id_not_starts_with": "主机在 {STORAGE_PRODUCT} 中的 chunk id不已指定字符开始",
+      "chunk_id_starts_with": "主机在 {STORAGE_PRODUCT} 中的 chunk id已指定字符开始",
       "cluster": "所属集群",
       "cpu_brand": "CPU 品牌",
       "cpu_brand_contains": "CPU 品牌包含指定字符",
@@ -8298,7 +8298,7 @@
       "iommu_not_in": "IOMMU 状态不在指定范围中"
     },
     "Hypervisor": {
-      "enum": "* BLUESHARK: BLUESHARK\n* ELF: ELF\n* VMWARE: VMWARE\n* XENSERVER: XENSERVER"
+      "enum": "* BLUESHARK: BLUESHARK\n* {VM_PRODUCT}: {VM_PRODUCT}\n* VMWARE: VMWARE\n* XENSERVER: XENSERVER"
     },
     "ImageConnector": {
       "name": "名称",
@@ -8494,7 +8494,7 @@
       "stripe_size": "条带大小（字节）",
       "thin_provision": "是否为精简置备",
       "unique_size": "独占容量（字节）",
-      "zbs_volume_id": "ZBS Volume UUID"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID"
     },
     "IscsiLunCloneParams": {
       "iscsi_target_id": "关联 ISCSI 对象 ID",
@@ -8955,20 +8955,20 @@
       "unique_size_lte": "独占容量（字节）小于或等于指定字符",
       "unique_size_not": "独占容量（字节）不等于指定数值",
       "unique_size_not_in": "独占容量（字节）不在指定范围中",
-      "zbs_volume_id": "ZBS Volume UUID",
-      "zbs_volume_id_contains": "ZBS Volume UUID包含指定字符",
-      "zbs_volume_id_ends_with": "ZBS Volume UUID已指定字符结尾",
-      "zbs_volume_id_gt": "ZBS Volume UUID大于指定数值",
-      "zbs_volume_id_gte": "ZBS Volume UUID大于或等于指定数值",
-      "zbs_volume_id_in": "ZBS Volume UUID在指定范围中",
-      "zbs_volume_id_lt": "ZBS Volume UUID小于指定字符",
-      "zbs_volume_id_lte": "ZBS Volume UUID小于或等于指定字符",
-      "zbs_volume_id_not": "ZBS Volume UUID不等于指定数值",
-      "zbs_volume_id_not_contains": "ZBS Volume UUID不包含指定字符",
-      "zbs_volume_id_not_ends_with": "ZBS Volume UUID不已指定字符结尾",
-      "zbs_volume_id_not_in": "ZBS Volume UUID不在指定范围中",
-      "zbs_volume_id_not_starts_with": "ZBS Volume UUID不已指定字符开始",
-      "zbs_volume_id_starts_with": "ZBS Volume UUID已指定字符开始"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID",
+      "zbs_volume_id_contains": "{STORAGE_PRODUCT} Volume UUID包含指定字符",
+      "zbs_volume_id_ends_with": "{STORAGE_PRODUCT} Volume UUID已指定字符结尾",
+      "zbs_volume_id_gt": "{STORAGE_PRODUCT} Volume UUID大于指定数值",
+      "zbs_volume_id_gte": "{STORAGE_PRODUCT} Volume UUID大于或等于指定数值",
+      "zbs_volume_id_in": "{STORAGE_PRODUCT} Volume UUID在指定范围中",
+      "zbs_volume_id_lt": "{STORAGE_PRODUCT} Volume UUID小于指定字符",
+      "zbs_volume_id_lte": "{STORAGE_PRODUCT} Volume UUID小于或等于指定字符",
+      "zbs_volume_id_not": "{STORAGE_PRODUCT} Volume UUID不等于指定数值",
+      "zbs_volume_id_not_contains": "{STORAGE_PRODUCT} Volume UUID不包含指定字符",
+      "zbs_volume_id_not_ends_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符结尾",
+      "zbs_volume_id_not_in": "{STORAGE_PRODUCT} Volume UUID不在指定范围中",
+      "zbs_volume_id_not_starts_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符开始",
+      "zbs_volume_id_starts_with": "{STORAGE_PRODUCT} Volume UUID已指定字符开始"
     },
     "IscsiTarget": {
       "bps": "总 BPS",
@@ -9402,7 +9402,7 @@
     },
     "IsolationPolicy": {
       "egress": "出流量",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "ingress": "入流量",
       "labels": "关联标签",
@@ -9417,7 +9417,7 @@
     },
     "IsolationPolicyWhereInput": {
       "AND": "符合所有的筛选条件",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -10174,7 +10174,7 @@
       "source": "创建来源",
       "password": "密码",
       "mfa_type": "MFA 类型",
-      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置"
+      "auth_config_id": "验证配置 ID, {PRODUCT} 平台用户无该配置"
     },
     "ManagementVlanUpdationParams": {
       "data.extra_ip.management_ip": "管理 IP",
@@ -11892,7 +11892,7 @@
       "stripe_size": "单个条带大小",
       "thin_provision": "是否为精简置备",
       "unique_size": "独占容量，单位为字节",
-      "zbs_volume_id": "ZBS Volume UUID"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID"
     },
     "NvmfNamespaceCloneParams": {
       "namespace_group_id": "Namespace Group ID",
@@ -12358,20 +12358,20 @@
       "unique_size_lte": "独占容量，单位为字节小于或等于指定字符",
       "unique_size_not": "独占容量，单位为字节不等于指定数值",
       "unique_size_not_in": "独占容量，单位为字节不在指定范围中",
-      "zbs_volume_id": "ZBS Volume UUID",
-      "zbs_volume_id_contains": "ZBS Volume UUID包含指定字符",
-      "zbs_volume_id_ends_with": "ZBS Volume UUID已指定字符结尾",
-      "zbs_volume_id_gt": "ZBS Volume UUID大于指定数值",
-      "zbs_volume_id_gte": "ZBS Volume UUID大于或等于指定数值",
-      "zbs_volume_id_in": "ZBS Volume UUID在指定范围中",
-      "zbs_volume_id_lt": "ZBS Volume UUID小于指定字符",
-      "zbs_volume_id_lte": "ZBS Volume UUID小于或等于指定字符",
-      "zbs_volume_id_not": "ZBS Volume UUID不等于指定数值",
-      "zbs_volume_id_not_contains": "ZBS Volume UUID不包含指定字符",
-      "zbs_volume_id_not_ends_with": "ZBS Volume UUID不已指定字符结尾",
-      "zbs_volume_id_not_in": "ZBS Volume UUID不在指定范围中",
-      "zbs_volume_id_not_starts_with": "ZBS Volume UUID不已指定字符开始",
-      "zbs_volume_id_starts_with": "ZBS Volume UUID已指定字符开始"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID",
+      "zbs_volume_id_contains": "{STORAGE_PRODUCT} Volume UUID包含指定字符",
+      "zbs_volume_id_ends_with": "{STORAGE_PRODUCT} Volume UUID已指定字符结尾",
+      "zbs_volume_id_gt": "{STORAGE_PRODUCT} Volume UUID大于指定数值",
+      "zbs_volume_id_gte": "{STORAGE_PRODUCT} Volume UUID大于或等于指定数值",
+      "zbs_volume_id_in": "{STORAGE_PRODUCT} Volume UUID在指定范围中",
+      "zbs_volume_id_lt": "{STORAGE_PRODUCT} Volume UUID小于指定字符",
+      "zbs_volume_id_lte": "{STORAGE_PRODUCT} Volume UUID小于或等于指定字符",
+      "zbs_volume_id_not": "{STORAGE_PRODUCT} Volume UUID不等于指定数值",
+      "zbs_volume_id_not_contains": "{STORAGE_PRODUCT} Volume UUID不包含指定字符",
+      "zbs_volume_id_not_ends_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符结尾",
+      "zbs_volume_id_not_in": "{STORAGE_PRODUCT} Volume UUID不在指定范围中",
+      "zbs_volume_id_not_starts_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符开始",
+      "zbs_volume_id_starts_with": "{STORAGE_PRODUCT} Volume UUID已指定字符开始"
     },
     "NvmfSubsystem": {
       "bps": "总 BPS",
@@ -13309,7 +13309,7 @@
       "apply_to": "作用范围",
       "description": "描述",
       "egress": "出流量",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "ingress": "入流量",
       "name": "名称",
@@ -13337,7 +13337,7 @@
       "description_not_in": "描述不在指定范围中",
       "description_not_starts_with": "描述不已指定字符开始",
       "description_starts_with": "描述已指定字符开始",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -15072,7 +15072,7 @@
       "password_expired": "密码是否过期",
       "login_info": "登录相关信息",
       "enum": "* User: 用户",
-      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置",
+      "auth_config_id": "验证配置 ID, {PRODUCT} 平台用户无该配置",
       "display_username": "用户名，用于展示"
     },
     "UserAuditLog": {
@@ -15228,7 +15228,7 @@
       "name": "名称",
       "password": "密码",
       "username": "用户名",
-      "auth_config_id": "验证配置 ID, CloudTower 平台用户无该配置",
+      "auth_config_id": "验证配置 ID, {PRODUCT} 平台用户无该配置",
       "ldap_dn": "LDAP DN",
       "source": "创建来源，目前仅支持内部用户通过 API 创建 LDAP 用户"
     },
@@ -15580,7 +15580,7 @@
       "bond_mode": "网口绑定模式",
       "cluster": "关联集群",
       "entityAsyncStatus": "内部字段",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "internal": "是否为内部创建",
       "labels": "关联标签",
@@ -15658,7 +15658,7 @@
       "entityAsyncStatus_in": "内部字段在指定范围中",
       "entityAsyncStatus_not": "内部字段不等于指定数值",
       "entityAsyncStatus_not_in": "内部字段不在指定范围中",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -17479,7 +17479,7 @@
       "data.memory_unit": "指定传入的 memory 的所属单位"
     },
     "VmUsage": {
-      "enum": "* EVEROUTE_CONTROLLER: Everoute 系统服务虚拟机"
+      "enum": ""
     },
     "VmVideoType": {
       "enum": "* CIRRUS: Cirrus\n* QXL: QXL\n* VGA:  VGA \n* VIRTIO: VIRTIO"
@@ -21073,7 +21073,7 @@
     "GetHostMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "主机查询条件",
-      "metrics": "zbs_chunk_readwrite_iops: IOPS-总\nzbs_chunk_read_iops: IOPS-读\nzbs_chunk_write_iops: IOPS-写\nzbs_chunk_read_write_iops: IOPS-读，写\nzbs_chunk_readwrite_speed_bps: I/O 带宽-总\nzbs_chunk_read_speed_bps: I/O 带宽-读\nzbs_chunk_write_speed_bps: I/O 带宽-写\nzbs_chunk_read_write_speed_bps: I/O 带宽-读，写\nzbs_chunk_avg_readwrite_latency_ns: I/O 平均延时-总\nzbs_chunk_avg_read_latency_ns: I/O 平均延时-读\nzbs_chunk_avg_write_latency_ns: I/O 平均延时-写\nzbs_chunk_avg_read_write_latency_ns: I/O 平均延时-读，写\nzbs_chunk_avg_readwrite_size_bytes: I/O 平均块大小-总\nzbs_chunk_avg_read_size_bytes: I/O 平均块大小-读\nzbs_chunk_avg_write_size_bytes: I/O 平均块大小-写\nzbs_chunk_avg_read_write_size_bytes: I/O 平均块大小-读，写\nzbs_chunk_data_capacity_bytes: 总数据容量\nzbs_chunk_used_data_space_bytes: 已使用数据空间（物理）\nzbs_chunk_cache_capacity_bytes: 总缓存容量\nzbs_chunk_read_cache_hit_ratio: 缓存命中率 - 读\nzbs_chunk_write_cache_hit_ratio: 缓存命中率 - 写\nzbs_chunk_readwrite_cache_hit_ratio: 缓存命中率 - 总\nhost_hdd_overall_size_bytes: 总 HDD 容量\nhost_ssd_overall_size_bytes: 总 SSD 容量\nelf_host_vcpus_provisioned: 分配给虚拟机的逻辑核数\nelf_host_vcpus_provisioned_running: 分配给运行中（含暂停）虚拟机的逻辑核数\nelf_host_memory_provisioned_bytes: 分配给虚拟机的内存大小\nelf_host_memory_provisioned_running_bytes: 分配给运行中（含暂停）虚拟机的内存大小\nhost_cpu_temperature_celsius: CPU 温度\nhost_cpu_overall_usage_percent: CPU 使用率（%）\nhost_cpu_overall_used_hz: CPU 使用频率（Hz）\nhost_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nhost_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nhost_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nhost_memory_usage_percent: 内存使用率 (%)\nhost_memory_used_bytes: 内存使用量\nhost_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nhost_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nhost_memory_swap_size_bytes: 内存交换空间\nhost_memory_swap_used_bytes: 已使用的交换空间容量\nhost_memory_swap_usage_percent: 交换空间使用率（%）\nhost_network_ping_packet_loss_percent_management: 管理网络网口之间丢包率（%）\nhost_network_ping_packet_loss_percent_storage: 存储网络网口之间丢包率（%）\nhost_sys_partition_used_space_bytes: / 已使用空间大小\nhost_zbs_log_dir_used_space_bytes: /var/log/zbs 已使用空间大小\nhost_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
+      "metrics": "zbs_chunk_readwrite_iops: IOPS-总\nzbs_chunk_read_iops: IOPS-读\nzbs_chunk_write_iops: IOPS-写\nzbs_chunk_read_write_iops: IOPS-读，写\nzbs_chunk_readwrite_speed_bps: I/O 带宽-总\nzbs_chunk_read_speed_bps: I/O 带宽-读\nzbs_chunk_write_speed_bps: I/O 带宽-写\nzbs_chunk_read_write_speed_bps: I/O 带宽-读，写\nzbs_chunk_avg_readwrite_latency_ns: I/O 平均延时-总\nzbs_chunk_avg_read_latency_ns: I/O 平均延时-读\nzbs_chunk_avg_write_latency_ns: I/O 平均延时-写\nzbs_chunk_avg_read_write_latency_ns: I/O 平均延时-读，写\nzbs_chunk_avg_readwrite_size_bytes: I/O 平均块大小-总\nzbs_chunk_avg_read_size_bytes: I/O 平均块大小-读\nzbs_chunk_avg_write_size_bytes: I/O 平均块大小-写\nzbs_chunk_avg_read_write_size_bytes: I/O 平均块大小-读，写\nzbs_chunk_data_capacity_bytes: 总数据容量\nzbs_chunk_used_data_space_bytes: 已使用数据空间（物理）\nzbs_chunk_cache_capacity_bytes: 总缓存容量\nzbs_chunk_read_cache_hit_ratio: 缓存命中率 - 读\nzbs_chunk_write_cache_hit_ratio: 缓存命中率 - 写\nzbs_chunk_readwrite_cache_hit_ratio: 缓存命中率 - 总\nhost_hdd_overall_size_bytes: 总 HDD 容量\nhost_ssd_overall_size_bytes: 总 SSD 容量\nelf_host_vcpus_provisioned: 分配给虚拟机的逻辑核数\nelf_host_vcpus_provisioned_running: 分配给运行中（含暂停）虚拟机的逻辑核数\nelf_host_memory_provisioned_bytes: 分配给虚拟机的内存大小\nelf_host_memory_provisioned_running_bytes: 分配给运行中（含暂停）虚拟机的内存大小\nhost_cpu_temperature_celsius: CPU 温度\nhost_cpu_overall_usage_percent: CPU 使用率（%）\nhost_cpu_overall_used_hz: CPU 使用频率（Hz）\nhost_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nhost_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nhost_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nhost_memory_usage_percent: 内存使用率 (%)\nhost_memory_used_bytes: 内存使用量\nhost_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nhost_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nhost_memory_swap_size_bytes: 内存交换空间\nhost_memory_swap_used_bytes: 已使用的交换空间容量\nhost_memory_swap_usage_percent: 交换空间使用率（%）\nhost_network_ping_packet_loss_percent_management: 管理网络网口之间丢包率（%）\nhost_network_ping_packet_loss_percent_storage: 存储网络网口之间丢包率（%）\nhost_sys_partition_used_space_bytes: / 已使用空间大小\nhost_zbs_log_dir_used_space_bytes: {STORAGE_LOG_PATH}} 已使用空间大小\nhost_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
     },
     "GetHostNetworkMetricInput": {
       "hosts": "主机查询条件",
@@ -21107,7 +21107,7 @@
     "GetScvmMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "指定主机",
-      "metrics": "scvm_cpu_overall_usage_percent: CPU 使用率（%）\nscvm_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nscvm_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nscvm_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nscvm_memory_usage_percent: 内存使用率 (%)\nscvm_memory_used_bytes: 内存使用量\nscvm_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nscvm_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nscvm_memory_swap_size_bytes: 内存交换空间\nscvm_memory_swap_used_bytes: 已使用的交换空间容量\nscvm_memory_swap_usage_percent: 交换空间使用率（%）\nscvm_sys_partition_used_space_bytes: / 已使用空间大小\nscvm_zbs_log_dir_used_space_bytes: /var/log/zbs 已使用空间大小\nscvm_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
+      "metrics": "scvm_cpu_overall_usage_percent: CPU 使用率（%）\nscvm_cpu_overall_1m_avg_load: CPU 平均负载：1 分钟\nscvm_cpu_overall_5m_avg_load: CPU 平均负载：5 分钟\nscvm_cpu_overall_15m_avg_load: CPU 平均负载：15 分钟\nscvm_memory_usage_percent: 内存使用率 (%)\nscvm_memory_used_bytes: 内存使用量\nscvm_memory_swap_in_speed_bps: 内存交换速率-SwapIn\nscvm_memory_swap_out_speed_bps: 内存交换速率-SwapOut\nscvm_memory_swap_size_bytes: 内存交换空间\nscvm_memory_swap_used_bytes: 已使用的交换空间容量\nscvm_memory_swap_usage_percent: 交换空间使用率（%）\nscvm_sys_partition_used_space_bytes: / 已使用空间大小\nscvm_zbs_log_dir_used_space_bytes: {STORAGE_LOG_PATH} 已使用空间大小\nscvm_mongo_dir_used_space_bytes: /var/lib/mongodb 已使用空间大小"
     },
     "GetScvmNetworkInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
@@ -22111,7 +22111,7 @@
     },
     "SecurityGroup": {
       "description": "描述",
-      "everoute_cluster": "所属 Everoute 服务",
+      "everoute_cluster": "所属 {NET_SECURITY_SERVICE}",
       "id": "唯一标识 ID",
       "isolation_policies": "隔离策略",
       "label_groups": "标签组",
@@ -22127,7 +22127,7 @@
       "vms": "需要绑定的虚拟机",
       "label_groups": "需要绑定的标签组",
       "description": "描述",
-      "everoute_cluster_id": "Everoute 服务 ID",
+      "everoute_cluster_id": "{NET_SECURITY_SERVICE} ID",
       "name": "唯一标识"
     },
     "DeleteSecurityGroup": {
@@ -22241,7 +22241,7 @@
       "egress": "出流量控制的配置",
       "apply_to": "应用到哪些虚拟机，或者标签上",
       "policy_mode": "策略模式。WORK 表示立刻生效，MONITOR 不会立即生效，需要改为 WORK 才会生效",
-      "everoute_cluster_id": "Everoute 服务 ID",
+      "everoute_cluster_id": "{NET_SECURITY_SERVICE} ID",
       "description": "安全策略描述",
       "name": "安全策略名称，不可重复"
     },
@@ -23180,7 +23180,7 @@
     },
     {
       "name": "Deploy",
-      "x-displayName": "CloudTower",
+      "x-displayName": "{PRODUCT}",
       "description": ""
     },
     {
@@ -23215,27 +23215,27 @@
     },
     {
       "name": "EverouteCluster",
-      "x-displayName": "Everoute 服务",
+      "x-displayName": "{NET_SECURITY_SERVICE}",
       "description": ""
     },
     {
       "name": "EverouteLicense",
-      "x-displayName": "Everoute 使用许可",
+      "x-displayName": "{NET_SECURITY} 使用许可",
       "description": ""
     },
     {
       "name": "EveroutePackage",
-      "x-displayName": "Everoute 安装包",
+      "x-displayName": "{NET_SECURITY} 安装包",
       "description": ""
     },
     {
       "name": "GlobalAlertRule",
-      "x-displayName": "CloudTower 报警规则",
+      "x-displayName": "{PRODUCT} 报警规则",
       "description": ""
     },
     {
       "name": "GlobalSettings",
-      "x-displayName": "CloudTower 设置",
+      "x-displayName": "{PRODUCT} 设置",
       "description": ""
     },
     {

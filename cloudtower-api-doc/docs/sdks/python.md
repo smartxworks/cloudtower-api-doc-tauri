@@ -1,16 +1,12 @@
 ---
 title: Python
 ---
+import Terminology from '@site/terminology.json'
 
-Python 环境下的 CloudTower SDK，适用于 2.7 和 3.4 及以上版本
-
-# Cloudtower Python SDK
-
-Python 环境下的 Cloudtower SDK，适用于 2.7 与 3.4 以上版本。
+<>Python 环境下的 {Terminology['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本</>
 
 - [源码地址](https://github.com/smartxworks/cloudtower-python-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-python-sdk/releases)
-- [通用指南](https://cloudtower-api-doc.vercel.app)
 
 ## 安装
 
@@ -84,7 +80,7 @@ vm_api = VmApi(client)
 
 ```python
 from cloudtower.utils import wait_tasks, login
-conf = Configuration(host="http://api-test.dev-cloudtower.smartx.com/v2/api")
+conf = Configuration(host="http://example-cloudtower.com/v2/api")
 api_client = ApiClient(conf)
 login(api_client, "your_username", "your_password") # 默认使用 LOCAL 作为 usersource
 ```
@@ -162,7 +158,9 @@ else:
 
 #### 自定义 header
 
-> cloudtower api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
+<>
+> {Terminology['zh-CN']['PRODUCT']} api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
+</>
 
 ##### 通过 `ApiClient` 的 `set_default_header` 方法
 

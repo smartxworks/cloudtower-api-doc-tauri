@@ -2,6 +2,7 @@
 title: 分页查询
 sidebar_position: 222
 ---
+import Terminology from '@site/terminology.json'
 
 ### 排序参数
 
@@ -14,7 +15,7 @@ sidebar_position: 222
 ```
 
 ### 其余参数
-目前 CloudTower API 提供的分页参数如下：
+<>目前 {Terminology['zh-CN']['PRODUCT']} API 提供的分页参数如下：</>
 
 | 字段名 |  类型 |  是否必填 |  解释 | 
 |  ----- |  :---: |  :-------: |  --- | 
