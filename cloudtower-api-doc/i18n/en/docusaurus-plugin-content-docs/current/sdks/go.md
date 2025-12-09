@@ -1,8 +1,9 @@
 ---
 title: Go
 ---
+import Terminology from '@site/terminology.json'
 
-The CloudTower SDK in the Golang environment is applicable to golang 1.16 or above. 
+<>The {Terminology['en-US']['PRODUCT']} SDK in the Golang environment is applicable to golang 1.16 or above. </>
 
 - [Source COde](https://github.com/smartxworks/cloudtower-go-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-go-sdk/releases)
@@ -33,6 +34,7 @@ client := apiclient.New(transport, strfmt.Default)
 ```
 
 > if https connection is required，cert should be installed，or skip verify cert
+
 ```go
 import (
 	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"

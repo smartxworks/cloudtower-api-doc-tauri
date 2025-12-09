@@ -2190,20 +2190,20 @@
       "unique_size_lte": "独占容量（字节）小于或等于指定字符",
       "unique_size_not": "独占容量（字节）不等于指定数值",
       "unique_size_not_in": "独占容量（字节）不在指定范围中",
-      "zbs_volume_id": "ZBS Volume UUID",
-      "zbs_volume_id_contains": "ZBS Volume UUID包含指定字符",
-      "zbs_volume_id_ends_with": "ZBS Volume UUID已指定字符结尾",
-      "zbs_volume_id_gt": "ZBS Volume UUID大于指定数值",
-      "zbs_volume_id_gte": "ZBS Volume UUID大于或等于指定数值",
-      "zbs_volume_id_in": "ZBS Volume UUID在指定范围中",
-      "zbs_volume_id_lt": "ZBS Volume UUID小于指定字符",
-      "zbs_volume_id_lte": "ZBS Volume UUID小于或等于指定字符",
-      "zbs_volume_id_not": "ZBS Volume UUID不等于指定数值",
-      "zbs_volume_id_not_contains": "ZBS Volume UUID不包含指定字符",
-      "zbs_volume_id_not_ends_with": "ZBS Volume UUID不已指定字符结尾",
-      "zbs_volume_id_not_in": "ZBS Volume UUID不在指定范围中",
-      "zbs_volume_id_not_starts_with": "ZBS Volume UUID不已指定字符开始",
-      "zbs_volume_id_starts_with": "ZBS Volume UUID已指定字符开始"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID",
+      "zbs_volume_id_contains": "{STORAGE_PRODUCT} Volume UUID包含指定字符",
+      "zbs_volume_id_ends_with": "{STORAGE_PRODUCT} Volume UUID已指定字符结尾",
+      "zbs_volume_id_gt": "{STORAGE_PRODUCT} Volume UUID大于指定数值",
+      "zbs_volume_id_gte": "{STORAGE_PRODUCT} Volume UUID大于或等于指定数值",
+      "zbs_volume_id_in": "{STORAGE_PRODUCT} Volume UUID在指定范围中",
+      "zbs_volume_id_lt": "{STORAGE_PRODUCT} Volume UUID小于指定字符",
+      "zbs_volume_id_lte": "{STORAGE_PRODUCT} Volume UUID小于或等于指定字符",
+      "zbs_volume_id_not": "{STORAGE_PRODUCT} Volume UUID不等于指定数值",
+      "zbs_volume_id_not_contains": "{STORAGE_PRODUCT} Volume UUID不包含指定字符",
+      "zbs_volume_id_not_ends_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符结尾",
+      "zbs_volume_id_not_in": "{STORAGE_PRODUCT} Volume UUID不在指定范围中",
+      "zbs_volume_id_not_starts_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符开始",
+      "zbs_volume_id_starts_with": "{STORAGE_PRODUCT} Volume UUID已指定字符开始"
     },
     "IscsiLunSnapshotWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -3381,20 +3381,20 @@
       "unique_size_lte": "独占容量，单位为字节小于或等于指定字符",
       "unique_size_not": "独占容量，单位为字节不等于指定数值",
       "unique_size_not_in": "独占容量，单位为字节不在指定范围中",
-      "zbs_volume_id": "ZBS Volume UUID",
-      "zbs_volume_id_contains": "ZBS Volume UUID包含指定字符",
-      "zbs_volume_id_ends_with": "ZBS Volume UUID已指定字符结尾",
-      "zbs_volume_id_gt": "ZBS Volume UUID大于指定数值",
-      "zbs_volume_id_gte": "ZBS Volume UUID大于或等于指定数值",
-      "zbs_volume_id_in": "ZBS Volume UUID在指定范围中",
-      "zbs_volume_id_lt": "ZBS Volume UUID小于指定字符",
-      "zbs_volume_id_lte": "ZBS Volume UUID小于或等于指定字符",
-      "zbs_volume_id_not": "ZBS Volume UUID不等于指定数值",
-      "zbs_volume_id_not_contains": "ZBS Volume UUID不包含指定字符",
-      "zbs_volume_id_not_ends_with": "ZBS Volume UUID不已指定字符结尾",
-      "zbs_volume_id_not_in": "ZBS Volume UUID不在指定范围中",
-      "zbs_volume_id_not_starts_with": "ZBS Volume UUID不已指定字符开始",
-      "zbs_volume_id_starts_with": "ZBS Volume UUID已指定字符开始"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID",
+      "zbs_volume_id_contains": "{STORAGE_PRODUCT} Volume UUID包含指定字符",
+      "zbs_volume_id_ends_with": "{STORAGE_PRODUCT} Volume UUID已指定字符结尾",
+      "zbs_volume_id_gt": "{STORAGE_PRODUCT} Volume UUID大于指定数值",
+      "zbs_volume_id_gte": "{STORAGE_PRODUCT} Volume UUID大于或等于指定数值",
+      "zbs_volume_id_in": "{STORAGE_PRODUCT} Volume UUID在指定范围中",
+      "zbs_volume_id_lt": "{STORAGE_PRODUCT} Volume UUID小于指定字符",
+      "zbs_volume_id_lte": "{STORAGE_PRODUCT} Volume UUID小于或等于指定字符",
+      "zbs_volume_id_not": "{STORAGE_PRODUCT} Volume UUID不等于指定数值",
+      "zbs_volume_id_not_contains": "{STORAGE_PRODUCT} Volume UUID不包含指定字符",
+      "zbs_volume_id_not_ends_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符结尾",
+      "zbs_volume_id_not_in": "{STORAGE_PRODUCT} Volume UUID不在指定范围中",
+      "zbs_volume_id_not_starts_with": "{STORAGE_PRODUCT} Volume UUID不已指定字符开始",
+      "zbs_volume_id_starts_with": "{STORAGE_PRODUCT} Volume UUID已指定字符开始"
     },
     "VmSnapshotWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -5489,7 +5489,7 @@
       "ecp_license": "",
       "enable_tiering": "",
       "entityAsyncStatus": "内部字段",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "failure_data_space": "失效空间",
       "has_metrox": "是否支持双活",
       "host_num": "主机数",
@@ -6009,7 +6009,7 @@
       "allocatable_memory_bytes": "可分配内存",
       "allocated_prioritized_space": "",
       "allocated_prioritized_space_usage": "",
-      "chunk_id": "主机在 zbs 中的 chunk id",
+      "chunk_id": "主机在 {STORAGE_PRODUCT} 中的 chunk id",
       "cluster": "所属集群",
       "commited_memory_bytes": "",
       "compatible_cpu_models": "可兼容的 CPU 模型",
@@ -6145,7 +6145,7 @@
       "thin_provision": "是否为精简置备",
       "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能。",
       "unique_size": "独占容量（字节）",
-      "zbs_volume_id": "ZBS Volume UUID"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID"
     },
     "GetVmMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
@@ -6188,7 +6188,7 @@
     "GetHostMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "",
-      "metrics": "<table><tr><td>zbs_chunk_readwrite_iops</td><td> IOPS-总</td></tr><tr><td>zbs_chunk_read_iops</td><td> IOPS-读</td></tr><tr><td>zbs_chunk_write_iops</td><td> IOPS-写</td></tr><tr><td>zbs_chunk_read_write_iops</td><td> IOPS-读，写</td></tr><tr><td>zbs_chunk_readwrite_speed_bps</td><td> I/O 带宽-总</td></tr><tr><td>zbs_chunk_read_speed_bps</td><td> I/O 带宽-读</td></tr><tr><td>zbs_chunk_write_speed_bps</td><td> I/O 带宽-写</td></tr><tr><td>zbs_chunk_read_write_speed_bps</td><td> I/O 带宽-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_latency_ns</td><td> I/O 平均延时-总</td></tr><tr><td>zbs_chunk_avg_read_latency_ns</td><td> I/O 平均延时-读</td></tr><tr><td>zbs_chunk_avg_write_latency_ns</td><td> I/O 平均延时-写</td></tr><tr><td>zbs_chunk_avg_read_write_latency_ns</td><td> I/O 平均延时-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_size_bytes</td><td> I/O 平均块大小-总</td></tr><tr><td>zbs_chunk_avg_read_size_bytes</td><td> I/O 平均块大小-读</td></tr><tr><td>zbs_chunk_avg_write_size_bytes</td><td> I/O 平均块大小-写</td></tr><tr><td>zbs_chunk_avg_read_write_size_bytes</td><td> I/O 平均块大小-读，写</td></tr><tr><td>zbs_chunk_data_capacity_bytes</td><td> 总数据容量</td></tr><tr><td>zbs_chunk_used_data_space_bytes</td><td> 已使用数据空间（物理）</td></tr><tr><td>zbs_chunk_cache_capacity_bytes</td><td> 总缓存容量</td></tr><tr><td>zbs_chunk_read_cache_hit_ratio</td><td> 缓存命中率 - 读</td></tr><tr><td>zbs_chunk_write_cache_hit_ratio</td><td> 缓存命中率 - 写</td></tr><tr><td>zbs_chunk_readwrite_cache_hit_ratio</td><td> 缓存命中率 - 总</td></tr><tr><td>host_hdd_overall_size_bytes</td><td> 总 HDD 容量</td></tr><tr><td>host_ssd_overall_size_bytes</td><td> 总 SSD 容量</td></tr><tr><td>elf_host_vcpus_provisioned</td><td> 分配给虚拟机的逻辑核数</td></tr><tr><td>elf_host_vcpus_provisioned_running</td><td> 分配给运行中（含暂停）虚拟机的逻辑核数</td></tr><tr><td>elf_host_memory_provisioned_bytes</td><td> 分配给虚拟机的内存大小</td></tr><tr><td>elf_host_memory_provisioned_running_bytes</td><td> 分配给运行中（含暂停）虚拟机的内存大小</td></tr><tr><td>host_cpu_temperature_celsius</td><td> CPU 温度</td></tr><tr><td>host_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>host_cpu_overall_used_hz</td><td> CPU 使用频率（Hz）</td></tr><tr><td>host_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>host_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>host_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>host_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>host_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>host_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>host_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>host_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>host_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>host_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_management</td><td> 管理网络网口之间丢包率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_storage</td><td> 存储网络网口之间丢包率（%）</td></tr><tr><td>host_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>host_zbs_log_dir_used_space_bytes</td><td> /var/log/zbs 已使用空间大小</td></tr><tr><td>host_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
+      "metrics": "<table><tr><td>zbs_chunk_readwrite_iops</td><td> IOPS-总</td></tr><tr><td>zbs_chunk_read_iops</td><td> IOPS-读</td></tr><tr><td>zbs_chunk_write_iops</td><td> IOPS-写</td></tr><tr><td>zbs_chunk_read_write_iops</td><td> IOPS-读，写</td></tr><tr><td>zbs_chunk_readwrite_speed_bps</td><td> I/O 带宽-总</td></tr><tr><td>zbs_chunk_read_speed_bps</td><td> I/O 带宽-读</td></tr><tr><td>zbs_chunk_write_speed_bps</td><td> I/O 带宽-写</td></tr><tr><td>zbs_chunk_read_write_speed_bps</td><td> I/O 带宽-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_latency_ns</td><td> I/O 平均延时-总</td></tr><tr><td>zbs_chunk_avg_read_latency_ns</td><td> I/O 平均延时-读</td></tr><tr><td>zbs_chunk_avg_write_latency_ns</td><td> I/O 平均延时-写</td></tr><tr><td>zbs_chunk_avg_read_write_latency_ns</td><td> I/O 平均延时-读，写</td></tr><tr><td>zbs_chunk_avg_readwrite_size_bytes</td><td> I/O 平均块大小-总</td></tr><tr><td>zbs_chunk_avg_read_size_bytes</td><td> I/O 平均块大小-读</td></tr><tr><td>zbs_chunk_avg_write_size_bytes</td><td> I/O 平均块大小-写</td></tr><tr><td>zbs_chunk_avg_read_write_size_bytes</td><td> I/O 平均块大小-读，写</td></tr><tr><td>zbs_chunk_data_capacity_bytes</td><td> 总数据容量</td></tr><tr><td>zbs_chunk_used_data_space_bytes</td><td> 已使用数据空间（物理）</td></tr><tr><td>zbs_chunk_cache_capacity_bytes</td><td> 总缓存容量</td></tr><tr><td>zbs_chunk_read_cache_hit_ratio</td><td> 缓存命中率 - 读</td></tr><tr><td>zbs_chunk_write_cache_hit_ratio</td><td> 缓存命中率 - 写</td></tr><tr><td>zbs_chunk_readwrite_cache_hit_ratio</td><td> 缓存命中率 - 总</td></tr><tr><td>host_hdd_overall_size_bytes</td><td> 总 HDD 容量</td></tr><tr><td>host_ssd_overall_size_bytes</td><td> 总 SSD 容量</td></tr><tr><td>elf_host_vcpus_provisioned</td><td> 分配给虚拟机的逻辑核数</td></tr><tr><td>elf_host_vcpus_provisioned_running</td><td> 分配给运行中（含暂停）虚拟机的逻辑核数</td></tr><tr><td>elf_host_memory_provisioned_bytes</td><td> 分配给虚拟机的内存大小</td></tr><tr><td>elf_host_memory_provisioned_running_bytes</td><td> 分配给运行中（含暂停）虚拟机的内存大小</td></tr><tr><td>host_cpu_temperature_celsius</td><td> CPU 温度</td></tr><tr><td>host_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>host_cpu_overall_used_hz</td><td> CPU 使用频率（Hz）</td></tr><tr><td>host_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>host_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>host_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>host_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>host_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>host_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>host_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>host_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>host_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>host_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_management</td><td> 管理网络网口之间丢包率（%）</td></tr><tr><td>host_network_ping_packet_loss_percent_storage</td><td> 存储网络网口之间丢包率（%）</td></tr><tr><td>host_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>host_zbs_log_dir_used_space_bytes</td><td> {STORAGE_LOG_PATH} 已使用空间大小</td></tr><tr><td>host_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
     },
     "GetHostNetworkMetricInput": {
       "hosts": "",
@@ -6205,7 +6205,7 @@
     "GetScvmMetricInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
       "hosts": "",
-      "metrics": "<table><tr><td>scvm_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>scvm_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>scvm_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>scvm_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>scvm_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>scvm_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>scvm_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>scvm_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>scvm_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>scvm_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>scvm_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>scvm_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>scvm_zbs_log_dir_used_space_bytes</td><td> /var/log/zbs 已使用空间大小</td></tr><tr><td>scvm_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
+      "metrics": "<table><tr><td>scvm_cpu_overall_usage_percent</td><td> CPU 使用率（%）</td></tr><tr><td>scvm_cpu_overall_1m_avg_load</td><td> CPU 平均负载：1 分钟</td></tr><tr><td>scvm_cpu_overall_5m_avg_load</td><td> CPU 平均负载：5 分钟</td></tr><tr><td>scvm_cpu_overall_15m_avg_load</td><td> CPU 平均负载：15 分钟</td></tr><tr><td>scvm_memory_usage_percent</td><td> 内存使用率 (%)</td></tr><tr><td>scvm_memory_used_bytes</td><td> 内存使用量</td></tr><tr><td>scvm_memory_swap_in_speed_bps</td><td> 内存交换速率-SwapIn</td></tr><tr><td>scvm_memory_swap_out_speed_bps</td><td> 内存交换速率-SwapOut</td></tr><tr><td>scvm_memory_swap_size_bytes</td><td> 内存交换空间</td></tr><tr><td>scvm_memory_swap_used_bytes</td><td> 已使用的交换空间容量</td></tr><tr><td>scvm_memory_swap_usage_percent</td><td> 交换空间使用率（%）</td></tr><tr><td>scvm_sys_partition_used_space_bytes</td><td> / 已使用空间大小</td></tr><tr><td>scvm_zbs_log_dir_used_space_bytes</td><td> {STORAGE_LOG_PATH} 已使用空间大小</td></tr><tr><td>scvm_mongo_dir_used_space_bytes</td><td> /var/lib/mongodb 已使用空间大小</td></tr></table>"
     },
     "GetScvmNetworkInput": {
       "range": "指定查询的时间范围。目前支持查询的时间范围为：<br/>5m (5 分钟)<br/>15m (15 分钟)<br/>1h (1 小时)<br/>2h (2 小时)<br/>24h (24 小时)<br/>7d (7 天)<br/>30d (30 天)<br/>182d (182 天)",
@@ -6523,7 +6523,7 @@
       "thin_provision": "是否为精简置备",
       "unique_logical_size": "独占逻辑容量，单位为字节。开启厚置备时，为独占容量除以副本数，存在小数位的可能",
       "unique_size": "独占容量，单位为字节",
-      "zbs_volume_id": "ZBS Volume UUID"
+      "zbs_volume_id": "{STORAGE_PRODUCT} Volume UUID"
     },
     "NvmfNamespaceCommonParams": {
       "business_host_groups": "",
@@ -7531,7 +7531,7 @@
     },
     {
       "name": "EcpLicense",
-      "x-displayName": "ECP 许可证",
+      "x-displayName": "{EIC} 许可证",
       "description": ""
     }
   ],
@@ -7581,11 +7581,11 @@
       "description": ""
     },
     "/get-ecp-licenses": {
-      "summary": "获取 ECP 许可信息",
+      "summary": "获取 {ECP} 许可信息",
       "description": ""
     },
     "/get-ecp-licenses-connection": {
-      "summary": "获取 ECP 许可数量",
+      "summary": "获取 {ECP} 许可数量",
       "description": ""
     },
     "/get-replication-services": {

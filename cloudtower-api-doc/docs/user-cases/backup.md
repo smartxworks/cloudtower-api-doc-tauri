@@ -1,7 +1,7 @@
 ---
 title: 虚拟机备份
 ---
-
+import Terminology from '@site/terminology'
 import GetVm from '../../code_blocks/GetVm.md'
 import CreateVmSnapshot from '../../code_blocks/CreateVmSnapshot.md'
 import GetTask from '../../code_blocks/GetTask.md'
@@ -9,31 +9,32 @@ import GetVmSnapshot from '../../code_blocks/GetVmSnapshot.md'
 import GetLunSnapshot from '../../code_blocks/GetLunSnapshot.md'
 
 对虚拟机的备份分为两部分
-1. 虚拟机配置的备份，例如虚拟机名称、vcpu 数量等。
-2. 虚拟机业务数据的备份。在 SMTX OS 中，即虚拟机所使用的存储的备份。
-对虚拟机业务数据备份之前，需要先理解 SMTX OS 虚拟机的资源关系。一个虚拟机与最终的存储之间的示例关系如下：
-- 虚拟机
-  - 虚拟盘（CD-ROM）
-  - 虚拟盘（数据盘 1）
-    - 虚拟卷
-      - iscsi LUN
-        - ZBS volume
-  - 虚拟盘（数据盘 2）
-    - 虚拟卷
-      - iscsi LUN
-        - ZBS volume
+1. 虚拟机配置的备份，例如虚拟机名称、vCPU 数量等。
+2. <>虚拟机业务数据的备份。在 {Terminology['zh-CN']['HCI_OS']} 中，即虚拟机所使用的存储的备份。
+对虚拟机业务数据备份之前，需要先理解 {Terminology['zh-CN']['HCI_OS']} 虚拟机的资源关系。一个虚拟机与最终的存储之间的示例关系如下：</>
+  - 虚拟机
+    - 虚拟盘（CD-ROM）
+    - 虚拟盘（数据盘 1）
+      - 虚拟卷
+        - iscsi LUN
+          - <>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume
+    - 虚拟盘（数据盘 2）
+      - 虚拟卷
+        - iscsi LUN
+          - <>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume
 
 同样地，当对虚拟机进行快照，一个虚拟机快照与最终的存储之间的示例关系如下：
 - 虚拟机快照
   - 虚拟盘（CD-ROM）
   - 虚拟盘（数据盘 1）
     - iscsi LUN 快照
-      - ZBS volume
+      - <>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume
   - 虚拟盘（数据盘 2）
     - iscsi LUN 快照
-      - ZBS volume
+      - <>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume
       
-ZBS volume 指最终的存储对象，使用 ZADP 可以与 ZBS volume 交互，完成数据的备份和恢复。
+<>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume 指最终的存储对象，使用 ZADP 可以与 <>{Terminology['zh-CN']['STORAGE_PRODUCT']}</> volume 交互，完成数据的备份和恢复。
+
 ### 获取所需虚拟机的基本信息。
 以下示例通过虚拟机名称进行查询，也可以根据业务实际情况使用其他的筛选条件进行查询，完整的查询方式请参考 API 文档。
 通过虚拟机名称查询到对应虚拟机后，返回值中将包含 vm 的 id 和其他配置信息，如需对虚拟机配置信息进行备份，可以使用这一结果。
@@ -63,4 +64,5 @@ vm_disk 的 snapshot_local_id 即该快照对应的 LUN 快照名称。
 
 <GetLunSnapshot />
 
-每一个 LUN 快照的 local_id 字段即在 ZBS 中的标识符，可以通过 ZBS API 进行进一步交互。
+
+<>每一个 LUN 快照的 local_id 字段即在 {Terminology['zh-CN']['STORAGE_PRODUCT']} 中的标识符，可以通过{Terminology['zh-CN']['STORAGE_PRODUCT']} API 进行进一步交互。</> 

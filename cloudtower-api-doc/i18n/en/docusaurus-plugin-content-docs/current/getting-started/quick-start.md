@@ -34,10 +34,10 @@ if [ -z "$endpoint" ]; then
 fi
 
 
-# 通过 /v2/api/login 进行登录，并获取 token
+# Login via /v2/api/login and get the token
 token=$(curl -X POST -H "Content-Type: application/json" -d '{"username":"'$username'","password":"'$password'","source":"LOCAL"}' $endpoint/v2/api/login | jq -r ".data.token")
 
-# 通过 Authorization header 携带 token 并为请求完成鉴权, 通过 /v2/api/get-vms 来获取虚拟机列表
+# Authenticate the request by carrying the token in the Authorization header, and get the VM list via /v2/api/get-vms
 curl \
     -X POST \
     -H "Content-Type: application/json" \
@@ -50,7 +50,7 @@ curl \
 </Tabs>
 
 
-如果希望使用 sdk，可以参考：
+To use an SDK, please refer to:
 
 - [Go SDK](/en/sdks/go)
 - [Python SDK](/en/sdks/python)

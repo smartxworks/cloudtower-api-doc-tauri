@@ -2,7 +2,7 @@
 title: Support Release
 sidebar_position: 41
 ---
-
+import Terminology from '@site/terminology.json'
 import Download from '../../../../../swagger/components/Download';
 
 export const AddressWrapper = (props) => {
@@ -18,13 +18,13 @@ export const AddressWrapper = (props) => {
 
 
 ## Upgrade Recommendations
-CloudTower API SDK supports backward compatibility. That is, if SDK 2.9.0 supports up to CloudTower 3.0.0, it can also support CloudTower 2.8.0 downwards.
-It is recommended to upgrade the SDK before upgrading the CloudTower.
+<>{Terminology['en-US']['PRODUCT']} API SDK supports backward compatibility. That is, if SDK 2.9.0 supports up to {Terminology['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['en-US']['PRODUCT']} 2.8.0 downwards.
+It is recommended to upgrade the SDK before upgrading the {Terminology['en-US']['PRODUCT']}.</>
 
 ## Compatibility Notes
-The following are the compatible versions when upgrading with CloudTower. Versions after SDK 2.0 have fixed many issues and are more stable, so they are recommended for use. If you need to use versions before SDK 2.0 or the fixed version of the SDK itself, you can check the corresponding SDK GitHub release page.
+<>The following are the compatible versions when upgrading with {Terminology['en-US']['PRODUCT']}. Versions after SDK 2.0 have fixed many issues and are more stable, so they are recommended for use. If you need to use versions before SDK 2.0 or the fixed version of the SDK itself, you can check the corresponding SDK GitHub release page.</>
 
-| SDK Version | Supported CloudTower Version | SDK Release Date | Download Address |
+| SDK Version | Supported Product Version | SDK Release Date | Download Address |
 | --- | --- | --- | --- |
 | 2.21.0 | 4.7.0 | 2025.10.14 | <AddressWrapper version="2.21.0" file_version="4.7.0"/>|
 | 2.20.0 | 4.6.x | 2025.06.09 | <AddressWrapper version="2.20.0" file_version="4.6.0"/>|

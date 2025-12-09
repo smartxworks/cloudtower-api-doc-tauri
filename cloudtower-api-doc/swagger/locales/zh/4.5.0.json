@@ -667,7 +667,7 @@
       "description_not_in": "描述不在指定范围中",
       "description_not_starts_with": "描述不已指定字符开始",
       "description_starts_with": "描述已指定字符开始",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "id_contains": "唯一标识包含指定字符",
       "id_ends_with": "唯一标识已指定字符结尾",
@@ -967,7 +967,7 @@
       "vm_template_uuids": "关联虚拟机模板 UUID",
       "vm_templates": "关联虚拟机模板",
       "win_opt": "是否为虚拟机开启 Windows 优化",
-      "zbs_storage_info": "zbs 存储集群数据"
+      "zbs_storage_info": "{STORAGE_PRODUCT} 存储集群数据"
     },
     "NestedStoragePolicyConfig": {
       "replica_num": "副本数",
@@ -987,7 +987,7 @@
       "apply_to": "作用范围",
       "description": "描述",
       "egress": "出流量",
-      "everoute_cluster": "关联 Everoute 服务",
+      "everoute_cluster": "关联 {NET_SECURITY_SERVICE}",
       "id": "唯一标识",
       "ingress": "入流量",
       "is_blocklist": "是否为黑名单策略类型",
@@ -1375,8 +1375,8 @@
       "ntp_service_url": "ntp 服务地址，使用逗号分隔"
     },
     "EverouteCluster": {
-      "agent_elf_clusters": "代理 ELF 集群",
-      "agent_elf_vdses": "代理 ELF 虚拟机交换机",
+      "agent_elf_clusters": "代理 {VM_PRODUCT} 集群",
+      "agent_elf_vdses": "代理 {VM_PRODUCT} 虚拟机交换机",
       "controller_instances": "控制器实例",
       "controller_template": "控制器模板",
       "entityAsyncStatus": "内部字段",
