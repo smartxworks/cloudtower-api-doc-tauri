@@ -312,7 +312,7 @@
       "window_start_starts_with": ""
     },
     "BackupPlanDelayOption": {
-      "enum": ""
+      "enum": "* KEEP_GO_ON: \n* STOP_BACKUP:"
     },
     "BackupPlanExecutionWhereInput": {
       "AND": "All conditions must return true.",
@@ -411,16 +411,16 @@
       "type_not_in": ""
     },
     "BackupExecutionMethod": {
-      "enum": ""
+      "enum": "* AUTO: \n* MANUAL:"
     },
     "BackupPlanExecutionState": {
       "enum": ""
     },
     "BackupPlanExecutionStatus": {
-      "enum": ""
+      "enum": "* FAILED: \n* NEVER_EXECUTE: \n* PARTIAL_SUCCESS: \n* PAUSED: \n* RUNNING: \n* SUCCESS:"
     },
     "BackupExecutionType": {
-      "enum": ""
+      "enum": "* FULL: \n* INCREMENTAL:"
     },
     "BackupRestorePointWhereInput": {
       "AND": "All conditions must return true.",
@@ -722,10 +722,10 @@
       "total_bytes_not_in": ""
     },
     "BackupRestoreExecutionMode": {
-      "enum": ""
+      "enum": "* INPLACE: \n* REBUILD:"
     },
     "BackupExecutionStatus": {
-      "enum": ""
+      "enum": "* ABORTED: \n* FAILED: \n* INITIALIZING: \n* PAUSED: \n* RUNNING: \n* SUCCESS:"
     },
     "BackupTargetExecutionWhereInput": {
       "AND": "All conditions must return true.",
@@ -886,10 +886,10 @@
       "vm_name_starts_with": ""
     },
     "BackupRestorePointCreation": {
-      "enum": ""
+      "enum": "* AUTO: \n* MANUAL:"
     },
     "BackupRestorePointType": {
-      "enum": ""
+      "enum": "* FULL: \n* INCREMENTAL:"
     },
     "BackupServiceWhereInput": {
       "AND": "All conditions must return true.",
@@ -1455,28 +1455,28 @@
       "valid_data_space_not_in": ""
     },
     "BackupStoreStatus": {
-      "enum": ""
+      "enum": "* CONNECTED: \n* CONNECTING: \n* DISABLED: \n* ERROR: \n* INIT:"
     },
     "BackupStoreType": {
-      "enum": ""
+      "enum": "* ISCSI: \n* NFS3: \n* NFS4:"
     },
     "BackupServiceStatus": {
-      "enum": ""
+      "enum": "* INSTALLING: \n* RUNNING: \n* UNINSTALL_FAILED: \n* UNINSTALLING: \n* UPGRADE_FAILED: \n* UPGRADING: \n* VM_ERROR:"
     },
     "BackupPlanDeleteStrategy": {
-      "enum": ""
+      "enum": "* DELETE_RESTORE_POINT: \n* KEEP_RESTORE_POINT:"
     },
     "BackupPlanPeriod": {
-      "enum": ""
+      "enum": "* DAILY: \n* MONTHLY: \n* WEEKLY: \n* YEARLY:"
     },
     "BackupPlanKeepPolicy": {
-      "enum": ""
+      "enum": "* COUNT: \n* FOREVER: \n* TIME:"
     },
     "BackupPlanPhase": {
       "enum": ""
     },
     "BackupPlanStatus": {
-      "enum": ""
+      "enum": "* PAUSED: \n* STOPPED: \n* WORKING:"
     },
     "EverouteClusterWhereInput": {
       "load_balancer_service": "",
@@ -1807,8 +1807,8 @@
       "cluster_id": ""
     },
     "VmCreateVmFromContentLibraryTemplateBatchParams": {
-      "vms": "",
-      "template_id": ""
+      "vms": "VM config list",
+      "template_id": "Specify the content library template ID"
     },
     "HostBatchCreateDiskInput": {
       "size": ""
@@ -1884,7 +1884,7 @@
       "name": "name"
     },
     "WeekdayTypeEnum": {
-      "enum": ""
+      "enum": "* FRI: \n* MON: \n* SAT: \n* SUN: \n* THU: \n* TUE: \n* WED:"
     },
     "NestedBackupPlanTimePoint": {
       "date": "",
@@ -2316,7 +2316,7 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "BackupServiceNetworkStatusEnum": {
-      "enum": ""
+      "enum": "* CONNECTED: \n* DISCONNECTED:"
     },
     "NestedBackupServiceNetworkStatus": {
       "cluster": "",
@@ -2499,7 +2499,7 @@
   "paths": {
     "/create-vm-from-content-library-template-batch": {
       "summary": "Batch create VMs from content library template",
-      "description": "create multiple vm from one content library vm template"
+      "description": "* Support from 3.4.4"
     },
     "/disassociate-system-service-from-obs-service": {
       "summary": "disassociate system service for observability service",
@@ -2546,59 +2546,59 @@
       "description": ""
     },
     "/get-backup-plan-executions": {
-      "summary": "",
+      "summary": " Get backup plan executions",
       "description": ""
     },
     "/get-backup-plan-executions-connection": {
-      "summary": "",
+      "summary": " Get the number of backup plan executions",
       "description": ""
     },
     "/get-backup-plans": {
-      "summary": "",
+      "summary": " Get backup plans",
       "description": ""
     },
     "/get-backup-plans-connection": {
-      "summary": "",
+      "summary": " Get the number of backup plans",
       "description": ""
     },
     "/get-backup-restore-executions": {
-      "summary": "",
+      "summary": " Get backup restore executions",
       "description": ""
     },
     "/get-backup-restore-executions-connection": {
-      "summary": "",
+      "summary": " Get the number of backup restore executions",
       "description": ""
     },
     "/get-backup-restore-points": {
-      "summary": "",
+      "summary": " Get backup restore points",
       "description": ""
     },
     "/get-backup-restore-points-connection": {
-      "summary": "",
+      "summary": " Get the number of backup restore points",
       "description": ""
     },
     "/get-backup-services": {
-      "summary": "",
+      "summary": " Get backup services",
       "description": ""
     },
     "/get-backup-services-connection": {
-      "summary": "",
+      "summary": " Get the number of backup services",
       "description": ""
     },
     "/get-backup-store-repositories": {
-      "summary": "",
+      "summary": " Get backup store repositories",
       "description": ""
     },
     "/get-backup-store-repositories-connection": {
-      "summary": "",
+      "summary": " Get the number of backup store repositories",
       "description": ""
     },
     "/get-backup-target-executions": {
-      "summary": "",
+      "summary": " Get backup target executions",
       "description": ""
     },
     "/get-backup-target-executions-connection": {
-      "summary": "",
+      "summary": " Get the number of backup target executions",
       "description": ""
     }
   }

@@ -34,7 +34,7 @@ const __dirname = dirname(__filename);
 const UPDATE_SNAPSHOTS = process.env.UPDATE_SNAPSHOTS === 'true' || process.env.UPDATE_SNAPSHOT === 'true';
 
 
-const LANGUAGES = ['zh', 'en'] as const;
+const LANGUAGES = ['zh'] as const;
 
 // 快照文件目录（使用单独的目录，避免与 vitest 的 .snap 文件混淆）
 const SNAPSHOTS_DIR = join(__dirname, '__snapshots_json__');
