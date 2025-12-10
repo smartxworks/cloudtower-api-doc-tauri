@@ -10,7 +10,7 @@ import GetTokenResponse from '../../../code_blocks/GetTokenResponse.md'
 > 除了登录以外，所有的请求都需要加上鉴权字段。
 
 ​
-<>{Terminology['zh-CN']['PRODUCT']} API 通过在 headers 中传递 <code>Authorization</code> 字段进行鉴权，token 的获取方式如下, 以 cURL 为例：</>
+<>{Terminology['zh-CN']['PRODUCT']} API 通过在 headers 中传递 Authorization 字段进行鉴权，token 的获取方式如下, 以 cURL 为例：</>
 
 <GetToken />
 
