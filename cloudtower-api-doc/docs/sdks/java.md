@@ -3,7 +3,7 @@ title: Java
 ---
 import Terminology from '@site/terminology.json'
 
-<>Java 环境下的 {Terminology['zh-CN']['PRODUCT']} SDK，适用于 Java 1.8 及以上版本</>
+<>Java 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 Java 1.8 及以上版本</>
 
 - [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-java-sdk/releases)

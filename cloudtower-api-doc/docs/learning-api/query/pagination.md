@@ -15,7 +15,7 @@ import Terminology from '@site/terminology.json'
 ```
 
 ### 其余参数
-<>目前 {Terminology['zh-CN']['PRODUCT']} API 提供的分页参数如下：</>
+<>目前 {Terminology['terminology']['zh-CN']['PRODUCT']} API 提供的分页参数如下：</>
 
 | 字段名 |  类型 |  是否必填 |  解释 | 
 |  ----- |  :---: |  :-------: |  --- | 

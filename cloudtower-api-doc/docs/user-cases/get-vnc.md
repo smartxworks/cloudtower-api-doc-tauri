@@ -7,7 +7,7 @@ import FormatVncProxy from '@site/code_blocks/FormatVncProxy.md'
 import GetVnc from '@site/code_blocks/GetVnc.md'
 import GetVncResponse from '@site/code_blocks/GetVncResponse.md'
 
-<>目前 {Terminology['zh-CN']['PRODUCT']} API 及相关 SDK 暂不提供获取 VNC 信息相关的 API。如果使用者需要获取 VNC 信息，打开虚拟机终端等相关操作的话，可以通过发送以下请求 token 并构建 noVnc 链接</>
+<>目前 {Terminology['terminology']['zh-CN']['PRODUCT']} API 及相关 SDK 暂不提供获取 VNC 信息相关的 API。如果使用者需要获取 VNC 信息，打开虚拟机终端等相关操作的话，可以通过发送以下请求 token 并构建 noVnc 链接</>
 
 <GetVnc />
 
@@ -50,7 +50,7 @@ import GetVncResponse from '@site/code_blocks/GetVncResponse.md'
 wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-<>如果希望通过 {Terminology['zh-CN']['PRODUCT']} 转发，我们需要先处理 token。</>
+<>如果希望通过 {Terminology['terminology']['zh-CN']['PRODUCT']} 转发，我们需要先处理 token。</>
 
 假设我们的 token 是 `MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=` （基于 `123456789abcdefghijklmnopqrstuvwxyz` base64 加密获得），我们需要将 `/`，`+`，`=` 等字符转义。
 
@@ -59,7 +59,7 @@ token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
 encodeURIComponent(token) = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D"
 ```
 
-<>假设 {Terminology['zh-CN']['PRODUCT']} 地址是 192.168.5.1 URL 最后会是：</>
+<>假设 {Terminology['terminology']['zh-CN']['PRODUCT']} 地址是 192.168.5.1 URL 最后会是：</>
 
 ```bash
 wss://192.168.5.1/websockify/?token=MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo%3D&uuid=00000000-0000-0000-0000-000000000000&host=192.168.5.4

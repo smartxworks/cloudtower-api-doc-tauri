@@ -18,11 +18,11 @@ export const AddressWrapper = (props) => {
 
 
 ## Upgrade Recommendations
-<>{Terminology['en-US']['PRODUCT']} API SDK supports backward compatibility. That is, if SDK 2.9.0 supports up to {Terminology['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['en-US']['PRODUCT']} 2.8.0 downwards.
-It is recommended to upgrade the SDK before upgrading the {Terminology['en-US']['PRODUCT']}.</>
+<>{Terminology['terminology']['en-US']['PRODUCT']} API SDK supports backward compatibility. That is, if SDK 2.9.0 supports up to {Terminology['terminology']['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['terminology']['en-US']['PRODUCT']} 2.8.0 downwards.
+It is recommended to upgrade the SDK before upgrading the {Terminology['terminology']['en-US']['PRODUCT']}.</>
 
 ## Compatibility Notes
-<>The following are the compatible versions when upgrading with {Terminology['en-US']['PRODUCT']}. Versions after SDK 2.0 have fixed many issues and are more stable, so they are recommended for use. If you need to use versions before SDK 2.0 or the fixed version of the SDK itself, you can check the corresponding SDK GitHub release page.</>
+<>The following are the compatible versions when upgrading with {Terminology['terminology']['en-US']['PRODUCT']}. Versions after SDK 2.0 have fixed many issues and are more stable, so they are recommended for use. If you need to use versions before SDK 2.0 or the fixed version of the SDK itself, you can check the corresponding SDK GitHub release page.</>
 
 | SDK Version | Supported Product Version | SDK Release Date | Download Address |
 | --- | --- | --- | --- |

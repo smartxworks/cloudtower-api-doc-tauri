@@ -63,7 +63,7 @@ export type ApiDoc = {
 };
 
 const defaultLng = process.env.DEFAULT_LNG || SupportLanguage.zh;
-const defaultVariables = Terminlogy[LngMap[defaultLng]];
+const defaultVariables = Terminlogy.terminology[LngMap[defaultLng]];
 
 i18next.init({
   resources: {
@@ -140,7 +140,7 @@ i18next.init({
 
 
 i18next.on('languageChanged', (lng) => {
-  set(i18next.options?.interpolation ?? {}, 'defaultVariables', Terminlogy[LngMap[lng]]);
+  set(i18next.options?.interpolation ?? {}, 'defaultVariables', Terminlogy.terminology[LngMap[lng]]);
 });
 
 export default i18next;

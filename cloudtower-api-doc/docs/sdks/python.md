@@ -3,7 +3,7 @@ title: Python
 ---
 import Terminology from '@site/terminology.json'
 
-<>Python 环境下的 {Terminology['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本</>
+<>Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本</>
 
 - [源码地址](https://github.com/smartxworks/cloudtower-python-sdk)
 - [下载地址](https://github.com/smartxworks/cloudtower-python-sdk/releases)
@@ -159,7 +159,7 @@ else:
 #### 自定义 header
 
 <>
-> {Terminology['zh-CN']['PRODUCT']} api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
+> {Terminology['terminology']['zh-CN']['PRODUCT']} api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
 </>
 
 ##### 通过 `ApiClient` 的 `set_default_header` 方法

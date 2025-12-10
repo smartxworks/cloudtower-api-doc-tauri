@@ -4,7 +4,7 @@ sidebar_position: 13
 ---
 import Terminology from '@site/terminology.json'
 
-<>{Terminology['zh-CN']['PRODUCT']} API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或任何 HTTP 客户端进行调用。</>
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} API 基于 OpenApi v3.0.0 规范进行开发，可以使用 cURL 或任何 HTTP 客户端进行调用。</>
 
 目前每个接口文档的组成包括了：
 * Request: 请求数据
