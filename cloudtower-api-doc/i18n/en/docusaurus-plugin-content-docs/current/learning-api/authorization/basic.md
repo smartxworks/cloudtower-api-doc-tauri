@@ -11,7 +11,7 @@ The token obtained in the first step does not have an expiration time and can be
 
 > Except for login, all the requests need to add the authentication field.
 
-<>The {Terminology['en-US']['PRODUCT']} API makes authentication by passing the <code>Authorization</code> field in the headers. Here is how to get a token, using cURL as an example:</>
+<>The {Terminology['en-US']['PRODUCT']} API makes authentication by passing the Authorization field in the headers. Here is how to get a token, using cURL as an example:</>
 
 <GetToken />
 

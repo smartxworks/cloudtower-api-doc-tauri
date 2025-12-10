@@ -1,9 +1,10 @@
 ---
-title: Welcome to CloudTower API
+title: Overview
 sidebar_position: 1
 slug: /
 ---
 import Terminology from '@site/terminology.json'
+
 
 <>Thank you for using {Terminology['en-US']['PRODUCT']} API. Please read the following documents carefully before use.</>
 
@@ -13,7 +14,9 @@ import Terminology from '@site/terminology.json'
 
 ## Request Type
 
-<>To facilitate batch operations and conditional queries, {Terminology['en-US']['PRODUCT']} API provides extremely flexible request parameter types. Considering the flexibility of parameters and the convenience of use, and the request limit of <code>GET</code>, we use <code>POST</code> request type uniformly and send data in json format.</>
+<>To facilitate batch operations and conditional queries, {Terminology['en-US']['PRODUCT']} API provides extremely flexible request parameter types.</> 
+
+Considering the flexibility of parameters and the convenience of use, and the request limit of `GET`, we use `POST` request type uniformly and send data in json format.
 
 ## More
 

@@ -1,5 +1,5 @@
 ---
-title: 欢迎使用 CloudTower API
+title: 概览
 sidebar_position: 1
 slug: /
 ---
@@ -13,7 +13,9 @@ import Terminology from '@site/terminology.json'
 
 ## 请求类型
 
-<>为了方便进行批量操作和条件查询，{Terminology['zh-CN']['PRODUCT']} API 提供了极为灵活的请求参数类型。。考虑到参数灵活性和使用上的便捷性和 <code>GET</code> 具有请求限制，我们一律使用了 <code>POST</code> 请求类型，发送 json 类型格式的数据</> 
+<>为了方便进行批量操作和条件查询，{Terminology['zh-CN']['PRODUCT']} API 提供了极为灵活的请求参数类型。</>
+
+考虑到参数灵活性和使用上的便捷性和 `GET` 具有请求限制，我们一律使用了 `POST` 请求类型，发送 json 类型格式的数据
 
 ## 更多
 

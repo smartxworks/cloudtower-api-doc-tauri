@@ -20,7 +20,7 @@ import GetVncResponse from '@site/code_blocks/GetVncResponse.md'
 
 <FormatVnc />
 
-<>或者可以选择使用 <code>token</code>, <code>vm_uuid</code> 和 <code>host_ip</code> 以构建通过 {Terminology['zh-CN']['PRODUCT']} 转发的 noVnc 链接，由于 token 是一个被 base64 处理后的字符串，因此中可能包含一部分不能包含在 URL 的字符，例如 <code>/</code>，<code>+</code>，<code>=</code> 等，需要转义成十六进制数字：</>
+或者可以选择使用 `token`, `vm_uuid` 和 `host_ip` 以构建通过管理平台 转发的 noVnc 链接，由于 token 是一个被 base64 处理后的字符串，因此中可能包含一部分不能包含在 URL 的字符，例如 `/`，`+`，`=` 等，需要转义成十六进制数字：
 
 <FormatVncProxy />
 
@@ -50,7 +50,9 @@ import GetVncResponse from '@site/code_blocks/GetVncResponse.md'
 wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-<>如果希望通过 {Terminology['zh-CN']['PRODUCT']} 转发，我们需要先处理 token，假设我们的 token 是 <code>MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=</code> （基于 <code>123456789abcdefghijklmnopqrstuvwxyz</code> base64 加密获得），我们需要将 <code>/</code>，<code>+</code>，<code>=</code> 等字符转义。</>
+<>如果希望通过 {Terminology['zh-CN']['PRODUCT']} 转发，我们需要先处理 token。</>
+
+假设我们的 token 是 `MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=` （基于 `123456789abcdefghijklmnopqrstuvwxyz` base64 加密获得），我们需要将 `/`，`+`，`=` 等字符转义。
 
 ```typescript
 token = "MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo="
