@@ -4,7 +4,7 @@ title: Asynchronous Task
 import Terminology from '@site/terminology.json'
 
 ### Return Value
-<>When you use {Terminology['en-US']['PRODUCT']} to manage resources, most of the time, the actual operations are put into an asynchronous task to execute, therefore, after an API that includes such operations as creation, deletion, and modification returns a result, the corresponding operations may still be in execution, and the status of the operations will be displayed by the corresponding asynchronous task.</>
+<>When you use {Terminology['terminology']['en-US']['PRODUCT']} to manage resources, most of the time, the actual operations are put into an asynchronous task to execute, therefore, after an API that includes such operations as creation, deletion, and modification returns a result, the corresponding operations may still be in execution, and the status of the operations will be displayed by the corresponding asynchronous task.</>
 
 In order to keep API invocations concise and consistent, this type of APIs will return the asynchronous task id as a parameter of `{ task_id: string }`.
 

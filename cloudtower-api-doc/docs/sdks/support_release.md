@@ -18,11 +18,11 @@ export const AddressWrapper = (props) => {
 
 
 ## 升级建议
-<>{Terminology['zh-CN']['PRODUCT']} API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 {Terminology['zh-CN']['PRODUCT']} 3.0.0 的话，同样可以向下支持 {Terminology['zh-CN']['PRODUCT']} 2.8.0。
-建议先升级 SDK 再升级 {Terminology['zh-CN']['PRODUCT']}。 </>
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} API SDK 支持向下兼容。即 SDK 2.9.0 最高支持至 {Terminology['terminology']['zh-CN']['PRODUCT']} 3.0.0 的话，同样可以向下支持 {Terminology['terminology']['zh-CN']['PRODUCT']} 2.8.0。
+建议先升级 SDK 再升级 {Terminology['terminology']['zh-CN']['PRODUCT']}。 </>
 
 ## 适配说明
-<>以下罗列了搭配 {Terminology['zh-CN']['PRODUCT']} 升级的配套版本。SDK 2.0 之后的版本都修复了较多问题，较为稳定，更推荐大家使用。如需使用 SDK 2.0 之前的版本，或者 SDK 自身的修复版本，可以到对应的 SDK github relase 页面进行查看。</>
+<>以下罗列了搭配 {Terminology['terminology']['zh-CN']['PRODUCT']} 升级的配套版本。SDK 2.0 之后的版本都修复了较多问题，较为稳定，更推荐大家使用。如需使用 SDK 2.0 之前的版本，或者 SDK 自身的修复版本，可以到对应的 SDK github relase 页面进行查看。</>
 
 | SDK 版本 | 产品版本 | SDK 发布日期 | 下载地址 |
 | --- | --- | --- | --- |

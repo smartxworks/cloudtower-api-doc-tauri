@@ -3,7 +3,7 @@ title: Go
 ---
 import Terminology from '@site/terminology.json'
 
-<>Golang 环境下的 {Terminology['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本。</>
+<>Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本。</>
 
 
 - [源码地址](https://github.com/smartxworks/cloudtower-go-sdk)

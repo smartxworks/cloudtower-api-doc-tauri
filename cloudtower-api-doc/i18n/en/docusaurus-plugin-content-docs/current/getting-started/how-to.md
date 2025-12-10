@@ -4,7 +4,7 @@ sidebar_position: 13
 ---
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['en-US']['PRODUCT']} API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. </>
+<>The {Terminology['terminology']['en-US']['PRODUCT']} API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. </>
 
 Currently each interface document includes:
  * Request: Request data

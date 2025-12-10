@@ -11,31 +11,31 @@ import GetLunSnapshot from '../../../../../code_blocks/GetLunSnapshot.md'
 Backing up a virtual machine consists of two parts:
 
 1. Backing up VM configurations, such as the VM name and the number of vCPUs.
-2. <>Backing up VM business data. In {Terminology['en-US']['HCI_OS']}, this refers to backing up the storage used by the VM.
-Before backing up VM business data, you need to first understand the resource relationships of {Terminology['en-US']['HCI_OS']} VMs. An example relationship between a VM and the final storage is shown below:</>
+2. <>Backing up VM business data. In {Terminology['terminology']['en-US']['HCI_OS']}, this refers to backing up the storage used by the VM.
+Before backing up VM business data, you need to first understand the resource relationships of {Terminology['terminology']['en-US']['HCI_OS']} VMs. An example relationship between a VM and the final storage is shown below:</>
 
   - VM
     - Virtual Disk (CD-ROM)
     - Virtual Disk (Data Disk 1)
       - Virtual Volume
         - iSCSI LUN
-          - <>{Terminology['en-US']['STORAGE_PRODUCT']}</> volume
+          - <>{Terminology['terminology']['en-US']['STORAGE_PRODUCT']}</> volume
     - Virtual Disk (Data Disk 2)
       - Virtual Volume
         - iSCSI LUN
-          - <>{Terminology['en-US']['STORAGE_PRODUCT']}</> volume
+          - <>{Terminology['terminology']['en-US']['STORAGE_PRODUCT']}</> volume
 
 Similarly, when taking a snapshot of a virtual machine, the relations between VM resources are shown as below:
 - VM Snapshot
   - Virtual Disk (CD-ROM)
   - Virtual Disk (Data Disk 1)
     - iSCSI LUN Snapshot
-      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
+      - <>{Terminology['terminology']['en-US']['STORAGE_PRODUCT']}  Volume</>
   - Virtual Disk (Data Disk 2)
     - iSCSI LUN Snapshot
-      - <>{Terminology['en-US']['STORAGE_PRODUCT']}  Volume</>
+      - <>{Terminology['terminology']['en-US']['STORAGE_PRODUCT']}  Volume</>
 
-<>The {Terminology['en-US']['STORAGE_PRODUCT']} volume is where the data is ultimately stored. You can read data from or write data into the {Terminology['en-US']['STORAGE_PRODUCT']} volume using ZADP to complete data backup and restore. </>
+<>The {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} volume is where the data is ultimately stored. You can read data from or write data into the {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} volume using ZADP to complete data backup and restore. </>
 
 ### Get VM Information
 You can obtain the VM information using the VM name. For details, refer to the following example. You can also use other filters to get the information you need. Please refer to the API documentation for details.
@@ -72,4 +72,4 @@ Through the API, you can query the LUN snapshot information corresponding to a g
 
 <GetLunSnapshot />
 
-<>The local_id field of each LUN snapshot is the identifier in {Terminology['en-US']['STORAGE_PRODUCT']} and can be further interacted with through the {Terminology['en-US']['STORAGE_PRODUCT']} API.</>
+<>The local_id field of each LUN snapshot is the identifier in {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} and can be further interacted with through the {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} API.</>

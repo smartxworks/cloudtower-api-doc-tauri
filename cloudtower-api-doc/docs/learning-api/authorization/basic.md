@@ -5,12 +5,12 @@ import Terminology from '@site/terminology.json'
 import GetToken from '../../../code_blocks/GetToken.md'
 import GetTokenResponse from '../../../code_blocks/GetTokenResponse.md'
 
-<>从快速开始的样例中，可以看到 {Terminology['zh-CN']['PRODUCT']} API 的使用一共分为 2 步，第一步是通过登陆获取鉴权用的 token，第二步是通过 Authorization header 携带 token，并调用对应的 API 来进行操作。其中第一步获取的 token 并没有过期时间，可以一直使用，所以在一系列的操作中，只需要获取一次 token 即可。</>
+<>从快速开始的样例中，可以看到 {Terminology['terminology']['zh-CN']['PRODUCT']} API 的使用一共分为 2 步，第一步是通过登陆获取鉴权用的 token，第二步是通过 Authorization header 携带 token，并调用对应的 API 来进行操作。其中第一步获取的 token 并没有过期时间，可以一直使用，所以在一系列的操作中，只需要获取一次 token 即可。</>
 
 > 除了登录以外，所有的请求都需要加上鉴权字段。
 
 ​
-<>{Terminology['zh-CN']['PRODUCT']} API 通过在 headers 中传递 Authorization 字段进行鉴权，token 的获取方式如下, 以 cURL 为例：</>
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} API 通过在 headers 中传递 Authorization 字段进行鉴权，token 的获取方式如下, 以 cURL 为例：</>
 
 <GetToken />
 

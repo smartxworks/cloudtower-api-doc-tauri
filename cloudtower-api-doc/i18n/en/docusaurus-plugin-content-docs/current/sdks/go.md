@@ -3,7 +3,7 @@ title: Go
 ---
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['en-US']['PRODUCT']} SDK in the Golang environment is applicable to golang 1.16 or above. </>
+<>The {Terminology['terminology']['en-US']['PRODUCT']} SDK in the Golang environment is applicable to golang 1.16 or above. </>
 
 - [Source COde](https://github.com/smartxworks/cloudtower-go-sdk)
 - [Download Links](https://github.com/smartxworks/cloudtower-go-sdk/releases)

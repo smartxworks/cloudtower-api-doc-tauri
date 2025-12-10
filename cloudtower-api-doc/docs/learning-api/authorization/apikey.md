@@ -5,7 +5,7 @@ import Terminology from '@site/terminology.json'
 
 在默认环境中，使用用户名，密码登录后即可换回 token，可以正常使用 token 进行鉴权，但是在开启了双因子认证后，无法单纯通过用户名，密码换回 token，会需要一个额外的第二因子验证，而在 API 的业务场景中，执行是无交互的，无法进行第二因子验证。
 
-<>为了在此类环境下可以使用 {Terminology['zh-CN']['PRODUCT']} API，{Terminology['zh-CN']['PRODUCT']} 引入了 API Key ，以代替 token 进行鉴权。</>
+<>为了在此类环境下可以使用 {Terminology['terminology']['zh-CN']['PRODUCT']} API，{Terminology['terminology']['zh-CN']['PRODUCT']} 引入了 API Key ，以代替 token 进行鉴权。</>
 
 ### 签发 API Key
 
