@@ -232,7 +232,7 @@ func main() {
 
 通过内容库模板创建虚拟机时，如果希望对原有的磁盘进行任何修改，可以通过 disk_operate 参数进行配置
 disk_operate 参数的类型是 VmDiskOperate，它是一个字典，包含以下字段：
-- remove_disks 由于删除指定index的磁盘
+- remove_disks 用于删除指定index的磁盘
 - modify_disks 修改现有磁盘的配置，目前仅支持修改总线，如果有其他修改可以通过，删除原有盘
 - new_disks 新增磁盘，类型是 VmDiskParams，它是一个字典，包含以下字段：
     - mount_cd_roms 挂载 cd-rom

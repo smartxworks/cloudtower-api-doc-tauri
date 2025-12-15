@@ -56,7 +56,7 @@ import PythonSuspend from '../../code_blocks/vm-operation/suspend/python.md'
 
 ## 虚拟机开机
 
-### 指定虚拟机开机，自动调度到合适的虚拟机
+### 指定虚拟机开机，自动调度到合适的主机
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -71,7 +71,7 @@ import PythonSuspend from '../../code_blocks/vm-operation/suspend/python.md'
 
 </Tabs>
 
-### 批量虚拟机开机，自动调度到合适的虚拟机
+### 批量虚拟机开机，自动调度到合适的主机
 
 <Tabs>
 <TabItem value="py" label="Python">
