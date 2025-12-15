@@ -1,12 +1,19 @@
-id: no-terminology
+id: no-terminology-tsx
 language: tsx
+files:
+  - "**/*.tsx"
+
 ignores:
   - node_modules
   - .docusaurus
   - build
 rule:
-  kind: string_fragment
-  matches: terminology
+  any:
+    - kind: string_fragment
+      matches: terminology
+    # Also match template strings (template literals)
+    - kind: template_string
+      matches: terminology
 
 message: no-terminology
 severity: error
