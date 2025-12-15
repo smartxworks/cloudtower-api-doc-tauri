@@ -1,5 +1,7 @@
-id: no-terminology
+id: no-terminology-ts
 language: typescript
+files:
+  - "**/*.ts"
 ignores:
   - node_modules
   - .docusaurus
