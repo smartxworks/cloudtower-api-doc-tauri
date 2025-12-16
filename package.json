@@ -14,7 +14,7 @@
     "build": "NODE_OPTIONS=--max-old-space-size=10248 docusaurus build  ./cloudtower-api-doc",
     "build:tauri": "cross-env TAURI_ENV=true docusaurus build ./cloudtower-api-doc",
     "serve": "docusaurus serve ./cloudtower-api-doc",
-    "swizzle": "docusaurus swizzle -- @docusaurus/theme-classic  Footer ./cloudtower-api-doc",
+    "swizzle": "docusaurus swizzle -- @docusaurus/theme-classic DocSidebarItem ./cloudtower-api-doc",
     "test": "vitest",
     "test:update-snapshots": "UPDATE_SNAPSHOTS=true npm test wrap.test.ts",
     "lint": "ast-grep scan -c astgrep-lint-rules/sgconfig.yml && node astgrep-lint-rules/markdown-lint.mjs",
