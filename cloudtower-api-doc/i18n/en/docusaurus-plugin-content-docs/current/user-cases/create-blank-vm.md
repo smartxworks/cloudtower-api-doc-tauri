@@ -1,32 +1,30 @@
 ---
-title: Create Blank VM(s)
+title: Creating a blank virtual machine
 sidebar_position: 42
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import GoSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/go.md'
+import GoCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/go.md'
+import GoCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/go.md'
+import GoCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
+import GoCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
 
-import GoSimpleCreate from '../../../../../code_blocks/create-blank-vm/simple-create/go.md'
-import GoCreateWithCDROM from '../../../../../code_blocks/create-blank-vm/create-with-cdrom/go.md'
-import GoCreateWithVolume from '../../../../../code_blocks/create-blank-vm/create-with-volume/go.md'
-import GoCreateWithNewVolume from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
-import GoCreateWithNic from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
+import JavaSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/java.md'
+import JavaCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/java.md'
+import JavaCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/java.md'
+import JavaCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
+import JavaCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
 
+import PythonSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/python.md'
+import PythonCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/python.md'
+import PythonCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/python.md'
+import PythonCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
+import PythonCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
 
-import JavaSimpleCreate from '../../../../../code_blocks/create-blank-vm/simple-create/java.md'
-import JavaCreateWithCDROM from '../../../../../code_blocks/create-blank-vm/create-with-cdrom/java.md'
-import JavaCreateWithVolume from '../../../../../code_blocks/create-blank-vm/create-with-volume/java.md'
-import JavaCreateWithNewVolume from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
-import JavaCreateWithNic from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
-
-
-import PythonSimpleCreate from '../../../../../code_blocks/create-blank-vm/simple-create/python.md'
-import PythonCreateWithCDROM from '../../../../../code_blocks/create-blank-vm/create-with-cdrom/python.md'
-import PythonCreateWithVolume from '../../../../../code_blocks/create-blank-vm/create-with-volume/python.md'
-import PythonCreateWithNewVolume from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
-import PythonCreateWithNic from '../../../../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
-
-## Create a virtual machine simply
+## Simple creation
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -41,10 +39,9 @@ import PythonCreateWithNic from '../../../../../code_blocks/create-blank-vm/crea
 
 </Tabs>
 
+## Configuring virtual disks during creation
 
-## Configure a virtual disk during creation
-
-### Load an ISO from CD-ROM
+### Mounting ISOs via CD-ROM
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -58,8 +55,7 @@ import PythonCreateWithNic from '../../../../../code_blocks/create-blank-vm/crea
 </TabItem>
 </Tabs>
 
-
-### Mount a virtual volume as a virtual disk
+### Mounting virtual volumes as virtual disks
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -73,8 +69,7 @@ import PythonCreateWithNic from '../../../../../code_blocks/create-blank-vm/crea
 </TabItem>
 </Tabs>
 
-
-### Add and mount a virtual disk
+### Mounting newly created virtual disks
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -88,9 +83,7 @@ import PythonCreateWithNic from '../../../../../code_blocks/create-blank-vm/crea
 </TabItem>
 </Tabs>
 
-
-## Configure a virtual NIC during creation
-
+## Configuring virtual NICs during creation
 
 <Tabs>
 <TabItem value="py" label="Python">

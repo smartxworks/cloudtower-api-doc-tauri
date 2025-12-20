@@ -1,12 +1,13 @@
 ---
-title: Get VM(s)
+title: Fetching virtual machines
 sidebar_position: 43
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Get all virtual machines
+## Fetching all virtual machines
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -63,7 +64,6 @@ func getAllVms(
 </TabItem>
 <TabItem value="java" label="Java">
 
-
 ```java
 public class App {
 
@@ -80,10 +80,12 @@ public class App {
   }
 }
 ```
+
 </TabItem>
 </Tabs>
 
-## Get virtual machines by page
+## Fetching virtual machines with pagination
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -136,7 +138,7 @@ func getVmsWithPagination(
 	getVmsWithPaginationParams := vm.NewGetVmsParams()
 	getVmsWithPaginationParams.RequestBody = &models.GetVmsRequestBody{
 		First: pointy.Int32(from+1),
-		Skip:  pointy.Int32(to-from),
+		Skip: pointy.Int32(to-from),
 	}
 	vmsRes, err := client.VM.GetVms(getVmsWithPaginationParams)
 	if err != nil {
@@ -170,7 +172,8 @@ public class App {
 </TabItem>
 </Tabs>
 
-## Get all powered-on virtual machines
+## Fetching all powered-on virtual machines
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -193,7 +196,6 @@ running_vms = vm_api.get_vms(
 
 </TabItem>
 <TabItem value="go" label="Golang">
-
 
 ```go
 package main
@@ -261,7 +263,8 @@ public class App {
 </TabItem>
 </Tabs>
 
-## Get virtual machines with a specific string in their names
+## Fetching virtual machines whose name or description contain a specific string
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -348,10 +351,12 @@ public class App {
   }
 }
 ```
+
 </TabItem>
 </Tabs>
 
-## Get all virtual machines with vcpu > n
+## Fetching all virtual machines with the number of vCPUs greater than `n`
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -416,6 +421,7 @@ func getVmshasNMoreCpuCore(
 	return vmsRes.Payload, nil
 }
 ```
+
 </TabItem>
 <TabItem value="java" label="Java">
 

@@ -1,18 +1,17 @@
 ---
-title: Filtering
+title: Filter conditions
 sidebar_position: 221
 ---
 
+In the second step of the _Quick start_ example, we used `/v2/api/get-vms`, a query API, to obtain a list of virtual machines. The parameters of a query API typically include the following parts:
 
-In step 2 of the Quick start example, we use `/v2/api/get-vms` to obtain a list of virtual machines. This is a query API, and the parameters for a query API generally include the following parts:
+### Filter condition parameters
 
-### Filter parameters
+The `where` parameter is used to filter resources. Each type of resource has its own `WhereInput` type, which defines the filter conditions. Some common examples include `VmWhereInput`, `ClusterWhereInput`, etc.
 
-We define the `where` parameter for filtering resources. Each type of resource has its own `WhereInput` type for describing filtering conditions, which includes some commonly used filtering conditions such as `VmWhereInput`, `ClusterWhereInput`, etc.
+#### Filtering by a field value
 
-#### Filtering by an exact match
-
-For example, to filter resources where a field matches a certain value, you can directly pass the field name and value in the `where` parameter. If we want to filter virtual machines with a name of "demo", we can use the following `where` parameter:
+To filter resources where a field equals a specific value, simply pass the field name and value in the `where` parameter. For example, to filter virtual machines whose name is "demo", use the following `where` parameter:
 
 ```json
 {
@@ -22,9 +21,9 @@ For example, to filter resources where a field matches a certain value, you can 
 }
 ```
 
-#### Filtering by not equal to
+#### Filtering by a field not equal to a value
 
-You can also filter resources where a field does not match a certain value by adding `_not` to the field name in the `where` parameter. If we want to filter virtual machines with a name that is not "demo", we can use the following `where` parameter:
+You can also use the `where` parameter to filter resources where a field does not equal a specific value by simply passing the field name with `_not` appended, along with the corresponding value. For example, to filter virtual machines whose name is not "demo", use the following `where` parameter:
 
 ```json
 {
@@ -34,9 +33,9 @@ You can also filter resources where a field does not match a certain value by ad
 }
 ```
 
-#### Filtering by membership in a set
+#### Filtering by a field in a set
 
-You can use `_in` or `_not_in` to filter by whether a value belongs to or does not belong to a set. For example, if we want to filter virtual machines with a name of "demo" or "demo2", we can use the following `where` parameter:
+The `where` parameter also supports `_in` and `_not_in` based on whether the value is in or not in a given set. For example, to filter virtual machines whose name is "demo" or "demo2", use the following `where` parameter:
 
 ```json
 {
@@ -46,9 +45,9 @@ You can use `_in` or `_not_in` to filter by whether a value belongs to or does n
 }
 ```
 
-#### Derived comparison conditions
+#### Derivied comparison conditions
 
-For different types of fields, there are other derived filtering conditions. For example, for an `int` type field, you can use `_gt`, `_gte`, `_lt`, `_lte` to filter by greater than, greater than or equal to, less than, and less than or equal to. For example, if we want to filter virtual machines with more than 2 CPUs, we can use the following `where` parameter:
+Other comparison-based filter conditions exist for different fields. For example, for an int field, you can append `_gt`, `_gte`, `_lt`, or `_lte` to the field name to filter for values, which represent "greater than", "greater than and equal to", "less than", or "less than and equal to", respectively. For instance, to filter virtual machines with more than 2 CPUs, you can use the following `where` parameter:
 
 ```json
 {
@@ -58,13 +57,13 @@ For different types of fields, there are other derived filtering conditions. For
 }
 ```
 
-Different types of fields have their own derived conditions. For example, for a `string` type field, you can use `_contains`, `_starts_with`, `_ends_with`, `_not_contains`, `_not_starts_with`, `_not_ends_with`. Please refer to the detailed API documentation for specific types.
+Fields of different types have their own derived conditions. For example, for a string field, you can append `_contains`, `_starts_with`, `_ends_with`, `_not_contains`, `_not_starts_with`, or `_not_ends_with` to the field name. For details, refer to the API documentation.
 
-#### Filtering by cascading resources
+#### Filtering by cascaded resources
 
-##### Single cascading resource
+##### Single related resource
 
-If a resource corresponds to only one cascading resource, then filtering by cascading resource is simple. It is similar to filtering by a field matching a certain value, but the filtering condition changes from a value to the `WhereInput` object of the corresponding cascading resource. For example, a virtual machine can only belong to one cluster, but a cluster can have multiple virtual machines. If we want to filter virtual machines belonging to a cluster named "clusterA", we can use the following `where` parameter:
+If a resource field corresponds to only one related (cascaded) resource, filtering by this related resource is straightforward. It works similarly to filtering a field by a specific value. The difference is that the filter condition uses the WhereInput object of the related resource instead of a single value. For example, since each virtual machine can belong to only one cluster, but a cluster can contain multiple virtual machines. You can filter virtual machines that belong to the cluster named "clusterA" using the following `where` parameter:
 
 ```json
 {
@@ -76,9 +75,10 @@ If a resource corresponds to only one cascading resource, then filtering by casc
 }
 ```
 
-##### Multiple resources
+##### Multiple related resources
 
-From the above example, we know that a cluster can have multiple virtual machines. Can we query clusters by virtual machines? The answer is yes, but we cannot directly filter by items. We can use the item name plus `_every`, `_some`, `_none` to filter by whether all, some or none of the corresponding cascading resources satisfy the condition. The condition is still the `WhereInput` object of the corresponding cluster. Here is an example using `/v2/api/get-cluster`. If we want to filter clusters with at least one virtual machine named "demo", we can use the following `where` parameter:
+From the previous example, we know that a cluster can contain multiple virtual machines. Can we filter clusters based on their virtual machines? The answer is yes, but we cannot filter directly by a single field.
+Instead, you can use the field name appended with `_every`, `_some`, or `_none` to filter related sources. The filter condition is still the `WhereInput` object of the related cluster. These three operators indicate whether all, some, or none of the related resources satisfy the condition. For example, using the `/v2/api/get-cluster` API: if you want to filter clusters that have any virtual machine named "demo", you can use the following `where` parameter:
 
 ```json
 {
@@ -94,7 +94,7 @@ From the above example, we know that a cluster can have multiple virtual machine
 
 ##### Simple combination
 
-The examples given above only use one condition, but there is no limit on the number of conditions in `where`. Different conditions can be combined. For example, if we want to filter virtual machines belonging to a cluster named "clusterA" and with more than 2 CPUs, we can use the following `where` parameter:
+The previous examples used only a single condition. The `where` parameter is not limited to a single condition, and multiple conditions can be combined. For example, to filter virtual machines that belong to the cluster named "clusterA" and have a cpu greater than 2, you can use the following `where` parameter:
 
 ```json
 {
@@ -107,9 +107,10 @@ The examples given above only use one condition, but there is no limit on the nu
 }
 ```
 
-##### Operator combination
+##### Combining with operators
 
-For more complex conditions, you can use `OR`, `NOT`, `AND` to combine conditions in `where`. The types of these filtering options are arrays of the current resource's `WhereInput`. For example, if we want to filter virtual machines belonging to clusterA or clusterB and not belonging to any other cluster, we can use the following `where` parameter:
+For complex conditions, you can combine `where` with `OR`, `AND`, and `NOT`. These filter options are all arrays of the `WHEREInput` of the current resource.
+For example, if you want to filter out clusters that belong to clusters named `clusterA` or `clusterB`, we can use the following combination of `where` parameters:
 
 ```json
 {

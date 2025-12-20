@@ -1,63 +1,64 @@
 ---
 title: Python
 ---
+
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['terminology']['en-US']['PRODUCT']} SDK in Python for versions of 2.7, 3.4 and above.</>
+<>The {Terminology['terminology']['en-US']['PRODUCT']} SDK for Python supports Python 2.7, 3.4 or later. </>
 
-- [Source Address](https://github.com/smartxworks/cloudtower-python-sdk)
-- [Download Links](https://github.com/smartxworks/cloudtower-python-sdk/releases)
+- [Source repository](https://github.com/smartxworks/cloudtower-python-sdk)
+- [Download the SDK](https://github.com/smartxworks/cloudtower-python-sdk/releases)
 
-## Install
+## Installing the SDK
 
-- ### whl
+- ### Installing using the `.whl` file
 
   ```shell
-  pip install cloudtower_sdk-1.9.0-py2.py3-none-any.whl
+  pip install cloudtower_sdk-2.21.0-py2.py3-none-any.whl
   ```
 
-- ### tar.gz
+- ### Installing using the `.tar.gz` file
 
   ```shell
-  tar xvzf cloudtower-sdk-1.9.0.tar.gz
-  cd cloudtower-sdk-1.90.tar.gz
+  tar xvzf cloudtower-sdk-2.21.0.tar.gz
+  cd cloudtower-sdk-2.21.0
   python setup.py install
   ```
 
-- ### git source installation
+- ### Installing using the Git source code
 
   ```
   git clone https://github.com/smartxworks/cloudtower-python-sdk.git
-  cd clodtower-python-sdk
+  cd cloudtower-python-sdk
   python setup.py install
   ```
 
-- ### git pip installation
+- ### Installing using pip from Git
 
   ```shell
   pip install git+https://github.com/smartxworks/cloudtower-python-sdk.git
   ```
 
-- ### pypi installation
+- ### Installing using PyPI
   ```shell
   pip install cloudtower-sdk
   ```
 
-## The Use of SDK
+## Using the SDK
 
-### Create an instance
+### Creating an instance
 
-#### Create an `ApiClient` instance
+#### Creating an `ApiClient` instance
 
 ```python
 from cloudtower.configuration import Configuration
 from cloudtower import ApiClient
-# Configure operation-api endpoint
+# Configure the operation-api endpoint.
 configuration = Configuration(host="http://192.168.96.133/v2/api")
 client = ApiClient(configuration)
 ```
 
-> if https connection is required，cert should be installed，or skip verify cert
+> If you need to use HTTPS, you can either install a certificate or skip certificate verification.
 
 ```python
 configuration = Configuration(host="https://192.168.96.133/v2/api")
@@ -65,35 +66,46 @@ configuration.verify_ssl = False
 client = ApiClient(configuration)
 ```
 
-#### Create a corresponding API instance
+#### Creating a corresponding API instance
 
-> Create a relevant API instance based on operations for different purposes, e.g., a `VmApi` needs to be created for the operations related to virtual machines.
+> Create the related API instance based on the type of operation. For example, to perform operations related to virtual machines, create a `VmApi` instance:
 
 ```python
 from cloudtower.api.vm_api import VmApi
 vm_api = VmApi(client)
 ```
 
-### Authentication
+### Authenticating
+
+> The `ApiClient` can be authenticated using the login method encapsulated in `utils`.
+
+```python
+from cloudtower.utils import wait_tasks, login
+conf = Configuration(host="http://example-cloudtower.com/v2/api")
+api_client = ApiClient(conf)
+login(api_client, "your_username", "your_password") #By default, LOCAL is used as usersource
+```
+
+> Alternatively, you can directly use the token in the `api_key` field of `configuration`.
 
 ```python
 from cloudtower.api.user_api import UserApi
 from cloudtower.models import UserSource
-# Obtain a token through the login method in UserApi.
+# Obtain a token using the login method of UserApi.
 user_api = UserApi(client)
 login_res = user_api.login({
     "username": "your_username",
     "password": "your_password",
     "source": UserSource.LOCAL
 })
-# Configure the token in configuration.api_key["Authorization"],
-# so that all the APIs using the current client will get the token information of authentication.
+# Configure the token in `configuration.api_key["Authorization"]`.
+# All APIs using this client will include the authentication token.
 configuration.api_key["Authorization"] = login_res.data.token
 ```
 
-### Send a request
+### Sending requests
 
-#### Get resources
+#### Retrieving resources
 
 ```python
 vms = vm_api.get_vms({
@@ -104,9 +116,9 @@ vms = vm_api.get_vms({
 })
 ```
 
-#### Update resources
+#### Updating resources
 
-> Resource updates will generate relevant asynchronous tasks. When an asynchronous task finishes, the resource operations are completed and the data has been updated.
+> Updating resources will trigger a related asynchronous task. When the task is completed, it indicates that the resource operation has finished and the data has been updated.
 
 ```python
 start_res = vm_api.start_vm({
@@ -116,48 +128,50 @@ start_res = vm_api.start_vm({
 })
 ```
 
-> Users can synchronously wait for the asynchronous task to finish through the provided tool method.
+> You can use the provided utility method to synchronously wait for the asynchronous task to complete:
 
 ```python
 from cloudtower.utils import wait_tasks
 try:
  wait_tasks([res.task_id for res in start_res], api_client)
 except ApiException as e:
- # Handle errors
+ # Handling errors
 else:
- # Callback after the task finishes
+ # Callback after the task is completed
 ```
 
-##### Description of Method Parameters
+##### **Method parameters**
 
-| Parameter name | Type      | Required | Description                                                                                                                                      |
-| -------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ids            | list[str] | Yes      | The id list of the tasks to be queried.                                                                                                          |
-| api_client     | ApiClient | Yes      | The ApiClient instance used by the query.                                                                                                        |
-| interval       | int       | No       | The polling interval with the default value of 5s.                                                                                               |
-| timeout        | int       | No       | The timeout with the default value of 300s.                                                                                                      |
-| exit_on_error  | bool      | No       | Whether to exit immediately when a single task fails, otherwise wait for all the tasks to finish before exiting, and the default value is False. |
+| <strong>Parameter</strong> | <strong>Type</strong>                                         | <strong>Required</strong> | <strong>Description</strong>                                                                                                                                                                     |
+| -------------------------- | ------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ids`                      | list[str] | Yes                       | The list of task IDs to query.                                                                                                                                                   |
+| `api_client`               | ApiClient                                                     | Yes                       | The ApiClient instance used for querying.                                                                                                                                        |
+| `interval`                 | int                                                           | No                        | The polling interval. Default: 5s.                                                                                                               |
+| `timeout`                  | int                                                           | No                        | The timeout period. Default: 300s.                                                                                                               |
+| `exit_on_error`            | bool                                                          | No                        | Whether to exit immediately when a singe task fails. Otherwise, wait for all tasks to complete before exiting. Default: `False`. |
 
-##### Error Description
+##### **Errors**
 
-| Error code | Description                            |
-| ---------- | -------------------------------------- |
-| 408        | Timeout                                |
-| 500        | An internal error of asynchronous task |
+| <strong>Error code</strong> | <strong>Description</strong>                                 |
+| --------------------------- | ------------------------------------------------------------ |
+| 408                         | Timeout                                                      |
+| 500                         | The internal error of the asynchronous task. |
 
-#### Custom header
-<blockquote>
-The {Terminology['terminology']['en-US']['PRODUCT']} APIs support setting the language of the returned information by setting the content-language in the header. The optional values are `en-US` and `zh-CN`, and the default is `en-US`.
-</blockquote>
+#### Custom headers
 
-##### By using the `set_default_header` method of `ApiClient`
+<>
 
-> The default header information can be set using the `set_default_header` method of `ApiClient`.
+> The {Terminology['terminology']['en-US']['PRODUCT']} API supports setting the `content-language` field in the request header to specify the response language. Available values are `en-US` and `en-US`. The default is `en-US`.
+> </>
+
+##### Using the `set_default_header` method of `ApiClient`
+
+> You can use the `set_default_header` method of `ApiClient` to configure default header information.
 
 ```python
 api_client.set_default_header("content_language","en-US")
 alert_api = AlertApi(api_client)
-# The message, solution, cause, impact in the alerts obtained at this time will be converted into English descriptions.
+# The message, solution, cause, and impact fields in the returned alerts will be in English.
 alerts = alert_api.get_alerts(
   {
     "where": {
@@ -170,15 +184,15 @@ alerts = alert_api.get_alerts(
 )
 ```
 
-##### By setting the keyword parameter of the request
+##### Using the request keyword argument
 
-> The language of the returned information can also be set by setting the keyword parameter `content_language` of the request.
+> You can also set the response language by specifying the `content_language` keyword argument in a request.
 
 ```python
-from cloudtower.api.alert_api import AlertApi
+from cloudtower.api.user_api import AlertApi
 
 alert_api = AlertApi(api_client)
-# The message, solution, cause, impact in the alerts obtained at this time will be converted into Chinese descriptions.
+# The message, solution, cause, and impact fields in the returned alerts will be in Chinese.
 alerts = alert_api.get_alerts(
   {
     "where": {
@@ -188,16 +202,16 @@ alerts = alert_api.get_alerts(
     },
     "first": 100
   },
-  content_language="zh-CN"
+  content_language="en-US"
 )
 ```
 
-#### Others
+#### Other notes
 
-##### Send an asynchronous request
+##### Sending asynchronous requests
 
-> The sending of the above requests are all synchronous and will block the current process. If users need to use an asynchronous request, please add `async_req=True` to the keyword parameter of the corresponding request.
-> And obtain the corresponding result from the returned value of `ApplyResult.get()`.
+> The requests shown above are synchronous and will block the current process. If you need to send an asynchronous request, add `async_req=True` to the corresponding keyword arguments of the request.
+> You can then obtain the result using `ApplyResult.get()` from the returned object.
 
 ```python
 vms = vm_api.get_vms(
@@ -211,16 +225,1410 @@ vms = vm_api.get_vms(
 print(vms.get()[0].name)
 ```
 
-### Destroy an ApiClient instance after use
+### Destroying the ApiClient instance after use
 
 ```python
 client.close()
 ```
 
+## Operation example
 
-## Scenario Examples
+### Fetching virtual machines
 
-### Backup a virtual machine
+#### Fetching all virtual machines
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+vms = vm_api.get_vms({})
+```
+
+#### Fetching virtual machines with pagination
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+vms_from_51_to_100 = vm_api.get_vms({
+  "first": 50,
+  "skip": 50,
+})
+```
+
+#### Fetching all powered-on virtual machines
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi, VmStatus
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+running_vms = vm_api.get_vms(
+    {
+        "where": {
+            "status": VmStatus.RUNNING
+        }
+    },
+)
+```
+
+#### Fetching virtual machines whose name or description contain a specific string
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+vms_name_contains = vm_api.get_vms(
+    {
+        "where": {
+            "name_contains": "string"
+        }
+    },
+)
+```
+
+#### Fetching all virtual machines with the number of vCPUs greater than `n`
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+vms_has_4_more_vcpu = vm_api.get_vms(
+    {
+        "where": {
+            "vcpu_gt": 4
+        }
+    },
+)
+```
+
+### Creating a virtual machine from a template
+
+#### Specifying IP address only only
+
+```python
+from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from cloudtower.utils import login, wait_tasks
+from cloudtower.configuration import Configuration
+from cloudtower import ApiClient
+import os
+
+
+configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+client = ApiClient(configuration)
+
+login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
+
+
+def create_vm_from_template(template_name, cluster_name, vm_name):
+    """
+    Create  a virtual machine from a template in content library. The virtual machine is configured with the template. 
+    :param template_name: Specify the name of the template to use in content library. 
+    :param cluster_name: Specify the name of the cluster hosting the virtual machine. 
+    :param vm_name: The name of the virtual machine. 
+    :return: The created virtual machine.
+    """
+    vm_api = VmApi(client)
+    cluster_api = ClusterApi(client)
+    template_api = ContentLibraryVmTemplateApi(client)
+
+    cluster = cluster_api.get_clusters({
+        "where": {
+            "name": cluster_name
+        }
+    })
+    if len(cluster) == 0:
+        raise Exception("cluster not found")
+
+    template = template_api.get_content_library_vm_templates({
+        "where": {
+            "name": template_name
+        }
+    })
+    if len(template) == 0:
+        raise Exception("template not found")
+
+    with_task_vms = vm_api.create_vm_from_content_library_template([
+        {
+            "template_id": template[0].id,
+            "cluster_id": cluster[0].id,
+            "name": vm_name,
+            "is_full_copy": False
+        }
+    ])
+    tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+    vm_ids = [
+        with_task_vm.data.id for with_task_vm in with_task_vms]
+    wait_tasks(tasks, client)
+    return vm_api.get_vms({
+        "where": {
+            "id_in": vm_ids
+        }
+    })[0]
+```
+
+#### Configuring virtual disk parameters that differ from the template
+
+```python
+from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from cloudtower.utils import login, wait_tasks
+from cloudtower.configuration import Configuration
+from cloudtower.models import Bus, VmVolumeElfStoragePolicyType
+from cloudtower import ApiClient
+import os
+
+
+configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+client = ApiClient(configuration)
+
+login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
+
+
+def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, disk_operate):
+    """
+    Create a virtual machine from a template in content library and configure the disks on the virtual machine.
+    :param template_name: The name of the template.
+    :param cluster_name: The name of the cluster.
+    :param vm_name: The name of the virtual machine.
+    :param disk_operate: Disk operations. For details, refer to the methods in create_vm_from_template_modify_disk_example
+    :return: The created virtual machine. 
+    """
+    vm_api = VmApi(client)
+    cluster_api = ClusterApi(client)
+    template_api = ContentLibraryVmTemplateApi(client)
+
+    cluster = cluster_api.get_clusters({
+        "where": {
+            "name": cluster_name
+        }
+    })
+    if len(cluster) == 0:
+        raise Exception("cluster not found")
+
+    template = template_api.get_content_library_vm_templates({
+        "where": {
+            "name": template_name
+        }
+    })
+    if len(template) == 0:
+        raise Exception("template not found")
+
+    with_task_vms = vm_api.create_vm_from_content_library_template([
+        {
+            "template_id": template[0].id,
+            "cluster_id": cluster[0].id,
+            "name": vm_name,
+            "is_full_copy": False,
+            "disk_operate": disk_operate
+        }
+    ])
+    tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+    vm_ids = [
+        with_task_vm.data.id for with_task_vm in with_task_vms]
+    wait_tasks(tasks, client)
+    return vm_api.get_vms({
+        "where": {
+            "id_in": vm_ids
+        }
+    })[0]
+
+
+def create_vm_from_template_modify_disk_example():
+    """
+    When creating a virtual machine from a template, any modifications to the original disks can be configured through the disk_operate parameter.
+    The disk_operate parameter is of the VmDiskOperate type, which is a dictionary containing the following fields: 
+    - remove_disks removes disks by their specified index.
+    - modify_disks modifies the configuration of existing disks. Currently, only the bus type can be modified. For other changes, remove the original disk and add a new one.
+    - new_disks adds new disks. This field is of type VmDiskParams, which is a dictionary containing the following fields: 
+        - mount_cd_roms mounts CD-ROM devices.
+        - mount_disks mounts existing disks.
+        - mount_new_create_disks mounts newly created disks.
+    """
+    disk_operate = {
+        "remove_disks": {
+            "disk_index": [0]  # Indexes of the disks to be removed. Indexing starts from 0. For example, [0] removes the first disk.
+        },
+        "new_disks": {
+            "mount_cd_roms": [
+                {
+                    "boot": 2,  # Boot order
+                    "content_library_image_id": ""  # The ID of the content library image to be mounted 
+                    "bus": Bus.VIRTIO,  # Bus type
+                    "vm_volume_id": "cljm6x2g1405g0958tp3zkhvh"  # ID of the virtual volume to be mounted.
+                }
+            ],
+            "mount_new_create_disks": [
+                {
+                    "boot": 4,
+                    "bus": Bus.VIRTIO,
+                    "vm_volume": {
+                        "name": "test",  # Name of the new virtual volume.
+                        "size": 10 * 1024 * 1024 * 1024,  # Size of the new virtual volume, in bytes.
+                        "elf_storage_policy": VmVolumeElfStoragePolicyType._2_THIN_PROVISION  # Storage policy
+                    }
+                }
+            ]
+        }
+    }
+    create_vm_from_template_modify_disk("template-name", "cluster-name", "vm-name", disk_operate)
+```
+
+#### Configuring NIC parameters that differ from the template
+
+```python
+from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from cloudtower.utils import login, wait_tasks
+from cloudtower.configuration import Configuration
+from cloudtower.models import Bus, VmNicModel
+from cloudtower import ApiClient
+import os
+
+
+configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+client = ApiClient(configuration)
+
+login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
+
+
+def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, nic_params):
+    """
+    Create a virtual machine via a template in content library and configure its NICs
+    :param template_name: The name of the template
+    :param cluster_name: The name of the cluster
+    :param vm_name: The name of the virtual machine
+    :param nic_params: Disk operations. For details, see the method for create_vm_from_template_modified_nic_example
+    :return: The created virtual machine
+    """
+    vm_api = VmApi(client)
+    cluster_api = ClusterApi(client)
+    template_api = ContentLibraryVmTemplateApi(client)
+
+    cluster = cluster_api.get_clusters({
+        "where": {
+            "name": cluster_name
+        }
+    })
+    if len(cluster) == 0:
+        raise Exception("cluster not found")
+
+    template = template_api.get_content_library_vm_templates({
+        "where": {
+            "name": template_name
+        }
+    })
+    if len(template) == 0:
+        raise Exception("template not found")
+
+    with_task_vms = vm_api.create_vm_from_content_library_template([
+        {
+            "template_id": template[0].id,
+            "cluster_id": cluster[0].id,
+            "name": vm_name,
+            "is_full_copy": False,
+            "vm_nics": nic_params
+        }
+    ])
+    tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+    vm_ids = [
+        with_task_vm.data.id for with_task_vm in with_task_vms]
+    wait_tasks(tasks, client)
+    return vm_api.get_vms({
+        "where": {
+            "id_in": vm_ids
+        }
+    })[0]
+
+
+def create_vm_from_template_modified_nic_example():
+    """
+    When creating a virtual machine using a template in content library, if the vm_nics parameter is not provided, the template's NIC configuration will be used by default. If modification of the NIC configuration is needed, the vm_nics parameter can be passed.
+    vm_nics is a list, where each element is a dictionary containing the following keys: 
+    - connect_vlan_id is the ID of the VM network corresponding to the NIC, not the vlan_id of the VM network
+    - enabled indicates whether the NIC is enabled
+    - model is the NIC type, which can be specified using properties of the VmNicModel class, such as VmNicModel.
+    When creating a virtual machine, modifying the IP, MAC address, gateway, or subnet mask of the NIC is not supported. If the configuration of IP address, subnet, or gateway is required, it can be achieved through cloud-init, provided the template supports cloud-init. 
+    """
+    nic_params = [
+        {
+            "connect_vlan_id": "vlan_id",
+            "enabled": True,
+            "model": VmNicModel.VIRTIO
+        }
+    ]
+    create_vm_from_template_modified_nic("template_name", "cluster_name", "vm_name", nic_params)
+```
+
+### Creating a blank virtual machine
+
+#### Simple creation
+
+```python
+from cloudtower import (
+    ApiClient,
+    Configuration,
+    VmApi,
+    VmStatus,
+    VmFirmware,
+    Bus
+)
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.create_vm([
+    {
+        "cluster_id": "cluster_id",
+        "name": "vm_name",
+        "ha": True,
+        "cpu_cores": 4,
+        "cpu_sockets": 4,
+        "memory": 4*1024*1024*1024,
+        "vcpu": 16,
+        "status": VmStatus.STOPPED,
+        "firmware": VmFirmware.BIOS,
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+            }
+        ],
+        "vm_disks": {
+            "mount_cd_roms": [{
+                "boot": 0,
+                "index": 0
+            }],
+        }
+    }
+])[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+created_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Configuring virtual disks during creation
+
+##### Mounting ISOs via CD-ROM
+
+```python
+from cloudtower import (
+    ApiClient,
+    Configuration,
+    VmApi,
+    VmStatus,
+    VmFirmware,
+    Bus
+)
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.create_vm([
+    {
+        "cluster_id": "cluster_id",
+        "name": "vm_name",
+        "ha": True,
+        "cpu_cores": 4,
+        "cpu_sockets": 4,
+        "memory": 4*1024*1024*1024,
+        "vcpu": 16,
+        "status": VmStatus.STOPPED,
+        "firmware": VmFirmware.BIOS,
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+            }
+        ],
+        "vm_disks": {
+            "mount_cd_roms": [{
+                "index": 0,
+                "boot": 0,
+                "elf_image_id": "elf_image_id"
+            }],
+        }
+    }
+])[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+created_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Mounting virtual volumes as virtual disks
+
+```python
+from cloudtower import (
+    ApiClient,
+    Configuration,
+    VmApi,
+    VmStatus,
+    VmFirmware,
+    Bus
+)
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.create_vm([
+    {
+        "cluster_id": "cluster_id",
+        "name": "vm_name",
+        "ha": True,
+        "cpu_cores": 4,
+        "cpu_sockets": 4,
+        "memory": 4*1024*1024*1024,
+        "vcpu": 16,
+        "status": VmStatus.STOPPED,
+        "firmware": VmFirmware.BIOS,
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+            }
+        ],
+        "vm_disks": {
+            "mount_disks": [{
+                "index": 0,
+                "boot": 0,
+                "bus": Bus.VIRTIO,
+                "vm_volume_id": "vm_volume_id",
+                "index": 0,
+            }],
+        }
+    }
+])[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+created_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Adding and mounting a virtual disk
+
+```python
+from cloudtower import (
+    ApiClient,
+    Configuration,
+    VmApi,
+    VmStatus,
+    VmFirmware,
+    Bus,
+    VmVolumeElfStoragePolicyType
+)
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.create_vm([
+    {
+        "cluster_id": "cluster_id",
+        "name": "vm_name",
+        "ha": True,
+        "cpu_cores": 4,
+        "cpu_sockets": 4,
+        "memory": 4 * 1024*1024*1024,
+        "vcpu": 16,
+        "status": VmStatus.STOPPED,
+        "firmware": VmFirmware.BIOS,
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+            }
+        ],
+        "vm_disks": {
+            "mount_new_create_disks": [{
+                "boot": 0,
+                "bus": Bus.VIRTIO,
+                "vm_volume": {
+                    "elf_storage_policy": VmVolumeElfStoragePolicyType._2_THIN_PROVISION,
+                    "size": 10 * 1024 * 1024 * 1024,
+                    "name": "new_volume_name"
+                }
+            }],
+        }
+    }
+])[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+created_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Configuring virtual NICs during creation
+
+```python
+from cloudtower import (
+    ApiClient,
+    Configuration,
+    VmApi,
+    VmStatus,
+    VmFirmware,
+    Bus,
+    VmNicModel,
+    VmVolumeElfStoragePolicyType
+)
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.create_vm([
+    {
+        "cluster_id": "cluster_id",
+        "name": "vm_name1",
+        "ha": True,
+        "cpu_cores": 4,
+        "cpu_sockets": 4,
+        "memory": 4 * 1024*1024*1024,
+        "vcpu": 16,
+        "status": VmStatus.STOPPED,
+        "firmware": VmFirmware.BIOS,
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+                "mirror": True,
+                "model": VmNicModel.VIRTIO
+            }
+        ],
+        "vm_disks": {
+            "mount_cd_roms": [{
+                "index": 0,
+                "boot": 0,
+            }],
+        }
+    }
+])[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+created_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+### Editing a virtual machine
+
+#### Editing basic information
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.update_vm({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "name": "new_name",
+        "description": "new_description",
+        "ha": False,
+        "vcpu": 2 * 2,
+        "cpu_cores": 2,
+        "cpu_sockets": 2,
+        "memory": 1*1024*1024*1024,
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Editing CD-ROMs
+
+##### Adding a CD-ROM
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.add_vm_cd_rom({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "vm_cd_roms": [
+            {
+                "elf_image_id": "elf_image_id",
+                "boot": 0,
+                "index": 0
+            }
+        ]
+    }
+})[0]
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Deleting a CD-ROM
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.remove_vm_cd_rom({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "cd_rom_ids": ["cd_rom_id_1", "cd_rom_id_2"]
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Managing virtual volumes
+
+##### Adding a new virtual volume
+
+```python
+from cloudtower import ApiClient, Configuration, Bus, VmVolumeElfStoragePolicyType, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.add_vm_disk({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "vm_disks": {
+            "mount_new_create_disks": [
+                {
+                    "vm_volume": {
+                        "elf_storage_policy": VmVolumeElfStoragePolicyType._2_THIN_PROVISION,
+                        "size": 5*1024*1024*1024,
+                        "name": "new_volume_name"
+                    },
+                    "boot": 1,
+                    "bus": Bus.VIRTIO,
+                }
+            ]
+        }
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Mounting an existing virtual volume as a virtual disk
+
+```python
+from cloudtower import ApiClient, Configuration, Bus, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.add_vm_disk({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "vm_disks": {
+            "mount_disks": [
+                {
+                    "index": 0,
+                    "vm_volume_id": "vm_volume_id",
+                    "boot": 1,
+                    "bus": Bus.VIRTIO,
+                }
+            ]
+        }
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Unmounting a virtual disk
+
+```python
+from cloudtower import ApiClient, Configuration, VmVolumeElfStoragePolicyType, Bus, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.remove_vm_disk({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "disk_ids": ["vm_disk_id_1", "vm_disk_id_2"]
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Managing NICs
+
+##### Adding a NIC
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi, VmNicModel
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.add_vm_nic({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "vm_nics": [
+            {
+                "connect_vlan_id": "vlan_id",
+                "enabled": False,
+                "model": VmNicModel.VIRTIO,
+            },
+            {
+                "connect_vlan_id": "vlan_id_2",
+                "enabled": True,
+                "mirror": True,
+                "model": VmNicModel.VIRTIO,
+            }
+        ]
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Editing NICs
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.update_vm_nic({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "nic_index": 0,
+        "enabled": False,
+        "mirror": False,
+        "connect_vlan_id": "vlan_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+##### Removing a NIC
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.remove_vm_nic({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "nic_index": [0, 1]
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+updated_vm = vm_api.get_vms({
+    "where": {
+        "id": with_task_vm.data.id
+    }
+})
+```
+
+#### Migrating a virtual machine
+
+##### Migrating a virtual machine to a specific host
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.mig_rate_vm({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "host_id": "host_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+```
+
+##### Automatically placing a virtual machine on a proper host
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+
+with_task_vm = vm_api.mig_rate_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+```
+
+### Managing virtual machine power
+
+#### Powering on virtual machines:
+
+##### Powering on a specific virtual machine and automatically scheduling it to a proper host
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.start_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Powering on virtual machines in batches and automatically scheduling them to a proper host
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.start_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+wait_tasks(tasks, api_client)
+
+opened_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+##### Powering on a virtual machine and placing it on a specified host
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.start_vm({
+    "where": {
+        "id": "vm_id"
+    },
+    "data": {
+        "host_id": "host_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+#### Shutting down virtual machines
+
+##### Shutting down a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.shut_down_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Shutting down virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.shut_down_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+closed_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+##### Forcibly powering off a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.force_shut_down_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Forcibly powering off virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+conf = Configuration(host="http://192.168.96.133/v2/api")
+conf.api_key["Authorization"] = "token"
+api_client = ApiClient(conf)
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.force_shut_down_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+wait_tasks(tasks, api_client)
+
+closed_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+#### Restrating virtual machines
+
+##### Restarting a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.restart_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Restarting virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.restart_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+##### Forcibly restarting a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.force_restart_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Forcibly restarting virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.force_restart_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+#### Suspending virtual machines
+
+##### Suspending a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.suspend_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+suspended_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Suspending virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.suspend_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+suspended_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+#### Resuming virtual machines
+
+##### Resuming a specific virtual machine
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vm = vm_api.resume_vm({
+    "where": {
+        "id": "vm_id"
+    }
+})[0]
+
+wait_tasks([with_task_vm.task_id], api_client)
+
+resumed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
+```
+
+##### Resuming virtual machines in batches
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_vms = vm_api.resume_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+resumed_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+### Deleting a virtual machine
+
+#### Recycle bin
+
+##### Moving virtual machines to the recycle bin
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_delete_vms = vm_api.move_vm_to_recycle_bin({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+vm_moved_to_recycle_bin = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+##### Restoring virtual machines from the recycle bin
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_delete_vms = vm_api.recover_vm_from_recycle_bin({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
+ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
+
+wait_tasks(tasks, api_client)
+
+recovered_vms = vm_api.get_vms({"where": {"id_in": ids}})
+```
+
+#### Permanently deleting virtual machines
+
+```python
+from cloudtower import ApiClient, Configuration, VmApi
+from cloudtower.utils import wait_tasks
+
+api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
+
+vm_api = VmApi(api_client)
+with_task_delete_vms = vm_api.delete_vm({
+    "where": {
+        "id_in": ["vm_id_1", "vm_id_2"]
+    }
+})
+
+tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
+
+wait_tasks(tasks, api_client)
+```
+
+## Example scenarios
+
+### Backing up a virtual machine
 
 ```python
 from cloudtower import ApiClient
@@ -243,18 +1651,18 @@ def create_vm_snapshot(
     vm_api = VmApi(api_client)
     vm_snapshot_api = VmSnapshotApi(api_client)
     iscsi_lun_snapshot_api = IscsiLunSnapshotApi(api_client)
-    # 1. Get the information of the virtual machine to be backed up, here we need the id of the virtual machine to construct the parameters for creating a snapshot.
+    # 1. Obtain the virtual machine information for the backup. Here, we use the virtual machine ID to build the parameters for creating a snapshot.
     vm = vm_api.get_vms({
         "where": {
             "name": target_vm_name
         },
         "first": 1
     })
-    # When the VMTools has been installed and started in the virtual machine, the consistent_type can use FILE_SYSTEM_CONSISTENT to represent a file system consistency snapshot.
+    # When VMTools is installed and is functioning normally, set consistent_type to FILE_SYSTEM_CONSISTENT to create a file-system-consistent snapshot.
     if vm.vm_tools_status != VmToolsStatus.RUNNING and consistent_type == ConsistentType.FILE_SYSTEM_CONSISTENT:
         consistent_type = ConsistentType.CRASH_CONSISTENT
 
-    # 2. Create a snapshot of the virtual machine.
+    # 2. Create the virtual machine snapshot.
     snapshots_with_task = vm_snapshot_api.create_vm_snapshot({
         "data": [
             {
@@ -265,18 +1673,19 @@ def create_vm_snapshot(
         ]
     })
 
-    # 3. Wait for the task to finish.
+    # 3. Wait for the task to complete.
     wait_tasks([snapshots_with_task[0].task_id], api_client)
 
-    # 4. Query the generated virtual machine snapshot according to the returned id.
+    # 4. Query the created VM snapshot by the returned ID.
     snapshot = vm_snapshot_api.get_vm_snapshots({
         "where": {
             "id": snapshots_with_task.data.id
         }
     })[0]
-    # 5. The vm_disks in the returned snapshot includes the virtual disk information of the snapshot.
-    # If the type is DISK, it indicates a corresponding volume, which contains a snapshot_local_id, indicating the local_id of the lun snapshot corresponding to the virtual volume.
-    # If the type is CD-ROM, it indicates a mounted CD-ROM, and no lun snapshot has been generated.
+    # 5. Extract the virtual disk information from vm_disks in the returned snapshot.
+    # The DISK type represents a volume. Each may include a snapshot_local_id, which is the local_id of the corresponding LUN snapshot.
+    # The CD-ROM type represents a mounted CD-ROM, which does not generate any LUN snapshots.
+
     lun_snapshot_ids = []
     for disk in snapshot.vm_disks:
         if disk.type == "DISK":
@@ -292,12 +1701,11 @@ def create_vm_snapshot(
         "vm_snapshot": snapshot,
         "lun_snapshots": lun_snapshots
     }
-
 ```
 
-### Build Dashboard
+### Building dashboard
 
-#### Define utility methods
+#### Defining utility methods
 
 ```python
 from functools import reduce
@@ -325,7 +1733,7 @@ def format_unit(base: int, units, step=1024):
     return "{:.2f}{}".format(base, units[-1])
 ```
 
-#### Build alart information
+#### Building alert information
 
 ```python
 def build_alerts(api_client: ApiClient, cluster_ids):
@@ -351,9 +1759,9 @@ def build_alerts(api_client: ApiClient, cluster_ids):
     }
 ```
 
-#### Build hard disk information
+#### Building disk information
 
-> Here is an example of a mechanical hard disk
+> Use mechanical hard drives (HDDs) as an example.
 
 ```python
 def build_hdd_info(api_client: ApiClient, cluster_ids):
@@ -385,9 +1793,9 @@ def build_hdd_info(api_client: ApiClient, cluster_ids):
     return hdd
 ```
 
-#### Build performance metrics
+#### Building performance metrics
 
-> Get total CPU cores, total CPU frequency, used CPU frequency, total memory, used memory, total storage, used storage, invalid storage, and available storage of the specified cluster.
+> Retrieve the number of CPU cores, total CPU frequency, CPU utilization, total memory, used memory, total storage capacity, used storage capacity, failed storage capacity, and available storage capacity of a specified cluster.
 
 ```python
 def build_metrics(api_client: ApiClient, clusters, cluster_ids):
@@ -457,7 +1865,7 @@ def build_metrics(api_client: ApiClient, clusters, cluster_ids):
     return result
 ```
 
-#### Build Dashboard
+#### Building dashboard
 
 ```python
 def build_dashboard(api_client: ApiClient, datacenter_id: str = None, cluster_id: str = None):
