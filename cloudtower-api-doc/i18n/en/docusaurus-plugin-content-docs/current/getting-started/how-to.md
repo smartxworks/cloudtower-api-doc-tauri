@@ -1,24 +1,27 @@
 ---
-title: How To Use API References
+title: How to read the API reference
 sidebar_position: 13
 ---
+
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['terminology']['en-US']['PRODUCT']} API is developed following the OpenApi Specification v3.0.0., and can be called using cURL or any HTTP client. </>
+The <>{Terminology['terminology']['en-US']['PRODUCT']} API is developed based on the OpenAPI v3.0.0 specification and can be called using the `curl` or any HTTP client. </>
 
-Currently each interface document includes:
- * Request: Request data
-   * header parameters: Request parameters in the header
-   * request body schema: Request filed description in body
-* Response: Return data
-  * 200: Description of data fields returned after a successful request.
-  * 400: Description of the returned data field when the requested data is incorrect.
-  * 404: A return when no corresponding operation resource can be found.
-  * 500: An error within the service
+Each API documentation entry consists of the following sections:
 
-Note: The panel explained by each field is folded by default. Click > to expand the details.
+- Request: Request data.
+  - `header parameters`: Parameters required in the request header.
+  - `request body schema`: Description of the fields in the request body.
+- **Response**: Response data.
+  - `200`: Explanation of the data fields returned when the request succeeds.
+  - `400`: Explanation of the data fields returned when the request data is invalid.
+  - `404`: Returned when the corresponding resource cannot be found.
+  - `500`: Returned when an internal service error occurs.
 
-The panel to the right of the document includes:
-* Try it: Call panel. Click the Try it button to expand the debugging panel, and you can enter parameters in the panel to call the page.
-* Request samples: The calling example panel provides JSON examples and curl example codes of API interface calls.
-* Response samples: Return to the example panel, which provides examples returned by the API interface.
+**Note**: Each field description panel is collapsed by default. Click `>` to expand details.
+
+The panel on the right side of the document contains:
+
+- Try it: The request panel. Click `Try it` to expand the panel, where you can enter parameters and make API calls directly from the page.
+- **Request samples**: The request examples panel. It provides JSON examples and `curl` command samples for calling the API.
+- **Response samples**: The response examples panel. It provides example responses returned by the API.

@@ -1,62 +1,62 @@
 ---
-title: VM Power Operations
+title: Managing virtual machine power
 sidebar_position: 44
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import GoBatchRestart from '../../../../../code_blocks/vm-operation/batch-restart/go.md'
-import GoBatchResume from '../../../../../code_blocks/vm-operation/batch-resume/go.md'
-import GoBatchShutdown from '../../../../../code_blocks/vm-operation/batch-shutdown/go.md'
-import GoBatchStart from '../../../../../code_blocks/vm-operation/batch-start/go.md'
-import GoBatchSuspend from '../../../../../code_blocks/vm-operation/batch-suspend/go.md'
-import GoForceBatcvhRestart from '../../../../../code_blocks/vm-operation/force-batch-restart/go.md'
-import GoForceBatchShutdown from '../../../../../code_blocks/vm-operation/force-batch-shutdown/go.md'
-import GoForceRestart from '../../../../../code_blocks/vm-operation/force-restart/go.md'
-import GoForceShutdown from '../../../../../code_blocks/vm-operation/force-shutdown/go.md'
-import GoRestart from '../../../../../code_blocks/vm-operation/restart/go.md'
-import GoResume from '../../../../../code_blocks/vm-operation/resume/go.md'
-import GoShutdown from '../../../../../code_blocks/vm-operation/shutdown/go.md'
-import GoStart from '../../../../../code_blocks/vm-operation/start/go.md'
-import GoStartTo from '../../../../../code_blocks/vm-operation/start-to/go.md'
-import GoSuspend from '../../../../../code_blocks/vm-operation/suspend/go.md'
+import GoBatchRestart from '../../code_blocks/vm-operation/batch-restart/go.md'
+import GoBatchResume from '../../code_blocks/vm-operation/batch-resume/go.md'
+import GoBatchShutdown from '../../code_blocks/vm-operation/batch-shutdown/go.md'
+import GoBatchStart from '../../code_blocks/vm-operation/batch-start/go.md'
+import GoBatchSuspend from '../../code_blocks/vm-operation/batch-suspend/go.md'
+import GoForceBatcvhRestart from '../../code_blocks/vm-operation/force-batch-restart/go.md'
+import GoForceBatchShutdown from '../../code_blocks/vm-operation/force-batch-shutdown/go.md'
+import GoForceRestart from '../../code_blocks/vm-operation/force-restart/go.md'
+import GoForceShutdown from '../../code_blocks/vm-operation/force-shutdown/go.md'
+import GoRestart from '../../code_blocks/vm-operation/restart/go.md'
+import GoResume from '../../code_blocks/vm-operation/resume/go.md'
+import GoShutdown from '../../code_blocks/vm-operation/shutdown/go.md'
+import GoStart from '../../code_blocks/vm-operation/start/go.md'
+import GoStartTo from '../../code_blocks/vm-operation/start-to/go.md'
+import GoSuspend from '../../code_blocks/vm-operation/suspend/go.md'
 
-import JavaBatchRestart from '../../../../../code_blocks/vm-operation/batch-restart/java.md'
-import JavaBatchResume from '../../../../../code_blocks/vm-operation/batch-resume/java.md'
-import JavaBatchShutdown from '../../../../../code_blocks/vm-operation/batch-shutdown/java.md'
-import JavaBatchStart from '../../../../../code_blocks/vm-operation/batch-start/java.md'
-import JavaBatchSuspend from '../../../../../code_blocks/vm-operation/batch-suspend/java.md'
-import JavaForceBatcvhRestart from '../../../../../code_blocks/vm-operation/force-batch-restart/java.md'
-import JavaForceBatchShutdown from '../../../../../code_blocks/vm-operation/force-batch-shutdown/java.md'
-import JavaForceRestart from '../../../../../code_blocks/vm-operation/force-restart/java.md'
-import JavaForceShutdown from '../../../../../code_blocks/vm-operation/force-shutdown/java.md'
-import JavaRestart from '../../../../../code_blocks/vm-operation/restart/java.md'
-import JavaResume from '../../../../../code_blocks/vm-operation/resume/java.md'
-import JavaShutdown from '../../../../../code_blocks/vm-operation/shutdown/java.md'
-import JavaStart from '../../../../../code_blocks/vm-operation/start/java.md'
-import JavaStartTo from '../../../../../code_blocks/vm-operation/start-to/java.md'
-import JavaSuspend from '../../../../../code_blocks/vm-operation/suspend/java.md'
+import JavaBatchRestart from '../../code_blocks/vm-operation/batch-restart/java.md'
+import JavaBatchResume from '../../code_blocks/vm-operation/batch-resume/java.md'
+import JavaBatchShutdown from '../../code_blocks/vm-operation/batch-shutdown/java.md'
+import JavaBatchStart from '../../code_blocks/vm-operation/batch-start/java.md'
+import JavaBatchSuspend from '../../code_blocks/vm-operation/batch-suspend/java.md'
+import JavaForceBatcvhRestart from '../../code_blocks/vm-operation/force-batch-restart/java.md'
+import JavaForceBatchShutdown from '../../code_blocks/vm-operation/force-batch-shutdown/java.md'
+import JavaForceRestart from '../../code_blocks/vm-operation/force-restart/java.md'
+import JavaForceShutdown from '../../code_blocks/vm-operation/force-shutdown/java.md'
+import JavaRestart from '../../code_blocks/vm-operation/restart/java.md'
+import JavaResume from '../../code_blocks/vm-operation/resume/java.md'
+import JavaShutdown from '../../code_blocks/vm-operation/shutdown/java.md'
+import JavaStart from '../../code_blocks/vm-operation/start/java.md'
+import JavaStartTo from '../../code_blocks/vm-operation/start-to/java.md'
+import JavaSuspend from '../../code_blocks/vm-operation/suspend/java.md'
 
-import PythonBatchRestart from '../../../../../code_blocks/vm-operation/batch-restart/python.md'
-import PythonBatchResume from '../../../../../code_blocks/vm-operation/batch-resume/python.md'
-import PythonBatchShutdown from '../../../../../code_blocks/vm-operation/batch-shutdown/python.md'
-import PythonBatchStart from '../../../../../code_blocks/vm-operation/batch-start/python.md'
-import PythonBatchSuspend from '../../../../../code_blocks/vm-operation/batch-suspend/python.md'
-import PythonForceBatcvhRestart from '../../../../../code_blocks/vm-operation/force-batch-restart/python.md'
-import PythonForceBatchShutdown from '../../../../../code_blocks/vm-operation/force-batch-shutdown/python.md'
-import PythonForceRestart from '../../../../../code_blocks/vm-operation/force-restart/python.md'
-import PythonForceShutdown from '../../../../../code_blocks/vm-operation/force-shutdown/python.md'
-import PythonRestart from '../../../../../code_blocks/vm-operation/restart/python.md'
-import PythonResume from '../../../../../code_blocks/vm-operation/resume/python.md'
-import PythonShutdown from '../../../../../code_blocks/vm-operation/shutdown/python.md'
-import PythonStart from '../../../../../code_blocks/vm-operation/start/python.md'
-import PythonStartTo from '../../../../../code_blocks/vm-operation/start-to/python.md'
-import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/python.md'
+import PythonBatchRestart from '../../code_blocks/vm-operation/batch-restart/python.md'
+import PythonBatchResume from '../../code_blocks/vm-operation/batch-resume/python.md'
+import PythonBatchShutdown from '../../code_blocks/vm-operation/batch-shutdown/python.md'
+import PythonBatchStart from '../../code_blocks/vm-operation/batch-start/python.md'
+import PythonBatchSuspend from '../../code_blocks/vm-operation/batch-suspend/python.md'
+import PythonForceBatcvhRestart from '../../code_blocks/vm-operation/force-batch-restart/python.md'
+import PythonForceBatchShutdown from '../../code_blocks/vm-operation/force-batch-shutdown/python.md'
+import PythonForceRestart from '../../code_blocks/vm-operation/force-restart/python.md'
+import PythonForceShutdown from '../../code_blocks/vm-operation/force-shutdown/python.md'
+import PythonRestart from '../../code_blocks/vm-operation/restart/python.md'
+import PythonResume from '../../code_blocks/vm-operation/resume/python.md'
+import PythonShutdown from '../../code_blocks/vm-operation/shutdown/python.md'
+import PythonStart from '../../code_blocks/vm-operation/start/python.md'
+import PythonStartTo from '../../code_blocks/vm-operation/start-to/python.md'
+import PythonSuspend from '../../code_blocks/vm-operation/suspend/python.md'
 
+## Powering on virtual machines
 
-## Power on a virtual machine:
-
-### The specified virtual machine is powered on and scheduled to an appropriate virtual machine automatically
+### Powering on a specific virtual machine and automatically scheduling it to a proper host
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -71,7 +71,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### The virtual machines are powered on in batch and scheduled to appropriate virtual machines automatically
+### Powering on virtual machines in batches and automatically scheduling them to a proper host
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -86,8 +86,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-
-### The virtual machine is powered on to a specified host
+### Powering on a virtual machine and placing it on a specified host
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -102,9 +101,9 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-## Power off a virtual machine
+## Shutting down virtual machines
 
-### Shut down the specified virtual machine
+### Shutting down a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -119,7 +118,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Shut down the virtual machines in batch
+### Shutting down virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -134,7 +133,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Power off the specified virtual machine
+### Forcibly powering off a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -149,7 +148,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Power off virtual machines in batch
+### Forcibly powering off virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -164,9 +163,9 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-## Reboot a virtual machine
+## Restrating virtual machines
 
-### Reboot a specified virtual machine
+### Restarting a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -181,7 +180,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Reboot the virtual machines in batch
+### Restarting virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -196,7 +195,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Reboot the specified virtual machine
+### Forcibly restarting a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -211,7 +210,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Force reboot the virtual machines in batch
+### Forcibly restarting virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -226,9 +225,9 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-## Suspend a virtual machine
+## Suspending virtual machines
 
-### Suspend the specified virtual machine
+### Suspending a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -243,7 +242,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Suspend the virtual machines in batch
+### Suspending virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -258,9 +257,9 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-## Resume a virtual machine
+## Resuming virtual machines
 
-### Resume the specified virtual machine
+### Resuming a specific virtual machine
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -275,7 +274,7 @@ import PythonSuspend from '../../../../../code_blocks/vm-operation/suspend/pytho
 
 </Tabs>
 
-### Resume the virtual machines in batch
+### Resuming virtual machines in batches
 
 <Tabs>
 <TabItem value="py" label="Python">

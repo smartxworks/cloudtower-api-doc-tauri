@@ -1,10 +1,13 @@
 ---
-title: Quick Start
+title: Quick start
 sidebar_position: 12
 ---
 
-Here is an example using curl to obtain a list of all virtual machines in the environment. You can copy the code to your local environment. In order to process JSON data, we use the jq tool in the example. Please make sure that curl and jq are installed in your local environment.
-You can execute the following script by running `./test.sh -u <username> -p <password> -e <endpoint>`.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Here, `curl` is used as an example to create a simple script that retrieves a list of all virtual machines in the environment. You can copy the code and run it in your local environment. To process JSON data in this example, we use the `jq` tool. Make sure that both `curl` and `jq` are preinstalled in your local environment.
+Run the following script with: `./test.sh -u <username> -p <password> -e <endpoint>`/.
 
 <Tabs>
 <TabItem value="shell" label="Shell">
@@ -34,25 +37,24 @@ if [ -z "$endpoint" ]; then
 fi
 
 
-# Login via /v2/api/login and get the token
+# Log in via /v2/api/login and obtain a token
 token=$(curl -X POST -H "Content-Type: application/json" -d '{"username":"'$username'","password":"'$password'","source":"LOCAL"}' $endpoint/v2/api/login | jq -r ".data.token")
 
-# Authenticate the request by carrying the token in the Authorization header, and get the VM list via /v2/api/get-vms
+# Use the token in the Authorization header for authentication,
+# and retrieve the virtual machine list via /v2/api/get-vms
 curl \
     -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: $token" \
     -d '{"where":{}}' http://192.168.27.57/v2/api/get-vms | jq ".[]"
-
 ```
 
 </TabItem>
 </Tabs>
 
+If you prefer to use an SDK, refer to the following:
 
-To use an SDK, please refer to:
-
-- [Go SDK](/en/sdks/go)
-- [Python SDK](/en/sdks/python)
-- [Java SDK](/en/sdks/java)
+- [Go SDK](/sdks/go)
+- [Python SDK](/sdks/python)
+- [Java SDK](/sdks/java)
 - [Node SDK](https://github.com/smartxworks/cloudtower-node-sdk)
