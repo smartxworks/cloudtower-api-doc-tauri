@@ -3,7 +3,7 @@ title: 适配说明
 sidebar_position: 41
 ---
 import Terminology from '@site/terminology.json'
-import Download from '../../swagger/components/Download';
+import Download from '@site/swagger/components/Download';
 
 export const AddressWrapper = (props) => {
   const getUrl = (lng, version) => `https://github.com/smartxworks/cloudtower-${lng}-sdk/releases/tag/v${version}`

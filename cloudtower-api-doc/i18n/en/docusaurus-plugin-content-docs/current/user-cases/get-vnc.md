@@ -8,7 +8,7 @@ import FormatVncProxy from '@site/code_blocks/FormatVncProxy.md'
 import GetVnc from '@site/code_blocks/GetVnc.md'
 import GetVncResponse from '@site/code_blocks/GetVncResponse.md'
 
-Currently, the {Terminology['terminology']['en-US']['PRODUCT']} API and related SDKs do not provide APIs for obtaining VNC information. If you need to fetch the VNC information or perform operations such as opening a virtual machine console, you can send the following request token and construct a noVNC link. </>
+<>Currently, the {Terminology['terminology']['en-US']['PRODUCT']} API and related SDKs do not provide APIs for obtaining VNC information. If you need to fetch the VNC information or perform operations such as opening a virtual machine console, you can send the following request token and construct a noVNC link. </>
 
 <GetVnc />
 
@@ -51,7 +51,7 @@ If you want to establish a direct connection, you can construct the following UR
 wss://192.168.5.2/websockify/?uuid=00000000-0000-0000-0000-000000000000&token=1a2bc3d4567e89f0a1b2c3d4e5f6a7b8&host=192.168.5.4
 ```
 
-If you want to forward via {Terminology['terminology']['en-US']['PRODUCT']}, you need to process the token first. </>
+<>If you want to forward via {Terminology['terminology']['en-US']['PRODUCT']}, you need to process the token first. </>
 
 Suppose that the token is `MTIzNDU2Nzg5YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=` (base64-encoded from `123456789abcdefghijklmnopqrstuvwxyz`). You need to escape special characters such as `/`, `+`, and `=`.
 

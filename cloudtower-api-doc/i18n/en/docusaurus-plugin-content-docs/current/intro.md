@@ -6,11 +6,11 @@ slug: /
 
 import Terminology from '@site/terminology.json'
 
-Thank you for using the {Terminology['terminology']['en-US']['PRODUCT']} API. Please read the following documentation carefully before using it. </>
+<>Thank you for using the {Terminology['terminology']['en-US']['PRODUCT']} API. Please read the following documentation carefully before using it. </>
 
 ## Introduction
 
-The API {Terminology['terminology']['en-US']['PRODUCT']} can be used to access various resources managed by {Terminology['terminology']['en-US']['PRODUCT']}. The API is written following the OpenAPI v3.0.0 specification and provides SDKs in multiple languages, including Java, Go, Python, and Nodejs. </>
+<>The API {Terminology['terminology']['en-US']['PRODUCT']} can be used to access various resources managed by {Terminology['terminology']['en-US']['PRODUCT']}. The API is written following the OpenAPI v3.0.0 specification and provides SDKs in multiple languages, including Java, Go, Python, and Nodejs. </>
 
 ## Request type
 

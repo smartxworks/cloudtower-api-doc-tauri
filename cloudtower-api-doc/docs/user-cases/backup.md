@@ -2,11 +2,11 @@
 title: 虚拟机备份
 ---
 import Terminology from '@site/terminology'
-import GetVm from '../../code_blocks/GetVm.md'
-import CreateVmSnapshot from '../../code_blocks/CreateVmSnapshot.md'
-import GetTask from '../../code_blocks/GetTask.md'
-import GetVmSnapshot from '../../code_blocks/GetVmSnapshot.md'
-import GetLunSnapshot from '../../code_blocks/GetLunSnapshot.md'
+import GetVm from '@site/code_blocks/GetVm.md'
+import CreateVmSnapshot from '@site/code_blocks/CreateVmSnapshot.md'
+import GetTask from '@site/code_blocks/GetTask.md'
+import GetVmSnapshot from '@site/code_blocks/GetVmSnapshot.md'
+import GetLunSnapshot from '@site/code_blocks/GetLunSnapshot.md'
 
 对虚拟机的备份分为两部分
 1. 虚拟机配置的备份，例如虚拟机名称、vCPU 数量等。

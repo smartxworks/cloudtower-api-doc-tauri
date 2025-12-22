@@ -4,7 +4,7 @@ title: Java
 
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['terminology']['en-US']['PRODUCT']} SDK for Java supports Java 1.8 or later.
+<>The {Terminology['terminology']['en-US']['PRODUCT']} SDK for Java supports Java 1.8 or later.</>
 
 - [Source repository](https://github.com/smartxworks/cloudtower-java-sdk)
 - [Download the SDK](https://github.com/smartxworks/cloudtower-java-sdk/releases)

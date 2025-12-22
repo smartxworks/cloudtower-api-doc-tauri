@@ -6,25 +6,25 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-import GoSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/go.md'
-import GoCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/go.md'
-import GoCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/go.md'
-import GoCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
-import GoCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/go.md'
+import GoSimpleCreate from '@site/code_blocks/create-blank-vm/simple-create/go.md'
+import GoCreateWithCDROM from '@site/code_blocks/create-blank-vm/create-with-cdrom/go.md'
+import GoCreateWithVolume from '@site/code_blocks/create-blank-vm/create-with-volume/go.md'
+import GoCreateWithNewVolume from '@site/code_blocks/create-blank-vm/create-with-new-volume/go.md'
+import GoCreateWithNic from '@site/code_blocks/create-blank-vm/create-with-new-volume/go.md'
 
 
-import JavaSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/java.md'
-import JavaCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/java.md'
-import JavaCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/java.md'
-import JavaCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
-import JavaCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/java.md'
+import JavaSimpleCreate from '@site/code_blocks/create-blank-vm/simple-create/java.md'
+import JavaCreateWithCDROM from '@site/code_blocks/create-blank-vm/create-with-cdrom/java.md'
+import JavaCreateWithVolume from '@site/code_blocks/create-blank-vm/create-with-volume/java.md'
+import JavaCreateWithNewVolume from '@site/code_blocks/create-blank-vm/create-with-new-volume/java.md'
+import JavaCreateWithNic from '@site/code_blocks/create-blank-vm/create-with-new-volume/java.md'
 
 
-import PythonSimpleCreate from '../../code_blocks/create-blank-vm/simple-create/python.md'
-import PythonCreateWithCDROM from '../../code_blocks/create-blank-vm/create-with-cdrom/python.md'
-import PythonCreateWithVolume from '../../code_blocks/create-blank-vm/create-with-volume/python.md'
-import PythonCreateWithNewVolume from '../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
-import PythonCreateWithNic from '../../code_blocks/create-blank-vm/create-with-new-volume/python.md'
+import PythonSimpleCreate from '@site/code_blocks/create-blank-vm/simple-create/python.md'
+import PythonCreateWithCDROM from '@site/code_blocks/create-blank-vm/create-with-cdrom/python.md'
+import PythonCreateWithVolume from '@site/code_blocks/create-blank-vm/create-with-volume/python.md'
+import PythonCreateWithNewVolume from '@site/code_blocks/create-blank-vm/create-with-new-volume/python.md'
+import PythonCreateWithNic from '@site/code_blocks/create-blank-vm/create-with-new-volume/python.md'
 
 ## 简单创建
 

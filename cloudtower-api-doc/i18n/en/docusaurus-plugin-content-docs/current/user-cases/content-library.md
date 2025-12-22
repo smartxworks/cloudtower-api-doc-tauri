@@ -14,7 +14,8 @@ You can create a virtual machine from a template in content library and configur
 - `cluster_name`: Select the name of the cluster where the virtual machine will reside.
 - `vm_name`: Enter the name of the virtual machine.
 
-The return value is the created virtual machine. <Tabs>
+The return value is the created virtual machine. 
+<Tabs>
 
 <TabItem value="py" label="Python">
 
