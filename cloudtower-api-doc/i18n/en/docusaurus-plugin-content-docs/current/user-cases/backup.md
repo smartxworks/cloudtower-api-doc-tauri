@@ -3,11 +3,11 @@ title: Backing up a virtual machine
 ---
 
 import Terminology from '@site/terminology'
-import GetVm from '../../code_blocks/GetVm.md'
-import CreateVmSnapshot from '../../code_blocks/CreateVmSnapshot.md'
-import GetTask from '../../code_blocks/GetTask.md'
-import GetVmSnapshot from '../../code_blocks/GetVmSnapshot.md'
-import GetLunSnapshot from '../../code_blocks/GetLunSnapshot.md'
+import GetVm from '@site/code_blocks/GetVm.md'
+import CreateVmSnapshot from '@site/code_blocks/CreateVmSnapshot.md'
+import GetTask from '@site/code_blocks/GetTask.md'
+import GetVmSnapshot from '@site/code_blocks/GetVmSnapshot.md'
+import GetLunSnapshot from '@site/code_blocks/GetLunSnapshot.md'
 
 The backup of a virtual machine can be divided into two parts:
 
@@ -72,4 +72,4 @@ You can use the API to retrieve information for a set of LUN snapshots by their 
 
 <GetLunSnapshot />
 
-The `local_id` field of each LUN snapshot is the identifier in {Terminology['terminology']['en-US']['STORAGE_PRODUCT']}, which can be further interacted with through the {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} API. </>
+<>The `local_id` field of each LUN snapshot is the identifier in {Terminology['terminology']['en-US']['STORAGE_PRODUCT']}, which can be further interacted with through the {Terminology['terminology']['en-US']['STORAGE_PRODUCT']} API. </>

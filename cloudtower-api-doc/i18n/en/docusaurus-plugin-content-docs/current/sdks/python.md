@@ -160,7 +160,6 @@ else:
 #### Custom headers
 
 <>
-
 > The {Terminology['terminology']['en-US']['PRODUCT']} API supports setting the `content-language` field in the request header to specify the response language. Available values are `en-US` and `en-US`. The default is `en-US`.
 > </>
 

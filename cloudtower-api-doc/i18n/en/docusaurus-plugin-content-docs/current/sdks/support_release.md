@@ -4,7 +4,7 @@ sidebar_position: 41
 ---
 
 import Terminology from '@site/terminology.json'
-import Download from '../../swagger/components/Download';
+import Download from '@site/swagger/components/Download';
 
 export const AddressWrapper = (props) => {
 const getUrl = (lng, version) => `https://github.com/smartxworks/cloudtower-${lng}-sdk/releases/tag/v${version}`
@@ -17,12 +17,12 @@ props.skip_node ? <></> : <> | <a href={getUrl('node', props.node_version || pro
 
 ## Upgrade recommendation
 
-The <>{Terminology['terminology']['en-US']['PRODUCT']} API SDK supports backward compatibility.If SDK 2.9.0 supports up to {Terminology['terminology']['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['terminology']['en-US']['PRODUCT']} 2.8.0.
+<>The {Terminology['terminology']['en-US']['PRODUCT']} API SDK supports backward compatibility.If SDK 2.9.0 supports up to {Terminology['terminology']['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['terminology']['en-US']['PRODUCT']} 2.8.0.
 It is recommended to upgrade the SDK first, and then upgrade {Terminology['terminology']['en-US']['PRODUCT']}.  </>
 
 ## Compatibility
 
-The following lists the compatible versions that can be upgraded with {Terminology['terminology']['en-US']['PRODUCT']}. Versions after SDK 2.0 are recommended because these versions have more issues fixed and are more stable. If you need to use SDK versions earlier than 2.0 or specific SDK patch releases, you can check the corresponding SDK GitHub release pages. </>
+<>The following lists the compatible versions that can be upgraded with {Terminology['terminology']['en-US']['PRODUCT']}. Versions after SDK 2.0 are recommended because these versions have more issues fixed and are more stable. If you need to use SDK versions earlier than 2.0 or specific SDK patch releases, you can check the corresponding SDK GitHub release pages. </>
 
 | <strong>SDK version</strong>           | Product version                                                                                                                                            | <strong>SDK release date</strong>          | <strong>Download</strong>                                                     |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------- |

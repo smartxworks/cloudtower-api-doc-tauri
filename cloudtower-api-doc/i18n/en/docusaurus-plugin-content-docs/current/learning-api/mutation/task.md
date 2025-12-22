@@ -6,7 +6,7 @@ import Terminology from '@site/terminology.json'
 
 ### Return value
 
-The return value of <>{Terminology['terminology']['en-US']['PRODUCT']} API requests that perform changes is either a <code>WithTask{`<T>`}</code> object or <code>Array{`<WithTask<T>>`}</code> objects. <code>WithTask</code> is a generic type that contains `task_id` and the corresponding return value. </>
+<>The return value of {Terminology['terminology']['en-US']['PRODUCT']} API requests that perform changes is either a <code>WithTask{`<T>`}</code> object or <code>Array{`<WithTask<T>>`}</code> objects. <code>WithTask</code> is a generic type that contains `task_id` and the corresponding return value. </>
 
 ```typescript
 type WithTask<T> = {

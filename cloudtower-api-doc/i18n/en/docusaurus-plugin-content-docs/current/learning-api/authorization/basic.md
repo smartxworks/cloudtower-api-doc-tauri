@@ -3,8 +3,8 @@ title: Token authentication
 ---
 
 import Terminology from '@site/terminology.json'
-import GetToken from '../../../code_blocks/GetToken.md'
-import GetTokenResponse from '../../../code_blocks/GetTokenResponse.md'
+import GetToken from '@site/code_blocks/GetToken.md'
+import GetTokenResponse from '@site/code_blocks/GetTokenResponse.md'
 
 <>From the example in **Quick start**, you can see that using the {Terminology['terminology']['en-US']['PRODUCT']} API involves two main steps. First, log in to obtain a token used for authentication. Second, include the token in the `Authorization` header when calling the corresponding API to perform operations. The token obtained in the first step does not have an expiration time and can be used indefinitely. Therefore, for a series of operations, you only need to obtain the token once. </>
 

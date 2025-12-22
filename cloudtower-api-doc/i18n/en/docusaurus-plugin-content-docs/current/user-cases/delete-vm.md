@@ -6,17 +6,17 @@ sidebar_position: 45
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import GoDelete from '../../code_blocks/delete-vm/delete/go.md'
-import GoToRecycleBin from '../../code_blocks/delete-vm/to-recycle-bin/go.md'
-import GoRecoverFromRecycleBin from '../../code_blocks/delete-vm/recover-from-recycle-bin/go.md'
+import GoDelete from '@site/code_blocks/delete-vm/delete/go.md'
+import GoToRecycleBin from '@site/code_blocks/delete-vm/to-recycle-bin/go.md'
+import GoRecoverFromRecycleBin from '@site/code_blocks/delete-vm/recover-from-recycle-bin/go.md'
 
-import JavaDelete from '../../code_blocks/delete-vm/delete/java.md'
-import JavaToRecycleBin from '../../code_blocks/delete-vm/to-recycle-bin/java.md'
-import JavaRecoverFromRecycleBin from '../../code_blocks/delete-vm/recover-from-recycle-bin/java.md'
+import JavaDelete from '@site/code_blocks/delete-vm/delete/java.md'
+import JavaToRecycleBin from '@site/code_blocks/delete-vm/to-recycle-bin/java.md'
+import JavaRecoverFromRecycleBin from '@site/code_blocks/delete-vm/recover-from-recycle-bin/java.md'
 
-import PythonDelete from '../../code_blocks/delete-vm/delete/python.md'
-import PythonToRecycleBin from '../../code_blocks/delete-vm/to-recycle-bin/python.md'
-import PythonRecoverFromRecycleBin from '../../code_blocks/delete-vm/recover-from-recycle-bin/python.md'
+import PythonDelete from '@site/code_blocks/delete-vm/delete/python.md'
+import PythonToRecycleBin from '@site/code_blocks/delete-vm/to-recycle-bin/python.md'
+import PythonRecoverFromRecycleBin from '@site/code_blocks/delete-vm/recover-from-recycle-bin/python.md'
 
 ## Recycle bin
 

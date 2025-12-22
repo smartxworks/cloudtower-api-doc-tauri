@@ -6,7 +6,7 @@ import Terminology from '@site/terminology.json'
 
 In the default environment, you can log in with your username and password to obtain a token, which can then be used for authentication. However, when two-factor authentication is enabled, you cannot obtain a token using only your username and password. An additional second-factor verification is required. Since API operations are non-interactive, the second-factor verification cannot be performed in this scenario.
 
-To enable the use of the {Terminology['terminology']['en-US']['PRODUCT']} API in such environments, {Terminology['terminology']['en-US']['PRODUCT']} introduces an API Key to replace the token for authentication. </>
+<>To enable the use of the {Terminology['terminology']['en-US']['PRODUCT']} API in such environments, {Terminology['terminology']['en-US']['PRODUCT']} introduces an API Key to replace the token for authentication. </>
 
 ### Issuing an API key
 
