@@ -201,7 +201,7 @@ getTaskZhParams.ContentLanguage = pointy.String("en-US")
 taskZhRes, err := client.Task.GetTasks(getTaskZhParams)
 ```
 
-## Operation example
+## Operation examples
 
 ### Fetching virtual machines
 
@@ -3110,7 +3110,7 @@ func deleteVm(
 }
 ```
 
-## Example scenarios
+## Scenario examples
 
 ### Backing up a virtual machine
 

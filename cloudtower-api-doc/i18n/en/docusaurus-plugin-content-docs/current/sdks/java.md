@@ -55,7 +55,7 @@ client.setVerifyingSsl(false);
 VmApi vmApi = new VmApi(client);
 ```
 
-### Authentication
+### Authenticating
 
 ```java
 // Use the login method in UserApi to obtain a token.
@@ -189,7 +189,7 @@ client.addDefaultHeader("content-language", "fr-CA");
 alerts = alertApi.getAlerts(new GetAlertsRequestBody().first(1));
 ```
 
-## Operation example
+## Operation examples
 
 ### Fetching virtual machines
 
@@ -1751,7 +1751,7 @@ public class App {
 }
 ```
 
-## Example scenarios
+## Scenario examples
 
 ### Backing up a virtual machine
 

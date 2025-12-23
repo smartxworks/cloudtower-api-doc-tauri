@@ -1,5 +1,5 @@
 ---
-title: Maintenance mode
+title: Entering and exiting maintenance mode for a host
 ---
 
 import Tabs from '@theme/Tabs';
