@@ -17,7 +17,7 @@ props.skip_node ? <></> : <> | <a href={getUrl('node', props.node_version || pro
 
 ## Upgrade recommendation
 
-<>The {Terminology['terminology']['en-US']['PRODUCT']} API SDK supports backward compatibility.If SDK 2.9.0 supports up to {Terminology['terminology']['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['terminology']['en-US']['PRODUCT']} 2.8.0.
+<>The {Terminology['terminology']['en-US']['PRODUCT']} API SDK supports backward compatibility. If SDK 2.9.0 supports up to {Terminology['terminology']['en-US']['PRODUCT']} 3.0.0, it can also support {Terminology['terminology']['en-US']['PRODUCT']} 2.8.0.
 It is recommended to upgrade the SDK first, and then upgrade {Terminology['terminology']['en-US']['PRODUCT']}.  </>
 
 ## Compatibility

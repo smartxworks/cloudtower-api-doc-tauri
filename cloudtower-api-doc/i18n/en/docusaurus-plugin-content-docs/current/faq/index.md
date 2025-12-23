@@ -39,7 +39,7 @@ For virtual NICs, you can use the MAC address as an additional identifier.
 }
 ```
 
-## `connect_vlan_id`
+## connect_vlan_id
 
 This parameter may be confused with a VLAN ID. However, in this context, `connect_vlan_id` does not refer to a VLAN ID ranges from 0 to 4095. Instead, it specifies the CUID of the VLAN to be used.
 
@@ -97,7 +97,7 @@ For running virtual machines, modifying network settings such as static IP addre
 }
 ```
 
-## `ResourceLockedError`
+## ResourceLockedError
 
 <>Although the {Terminology['terminology']['en-US']['PRODUCT']} API is presented as an imperative API, the imperative API is actually converted into a declarative API. Repeating operations on the same resource may therefore cause dirty data conflicts. </>
 

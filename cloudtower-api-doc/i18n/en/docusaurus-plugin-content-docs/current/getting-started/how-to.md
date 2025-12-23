@@ -5,7 +5,7 @@ sidebar_position: 13
 
 import Terminology from '@site/terminology.json'
 
-<>The {Terminology['terminology']['en-US']['PRODUCT']} API is developed based on the OpenAPI v3.0.0 specification and can be called using the `curl` or any HTTP client. </>
+<>The {Terminology['terminology']['en-US']['PRODUCT']} API is developed based on the OpenAPI v3.0.0 specification and can be called using the <code>curl</code> or any HTTP client. </>
 
 Each API documentation entry consists of the following sections:
 

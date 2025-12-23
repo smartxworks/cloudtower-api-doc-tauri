@@ -230,7 +230,7 @@ print(vms.get()[0].name)
 client.close()
 ```
 
-## Operation example
+## Operation examples
 
 ### Fetching virtual machines
 
@@ -1625,7 +1625,7 @@ tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete
 wait_tasks(tasks, api_client)
 ```
 
-## Example scenarios
+## Scenario examples
 
 ### Backing up a virtual machine
 
