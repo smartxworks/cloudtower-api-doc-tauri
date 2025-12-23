@@ -7,7 +7,7 @@ import Terminology from '@site/terminology.json'
 
 ### Sorting parameters
 
-We define `OrderByInput` to sort the query results. By providing the `orderBy` parameter in your query, each sortable field (e.g., `int` and `string`) has an associated enum type with `_DESC` and `_ASC` values to define the sort order. Currently, only single-column sorting is supported. For example, if you want to sort virtual machines in descending order by CPU, you can use the following `orderBy` parameter:
+We define `OrderByInput` to sort the query results. By providing the `orderBy` parameter in your query, each sortable field (e.g., `int` and `string`) has an associated enum type with `_DESC` and `_ASC` values to define the sort order. Currently, only single-column sorting is supported. For example, if you want to sort virtual machines in descending order by CPU, you can use the following `orderBy` parameter: 
 
 ```json
 {

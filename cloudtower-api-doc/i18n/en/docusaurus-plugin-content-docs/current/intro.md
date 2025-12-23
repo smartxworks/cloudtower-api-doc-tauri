@@ -20,6 +20,6 @@ To ensure parameter flexibility and usage convenience, and to circumvent `GET` r
 
 ## What's more
 
-We provide a wide range of SDK usage examples. You can go to the \*Example demonstrations \* section to view the details. For specific API interfaces and field descriptions, refer to [API reference](/api/).
+We provide a wide range of SDK usage examples. You can go to the **Case demonstration** section to view the details. For specific API interfaces and field descriptions, refer to [API Reference](/api/).
 
 <>Thank you for choosing {Terminology['terminology']['en-US']['PRODUCT']} API. </>If you have any questions or need assistance, feel free to contact us.
