@@ -6,8 +6,7 @@ sidebar_position: 12
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Here, `curl` is used as an example to create a simple script that retrieves a list of all virtual machines in the environment. You can copy the code and run it in your local environment. To process JSON data in this example, we use the `jq` tool. Make sure that both `curl` and `jq` are preinstalled in your local environment.
-Run the following script with: `./test.sh -u <username> -p <password> -e <endpoint>`/.
+Here, `curl` is used as an example to create a simple script that retrieves a list of all virtual machines in the environment. You can copy the code and run it in your local environment. To process JSON data in this example, we use the `jq` tool. Make sure that both `curl` and `jq` are preinstalled in your local environment. Run the following script with: `./test.sh -u <username> -p <password> -e <endpoint>`.
 
 <Tabs>
 <TabItem value="shell" label="Shell">

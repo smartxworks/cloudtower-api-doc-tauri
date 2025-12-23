@@ -1,5 +1,5 @@
 ---
-title: How to read the API reference
+title: Introduction to the API reference
 sidebar_position: 13
 ---
 
@@ -9,7 +9,7 @@ import Terminology from '@site/terminology.json'
 
 Each API documentation entry consists of the following sections:
 
-- Request: Request data.
+- **Request**: Request data.
   - `header parameters`: Parameters required in the request header.
   - `request body schema`: Description of the fields in the request body.
 - **Response**: Response data.
@@ -22,6 +22,6 @@ Each API documentation entry consists of the following sections:
 
 The panel on the right side of the document contains:
 
-- Try it: The request panel. Click `Try it` to expand the panel, where you can enter parameters and make API calls directly from the page.
+- **Try it**: The request panel. Click `Try it` to expand the panel, where you can enter parameters and make API calls directly from the page.
 - **Request samples**: The request examples panel. It provides JSON examples and `curl` command samples for calling the API.
 - **Response samples**: The response examples panel. It provides example responses returned by the API.

@@ -6,7 +6,7 @@ import Terminology from '@site/terminology.json'
 
 ## Why do the IDs of some resources keep changing?
 
-<>In  {Terminology['terminology']['en-US']['PRODUCT']}</>, virtual disks and virtual NICs are virtual resources that do not correspond to any physical entities. They represent the connections between two types of resources. For example, a virtual disk represents the connection between a virtual machine and a virtual disk or a virtual CD-ROM.
+<>In {Terminology['terminology']['en-US']['PRODUCT']}</>, virtual disks and virtual NICs are virtual resources that do not correspond to any physical entities. They represent the connections between two types of resources. For example, a virtual disk represents the connection between a virtual machine and a virtual disk or a virtual CD-ROM.
 Since these resources cannot be uniquely identified during updates or synchronizations, each update or synchronization will delete the existing virtual resources and recreate them, which results in ID changes.
 When querying these resources, use other attributes instead of directly using IDs to accurately locate these resources.
 For example, you can query a virtual-volume-type virtual disk by using the IDs of the virtual machine and the corresponding virtual volume. The resulting virtual disk will be stable because both IDs used are stable.
@@ -107,7 +107,7 @@ For example, assume that request A attempts to expand an existing volume of a vi
 
 Conversely, if the latter request arrives after the lock is released, it may overwrite the results of the earlier request, causing unexpected impacts and dirty data.
 
-<>To prevent such issues, since Terminology['en-US']['PRODUCT']} API 3.3.0, an additional resource-locking mechanism has been implemented. When receiving a response with the status code `400`: </>
+<>To prevent such issues, since {Terminology['terminology']['en-US']['PRODUCT']} API 3.3.0, an additional resource-locking mechanism has been implemented. When receiving a response with the status code <code>400</code>: </>
 
 ```json
 {
