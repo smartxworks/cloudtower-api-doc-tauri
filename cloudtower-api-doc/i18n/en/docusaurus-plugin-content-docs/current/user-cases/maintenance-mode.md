@@ -4,6 +4,8 @@ title: Entering and exiting maintenance mode for a host
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
 ## Performing maintenance mode pre-check
 
@@ -14,44 +16,36 @@ Before placing a host in maintenance mode, you need to know which virtual machin
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, HostApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, HostApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 host_api = HostApi(api_client)
-
 host_id = ""
-
 precheck_task = host_api.enter_maintenance_mode_precheck({
   "where": {
     "id": host_id
   }
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   enterMaintenanceModePrecheckParams := host.EnterMaintenanceModePrecheckParams()
 	enterMaintenanceModePrecheckParams.RequestBody = &models.EnterMaintenanceModePrecheckRequestBody{
     Where: &models.HostWhereInput{
@@ -59,8 +53,8 @@ func main() {
     }
   }
   precheckTaskRes, err := client.Host.EnterMaintenanceModePrecheck(enterMaintenanceModePrecheckParams)
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -94,44 +88,36 @@ The `$HOST_ID` is the ID of the host that needs to be placed in maintenance mode
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, HostApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, HostApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 host_api = HostApi(api_client)
-
 task_id = ""
-
 precheck_task = host_api.enter_maintenance_mode_precheck_result({
   "where": {
     "id": task_id
   }
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   enterMaintenanceModeResultParams := host.EnterMaintenanceModeResultParams()
 	enterMaintenanceModeResultParams.RequestBody = &models.EnterMaintenanceModeResultRequestBody{
     Where: &models.TaskWhereInput{
@@ -139,8 +125,8 @@ func main() {
     }
   }
   precheckTaskResultRes, err := client.Host.EnterMaintenanceModePrecheckResult(enterMaintenanceModeParams)
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -180,16 +166,13 @@ The `shutdownVms` field lists the virtual machines that need to be shut down.
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, HostApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, HostApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 host_api = HostApi(api_client)
-
 host_id = ""
-
 host_api.enter_maintenance_mode({
   "where": {
     "id": host_id
@@ -197,30 +180,25 @@ host_api.enter_maintenance_mode({
   "data": {
     "shutdown_vms": ["someVmId1","someVmId2"]
   }
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   enterMaintenanceModeParams := host.EnterMaintenanceModeParams()
 	enterMaintenanceModeParams.RequestBody = &models.EnterMaintenanceModePrecheckRequestBody{
     Where: &models.HostWhereInput{
@@ -231,8 +209,8 @@ func main() {
     }
   }
   client.Host.EnterMaintenanceMode(enterMaintenanceModeParams)
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -267,44 +245,36 @@ When exiting the host from maintenance mode, you need to power on the virtual ma
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, HostApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, HostApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 host_api = HostApi(api_client)
-
 task_id = ""
-
 precheck_task = host_api.enter_maintenance_mode_precheck_result({
   "where": {
     "id": task_id
   }
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   exitMaintenanceModeResultParams := host.ExitMaintenanceModeResultParams()
 	exitMaintenanceModeResultParams.RequestBody = &models.ExitMaintenanceModeResultRequestBody{
     Where: &models.TaskWhereInput{
@@ -312,8 +282,8 @@ func main() {
     }
   }
   precheckTaskResultRes, err := client.Host.ExitMaintenanceModePrecheckResult(exitMaintenanceModeParams)
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -343,7 +313,7 @@ When exiting the host from maintenance mode, you can directly retrieve the pre-c
   "offlineMigrateVms": [
     {
       "state": "done",
-      "target_host_name": "qinghua-smtxos-5-1-0X20230906094802X2",
+      "target_host_name": "test-os-5-1-0X20230906094802X2",
       "verify": {
       "changed": false,
         "reason": ""
@@ -355,7 +325,7 @@ When exiting the host from maintenance mode, you can directly retrieve the pre-c
     },
     {
       "state": "done",
-      "target_host_name": "qinghua-smtxos-5-1-0X20230906094802X1",
+      "target_host_name": "test-os-5-1-0X20230906094802X1",
        "verify": {
         "changed": false,
         "reason": ""
@@ -410,16 +380,13 @@ The example is as follows:
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, HostApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, HostApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 host_api = HostApi(api_client)
-
 host_id = ""
-
 host_api.exit_maintenance_mode({
   "where": {
     "id": host_id
@@ -435,30 +402,25 @@ host_api.exit_maintenance_mode({
       "vm_uuid_3"
     ],
   }
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   exitMaintenanceModeParams := host.ExitMaintenanceModeParams()
 	exitMaintenanceModeParams.RequestBody = &models.ExitMaintenanceModePrecheckRequestBody{
     Where: &models.HostWhereInput{
@@ -471,8 +433,8 @@ func main() {
     }
   }
   precheckTaskRes, err := client.Host.ExitMaintenanceMode(exitMaintenanceModeParams)
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">

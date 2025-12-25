@@ -3,20 +3,23 @@ title: Java
 ---
 
 import Terminology from '@site/terminology.json'
+import CodeTerminology from '@site/code-terminology.json'
+import CodeBlock from '@theme/CodeBlock'
 
 <>The {Terminology['terminology']['en-US']['PRODUCT']} SDK for Java supports Java 1.8 or later.</>
 
-- [Source repository](https://github.com/smartxworks/cloudtower-java-sdk)
-- [Download the SDK](https://github.com/smartxworks/cloudtower-java-sdk/releases)
+- <a href={`https://github.com/${CodeTerminology["java_github_address"]}`}>Source repository</a>
+- <a href={`https://github.com/${CodeTerminology["java_github_address"]}/releases`}>Download the SDK</a>
 
 ## Installing the SDK
 
 - ### Installing using the source code
 
-  ```shell
-  git clone https://github.com/smartxworks/cloudtower-java-sdk.git
+  <CodeBlock language="shell">
+  {`git clone https://github.com/${CodeTerminology["java_github_address"]}.git
   mvn clean install
-  ```
+  `}
+  </CodeBlock>
 
 - ### Installing using the JAR package
 

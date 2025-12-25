@@ -2,20 +2,23 @@
 title: Java
 ---
 import Terminology from '@site/terminology.json'
+import CodeTerminology from '@site/code-terminology.json'
+import CodeBlock from '@theme/CodeBlock'
 
 <>Java 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 Java 1.8 及以上版本</>
 
-- [源码地址](https://github.com/smartxworks/cloudtower-java-sdk)
-- [下载地址](https://github.com/smartxworks/cloudtower-java-sdk/releases)
+- <a href={`https://github.com/${CodeTerminology["java_github_address"]}`}>源码地址</a>
+- <a href={`https://github.com/${CodeTerminology["java_github_address"]}/releases`}>下载地址</a>
 
 ## 安装
 
 - ### 源码安装
 
-  ```shell
-  git clone https://github.com/smartxworks/cloudtower-java-sdk.git
+  <CodeBlock language="shell">
+  {`git clone https://github.com/${CodeTerminology["java_github_address"]}.git
   mvn clean install
-  ```
+  `}
+  </CodeBlock>
 
 - ### jar 包安装
 

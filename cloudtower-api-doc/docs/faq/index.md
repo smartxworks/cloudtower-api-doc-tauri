@@ -105,7 +105,7 @@ import Terminology from '@site/terminology.json'
 
 但是如果当后一个请求在释放资源后才被接收到，先发生的请求的结果会被后发生的请求覆盖，从而产生预料之外的副作用以及脏数据。
 
-<>因此我们在 3.3.0 及以后的 Terminology['zh-CN']['PRODUCT']} API 中实现了一个额外的资源锁的机制，以避免此类情况发生。当接收状态码为 400 的返回值：</>
+<>因此我们在 3.3.0 及以后的 {Terminology['terminology']['zh-CN']['PRODUCT']} API 中实现了一个额外的资源锁的机制，以避免此类情况发生。当接收状态码为 400 的返回值：</>
 
 ```json
 {

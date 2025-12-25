@@ -5,38 +5,34 @@ sidebar_position: 43
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
 ## 获取所有
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
-vms = vm_api.get_vms({})
-```
+vms = vm_api.get_vms({})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -47,9 +43,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getAllVms(
-	client *apiclient.Cloudtower) ([]*models.VM, error) {
+	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
 	getAllVmsParams := vm.NewGetVmsParams()
 	getAllVmsParams.RequestBody = &models.GetVmsRequestBody{}
 	vmsRes, err := client.VM.GetVms(getAllVmsParams)
@@ -57,8 +52,8 @@ func getAllVms(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -87,37 +82,31 @@ public class App {
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_from_51_to_100 = vm_api.get_vms({
   "first": 50,
   "skip": 50,
-})
-```
+})`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -128,9 +117,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmsWithPagination(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
   from int32,
   to int32) ([]*models.VM, error) {
 	getVmsWithPaginationParams := vm.NewGetVmsParams()
@@ -143,8 +131,8 @@ func getVmsWithPagination(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -174,41 +162,35 @@ public class App {
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi, VmStatus
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi, VmStatus
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 running_vms = vm_api.get_vms(
     {
         "where": {
             "status": VmStatus.RUNNING
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -219,9 +201,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getAllRunningVms(
-	client *apiclient.Cloudtower) ([]*models.VM, error) {
+	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
 	getAllRunningVmsParams := vm.NewGetVmsParams()
 	getAllRunningVmsParams.RequestBody = &models.GetVmsRequestBody{
 		Where: &models.VMWhereInput{
@@ -233,8 +214,8 @@ func getAllRunningVms(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -265,40 +246,34 @@ public class App {
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_name_contains = vm_api.get_vms(
     {
         "where": {
             "name_contains": "string"
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -309,9 +284,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmsMatchStr(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	match string) ([]*models.VM, error) {
 	getAllVmNameMatchStrParams := vm.NewGetVmsParams()
 	getAllVmNameMatchStrParams.RequestBody = &models.GetVmsRequestBody{
@@ -324,8 +298,8 @@ func getVmsMatchStr(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="java" label="Java">
@@ -355,40 +329,34 @@ public class App {
 <Tabs>
 <TabItem value="py" label="Python">
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_has_4_more_vcpu = vm_api.get_vms(
     {
         "where": {
             "vcpu_gt": 4
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 </TabItem>
 <TabItem value="go" label="Golang">
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -399,9 +367,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmshasNMoreCpuCore(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	n int32) ([]*models.VM, error) {
 	getAllVmCoreGtNParams := vm.NewGetVmsParams()
 	getAllVmCoreGtNParams.RequestBody = &models.GetVmsRequestBody{
@@ -414,8 +381,8 @@ func getVmshasNMoreCpuCore(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 </TabItem>
 <TabItem value="java" label="Java">
 

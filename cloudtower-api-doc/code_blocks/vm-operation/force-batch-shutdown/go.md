@@ -1,25 +1,24 @@
-```go
-package main
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
+export default function GoForceBatchShutdown() {
+  return (
+    <CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-	"github.com/smartxworks/cloudtower-go-sdk/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
+	"github.com/${CodeTerminology["go_github_address"]}/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	shutdownVms, err := forceshutdownVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -28,9 +27,7 @@ func main() {
 	}
   // handle shutdown vms
 }
-
-
-func forceshutdownVmsByQuery(client *apiclient.Cloudtower,
+func forceshutdownVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	shutdownParams := vm.NewForceShutDownVMParams()
 	shutdownParams.RequestBody = &models.VMOperateParams{
@@ -68,6 +65,7 @@ func forceshutdownVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
+}`}
+    </CodeBlock>
+  );
 }
-
-```

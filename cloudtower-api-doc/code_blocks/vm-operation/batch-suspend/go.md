@@ -1,25 +1,24 @@
-```go
-package main
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
+export default function GoBatchSuspend() {
+  return (
+    <CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-	"github.com/smartxworks/cloudtower-go-sdk/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
+	"github.com/${CodeTerminology["go_github_address"]}/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	suspendedVms, err := suspendVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -29,8 +28,7 @@ func main() {
 	// handle restarted vms
 	print(suspendedVms)
 }
-
-func suspendVmsByQuery(client *apiclient.Cloudtower,
+func suspendVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	suspendParams := vm.NewSuspendVMParams()
 	suspendParams.RequestBody = &models.VMOperateParams{
@@ -68,6 +66,7 @@ func suspendVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
+}`}
+    </CodeBlock>
+  );
 }
-
-```

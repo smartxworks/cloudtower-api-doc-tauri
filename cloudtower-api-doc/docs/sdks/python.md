@@ -2,46 +2,49 @@
 title: Python
 ---
 import Terminology from '@site/terminology.json'
+import CodeTerminology from '@site/code-terminology.json'
+import CodeBlock from '@theme/CodeBlock'
 
 <>Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本</>
 
-- [源码地址](https://github.com/smartxworks/cloudtower-python-sdk)
-- [下载地址](https://github.com/smartxworks/cloudtower-python-sdk/releases)
+- <a href={`https://github.com/${CodeTerminology["python_github_address"]}`}>源码地址</a>
+- <a href={`https://github.com/${CodeTerminology["python_github_address"]}/releases`}>下载地址</a>
 
 ## 安装
 
 - ### whl
 
-  ```shell
-  pip install cloudtower_sdk-2.21.0-py2.py3-none-any.whl
-  ```
+  <CodeBlock language="shell">
+{`  pip install ${CodeTerminology["python_package_1"]}-2.21.0-py2.py3-none-any.whl`}
+</CodeBlock>
 
 - ### tar.gz
 
-  ```shell
-  tar xvzf cloudtower-sdk-2.21.0.tar.gz
-  cd cloudtower-sdk-2.21.0
-  python setup.py install
-  ```
+  <CodeBlock language="shell">
+{`  tar xvzf ${CodeTerminology["python_package"]}-2.21.0.tar.gz
+  cd ${CodeTerminology["python_package"]}-2.21.0
+  python setup.py install`}
+</CodeBlock>
 
 - ### git 源码安装
 
-  ```
-  git clone https://github.com/smartxworks/cloudtower-python-sdk.git
-  cd cloudtower-python-sdk
+  <CodeBlock>
+  {`git clone https://github.com/${CodeTerminology["python_github_address"]}.git
+  cd ${CodeTerminology["python_sdk"]}
   python setup.py install
-  ```
+  `}
+  </CodeBlock>
 
 - ### git pip 安装
 
-  ```shell
-  pip install git+https://github.com/smartxworks/cloudtower-python-sdk.git
-  ```
+  <CodeBlock language="shell">
+{`pip install git+https://github.com/${CodeTerminology["python_github_address"]}.git`}
+</CodeBlock>
 
 - ### pypi 安装
-  ```shell
-  pip install cloudtower-sdk
-  ```
+  <CodeBlock language="shell">
+{`  pip install ${CodeTerminology["python_package"]}`}
+</CodeBlock>
 
 ## 使用
 
@@ -49,47 +52,47 @@ import Terminology from '@site/terminology.json'
 
 #### 创建 `ApiClient` 实例
 
-```python
-from cloudtower.configuration import Configuration
-from cloudtower import ApiClient
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.configuration import Configuration
+from ${CodeTerminology["python_from_package"]} import ApiClient
 # 配置 operation-api endpoint
 configuration = Configuration(host="http://192.168.96.133/v2/api")
-client = ApiClient(configuration)
-```
+client = ApiClient(configuration)`}
+</CodeBlock>
 
 > 如果需要使用 https，可以安装证书，或者忽略证书验证
 
-```python
-configuration = Configuration(host="https://192.168.96.133/v2/api")
+<CodeBlock language="python">
+{`configuration = Configuration(host="https://192.168.96.133/v2/api")
 configuration.verify_ssl = False
-client = ApiClient(configuration)
-```
+client = ApiClient(configuration)`}
+</CodeBlock>
 
 #### 创建对应的 API 实例
 
 > 根据不同用途的操作创建相关的 API 实例，例如虚拟机相关操作需要创建一个 `VmApi`。
 
-```python
-from cloudtower.api.vm_api import VmApi
-vm_api = VmApi(client)
-```
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api.vm_api import VmApi
+vm_api = VmApi(client)`}
+</CodeBlock>
 
 ### 鉴权
 
 > 可以通过 utils 中封装的登陆方法来鉴权 `ApiClient`
 
-```python
-from cloudtower.utils import wait_tasks, login
-conf = Configuration(host="http://example-cloudtower.com/v2/api")
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.utils import wait_tasks, login
+conf = Configuration(host="http://${CodeTerminology["endpoint_placeholder"]}.com/v2/api")
 api_client = ApiClient(conf)
-login(api_client, "your_username", "your_password") # 默认使用 LOCAL 作为 usersource
-```
+login(api_client, "your_username", "your_password") # 默认使用 LOCAL 作为 usersource`}
+</CodeBlock>
 
 > 也可以直接将 token 应用置 `configuration` 的 `api_key` 中
 
-```python
-from cloudtower.api.user_api import UserApi
-from cloudtower.models import UserSource
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api.user_api import UserApi
+from ${CodeTerminology["python_from_package"]}.models import UserSource
 # 通过 UserApi 中的 login 方法来获得 token。
 user_api = UserApi(client)
 login_res = user_api.login({
@@ -99,45 +102,45 @@ login_res = user_api.login({
 })
 # 将 token 配置在 configuration.api_key["Authorization"] 中，
 # 这样所有使用当前 client 的 api 都会获得鉴权的 token 信息。
-configuration.api_key["Authorization"] = login_res.data.token
-```
+configuration.api_key["Authorization"] = login_res.data.token`}
+</CodeBlock>
 
 ### 发送请求
 
 #### 获取资源
 
-```python
-vms = vm_api.get_vms({
+<CodeBlock language="python">
+{`vms = vm_api.get_vms({
   "where": {
     "id": "vm_id"
   },
   "first":1,
-})
-```
+})`}
+</CodeBlock>
 
 #### 更新资源
 
 > 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
 
-```python
-start_res = vm_api.start_vm({
+<CodeBlock language="python">
+{`start_res = vm_api.start_vm({
   "where": {
     "id": "stopped_vm_id"
   },
-})
-```
+})`}
+</CodeBlock>
 
 > 可以通过提供的工具方法同步等待异步任务结束
 
-```python
-from cloudtower.utils import wait_tasks
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 try:
  wait_tasks([res.task_id for res in start_res], api_client)
 except ApiException as e:
  # 处理错误
 else:
- # task完成后的回调
-```
+ # task完成后的回调`}
+</CodeBlock>
 
 ##### 方法参数说明
 
@@ -166,8 +169,8 @@ else:
 
 > 可以通过 `ApiClient` 的 `set_default_header` 方法设置默认的 header 信息。
 
-```python
-api_client.set_default_header("content_language","en-US")
+<CodeBlock language="python">
+{`api_client.set_default_header("content_language","en-US")
 alert_api = AlertApi(api_client)
 # 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为英文描述。
 alerts = alert_api.get_alerts(
@@ -179,16 +182,15 @@ alerts = alert_api.get_alerts(
     },
     "first": 100
   },
-)
-```
+)`}
+</CodeBlock>
 
 ##### 通过设置请求的关键字参数
 
 > 也可以通过设置请求的关键字参数 `content_language` 来设置返回信息的语言。
 
-```python
-from cloudtower.api.user_api import AlertApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api.user_api import AlertApi
 alert_api = AlertApi(api_client)
 # 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为中文描述。
 alerts = alert_api.get_alerts(
@@ -201,8 +203,8 @@ alerts = alert_api.get_alerts(
     "first": 100
   },
   content_language="zh-CN"
-)
-```
+)`}
+</CodeBlock>
 
 #### 其他
 
@@ -211,8 +213,8 @@ alerts = alert_api.get_alerts(
 > 上述请求的发送都是同步的请求，会堵塞当前进程。如果需要使用异步请求，请在对应请求的关键字参数中加上 `async_req=True`。
 > 通过返回结果 `ApplyResult.get()` 来获取对应的结果。
 
-```python
-vms = vm_api.get_vms(
+<CodeBlock language="python">
+{`vms = vm_api.get_vms(
   {
     "where": {
       "id": "vm_id"
@@ -220,14 +222,14 @@ vms = vm_api.get_vms(
   },
   async_req=True
 )
-print(vms.get()[0].name)
-```
+print(vms.get()[0].name)`}
+</CodeBlock>
 
 ### 使用完成后销毁 ApiClient 实例
 
-```python
-client.close()
-```
+<CodeBlock language="python">
+{`client.close()`}
+</CodeBlock>
 
 ## 操作示例
 
@@ -235,108 +237,93 @@ client.close()
 
 #### 获取所有虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
-vms = vm_api.get_vms({})
-```
+vms = vm_api.get_vms({})`}
+</CodeBlock>
 
 #### 分页获取虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_from_51_to_100 = vm_api.get_vms({
   "first": 50,
   "skip": 50,
-})
-```
+})`}
+</CodeBlock>
 
 #### 获取所有已开机虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi, VmStatus
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi, VmStatus
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 running_vms = vm_api.get_vms(
     {
         "where": {
             "status": VmStatus.RUNNING
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 #### 获取名称或描述中包含特定字符串的虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_name_contains = vm_api.get_vms(
     {
         "where": {
             "name_contains": "string"
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 #### 获取所有 vcpu > n 的虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 vms_has_4_more_vcpu = vm_api.get_vms(
     {
         "where": {
             "vcpu_gt": 4
         }
     },
-)
-```
+)`}
+</CodeBlock>
 
 ### 从模版创建虚拟机
 
 #### 仅指定 id
 
-```python
-from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
-from cloudtower.utils import login, wait_tasks
-from cloudtower.configuration import Configuration
-from cloudtower import ApiClient
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from ${CodeTerminology["python_from_package"]}.utils import login, wait_tasks
+from ${CodeTerminology["python_from_package"]}.configuration import Configuration
+from ${CodeTerminology["python_from_package"]} import ApiClient
 import os
-
-
-configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+configuration = Configuration(host=os.getenv("${CodeTerminology["endpoint_placeholder"]}"))
 client = ApiClient(configuration)
-
-login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
-
-
+login(client, os.getenv("${CodeTerminology["username_placeholder"]}"), os.getenv("${CodeTerminology["password_placeholder"]}"))
 def create_vm_from_template(template_name, cluster_name, vm_name):
     """
     通过内容库模板创建一台虚拟机，内容通过内容库模板设置
@@ -348,7 +335,6 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
     vm_api = VmApi(client)
     cluster_api = ClusterApi(client)
     template_api = ContentLibraryVmTemplateApi(client)
-
     cluster = cluster_api.get_clusters({
         "where": {
             "name": cluster_name
@@ -356,7 +342,6 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
     })
     if len(cluster) == 0:
         raise Exception("cluster not found")
-
     template = template_api.get_content_library_vm_templates({
         "where": {
             "name": template_name
@@ -364,7 +349,6 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
     })
     if len(template) == 0:
         raise Exception("template not found")
-
     with_task_vms = vm_api.create_vm_from_content_library_template([
         {
             "template_id": template[0].id,
@@ -381,26 +365,21 @@ def create_vm_from_template(template_name, cluster_name, vm_name):
         "where": {
             "id_in": vm_ids
         }
-    })[0]
-```
+    })[0]`}
+</CodeBlock>
 
 #### 配置与模板不同的虚拟盘参数
 
-```python
-from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
-from cloudtower.utils import login, wait_tasks
-from cloudtower.configuration import Configuration
-from cloudtower.models import Bus, VmVolumeElfStoragePolicyType
-from cloudtower import ApiClient
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from ${CodeTerminology["python_from_package"]}.utils import login, wait_tasks
+from ${CodeTerminology["python_from_package"]}.configuration import Configuration
+from ${CodeTerminology["python_from_package"]}.models import Bus, VmVolumeElfStoragePolicyType
+from ${CodeTerminology["python_from_package"]} import ApiClient
 import os
-
-
-configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+configuration = Configuration(host=os.getenv("${CodeTerminology["endpoint_placeholder"]}"))
 client = ApiClient(configuration)
-
-login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
-
-
+login(client, os.getenv("${CodeTerminology["username_placeholder"]}"), os.getenv("${CodeTerminology["password_placeholder"]}"))
 def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, disk_operate):
     """
     通过内容库模板创建一台虚拟机，配置虚拟机的磁盘
@@ -413,7 +392,6 @@ def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, di
     vm_api = VmApi(client)
     cluster_api = ClusterApi(client)
     template_api = ContentLibraryVmTemplateApi(client)
-
     cluster = cluster_api.get_clusters({
         "where": {
             "name": cluster_name
@@ -421,7 +399,6 @@ def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, di
     })
     if len(cluster) == 0:
         raise Exception("cluster not found")
-
     template = template_api.get_content_library_vm_templates({
         "where": {
             "name": template_name
@@ -429,7 +406,6 @@ def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, di
     })
     if len(template) == 0:
         raise Exception("template not found")
-
     with_task_vms = vm_api.create_vm_from_content_library_template([
         {
             "template_id": template[0].id,
@@ -448,8 +424,6 @@ def create_vm_from_template_modify_disk(template_name, cluster_name, vm_name, di
             "id_in": vm_ids
         }
     })[0]
-
-
 def create_vm_from_template_modify_disk_example():
     """
     通过模板创建虚拟机时，如果希望对原有的磁盘进行任何修改，可以通过 disk_operate 参数进行配置
@@ -492,26 +466,21 @@ def create_vm_from_template_modify_disk_example():
             ]
         }
     }
-    create_vm_from_template_modify_disk("template-name", "cluster-name", "vm-name", disk_operate)
-```
+    create_vm_from_template_modify_disk("template-name", "cluster-name", "vm-name", disk_operate)`}
+</CodeBlock>
 
 #### 配置与模版不同的网卡参数
 
-```python
-from cloudtower.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
-from cloudtower.utils import login, wait_tasks
-from cloudtower.configuration import Configuration
-from cloudtower.models import Bus, VmNicModel
-from cloudtower import ApiClient
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]}.api import VmApi, ContentLibraryVmTemplateApi, ClusterApi
+from ${CodeTerminology["python_from_package"]}.utils import login, wait_tasks
+from ${CodeTerminology["python_from_package"]}.configuration import Configuration
+from ${CodeTerminology["python_from_package"]}.models import Bus, VmNicModel
+from ${CodeTerminology["python_from_package"]} import ApiClient
 import os
-
-
-configuration = Configuration(host=os.getenv("CLOUDTOWER_ENDPOINT"))
+configuration = Configuration(host=os.getenv("${CodeTerminology["endpoint_placeholder"]}"))
 client = ApiClient(configuration)
-
-login(client, os.getenv("CLOUDTOWER_USERNAME"), os.getenv("CLOUDTOWER_PASSWORD"))
-
-
+login(client, os.getenv("${CodeTerminology["username_placeholder"]}"), os.getenv("${CodeTerminology["password_placeholder"]}"))
 def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, nic_params):
     """
     通过内容库模板创建一台虚拟机，配置虚拟机的网卡
@@ -524,7 +493,6 @@ def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, n
     vm_api = VmApi(client)
     cluster_api = ClusterApi(client)
     template_api = ContentLibraryVmTemplateApi(client)
-
     cluster = cluster_api.get_clusters({
         "where": {
             "name": cluster_name
@@ -532,7 +500,6 @@ def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, n
     })
     if len(cluster) == 0:
         raise Exception("cluster not found")
-
     template = template_api.get_content_library_vm_templates({
         "where": {
             "name": template_name
@@ -540,7 +507,6 @@ def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, n
     })
     if len(template) == 0:
         raise Exception("template not found")
-
     with_task_vms = vm_api.create_vm_from_content_library_template([
         {
             "template_id": template[0].id,
@@ -559,8 +525,6 @@ def create_vm_from_template_modified_nic(template_name, cluster_name, vm_name, n
             "id_in": vm_ids
         }
     })[0]
-
-
 def create_vm_from_template_modified_nic_example():
     """
     通过内容库模板创建虚拟机时，如果不传递 vm_nics 参数，会默认使用模板的网卡配置，如果需要修改网卡配置，可以传递 vm_nics 参数，
@@ -577,15 +541,15 @@ def create_vm_from_template_modified_nic_example():
             "model": VmNicModel.VIRTIO
         }
     ]
-    create_vm_from_template_modified_nic("template_name", "cluster_name", "vm_name", nic_params)
-```
+    create_vm_from_template_modified_nic("template_name", "cluster_name", "vm_name", nic_params)`}
+</CodeBlock>
 
 ### 创建空白虚拟机
 
 #### 简单创建
 
-```python
-from cloudtower import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -593,8 +557,7 @@ from cloudtower import (
     VmFirmware,
     Bus
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -623,21 +586,20 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### 创建时配置虚拟盘
 
 ##### CD-ROM 加载 ISO
 
-```python
-from cloudtower import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -645,8 +607,7 @@ from cloudtower import (
     VmFirmware,
     Bus
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -676,19 +637,18 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 挂载虚拟卷为虚拟盘
 
-```python
-from cloudtower import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -696,8 +656,7 @@ from cloudtower import (
     VmFirmware,
     Bus
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -729,19 +688,18 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 新增并挂载虚拟盘
 
-```python
-from cloudtower import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -750,8 +708,7 @@ from cloudtower import (
     Bus,
     VmVolumeElfStoragePolicyType
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -785,19 +742,18 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### 创建时配置虚拟网卡
 
-```python
-from cloudtower import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -807,8 +763,7 @@ from cloudtower import (
     VmNicModel,
     VmVolumeElfStoragePolicyType
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -839,28 +794,25 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ### 编辑虚拟机
 
 #### 编辑基本信息
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.update_vm({
     "where": {
         "id": "vm_id"
@@ -875,29 +827,25 @@ with_task_vm = vm_api.update_vm({
         "memory": 1*1024*1024*1024,
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### CD-ROM 编辑
 
 ##### 添加 CD-ROM
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.add_vm_cd_rom({
     "where": {
         "id": "vm_id"
@@ -913,25 +861,22 @@ with_task_vm = vm_api.add_vm_cd_rom({
     }
 })[0]
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 删除 CD-ROM
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.remove_vm_cd_rom({
     "where": {
         "id": "vm_id"
@@ -940,29 +885,25 @@ with_task_vm = vm_api.remove_vm_cd_rom({
         "cd_rom_ids": ["cd_rom_id_1", "cd_rom_id_2"]
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### 虚拟卷操作
 
 ##### 添加新虚拟卷
 
-```python
-from cloudtower import ApiClient, Configuration, Bus, VmVolumeElfStoragePolicyType, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, Bus, VmVolumeElfStoragePolicyType, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.add_vm_disk({
     "where": {
         "id": "vm_id"
@@ -983,27 +924,23 @@ with_task_vm = vm_api.add_vm_disk({
         }
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 挂载已存在虚拟卷为虚拟盘
 
-```python
-from cloudtower import ApiClient, Configuration, Bus, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, Bus, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.add_vm_disk({
     "where": {
         "id": "vm_id"
@@ -1021,27 +958,23 @@ with_task_vm = vm_api.add_vm_disk({
         }
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 卸载虚拟盘
 
-```python
-from cloudtower import ApiClient, Configuration, VmVolumeElfStoragePolicyType, Bus, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmVolumeElfStoragePolicyType, Bus, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.remove_vm_disk({
     "where": {
         "id": "vm_id"
@@ -1050,30 +983,25 @@ with_task_vm = vm_api.remove_vm_disk({
         "disk_ids": ["vm_disk_id_1", "vm_disk_id_2"]
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### 网卡操作
 
 ##### 添加网卡
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi, VmNicModel
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi, VmNicModel
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.add_vm_nic({
     "where": {
         "id": "vm_id"
@@ -1094,27 +1022,23 @@ with_task_vm = vm_api.add_vm_nic({
         ]
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 编辑网卡
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.update_vm_nic({
     "where": {
         "id": "vm_id"
@@ -1126,27 +1050,23 @@ with_task_vm = vm_api.update_vm_nic({
         "connect_vlan_id": "vlan_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 ##### 移除网卡
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.remove_vm_nic({
     "where": {
         "id": "vm_id"
@@ -1155,29 +1075,25 @@ with_task_vm = vm_api.remove_vm_nic({
         "nic_index": [0, 1]
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 updated_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+</CodeBlock>
 
 #### 虚拟机迁移
 
 ##### 迁移至指定主机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.mig_rate_vm({
     "where": {
         "id": "vm_id"
@@ -1186,30 +1102,25 @@ with_task_vm = vm_api.mig_rate_vm({
         "host_id": "host_id"
     }
 })[0]
-
-wait_tasks([with_task_vm.task_id], api_client)
-```
+wait_tasks([with_task_vm.task_id], api_client)`}
+</CodeBlock>
 
 ##### 自动调度到合适的主机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
-
 with_task_vm = vm_api.mig_rate_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
-wait_tasks([with_task_vm.task_id], api_client)
-```
+wait_tasks([with_task_vm.task_id], api_client)`}
+</CodeBlock>
 
 ### 虚拟机电源操作
 
@@ -1217,60 +1128,50 @@ wait_tasks([with_task_vm.task_id], api_client)
 
 ##### 指定虚拟机开机，自动调度到合适的虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.start_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 批量虚拟机开机，自动调度到合适的虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.start_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
 wait_tasks(tasks, api_client)
-
-opened_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+opened_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 ##### 开机至指定主机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.start_vm({
     "where": {
@@ -1280,284 +1181,229 @@ with_task_vm = vm_api.start_vm({
         "host_id": "host_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+opened_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 #### 虚拟机关机
 
 ##### 指定虚拟机关机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.shut_down_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 批量虚拟机关机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.shut_down_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-closed_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+closed_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 ##### 强制关机指定虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.force_shut_down_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+closed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 强制关机批量虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.force_shut_down_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
 wait_tasks(tasks, api_client)
-
-closed_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+closed_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 #### 虚拟机重启
 
 ##### 重启指定虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.restart_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 重启批量虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.restart_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 ##### 强制重启指定虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.force_restart_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+restarted_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 强制重启批量虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.force_restart_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+restarted_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 #### 虚拟机暂停
 
 ##### 暂停指定虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.suspend_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-suspended_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+suspended_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 暂停批量虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.suspend_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-suspended_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+suspended_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 #### 虚拟机恢复
 
 ##### 恢复指定虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vm = vm_api.resume_vm({
     "where": {
         "id": "vm_id"
     }
 })[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
-
-resumed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]
-```
+resumed_vm = vm_api.get_vms({"where": {"id": with_task_vm.data.id}})[0]`}
+</CodeBlock>
 
 ##### 恢复批量虚拟机
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_vms = vm_api.resume_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_vm.task_id for with_task_vm in with_task_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-resumed_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+resumed_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 ### 删除虚拟机
 
@@ -1565,86 +1411,70 @@ resumed_vms = vm_api.get_vms({"where": {"id_in": ids}})
 
 ##### 移入回收站
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_delete_vms = vm_api.move_vm_to_recycle_bin({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-vm_moved_to_recycle_bin = vm_api.get_vms({"where": {"id_in": ids}})
-```
+vm_moved_to_recycle_bin = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 ##### 从回收站恢复
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_delete_vms = vm_api.recover_vm_from_recycle_bin({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
 ids = [with_task_vm.data.id for with_task_vm in with_task_vms]
-
 wait_tasks(tasks, api_client)
-
-recovered_vms = vm_api.get_vms({"where": {"id_in": ids}})
-```
+recovered_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
+</CodeBlock>
 
 #### 永久删除
 
-```python
-from cloudtower import ApiClient, Configuration, VmApi
-from cloudtower.utils import wait_tasks
-
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient, Configuration, VmApi
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 vm_api = VmApi(api_client)
 with_task_delete_vms = vm_api.delete_vm({
     "where": {
         "id_in": ["vm_id_1", "vm_id_2"]
     }
 })
-
 tasks = [with_task_delete_vm.task_id for with_task_delete_vm in with_task_delete_vms]
-
-wait_tasks(tasks, api_client)
-```
+wait_tasks(tasks, api_client)`}
+</CodeBlock>
 
 ## 场景示例
 
 ### 虚拟机备份
 
-```python
-from cloudtower import ApiClient
-from cloudtower.api.vm_api import VmApi
-from cloudtower.api.vm_snapshot_api import VmSnapshotApi
-from cloudtower.api.iscsi_lun_snapshot_api import IscsiLunSnapshotApi
-from cloudtower.models import (
+<CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import ApiClient
+from ${CodeTerminology["python_from_package"]}.api.vm_api import VmApi
+from ${CodeTerminology["python_from_package"]}.api.vm_snapshot_api import VmSnapshotApi
+from ${CodeTerminology["python_from_package"]}.api.iscsi_lun_snapshot_api import IscsiLunSnapshotApi
+from ${CodeTerminology["python_from_package"]}.models import (
     ConsistentType,
     VmToolsStatus
 )
-from cloudtower.utils import wait_tasks
-
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 def create_vm_snapshot(
     api_client: ApiClient,
     target_vm_name: str,
@@ -1664,7 +1494,6 @@ def create_vm_snapshot(
     # vm 已安装并启动 VMTools 时，consistent_type 可以使用 FILE_SYSTEM_CONSISTENT 代表文件系统一致性快照
     if vm.vm_tools_status != VmToolsStatus.RUNNING and consistent_type == ConsistentType.FILE_SYSTEM_CONSISTENT:
         consistent_type = ConsistentType.CRASH_CONSISTENT
-
     # 2. 创建虚拟机快照
     snapshots_with_task = vm_snapshot_api.create_vm_snapshot({
         "data": [
@@ -1675,10 +1504,8 @@ def create_vm_snapshot(
             }
         ]
     })
-
     # 3. 等待Task完成
     wait_tasks([snapshots_with_task[0].task_id], api_client)
-
     # 4. 根据返回的id查询生成的虚拟机快照
     snapshot = vm_snapshot_api.get_vm_snapshots({
         "where": {
@@ -1692,38 +1519,31 @@ def create_vm_snapshot(
     for disk in snapshot.vm_disks:
         if disk.type == "DISK":
             lun_snapshot_ids.append(disk.snapshot_local_id)
-
     lun_snapshots = iscsi_lun_snapshot_api.get_iscsi_lun_snapshots({
         "where": {
             "name_in": lun_snapshot_ids
         }
     })
-
     return {
         "vm_snapshot": snapshot,
         "lun_snapshots": lun_snapshots
-    }
-
-```
+    }`}
+</CodeBlock>
 
 ### Dashboard 构建
 
 #### 定义工具方法
 
-```python
-from functools import reduce
+<CodeBlock language="python">
+{`from functools import reduce
 from datetime import datetime, timedelta
-from cloudtower import ApiClient
-from cloudtower.configuration import Configuration
-from cloudtower.models import SeverityEnum, ClusterType, Hypervisor, DiskType, DiskUsageStatus, DiskHealthStatus
-from cloudtower.api import VmApi, ClusterApi, AlertApi, HostApi, DiskApi, ClusterSettingsApi, GlobalSettingsApi
-
+from ${CodeTerminology["python_from_package"]} import ApiClient
+from ${CodeTerminology["python_from_package"]}.configuration import Configuration
+from ${CodeTerminology["python_from_package"]}.models import SeverityEnum, ClusterType, Hypervisor, DiskType, DiskUsageStatus, DiskHealthStatus
+from ${CodeTerminology["python_from_package"]}.api import VmApi, ClusterApi, AlertApi, HostApi, DiskApi, ClusterSettingsApi, GlobalSettingsApi
 api_client = ApiClient(Configuration(host="http://192.168.96.133/v2/api"))
-
 byte_units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB"]
 hz_units = ["Hz", "KHz", "MHz", "GHz", "THz"]
-
-
 def format_unit(base: int, units, step=1024):
     if not len(units):
         raise Exception("no unit provided")
@@ -1733,13 +1553,13 @@ def format_unit(base: int, units, step=1024):
         if base < step:
             return "{:.2f}{}".format(base, unit)
         base /= step
-    return "{:.2f}{}".format(base, units[-1])
-```
+    return "{:.2f}{}".format(base, units[-1])`}
+</CodeBlock>
 
 #### 构建报警信息
 
-```python
-def build_alerts(api_client: ApiClient, cluster_ids):
+<CodeBlock language="python">
+{`def build_alerts(api_client: ApiClient, cluster_ids):
     alert_api = AlertApi(api_client)
     alerts = alert_api.get_alerts({
         "where": {
@@ -1759,15 +1579,15 @@ def build_alerts(api_client: ApiClient, cluster_ids):
         "critical": critial_alerts,
         "notice": notice_alerts,
         "info": info_alerts
-    }
-```
+    }`}
+</CodeBlock>
 
 #### 构建硬盘信息
 
 > 这里以机械硬盘为例
 
-```python
-def build_hdd_info(api_client: ApiClient, cluster_ids):
+<CodeBlock language="python">
+{`def build_hdd_info(api_client: ApiClient, cluster_ids):
     disk_api = DiskApi(api_client)
     disks = disk_api.get_disks({
         "where": {
@@ -1793,15 +1613,15 @@ def build_hdd_info(api_client: ApiClient, cluster_ids):
             else:
                 hdd['healthy'] += 1
             hdd['total'] += 1
-    return hdd
-```
+    return hdd`}
+</CodeBlock>
 
 #### 构建性能指标
 
 > 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
 
-```python
-def build_metrics(api_client: ApiClient, clusters, cluster_ids):
+<CodeBlock language="python">
+{`def build_metrics(api_client: ApiClient, clusters, cluster_ids):
     result = {}
     host_api = HostApi(api_client)
     hosts = host_api.get_hosts({
@@ -1826,7 +1646,6 @@ def build_metrics(api_client: ApiClient, clusters, cluster_ids):
         "invalid": 0,
         "available": 0
     }
-
     for host in hosts:
         cluster = next(
             cluster for cluster in clusters if cluster.id == host.cluster.id)
@@ -1834,7 +1653,6 @@ def build_metrics(api_client: ApiClient, clusters, cluster_ids):
             memory['total_memory'] += 0 if host.total_memory_bytes is None else host.total_memory_bytes
             memory['used_memory'] += (0 if host.running_pause_vm_memory_bytes is None else host.running_pause_vm_memory_bytes) + \
                 (0 if host.os_memory_bytes is None else host.os_memory_bytes)
-
     for cluster in clusters:
         if cluster.type == ClusterType.SMTX_OS:
             cpu["total_cpu_cores"] += 0 if cluster.total_cpu_cores is None else cluster.total_cpu_cores
@@ -1865,20 +1683,19 @@ def build_metrics(api_client: ApiClient, clusters, cluster_ids):
     storage["used"] = format_unit(storage["used"], byte_units)
     storage["invalid"] = format_unit(storage["invalid"], byte_units)
     result["storage"] = storage
-    return result
-```
+    return result`}
+</CodeBlock>
 
 #### 构建 Dashboard
 
-```python
-def build_dashboard(api_client: ApiClient, datacenter_id: str = None, cluster_id: str = None):
+<CodeBlock language="python">
+{`def build_dashboard(api_client: ApiClient, datacenter_id: str = None, cluster_id: str = None):
     result = {}
     cluster_api = ClusterApi(api_client)
     clusters = cluster_api.get_clusters({
         "where": {"id": cluster_id} if cluster_id is not None else {"datacenters_some": {"id": datacenter_id}} if datacenter_id is not None else None
     })
     cluster_ids = [cluster.id for cluster in clusters]
-
     result["alerts"] = build_alerts(api_client, cluster_ids)
     result["hdd"] = build_hdd_info(api_client, cluster_ids)
     metric = build_metrics(api_client, clusters, cluster_ids)
@@ -1888,5 +1705,5 @@ def build_dashboard(api_client: ApiClient, datacenter_id: str = None, cluster_id
         result["memory"] = metric["memory"]
     if "storage" in metric:
         result["storage"] = metric["storage"]
-    return result
-```
+    return result`}
+</CodeBlock>

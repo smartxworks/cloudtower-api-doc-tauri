@@ -28,6 +28,7 @@ import PythonEdit from '@site/code_blocks/edit-vm/edit-nic/python.md'
 import PythonMigrateToHost from '@site/code_blocks/edit-vm/migrate-to-host/python.md'
 import PythonRemoveDisk from '@site/code_blocks/edit-vm/remove-disk/python.md'
 import PythonRemoveNic from '@site/code_blocks/edit-vm/remove-nic/python.md'
+import PythonEditBasicInfo  from '@site/code_blocks/edit-vm/edit-basic-info/python.md'
 
 import JavaAddCDROM from '@site/code_blocks/edit-vm/add-cd-rom/java.md'
 import JavaAddExistVolume from '@site/code_blocks/edit-vm/add-exist-volume/java.md'
