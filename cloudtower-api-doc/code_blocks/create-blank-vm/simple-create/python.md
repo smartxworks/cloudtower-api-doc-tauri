@@ -1,5 +1,10 @@
-```python
-from cloudtower import (
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
+
+export default function PythonSimpleCreatePython() {
+  return (
+    <CodeBlock language="python">
+{`from ${CodeTerminology["python_from_package"]} import (
     ApiClient,
     Configuration,
     VmApi,
@@ -7,8 +12,7 @@ from cloudtower import (
     VmFirmware,
     Bus
 )
-from cloudtower.utils import wait_tasks
-
+from ${CodeTerminology["python_from_package"]}.utils import wait_tasks
 conf = Configuration(host="http://192.168.96.133/v2/api")
 conf.api_key["Authorization"] = "token"
 api_client = ApiClient(conf)
@@ -37,11 +41,12 @@ with_task_vm = vm_api.create_vm([
         }
     }
 ])[0]
-
 wait_tasks([with_task_vm.task_id], api_client)
 created_vm = vm_api.get_vms({
     "where": {
         "id": with_task_vm.data.id
     }
-})
-```
+})`}
+    </CodeBlock>
+  );
+}

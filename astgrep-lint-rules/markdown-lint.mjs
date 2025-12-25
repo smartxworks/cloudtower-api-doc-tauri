@@ -98,19 +98,10 @@ function collectFiles(dir, patterns) {
 
 // Allowed exceptions for terminology regex
 const allowedExceptions = [
-    'CLOUDTOWER_IP',
-    'com.smartx.com',
-    'smartxworks',
     'ClusterType.SMTX_OS',
-    'from cloudtower',
-    'cloudtower_sdk',
-    'cloudtower-sdk',
-    'cloudtower-java-sdk',
-    'cloudtower-go-sdk',
-    'cloudtower-python',
-    'apiclient.Cloudtower',
-    'cloudtower-python-sdk',
-    'client.cloudtower'
+    'Hypervisor.ELF',
+    'VmVolumeElfStoragePolicyType',
+    'elf_image_id'
 ];
 
 // Function to escape special regex characters

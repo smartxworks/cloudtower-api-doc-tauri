@@ -18,6 +18,7 @@ import GoMigrateToHost from '@site/code_blocks/edit-vm/migrate-to-host/go.md'
 import GoRemoveDisk from '@site/code_blocks/edit-vm/remove-disk/go.md'
 import GoRemoveNic from '@site/code_blocks/edit-vm/remove-nic/go.md'
 
+import PythonEditBasicInfo  from '@site/code_blocks/edit-vm/edit-basic-info/python.md'
 import PythonAddCDROM from '@site/code_blocks/edit-vm/add-cd-rom/python.md'
 import PythonAddExistVolume from '@site/code_blocks/edit-vm/add-exist-volume/python.md'
 import PythonAddNewVolume from '@site/code_blocks/edit-vm/add-new-volume/python.md'

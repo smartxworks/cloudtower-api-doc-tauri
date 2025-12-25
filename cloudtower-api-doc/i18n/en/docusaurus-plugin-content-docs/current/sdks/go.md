@@ -3,17 +3,19 @@ title: Go
 ---
 
 import Terminology from '@site/terminology.json'
+import CodeTerminology from '@site/code-terminology.json'
+import CodeBlock from '@theme/CodeBlock'
 
 <>The {Terminology['terminology']['en-US']['PRODUCT']} SDK for Golang supports Golang 1.16 or later. </>
 
-- [Source repository](https://github.com/smartxworks/cloudtower-go-sdk)
-- [Download the SDK](https://github.com/smartxworks/cloudtower-go-sdk/releases)
+- <a href={`https://github.com/${CodeTerminology["go_github_address"]}`}>Source repository</a>
+- <a href={`https://github.com/${CodeTerminology["go_github_address"]}/releases`}>Download the SDK</a>
 
 ## Installing the SDK
 
-```shell
-go get github.com/smartxworks/cloudtower-go-sdk/v2
-```
+<CodeBlock language="shell">
+{`go get github.com/${CodeTerminology["go_github_address"]}/v2`}
+</CodeBlock>
 
 ## Using the SDK
 
@@ -23,21 +25,21 @@ go get github.com/smartxworks/cloudtower-go-sdk/v2
 
 #### Creating an `ApiClient` instance
 
-```go
-import (
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+<CodeBlock language="go">
+{`import (
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-client := apiclient.New(transport, strfmt.Default)
-```
+client := apiclient.New(transport, strfmt.Default)`}
+</CodeBlock>
 
 > If you need to use HTTPS, you can either install a certificate or skip certificate verification.
 
-```go
-import (
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
+<CodeBlock language="go">
+{`import (
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
@@ -49,8 +51,8 @@ if err != nil {
 	return
 }
 transport := httptransport.NewWithClient("192.168.29.157", "/v2/api", []string{"https"}, tlsClient)
-client := apiclient.New(transport, strfmt.Default)
-```
+client := apiclient.New(transport, strfmt.Default)`}
+</CodeBlock>
 
 ### Sending requests
 
@@ -58,22 +60,21 @@ client := apiclient.New(transport, strfmt.Default)
 
 > Import and create the `client` package based on the type of operation you want to perform.
 
-```go
-import (
-  	vm "github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-)
-```
+<CodeBlock language="go">
+{`import (
+  	vm "github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+)`}
+</CodeBlock>
 
 #### Authenticating
 
 You can use `NewWithUserConfig` to create a `Client` with authentication information.
 
-```go
-import (
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+<CodeBlock language="go">
+{`import (
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 )
-
 client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
 	Host:     "localhost:8090",
 	BasePath: "v2/api",
@@ -82,14 +83,14 @@ client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
 	Name:     "Name",
 	Password: "Password",
 	Source:   models.UserSourceLOCAL,
-})
-```
+})`}
+</CodeBlock>
 
 Alternatively, you can create a `Client` and then manually add authentication information.
 
-```go
-import (
-  User "github.com/smartxworks/cloudtower-go-sdk/v2/client/user"
+<CodeBlock language="go">
+{`import (
+  User "github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
 )
 loginParams := User.NewLoginParams()
 loginParams.RequestBody = &models.LoginInput{
@@ -101,13 +102,13 @@ logRes, err := client.User.Login(loginParams)
 if err != nil {
 	return err
 }
-transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", *logRes.Payload.Data.Token)
-```
+transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", *logRes.Payload.Data.Token)`}
+</CodeBlock>
 
 #### Retrieving resources
 
-```go
-getVmParams := vm.NewGetVmsParams();
+<CodeBlock language="go">
+{`getVmParams := vm.NewGetVmsParams();
 getVmParams.RequestBody = &models.GetVmsRequestBody{
 	Where: &models.VMWhereInput{
 		ID: pointy.String("vm_id"),
@@ -117,15 +118,15 @@ vmsRes, err := client.VM.GetVms(getVmParams)
 if err != nil {
 	return err
 }
-vms := vmsRes.Payload
-```
+vms := vmsRes.Payload`}
+</CodeBlock>
 
 #### Updating resources
 
 > Updating resources will trigger a related asynchronous task. When the task is completed, it indicates that the resource operation has finished and the data has been updated.
 
-```go
-target_vm := vmsRes.Payload[0]
+<CodeBlock language="go">
+{`target_vm := vmsRes.Payload[0]
 vmStartParams := vm.NewStartVMParams()
 vmStartParams.RequestBody = &models.VMStartParams{
 	Where: &models.VMWhereInput{
@@ -135,48 +136,108 @@ vmStartParams.RequestBody = &models.VMStartParams{
 startRes, err := client.VM.StartVM(vmStartParams)
 if err != nil {
 	return err
-}
-```
+}`}
+</CodeBlock>
 
 > You can use the provided utility method `WaitTask` to synchronously wait for an asynchronous task to complete. If the task fails or times out, an error will be returned. The polling interval is 5 seconds, and the timeout is 300 seconds.
 >
 > - **Method parameters**
 >
-> | <strong>Parameter</strong> | <strong>Type</strong>               | <strong>Required</strong> | <strong>Description</strong>                                                                |
-> | -------------------------- | ----------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------- |
-> | context                    | Context                             | Yes                       | Used to control interrupts.                                                 |
-> | <code>client</code>        | \*client.Cloudtower | Yes                       | The client instance used for querying.                                      |
-> | `id`                       | string                              | Yes                       | The ID of the task to query.                                                |
-> | interval                   | time.duration       | Yes                       | The waiting time after each query. The minimum is 1 second. |
+> <table>
+> <thead>
+> <tr>
+> <th><strong>Parameter</strong></th>
+> <th><strong>Type</strong></th>
+> <th><strong>Required</strong></th>
+> <th><strong>Description</strong></th>
+> </tr>
+> </thead>
+> <tbody>
+> <tr>
+> <td>context</td>
+> <td>Context</td>
+> <td>Yes</td>
+> <td>Used to control interrupts.</td>
+> </tr>
+> <tr>
+> <td><code>client</code></td>
+> <td>*{CodeTerminology["go_client_type"]}</td>
+> <td>Yes</td>
+> <td>The client instance used for querying.</td>
+> </tr>
+> <tr>
+> <td><code>id</code></td>
+> <td>string</td>
+> <td>Yes</td>
+> <td>The ID of the task to query.</td>
+> </tr>
+> <tr>
+> <td>interval</td>
+> <td>time.duration</td>
+> <td>Yes</td>
+> <td>The waiting time after each query. The minimum is 1 second.</td>
+> </tr>
+> </tbody>
+> </table>
 
-```go
-task := *startRes.Payload[0].TaskID
+<CodeBlock language="go">
+{`task := *startRes.Payload[0].TaskID
 err = utils.WaitTask(context.TODO(), client, task, 1*time.Second)
 if err != nil {
 	return err
-}
-```
+}`}
+</CodeBlock>
 
 > If there are multiple tasks, you can use `WaitTasks`, which accepts multiple task IDs. Other behaviors are the same as `WaitTask`.
 >
 > - **Method parameters**
 >
-> | <strong>Parameter</strong> | <strong>Type</strong>                                        | <strong>Required</strong> | <strong>Description</strong>                                                                |
-> | -------------------------- | ------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------- |
-> | context                    | Context                                                      | Yes                       | Used to control interrupts.                                                 |
-> | `client`                   | \*client.Cloudtower                          | Yes                       | The client instance used for querying.                                      |
-> | `ids`                      | []string | Yes                       | The list of task IDs to query.                                              |
-> | interval                   | time.duration                                | Yes                       | The waiting time after each query. The minimum is 1 second. |
+> <table>
+> <thead>
+> <tr>
+> <th><strong>Parameter</strong></th>
+> <th><strong>Type</strong></th>
+> <th><strong>Required</strong></th>
+> <th><strong>Description</strong></th>
+> </tr>
+> </thead>
+> <tbody>
+> <tr>
+> <td>context</td>
+> <td>Context</td>
+> <td>Yes</td>
+> <td>Used to control interrupts.</td>
+> </tr>
+> <tr>
+> <td><code>client</code></td>
+> <td>*{CodeTerminology["go_client_type"]}</td>
+> <td>Yes</td>
+> <td>The client instance used for querying.</td>
+> </tr>
+> <tr>
+> <td><code>ids</code></td>
+> <td>[]string</td>
+> <td>Yes</td>
+> <td>The list of task IDs to query.</td>
+> </tr>
+> <tr>
+> <td>interval</td>
+> <td>time.duration</td>
+> <td>Yes</td>
+> <td>The waiting time after each query. The minimum is 1 second.</td>
+> </tr>
+> </tbody>
+> </table>
 
-```go
-tasks := funk.Map(startRes.Payload, func(tvm *models.WithTaskVM) string {
+<CodeBlock language="go">
+{`tasks := funk.Map(startRes.Payload, func(tvm *models.WithTaskVM) string {
 	return *tvm.TaskID
 }).([]string)
 err = utils.WaitTask(context.TODO(), client, tasks, 1*time.Second)
 if err != nil {
 	return err
-}
-```
+}`}
+</CodeBlock>
 
 #### Others
 
@@ -184,22 +245,21 @@ if err != nil {
 
 > You can set the response language by configuring the `ContentLanguage` field in the request parameters. Available values are `["en-US", "zh-CN"]`, with `en-US` as the default. If you specify an unsupported language, the API returns an `HTTP 400` error.
 
-```go
-getTaskDefaultParams := task.NewGetTasksParams()
+<CodeBlock language="go">
+{`getTaskDefaultParams := task.NewGetTasksParams()
 getTaskDefaultParams.RequestBody = &models.GetTasksRequestBody{
 	First: pointy.Int32(10),
 }
 // The message, solution, cause, and impact in alerts will be returned in English. 
 taskDefaultRes, err := client.Task.GetTasks(getTaskDefaultParams)
-
 getTaskZhParams := task.NewGetTasksParams()
 getTaskZhParams.RequestBody = &models.GetTasksRequestBody{
 	First: pointy.Int32(10),
 }
 // The message, solution, cause, and impact in alerts will be returned in Chinese. 
 getTaskZhParams.ContentLanguage = pointy.String("en-US")
-taskZhRes, err := client.Task.GetTasks(getTaskZhParams)
-```
+taskZhRes, err := client.Task.GetTasks(getTaskZhParams)`}
+</CodeBlock>
 
 ## Operation examples
 
@@ -207,19 +267,15 @@ taskZhRes, err := client.Task.GetTasks(getTaskZhParams)
 
 #### Fetching all virtual machines
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -230,9 +286,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getAllVms(
-	client *apiclient.Cloudtower) ([]*models.VM, error) {
+	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
 	getAllVmsParams := vm.NewGetVmsParams()
 	getAllVmsParams.RequestBody = &models.GetVmsRequestBody{}
 	vmsRes, err := client.VM.GetVms(getAllVmsParams)
@@ -240,25 +295,21 @@ func getAllVms(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Fetching virtual machines with pagination
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -269,9 +320,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmsWithPagination(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
   from int32,
   to int32) ([]*models.VM, error) {
 	getVmsWithPaginationParams := vm.NewGetVmsParams()
@@ -284,25 +334,21 @@ func getVmsWithPagination(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Fetching all powered-on virtual machines
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -313,9 +359,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getAllRunningVms(
-	client *apiclient.Cloudtower) ([]*models.VM, error) {
+	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
 	getAllRunningVmsParams := vm.NewGetVmsParams()
 	getAllRunningVmsParams.RequestBody = &models.GetVmsRequestBody{
 		Where: &models.VMWhereInput{
@@ -327,25 +372,21 @@ func getAllRunningVms(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Fetching virtual machines whose name or description contain a specific string
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -356,9 +397,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmsMatchStr(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	match string) ([]*models.VM, error) {
 	getAllVmNameMatchStrParams := vm.NewGetVmsParams()
 	getAllVmNameMatchStrParams.RequestBody = &models.GetVmsRequestBody{
@@ -371,25 +411,21 @@ func getVmsMatchStr(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Fetching all virtual machines with the number of vCPUs greater than `n`
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -400,9 +436,8 @@ func main() {
 	}
   // handle queried vms
 }
-
 func getVmshasNMoreCpuCore(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	n int32) ([]*models.VM, error) {
 	getAllVmCoreGtNParams := vm.NewGetVmsParams()
 	getAllVmCoreGtNParams.RequestBody = &models.GetVmsRequestBody{
@@ -415,30 +450,26 @@ func getVmshasNMoreCpuCore(
 		return nil, err
 	}
 	return vmsRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 ### Creating a virtual machine from a template
 
 #### Specifying IP address only
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -449,9 +480,8 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVmFromTemplate(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	templateId string,
 	clusterId string,
 	name string) (*models.VM, error) {
@@ -484,28 +514,24 @@ func createVmFromTemplate(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Configure virtual disk parameters that differ from the template
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -516,9 +542,8 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVmFromTemplate(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	templateId string,
 	clusterId string,
 	name string) (*models.VM, error) {
@@ -590,28 +615,24 @@ func createVmFromTemplate(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Configure NIC parameters that differ from the template
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -622,9 +643,8 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVmFromTemplate(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	templateId string,
 	clusterId string,
 	name string) (*models.VM, error) {
@@ -664,30 +684,26 @@ func createVmFromTemplate(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ### Creating a blank virtual machine
 
 #### Simple creation
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
   	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -723,11 +739,9 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	createParams *vm.CreateVMParams) (*models.VM, error) {
-
 	createRes, err := client.VM.CreateVM(createParams)
 	if err != nil {
 		return nil, err
@@ -748,31 +762,26 @@ func createVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-
-```
+}`}
+</CodeBlock>
 
 #### Configuring virtual disks during creation
 
 ##### Mounting ISOs via CD-ROM
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -809,11 +818,9 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	createParams *vm.CreateVMParams) (*models.VM, error) {
-
 	createRes, err := client.VM.CreateVM(createParams)
 	if err != nil {
 		return nil, err
@@ -834,28 +841,24 @@ func createVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Mounting virtual volumes as virtual disks
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -893,11 +896,9 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	createParams *vm.CreateVMParams) (*models.VM, error) {
-
 	createRes, err := client.VM.CreateVM(createParams)
 	if err != nil {
 		return nil, err
@@ -918,28 +919,24 @@ func createVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Mounting newly created virtual disks
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -980,11 +977,9 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	createParams *vm.CreateVMParams) (*models.VM, error) {
-
 	createRes, err := client.VM.CreateVM(createParams)
 	if err != nil {
 		return nil, err
@@ -1005,28 +1000,24 @@ func createVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Configuring virtual NICs during creation
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1067,11 +1058,9 @@ func main() {
 	}
   // handle created vm
 }
-
 func createVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	createParams *vm.CreateVMParams) (*models.VM, error) {
-
 	createRes, err := client.VM.CreateVM(createParams)
 	if err != nil {
 		return nil, err
@@ -1092,30 +1081,26 @@ func createVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ### Editing a virtual machine
 
 #### Editing basic information
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1141,9 +1126,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func updateVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	updateParams *vm.UpdateVMParams) (*models.VM, error) {
 	updateRes, err := client.VM.UpdateVM(updateParams)
 	if err != nil {
@@ -1165,30 +1149,26 @@ func updateVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Editing CD-ROMs
 
 ##### Adding a CD-ROM
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1214,9 +1194,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func addVmCdRom(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	addCdRomParams *vm.AddVMCdRomParams) (*models.VM, error) {
 	updateRes, err := client.VM.AddVMCdRom(addCdRomParams)
 	if err != nil {
@@ -1238,28 +1217,24 @@ func addVmCdRom(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Deleting a CD-ROM
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1279,9 +1254,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func removeVmCdRom(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	removeCdRomParams *vm.RemoveVMCdRomParams) (*models.VM, error) {
 	updateRes, err := client.VM.RemoveVMCdRom(removeCdRomParams)
 	if err != nil {
@@ -1303,30 +1277,26 @@ func removeVmCdRom(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Managing virtual volumes
 
 ##### Adding a new virtual volume
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1358,9 +1328,8 @@ func main() {
 	}
   // handle created vm
 }
-
 func addVmDisk(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	addVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {
 	updateRes, err := client.VM.AddVMDisk(addVMDiskParams)
 	if err != nil {
@@ -1382,28 +1351,24 @@ func addVmDisk(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Mounting an existing virtual volume as a virtual disk
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1432,9 +1397,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func addVmDisk(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	addVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {
 	updateRes, err := client.VM.AddVMDisk(addVMDiskParams)
 	if err != nil {
@@ -1456,28 +1420,24 @@ func addVmDisk(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Unmounting a virtual disk
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1497,9 +1457,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func removeVmDisk(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	removeVmDiskParams *vm.RemoveVMDiskParams) (*models.VM, error) {
 	updateRes, err := client.VM.RemoveVMDisk(removeVmDiskParams)
 	if err != nil {
@@ -1521,30 +1480,26 @@ func removeVmDisk(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Managing NICs
 
 ##### Adding a NIC
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1570,9 +1525,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func addVmNic(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	addVMNicParams *vm.AddVMNicParams) (*models.VM, error) {
 	updateRes, err := client.VM.AddVMNic(addVMNicParams)
 	if err != nil {
@@ -1594,28 +1548,24 @@ func addVmNic(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Editing NICs
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1637,9 +1587,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func updateVmNic(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	updateVMNicParams *vm.UpdateVMNicParams) (*models.VM, error) {
 	updateRes, err := client.VM.UpdateVMNic(updateVMNicParams)
 	if err != nil {
@@ -1661,28 +1610,24 @@ func updateVmNic(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Removing a NIC
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -1702,9 +1647,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func removeVmNic(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	removeVmDiskParams *vm.RemoveVMNicParams) (*models.VM, error) {
 	updateRes, err := client.VM.RemoveVMNic(removeVmDiskParams)
 	if err != nil {
@@ -1726,45 +1670,38 @@ func removeVmNic(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-
-```
+}`}
+</CodeBlock>
 
 #### Migrating a virtual machine
 
 ##### Migrating a virtual machine to a specific host
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	migratedVm, err := migrateVmToHost(client, "vmId", "hostId")
 	if err != nil {
 		panic(err.Error())
 	}
 	// handle migrated vm
 }
-
 func migrateVmToHost(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string,
 	hostId string) (*models.VM, error) {
 	migrateParams := vm.NewMigRateVMParams()
@@ -1796,42 +1733,36 @@ func migrateVmToHost(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Automatically placing a virtual machine on a proper host
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	migratedVm, err := migrateVmAutoSchedule(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
 	// handle migrated vm
 }
-
 func migrateVmAutoSchedule(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	migrateParams := vm.NewMigRateVMParams()
 	migrateParams.RequestBody = &models.VMMigrateParams{
@@ -1859,8 +1790,8 @@ func migrateVmAutoSchedule(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ### Managing virtual machine power
 
@@ -1868,37 +1799,31 @@ func migrateVmAutoSchedule(
 
 ##### Powering on a specific virtual machine and automatically scheduling it to a proper host
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	startedVm, err := startVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle started vm
 }
-
 func startVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	startParams := vm.NewStartVMParams()
 	startParams.RequestBody = &models.VMStartParams{
@@ -1926,36 +1851,30 @@ func startVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Powering on virtual machines in batches and automatically scheduling them to a proper host
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	startedVms, err := startVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -1964,8 +1883,7 @@ func main() {
 	}
   // handle started vms
 }
-
-func startVmsByQuery(client *apiclient.Cloudtower,
+func startVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	startParams := vm.NewStartVMParams()
 	startParams.RequestBody = &models.VMStartParams{
@@ -2003,42 +1921,36 @@ func startVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Powering on a virtual machine and placing it on a specified host
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	startedVm, err := startVmOnHost(client, "vmId", "hostId2")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle started vm
 }
-
 func startVmOnHost(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string,
 	hostId string) (*models.VM, error) {
 	startParams := vm.NewStartVMParams()
@@ -2070,44 +1982,38 @@ func startVmOnHost(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Shutting down virtual machines
 
 ##### Shutting down a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	shutdownVm, err := shutdownVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle shutdown vm
 }
-
 func shutdownVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	shutdownParams := vm.NewShutDownVMParams()
 	shutdownParams.RequestBody = &models.VMOperateParams{
@@ -2135,36 +2041,30 @@ func shutdownVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Shutting down virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	shutdownVms, err := shutdownVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2173,8 +2073,7 @@ func main() {
 	}
   // handle shutdown vms
 }
-
-func shutdownVmsByQuery(client *apiclient.Cloudtower,
+func shutdownVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	shutdownParams := vm.NewShutDownVMParams()
 	shutdownParams.RequestBody = &models.VMOperateParams{
@@ -2212,42 +2111,36 @@ func shutdownVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Forcibly powering off a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	shutdownVm, err := forceShutdownVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle shutdown vm
 }
-
 func forceShutdownVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	shutdownParams := vm.NewForceShutDownVMParams()
 	shutdownParams.RequestBody = &models.VMOperateParams{
@@ -2275,35 +2168,29 @@ func forceShutdownVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Forcibly powering off virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	shutdownVms, err := forceshutdownVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2312,9 +2199,7 @@ func main() {
 	}
   // handle shutdown vms
 }
-
-
-func forceshutdownVmsByQuery(client *apiclient.Cloudtower,
+func forceshutdownVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	shutdownParams := vm.NewForceShutDownVMParams()
 	shutdownParams.RequestBody = &models.VMOperateParams{
@@ -2352,45 +2237,38 @@ func forceshutdownVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-
-```
+}`}
+</CodeBlock>
 
 #### Restrating virtual machines
 
 ##### Restarting a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	restartedVm, err := restartVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle restarted vm
 }
-
 func restartVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	restartParams := vm.NewRestartVMParams()
 	restartParams.RequestBody = &models.VMOperateParams{
@@ -2418,35 +2296,29 @@ func restartVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Restarting virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
   	restartedVms, err := restartVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2455,8 +2327,7 @@ func main() {
 	}
   // handle restarted vms
 }
-
-func restartVmsByQuery(client *apiclient.Cloudtower,
+func restartVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	restartParams := vm.NewRestartVMParams()
 	restartParams.RequestBody = &models.VMOperateParams{
@@ -2494,42 +2365,36 @@ func restartVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Forcibly restarting a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	restartedVm, err := forceRestartVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle restarted vm
 }
-
 func forceRestartVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	restartParams := vm.NewForceRestartVMParams()
 	restartParams.RequestBody = &models.VMOperateParams{
@@ -2557,35 +2422,29 @@ func forceRestartVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Forcibly restarting virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	restartedVms, err := forceRestartVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2594,8 +2453,7 @@ func main() {
 	}
   // handle restarted vms
 }
-
-func forceRestartVmsByQuery(client *apiclient.Cloudtower,
+func forceRestartVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	restartParams := vm.NewForceRestartVMParams()
 	restartParams.RequestBody = &models.VMOperateParams{
@@ -2633,45 +2491,38 @@ func forceRestartVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Suspending virtual machines
 
 ##### Suspending a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
-
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	suspendedVm, err := suspendVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle suspended vm
 }
-
 func suspendVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	suspendParams := vm.NewSuspendVMParams()
 	suspendParams.RequestBody = &models.VMOperateParams{
@@ -2699,35 +2550,29 @@ func suspendVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Suspending virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	suspendedVms, err := suspendVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2737,8 +2582,7 @@ func main() {
 	// handle restarted vms
 	print(suspendedVms)
 }
-
-func suspendVmsByQuery(client *apiclient.Cloudtower,
+func suspendVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	suspendParams := vm.NewSuspendVMParams()
 	suspendParams.RequestBody = &models.VMOperateParams{
@@ -2776,45 +2620,38 @@ func suspendVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-
-```
+}`}
+</CodeBlock>
 
 #### Resuming virtual machines
 
 ##### Resuming a specific virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	resumedVm, err := resumeVm(client, "vmId")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle resumed vm
 }
-
 func resumeVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	resumeVmParams := vm.NewResumeVMParams()
 	resumeVmParams.RequestBody = &models.VMOperateParams{
@@ -2842,35 +2679,29 @@ func resumeVm(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Resuming virtual machines in batches
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	resumedVms, err := resumeVmsByQuery(client, &models.VMWhereInput{
 		IDIn: []string{"vmId"},
 	})
@@ -2879,8 +2710,7 @@ func main() {
 	}
   // handle resumed vms
 }
-
-func resumeVmsByQuery(client *apiclient.Cloudtower,
+func resumeVmsByQuery(client *${CodeTerminology["go_client"]},
 	where *models.VMWhereInput) ([]*models.VM, error) {
 	resumeParams := vm.NewResumeVMParams()
 	resumeParams.RequestBody = &models.VMOperateParams{
@@ -2918,9 +2748,8 @@ func resumeVmsByQuery(client *apiclient.Cloudtower,
 		return nil, err
 	}
 	return queryRes.Payload, nil
-}
-
-```
+}`}
+</CodeBlock>
 
 ### Deleting a virtual machine
 
@@ -2928,39 +2757,32 @@ func resumeVmsByQuery(client *apiclient.Cloudtower,
 
 ##### Moving virtual machines to the recycle bin
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	vmInRecycleBin, err := moveVmToRecycleBin(client, "vmId")
-
 	if err != nil {
 		panic(err.Error())
 	}
 	// fmt.Print(vms)
 	print(vmInRecycleBin)
 }
-
 func moveVmToRecycleBin(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	moveParams := vm.NewMoveVMToRecycleBinParams()
 	moveParams.RequestBody = &models.VMOperateParams{
@@ -2988,45 +2810,37 @@ func moveVmToRecycleBin(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 ##### Restoring virtual machines from the recycle bin
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
-
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	vmInRecycleBin, err := recoverVmFromRecycleBin(client, "vmId")
-
 	if err != nil {
 		panic(err.Error())
 	}
 	// fmt.Print(vms)
 	print(vmInRecycleBin)
 }
-
 func recoverVmFromRecycleBin(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) (*models.VM, error) {
 	recoverParams := vm.NewRecoverVMFromRecycleBinParams()
 	recoverParams.RequestBody = &models.VMOperateParams{
@@ -3054,42 +2868,35 @@ func recoverVmFromRecycleBin(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Permanently deleting virtual machines
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"time"
 	"context"
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	err := deleteVm(client, "vmId")
-
 	if err != nil {
 		panic(err.Error())
 	}
 }
-
 func deleteVm(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string) error {
 	deleteParams := vm.NewDeleteVMParams()
 	deleteParams.RequestBody = &models.VMOperateParams{
@@ -3107,38 +2914,33 @@ func deleteVm(
 		return err
 	}
 	return nil
-}
-```
+}`}
+</CodeBlock>
 
 ## Scenario examples
 
 ### Backing up a virtual machine
 
-```go
-package main
-
+<CodeBlock language="go">
+{`package main
 import (
 	"fmt"
 	"time"
 	"context"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/iscsi_lun_snapshot"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/user"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm_snapshot"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/utils"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/iscsi_lun_snapshot"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm_snapshot"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
 	"github.com/openlyinc/pointy"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func create_vm_snapshot(
-  client *apiclient.Cloudtower,
+  client *${CodeTerminology["go_client"]},
 	targetVmName string,
 	targetSnapshotName string,
 	consistentType models.ConsistentType) (*models.VMSnapshot, []*models.IscsiLunSnapshot, error) {
@@ -3212,35 +3014,30 @@ func create_vm_snapshot(
 		return nil, nil, err
 	}
 	return createdSnapshot, getLunSnapshotRes.Payload, nil
-}
-```
+}`}
+</CodeBlock>
 
 ### Building dashboard
 
 #### Defining utility methods
 
-```go
-import (
+<CodeBlock language="go">
+{`import (
 	"fmt"
-
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/v2/client"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/alert"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/disk"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/host"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/client/user"
-	"github.com/smartxworks/cloudtower-go-sdk/v2/models"
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/alert"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/cluster"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/disk"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/host"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
+	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
 	"github.com/openlyinc/pointy"
 	"github.com/thoas/go-funk"
-
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 var ByteUnits []string = []string{"B", "KiB", "MiB", "GiB", "TiB", "PiB"}
 var HzUnits []string = []string{"Hz", "KHz", "MHz", "GHz", "THz"}
-
 func formatUnit(base float64, units []string, step int32) string {
 	length := len(units)
 	if length == 0 {
@@ -3256,18 +3053,17 @@ func formatUnit(base float64, units []string, step int32) string {
 		base = base / float64(step)
 	}
 	return fmt.Sprintf("%0.2f%s", base, units[length-1])
-}
-```
+}`}
+</CodeBlock>
 
 #### Building alert information
 
-```go
-type AlertInfo struct {
+<CodeBlock language="go">
+{`type AlertInfo struct {
 	Critical []*models.Alert
 	Notice   []*models.Alert
 	Info     []*models.Alert
 }
-
 func NewAlertInfo(critial []*models.Alert, notice []*models.Alert, info []*models.Alert) *AlertInfo {
 	return &AlertInfo{
 		Critical: critial,
@@ -3275,8 +3071,7 @@ func NewAlertInfo(critial []*models.Alert, notice []*models.Alert, info []*model
 		Info:     info,
 	}
 }
-
-func buildAlertInfo(client *apiclient.Cloudtower, clusterIds []string) (*AlertInfo, error) {
+func buildAlertInfo(client *${CodeTerminology["go_client"]}, clusterIds []string) (*AlertInfo, error) {
 	getAlertParams := alert.NewGetAlertsParams()
 	if len(clusterIds) == 0 {
 		getAlertParams.RequestBody = &models.GetAlertsRequestBody{
@@ -3312,21 +3107,20 @@ func buildAlertInfo(client *apiclient.Cloudtower, clusterIds []string) (*AlertIn
 		}
 	}
 	return NewAlertInfo(critial, notice, info), nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Building disk information
 
 > Use mechanical hard drives (HDDs) as an example.
 
-```go
-type DiskInfo struct {
+<CodeBlock language="go">
+{`type DiskInfo struct {
 	Healthy int32
 	Warning int32
 	Error   int32
 	Total   int32
 }
-
 func NewDiskInfo() *DiskInfo {
 	return &DiskInfo{
 		Healthy: 0,
@@ -3335,8 +3129,7 @@ func NewDiskInfo() *DiskInfo {
 		Total:   0,
 	}
 }
-
-func buildHddInfo(client *apiclient.Cloudtower, clusterIds []string) (*DiskInfo, error) {
+func buildHddInfo(client *${CodeTerminology["go_client"]}, clusterIds []string) (*DiskInfo, error) {
 	getDiskParams := disk.NewGetDisksParams()
 	if len(clusterIds) == 0 {
 		getDiskParams.RequestBody = &models.GetDisksRequestBody{}
@@ -3382,15 +3175,15 @@ func buildHddInfo(client *apiclient.Cloudtower, clusterIds []string) (*DiskInfo,
 		}
 	}
 	return hddInfo, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Building performance metrics
 
 > Retrieve the number of CPU cores, total CPU frequency, CPU utilization, total memory, used memory, total storage capacity, used storage capacity, failed storage capacity, and available storage capacity of a specified cluster.
 
-```go
-type CpuInfo struct {
+<CodeBlock language="go">
+{`type CpuInfo struct {
 	TotalCore uint32
 	TotalInHz uint64
 	Total     string
@@ -3398,7 +3191,6 @@ type CpuInfo struct {
 	Used      string
 	Usage     string
 }
-
 func NewCpuInfo() *CpuInfo {
 	return &CpuInfo{
 		TotalCore: 0,
@@ -3406,14 +3198,12 @@ func NewCpuInfo() *CpuInfo {
 		UsedInHz:  0,
 	}
 }
-
 func (info *CpuInfo) compute() *CpuInfo {
 	info.Total = formatUnit(float64(info.TotalInHz), HzUnits, 1000)
 	info.Used = formatUnit(float64(info.UsedInHz), HzUnits, 1000)
 	info.Usage = fmt.Sprintf("%0.2f%%", float64(info.UsedInHz)/float64(info.TotalInHz))
 	return info
 }
-
 type MemoryInfo struct {
 	TotalInByte uint64
 	Total       string
@@ -3421,21 +3211,18 @@ type MemoryInfo struct {
 	Used        string
 	Usage       string
 }
-
 func NewMemoryInfo() *MemoryInfo {
 	return &MemoryInfo{
 		TotalInByte: 0,
 		UsedInByte:  0,
 	}
 }
-
 func (info *MemoryInfo) compute() *MemoryInfo {
 	info.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)
 	info.Used = formatUnit(float64(info.UsedInByte), ByteUnits, 1024)
 	info.Usage = fmt.Sprintf("%0.2f%%", float64(info.UsedInByte)/float64(info.TotalInByte))
 	return info
 }
-
 type StorageInfo struct {
 	TotalInByte     uint64
 	Total           string
@@ -3446,7 +3233,6 @@ type StorageInfo struct {
 	AvailableInByte uint64
 	Available       string
 }
-
 func NewStorageInfo() *StorageInfo {
 	return &StorageInfo{
 		TotalInByte:     0,
@@ -3455,7 +3241,6 @@ func NewStorageInfo() *StorageInfo {
 		AvailableInByte: 0,
 	}
 }
-
 func (info *StorageInfo) compute() *StorageInfo {
 	info.AvailableInByte = info.TotalInByte - info.UsedInByte - info.InvalidInByte
 	info.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)
@@ -3464,14 +3249,12 @@ func (info *StorageInfo) compute() *StorageInfo {
 	info.Available = formatUnit(float64(info.AvailableInByte), ByteUnits, 1024)
 	return info
 }
-
 type MetricInfo struct {
 	Storage *StorageInfo
 	Memory  *MemoryInfo
 	Cpu     *CpuInfo
 }
-
-func buildMetricsInfo(client *apiclient.Cloudtower, clusters []*models.Cluster, clusterIds []string) (*MetricInfo, error) {
+func buildMetricsInfo(client *${CodeTerminology["go_client"]}, clusters []*models.Cluster, clusterIds []string) (*MetricInfo, error) {
 	memory := NewMemoryInfo()
 	storage := NewStorageInfo()
 	cpu := NewCpuInfo()
@@ -3526,19 +3309,18 @@ func buildMetricsInfo(client *apiclient.Cloudtower, clusters []*models.Cluster, 
 		Cpu:     cpu,
 		Storage: storage,
 	}, nil
-}
-```
+}`}
+</CodeBlock>
 
 #### Building dashboard
 
-```go
-type DashboardInfo struct {
+<CodeBlock language="go">
+{`type DashboardInfo struct {
 	Metric *MetricInfo
 	Hdd    *DiskInfo
 	Alert  *AlertInfo
 }
-
-func BuildDashboard(client *apiclient.Cloudtower, clusterIds []string) (*DashboardInfo, error) {
+func BuildDashboard(client *${CodeTerminology["go_client"]}, clusterIds []string) (*DashboardInfo, error) {
 	getClusterParams := cluster.NewGetClustersParams()
 	if len(clusterIds) == 0 {
 		getClusterParams.RequestBody = &models.GetClustersRequestBody{}
@@ -3570,5 +3352,5 @@ func BuildDashboard(client *apiclient.Cloudtower, clusterIds []string) (*Dashboa
 		Hdd:    hdd,
 		Alert:  alert,
 	}, nil
-}
-```
+}`}
+</CodeBlock>

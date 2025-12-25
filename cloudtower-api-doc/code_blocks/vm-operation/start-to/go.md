@@ -1,32 +1,31 @@
-```go
-package main
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
+export default function GoStartTo() {
+  return (
+    <CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-	"github.com/smartxworks/cloudtower-go-sdk/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
+	"github.com/${CodeTerminology["go_github_address"]}/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
 	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-
 	startedVm, err := startVmOnHost(client, "vmId", "hostId2")
 	if err != nil {
 		panic(err.Error())
 	}
   // handle started vm
 }
-
 func startVmOnHost(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	vmId string,
 	hostId string) (*models.VM, error) {
 	startParams := vm.NewStartVMParams()
@@ -58,5 +57,7 @@ func startVmOnHost(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
+}`}
+    </CodeBlock>
+  );
 }
-```

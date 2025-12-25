@@ -1,0 +1,20 @@
+{
+    "java_package": "com.smartx.com",
+    "java_import_package": "com.smartx.tower",
+    "python_from_package": "cloudtower",
+    "example_host": "tower.smartx.com",
+    "github_org": "smartxworks",
+    "github_repo_prefix": "cloudtower",
+    "java_github_address": "smartxworks/cloudtower-java-sdk",
+    "node_github_address": "smartxworks/cloudtower-node-sdk",
+    "go_github_address": "smartxworks/cloudtower-go-sdk",
+    "python_github_address": "smartxworks/cloudtower-python-sdk",
+    "python_sdk": "cloudtower-python-sdk",
+    "username_placeholder": "CLOUDTOWER_USERNAME",
+    "password_placeholder": "CLOUDTOWER_PASSWORD",
+    "endpoint_placeholder": "CLOUDTOWER_ENDPOINT",
+    "python_package": "cloudtower-sdk",
+    "python_package_1": "cloudtower_sdk",
+    "go_client": "apiclient.Cloudtower",
+    "go_client_type": "client.Cloudtower"
+}

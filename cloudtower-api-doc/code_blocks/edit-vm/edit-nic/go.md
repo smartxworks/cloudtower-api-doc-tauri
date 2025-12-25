@@ -1,18 +1,19 @@
-```go
-package main
+import CodeBlock from '@theme/CodeBlock';
+import CodeTerminology from '@site/code-terminology.json';
 
+export default function GoEditNic() {
+  return (
+    <CodeBlock language="go">
+{`package main
 import (
 	"github.com/openlyinc/pointy"
-	apiclient "github.com/smartxworks/cloudtower-go-sdk/client"
-	"github.com/smartxworks/cloudtower-go-sdk/client/vm"
-	"github.com/smartxworks/cloudtower-go-sdk/models"
-	"github.com/smartxworks/cloudtower-go-sdk/utils"
-
+	apiclient "github.com/${CodeTerminology["go_github_address"]}/client"
+	"github.com/${CodeTerminology["go_github_address"]}/client/vm"
+	"github.com/${CodeTerminology["go_github_address"]}/models"
+	"github.com/${CodeTerminology["go_github_address"]}/utils"
 	httptransport "github.com/go-openapi/runtime/client"
-
 	"github.com/go-openapi/strfmt"
 )
-
 func main() {
 	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
 	client := apiclient.New(transport, strfmt.Default)
@@ -34,9 +35,8 @@ func main() {
 	}
   // handle updated vm
 }
-
 func updateVmNic(
-	client *apiclient.Cloudtower,
+	client *${CodeTerminology["go_client"]},
 	updateVMNicParams *vm.UpdateVMNicParams) (*models.VM, error) {
 	updateRes, err := client.VM.UpdateVMNic(updateVMNicParams)
 	if err != nil {
@@ -58,5 +58,7 @@ func updateVmNic(
 		return nil, err
 	}
 	return queryRes.Payload[0], nil
+}`}
+    </CodeBlock>
+  );
 }
-```
