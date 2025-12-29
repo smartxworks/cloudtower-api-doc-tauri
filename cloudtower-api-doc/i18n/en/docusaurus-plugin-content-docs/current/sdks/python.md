@@ -1259,7 +1259,7 @@ wait_tasks(tasks, api_client)
 closed_vms = vm_api.get_vms({"where": {"id_in": ids}})`}
 </CodeBlock>
 
-#### Restrating virtual machines
+#### Restarting virtual machines
 
 ##### Restarting a specific virtual machine
 

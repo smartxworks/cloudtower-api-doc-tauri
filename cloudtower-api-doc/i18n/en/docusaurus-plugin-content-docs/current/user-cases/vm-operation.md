@@ -163,7 +163,7 @@ import PythonSuspend from '@site/code_blocks/vm-operation/suspend/python.md'
 
 </Tabs>
 
-## Restrating virtual machines
+## Restarting virtual machines
 
 ### Restarting a specific virtual machine
 

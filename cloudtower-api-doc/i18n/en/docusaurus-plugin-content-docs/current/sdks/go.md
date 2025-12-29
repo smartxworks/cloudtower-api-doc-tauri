@@ -2240,7 +2240,7 @@ func forceshutdownVmsByQuery(client *${CodeTerminology["go_client"]},
 }`}
 </CodeBlock>
 
-#### Restrating virtual machines
+#### Restarting virtual machines
 
 ##### Restarting a specific virtual machine
 
