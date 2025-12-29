@@ -1396,7 +1396,7 @@ public class App {
 }
 ```
 
-#### Restrating virtual machines
+#### Restarting virtual machines
 
 ##### Restarting a specific virtual machine
 
@@ -1812,7 +1812,7 @@ public BackupResult vmBackup(ApiClient client, String vmId, String snapshotName,
 }
 ```
 
-### Building Dashboard
+### Building dashboard
 
 #### Defining utility methods
 

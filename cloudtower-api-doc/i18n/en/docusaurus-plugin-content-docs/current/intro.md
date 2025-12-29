@@ -10,7 +10,7 @@ import Terminology from '@site/terminology.json'
 
 ## Introduction
 
-<>The API {Terminology['terminology']['en-US']['PRODUCT']} can be used to access various resources managed by {Terminology['terminology']['en-US']['PRODUCT']}. The API is written following the OpenAPI v3.0.0 specification and provides SDKs in multiple languages, including Java, Go, Python, and Nodejs. </>
+<>The API {Terminology['terminology']['en-US']['PRODUCT']} can be used to access various resources managed by {Terminology['terminology']['en-US']['PRODUCT']}. The API is written following the OpenAPI v3.0.0 specification and provides software development kits (SDKs) in multiple languages, including Java, Go, Python, and Nodejs. </>
 
 ## Request type
 
