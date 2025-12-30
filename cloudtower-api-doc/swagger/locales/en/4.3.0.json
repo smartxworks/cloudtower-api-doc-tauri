@@ -262,6 +262,1062 @@
     "/update-vm-vpc-nic": {
       "summary": "Update VM VPC NIC Information",
       "description": "Used to update the VPC, subnet, floating IP, and IP address configuration of a VM's VPC NIC."
+    },
+    "/connect-cluster": {
+      "summary": "Associating a cluster",
+      "description": ""
+    },
+    "/upload-content-library-image": {
+      "summary": "Uploading an ISO image to content library",
+      "description": ""
+    },
+    "/update-content-library-image": {
+      "summary": "Editing an ISO image in content library",
+      "description": ""
+    },
+    "/distribute-content-library-image-clusters": {
+      "summary": "Distributing an ISO image in content library to a new cluster",
+      "description": ""
+    },
+    "/remove-content-library-image-clusters": {
+      "summary": "Removing a cluster storing an ISO image in content library",
+      "description": ""
+    },
+    "/delete-content-library-image": {
+      "summary": "Deleting an ISO image in content library",
+      "description": ""
+    },
+    "/import-content-library-image": {
+      "summary": "Importing an ISO image to content library",
+      "description": ""
+    },
+    "/upload-elf-file": {
+      "summary": "Uploading a VMDK file",
+      "description": ""
+    },
+    "/parse-ovf": {
+      "summary": "Parsing an OVF file",
+      "description": ""
+    },
+    "/get-export-file-download-links": {
+      "summary": "Fetching the download link for the exported file",
+      "description": ""
+    },
+    "/create-vm": {
+      "summary": "Creating a virtual machine",
+      "description": ""
+    },
+    "/create-vm-from-template": {
+      "summary": "Creating a virtual machine from a template ",
+      "description": "**Warning**: The VM template has been removed from the Arcfra Operation Center page. Unless required for specific needs, avoid using the API for creating a virtual machine from a template. Please use the template in content library instead."
+    },
+    "/create-vm-from-content-library-template": {
+      "summary": "Creating a virtual machine from a template in content library",
+      "description": ""
+    },
+    "/convert-vm-template-to-vm": {
+      "summary": "Converting a VM template into a virtual machine",
+      "description": ""
+    },
+    "/clone-vm": {
+      "summary": "Cloning a virtual machine",
+      "description": ""
+    },
+    "/rebuild-vm-from-snapshot": {
+      "summary": "Rebuilding a virtual machine from a snapshot",
+      "description": ""
+    },
+    "/rollback-vm": {
+      "summary": "Rolling back a virtual machine",
+      "description": ""
+    },
+    "/update-vm-basic-info": {
+      "summary": "Updating the basic information of a virtual machine",
+      "description": ""
+    },
+    "/move-vm-to-recycle": {
+      "summary": "Moving a virtual machine to the recycle bin",
+      "description": ""
+    },
+    "/recover-vm-from-recycle": {
+      "summary": "Recovering a virtual machine from the recycle bin",
+      "description": ""
+    },
+    "/delete-vm": {
+      "summary": "Deleting a virtual machine",
+      "description": ""
+    },
+    "/start-vm": {
+      "summary": "Powering on a virtual machine",
+      "description": ""
+    },
+    "/restart-vm": {
+      "summary": "Restarting a virtual machine",
+      "description": ""
+    },
+    "/force-restart-vm": {
+      "summary": "Forcibly restarting a virtual machine",
+      "description": ""
+    },
+    "/shutdown-vm": {
+      "summary": "Shutting down a virtual machine",
+      "description": ""
+    },
+    "/poweroff-vm": {
+      "summary": "Forcibly shutting down a virtual machine",
+      "description": ""
+    },
+    "/suspend-vm": {
+      "summary": "Suspending a virtual machine",
+      "description": ""
+    },
+    "/resume-vm": {
+      "summary": "Recovering a virtual machine",
+      "description": ""
+    },
+    "/add-vm-disk": {
+      "summary": "Adding a virtual disk",
+      "description": ""
+    },
+    "/update-vm-disk": {
+      "summary": "Updating a virtual disk",
+      "description": ""
+    },
+    "/expand-vm-disk": {
+      "summary": "Expanding a virtual disk",
+      "description": "The virtual disk will be expanded to the specified size"
+    },
+    "/remove-vm-disk": {
+      "summary": "Unmounting a virtual disk",
+      "description": ""
+    },
+    "/add-vm-cd-rom": {
+      "summary": "Adding a CD-ROM",
+      "description": ""
+    },
+    "/remove-vm-cd-rom": {
+      "summary": "Deleting a CD-ROM",
+      "description": ""
+    },
+    "/eject-iso-from-vm-cd-rom": {
+      "summary": "ISO image used for uninstalling the specified CD-ROM",
+      "description": ""
+    },
+    "/toggle-vm-cd-rom-disable": {
+      "summary": "Setting the CD-ROM status",
+      "description": ""
+    },
+    "/add-vm-nic": {
+      "summary": "Adding a virtual NIC",
+      "description": ""
+    },
+    "/update-vm-nic": {
+      "summary": "Updating a virtual NIC",
+      "description": ""
+    },
+    "/update-vm-nic-basic-info": {
+      "summary": "Editing the basic NIC information",
+      "description": "Used for updating the basic information of a virtual machine NIC. This part of the information changes more frequently than other types, but requires VMTools support. There might be bugs if VMTools is not installed or running."
+    },
+    "/update-vm-nic-advance-info": {
+      "summary": "Editing advanced NIC attributes",
+      "description": "Used for updating the infrequently changed data in the virtual machine NIC. The nic_id can only be updated when the NIC model is set to SR-IOV. Additionally, updating the NIC model is not supported."
+    },
+    "/update-vm-nic-qos-option": {
+      "summary": "Updating the QoS option for a virtual machine NIC",
+      "description": ""
+    },
+    "/add-vm-pci-nic": {
+      "summary": "Adding a virtual machine PCI NIC",
+      "description": ""
+    },
+    "/remove-vm-pci-nic": {
+      "summary": "Removing a virtual machine PCI NIC",
+      "description": ""
+    },
+    "/remove-vm-nic": {
+      "summary": "Removing a virtual NIC",
+      "description": ""
+    },
+    "/remove-vm-nic-by-where": {
+      "summary": "Removing a virtual machine NIC",
+      "description": "Improving the related filter condition, recommended for use"
+    },
+    "/add-vm-gpu-device": {
+      "summary": "Mounting a GPU device on a virtual machine",
+      "description": ""
+    },
+    "/remove-vm-gpu-device": {
+      "summary": "Unmounting a GPU device from a virtual machine",
+      "description": ""
+    },
+    "/install-vmtools": {
+      "summary": "Installing {OS_CO} VMTools",
+      "description": ""
+    },
+    "/migrate-vm": {
+      "summary": "Migrating a virtual machine",
+      "description": ""
+    },
+    "/migrate-vm-across-cluster": {
+      "summary": "Migrate a virtual machine across clusters ",
+      "description": ""
+    },
+    "/stop-vm-in-cutover-migration": {
+      "summary": "Shutting down the source virtual machine",
+      "description": "In staged migration, you need to manually shut down the source virtual machine to complete the remaining data migration."
+    },
+    "/abort-migrate-vm-across-cluster": {
+      "summary": "Terminating cross-cluster migration",
+      "description": "Manually terminating the cross-cluster migration task"
+    },
+    "/add-vm-to-folder": {
+      "summary": "Moving a virtual machine to a VM group",
+      "description": ""
+    },
+    "/remove-vm-from-folder": {
+      "summary": "Moving a virtual machine out of a VM group",
+      "description": ""
+    },
+    "/update-vm-advanced-options": {
+      "summary": "Editing virtual machine advanced attributes",
+      "description": "Used for updating virtual machine advanced attributes, including Windows optimization, CPU compatibility, virtual machine clock, and virtual machine graphics card type."
+    },
+    "/update-vm-host-options": {
+      "summary": "Updating the host information of a virtual machine",
+      "description": "Used for updating the host information of a specific virtual machine, including DNS, NTP, and host name."
+    },
+    "/reset-vm-guest-os-password": {
+      "summary": "Resetting the virtual machine password",
+      "description": "Used for updating the password of the guest OS user of a specified virtual machine."
+    },
+    "/update-vm-owner": {
+      "summary": "Updating the owner of a specified virtual machine",
+      "description": ""
+    },
+    "/update-vm-io-policy": {
+      "summary": "Updating the IO throttling policy for a virtual machine",
+      "description": ""
+    },
+    "/export-vm": {
+      "summary": "Exporting a virtual machine",
+      "description": ""
+    },
+    "/import-vm": {
+      "summary": "Importing a virtual machine",
+      "description": ""
+    },
+    "/get-vm-gpu-device-info": {
+      "summary": "Fetching the GPU driver information of the virtual machine",
+      "description": ""
+    },
+    "/get-vm-vnc-info": {
+      "summary": "Fetching the VNC connection information",
+      "description": ""
+    },
+    "/clone-content-library-vm-template-from-vm": {
+      "summary": "Cloning a VM template in content library via a virtual machine",
+      "description": ""
+    },
+    "/convert-content-library-vm-template-from-vm": {
+      "summary": "Converting a virtual machine into a template in content library",
+      "description": ""
+    },
+    "/update-content-library-vm-template": {
+      "summary": "Editing a VM template in content library",
+      "description": ""
+    },
+    "/distribute-content-library-vm-template-clusters": {
+      "summary": "Distributing a VM template in content library to a new cluster",
+      "description": ""
+    },
+    "/remove-content-library-vm-template-clusters": {
+      "summary": "Removing a cluster holding the VM template in content library",
+      "description": ""
+    },
+    "/delete-content-library-vm-template": {
+      "summary": "Deleting a VM template in content library",
+      "description": ""
+    },
+    "/export-content-library-vm-template": {
+      "summary": "Exporting a VM template",
+      "description": ""
+    },
+    "/import-content-library-vm-template": {
+      "summary": "Importing a VM template",
+      "description": ""
+    },
+    "/create-datacenter": {
+      "summary": "Creating a data center",
+      "description": ""
+    },
+    "/get-detail-vm-info-by-gpu-devices": {
+      "summary": "Fetching detailed virtual machine information via GPU details",
+      "description": ""
+    },
+    "/create-iscsi-lun": {
+      "summary": "Creating a LUN",
+      "description": ""
+    },
+    "/delete-iscsi-lun": {
+      "summary": "Deleting a LUN",
+      "description": ""
+    },
+    "/create-iscsi-target": {
+      "summary": "Creating an iSCSI target",
+      "description": ""
+    },
+    "/delete-iscsi-target": {
+      "summary": "Deleting an iSCSI target",
+      "description": ""
+    },
+    "/upload-elf-image": {
+      "summary": "Uploading an ISO image",
+      "description": ""
+    },
+    "/update-elf-image": {
+      "summary": "Updating an ISO image",
+      "description": ""
+    },
+    "/delete-elf-image": {
+      "summary": "Deleting an ISO Image",
+      "description": ""
+    },
+    "/create-isolation-policy": {
+      "summary": "Creating a quarantine policy",
+      "description": ""
+    },
+    "/update-isolation-policy": {
+      "summary": "Editing a quarantine policy",
+      "description": ""
+    },
+    "/delete-isolation-policy": {
+      "summary": "Editing a quarantine policy",
+      "description": ""
+    },
+    "/create-label": {
+      "summary": "Creating a label",
+      "description": ""
+    },
+    "/update-label": {
+      "summary": "Updating a label",
+      "description": ""
+    },
+    "/add-labels-to-resources": {
+      "summary": "Associating a label",
+      "description": ""
+    },
+    "/remove-labels-from-resources": {
+      "summary": "Dissociating a label",
+      "description": ""
+    },
+    "/delete-label": {
+      "summary": "Deleting a label",
+      "description": ""
+    },
+    "/create-network-policy-rule-service": {
+      "summary": "Creating a service",
+      "description": ""
+    },
+    "/update-network-policy-rule-service": {
+      "summary": "Updating a service",
+      "description": ""
+    },
+    "/delete-network-policy-rule-service": {
+      "summary": "Deleting a service",
+      "description": ""
+    },
+    "/disassociate-system-service-from-obs-service": {
+      "summary": "Removing the system service from an observability service",
+      "description": "Removing the system service from an observability service"
+    },
+    "/create-organization": {
+      "summary": "Creating an organization",
+      "description": ""
+    },
+    "/create-security-group": {
+      "summary": "Creating a security group",
+      "description": ""
+    },
+    "/delete-security-group": {
+      "summary": "Deleting a security group",
+      "description": ""
+    },
+    "/update-security-group": {
+      "summary": "Updating a security group",
+      "description": ""
+    },
+    "/create-security-policy": {
+      "summary": "Creating a security policy",
+      "description": ""
+    },
+    "/delete-security-policy": {
+      "summary": "Deleting a security policy",
+      "description": ""
+    },
+    "/update-security-policy": {
+      "summary": "Updating a security policy",
+      "description": ""
+    },
+    "/upload-svt-image": {
+      "summary": "Uploading an SVT image",
+      "description": ""
+    },
+    "/get-usb-devices": {
+      "summary": "Fetching a USB device",
+      "description": ""
+    },
+    "/login": {
+      "summary": "Logging in",
+      "description": ""
+    },
+    "/create-user": {
+      "summary": "Creating a user",
+      "description": ""
+    },
+    "/update-user": {
+      "summary": "Updating a user",
+      "description": ""
+    },
+    "/delete-user": {
+      "summary": "Deleting a user",
+      "description": ""
+    },
+    "/create-root-user": {
+      "summary": "Creating a user",
+      "description": "This is used to create the first user, with the fixed username as root and the role as root."
+    },
+    "/delete-virtual-private-cloud-floating-ip": {
+      "summary": "Releasing a floating IP address",
+      "description": ""
+    },
+    "/batch-create-virtual-private-cloud-floating-ips": {
+      "summary": "Creating floating IP addresses in batches",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-nat-gateway": {
+      "summary": "Creating a NAT gateway",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-nat-gateway": {
+      "summary": "Updating a NAT gateway",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-nat-gateway": {
+      "summary": "Deleting a NAT gateway",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-route-table": {
+      "summary": "Creating a route table",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-route-table": {
+      "summary": "Updating a route table",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-route-table": {
+      "summary": "Deleting a route table",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-router-gateway": {
+      "summary": "Creating a routing gateway",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-router-gateway": {
+      "summary": "Updating a routing gateway",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-router-gateway": {
+      "summary": "Delete a routing gateway",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-group": {
+      "summary": "Creating a security group in VPC",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-group": {
+      "summary": "Updating a security group in VPC",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-group": {
+      "summary": "Deleting a security group in VPC",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-policy": {
+      "summary": "Creating a  security policy in VPC",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-policy": {
+      "summary": "Deleting a security policy in VPC",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-policy": {
+      "summary": "Updating a security policy in VPC",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-subnet": {
+      "summary": "Creating a subnet",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-subnet": {
+      "summary": "Updating a subnet",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-subnet": {
+      "summary": "Deleting a subnet",
+      "description": ""
+    },
+    "/create-virtual-private-cloud": {
+      "summary": "Creating a VPC",
+      "description": ""
+    },
+    "/update-virtual-private-cloud": {
+      "summary": "Updating a VPC",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud": {
+      "summary": "Deleting a VPC",
+      "description": ""
+    },
+    "/create-vm-vlan": {
+      "summary": "Creating a VM network",
+      "description": ""
+    },
+    "/update-vm-vlan": {
+      "summary": "Updating a VLAN",
+      "description": ""
+    },
+    "/delete-vm-vlan": {
+      "summary": "Deleting a VM network",
+      "description": ""
+    },
+    "/create-vm-folder": {
+      "summary": "Creating a VM group",
+      "description": ""
+    },
+    "/update-vm-folder": {
+      "summary": "Updating a VM group",
+      "description": ""
+    },
+    "/delete-vm-folder": {
+      "summary": "Deleting a VM group",
+      "description": ""
+    },
+    "/create-vm-placement-group": {
+      "summary": "Creating a VM placement group",
+      "description": ""
+    },
+    "/update-vm-placement-group": {
+      "summary": "Editing a VM placement group",
+      "description": ""
+    },
+    "/delete-vm-placement-group": {
+      "summary": "Deleting a VM placement group",
+      "description": ""
+    },
+    "/create-vm-snapshot": {
+      "summary": "Creating a VM snapshot",
+      "description": ""
+    },
+    "/delete-vm-snapshot": {
+      "summary": "Deleting a VM snapshot",
+      "description": ""
+    },
+    "/clone-vm-template-from-vm": {
+      "summary": "Cloning a virtual machine as a VM template",
+      "description": ""
+    },
+    "/convert-vm-template-from-vm": {
+      "summary": "Converting a virtual machine into a VM template",
+      "description": ""
+    },
+    "/update-vm-template": {
+      "summary": "Updating a VM template",
+      "description": ""
+    },
+    "/delete-vm-template": {
+      "summary": "Deleting a VM template",
+      "description": ""
+    },
+    "/create-vm-volume-snapshot": {
+      "summary": "Creating a virtual volume snapshot",
+      "description": ""
+    },
+    "/delete-vm-volume-snapshot": {
+      "summary": "Deleting a virtual volume snapshot",
+      "description": ""
+    },
+    "/create-vm-volume": {
+      "summary": "Creating a virtual volume",
+      "description": ""
+    },
+    "/delete-vm-volume": {
+      "summary": "Deleting a virtual volume",
+      "description": ""
+    },
+    "/rebuild-vm-volume": {
+      "summary": "Rebuilding a virtual volume from a snapshot",
+      "description": ""
+    },
+    "/rollback-vm-volume": {
+      "summary": "Rolling back a virtual volume based on a snapshot",
+      "description": ""
+    },
+    "/clone-vm-volume": {
+      "summary": "Cloning a virtual volume",
+      "description": ""
+    },
+    "/update-vm-volume": {
+      "summary": "Updating a virtual volume",
+      "description": ""
+    },
+    "/export-vm-volume": {
+      "summary": "Exporting a virtual volume",
+      "description": ""
+    },
+    "/import-vm-volume": {
+      "summary": "Importing a virtual volume ",
+      "description": ""
+    },
+    "/get-alerts": {
+      "summary": "Fetching alerts",
+      "description": ""
+    },
+    "/get-alerts-connection": {
+      "summary": "Fetching the number of alerts",
+      "description": ""
+    },
+    "/get-clusters": {
+      "summary": "Fetching a cluster",
+      "description": ""
+    },
+    "/get-clusters-connection": {
+      "summary": "Fetching the number of clusters",
+      "description": ""
+    },
+    "/get-content-library-images": {
+      "summary": "Fetching ISO images in content library ",
+      "description": ""
+    },
+    "/get-content-library-images-connection": {
+      "summary": "Fetching the number of  ISO images in content library",
+      "description": ""
+    },
+    "/get-content-library-vm-templates": {
+      "summary": "Fetching VM templates in content library ",
+      "description": ""
+    },
+    "/get-content-library-vm-templates-connection": {
+      "summary": "Fetching the number of VM templates in content library",
+      "description": ""
+    },
+    "/get-datacenters": {
+      "summary": "Fetching a data center",
+      "description": ""
+    },
+    "/get-datacenters-connection": {
+      "summary": "Fetching the number of data centers",
+      "description": ""
+    },
+    "/get-deploys": {
+      "summary": "Fetching an Arcfra Operation Center",
+      "description": ""
+    },
+    "/get-elf-images": {
+      "summary": "Fetching an ISO image",
+      "description": ""
+    },
+    "/get-elf-images-connection": {
+      "summary": "Fetching the number of ISO images",
+      "description": ""
+    },
+    "/get-elf-storage-policies": {
+      "summary": "Fetching a storage policy",
+      "description": ""
+    },
+    "/get-elf-storage-policies-connection": {
+      "summary": "Fetching the number of storage policies",
+      "description": ""
+    },
+    "/get-everoute-clusters": {
+      "summary": "Fetching an ANS service",
+      "description": ""
+    },
+    "/get-everoute-clusters-connection": {
+      "summary": "Fetching the number of ANS services",
+      "description": ""
+    },
+    "/get-everoute-licenses": {
+      "summary": "Fetching the Arcfra Network Service license",
+      "description": ""
+    },
+    "/get-everoute-licenses-connection": {
+      "summary": "Fetching the number of Arcfra Network Service licenses",
+      "description": ""
+    },
+    "/get-everoute-packages": {
+      "summary": "Fetching the Arcfra Network Service installation package",
+      "description": ""
+    },
+    "/get-everoute-packages-connection": {
+      "summary": "Fetching the number of Arcfra Network Service installation packages",
+      "description": ""
+    },
+    "/get-gpu-devices": {
+      "summary": "Fetching a GPU device",
+      "description": ""
+    },
+    "/get-gpu-devices-connection": {
+      "summary": "Fetching the number of GPU devices",
+      "description": ""
+    },
+    "/get-hosts": {
+      "summary": "Fetching hosts",
+      "description": ""
+    },
+    "/get-hosts-connection": {
+      "summary": "Fetching the number of hosts",
+      "description": ""
+    },
+    "/get-iscsi-lun-snapshots": {
+      "summary": "Fetching a LUN snapshot",
+      "description": ""
+    },
+    "/get-iscsi-luns": {
+      "summary": "Fetching LUNs",
+      "description": ""
+    },
+    "/get-iscsi-luns-connection": {
+      "summary": "Fetching the number of LUNs",
+      "description": ""
+    },
+    "/get-iscsi-targets": {
+      "summary": "Fetching an iSCSI target",
+      "description": ""
+    },
+    "/get-iscsi-targets-connection": {
+      "summary": "Fetching the number of iSCSI targets",
+      "description": ""
+    },
+    "/get-isolation-policies": {
+      "summary": "Fetching a quarantine policy",
+      "description": ""
+    },
+    "/get-isolation-policies-connection": {
+      "summary": "Fetching the number of quarantine policies",
+      "description": ""
+    },
+    "/get-labels": {
+      "summary": "Fetching a label",
+      "description": ""
+    },
+    "/get-labels-connection": {
+      "summary": "Fetching the number of labels",
+      "description": ""
+    },
+    "/get-network-policy-rule-services": {
+      "summary": "Fetching a service",
+      "description": ""
+    },
+    "/get-network-policy-rule-services-connection": {
+      "summary": "Fetching the number of services",
+      "description": ""
+    },
+    "/get-nics": {
+      "summary": "Fetching a network port",
+      "description": ""
+    },
+    "/get-nics-connection": {
+      "summary": "Fetching the number of network ports",
+      "description": ""
+    },
+    "/get-organizations": {
+      "summary": "Fetching an organization",
+      "description": ""
+    },
+    "/get-organizations-connection": {
+      "summary": "Fetching the number of organizations",
+      "description": ""
+    },
+    "/get-security-groups": {
+      "summary": "Fetching a security group",
+      "description": ""
+    },
+    "/get-security-groups-connection": {
+      "summary": "Fetching the number of security groups",
+      "description": ""
+    },
+    "/get-security-policies": {
+      "summary": "Fetching a security policy",
+      "description": ""
+    },
+    "/get-security-policies-connection": {
+      "summary": "Fetching the number of security policies",
+      "description": ""
+    },
+    "/get-svt-images": {
+      "summary": "Fetching a VMTools ISO image",
+      "description": ""
+    },
+    "/get-svt-images-connection": {
+      "summary": "Fetching the number of VMTools ISO images",
+      "description": ""
+    },
+    "/get-system-audit-logs": {
+      "summary": "Fetching a system event",
+      "description": ""
+    },
+    "/get-system-audit-logs-connection": {
+      "summary": "Fetching the number of system events",
+      "description": ""
+    },
+    "/get-tasks": {
+      "summary": "Fetching a task",
+      "description": ""
+    },
+    "/get-tasks-connection": {
+      "summary": "Fetching the number of tasks",
+      "description": ""
+    },
+    "/get-upload-tasks": {
+      "summary": "Fetching an uploaded task",
+      "description": ""
+    },
+    "/get-upload-tasks-connection": {
+      "summary": "Fetching the number of uploaded tasks",
+      "description": ""
+    },
+    "/get-usb-devices-connection": {
+      "summary": "Fetching the number of USB devices",
+      "description": ""
+    },
+    "/get-user-audit-logs": {
+      "summary": "Fetching a user event",
+      "description": ""
+    },
+    "/get-user-audit-logs-connection": {
+      "summary": "Fetching the number of user events",
+      "description": ""
+    },
+    "/get-user-role-nexts": {
+      "summary": "Fetching a role",
+      "description": ""
+    },
+    "/get-user-role-nexts-connection": {
+      "summary": "Fetching the number of roles",
+      "description": ""
+    },
+    "/get-users": {
+      "summary": "Fetching a user",
+      "description": ""
+    },
+    "/get-users-connection": {
+      "summary": "Fetching the number of users",
+      "description": ""
+    },
+    "/get-v2-everoute-licenses": {
+      "summary": "Fetching a V2 version Arcfra Network Service license",
+      "description": ""
+    },
+    "/get-vdses": {
+      "summary": "Fetching a virtual distributed switch",
+      "description": ""
+    },
+    "/get-vdses-connection": {
+      "summary": "Fetching the number of virtual distributed switches",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings": {
+      "summary": "Fetching an associated VPC cluster",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings-connection": {
+      "summary": "Fetching the number of associated VPC clusters",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-edge-gateway-groups": {
+      "summary": "Fetching an edge gateway group",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-edge-gateway-groups-connection": {
+      "summary": "Fetching the number of edge gateway groups",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-edge-gateways": {
+      "summary": "Fetching an edge gateway",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-edge-gateways-connection": {
+      "summary": "Fetching the number of edge gateways",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnet-groups": {
+      "summary": "Fetching an external subnet group",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnet-groups-connection": {
+      "summary": "Fetching the number of external subnet groups",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets": {
+      "summary": "Fetching an external subnet",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets-connection": {
+      "summary": "Fetching the number of external subnets",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips": {
+      "summary": "Fetching a floating IP address",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips-connection": {
+      "summary": "Fetching the number of floating IP addresses",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways": {
+      "summary": "Fetching a NAT gateway",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways-connection": {
+      "summary": "Fetching the number of NAT gateways",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables": {
+      "summary": "Fetching a route table",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables-connection": {
+      "summary": "Fetching the number of route tables",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways": {
+      "summary": "Fetching a routing gateway",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways-connection": {
+      "summary": "Fetching the number of routing gateways",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups": {
+      "summary": "Fetching a security group in VPC",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups-connection": {
+      "summary": "Fetching the number of security groups in VPC",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies": {
+      "summary": "Fetching a security policy in VPC",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies-connection": {
+      "summary": "Fetching the number of security policies in VPC",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets": {
+      "summary": "Fetching a subnet",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets-connection": {
+      "summary": "Fetching the number of subnets",
+      "description": ""
+    },
+    "/get-virtual-private-clouds": {
+      "summary": "Fetching a VPC",
+      "description": ""
+    },
+    "/get-virtual-private-clouds-connection": {
+      "summary": "Fetching the number of VPCs",
+      "description": ""
+    },
+    "/get-vlans": {
+      "summary": "Fetching a network",
+      "description": ""
+    },
+    "/get-vlans-connection": {
+      "summary": "Fetching the number of networks",
+      "description": ""
+    },
+    "/get-vm-disks": {
+      "summary": "Fetching a virtual disk",
+      "description": ""
+    },
+    "/get-vm-disks-connection": {
+      "summary": "Fetching the number of virtual disks",
+      "description": ""
+    },
+    "/get-vm-export-files": {
+      "summary": "Fetching a VMDK file",
+      "description": ""
+    },
+    "/get-vm-export-files-connection": {
+      "summary": "Fetching the number of VMDK files",
+      "description": ""
+    },
+    "/get-vm-folders": {
+      "summary": "Fetching a VM group",
+      "description": ""
+    },
+    "/get-vm-folders-connection": {
+      "summary": "Fetching the number of VM groups",
+      "description": ""
+    },
+    "/get-vm-nics": {
+      "summary": "Fetching a virtual NIC",
+      "description": ""
+    },
+    "/get-vm-nics-connection": {
+      "summary": "Fetching the number of virtual NICs",
+      "description": ""
+    },
+    "/get-vm-placement-groups": {
+      "summary": "Fetching a virtual machine placement group",
+      "description": ""
+    },
+    "/get-vm-placement-groups-connection": {
+      "summary": "Fetching the number of virtual machine placement groups",
+      "description": ""
+    },
+    "/get-vm-snapshots": {
+      "summary": "Fetching a VM snapshot",
+      "description": ""
+    },
+    "/get-vm-snapshots-connection": {
+      "summary": "Fetching the number of VM snapshots",
+      "description": ""
+    },
+    "/get-vm-templates": {
+      "summary": "Fetching a VM template in a cluster",
+      "description": ""
+    },
+    "/get-vm-templates-connection": {
+      "summary": "Fetching the number of VM templates in a cluster",
+      "description": ""
+    },
+    "/get-vm-volume-snapshots": {
+      "summary": "Fetching a virtual volume snapshot",
+      "description": ""
+    },
+    "/get-vm-volume-snapshots-connection": {
+      "summary": "Fetching the number of VM snapshots",
+      "description": ""
+    },
+    "/get-vm-volumes": {
+      "summary": "Fetching a virtual volume",
+      "description": ""
+    },
+    "/get-vm-volumes-connection": {
+      "summary": "Fetching the number of virtual volumes",
+      "description": ""
+    },
+    "/get-vms": {
+      "summary": "Fetching a virtual machine",
+      "description": ""
+    },
+    "/get-vms-connection": {
+      "summary": "Fetching the number of virtual machines",
+      "description": ""
     }
   }
 }
