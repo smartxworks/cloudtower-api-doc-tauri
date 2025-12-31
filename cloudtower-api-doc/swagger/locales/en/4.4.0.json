@@ -2817,8 +2817,8 @@
       "description": "create multiple vm from one content library vm template"
     },
     "/disassociate-system-service-from-obs-service": {
-      "summary": "Removing the system service from an observability service",
-      "description": "Removing the system service from an observability service"
+      "summary": "Dissociating a system service from an observability service",
+      "description": "Dissociating a system service from an observability service"
     },
     "/create-backup-plan": {
       "summary": "create backup plan",
@@ -2869,7 +2869,7 @@
       "description": ""
     },
     "/update-content-library-image": {
-      "summary": "Editing an ISO image in content library",
+      "summary": "Updating an ISO image in content library",
       "description": ""
     },
     "/distribute-content-library-image-clusters": {
@@ -3013,11 +3013,11 @@
       "description": ""
     },
     "/update-vm-nic-basic-info": {
-      "summary": "Editing the basic NIC information",
+      "summary": "Updating the NIC basic information",
       "description": "Used for updating the basic information of a virtual machine NIC. This part of the information changes more frequently than other types, but requires VMTools support. There might be bugs if VMTools is not installed or running."
     },
     "/update-vm-nic-advance-info": {
-      "summary": "Editing advanced NIC attributes",
+      "summary": "Updating the NIC advanced attributes",
       "description": "Used for updating the infrequently changed data in the virtual machine NIC. The nic_id can only be updated when the NIC model is set to SR-IOV. Additionally, updating the NIC model is not supported."
     },
     "/update-vm-nic-qos-option": {
@@ -3077,7 +3077,7 @@
       "description": ""
     },
     "/update-vm-advanced-options": {
-      "summary": "Editing virtual machine advanced attributes",
+      "summary": "Updating the virtual machine advanced attributes",
       "description": "Used for updating virtual machine advanced attributes, including Windows optimization, CPU compatibility, virtual machine clock, and virtual machine graphics card type."
     },
     "/update-vm-host-options": {
@@ -3121,7 +3121,7 @@
       "description": ""
     },
     "/update-content-library-vm-template": {
-      "summary": "Editing a VM template in content library",
+      "summary": "Updating a VM template in content library",
       "description": ""
     },
     "/distribute-content-library-vm-template-clusters": {
@@ -3185,11 +3185,11 @@
       "description": ""
     },
     "/update-isolation-policy": {
-      "summary": "Editing a quarantine policy",
+      "summary": "Updating a quarantine policy",
       "description": ""
     },
     "/delete-isolation-policy": {
-      "summary": "Editing a quarantine policy",
+      "summary": "Deleting a quarantine policy",
       "description": ""
     },
     "/create-label": {
@@ -3401,7 +3401,7 @@
       "description": ""
     },
     "/update-vm-placement-group": {
-      "summary": "Editing a VM placement group",
+      "summary": "Updating a VM placement group",
       "description": ""
     },
     "/delete-vm-placement-group": {
@@ -3541,19 +3541,19 @@
       "description": ""
     },
     "/get-everoute-licenses": {
-      "summary": "Fetching the Arcfra Network Service license",
+      "summary": "Fetching the ANS license",
       "description": ""
     },
     "/get-everoute-licenses-connection": {
-      "summary": "Fetching the number of Arcfra Network Service licenses",
+      "summary": "Fetching the number of ANS licenses",
       "description": ""
     },
     "/get-everoute-packages": {
-      "summary": "Fetching the Arcfra Network Service installation package",
+      "summary": "Fetching the ANS installation package",
       "description": ""
     },
     "/get-everoute-packages-connection": {
-      "summary": "Fetching the number of Arcfra Network Service installation packages",
+      "summary": "Fetching the number of ANS installation packages",
       "description": ""
     },
     "/get-gpu-devices": {
@@ -3709,7 +3709,7 @@
       "description": ""
     },
     "/get-v2-everoute-licenses": {
-      "summary": "Fetching a V2 version Arcfra Network Service license",
+      "summary": "Fetching the V2 version ANS license",
       "description": ""
     },
     "/get-vdses": {
