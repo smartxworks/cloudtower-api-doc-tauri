@@ -1,5 +1,5 @@
 ---
-title: API 参考
+title: API
 hide_table_of_contents: true
 ---
 
