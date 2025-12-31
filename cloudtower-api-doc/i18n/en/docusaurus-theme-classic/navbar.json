@@ -1,6 +1,6 @@
 { 
-  "item.label.API 参考": {
-    "message": "API Reference"
+  "item.label.API": {
+    "message": "API"
   },
   "item.label.下载": {
     "message": "Download"

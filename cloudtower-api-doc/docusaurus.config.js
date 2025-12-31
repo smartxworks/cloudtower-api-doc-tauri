@@ -161,7 +161,7 @@ const config = {
           },
           {
             to: "/api",
-            label: "API 参考",
+            label: "API",
           },
           {
             type: "docsVersionDropdown",
