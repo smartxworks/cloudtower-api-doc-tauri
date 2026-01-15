@@ -6,11 +6,11 @@ import { LngMap, SupportLanguage } from "./utils";
 import enComponents from "./locales/en/components.json";
 import zhComponents from "./locales/zh/components.json";
 
-import zh2_xAPI from "./locales/zh/2x.json";
-import en2_xAPI from "./locales/en/2x.json";
+import zh2_xAPI from "./locales/zh/2.8.0.json";
+import en2_xAPI from "./locales/en/2.8.0.json";
 
-import zh3_xAPI from "./locales/zh/3x.json";
-import en3_xAPI from "./locales/en/3x.json";
+import zh3_xAPI from "./locales/zh/3.4.4.json";
+import en3_xAPI from "./locales/en/3.4.4.json";
 
 import zh4_0API from "./locales/zh/4.0.0.json";
 import en4_0API from "./locales/en/4.0.0.json";

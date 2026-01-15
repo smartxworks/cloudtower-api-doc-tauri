@@ -105,7 +105,6 @@ export const wrapSpecWithI18n = (
           }
         }
         const des = i18next.t(`${ns}.schemas.${s}${path ? `.${path}` : ''}`, {lng: language, returnObjects: true});
-        // not found schema description
         if(typeof des === 'string' && des.includes(s)) { return }
         if(typeof des === 'string') {
           _.set(cloneSpec, [...prefix, "description"], des);

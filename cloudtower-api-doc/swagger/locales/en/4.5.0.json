@@ -1,22 +1,10 @@
 {
   "schemas": {
     "ContentLibraryVmTemplateWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "architecture": "",
-      "architecture_in": "",
-      "architecture_not": "",
-      "architecture_not_in": "",
       "clock_offset": "",
       "clock_offset_in": "",
       "clock_offset_not": "",
       "clock_offset_not_in": "",
-      "cloud_init_supported": "",
-      "cloud_init_supported_not": "",
-      "clusters_every": "",
-      "clusters_none": "",
-      "clusters_some": "",
       "cpu_model": "",
       "cpu_model_contains": "",
       "cpu_model_ends_with": "",
@@ -31,59 +19,16 @@
       "cpu_model_not_in": "",
       "cpu_model_not_starts_with": "",
       "cpu_model_starts_with": "",
-      "createdAt": "",
-      "createdAt_gt": "",
-      "createdAt_gte": "",
-      "createdAt_in": "",
-      "createdAt_lt": "",
-      "createdAt_lte": "",
-      "createdAt_not": "",
-      "createdAt_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
       "firmware": "",
       "firmware_in": "",
       "firmware_not": "",
       "firmware_not_in": "",
       "ha": "",
       "ha_not": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
       "io_policy": "",
       "io_policy_in": "",
       "io_policy_not": "",
       "io_policy_not_in": "",
-      "labels_every": "",
-      "labels_none": "",
-      "labels_some": "",
       "max_bandwidth": "",
       "max_bandwidth_gt": "",
       "max_bandwidth_gte": "",
@@ -108,58 +53,6 @@
       "max_iops_policy_in": "",
       "max_iops_policy_not": "",
       "max_iops_policy_not_in": "",
-      "memory": "",
-      "memory_gt": "",
-      "memory_gte": "",
-      "memory_in": "",
-      "memory_lt": "",
-      "memory_lte": "",
-      "memory_not": "",
-      "memory_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "os": "",
-      "os_contains": "",
-      "os_ends_with": "",
-      "os_gt": "",
-      "os_gte": "",
-      "os_in": "",
-      "os_lt": "",
-      "os_lte": "",
-      "os_not": "",
-      "os_not_contains": "",
-      "os_not_ends_with": "",
-      "os_not_in": "",
-      "os_not_starts_with": "",
-      "os_starts_with": "",
-      "size": "",
-      "size_gt": "",
-      "size_gte": "",
-      "size_in": "",
-      "size_lt": "",
-      "size_lte": "",
-      "size_not": "",
-      "size_not_in": "",
-      "vcpu": "",
-      "vcpu_gt": "",
-      "vcpu_gte": "",
-      "vcpu_in": "",
-      "vcpu_lt": "",
-      "vcpu_lte": "",
-      "vcpu_not": "",
-      "vcpu_not_in": "",
       "video_type": "",
       "video_type_contains": "",
       "video_type_ends_with": "",
@@ -174,271 +67,15 @@
       "video_type_not_in": "",
       "video_type_not_starts_with": "",
       "video_type_starts_with": "",
-      "vm_templates_every": "",
-      "vm_templates_none": "",
-      "vm_templates_some": "",
       "win_opt": "",
       "win_opt_not": ""
     },
     "VirtualPrivateCloudExternalSubnetWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "cidr": "",
-      "cidr_contains": "",
-      "cidr_ends_with": "",
-      "cidr_gt": "",
-      "cidr_gte": "",
-      "cidr_in": "",
-      "cidr_lt": "",
-      "cidr_lte": "",
-      "cidr_not": "",
-      "cidr_not_contains": "",
-      "cidr_not_ends_with": "",
-      "cidr_not_in": "",
-      "cidr_not_starts_with": "",
-      "cidr_starts_with": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
       "edge_gateway": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
       "exclusive": "",
-      "exclusive_not": "",
-      "floating_ip_cidr": "",
-      "floating_ip_cidr_contains": "",
-      "floating_ip_cidr_ends_with": "",
-      "floating_ip_cidr_gt": "",
-      "floating_ip_cidr_gte": "",
-      "floating_ip_cidr_in": "",
-      "floating_ip_cidr_lt": "",
-      "floating_ip_cidr_lte": "",
-      "floating_ip_cidr_not": "",
-      "floating_ip_cidr_not_contains": "",
-      "floating_ip_cidr_not_ends_with": "",
-      "floating_ip_cidr_not_in": "",
-      "floating_ip_cidr_not_starts_with": "",
-      "floating_ip_cidr_starts_with": "",
-      "floating_ips_every": "",
-      "floating_ips_none": "",
-      "floating_ips_some": "",
-      "gateway": "",
-      "gateway_contains": "",
-      "gateway_ends_with": "",
-      "gateway_gt": "",
-      "gateway_gte": "",
-      "gateway_in": "",
-      "gateway_lt": "",
-      "gateway_lte": "",
-      "gateway_not": "",
-      "gateway_not_contains": "",
-      "gateway_not_ends_with": "",
-      "gateway_not_in": "",
-      "gateway_not_starts_with": "",
-      "gateway_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "nat_gateway_cidr": "",
-      "nat_gateway_cidr_contains": "",
-      "nat_gateway_cidr_ends_with": "",
-      "nat_gateway_cidr_gt": "",
-      "nat_gateway_cidr_gte": "",
-      "nat_gateway_cidr_in": "",
-      "nat_gateway_cidr_lt": "",
-      "nat_gateway_cidr_lte": "",
-      "nat_gateway_cidr_not": "",
-      "nat_gateway_cidr_not_contains": "",
-      "nat_gateway_cidr_not_ends_with": "",
-      "nat_gateway_cidr_not_in": "",
-      "nat_gateway_cidr_not_starts_with": "",
-      "nat_gateway_cidr_starts_with": "",
-      "nat_gateways_every": "",
-      "nat_gateways_none": "",
-      "nat_gateways_some": "",
-      "router_gateway_cidr": "",
-      "router_gateway_cidr_contains": "",
-      "router_gateway_cidr_ends_with": "",
-      "router_gateway_cidr_gt": "",
-      "router_gateway_cidr_gte": "",
-      "router_gateway_cidr_in": "",
-      "router_gateway_cidr_lt": "",
-      "router_gateway_cidr_lte": "",
-      "router_gateway_cidr_not": "",
-      "router_gateway_cidr_not_contains": "",
-      "router_gateway_cidr_not_ends_with": "",
-      "router_gateway_cidr_not_in": "",
-      "router_gateway_cidr_not_starts_with": "",
-      "router_gateway_cidr_starts_with": "",
-      "router_gateways_every": "",
-      "router_gateways_none": "",
-      "router_gateways_some": "",
-      "vlan": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "associate_external_subnet_num": "",
-      "associate_external_subnet_num_gt": "",
-      "associate_external_subnet_num_gte": "",
-      "associate_external_subnet_num_in": "",
-      "associate_external_subnet_num_lt": "",
-      "associate_external_subnet_num_lte": "",
-      "associate_external_subnet_num_not": "",
-      "associate_external_subnet_num_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "isolation_policies_every": "",
-      "isolation_policies_none": "",
-      "isolation_policies_some": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "mtu": "",
-      "mtu_gt": "",
-      "mtu_gte": "",
-      "mtu_in": "",
-      "mtu_lt": "",
-      "mtu_lte": "",
-      "mtu_not": "",
-      "mtu_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "route_tables_every": "",
-      "route_tables_none": "",
-      "route_tables_some": "",
-      "security_groups_every": "",
-      "security_groups_none": "",
-      "security_groups_some": "",
-      "security_policies_every": "",
-      "security_policies_none": "",
-      "security_policies_some": "",
-      "subnets_every": "",
-      "subnets_none": "",
-      "subnets_some": "",
-      "vpc_service": ""
+      "exclusive_not": ""
     },
     "VirtualPrivateCloudEdgeGatewayWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "cluster": "",
-      "cpu_number": "",
-      "cpu_number_gt": "",
-      "cpu_number_gte": "",
-      "cpu_number_in": "",
-      "cpu_number_lt": "",
-      "cpu_number_lte": "",
-      "cpu_number_not": "",
-      "cpu_number_not_in": "",
       "createdAt": "",
       "createdAt_gt": "",
       "createdAt_gte": "",
@@ -447,261 +84,7 @@
       "createdAt_lte": "",
       "createdAt_not": "",
       "createdAt_not_in": "",
-      "data_volume_size": "",
-      "data_volume_size_gt": "",
-      "data_volume_size_gte": "",
-      "data_volume_size_in": "",
-      "data_volume_size_lt": "",
-      "data_volume_size_lte": "",
-      "data_volume_size_not": "",
-      "data_volume_size_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "edge_gateway_group": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "gateway": "",
-      "gateway_contains": "",
-      "gateway_ends_with": "",
-      "gateway_gt": "",
-      "gateway_gte": "",
-      "gateway_in": "",
-      "gateway_lt": "",
-      "gateway_lte": "",
-      "gateway_not": "",
-      "gateway_not_contains": "",
-      "gateway_not_ends_with": "",
-      "gateway_not_in": "",
-      "gateway_not_starts_with": "",
-      "gateway_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "memory_size": "",
-      "memory_size_gt": "",
-      "memory_size_gte": "",
-      "memory_size_in": "",
-      "memory_size_lt": "",
-      "memory_size_lte": "",
-      "memory_size_not": "",
-      "memory_size_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "phase": "",
-      "phase_in": "",
-      "phase_not": "",
-      "phase_not_in": "",
-      "subnet_mask": "",
-      "subnet_mask_contains": "",
-      "subnet_mask_ends_with": "",
-      "subnet_mask_gt": "",
-      "subnet_mask_gte": "",
-      "subnet_mask_in": "",
-      "subnet_mask_lt": "",
-      "subnet_mask_lte": "",
-      "subnet_mask_not": "",
-      "subnet_mask_not_contains": "",
-      "subnet_mask_not_ends_with": "",
-      "subnet_mask_not_in": "",
-      "subnet_mask_not_starts_with": "",
-      "subnet_mask_starts_with": "",
-      "vdses_every": "",
-      "vdses_none": "",
-      "vdses_some": "",
-      "vm_instances_every": "",
-      "vm_instances_none": "",
-      "vm_instances_some": "",
-      "vpc_service": ""
-    },
-    "VirtualPrivateCloudClusterBindingWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "cluster": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "mtu": "",
-      "mtu_gt": "",
-      "mtu_gte": "",
-      "mtu_in": "",
-      "mtu_lt": "",
-      "mtu_lte": "",
-      "mtu_not": "",
-      "mtu_not_in": "",
-      "vds": "",
-      "vlan_id": "",
-      "vlan_id_gt": "",
-      "vlan_id_gte": "",
-      "vlan_id_in": "",
-      "vlan_id_lt": "",
-      "vlan_id_lte": "",
-      "vlan_id_not": "",
-      "vlan_id_not_in": "",
-      "vpc_service": ""
-    },
-    "VirtualPrivateCloudServiceWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "cluster_bindings_every": "",
-      "cluster_bindings_none": "",
-      "cluster_bindings_some": "",
-      "edge_gateway_groups_every": "",
-      "edge_gateway_groups_none": "",
-      "edge_gateway_groups_some": "",
-      "edge_gateways_every": "",
-      "edge_gateways_none": "",
-      "edge_gateways_some": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "everoute_cluster": "",
-      "external_subnets_every": "",
-      "external_subnets_none": "",
-      "external_subnets_some": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "internal_cidr": "",
-      "internal_cidr_contains": "",
-      "internal_cidr_ends_with": "",
-      "internal_cidr_gt": "",
-      "internal_cidr_gte": "",
-      "internal_cidr_in": "",
-      "internal_cidr_lt": "",
-      "internal_cidr_lte": "",
-      "internal_cidr_not": "",
-      "internal_cidr_not_contains": "",
-      "internal_cidr_not_ends_with": "",
-      "internal_cidr_not_in": "",
-      "internal_cidr_not_starts_with": "",
-      "internal_cidr_starts_with": "",
-      "phase": "",
-      "phase_in": "",
-      "phase_not": "",
-      "phase_not_in": "",
-      "vpcs_every": "",
-      "vpcs_none": "",
-      "vpcs_some": ""
-    },
-    "SecurityPolicyWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "everoute_cluster": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "is_blocklist": "",
-      "is_blocklist_not": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "policy_mode": "",
-      "policy_mode_in": "",
-      "policy_mode_not": "",
-      "policy_mode_not_in": ""
+      "edge_gateway_group": ""
     },
     "VirtualPrivateCloudEdgeGatewayGroupWhereInput": {
       "AND": "All conditions must return true.",
@@ -885,173 +268,20 @@
       "shared_in_edge_gateway_group_not": "",
       "vpc": ""
     },
-    "NestedTemplateVpcNic": {
-      "use_floating_ip": "",
-      "vpc_local_id": "",
-      "vpc_subnet_local_id": ""
+    "VirtualPrivateCloudWhereInput": {
+      "vpc_service": ""
     },
-    "NestedFrozenVlan": {
-      "name": "name",
-      "network_ids": "",
-      "vds_ovs": "name",
-      "vlan_id": "name",
-      "vlan_local_id": "name"
+    "VirtualPrivateCloudServiceWhereInput": {
+      "edge_gateway_groups_every": "",
+      "edge_gateway_groups_none": "",
+      "edge_gateway_groups_some": ""
     },
-    "NestedTemplateConfig": {
-      "cpu_exclusive_expected_enabled": "",
-      "guest_os_type": "",
-      "minimum_replica": "",
-      "sync_vm_time_on_resume": ""
+    "VirtualPrivateCloudClusterBindingWhereInput": {
+      "vpc_service": ""
     },
-    "NestedContentLibraryVmTemplateDisk": {
-      "boot": "",
-      "bus": "",
-      "content_library_image_id": "",
-      "disabled": "",
-      "disk_name": "",
-      "index": "",
-      "max_bandwidth": "",
-      "max_bandwidth_policy": "",
-      "max_iops": "",
-      "max_iops_policy": "",
-      "path": "",
-      "resident_in_cache": "",
-      "size": "",
-      "storage_encrypted": "",
-      "storage_policy": "",
-      "type": ""
-    },
-    "NestedContentLibraryVmTemplateNic": {
-      "egress_rate_limit_burst_in_bit": "",
-      "egress_rate_limit_enabled": "",
-      "egress_rate_limit_max_rate_in_bitps": "",
-      "enabled": "",
-      "index": "",
-      "ingress_rate_limit_burst_in_bit": "",
-      "ingress_rate_limit_enabled": "",
-      "ingress_rate_limit_max_rate_in_bitps": "",
-      "mirror": "",
-      "model": "",
-      "type": "",
-      "vlan": "",
-      "vpc_nic": ""
-    },
-    "NestedStoragePolicyConfig": {
-      "replica_num": "",
-      "thin_provision": ""
-    },
-    "ContentLibraryVmTemplate": {
-      "architecture": "",
-      "clock_offset": "",
-      "cloud_init_supported": "",
-      "clusters": "",
-      "cpu": "",
-      "cpu_model": "",
-      "createdAt": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "firmware": "",
-      "ha": "",
-      "id": "",
-      "io_policy": "",
-      "labels": "",
-      "max_bandwidth": "",
-      "max_bandwidth_policy": "",
-      "max_iops": "",
-      "max_iops_policy": "",
-      "memory": "",
-      "name": "",
-      "os": "",
-      "size": "",
-      "template_config": "",
-      "vcpu": "",
-      "video_type": "",
-      "vm_disks": "",
-      "vm_nics": "",
-      "vm_template_uuids": "",
-      "vm_templates": "",
-      "win_opt": "",
-      "zbs_storage_info": ""
-    },
-    "NestedSnapshotInfo": {
-      "index": "",
-      "iscsi_lun_snapshot_uuid": "",
-      "storage_encrypted": "",
-      "storage_policy_config": ""
-    },
-    "NestedZbsStorageInfo": {
-      "cluster_id": "",
-      "snapshot_info": ""
-    },
-    "SecurityPolicy": {
-      "apply_to": "",
-      "description": "",
-      "egress": "",
-      "everoute_cluster": "",
-      "id": "",
-      "ingress": "",
+    "SecurityPolicyWhereInput": {
       "is_blocklist": "",
-      "name": "",
-      "policy_mode": ""
-    },
-    "VirtualPrivateCloud": {
-      "associate_external_subnet_num": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "isolation_policies": "",
-      "local_id": "",
-      "mtu": "",
-      "name": "",
-      "route_tables": "",
-      "security_groups": "",
-      "security_policies": "",
-      "subnets": "",
-      "vpc_service": ""
-    },
-    "NestedVirtualPrivateCloudServiceTepIpPool": {
-      "display_name": "",
-      "gateway": "",
-      "ip_end": "",
-      "ip_start": "",
-      "netmask": ""
-    },
-    "NestedVirtualPrivateCloudService": {
-      "id": "id",
-      "internal_cidr": "",
-      "tep_ip_pools": ""
-    },
-    "VirtualPrivateCloudClusterBinding": {
-      "cluster": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "mtu": "",
-      "vds": "",
-      "vlan_id": "",
-      "vpc_service": ""
-    },
-    "VirtualPrivateCloudExternalSubnet": {
-      "cidr": "",
-      "description": "",
-      "edge_gateway": "",
-      "entityAsyncStatus": "",
-      "exclusive": "",
-      "floating_ip_cidr": "",
-      "floating_ips": "",
-      "gateway": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nat_gateway_cidr": "",
-      "nat_gateways": "",
-      "router_gateway_cidr": "",
-      "router_gateways": "",
-      "vlan": "",
-      "vpc": ""
-    },
-    "NestedVirtualPrivateCloudEdgeGateway": {
-      "id": "id",
-      "name": "name"
+      "is_blocklist_not": ""
     },
     "ClusterStorageInfo": {
       "allocable_storage_capacity": "",
@@ -1078,7 +308,6 @@
       "ec": "",
       "replica": ""
     },
-    "ReplicaNum": {},
     "ClusterStorageInfoEcConfig": {
       "m": "",
       "k": ""
@@ -1091,1133 +320,134 @@
       "effect": "",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
+    "NestedTemplateConfig": {
+      "cpu_exclusive_expected_enabled": "",
+      "guest_os_type": "",
+      "minimum_replica": "",
+      "sync_vm_time_on_resume": ""
+    },
+    "NestedContentLibraryVmTemplateDisk": {
+      "boot": "",
+      "bus": "",
+      "content_library_image_id": "",
+      "disabled": "",
+      "disk_name": "",
+      "index": "",
+      "max_bandwidth": "",
+      "max_bandwidth_policy": "",
+      "max_iops": "",
+      "max_iops_policy": "",
+      "path": "",
+      "resident_in_cache": "",
+      "size": "",
+      "storage_encrypted": "",
+      "storage_policy": "",
+      "type": ""
+    },
+    "NestedFrozenVlan": {
+      "network_ids": ""
+    },
+    "NestedTemplateVpcNic": {
+      "use_floating_ip": ""
+    },
+    "NestedContentLibraryVmTemplateNic": {
+      "egress_rate_limit_burst_in_bit": "",
+      "egress_rate_limit_enabled": "",
+      "egress_rate_limit_max_rate_in_bitps": "",
+      "enabled": "",
+      "index": "",
+      "ingress_rate_limit_burst_in_bit": "",
+      "ingress_rate_limit_enabled": "",
+      "ingress_rate_limit_max_rate_in_bitps": "",
+      "mirror": "",
+      "model": "",
+      "type": "",
+      "vlan": "",
+      "vpc_nic": ""
+    },
+    "NestedStoragePolicyConfig": {
+      "replica_num": "",
+      "thin_provision": ""
+    },
+    "NestedSnapshotInfo": {
+      "index": "",
+      "iscsi_lun_snapshot_uuid": "",
+      "storage_encrypted": "",
+      "storage_policy_config": ""
+    },
+    "NestedZbsStorageInfo": {
+      "cluster_id": "",
+      "snapshot_info": ""
+    },
+    "ContentLibraryVmTemplate": {
+      "clock_offset": "",
+      "cpu": "",
+      "cpu_model": "",
+      "firmware": "",
+      "ha": "",
+      "io_policy": "",
+      "max_bandwidth": "",
+      "max_bandwidth_policy": "",
+      "max_iops": "",
+      "max_iops_policy": "",
+      "template_config": "",
+      "video_type": "",
+      "vm_disks": "",
+      "vm_nics": "",
+      "win_opt": "",
+      "zbs_storage_info": ""
+    },
+    "SecurityPolicy": {
+      "is_blocklist": ""
+    },
     "TaskCreationParams": {
       "finished_at": "",
-      "started_at": "",
-      "steps": "",
-      "args": "",
-      "key": "",
-      "internal": "",
-      "type": "",
-      "resource_id": "",
-      "cluster_id": "",
-      "user_id": "",
-      "description": "",
-      "resource_mutation": "",
-      "resource_type": ""
+      "started_at": ""
     },
     "TaskUpdateParams": {
       "data.finished_at": "",
-      "data.started_at": "",
-      "data.resource_rollback_retry_count": "",
-      "data.resource_rollback_error": "",
-      "data.resource_rollbacked": "",
-      "data.steps": "",
-      "data.error_message": "",
-      "data.error_code": "",
-      "data.progress": "",
-      "data.status": "",
-      "data.snapshot": "",
-      "data.args": "",
-      "data.key": "",
-      "data.type": "",
-      "data.resource_id": "",
-      "data.cluster_id": "",
-      "data.user_id": "",
-      "data.resource_mutation": "",
-      "data.resource_type": "",
-      "data.description": "",
-      "data": "",
-      "where": ""
+      "data.started_at": ""
+    },
+    "NestedVirtualPrivateCloudServiceTepIpPool": {
+      "display_name": "",
+      "gateway": "",
+      "ip_end": "",
+      "ip_start": "",
+      "netmask": ""
+    },
+    "NestedVirtualPrivateCloudService": {
+      "internal_cidr": "",
+      "tep_ip_pools": ""
+    },
+    "VirtualPrivateCloud": {
+      "vpc_service": ""
     },
     "NtpServiceUrl": {
       "ntp_service_url": ""
+    },
+    "VirtualPrivateCloudClusterBinding": {
+      "vpc_service": ""
+    },
+    "NestedVirtualPrivateCloudEdgeGateway": {
+      "id": "id",
+      "name": "name"
+    },
+    "VirtualPrivateCloudExternalSubnet": {
+      "edge_gateway": "",
+      "exclusive": ""
     }
   },
-  "tags": [
-    {
-      "name": "Observability",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "ApiInfo",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "Ntp",
-      "x-displayName": "",
-      "description": ""
-    }
-  ],
   "paths": {
-    "/clear-system-service-alert-notification-config": {
-      "summary": "Clear system service alert notification configuration",
-      "description": "Clear the alert notification configuration for system services, currently including: email notification configuration, SNMP trap configuration, Webhook notification configuration"
-    },
     "/get-cluster-storage-info": {
       "summary": "",
       "description": ""
     },
+    "/clear-system-service-alert-notification-config": {
+      "summary": "Clear system service alert notification configuration",
+      "description": "Clear the alert notification configuration for system services, currently including: email notification configuration, SNMP trap configuration, Webhook notification configuration"
+    },
     "/get-ntp-service-url": {
       "summary": "",
-      "description": ""
-    },
-    "/connect-cluster": {
-      "summary": "Associating a cluster",
-      "description": ""
-    },
-    "/upload-content-library-image": {
-      "summary": "Uploading an ISO image to content library",
-      "description": ""
-    },
-    "/update-content-library-image": {
-      "summary": "Updating an ISO image in content library",
-      "description": ""
-    },
-    "/distribute-content-library-image-clusters": {
-      "summary": "Distributing an ISO image in content library to a new cluster",
-      "description": ""
-    },
-    "/remove-content-library-image-clusters": {
-      "summary": "Removing a cluster storing an ISO image in content library",
-      "description": ""
-    },
-    "/delete-content-library-image": {
-      "summary": "Deleting an ISO image in content library",
-      "description": ""
-    },
-    "/import-content-library-image": {
-      "summary": "Importing an ISO image to content library",
-      "description": ""
-    },
-    "/upload-elf-file": {
-      "summary": "Uploading a VMDK file",
-      "description": ""
-    },
-    "/parse-ovf": {
-      "summary": "Parsing an OVF file",
-      "description": ""
-    },
-    "/get-export-file-download-links": {
-      "summary": "Fetching the download link for the exported file",
-      "description": ""
-    },
-    "/create-vm": {
-      "summary": "Creating a virtual machine",
-      "description": ""
-    },
-    "/create-vm-from-template": {
-      "summary": "Creating a virtual machine from a template ",
-      "description": "**Warning**: The VM template has been removed from the Arcfra Operation Center page. Unless required for specific needs, avoid using the API for creating a virtual machine from a template. Please use the template in content library instead."
-    },
-    "/create-vm-from-content-library-template": {
-      "summary": "Creating a virtual machine from a template in content library",
-      "description": ""
-    },
-    "/convert-vm-template-to-vm": {
-      "summary": "Converting a VM template into a virtual machine",
-      "description": ""
-    },
-    "/clone-vm": {
-      "summary": "Cloning a virtual machine",
-      "description": ""
-    },
-    "/rebuild-vm-from-snapshot": {
-      "summary": "Rebuilding a virtual machine from a snapshot",
-      "description": ""
-    },
-    "/rollback-vm": {
-      "summary": "Rolling back a virtual machine",
-      "description": ""
-    },
-    "/update-vm-basic-info": {
-      "summary": "Updating the basic information of a virtual machine",
-      "description": ""
-    },
-    "/move-vm-to-recycle": {
-      "summary": "Moving a virtual machine to the recycle bin",
-      "description": ""
-    },
-    "/recover-vm-from-recycle": {
-      "summary": "Recovering a virtual machine from the recycle bin",
-      "description": ""
-    },
-    "/delete-vm": {
-      "summary": "Deleting a virtual machine",
-      "description": ""
-    },
-    "/start-vm": {
-      "summary": "Powering on a virtual machine",
-      "description": ""
-    },
-    "/restart-vm": {
-      "summary": "Restarting a virtual machine",
-      "description": ""
-    },
-    "/force-restart-vm": {
-      "summary": "Forcibly restarting a virtual machine",
-      "description": ""
-    },
-    "/shutdown-vm": {
-      "summary": "Shutting down a virtual machine",
-      "description": ""
-    },
-    "/poweroff-vm": {
-      "summary": "Forcibly shutting down a virtual machine",
-      "description": ""
-    },
-    "/suspend-vm": {
-      "summary": "Suspending a virtual machine",
-      "description": ""
-    },
-    "/resume-vm": {
-      "summary": "Recovering a virtual machine",
-      "description": ""
-    },
-    "/add-vm-disk": {
-      "summary": "Adding a virtual disk",
-      "description": ""
-    },
-    "/update-vm-disk": {
-      "summary": "Updating a virtual disk",
-      "description": ""
-    },
-    "/expand-vm-disk": {
-      "summary": "Expanding a virtual disk",
-      "description": "The virtual disk will be expanded to the specified size"
-    },
-    "/remove-vm-disk": {
-      "summary": "Unmounting a virtual disk",
-      "description": ""
-    },
-    "/add-vm-cd-rom": {
-      "summary": "Adding a CD-ROM",
-      "description": ""
-    },
-    "/remove-vm-cd-rom": {
-      "summary": "Deleting a CD-ROM",
-      "description": ""
-    },
-    "/eject-iso-from-vm-cd-rom": {
-      "summary": "ISO image used for uninstalling the specified CD-ROM",
-      "description": ""
-    },
-    "/toggle-vm-cd-rom-disable": {
-      "summary": "Setting the CD-ROM status",
-      "description": ""
-    },
-    "/add-vm-nic": {
-      "summary": "Adding a virtual NIC",
-      "description": ""
-    },
-    "/update-vm-nic": {
-      "summary": "Updating a virtual NIC",
-      "description": ""
-    },
-    "/update-vm-nic-basic-info": {
-      "summary": "Updating the NIC basic information",
-      "description": "Used for updating the basic information of a virtual machine NIC. This part of the information changes more frequently than other types, but requires VMTools support. There might be bugs if VMTools is not installed or running."
-    },
-    "/update-vm-nic-advance-info": {
-      "summary": "Updating the NIC advanced attributes",
-      "description": "Used for updating the infrequently changed data in the virtual machine NIC. The nic_id can only be updated when the NIC model is set to SR-IOV. Additionally, updating the NIC model is not supported."
-    },
-    "/update-vm-nic-qos-option": {
-      "summary": "Updating the QoS option for a virtual machine NIC",
-      "description": ""
-    },
-    "/add-vm-pci-nic": {
-      "summary": "Adding a virtual machine PCI NIC",
-      "description": ""
-    },
-    "/remove-vm-pci-nic": {
-      "summary": "Removing a virtual machine PCI NIC",
-      "description": ""
-    },
-    "/remove-vm-nic": {
-      "summary": "Removing a virtual NIC",
-      "description": ""
-    },
-    "/remove-vm-nic-by-where": {
-      "summary": "Removing a virtual machine NIC",
-      "description": "Improving the related filter condition, recommended for use"
-    },
-    "/add-vm-gpu-device": {
-      "summary": "Mounting a GPU device on a virtual machine",
-      "description": ""
-    },
-    "/remove-vm-gpu-device": {
-      "summary": "Unmounting a GPU device from a virtual machine",
-      "description": ""
-    },
-    "/install-vmtools": {
-      "summary": "Installing {OS_CO} VMTools",
-      "description": ""
-    },
-    "/migrate-vm": {
-      "summary": "Migrating a virtual machine",
-      "description": ""
-    },
-    "/migrate-vm-across-cluster": {
-      "summary": "Migrate a virtual machine across clusters ",
-      "description": ""
-    },
-    "/stop-vm-in-cutover-migration": {
-      "summary": "Shutting down the source virtual machine",
-      "description": "In staged migration, you need to manually shut down the source virtual machine to complete the remaining data migration."
-    },
-    "/abort-migrate-vm-across-cluster": {
-      "summary": "Terminating cross-cluster migration",
-      "description": "Manually terminating the cross-cluster migration task"
-    },
-    "/add-vm-to-folder": {
-      "summary": "Moving a virtual machine to a VM group",
-      "description": ""
-    },
-    "/remove-vm-from-folder": {
-      "summary": "Moving a virtual machine out of a VM group",
-      "description": ""
-    },
-    "/update-vm-advanced-options": {
-      "summary": "Updating the virtual machine advanced attributes",
-      "description": "Used for updating virtual machine advanced attributes, including Windows optimization, CPU compatibility, virtual machine clock, and virtual machine graphics card type."
-    },
-    "/update-vm-host-options": {
-      "summary": "Updating the host information of a virtual machine",
-      "description": "Used for updating the host information of a specific virtual machine, including DNS, NTP, and host name."
-    },
-    "/reset-vm-guest-os-password": {
-      "summary": "Resetting the virtual machine password",
-      "description": "Used for updating the password of the guest OS user of a specified virtual machine."
-    },
-    "/update-vm-owner": {
-      "summary": "Updating the owner of a specified virtual machine",
-      "description": ""
-    },
-    "/update-vm-io-policy": {
-      "summary": "Updating the IO throttling policy for a virtual machine",
-      "description": ""
-    },
-    "/export-vm": {
-      "summary": "Exporting a virtual machine",
-      "description": ""
-    },
-    "/import-vm": {
-      "summary": "Importing a virtual machine",
-      "description": ""
-    },
-    "/get-vm-gpu-device-info": {
-      "summary": "Fetching the GPU driver information of the virtual machine",
-      "description": ""
-    },
-    "/get-vm-vnc-info": {
-      "summary": "Fetching the VNC connection information",
-      "description": ""
-    },
-    "/clone-content-library-vm-template-from-vm": {
-      "summary": "Cloning a VM template in content library via a virtual machine",
-      "description": ""
-    },
-    "/convert-content-library-vm-template-from-vm": {
-      "summary": "Converting a virtual machine into a template in content library",
-      "description": ""
-    },
-    "/update-content-library-vm-template": {
-      "summary": "Updating a VM template in content library",
-      "description": ""
-    },
-    "/distribute-content-library-vm-template-clusters": {
-      "summary": "Distributing a VM template in content library to a new cluster",
-      "description": ""
-    },
-    "/remove-content-library-vm-template-clusters": {
-      "summary": "Removing a cluster holding the VM template in content library",
-      "description": ""
-    },
-    "/delete-content-library-vm-template": {
-      "summary": "Deleting a VM template in content library",
-      "description": ""
-    },
-    "/export-content-library-vm-template": {
-      "summary": "Exporting a VM template",
-      "description": ""
-    },
-    "/import-content-library-vm-template": {
-      "summary": "Importing a VM template",
-      "description": ""
-    },
-    "/create-datacenter": {
-      "summary": "Creating a data center",
-      "description": ""
-    },
-    "/get-detail-vm-info-by-gpu-devices": {
-      "summary": "Fetching detailed virtual machine information via GPU details",
-      "description": ""
-    },
-    "/create-iscsi-lun": {
-      "summary": "Creating a LUN",
-      "description": ""
-    },
-    "/delete-iscsi-lun": {
-      "summary": "Deleting a LUN",
-      "description": ""
-    },
-    "/create-iscsi-target": {
-      "summary": "Creating an iSCSI target",
-      "description": ""
-    },
-    "/delete-iscsi-target": {
-      "summary": "Deleting an iSCSI target",
-      "description": ""
-    },
-    "/upload-elf-image": {
-      "summary": "Uploading an ISO image",
-      "description": ""
-    },
-    "/update-elf-image": {
-      "summary": "Updating an ISO image",
-      "description": ""
-    },
-    "/delete-elf-image": {
-      "summary": "Deleting an ISO Image",
-      "description": ""
-    },
-    "/create-isolation-policy": {
-      "summary": "Creating a quarantine policy",
-      "description": ""
-    },
-    "/update-isolation-policy": {
-      "summary": "Updating a quarantine policy",
-      "description": ""
-    },
-    "/delete-isolation-policy": {
-      "summary": "Deleting a quarantine policy",
-      "description": ""
-    },
-    "/create-label": {
-      "summary": "Creating a label",
-      "description": ""
-    },
-    "/update-label": {
-      "summary": "Updating a label",
-      "description": ""
-    },
-    "/add-labels-to-resources": {
-      "summary": "Associating a label",
-      "description": ""
-    },
-    "/remove-labels-from-resources": {
-      "summary": "Dissociating a label",
-      "description": ""
-    },
-    "/delete-label": {
-      "summary": "Deleting a label",
-      "description": ""
-    },
-    "/create-network-policy-rule-service": {
-      "summary": "Creating a service",
-      "description": ""
-    },
-    "/update-network-policy-rule-service": {
-      "summary": "Updating a service",
-      "description": ""
-    },
-    "/delete-network-policy-rule-service": {
-      "summary": "Deleting a service",
-      "description": ""
-    },
-    "/disassociate-system-service-from-obs-service": {
-      "summary": "Dissociating a system service from an observability service",
-      "description": "Dissociating a system service from an observability service"
-    },
-    "/create-organization": {
-      "summary": "Creating an organization",
-      "description": ""
-    },
-    "/create-security-group": {
-      "summary": "Creating a security group",
-      "description": ""
-    },
-    "/delete-security-group": {
-      "summary": "Deleting a security group",
-      "description": ""
-    },
-    "/update-security-group": {
-      "summary": "Updating a security group",
-      "description": ""
-    },
-    "/create-security-policy": {
-      "summary": "Creating a security policy",
-      "description": ""
-    },
-    "/delete-security-policy": {
-      "summary": "Deleting a security policy",
-      "description": ""
-    },
-    "/update-security-policy": {
-      "summary": "Updating a security policy",
-      "description": ""
-    },
-    "/upload-svt-image": {
-      "summary": "Uploading an SVT image",
-      "description": ""
-    },
-    "/get-usb-devices": {
-      "summary": "Fetching a USB device",
-      "description": ""
-    },
-    "/login": {
-      "summary": "Logging in",
-      "description": ""
-    },
-    "/create-user": {
-      "summary": "Creating a user",
-      "description": ""
-    },
-    "/update-user": {
-      "summary": "Updating a user",
-      "description": ""
-    },
-    "/delete-user": {
-      "summary": "Deleting a user",
-      "description": ""
-    },
-    "/create-root-user": {
-      "summary": "Creating a user",
-      "description": "This is used to create the first user, with the fixed username as root and the role as root."
-    },
-    "/delete-virtual-private-cloud-floating-ip": {
-      "summary": "Releasing a floating IP address",
-      "description": ""
-    },
-    "/batch-create-virtual-private-cloud-floating-ips": {
-      "summary": "Creating floating IP addresses in batches",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-nat-gateway": {
-      "summary": "Creating a NAT gateway",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-nat-gateway": {
-      "summary": "Updating a NAT gateway",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-nat-gateway": {
-      "summary": "Deleting a NAT gateway",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-route-table": {
-      "summary": "Creating a route table",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-route-table": {
-      "summary": "Updating a route table",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-route-table": {
-      "summary": "Deleting a route table",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-router-gateway": {
-      "summary": "Creating a routing gateway",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-router-gateway": {
-      "summary": "Updating a routing gateway",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-router-gateway": {
-      "summary": "Delete a routing gateway",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-security-group": {
-      "summary": "Creating a security group in VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-security-group": {
-      "summary": "Updating a security group in VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-security-group": {
-      "summary": "Deleting a security group in VPC",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-security-policy": {
-      "summary": "Creating a  security policy in VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-security-policy": {
-      "summary": "Deleting a security policy in VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-security-policy": {
-      "summary": "Updating a security policy in VPC",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-subnet": {
-      "summary": "Creating a subnet",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-subnet": {
-      "summary": "Updating a subnet",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-subnet": {
-      "summary": "Deleting a subnet",
-      "description": ""
-    },
-    "/create-virtual-private-cloud": {
-      "summary": "Creating a VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud": {
-      "summary": "Updating a VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud": {
-      "summary": "Deleting a VPC",
-      "description": ""
-    },
-    "/create-vm-vlan": {
-      "summary": "Creating a VM network",
-      "description": ""
-    },
-    "/update-vm-vlan": {
-      "summary": "Updating a VLAN",
-      "description": ""
-    },
-    "/delete-vm-vlan": {
-      "summary": "Deleting a VM network",
-      "description": ""
-    },
-    "/create-vm-folder": {
-      "summary": "Creating a VM group",
-      "description": ""
-    },
-    "/update-vm-folder": {
-      "summary": "Updating a VM group",
-      "description": ""
-    },
-    "/delete-vm-folder": {
-      "summary": "Deleting a VM group",
-      "description": ""
-    },
-    "/create-vm-placement-group": {
-      "summary": "Creating a VM placement group",
-      "description": ""
-    },
-    "/update-vm-placement-group": {
-      "summary": "Updating a VM placement group",
-      "description": ""
-    },
-    "/delete-vm-placement-group": {
-      "summary": "Deleting a VM placement group",
-      "description": ""
-    },
-    "/create-vm-snapshot": {
-      "summary": "Creating a VM snapshot",
-      "description": ""
-    },
-    "/delete-vm-snapshot": {
-      "summary": "Deleting a VM snapshot",
-      "description": ""
-    },
-    "/clone-vm-template-from-vm": {
-      "summary": "Cloning a virtual machine as a VM template",
-      "description": ""
-    },
-    "/convert-vm-template-from-vm": {
-      "summary": "Converting a virtual machine into a VM template",
-      "description": ""
-    },
-    "/update-vm-template": {
-      "summary": "Updating a VM template",
-      "description": ""
-    },
-    "/delete-vm-template": {
-      "summary": "Deleting a VM template",
-      "description": ""
-    },
-    "/create-vm-volume-snapshot": {
-      "summary": "Creating a virtual volume snapshot",
-      "description": ""
-    },
-    "/delete-vm-volume-snapshot": {
-      "summary": "Deleting a virtual volume snapshot",
-      "description": ""
-    },
-    "/create-vm-volume": {
-      "summary": "Creating a virtual volume",
-      "description": ""
-    },
-    "/delete-vm-volume": {
-      "summary": "Deleting a virtual volume",
-      "description": ""
-    },
-    "/rebuild-vm-volume": {
-      "summary": "Rebuilding a virtual volume from a snapshot",
-      "description": ""
-    },
-    "/rollback-vm-volume": {
-      "summary": "Rolling back a virtual volume based on a snapshot",
-      "description": ""
-    },
-    "/clone-vm-volume": {
-      "summary": "Cloning a virtual volume",
-      "description": ""
-    },
-    "/update-vm-volume": {
-      "summary": "Updating a virtual volume",
-      "description": ""
-    },
-    "/export-vm-volume": {
-      "summary": "Exporting a virtual volume",
-      "description": ""
-    },
-    "/import-vm-volume": {
-      "summary": "Importing a virtual volume ",
-      "description": ""
-    },
-    "/get-alerts": {
-      "summary": "Fetching alerts",
-      "description": ""
-    },
-    "/get-alerts-connection": {
-      "summary": "Fetching the number of alerts",
-      "description": ""
-    },
-    "/get-clusters": {
-      "summary": "Fetching a cluster",
-      "description": ""
-    },
-    "/get-clusters-connection": {
-      "summary": "Fetching the number of clusters",
-      "description": ""
-    },
-    "/get-content-library-images": {
-      "summary": "Fetching ISO images in content library ",
-      "description": ""
-    },
-    "/get-content-library-images-connection": {
-      "summary": "Fetching the number of  ISO images in content library",
-      "description": ""
-    },
-    "/get-content-library-vm-templates": {
-      "summary": "Fetching VM templates in content library ",
-      "description": ""
-    },
-    "/get-content-library-vm-templates-connection": {
-      "summary": "Fetching the number of VM templates in content library",
-      "description": ""
-    },
-    "/get-datacenters": {
-      "summary": "Fetching a data center",
-      "description": ""
-    },
-    "/get-datacenters-connection": {
-      "summary": "Fetching the number of data centers",
-      "description": ""
-    },
-    "/get-deploys": {
-      "summary": "Fetching an Arcfra Operation Center",
-      "description": ""
-    },
-    "/get-elf-images": {
-      "summary": "Fetching an ISO image",
-      "description": ""
-    },
-    "/get-elf-images-connection": {
-      "summary": "Fetching the number of ISO images",
-      "description": ""
-    },
-    "/get-elf-storage-policies": {
-      "summary": "Fetching a storage policy",
-      "description": ""
-    },
-    "/get-elf-storage-policies-connection": {
-      "summary": "Fetching the number of storage policies",
-      "description": ""
-    },
-    "/get-everoute-clusters": {
-      "summary": "Fetching an ANS service",
-      "description": ""
-    },
-    "/get-everoute-clusters-connection": {
-      "summary": "Fetching the number of ANS services",
-      "description": ""
-    },
-    "/get-everoute-licenses": {
-      "summary": "Fetching the ANS license",
-      "description": ""
-    },
-    "/get-everoute-licenses-connection": {
-      "summary": "Fetching the number of ANS licenses",
-      "description": ""
-    },
-    "/get-everoute-packages": {
-      "summary": "Fetching the ANS installation package",
-      "description": ""
-    },
-    "/get-everoute-packages-connection": {
-      "summary": "Fetching the number of ANS installation packages",
-      "description": ""
-    },
-    "/get-gpu-devices": {
-      "summary": "Fetching a GPU device",
-      "description": ""
-    },
-    "/get-gpu-devices-connection": {
-      "summary": "Fetching the number of GPU devices",
-      "description": ""
-    },
-    "/get-hosts": {
-      "summary": "Fetching hosts",
-      "description": ""
-    },
-    "/get-hosts-connection": {
-      "summary": "Fetching the number of hosts",
-      "description": ""
-    },
-    "/get-iscsi-lun-snapshots": {
-      "summary": "Fetching a LUN snapshot",
-      "description": ""
-    },
-    "/get-iscsi-luns": {
-      "summary": "Fetching LUNs",
-      "description": ""
-    },
-    "/get-iscsi-luns-connection": {
-      "summary": "Fetching the number of LUNs",
-      "description": ""
-    },
-    "/get-iscsi-targets": {
-      "summary": "Fetching an iSCSI target",
-      "description": ""
-    },
-    "/get-iscsi-targets-connection": {
-      "summary": "Fetching the number of iSCSI targets",
-      "description": ""
-    },
-    "/get-isolation-policies": {
-      "summary": "Fetching a quarantine policy",
-      "description": ""
-    },
-    "/get-isolation-policies-connection": {
-      "summary": "Fetching the number of quarantine policies",
-      "description": ""
-    },
-    "/get-labels": {
-      "summary": "Fetching a label",
-      "description": ""
-    },
-    "/get-labels-connection": {
-      "summary": "Fetching the number of labels",
-      "description": ""
-    },
-    "/get-network-policy-rule-services": {
-      "summary": "Fetching a service",
-      "description": ""
-    },
-    "/get-network-policy-rule-services-connection": {
-      "summary": "Fetching the number of services",
-      "description": ""
-    },
-    "/get-nics": {
-      "summary": "Fetching a network port",
-      "description": ""
-    },
-    "/get-nics-connection": {
-      "summary": "Fetching the number of network ports",
-      "description": ""
-    },
-    "/get-organizations": {
-      "summary": "Fetching an organization",
-      "description": ""
-    },
-    "/get-organizations-connection": {
-      "summary": "Fetching the number of organizations",
-      "description": ""
-    },
-    "/get-security-groups": {
-      "summary": "Fetching a security group",
-      "description": ""
-    },
-    "/get-security-groups-connection": {
-      "summary": "Fetching the number of security groups",
-      "description": ""
-    },
-    "/get-security-policies": {
-      "summary": "Fetching a security policy",
-      "description": ""
-    },
-    "/get-security-policies-connection": {
-      "summary": "Fetching the number of security policies",
-      "description": ""
-    },
-    "/get-svt-images": {
-      "summary": "Fetching a VMTools ISO image",
-      "description": ""
-    },
-    "/get-svt-images-connection": {
-      "summary": "Fetching the number of VMTools ISO images",
-      "description": ""
-    },
-    "/get-system-audit-logs": {
-      "summary": "Fetching a system event",
-      "description": ""
-    },
-    "/get-system-audit-logs-connection": {
-      "summary": "Fetching the number of system events",
-      "description": ""
-    },
-    "/get-tasks": {
-      "summary": "Fetching a task",
-      "description": ""
-    },
-    "/get-tasks-connection": {
-      "summary": "Fetching the number of tasks",
-      "description": ""
-    },
-    "/get-upload-tasks": {
-      "summary": "Fetching an uploaded task",
-      "description": ""
-    },
-    "/get-upload-tasks-connection": {
-      "summary": "Fetching the number of uploaded tasks",
-      "description": ""
-    },
-    "/get-usb-devices-connection": {
-      "summary": "Fetching the number of USB devices",
-      "description": ""
-    },
-    "/get-user-audit-logs": {
-      "summary": "Fetching a user event",
-      "description": ""
-    },
-    "/get-user-audit-logs-connection": {
-      "summary": "Fetching the number of user events",
-      "description": ""
-    },
-    "/get-user-role-nexts": {
-      "summary": "Fetching a role",
-      "description": ""
-    },
-    "/get-user-role-nexts-connection": {
-      "summary": "Fetching the number of roles",
-      "description": ""
-    },
-    "/get-users": {
-      "summary": "Fetching a user",
-      "description": ""
-    },
-    "/get-users-connection": {
-      "summary": "Fetching the number of users",
-      "description": ""
-    },
-    "/get-v2-everoute-licenses": {
-      "summary": "Fetching the V2 version ANS license",
-      "description": ""
-    },
-    "/get-vdses": {
-      "summary": "Fetching a virtual distributed switch",
-      "description": ""
-    },
-    "/get-vdses-connection": {
-      "summary": "Fetching the number of virtual distributed switches",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-cluster-bindings": {
-      "summary": "Fetching an associated VPC cluster",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-cluster-bindings-connection": {
-      "summary": "Fetching the number of associated VPC clusters",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateway-groups": {
-      "summary": "Fetching an edge gateway group",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateway-groups-connection": {
-      "summary": "Fetching the number of edge gateway groups",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateways": {
-      "summary": "Fetching an edge gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateways-connection": {
-      "summary": "Fetching the number of edge gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnet-groups": {
-      "summary": "Fetching an external subnet group",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnet-groups-connection": {
-      "summary": "Fetching the number of external subnet groups",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnets": {
-      "summary": "Fetching an external subnet",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnets-connection": {
-      "summary": "Fetching the number of external subnets",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-floating-ips": {
-      "summary": "Fetching a floating IP address",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-floating-ips-connection": {
-      "summary": "Fetching the number of floating IP addresses",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-nat-gateways": {
-      "summary": "Fetching a NAT gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-nat-gateways-connection": {
-      "summary": "Fetching the number of NAT gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-route-tables": {
-      "summary": "Fetching a route table",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-route-tables-connection": {
-      "summary": "Fetching the number of route tables",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-router-gateways": {
-      "summary": "Fetching a routing gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-router-gateways-connection": {
-      "summary": "Fetching the number of routing gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-groups": {
-      "summary": "Fetching a security group in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-groups-connection": {
-      "summary": "Fetching the number of security groups in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-policies": {
-      "summary": "Fetching a security policy in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-policies-connection": {
-      "summary": "Fetching the number of security policies in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-subnets": {
-      "summary": "Fetching a subnet",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-subnets-connection": {
-      "summary": "Fetching the number of subnets",
-      "description": ""
-    },
-    "/get-virtual-private-clouds": {
-      "summary": "Fetching a VPC",
-      "description": ""
-    },
-    "/get-virtual-private-clouds-connection": {
-      "summary": "Fetching the number of VPCs",
-      "description": ""
-    },
-    "/get-vlans": {
-      "summary": "Fetching a network",
-      "description": ""
-    },
-    "/get-vlans-connection": {
-      "summary": "Fetching the number of networks",
-      "description": ""
-    },
-    "/get-vm-disks": {
-      "summary": "Fetching a virtual disk",
-      "description": ""
-    },
-    "/get-vm-disks-connection": {
-      "summary": "Fetching the number of virtual disks",
-      "description": ""
-    },
-    "/get-vm-export-files": {
-      "summary": "Fetching a VMDK file",
-      "description": ""
-    },
-    "/get-vm-export-files-connection": {
-      "summary": "Fetching the number of VMDK files",
-      "description": ""
-    },
-    "/get-vm-folders": {
-      "summary": "Fetching a VM group",
-      "description": ""
-    },
-    "/get-vm-folders-connection": {
-      "summary": "Fetching the number of VM groups",
-      "description": ""
-    },
-    "/get-vm-nics": {
-      "summary": "Fetching a virtual NIC",
-      "description": ""
-    },
-    "/get-vm-nics-connection": {
-      "summary": "Fetching the number of virtual NICs",
-      "description": ""
-    },
-    "/get-vm-placement-groups": {
-      "summary": "Fetching a virtual machine placement group",
-      "description": ""
-    },
-    "/get-vm-placement-groups-connection": {
-      "summary": "Fetching the number of virtual machine placement groups",
-      "description": ""
-    },
-    "/get-vm-snapshots": {
-      "summary": "Fetching a VM snapshot",
-      "description": ""
-    },
-    "/get-vm-snapshots-connection": {
-      "summary": "Fetching the number of VM snapshots",
-      "description": ""
-    },
-    "/get-vm-templates": {
-      "summary": "Fetching a VM template in a cluster",
-      "description": ""
-    },
-    "/get-vm-templates-connection": {
-      "summary": "Fetching the number of VM templates in a cluster",
-      "description": ""
-    },
-    "/get-vm-volume-snapshots": {
-      "summary": "Fetching a virtual volume snapshot",
-      "description": ""
-    },
-    "/get-vm-volume-snapshots-connection": {
-      "summary": "Fetching the number of VM snapshots",
-      "description": ""
-    },
-    "/get-vm-volumes": {
-      "summary": "Fetching a virtual volume",
-      "description": ""
-    },
-    "/get-vm-volumes-connection": {
-      "summary": "Fetching the number of virtual volumes",
-      "description": ""
-    },
-    "/get-vms": {
-      "summary": "Fetching a virtual machine",
-      "description": ""
-    },
-    "/get-vms-connection": {
-      "summary": "Fetching the number of virtual machines",
       "description": ""
     }
   }

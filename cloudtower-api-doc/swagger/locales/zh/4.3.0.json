@@ -1,19 +1,12 @@
 {
   "schemas": {
-    "VmNicParams": {
-      "vpc_nic": "VPC NIC 相关配置",
-      "type": "虚拟机 NIC 类型",
-      "qos": "Qos 参数配置",
-      "subnet_mask": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的子网掩码。",
-      "gateway": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的网关。",
-      "ip_address": "可为 DHCP 网络中的网卡设置一个固定 IP。或者当VM内部的虚拟机工具运行时，用来指定设置静态IP的地址。",
-      "nic_id": "关联网卡 ID",
-      "connect_vlan_id": "关联 VLAN 的唯一标识",
-      "mirror": "是否启动镜像流量模式（port mirroring）",
-      "model": "型号",
-      "enabled": "是否启用",
-      "mac_address": "可选项，用于编辑 NIC。如果是一个新的网卡，则不需要该字段。",
-      "local_id": "UUID"
+    "ContentLibraryImageWhereInput": {
+      "iscsi_luns_every": "",
+      "iscsi_luns_none": "",
+      "iscsi_luns_some": ""
+    },
+    "ContentLibraryImage": {
+      "iscsi_luns": ""
     },
     "VpcNicParams": {
       "ip_addresses": "IP 地址",
@@ -21,247 +14,227 @@
       "vpc_subnet_id": "VPC 子网 ID，关联 VPC 子网的唯一标识",
       "vpc_id": "VPC ID，关联 VPC 的唯一标识"
     },
+    "VmNicParams": {
+      "vpc_nic": "VPC NIC 相关配置",
+      "type": "虚拟机 NIC 类型"
+    },
     "UpdateVpcNicPayloads": {
       "floating_ip_id": "浮动 IP ID，关联浮动 IP 的唯一标识",
       "ip_addresses": "IP 地址",
       "vpc_subnet_id": "VPC 子网 ID，关联 VPC 子网的唯一标识"
     },
     "VmUpdateNicParams": {
-      "data.vpc_nic": "VPC NIC 相关配置",
-      "data.subnet_mask": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的子网掩码。",
-      "data.gateway": "当VM内部的虚拟机工具运行时，用来指定设置静态IP的网关。",
-      "data.ip_address": "可为 DHCP 网络中的网卡设置一个固定 IP。或者当VM内部的虚拟机工具运行时，用来指定设置静态IP的地址。",
-      "data.nic_id": "虚拟网卡 ID",
-      "data.connect_vlan_id": "关联 VLAN 的唯一标识",
-      "data.mirror": "是否启动镜像流量模式（port mirroring）",
-      "data.model": "型号",
-      "data.enabled": "是否启用",
-      "data.mac_address": "可选项，用于编辑 NIC。如果是一个新的网卡，则不需要该字段。",
-      "data.nic_index": "网卡索引",
-      "data": "",
-      "where": ""
+      "data.vpc_nic": "VPC NIC 相关配置"
     },
     "VmUpdateVpcNicParams": {
       "data.vpc_nic": "VPC NIC 相关配置",
       "data": "",
       "where": ""
     },
-    "NestedVirtualPrivateCloudNic": {
-      "floating_ip": "",
-      "id": "唯一标识",
-      "ip_addresses": "",
-      "local_id": "",
-      "vpc": "",
-      "vpc_subnet": ""
-    },
-    "ContentLibraryImageWhereInput": {
-      "AND": "符合所有的筛选条件",
-      "NOT": "不符合所有筛选条件",
-      "OR": "符合一项或多项筛选条件",
-      "clusters_every": "返回关联资源全都符合相关筛选条件的资源",
-      "clusters_none": "返回关联资源不符合相关筛选条件的资源",
-      "clusters_some": "返回关联资源一项或多项符合相关筛选条件的资源",
-      "createdAt": "创建时间",
-      "createdAt_gt": "创建时间大于指定数值",
-      "createdAt_gte": "创建时间大于或等于指定数值",
-      "createdAt_in": "创建时间在指定范围中",
-      "createdAt_lt": "创建时间小于指定字符",
-      "createdAt_lte": "创建时间小于或等于指定字符",
-      "createdAt_not": "创建时间不等于指定数值",
-      "createdAt_not_in": "创建时间不在指定范围中",
-      "description": "描述",
-      "description_contains": "描述包含指定字符",
-      "description_ends_with": "描述已指定字符结尾",
-      "description_gt": "描述大于指定数值",
-      "description_gte": "描述大于或等于指定数值",
-      "description_in": "描述在指定范围中",
-      "description_lt": "描述小于指定字符",
-      "description_lte": "描述小于或等于指定字符",
-      "description_not": "描述不等于指定数值",
-      "description_not_contains": "描述不包含指定字符",
-      "description_not_ends_with": "描述不已指定字符结尾",
-      "description_not_in": "描述不在指定范围中",
-      "description_not_starts_with": "描述不已指定字符开始",
-      "description_starts_with": "描述已指定字符开始",
-      "elf_images_every": "返回关联资源全都符合相关筛选条件的资源",
-      "elf_images_none": "返回关联资源不符合相关筛选条件的资源",
-      "elf_images_some": "返回关联资源一项或多项符合相关筛选条件的资源",
-      "entityAsyncStatus": "内部字段",
-      "entityAsyncStatus_in": "内部字段在指定范围中",
-      "entityAsyncStatus_not": "内部字段不等于指定数值",
-      "entityAsyncStatus_not_in": "内部字段不在指定范围中",
-      "id": "唯一标识",
-      "id_contains": "唯一标识包含指定字符",
-      "id_ends_with": "唯一标识已指定字符结尾",
-      "id_gt": "唯一标识大于指定数值",
-      "id_gte": "唯一标识大于或等于指定数值",
-      "id_in": "唯一标识在指定范围中",
-      "id_lt": "唯一标识小于指定字符",
-      "id_lte": "唯一标识小于或等于指定字符",
-      "id_not": "唯一标识不等于指定数值",
-      "id_not_contains": "唯一标识不包含指定字符",
-      "id_not_ends_with": "唯一标识不已指定字符结尾",
-      "id_not_in": "唯一标识不在指定范围中",
-      "id_not_starts_with": "唯一标识不已指定字符开始",
-      "id_starts_with": "唯一标识已指定字符开始",
-      "iscsi_luns_every": "",
-      "iscsi_luns_none": "",
-      "iscsi_luns_some": "",
-      "labels_every": "返回关联资源全都符合相关筛选条件的资源",
-      "labels_none": "返回关联资源不符合相关筛选条件的资源",
-      "labels_some": "返回关联资源一项或多项符合相关筛选条件的资源",
-      "name": "名称",
-      "name_contains": "名称包含指定字符",
-      "name_ends_with": "名称已指定字符结尾",
-      "name_gt": "名称大于指定数值",
-      "name_gte": "名称大于或等于指定数值",
-      "name_in": "名称在指定范围中",
-      "name_lt": "名称小于指定字符",
-      "name_lte": "名称小于或等于指定字符",
-      "name_not": "名称不等于指定数值",
-      "name_not_contains": "名称不包含指定字符",
-      "name_not_ends_with": "名称不已指定字符结尾",
-      "name_not_in": "名称不在指定范围中",
-      "name_not_starts_with": "名称不已指定字符开始",
-      "name_starts_with": "名称已指定字符开始",
-      "path": "路径",
-      "path_contains": "路径包含指定字符",
-      "path_ends_with": "路径已指定字符结尾",
-      "path_gt": "路径大于指定数值",
-      "path_gte": "路径大于或等于指定数值",
-      "path_in": "路径在指定范围中",
-      "path_lt": "路径小于指定字符",
-      "path_lte": "路径小于或等于指定字符",
-      "path_not": "路径不等于指定数值",
-      "path_not_contains": "路径不包含指定字符",
-      "path_not_ends_with": "路径不已指定字符结尾",
-      "path_not_in": "路径不在指定范围中",
-      "path_not_starts_with": "路径不已指定字符开始",
-      "path_starts_with": "路径已指定字符开始",
-      "size": "容量大小（字节）",
-      "size_gt": "容量大小（字节）大于指定数值",
-      "size_gte": "容量大小（字节）大于或等于指定数值",
-      "size_in": "容量大小（字节）在指定范围中",
-      "size_lt": "容量大小（字节）小于指定字符",
-      "size_lte": "容量大小（字节）小于或等于指定字符",
-      "size_not": "容量大小（字节）不等于指定数值",
-      "size_not_in": "容量大小（字节）不在指定范围中",
-      "vm_disks_every": "返回关联资源全都符合相关筛选条件的资源",
-      "vm_disks_none": "返回关联资源不符合相关筛选条件的资源",
-      "vm_disks_some": "返回关联资源一项或多项符合相关筛选条件的资源",
-      "vm_snapshots_every": "返回关联资源全都符合相关筛选条件的资源",
-      "vm_snapshots_none": "返回关联资源不符合相关筛选条件的资源",
-      "vm_snapshots_some": "返回关联资源一项或多项符合相关筛选条件的资源",
-      "vm_templates_every": "返回关联资源全都符合相关筛选条件的资源",
-      "vm_templates_none": "返回关联资源不符合相关筛选条件的资源",
-      "vm_templates_some": "返回关联资源一项或多项符合相关筛选条件的资源"
-    },
-    "ContentLibraryImage": {
-      "clusters": "关联集群",
-      "createdAt": "创建时间",
-      "description": "描述",
-      "elf_image_uuids": "ISO 映像 UUID",
-      "elf_images": "ISO 映像",
-      "entityAsyncStatus": "内部字段",
-      "id": "唯一标识",
-      "iscsi_luns": "",
-      "labels": "关联标签",
-      "name": "名称",
-      "path": "路径",
-      "size": "容量大小（字节）",
-      "vm_disks": "关联虚拟盘",
-      "vm_snapshots": "关联虚拟机快照",
-      "vm_templates": "关联虚拟机模板"
-    },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
-      "id": "唯一标识",
-      "name": "名称",
       "nat_gateway_cidr": "从 CIDR 块中指定的 NAT 网关地址块",
       "router_gateway_cidr": "从 CIDR 块中指定的路由网关地址块"
     },
     "NestedTemplateVpcNic": {
-      "vpc_local_id": "",
-      "vpc_subnet_local_id": ""
+      "vpc_local_id": "VPC UUID",
+      "vpc_subnet_local_id": "VPC 子网 UUID"
     },
     "NestedTemplateNic": {
-      "enabled": "",
-      "index": "",
-      "ip_address": "",
-      "mac_address": "",
-      "mirror": "是否启动镜像流量模式（port mirroring）",
-      "model": "",
       "type": "",
-      "vlan": "",
       "vpc_nic": ""
+    },
+    "NestedVirtualPrivateCloudNic": {
+      "floating_ip": "",
+      "ip_addresses": "",
+      "local_id": "",
+      "vpc": "",
+      "vpc_subnet": ""
     }
   },
-  "tags": [
-    {
-      "name": "ApiInfo",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudFloatingIp",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudNatGateway",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudRouteTable",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudRouterGateway",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSecurityGroup",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSecurityPolicy",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudSubnet",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloud",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "V2EverouteLicense",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudClusterBinding",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudExternalSubnet",
-      "x-displayName": "",
-      "description": ""
-    }
-  ],
   "paths": {
     "/update-vm-vpc-nic": {
       "summary": "更新虚拟机 VPC 网卡信息",
       "description": "用于更新虚拟机 VPC 网卡的VPC、子网、浮动 IP、IP 地址配置。"
+    },
+    "/create-virtual-private-cloud-floating-ip": {
+      "summary": "分配浮动 IP",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-floating-ip": {
+      "summary": "释放浮动 IP",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-nat-gateway": {
+      "summary": "创建 NAT 网关",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-nat-gateway": {
+      "summary": "更新 NAT 网关",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-nat-gateway": {
+      "summary": "删除 NAT 网关",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-route-table": {
+      "summary": "创建路由表",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-route-table": {
+      "summary": "更新路由表",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-route-table": {
+      "summary": "删除路由表",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-router-gateway": {
+      "summary": "创建路由网关",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-router-gateway": {
+      "summary": "更新路由网关",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-router-gateway": {
+      "summary": "删除路由网关",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-group": {
+      "summary": "创建 VPC 安全组",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-group": {
+      "summary": "更新 VPC 安全组",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-group": {
+      "summary": "删除 VPC 安全组",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-security-policy": {
+      "summary": "创建 VPC 安全策略",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-security-policy": {
+      "summary": "删除 VPC 安全策略",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-security-policy": {
+      "summary": "更新 VPC 安全策略",
+      "description": ""
+    },
+    "/create-virtual-private-cloud-subnet": {
+      "summary": "创建子网",
+      "description": ""
+    },
+    "/update-virtual-private-cloud-subnet": {
+      "summary": "更新子网",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud-subnet": {
+      "summary": "删除子网",
+      "description": ""
+    },
+    "/create-virtual-private-cloud": {
+      "summary": "创建 VPC",
+      "description": ""
+    },
+    "/update-virtual-private-cloud": {
+      "summary": "更新 VPC",
+      "description": ""
+    },
+    "/delete-virtual-private-cloud": {
+      "summary": "删除 VPC",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings": {
+      "summary": "获取 VPC 关联集群",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-cluster-bindings-connection": {
+      "summary": "获取 VPC 关联集群数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets": {
+      "summary": "获取外部子网",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-external-subnets-connection": {
+      "summary": "获取外部子网数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips": {
+      "summary": "获取浮动 IP",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-floating-ips-connection": {
+      "summary": "获取浮动 IP 数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways": {
+      "summary": "获取 NAT 网关",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-nat-gateways-connection": {
+      "summary": "获取 NAT 网关数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables": {
+      "summary": "获取路由表",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-route-tables-connection": {
+      "summary": "获取路由表数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways": {
+      "summary": "获取路由网关",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-router-gateways-connection": {
+      "summary": "获取路由网关数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups": {
+      "summary": "获取 VPC 安全组",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-groups-connection": {
+      "summary": "获取 VPC 安全组数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies": {
+      "summary": "获取 VPC 安全策略",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-security-policies-connection": {
+      "summary": "获取 VPC 安全策略数量",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets": {
+      "summary": "获取子网",
+      "description": ""
+    },
+    "/get-virtual-private-cloud-subnets-connection": {
+      "summary": "获取子网数量",
+      "description": ""
+    },
+    "/get-virtual-private-clouds": {
+      "summary": "获取 VPC",
+      "description": ""
+    },
+    "/get-virtual-private-clouds-connection": {
+      "summary": "获取 VPC 数量",
+      "description": ""
+    },
+    "/get-v2-everoute-licenses": {
+      "summary": "获取 V2 版本 {NET_SECURITY} 使用许可",
+      "description": ""
+    },
+    "/get-v-2-everoute-licenses-connection": {
+      "summary": "获取 V2 版本 {NET_SECURITY} 使用许可数量",
+      "description": ""
     }
   }
 }
