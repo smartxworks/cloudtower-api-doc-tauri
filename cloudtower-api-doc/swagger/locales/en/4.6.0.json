@@ -1,395 +1,6 @@
 {
   "schemas": {
     "VmWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "backup_plans_every": "",
-      "backup_plans_none": "",
-      "backup_plans_some": "",
-      "bios_uuid": "",
-      "bios_uuid_contains": "",
-      "bios_uuid_ends_with": "",
-      "bios_uuid_gt": "",
-      "bios_uuid_gte": "",
-      "bios_uuid_in": "",
-      "bios_uuid_lt": "",
-      "bios_uuid_lte": "",
-      "bios_uuid_not": "",
-      "bios_uuid_not_contains": "",
-      "bios_uuid_not_ends_with": "",
-      "bios_uuid_not_in": "",
-      "bios_uuid_not_starts_with": "",
-      "bios_uuid_starts_with": "",
-      "clock_offset": "",
-      "clock_offset_in": "",
-      "clock_offset_not": "",
-      "clock_offset_not_in": "",
-      "cloud_init_supported": "",
-      "cloud_init_supported_not": "",
-      "cluster": "",
-      "cpu_model": "",
-      "cpu_model_contains": "",
-      "cpu_model_ends_with": "",
-      "cpu_model_gt": "",
-      "cpu_model_gte": "",
-      "cpu_model_in": "",
-      "cpu_model_lt": "",
-      "cpu_model_lte": "",
-      "cpu_model_not": "",
-      "cpu_model_not_contains": "",
-      "cpu_model_not_ends_with": "",
-      "cpu_model_not_in": "",
-      "cpu_model_not_starts_with": "",
-      "cpu_model_starts_with": "",
-      "cpu_usage": "",
-      "cpu_usage_gt": "",
-      "cpu_usage_gte": "",
-      "cpu_usage_in": "",
-      "cpu_usage_lt": "",
-      "cpu_usage_lte": "",
-      "cpu_usage_not": "",
-      "cpu_usage_not_in": "",
-      "deleted_at": "",
-      "deleted_at_gt": "",
-      "deleted_at_gte": "",
-      "deleted_at_in": "",
-      "deleted_at_lt": "",
-      "deleted_at_lte": "",
-      "deleted_at_not": "",
-      "deleted_at_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "dns_servers": "",
-      "dns_servers_contains": "",
-      "dns_servers_ends_with": "",
-      "dns_servers_gt": "",
-      "dns_servers_gte": "",
-      "dns_servers_in": "",
-      "dns_servers_lt": "",
-      "dns_servers_lte": "",
-      "dns_servers_not": "",
-      "dns_servers_not_contains": "",
-      "dns_servers_not_ends_with": "",
-      "dns_servers_not_in": "",
-      "dns_servers_not_starts_with": "",
-      "dns_servers_starts_with": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "entity_filter_results_every": "",
-      "entity_filter_results_none": "",
-      "entity_filter_results_some": "",
-      "firmware": "",
-      "firmware_in": "",
-      "firmware_not": "",
-      "firmware_not_in": "",
-      "folder": "",
-      "gpu_devices_every": "",
-      "gpu_devices_none": "",
-      "gpu_devices_some": "",
-      "guest_cpu_model": "",
-      "guest_cpu_model_contains": "",
-      "guest_cpu_model_ends_with": "",
-      "guest_cpu_model_gt": "",
-      "guest_cpu_model_gte": "",
-      "guest_cpu_model_in": "",
-      "guest_cpu_model_lt": "",
-      "guest_cpu_model_lte": "",
-      "guest_cpu_model_not": "",
-      "guest_cpu_model_not_contains": "",
-      "guest_cpu_model_not_ends_with": "",
-      "guest_cpu_model_not_in": "",
-      "guest_cpu_model_not_starts_with": "",
-      "guest_cpu_model_starts_with": "",
-      "guest_os_type": "",
-      "guest_os_type_in": "",
-      "guest_os_type_not": "",
-      "guest_os_type_not_in": "",
-      "guest_size_usage": "",
-      "guest_size_usage_gt": "",
-      "guest_size_usage_gte": "",
-      "guest_size_usage_in": "",
-      "guest_size_usage_lt": "",
-      "guest_size_usage_lte": "",
-      "guest_size_usage_not": "",
-      "guest_size_usage_not_in": "",
-      "guest_used_size": "",
-      "guest_used_size_gt": "",
-      "guest_used_size_gte": "",
-      "guest_used_size_in": "",
-      "guest_used_size_lt": "",
-      "guest_used_size_lte": "",
-      "guest_used_size_not": "",
-      "guest_used_size_not_in": "",
-      "ha": "",
-      "ha_not": "",
-      "host": "",
-      "hostname": "",
-      "hostname_contains": "",
-      "hostname_ends_with": "",
-      "hostname_gt": "",
-      "hostname_gte": "",
-      "hostname_in": "",
-      "hostname_lt": "",
-      "hostname_lte": "",
-      "hostname_not": "",
-      "hostname_not_contains": "",
-      "hostname_not_ends_with": "",
-      "hostname_not_in": "",
-      "hostname_not_starts_with": "",
-      "hostname_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "in_recycle_bin": "",
-      "in_recycle_bin_not": "",
-      "internal": "",
-      "internal_not": "",
-      "io_policy": "",
-      "io_policy_in": "",
-      "io_policy_not": "",
-      "io_policy_not_in": "",
-      "ips": "",
-      "ips_contains": "",
-      "ips_ends_with": "",
-      "ips_gt": "",
-      "ips_gte": "",
-      "ips_in": "",
-      "ips_lt": "",
-      "ips_lte": "",
-      "ips_not": "",
-      "ips_not_contains": "",
-      "ips_not_ends_with": "",
-      "ips_not_in": "",
-      "ips_not_starts_with": "",
-      "ips_starts_with": "",
-      "isolation_policy": "",
-      "kernel_info": "",
-      "kernel_info_contains": "",
-      "kernel_info_ends_with": "",
-      "kernel_info_gt": "",
-      "kernel_info_gte": "",
-      "kernel_info_in": "",
-      "kernel_info_lt": "",
-      "kernel_info_lte": "",
-      "kernel_info_not": "",
-      "kernel_info_not_contains": "",
-      "kernel_info_not_ends_with": "",
-      "kernel_info_not_in": "",
-      "kernel_info_not_starts_with": "",
-      "kernel_info_starts_with": "",
-      "labels_every": "",
-      "labels_none": "",
-      "labels_some": "",
-      "last_shutdown_time": "",
-      "last_shutdown_time_gt": "",
-      "last_shutdown_time_gte": "",
-      "last_shutdown_time_in": "",
-      "last_shutdown_time_lt": "",
-      "last_shutdown_time_lte": "",
-      "last_shutdown_time_not": "",
-      "last_shutdown_time_not_in": "",
-      "local_created_at": "",
-      "local_created_at_gt": "",
-      "local_created_at_gte": "",
-      "local_created_at_in": "",
-      "local_created_at_lt": "",
-      "local_created_at_lte": "",
-      "local_created_at_not": "",
-      "local_created_at_not_in": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "logical_size_bytes": "",
-      "logical_size_bytes_gt": "",
-      "logical_size_bytes_gte": "",
-      "logical_size_bytes_in": "",
-      "logical_size_bytes_lt": "",
-      "logical_size_bytes_lte": "",
-      "logical_size_bytes_not": "",
-      "logical_size_bytes_not_in": "",
-      "max_bandwidth": "",
-      "max_bandwidth_gt": "",
-      "max_bandwidth_gte": "",
-      "max_bandwidth_in": "",
-      "max_bandwidth_lt": "",
-      "max_bandwidth_lte": "",
-      "max_bandwidth_not": "",
-      "max_bandwidth_not_in": "",
-      "max_bandwidth_policy": "",
-      "max_bandwidth_policy_in": "",
-      "max_bandwidth_policy_not": "",
-      "max_bandwidth_policy_not_in": "",
-      "max_iops": "",
-      "max_iops_gt": "",
-      "max_iops_gte": "",
-      "max_iops_in": "",
-      "max_iops_lt": "",
-      "max_iops_lte": "",
-      "max_iops_not": "",
-      "max_iops_not_in": "",
-      "max_iops_policy": "",
-      "max_iops_policy_in": "",
-      "max_iops_policy_not": "",
-      "max_iops_policy_not_in": "",
-      "memory": "",
-      "memory_gt": "",
-      "memory_gte": "",
-      "memory_in": "",
-      "memory_lt": "",
-      "memory_lte": "",
-      "memory_not": "",
-      "memory_not_in": "",
-      "memory_usage": "",
-      "memory_usage_gt": "",
-      "memory_usage_gte": "",
-      "memory_usage_in": "",
-      "memory_usage_lt": "",
-      "memory_usage_lte": "",
-      "memory_usage_not": "",
-      "memory_usage_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "nested_virtualization": "",
-      "nested_virtualization_not": "",
-      "node_ip": "",
-      "node_ip_contains": "",
-      "node_ip_ends_with": "",
-      "node_ip_gt": "",
-      "node_ip_gte": "",
-      "node_ip_in": "",
-      "node_ip_lt": "",
-      "node_ip_lte": "",
-      "node_ip_not": "",
-      "node_ip_not_contains": "",
-      "node_ip_not_ends_with": "",
-      "node_ip_not_in": "",
-      "node_ip_not_starts_with": "",
-      "node_ip_starts_with": "",
-      "original_name": "",
-      "original_name_contains": "",
-      "original_name_ends_with": "",
-      "original_name_gt": "",
-      "original_name_gte": "",
-      "original_name_in": "",
-      "original_name_lt": "",
-      "original_name_lte": "",
-      "original_name_not": "",
-      "original_name_not_contains": "",
-      "original_name_not_ends_with": "",
-      "original_name_not_in": "",
-      "original_name_not_starts_with": "",
-      "original_name_starts_with": "",
-      "os": "",
-      "os_contains": "",
-      "os_ends_with": "",
-      "os_gt": "",
-      "os_gte": "",
-      "os_in": "",
-      "os_lt": "",
-      "os_lte": "",
-      "os_not": "",
-      "os_not_contains": "",
-      "os_not_ends_with": "",
-      "os_not_in": "",
-      "os_not_starts_with": "",
-      "os_starts_with": "",
-      "pci_nics_every": "",
-      "pci_nics_none": "",
-      "pci_nics_some": "",
-      "protected": "",
-      "protected_not": "",
-      "provisioned_size": "",
-      "provisioned_size_gt": "",
-      "provisioned_size_gte": "",
-      "provisioned_size_in": "",
-      "provisioned_size_lt": "",
-      "provisioned_size_lte": "",
-      "provisioned_size_not": "",
-      "provisioned_size_not_in": "",
-      "size": "",
-      "size_gt": "",
-      "size_gte": "",
-      "size_in": "",
-      "size_lt": "",
-      "size_lte": "",
-      "size_not": "",
-      "size_not_in": "",
-      "snapshot_plan": "",
-      "snapshots_every": "",
-      "snapshots_none": "",
-      "snapshots_some": "",
-      "status": "",
-      "status_in": "",
-      "status_not": "",
-      "status_not_in": "",
-      "unique_logical_size": "",
-      "unique_logical_size_gt": "",
-      "unique_logical_size_gte": "",
-      "unique_logical_size_in": "",
-      "unique_logical_size_lt": "",
-      "unique_logical_size_lte": "",
-      "unique_logical_size_not": "",
-      "unique_logical_size_not_in": "",
-      "unique_size": "",
-      "unique_size_gt": "",
-      "unique_size_gte": "",
-      "unique_size_in": "",
-      "unique_size_lt": "",
-      "unique_size_lte": "",
-      "unique_size_not": "",
-      "unique_size_not_in": "",
-      "usb_devices_every": "",
-      "usb_devices_none": "",
-      "usb_devices_some": "",
       "used_size": "",
       "used_size_gt": "",
       "used_size_gte": "",
@@ -405,196 +16,9 @@
       "used_size_usage_lt": "",
       "used_size_usage_lte": "",
       "used_size_usage_not": "",
-      "used_size_usage_not_in": "",
-      "vcpu": "",
-      "vcpu_gt": "",
-      "vcpu_gte": "",
-      "vcpu_in": "",
-      "vcpu_lt": "",
-      "vcpu_lte": "",
-      "vcpu_not": "",
-      "vcpu_not_in": "",
-      "video_type": "",
-      "video_type_in": "",
-      "video_type_not": "",
-      "video_type_not_in": "",
-      "vm_disks_every": "",
-      "vm_disks_none": "",
-      "vm_disks_some": "",
-      "vm_nics_every": "",
-      "vm_nics_none": "",
-      "vm_nics_some": "",
-      "vm_placement_group_every": "",
-      "vm_placement_group_none": "",
-      "vm_placement_group_some": "",
-      "vm_tools_status": "",
-      "vm_tools_status_in": "",
-      "vm_tools_status_not": "",
-      "vm_tools_status_not_in": "",
-      "vm_tools_version": "",
-      "vm_tools_version_contains": "",
-      "vm_tools_version_ends_with": "",
-      "vm_tools_version_gt": "",
-      "vm_tools_version_gte": "",
-      "vm_tools_version_in": "",
-      "vm_tools_version_lt": "",
-      "vm_tools_version_lte": "",
-      "vm_tools_version_not": "",
-      "vm_tools_version_not_contains": "",
-      "vm_tools_version_not_ends_with": "",
-      "vm_tools_version_not_in": "",
-      "vm_tools_version_not_starts_with": "",
-      "vm_tools_version_starts_with": "",
-      "vm_usage": "",
-      "vm_usage_in": "",
-      "vm_usage_not": "",
-      "vm_usage_not_in": "",
-      "win_opt": "",
-      "win_opt_not": ""
+      "used_size_usage_not_in": ""
     },
     "VmVolumeWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "cluster": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "elf_storage_policy": "",
-      "elf_storage_policy_in": "",
-      "elf_storage_policy_not": "",
-      "elf_storage_policy_not_in": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "guest_size_usage": "",
-      "guest_size_usage_gt": "",
-      "guest_size_usage_gte": "",
-      "guest_size_usage_in": "",
-      "guest_size_usage_lt": "",
-      "guest_size_usage_lte": "",
-      "guest_size_usage_not": "",
-      "guest_size_usage_not_in": "",
-      "guest_used_size": "",
-      "guest_used_size_gt": "",
-      "guest_used_size_gte": "",
-      "guest_used_size_in": "",
-      "guest_used_size_lt": "",
-      "guest_used_size_lte": "",
-      "guest_used_size_not": "",
-      "guest_used_size_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "labels_every": "",
-      "labels_none": "",
-      "labels_some": "",
-      "local_created_at": "",
-      "local_created_at_gt": "",
-      "local_created_at_gte": "",
-      "local_created_at_in": "",
-      "local_created_at_lt": "",
-      "local_created_at_lte": "",
-      "local_created_at_not": "",
-      "local_created_at_not_in": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "lun": "",
-      "mounting": "",
-      "mounting_not": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "path": "",
-      "path_contains": "",
-      "path_ends_with": "",
-      "path_gt": "",
-      "path_gte": "",
-      "path_in": "",
-      "path_lt": "",
-      "path_lte": "",
-      "path_not": "",
-      "path_not_contains": "",
-      "path_not_ends_with": "",
-      "path_not_in": "",
-      "path_not_starts_with": "",
-      "path_starts_with": "",
-      "sharing": "",
-      "sharing_not": "",
-      "size": "",
-      "size_gt": "",
-      "size_gte": "",
-      "size_in": "",
-      "size_lt": "",
-      "size_lte": "",
-      "size_not": "",
-      "size_not_in": "",
-      "type": "",
-      "type_in": "",
-      "type_not": "",
-      "type_not_in": "",
-      "unique_logical_size": "",
-      "unique_logical_size_gt": "",
-      "unique_logical_size_gte": "",
-      "unique_logical_size_in": "",
-      "unique_logical_size_lt": "",
-      "unique_logical_size_lte": "",
-      "unique_logical_size_not": "",
-      "unique_logical_size_not_in": "",
-      "unique_size": "",
-      "unique_size_gt": "",
-      "unique_size_gte": "",
-      "unique_size_in": "",
-      "unique_size_lt": "",
-      "unique_size_lte": "",
-      "unique_size_not": "",
-      "unique_size_not_in": "",
       "used_size": "",
       "used_size_gt": "",
       "used_size_gte": "",
@@ -610,507 +34,25 @@
       "used_size_usage_lt": "",
       "used_size_usage_lte": "",
       "used_size_usage_not": "",
-      "used_size_usage_not_in": "",
-      "vm_disks_every": "",
-      "vm_disks_none": "",
-      "vm_disks_some": ""
+      "used_size_usage_not_in": ""
     },
     "IsolationPolicyWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "everoute_cluster": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "labels_every": "",
-      "labels_none": "",
-      "labels_some": "",
-      "mode": "",
-      "mode_in": "",
-      "mode_not": "",
-      "mode_not_in": "",
-      "statistics": "",
-      "vm": ""
-    },
-    "VirtualPrivateCloudFloatingIpWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "external_ip": "",
-      "external_ip_contains": "",
-      "external_ip_ends_with": "",
-      "external_ip_gt": "",
-      "external_ip_gte": "",
-      "external_ip_in": "",
-      "external_ip_lt": "",
-      "external_ip_lte": "",
-      "external_ip_not": "",
-      "external_ip_not_contains": "",
-      "external_ip_not_ends_with": "",
-      "external_ip_not_in": "",
-      "external_ip_not_starts_with": "",
-      "external_ip_starts_with": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudNatGatewayWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "enable_dnat": "",
-      "enable_dnat_not": "",
-      "enable_snat": "",
-      "enable_snat_not": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "external_ip": "",
-      "external_ip_contains": "",
-      "external_ip_ends_with": "",
-      "external_ip_gt": "",
-      "external_ip_gte": "",
-      "external_ip_in": "",
-      "external_ip_lt": "",
-      "external_ip_lte": "",
-      "external_ip_not": "",
-      "external_ip_not_contains": "",
-      "external_ip_not_ends_with": "",
-      "external_ip_not_in": "",
-      "external_ip_not_starts_with": "",
-      "external_ip_starts_with": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudEdgeGatewayWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "vdses_every": "",
-      "vdses_none": "",
-      "vdses_some": ""
-    },
-    "VirtualPrivateCloudRouterGatewayWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "associated_subnets_every": "",
-      "associated_subnets_none": "",
-      "associated_subnets_some": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "external_ip": "",
-      "external_ip_contains": "",
-      "external_ip_ends_with": "",
-      "external_ip_gt": "",
-      "external_ip_gte": "",
-      "external_ip_in": "",
-      "external_ip_lt": "",
-      "external_ip_lte": "",
-      "external_ip_not": "",
-      "external_ip_not_contains": "",
-      "external_ip_not_ends_with": "",
-      "external_ip_not_in": "",
-      "external_ip_not_starts_with": "",
-      "external_ip_starts_with": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "nexthop_ip": "",
-      "nexthop_ip_contains": "",
-      "nexthop_ip_ends_with": "",
-      "nexthop_ip_gt": "",
-      "nexthop_ip_gte": "",
-      "nexthop_ip_in": "",
-      "nexthop_ip_lt": "",
-      "nexthop_ip_lte": "",
-      "nexthop_ip_not": "",
-      "nexthop_ip_not_contains": "",
-      "nexthop_ip_not_ends_with": "",
-      "nexthop_ip_not_in": "",
-      "nexthop_ip_not_starts_with": "",
-      "nexthop_ip_starts_with": "",
-      "vpc": ""
-    },
-    "SecurityPolicyWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "everoute_cluster": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "is_blocklist": "",
-      "is_blocklist_not": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "policy_mode": "",
-      "policy_mode_in": "",
-      "policy_mode_not": "",
-      "policy_mode_not_in": "",
       "statistics": ""
     },
-    "VirtualPrivateCloudExternalSubnetGroupWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "edge_gateway_group": "",
+    "VirtualPrivateCloudNicWhereInput": {
       "entityAsyncStatus": "",
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "exclusive": "",
-      "exclusive_not": "",
-      "floating_ips_every": "",
-      "floating_ips_none": "",
-      "floating_ips_some": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "nat_gateways_every": "",
-      "nat_gateways_none": "",
-      "nat_gateways_some": "",
-      "router_gateways_every": "",
-      "router_gateways_none": "",
-      "router_gateways_some": "",
-      "shared_in_edge_gateway_group": "",
-      "shared_in_edge_gateway_group_not": "",
-      "vpc": ""
+      "entityAsyncStatus_not_in": ""
     },
-    "VirtualPrivateCloudEdgeGatewayGroupWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "edge_gateways_every": "",
-      "edge_gateways_none": "",
-      "edge_gateways_some": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "primary_edge_gateway_id": "",
-      "primary_edge_gateway_id_contains": "",
-      "primary_edge_gateway_id_ends_with": "",
-      "primary_edge_gateway_id_gt": "",
-      "primary_edge_gateway_id_gte": "",
-      "primary_edge_gateway_id_in": "",
-      "primary_edge_gateway_id_lt": "",
-      "primary_edge_gateway_id_lte": "",
-      "primary_edge_gateway_id_not": "",
-      "primary_edge_gateway_id_not_contains": "",
-      "primary_edge_gateway_id_not_ends_with": "",
-      "primary_edge_gateway_id_not_in": "",
-      "primary_edge_gateway_id_not_starts_with": "",
-      "primary_edge_gateway_id_starts_with": ""
+    "VirtualPrivateCloudFloatingIpWhereInput": {
+      "external_subnet_group": ""
+    },
+    "VirtualPrivateCloudNatGatewayWhereInput": {
+      "external_subnet_group": ""
+    },
+    "VirtualPrivateCloudRouterGatewayWhereInput": {
+      "external_subnet_group": ""
     },
     "SecurityPolicyStatisticsWhereInput": {
       "AND": "All conditions must return true.",
@@ -1209,93 +151,39 @@
       "total_count_not": "",
       "total_count_not_in": ""
     },
-    "Vm": {
-      "backup_plans": "",
-      "bios_uuid": "",
-      "clock_offset": "",
-      "cloud_init_supported": "",
-      "cluster": "",
-      "cpu": "",
-      "cpu_model": "",
-      "cpu_usage": "",
-      "deleted_at": "",
-      "description": "",
-      "dns_servers": "",
-      "entityAsyncStatus": "",
-      "entity_filter_results": "",
-      "firmware": "",
-      "folder": "",
-      "gpu_devices": "",
-      "guest_cpu_model": "",
-      "guest_os_type": "",
-      "guest_size_usage": "",
-      "guest_used_size": "",
-      "ha": "",
-      "host": "",
-      "hostname": "",
-      "id": "",
-      "in_recycle_bin": "",
-      "internal": "",
-      "io_policy": "",
-      "ips": "",
-      "isolation_policy": "",
-      "kernel_info": "",
-      "labels": "",
-      "last_shutdown_time": "",
-      "local_created_at": "",
-      "local_id": "",
-      "logical_size_bytes": "",
-      "max_bandwidth": "",
-      "max_bandwidth_policy": "",
-      "max_iops": "",
-      "max_iops_policy": "",
-      "memory": "",
-      "memory_usage": "",
-      "name": "",
-      "nested_virtualization": "",
-      "node_ip": "",
-      "original_name": "",
-      "os": "",
-      "out_uninstall_usb": "",
-      "pci_nics": "",
-      "protected": "",
-      "provisioned_size": "",
-      "size": "",
-      "snapshot_plan": "",
-      "snapshots": "",
-      "status": "",
-      "unique_logical_size": "",
-      "unique_size": "",
-      "usb_devices": "",
-      "used_size": "",
-      "used_size_usage": "",
-      "vcpu": "",
-      "video_type": "",
-      "vm_disks": "",
-      "vm_nics": "",
-      "vm_placement_group": "",
-      "vm_tools_status": "",
-      "vm_tools_version": "",
-      "vm_usage": "",
-      "win_opt": ""
+    "SecurityPolicyWhereInput": {
+      "statistics": ""
     },
-    "SecurityPolicyIngressEgressInput": {
-      "service_ids": "",
+    "UserAuditLogCreationParams": {
+      "api_key_name": "",
+      "id": "",
+      "key": ""
+    },
+    "BackupRestoreExecutionNetworkInformation": {
+      "vpc_subnet_local_id": "",
+      "vpc_local_id": "",
+      "vlan_local_id": "",
       "type": "",
-      "ports": "",
-      "target": ""
+      "enum": ""
+    },
+    "BackupRestoreExecutionNetworkMapping": {
+      "target": "",
+      "source": ""
+    },
+    "Vm": {
+      "used_size": "",
+      "used_size_usage": ""
+    },
+    "NestedNetworkPolicyRuleService": {
+      "id": "id",
+      "name": "name"
     },
     "NestedNetworkPolicyRule": {
       "except_ip_block": "",
-      "ip_block": "IP address whitelist",
-      "ports": "ports",
       "security_group": "",
       "security_group_id": "",
-      "selector": "labels",
-      "selector_ids": "label IDs",
       "service_ids": "",
-      "services": "",
-      "type": "type"
+      "services": ""
     },
     "NestedSecurityPolicyStatistics": {
       "count_reset_timestamp": "",
@@ -1308,17 +196,47 @@
       "total_count": ""
     },
     "IsolationPolicy": {
-      "egress": "",
-      "everoute_cluster": "",
-      "id": "",
-      "ingress": "",
-      "labels": "",
-      "mode": "",
-      "statistics": "",
-      "vm": ""
+      "statistics": ""
+    },
+    "SecurityGroupWhereInput": {
+      "member_type_not_in": "",
+      "member_type_not": "",
+      "member_type_in": "",
+      "member_type": "",
+      "ips_starts_with": "",
+      "ips_not_starts_with": "",
+      "ips_not_in": "",
+      "ips_not_ends_with": "",
+      "ips_not_contains": "",
+      "ips_not": "",
+      "ips_lte": "",
+      "ips_lt": "",
+      "ips_in": "",
+      "ips_gte": "",
+      "ips_gt": "",
+      "ips_ends_with": "",
+      "ips_contains": "",
+      "ips": "",
+      "exclude_ips_starts_with": "",
+      "exclude_ips_not_starts_with": "",
+      "exclude_ips_not_in": "",
+      "exclude_ips_not_ends_with": "",
+      "exclude_ips_not_contains": "",
+      "exclude_ips_not": "",
+      "exclude_ips_lte": "",
+      "exclude_ips_lt": "",
+      "exclude_ips_in": "",
+      "exclude_ips_gte": "",
+      "exclude_ips_gt": "",
+      "exclude_ips_ends_with": "",
+      "exclude_ips_contains": "",
+      "exclude_ips": ""
     },
     "SecurityGroupMemberType": {
       "enum": ""
+    },
+    "SecurityPolicyIngressEgressInput": {
+      "service_ids": ""
     },
     "IsolationPolicyCreateParams": {
       "ingress": "",
@@ -1447,147 +365,26 @@
       "ec": ""
     },
     "SecurityPolicy": {
-      "apply_to": "",
-      "description": "",
-      "egress": "",
-      "everoute_cluster": "",
-      "id": "",
-      "ingress": "",
-      "is_blocklist": "",
-      "name": "",
-      "policy_mode": "",
       "statistics": ""
+    },
+    "SecurityPolicyCreateParams": {
+      "is_blocklist": ""
+    },
+    "SecurityPolicyUpdateParams": {
+      "is_blocklist": ""
     },
     "TaskCreationParams": {
       "api_key_name": "",
       "snapshot": "",
       "status": "",
-      "id": "",
-      "finished_at": "",
-      "started_at": "",
-      "steps": "",
-      "args": "",
-      "key": "",
-      "internal": "",
-      "type": "",
-      "resource_id": "",
-      "cluster_id": "",
-      "user_id": "",
-      "description": "",
-      "resource_mutation": "",
-      "resource_type": ""
-    },
-    "NestedVirtualPrivateCloudExternalSubnet": {
-      "edge_gateway": "",
-      "floating_ip_cidr": "从 CIDR 块中指定的浮动 IP 地址块",
-      "id": "id",
-      "name": "name",
-      "nat_gateway_cidr": "",
-      "router_gateway_cidr": ""
-    },
-    "VirtualPrivateCloudFloatingIp": {
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_ips": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "local_id": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudNatGateway": {
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_ips": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudNatGatewayCreationParams": {
-      "external_ips": "",
-      "external_ip": "",
-      "external_subnet_group_id": "",
-      "external_subnet_id": "",
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
-      "vpc_id": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudNatGatewayUpdationParams": {
-      "data.external_ips": "",
-      "data.external_ip": "",
-      "data.dnat_rules": "",
-      "data.enable_dnat": "",
-      "data.enable_snat": "",
-      "data.name": "",
-      "data": "",
-      "where": ""
-    },
-    "VirtualPrivateCloudRouterGateway": {
-      "associated_subnets": "",
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_ips": "",
-      "external_subnet": "",
-      "external_subnet_group": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nexthop_ip": "",
-      "rules": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudRouterGatewayCreationParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ips": "",
-      "external_subnet_group_id": "",
-      "external_ip": "",
-      "external_subnet_id": "",
-      "vpc_id": "",
-      "name": ""
-    },
-    "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ips": "",
-      "external_ip": "",
-      "name": ""
-    },
-    "VmVolume": {
-      "cluster": "",
-      "description": "",
-      "elf_storage_policy": "",
-      "entityAsyncStatus": "",
-      "guest_size_usage": "",
-      "guest_used_size": "",
-      "id": "",
-      "labels": "",
-      "local_created_at": "",
-      "local_id": "",
-      "lun": "",
-      "mounting": "",
-      "name": "",
-      "path": "",
-      "sharing": "",
-      "size": "",
-      "type": "",
-      "unique_logical_size": "",
-      "unique_size": "",
-      "used_size": "",
-      "used_size_usage": "",
-      "vm_disks": ""
+      "id": ""
     },
     "NestedVpcGatewaysCommonExternalIpsType": {
       "edge_gateway_id": "",
       "external_ip": ""
+    },
+    "NestedVirtualPrivateCloudExternalSubnet": {
+      "edge_gateway": ""
     },
     "NestedVirtualPrivateCloudEdgeGatewayGroup": {
       "id": "id",
@@ -1597,6 +394,17 @@
       "edge_gateway_group": "",
       "id": "id",
       "name": "name"
+    },
+    "VirtualPrivateCloudFloatingIp": {
+      "external_ips": "",
+      "external_subnet_group": ""
+    },
+    "BatchCreateVirtualPrivateCloudFloatingIp": {
+      "local_id": ""
+    },
+    "WithTask_BatchCreateVirtualPrivateCloudFloatingIp_": {
+      "task_id": "asynchronous task id ",
+      "data": "resources"
     },
     "VirtualPrivateCloudExternalIpsParams": {
       "edge_gateway_id": "",
@@ -1609,6 +417,46 @@
       "external_subnet_group_id": "",
       "external_subnet_id": "",
       "vpc_id": ""
+    },
+    "VirtualPrivateCloudNatGateway": {
+      "external_ips": "",
+      "external_subnet_group": ""
+    },
+    "VirtualPrivateCloudNatGatewayCreationParams": {
+      "external_ips": "",
+      "external_subnet_group_id": ""
+    },
+    "VirtualPrivateCloudNatGatewayUpdationParams": {
+      "data.external_ips": ""
+    },
+    "NestedVpcRouterGatewayRuleNextHopsItemType": {
+      "edge_gateway_id": "",
+      "nexthop": ""
+    },
+    "NestedVpcRouterGatewayRuleType": {
+      "nexthops": ""
+    },
+    "VirtualPrivateCloudRouterGateway": {
+      "external_ips": "",
+      "external_subnet_group": ""
+    },
+    "VirtualPrivateCloudRouterGatewayNexthopInputType": {
+      "edge_gateway_id": "",
+      "nexthop": ""
+    },
+    "VirtualPrivateCloudRouterGatewayRuleInputType": {
+      "nexthops": ""
+    },
+    "VirtualPrivateCloudRouterGatewayCreationParams": {
+      "external_ips": "",
+      "external_subnet_group_id": ""
+    },
+    "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
+      "external_ips": ""
+    },
+    "VmVolume": {
+      "used_size": "",
+      "used_size_usage": ""
     },
     "NetworkPolicyRuleServiceOrderByInput": {
       "enum": "Sorts a list of records"
@@ -1987,190 +835,9 @@
       "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
-    "VirtualPrivateCloudEdgeGatewayGroup": {
-      "active_edge_gateway_ids": "",
-      "description": "",
-      "edge_gateways": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "name": "",
-      "primary_edge_gateway_id": ""
-    },
-    "VirtualPrivateCloudEdgeGatewayGroupOrderByInput": {
-      "enum": "Sorts a list of records"
-    },
-    "GetVirtualPrivateCloudEdgeGatewayGroupsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedAggregateVirtualPrivateCloudEdgeGatewayGroup": {
-      "count": "count"
-    },
-    "VirtualPrivateCloudEdgeGatewayGroupConnection": {
-      "aggregate": ""
-    },
-    "GetVirtualPrivateCloudEdgeGatewayGroupsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedVirtualPrivateCloudEdgeGatewayInstanceStatus": {
-      "isHealth": ""
-    },
-    "NestedVirtualPrivateCloudEdgeGatewayStatus": {
-      "instances": ""
-    },
-    "VirtualPrivateCloudEdgeGateway": {
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "name": "",
-      "status": "",
-      "vdses": ""
-    },
-    "VirtualPrivateCloudEdgeGatewayOrderByInput": {
-      "enum": "Sorts a list of records"
-    },
-    "GetVirtualPrivateCloudEdgeGatewaysRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedAggregateVirtualPrivateCloudEdgeGateway": {
-      "count": "count"
-    },
-    "VirtualPrivateCloudEdgeGatewayConnection": {
-      "aggregate": ""
-    },
-    "GetVirtualPrivateCloudEdgeGatewaysConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedVirtualPrivateCloudExternalSubnetGroupExternalSubnetsSpec": {
-      "cidr": "",
-      "edge_gateway_id": "",
-      "floating_ip_cidr": "",
-      "gateway": "",
-      "id": "id",
-      "nat_gateway_cidr": "",
-      "router_gateway_cidr": "",
-      "vlan_id": ""
-    },
-    "VirtualPrivateCloudExternalSubnetGroup": {
-      "description": "",
-      "edge_gateway_group": "",
-      "entityAsyncStatus": "",
-      "exclusive": "",
-      "external_subnets_spec": "",
-      "floating_ips": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nat_gateways": "",
-      "router_gateways": "",
-      "shared_in_edge_gateway_group": "",
-      "vpc": ""
-    },
-    "VirtualPrivateCloudExternalSubnetGroupOrderByInput": {
-      "enum": "Sorts a list of records"
-    },
-    "GetVirtualPrivateCloudExternalSubnetGroupsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedAggregateVirtualPrivateCloudExternalSubnetGroup": {
-      "count": "count"
-    },
-    "VirtualPrivateCloudExternalSubnetGroupConnection": {
-      "aggregate": ""
-    },
-    "GetVirtualPrivateCloudExternalSubnetGroupsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
-    },
-    "NestedNetworkPolicyRuleService": {
-      "id": "id",
-      "name": "name"
-    },
-    "UserAuditLogCreationParams": {
-      "api_key_name": "",
-      "id": "",
-      "started_at": "",
-      "finished_at": "",
-      "cluster_id": "",
-      "resource_id": "",
-      "ip_address": "",
-      "status": "",
-      "user_id": "",
-      "key": "",
-      "message": "",
-      "resource_type": "",
-      "action": ""
-    },
-    "BatchCreateVirtualPrivateCloudFloatingIp": {
-      "local_id": ""
-    },
-    "WithTask_BatchCreateVirtualPrivateCloudFloatingIp_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
-    },
     "NestedExternalCloudTower": {
       "id": "id",
       "name": "name"
-    },
-    "NestedReplicationNetworkConfigure": {
-      "gateway": "",
-      "ip": "",
-      "subnet_mask": ""
-    },
-    "NestedReplicationIPAddressMapping": {
-      "source": "",
-      "target": ""
-    },
-    "NestedReplicationNetworkInformation": {
-      "cluster_local_id": "",
-      "cluster_name": "",
-      "network_ids": "",
-      "vds_name": "",
-      "vlan_id": "",
-      "vlan_local_id": "",
-      "vlan_mode_type": "",
-      "vlan_name": ""
-    },
-    "NestedReplicationPlanNetworkMapping": {
-      "source": "",
-      "target": ""
-    },
-    "ReplicationObjectType": {
-      "enum": ""
     },
     "NestedReplicationObjectDescriptor": {
       "cluster_local_id": "",
@@ -2182,116 +849,62 @@
       "tower_deploy_id": "",
       "zbs_volume_id": ""
     },
-    "ReplicationPlanPeriod": {
-      "enum": ""
+    "NestedReplicationPlan": {
+      "id": "id",
+      "name": "name"
     },
-    "ReplicaNameRule": {
-      "enum": ""
-    },
-    "NestedReplicaVm": {
-      "id": "id"
-    },
-    "NestedReplicationPlanExecution": {
-      "id": "id"
-    },
-    "NestedReplicationRestorePoint": {
+    "NestedReplicationService": {
       "id": "id"
     },
     "NestedReplicationTargetExecution": {
       "id": "id"
     },
-    "ResiliencyType": {
-      "enum": ""
-    },
-    "NestedReplicationClusterDescriptor": {
-      "cluster_local_id": "",
-      "cluster_name": "",
-      "tower_deploy_id": ""
-    },
-    "NestedReplicationService": {
+    "NestedReplicationRestorePoint": {
       "id": "id"
     },
-    "ReplicationPlanType": {
+    "ReplicaVmState": {
       "enum": ""
     },
-    "ReplicationPlan": {
-      "abort_window_unfinished": "",
-      "activation_timestamp": "",
-      "compression": "",
+    "ReplicationObjectType": {
+      "enum": ""
+    },
+    "ReplicaVm": {
       "createdAt": "",
-      "delete_strategy": "",
-      "description": "",
-      "ec_k": "",
-      "ec_m": "",
-      "enable_window": "",
       "entityAsyncStatus": "",
       "external_cloudtower": "",
+      "failover_test_object_descriptor": "",
+      "failover_test_replica_group": "",
+      "failover_test_vm": "",
       "id": "",
       "inbound": "",
-      "interval": "",
-      "ip_mapping": "",
-      "iscsi_luns": "",
-      "keep_mac_address": "",
-      "keep_policy": "",
-      "keep_policy_value": "",
-      "last_execute_status": "",
-      "last_execute_status_message": "",
-      "last_execute_success_job_count": "",
-      "last_execute_total_job_count": "",
-      "last_executed_at": "",
-      "last_manual_execute_status": "",
-      "last_manual_execute_status_message": "",
-      "last_manual_execute_success_job_count": "",
-      "last_manual_execute_total_job_count": "",
-      "last_manual_executed_at": "",
-      "name": "",
-      "network_mapping": "",
-      "next_execution_time": "",
-      "objects_descriptor": "",
-      "period": "",
-      "phase": "",
-      "replica_name_rule": "",
-      "replica_name_setting": "",
-      "replica_num": "",
-      "replica_vms": "",
-      "replication_plan_executions": "",
-      "replication_restore_points": "",
+      "iscsi_lun": "",
+      "object_descriptor": "",
+      "origin_iscsi_lun": "",
+      "origin_object_descriptor": "",
+      "origin_vm": "",
+      "origin_vm_cluster_local_id": "",
+      "origin_vm_cluster_name": "",
+      "origin_vm_local_id": "",
+      "origin_vm_name": "",
+      "replica_group": "",
+      "replication_group": "",
+      "replication_plan": "",
+      "replication_service": "",
       "replication_target_executions": "",
-      "resiliency_type": "",
-      "snapshot_consistent_type": "",
-      "status": "",
-      "storage_policy": "",
-      "target_cluster": "",
-      "target_cluster_descriptor": "",
-      "target_replication_service": "",
-      "thin_provision": "",
-      "time_points": "",
+      "restore_points": "",
+      "state": "",
+      "targets_deletable": "",
       "type": "",
       "updatedAt": "",
-      "vms": "",
-      "weekdays": "",
-      "window_end": "",
-      "window_start": ""
+      "vm": ""
     },
-    "ReplicationPlanOrderByInput": {
+    "ReplicaVmOrderByInput": {
       "enum": "Sorts a list of records"
     },
-    "ReplicationPlanWhereInput": {
+    "ReplicaVmWhereInput": {
       "AND": "All conditions must return true.",
       "NOT": "All conditions must return false.",
       "OR": "One or more conditions must return true.",
-      "abort_window_unfinished": "",
-      "abort_window_unfinished_not": "",
-      "activation_timestamp": "",
-      "activation_timestamp_gt": "",
-      "activation_timestamp_gte": "",
-      "activation_timestamp_in": "",
-      "activation_timestamp_lt": "",
-      "activation_timestamp_lte": "",
-      "activation_timestamp_not": "",
-      "activation_timestamp_not_in": "",
-      "compression": "",
-      "compression_not": "",
       "createdAt": "",
       "createdAt_gt": "",
       "createdAt_gte": "",
@@ -2300,47 +913,26 @@
       "createdAt_lte": "",
       "createdAt_not": "",
       "createdAt_not_in": "",
-      "delete_strategy": "",
-      "delete_strategy_in": "",
-      "delete_strategy_not": "",
-      "delete_strategy_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "ec_k": "",
-      "ec_k_gt": "",
-      "ec_k_gte": "",
-      "ec_k_in": "",
-      "ec_k_lt": "",
-      "ec_k_lte": "",
-      "ec_k_not": "",
-      "ec_k_not_in": "",
-      "ec_m": "",
-      "ec_m_gt": "",
-      "ec_m_gte": "",
-      "ec_m_in": "",
-      "ec_m_lt": "",
-      "ec_m_lte": "",
-      "ec_m_not": "",
-      "ec_m_not_in": "",
-      "enable_window": "",
-      "enable_window_not": "",
       "entityAsyncStatus": "",
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
       "external_cloudtower": "",
+      "failover_test_replica_group": "",
+      "failover_test_replica_group_contains": "",
+      "failover_test_replica_group_ends_with": "",
+      "failover_test_replica_group_gt": "",
+      "failover_test_replica_group_gte": "",
+      "failover_test_replica_group_in": "",
+      "failover_test_replica_group_lt": "",
+      "failover_test_replica_group_lte": "",
+      "failover_test_replica_group_not": "",
+      "failover_test_replica_group_not_contains": "",
+      "failover_test_replica_group_not_ends_with": "",
+      "failover_test_replica_group_not_in": "",
+      "failover_test_replica_group_not_starts_with": "",
+      "failover_test_replica_group_starts_with": "",
+      "failover_test_vm": "",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -2357,203 +949,107 @@
       "id_starts_with": "",
       "inbound": "",
       "inbound_not": "",
-      "interval": "",
-      "interval_gt": "",
-      "interval_gte": "",
-      "interval_in": "",
-      "interval_lt": "",
-      "interval_lte": "",
-      "interval_not": "",
-      "interval_not_in": "",
-      "iscsi_luns_every": "",
-      "iscsi_luns_none": "",
-      "iscsi_luns_some": "",
-      "keep_mac_address": "",
-      "keep_mac_address_not": "",
-      "keep_policy": "",
-      "keep_policy_in": "",
-      "keep_policy_not": "",
-      "keep_policy_not_in": "",
-      "keep_policy_value": "",
-      "keep_policy_value_gt": "",
-      "keep_policy_value_gte": "",
-      "keep_policy_value_in": "",
-      "keep_policy_value_lt": "",
-      "keep_policy_value_lte": "",
-      "keep_policy_value_not": "",
-      "keep_policy_value_not_in": "",
-      "last_execute_status": "",
-      "last_execute_status_in": "",
-      "last_execute_status_message": "",
-      "last_execute_status_message_contains": "",
-      "last_execute_status_message_ends_with": "",
-      "last_execute_status_message_gt": "",
-      "last_execute_status_message_gte": "",
-      "last_execute_status_message_in": "",
-      "last_execute_status_message_lt": "",
-      "last_execute_status_message_lte": "",
-      "last_execute_status_message_not": "",
-      "last_execute_status_message_not_contains": "",
-      "last_execute_status_message_not_ends_with": "",
-      "last_execute_status_message_not_in": "",
-      "last_execute_status_message_not_starts_with": "",
-      "last_execute_status_message_starts_with": "",
-      "last_execute_status_not": "",
-      "last_execute_status_not_in": "",
-      "last_execute_success_job_count": "",
-      "last_execute_success_job_count_gt": "",
-      "last_execute_success_job_count_gte": "",
-      "last_execute_success_job_count_in": "",
-      "last_execute_success_job_count_lt": "",
-      "last_execute_success_job_count_lte": "",
-      "last_execute_success_job_count_not": "",
-      "last_execute_success_job_count_not_in": "",
-      "last_execute_total_job_count": "",
-      "last_execute_total_job_count_gt": "",
-      "last_execute_total_job_count_gte": "",
-      "last_execute_total_job_count_in": "",
-      "last_execute_total_job_count_lt": "",
-      "last_execute_total_job_count_lte": "",
-      "last_execute_total_job_count_not": "",
-      "last_execute_total_job_count_not_in": "",
-      "last_executed_at": "",
-      "last_executed_at_gt": "",
-      "last_executed_at_gte": "",
-      "last_executed_at_in": "",
-      "last_executed_at_lt": "",
-      "last_executed_at_lte": "",
-      "last_executed_at_not": "",
-      "last_executed_at_not_in": "",
-      "last_manual_execute_status": "",
-      "last_manual_execute_status_in": "",
-      "last_manual_execute_status_message": "",
-      "last_manual_execute_status_message_contains": "",
-      "last_manual_execute_status_message_ends_with": "",
-      "last_manual_execute_status_message_gt": "",
-      "last_manual_execute_status_message_gte": "",
-      "last_manual_execute_status_message_in": "",
-      "last_manual_execute_status_message_lt": "",
-      "last_manual_execute_status_message_lte": "",
-      "last_manual_execute_status_message_not": "",
-      "last_manual_execute_status_message_not_contains": "",
-      "last_manual_execute_status_message_not_ends_with": "",
-      "last_manual_execute_status_message_not_in": "",
-      "last_manual_execute_status_message_not_starts_with": "",
-      "last_manual_execute_status_message_starts_with": "",
-      "last_manual_execute_status_not": "",
-      "last_manual_execute_status_not_in": "",
-      "last_manual_execute_success_job_count": "",
-      "last_manual_execute_success_job_count_gt": "",
-      "last_manual_execute_success_job_count_gte": "",
-      "last_manual_execute_success_job_count_in": "",
-      "last_manual_execute_success_job_count_lt": "",
-      "last_manual_execute_success_job_count_lte": "",
-      "last_manual_execute_success_job_count_not": "",
-      "last_manual_execute_success_job_count_not_in": "",
-      "last_manual_execute_total_job_count": "",
-      "last_manual_execute_total_job_count_gt": "",
-      "last_manual_execute_total_job_count_gte": "",
-      "last_manual_execute_total_job_count_in": "",
-      "last_manual_execute_total_job_count_lt": "",
-      "last_manual_execute_total_job_count_lte": "",
-      "last_manual_execute_total_job_count_not": "",
-      "last_manual_execute_total_job_count_not_in": "",
-      "last_manual_executed_at": "",
-      "last_manual_executed_at_gt": "",
-      "last_manual_executed_at_gte": "",
-      "last_manual_executed_at_in": "",
-      "last_manual_executed_at_lt": "",
-      "last_manual_executed_at_lte": "",
-      "last_manual_executed_at_not": "",
-      "last_manual_executed_at_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "next_execution_time": "",
-      "next_execution_time_gt": "",
-      "next_execution_time_gte": "",
-      "next_execution_time_in": "",
-      "next_execution_time_lt": "",
-      "next_execution_time_lte": "",
-      "next_execution_time_not": "",
-      "next_execution_time_not_in": "",
-      "period": "",
-      "period_in": "",
-      "period_not": "",
-      "period_not_in": "",
-      "phase": "",
-      "phase_in": "",
-      "phase_not": "",
-      "phase_not_in": "",
-      "replica_name_rule": "",
-      "replica_name_rule_in": "",
-      "replica_name_rule_not": "",
-      "replica_name_rule_not_in": "",
-      "replica_name_setting": "",
-      "replica_name_setting_contains": "",
-      "replica_name_setting_ends_with": "",
-      "replica_name_setting_gt": "",
-      "replica_name_setting_gte": "",
-      "replica_name_setting_in": "",
-      "replica_name_setting_lt": "",
-      "replica_name_setting_lte": "",
-      "replica_name_setting_not": "",
-      "replica_name_setting_not_contains": "",
-      "replica_name_setting_not_ends_with": "",
-      "replica_name_setting_not_in": "",
-      "replica_name_setting_not_starts_with": "",
-      "replica_name_setting_starts_with": "",
-      "replica_num": "",
-      "replica_num_gt": "",
-      "replica_num_gte": "",
-      "replica_num_in": "",
-      "replica_num_lt": "",
-      "replica_num_lte": "",
-      "replica_num_not": "",
-      "replica_num_not_in": "",
-      "replica_vms_every": "",
-      "replica_vms_none": "",
-      "replica_vms_some": "",
-      "replication_plan_executions_every": "",
-      "replication_plan_executions_none": "",
-      "replication_plan_executions_some": "",
-      "replication_restore_points_every": "",
-      "replication_restore_points_none": "",
-      "replication_restore_points_some": "",
+      "iscsi_lun": "",
+      "origin_iscsi_lun": "",
+      "origin_vm": "",
+      "origin_vm_cluster_local_id": "",
+      "origin_vm_cluster_local_id_contains": "",
+      "origin_vm_cluster_local_id_ends_with": "",
+      "origin_vm_cluster_local_id_gt": "",
+      "origin_vm_cluster_local_id_gte": "",
+      "origin_vm_cluster_local_id_in": "",
+      "origin_vm_cluster_local_id_lt": "",
+      "origin_vm_cluster_local_id_lte": "",
+      "origin_vm_cluster_local_id_not": "",
+      "origin_vm_cluster_local_id_not_contains": "",
+      "origin_vm_cluster_local_id_not_ends_with": "",
+      "origin_vm_cluster_local_id_not_in": "",
+      "origin_vm_cluster_local_id_not_starts_with": "",
+      "origin_vm_cluster_local_id_starts_with": "",
+      "origin_vm_cluster_name": "",
+      "origin_vm_cluster_name_contains": "",
+      "origin_vm_cluster_name_ends_with": "",
+      "origin_vm_cluster_name_gt": "",
+      "origin_vm_cluster_name_gte": "",
+      "origin_vm_cluster_name_in": "",
+      "origin_vm_cluster_name_lt": "",
+      "origin_vm_cluster_name_lte": "",
+      "origin_vm_cluster_name_not": "",
+      "origin_vm_cluster_name_not_contains": "",
+      "origin_vm_cluster_name_not_ends_with": "",
+      "origin_vm_cluster_name_not_in": "",
+      "origin_vm_cluster_name_not_starts_with": "",
+      "origin_vm_cluster_name_starts_with": "",
+      "origin_vm_local_id": "",
+      "origin_vm_local_id_contains": "",
+      "origin_vm_local_id_ends_with": "",
+      "origin_vm_local_id_gt": "",
+      "origin_vm_local_id_gte": "",
+      "origin_vm_local_id_in": "",
+      "origin_vm_local_id_lt": "",
+      "origin_vm_local_id_lte": "",
+      "origin_vm_local_id_not": "",
+      "origin_vm_local_id_not_contains": "",
+      "origin_vm_local_id_not_ends_with": "",
+      "origin_vm_local_id_not_in": "",
+      "origin_vm_local_id_not_starts_with": "",
+      "origin_vm_local_id_starts_with": "",
+      "origin_vm_name": "",
+      "origin_vm_name_contains": "",
+      "origin_vm_name_ends_with": "",
+      "origin_vm_name_gt": "",
+      "origin_vm_name_gte": "",
+      "origin_vm_name_in": "",
+      "origin_vm_name_lt": "",
+      "origin_vm_name_lte": "",
+      "origin_vm_name_not": "",
+      "origin_vm_name_not_contains": "",
+      "origin_vm_name_not_ends_with": "",
+      "origin_vm_name_not_in": "",
+      "origin_vm_name_not_starts_with": "",
+      "origin_vm_name_starts_with": "",
+      "replica_group": "",
+      "replica_group_contains": "",
+      "replica_group_ends_with": "",
+      "replica_group_gt": "",
+      "replica_group_gte": "",
+      "replica_group_in": "",
+      "replica_group_lt": "",
+      "replica_group_lte": "",
+      "replica_group_not": "",
+      "replica_group_not_contains": "",
+      "replica_group_not_ends_with": "",
+      "replica_group_not_in": "",
+      "replica_group_not_starts_with": "",
+      "replica_group_starts_with": "",
+      "replication_group": "",
+      "replication_group_contains": "",
+      "replication_group_ends_with": "",
+      "replication_group_gt": "",
+      "replication_group_gte": "",
+      "replication_group_in": "",
+      "replication_group_lt": "",
+      "replication_group_lte": "",
+      "replication_group_not": "",
+      "replication_group_not_contains": "",
+      "replication_group_not_ends_with": "",
+      "replication_group_not_in": "",
+      "replication_group_not_starts_with": "",
+      "replication_group_starts_with": "",
+      "replication_plan": "",
+      "replication_service": "",
       "replication_target_executions_every": "",
       "replication_target_executions_none": "",
       "replication_target_executions_some": "",
-      "resiliency_type": "",
-      "resiliency_type_in": "",
-      "resiliency_type_not": "",
-      "resiliency_type_not_in": "",
-      "snapshot_consistent_type": "",
-      "snapshot_consistent_type_in": "",
-      "snapshot_consistent_type_not": "",
-      "snapshot_consistent_type_not_in": "",
-      "status": "",
-      "status_in": "",
-      "status_not": "",
-      "status_not_in": "",
-      "storage_policy": "",
-      "storage_policy_in": "",
-      "storage_policy_not": "",
-      "storage_policy_not_in": "",
-      "target_cluster": "",
-      "target_replication_service": "",
-      "thin_provision": "",
-      "thin_provision_not": "",
+      "restore_points_every": "",
+      "restore_points_none": "",
+      "restore_points_some": "",
+      "state": "",
+      "state_in": "",
+      "state_not": "",
+      "state_not_in": "",
+      "targets_deletable": "",
+      "targets_deletable_not": "",
       "type": "",
       "type_in": "",
       "type_not": "",
@@ -2566,37 +1062,7 @@
       "updatedAt_lte": "",
       "updatedAt_not": "",
       "updatedAt_not_in": "",
-      "vms_every": "",
-      "vms_none": "",
-      "vms_some": "",
-      "window_end": "",
-      "window_end_contains": "",
-      "window_end_ends_with": "",
-      "window_end_gt": "",
-      "window_end_gte": "",
-      "window_end_in": "",
-      "window_end_lt": "",
-      "window_end_lte": "",
-      "window_end_not": "",
-      "window_end_not_contains": "",
-      "window_end_not_ends_with": "",
-      "window_end_not_in": "",
-      "window_end_not_starts_with": "",
-      "window_end_starts_with": "",
-      "window_start": "",
-      "window_start_contains": "",
-      "window_start_ends_with": "",
-      "window_start_gt": "",
-      "window_start_gte": "",
-      "window_start_in": "",
-      "window_start_lt": "",
-      "window_start_lte": "",
-      "window_start_not": "",
-      "window_start_not_contains": "",
-      "window_start_not_ends_with": "",
-      "window_start_not_in": "",
-      "window_start_not_starts_with": "",
-      "window_start_starts_with": ""
+      "vm": ""
     },
     "ExternalCloudTowerWhereInput": {
       "AND": "All conditions must return true.",
@@ -3022,6 +1488,160 @@
       "updatedAt_not": "",
       "updatedAt_not_in": ""
     },
+    "FailoverExecutionWhereInput": {
+      "AND": "All conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "createdAt": "",
+      "createdAt_gt": "",
+      "createdAt_gte": "",
+      "createdAt_in": "",
+      "createdAt_lt": "",
+      "createdAt_lte": "",
+      "createdAt_not": "",
+      "createdAt_not_in": "",
+      "entityAsyncStatus": "",
+      "entityAsyncStatus_in": "",
+      "entityAsyncStatus_not": "",
+      "entityAsyncStatus_not_in": "",
+      "external_cloudtower": "",
+      "finished_at": "",
+      "finished_at_gt": "",
+      "finished_at_gte": "",
+      "finished_at_in": "",
+      "finished_at_lt": "",
+      "finished_at_lte": "",
+      "finished_at_not": "",
+      "finished_at_not_in": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "is_test_mode": "",
+      "is_test_mode_not": "",
+      "replication_failover_target_executions_every": "",
+      "replication_failover_target_executions_none": "",
+      "replication_failover_target_executions_some": "",
+      "replication_service": "",
+      "resource_version": "",
+      "resource_version_gt": "",
+      "resource_version_gte": "",
+      "resource_version_in": "",
+      "resource_version_lt": "",
+      "resource_version_lte": "",
+      "resource_version_not": "",
+      "resource_version_not_in": "",
+      "shutdown_mode": "",
+      "shutdown_mode_in": "",
+      "shutdown_mode_not": "",
+      "shutdown_mode_not_in": "",
+      "state": "",
+      "state_in": "",
+      "state_not": "",
+      "state_not_in": "",
+      "success_job_count": "",
+      "success_job_count_gt": "",
+      "success_job_count_gte": "",
+      "success_job_count_in": "",
+      "success_job_count_lt": "",
+      "success_job_count_lte": "",
+      "success_job_count_not": "",
+      "success_job_count_not_in": "",
+      "total_job_count": "",
+      "total_job_count_gt": "",
+      "total_job_count_gte": "",
+      "total_job_count_in": "",
+      "total_job_count_lt": "",
+      "total_job_count_lte": "",
+      "total_job_count_not": "",
+      "total_job_count_not_in": "",
+      "updatedAt": "",
+      "updatedAt_gt": "",
+      "updatedAt_gte": "",
+      "updatedAt_in": "",
+      "updatedAt_lt": "",
+      "updatedAt_lte": "",
+      "updatedAt_not": "",
+      "updatedAt_not_in": ""
+    },
+    "ReplicationFailoverTargetExecutionWhereInput": {
+      "AND": "All conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "failover_execution": "",
+      "finished_at": "",
+      "finished_at_gt": "",
+      "finished_at_gte": "",
+      "finished_at_in": "",
+      "finished_at_lt": "",
+      "finished_at_lte": "",
+      "finished_at_not": "",
+      "finished_at_not_in": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "local_id": "",
+      "local_id_contains": "",
+      "local_id_ends_with": "",
+      "local_id_gt": "",
+      "local_id_gte": "",
+      "local_id_in": "",
+      "local_id_lt": "",
+      "local_id_lte": "",
+      "local_id_not": "",
+      "local_id_not_contains": "",
+      "local_id_not_ends_with": "",
+      "local_id_not_in": "",
+      "local_id_not_starts_with": "",
+      "local_id_starts_with": "",
+      "phase": "",
+      "phase_in": "",
+      "phase_not": "",
+      "phase_not_in": "",
+      "resource_version": "",
+      "resource_version_gt": "",
+      "resource_version_gte": "",
+      "resource_version_in": "",
+      "resource_version_lt": "",
+      "resource_version_lte": "",
+      "resource_version_not": "",
+      "resource_version_not_in": "",
+      "started_at": "",
+      "started_at_gt": "",
+      "started_at_gte": "",
+      "started_at_in": "",
+      "started_at_lt": "",
+      "started_at_lte": "",
+      "started_at_not": "",
+      "started_at_not_in": ""
+    },
+    "FailoverShutdownMode": {
+      "enum": ""
+    },
+    "BackupExecutionState": {
+      "enum": ""
+    },
     "PermanentFailoverExecutionWhereInput": {
       "AND": "All conditions must return true.",
       "NOT": "All conditions must return false.",
@@ -3152,10 +1772,22 @@
       "updatedAt_not": "",
       "updatedAt_not_in": ""
     },
-    "ReplicaVmWhereInput": {
+    "ReplicationPlanWhereInput": {
       "AND": "All conditions must return true.",
       "NOT": "All conditions must return false.",
       "OR": "One or more conditions must return true.",
+      "abort_window_unfinished": "",
+      "abort_window_unfinished_not": "",
+      "activation_timestamp": "",
+      "activation_timestamp_gt": "",
+      "activation_timestamp_gte": "",
+      "activation_timestamp_in": "",
+      "activation_timestamp_lt": "",
+      "activation_timestamp_lte": "",
+      "activation_timestamp_not": "",
+      "activation_timestamp_not_in": "",
+      "compression": "",
+      "compression_not": "",
       "createdAt": "",
       "createdAt_gt": "",
       "createdAt_gte": "",
@@ -3164,26 +1796,47 @@
       "createdAt_lte": "",
       "createdAt_not": "",
       "createdAt_not_in": "",
+      "delete_strategy": "",
+      "delete_strategy_in": "",
+      "delete_strategy_not": "",
+      "delete_strategy_not_in": "",
+      "description": "",
+      "description_contains": "",
+      "description_ends_with": "",
+      "description_gt": "",
+      "description_gte": "",
+      "description_in": "",
+      "description_lt": "",
+      "description_lte": "",
+      "description_not": "",
+      "description_not_contains": "",
+      "description_not_ends_with": "",
+      "description_not_in": "",
+      "description_not_starts_with": "",
+      "description_starts_with": "",
+      "ec_k": "",
+      "ec_k_gt": "",
+      "ec_k_gte": "",
+      "ec_k_in": "",
+      "ec_k_lt": "",
+      "ec_k_lte": "",
+      "ec_k_not": "",
+      "ec_k_not_in": "",
+      "ec_m": "",
+      "ec_m_gt": "",
+      "ec_m_gte": "",
+      "ec_m_in": "",
+      "ec_m_lt": "",
+      "ec_m_lte": "",
+      "ec_m_not": "",
+      "ec_m_not_in": "",
+      "enable_window": "",
+      "enable_window_not": "",
       "entityAsyncStatus": "",
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
       "external_cloudtower": "",
-      "failover_test_replica_group": "",
-      "failover_test_replica_group_contains": "",
-      "failover_test_replica_group_ends_with": "",
-      "failover_test_replica_group_gt": "",
-      "failover_test_replica_group_gte": "",
-      "failover_test_replica_group_in": "",
-      "failover_test_replica_group_lt": "",
-      "failover_test_replica_group_lte": "",
-      "failover_test_replica_group_not": "",
-      "failover_test_replica_group_not_contains": "",
-      "failover_test_replica_group_not_ends_with": "",
-      "failover_test_replica_group_not_in": "",
-      "failover_test_replica_group_not_starts_with": "",
-      "failover_test_replica_group_starts_with": "",
-      "failover_test_vm": "",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -3200,107 +1853,203 @@
       "id_starts_with": "",
       "inbound": "",
       "inbound_not": "",
-      "iscsi_lun": "",
-      "origin_iscsi_lun": "",
-      "origin_vm": "",
-      "origin_vm_cluster_local_id": "",
-      "origin_vm_cluster_local_id_contains": "",
-      "origin_vm_cluster_local_id_ends_with": "",
-      "origin_vm_cluster_local_id_gt": "",
-      "origin_vm_cluster_local_id_gte": "",
-      "origin_vm_cluster_local_id_in": "",
-      "origin_vm_cluster_local_id_lt": "",
-      "origin_vm_cluster_local_id_lte": "",
-      "origin_vm_cluster_local_id_not": "",
-      "origin_vm_cluster_local_id_not_contains": "",
-      "origin_vm_cluster_local_id_not_ends_with": "",
-      "origin_vm_cluster_local_id_not_in": "",
-      "origin_vm_cluster_local_id_not_starts_with": "",
-      "origin_vm_cluster_local_id_starts_with": "",
-      "origin_vm_cluster_name": "",
-      "origin_vm_cluster_name_contains": "",
-      "origin_vm_cluster_name_ends_with": "",
-      "origin_vm_cluster_name_gt": "",
-      "origin_vm_cluster_name_gte": "",
-      "origin_vm_cluster_name_in": "",
-      "origin_vm_cluster_name_lt": "",
-      "origin_vm_cluster_name_lte": "",
-      "origin_vm_cluster_name_not": "",
-      "origin_vm_cluster_name_not_contains": "",
-      "origin_vm_cluster_name_not_ends_with": "",
-      "origin_vm_cluster_name_not_in": "",
-      "origin_vm_cluster_name_not_starts_with": "",
-      "origin_vm_cluster_name_starts_with": "",
-      "origin_vm_local_id": "",
-      "origin_vm_local_id_contains": "",
-      "origin_vm_local_id_ends_with": "",
-      "origin_vm_local_id_gt": "",
-      "origin_vm_local_id_gte": "",
-      "origin_vm_local_id_in": "",
-      "origin_vm_local_id_lt": "",
-      "origin_vm_local_id_lte": "",
-      "origin_vm_local_id_not": "",
-      "origin_vm_local_id_not_contains": "",
-      "origin_vm_local_id_not_ends_with": "",
-      "origin_vm_local_id_not_in": "",
-      "origin_vm_local_id_not_starts_with": "",
-      "origin_vm_local_id_starts_with": "",
-      "origin_vm_name": "",
-      "origin_vm_name_contains": "",
-      "origin_vm_name_ends_with": "",
-      "origin_vm_name_gt": "",
-      "origin_vm_name_gte": "",
-      "origin_vm_name_in": "",
-      "origin_vm_name_lt": "",
-      "origin_vm_name_lte": "",
-      "origin_vm_name_not": "",
-      "origin_vm_name_not_contains": "",
-      "origin_vm_name_not_ends_with": "",
-      "origin_vm_name_not_in": "",
-      "origin_vm_name_not_starts_with": "",
-      "origin_vm_name_starts_with": "",
-      "replica_group": "",
-      "replica_group_contains": "",
-      "replica_group_ends_with": "",
-      "replica_group_gt": "",
-      "replica_group_gte": "",
-      "replica_group_in": "",
-      "replica_group_lt": "",
-      "replica_group_lte": "",
-      "replica_group_not": "",
-      "replica_group_not_contains": "",
-      "replica_group_not_ends_with": "",
-      "replica_group_not_in": "",
-      "replica_group_not_starts_with": "",
-      "replica_group_starts_with": "",
-      "replication_group": "",
-      "replication_group_contains": "",
-      "replication_group_ends_with": "",
-      "replication_group_gt": "",
-      "replication_group_gte": "",
-      "replication_group_in": "",
-      "replication_group_lt": "",
-      "replication_group_lte": "",
-      "replication_group_not": "",
-      "replication_group_not_contains": "",
-      "replication_group_not_ends_with": "",
-      "replication_group_not_in": "",
-      "replication_group_not_starts_with": "",
-      "replication_group_starts_with": "",
-      "replication_plan": "",
-      "replication_service": "",
+      "interval": "",
+      "interval_gt": "",
+      "interval_gte": "",
+      "interval_in": "",
+      "interval_lt": "",
+      "interval_lte": "",
+      "interval_not": "",
+      "interval_not_in": "",
+      "iscsi_luns_every": "",
+      "iscsi_luns_none": "",
+      "iscsi_luns_some": "",
+      "keep_mac_address": "",
+      "keep_mac_address_not": "",
+      "keep_policy": "",
+      "keep_policy_in": "",
+      "keep_policy_not": "",
+      "keep_policy_not_in": "",
+      "keep_policy_value": "",
+      "keep_policy_value_gt": "",
+      "keep_policy_value_gte": "",
+      "keep_policy_value_in": "",
+      "keep_policy_value_lt": "",
+      "keep_policy_value_lte": "",
+      "keep_policy_value_not": "",
+      "keep_policy_value_not_in": "",
+      "last_execute_status": "",
+      "last_execute_status_in": "",
+      "last_execute_status_message": "",
+      "last_execute_status_message_contains": "",
+      "last_execute_status_message_ends_with": "",
+      "last_execute_status_message_gt": "",
+      "last_execute_status_message_gte": "",
+      "last_execute_status_message_in": "",
+      "last_execute_status_message_lt": "",
+      "last_execute_status_message_lte": "",
+      "last_execute_status_message_not": "",
+      "last_execute_status_message_not_contains": "",
+      "last_execute_status_message_not_ends_with": "",
+      "last_execute_status_message_not_in": "",
+      "last_execute_status_message_not_starts_with": "",
+      "last_execute_status_message_starts_with": "",
+      "last_execute_status_not": "",
+      "last_execute_status_not_in": "",
+      "last_execute_success_job_count": "",
+      "last_execute_success_job_count_gt": "",
+      "last_execute_success_job_count_gte": "",
+      "last_execute_success_job_count_in": "",
+      "last_execute_success_job_count_lt": "",
+      "last_execute_success_job_count_lte": "",
+      "last_execute_success_job_count_not": "",
+      "last_execute_success_job_count_not_in": "",
+      "last_execute_total_job_count": "",
+      "last_execute_total_job_count_gt": "",
+      "last_execute_total_job_count_gte": "",
+      "last_execute_total_job_count_in": "",
+      "last_execute_total_job_count_lt": "",
+      "last_execute_total_job_count_lte": "",
+      "last_execute_total_job_count_not": "",
+      "last_execute_total_job_count_not_in": "",
+      "last_executed_at": "",
+      "last_executed_at_gt": "",
+      "last_executed_at_gte": "",
+      "last_executed_at_in": "",
+      "last_executed_at_lt": "",
+      "last_executed_at_lte": "",
+      "last_executed_at_not": "",
+      "last_executed_at_not_in": "",
+      "last_manual_execute_status": "",
+      "last_manual_execute_status_in": "",
+      "last_manual_execute_status_message": "",
+      "last_manual_execute_status_message_contains": "",
+      "last_manual_execute_status_message_ends_with": "",
+      "last_manual_execute_status_message_gt": "",
+      "last_manual_execute_status_message_gte": "",
+      "last_manual_execute_status_message_in": "",
+      "last_manual_execute_status_message_lt": "",
+      "last_manual_execute_status_message_lte": "",
+      "last_manual_execute_status_message_not": "",
+      "last_manual_execute_status_message_not_contains": "",
+      "last_manual_execute_status_message_not_ends_with": "",
+      "last_manual_execute_status_message_not_in": "",
+      "last_manual_execute_status_message_not_starts_with": "",
+      "last_manual_execute_status_message_starts_with": "",
+      "last_manual_execute_status_not": "",
+      "last_manual_execute_status_not_in": "",
+      "last_manual_execute_success_job_count": "",
+      "last_manual_execute_success_job_count_gt": "",
+      "last_manual_execute_success_job_count_gte": "",
+      "last_manual_execute_success_job_count_in": "",
+      "last_manual_execute_success_job_count_lt": "",
+      "last_manual_execute_success_job_count_lte": "",
+      "last_manual_execute_success_job_count_not": "",
+      "last_manual_execute_success_job_count_not_in": "",
+      "last_manual_execute_total_job_count": "",
+      "last_manual_execute_total_job_count_gt": "",
+      "last_manual_execute_total_job_count_gte": "",
+      "last_manual_execute_total_job_count_in": "",
+      "last_manual_execute_total_job_count_lt": "",
+      "last_manual_execute_total_job_count_lte": "",
+      "last_manual_execute_total_job_count_not": "",
+      "last_manual_execute_total_job_count_not_in": "",
+      "last_manual_executed_at": "",
+      "last_manual_executed_at_gt": "",
+      "last_manual_executed_at_gte": "",
+      "last_manual_executed_at_in": "",
+      "last_manual_executed_at_lt": "",
+      "last_manual_executed_at_lte": "",
+      "last_manual_executed_at_not": "",
+      "last_manual_executed_at_not_in": "",
+      "name": "",
+      "name_contains": "",
+      "name_ends_with": "",
+      "name_gt": "",
+      "name_gte": "",
+      "name_in": "",
+      "name_lt": "",
+      "name_lte": "",
+      "name_not": "",
+      "name_not_contains": "",
+      "name_not_ends_with": "",
+      "name_not_in": "",
+      "name_not_starts_with": "",
+      "name_starts_with": "",
+      "next_execution_time": "",
+      "next_execution_time_gt": "",
+      "next_execution_time_gte": "",
+      "next_execution_time_in": "",
+      "next_execution_time_lt": "",
+      "next_execution_time_lte": "",
+      "next_execution_time_not": "",
+      "next_execution_time_not_in": "",
+      "period": "",
+      "period_in": "",
+      "period_not": "",
+      "period_not_in": "",
+      "phase": "",
+      "phase_in": "",
+      "phase_not": "",
+      "phase_not_in": "",
+      "replica_name_rule": "",
+      "replica_name_rule_in": "",
+      "replica_name_rule_not": "",
+      "replica_name_rule_not_in": "",
+      "replica_name_setting": "",
+      "replica_name_setting_contains": "",
+      "replica_name_setting_ends_with": "",
+      "replica_name_setting_gt": "",
+      "replica_name_setting_gte": "",
+      "replica_name_setting_in": "",
+      "replica_name_setting_lt": "",
+      "replica_name_setting_lte": "",
+      "replica_name_setting_not": "",
+      "replica_name_setting_not_contains": "",
+      "replica_name_setting_not_ends_with": "",
+      "replica_name_setting_not_in": "",
+      "replica_name_setting_not_starts_with": "",
+      "replica_name_setting_starts_with": "",
+      "replica_num": "",
+      "replica_num_gt": "",
+      "replica_num_gte": "",
+      "replica_num_in": "",
+      "replica_num_lt": "",
+      "replica_num_lte": "",
+      "replica_num_not": "",
+      "replica_num_not_in": "",
+      "replica_vms_every": "",
+      "replica_vms_none": "",
+      "replica_vms_some": "",
+      "replication_plan_executions_every": "",
+      "replication_plan_executions_none": "",
+      "replication_plan_executions_some": "",
+      "replication_restore_points_every": "",
+      "replication_restore_points_none": "",
+      "replication_restore_points_some": "",
       "replication_target_executions_every": "",
       "replication_target_executions_none": "",
       "replication_target_executions_some": "",
-      "restore_points_every": "",
-      "restore_points_none": "",
-      "restore_points_some": "",
-      "state": "",
-      "state_in": "",
-      "state_not": "",
-      "state_not_in": "",
-      "targets_deletable": "",
-      "targets_deletable_not": "",
+      "resiliency_type": "",
+      "resiliency_type_in": "",
+      "resiliency_type_not": "",
+      "resiliency_type_not_in": "",
+      "snapshot_consistent_type": "",
+      "snapshot_consistent_type_in": "",
+      "snapshot_consistent_type_not": "",
+      "snapshot_consistent_type_not_in": "",
+      "status": "",
+      "status_in": "",
+      "status_not": "",
+      "status_not_in": "",
+      "storage_policy": "",
+      "storage_policy_in": "",
+      "storage_policy_not": "",
+      "storage_policy_not_in": "",
+      "target_cluster": "",
+      "target_replication_service": "",
+      "thin_provision": "",
+      "thin_provision_not": "",
       "type": "",
       "type_in": "",
       "type_not": "",
@@ -3313,85 +2062,42 @@
       "updatedAt_lte": "",
       "updatedAt_not": "",
       "updatedAt_not_in": "",
-      "vm": ""
+      "vms_every": "",
+      "vms_none": "",
+      "vms_some": "",
+      "window_end": "",
+      "window_end_contains": "",
+      "window_end_ends_with": "",
+      "window_end_gt": "",
+      "window_end_gte": "",
+      "window_end_in": "",
+      "window_end_lt": "",
+      "window_end_lte": "",
+      "window_end_not": "",
+      "window_end_not_contains": "",
+      "window_end_not_ends_with": "",
+      "window_end_not_in": "",
+      "window_end_not_starts_with": "",
+      "window_end_starts_with": "",
+      "window_start": "",
+      "window_start_contains": "",
+      "window_start_ends_with": "",
+      "window_start_gt": "",
+      "window_start_gte": "",
+      "window_start_in": "",
+      "window_start_lt": "",
+      "window_start_lte": "",
+      "window_start_not": "",
+      "window_start_not_contains": "",
+      "window_start_not_ends_with": "",
+      "window_start_not_in": "",
+      "window_start_not_starts_with": "",
+      "window_start_starts_with": ""
     },
-    "ReplicationTargetExecutionWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "creation": "",
-      "creation_in": "",
-      "creation_not": "",
-      "creation_not_in": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "finished_at": "",
-      "finished_at_gt": "",
-      "finished_at_gte": "",
-      "finished_at_in": "",
-      "finished_at_lt": "",
-      "finished_at_lte": "",
-      "finished_at_not": "",
-      "finished_at_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "phase": "",
-      "phase_in": "",
-      "phase_not": "",
-      "phase_not_in": "",
-      "replica_vm": "",
-      "replication_plan": "",
-      "replication_plan_execution": "",
-      "resource_version": "",
-      "resource_version_gt": "",
-      "resource_version_gte": "",
-      "resource_version_in": "",
-      "resource_version_lt": "",
-      "resource_version_lte": "",
-      "resource_version_not": "",
-      "resource_version_not_in": "",
-      "started_at": "",
-      "started_at_gt": "",
-      "started_at_gte": "",
-      "started_at_in": "",
-      "started_at_lt": "",
-      "started_at_lte": "",
-      "started_at_not": "",
-      "started_at_not_in": "",
-      "type": "",
-      "type_in": "",
-      "type_not": "",
-      "type_not_in": ""
+    "ReplicationPlanPeriod": {
+      "enum": ""
     },
-    "ReplicationTargetExecutionCreation": {
+    "ReplicaNameRule": {
       "enum": ""
     },
     "ReplicationPlanExecutionWhereInput": {
@@ -3507,7 +2213,83 @@
       "updatedAt_not": "",
       "updatedAt_not_in": ""
     },
-    "BackupExecutionState": {
+    "ReplicationTargetExecutionWhereInput": {
+      "AND": "All conditions must return true.",
+      "NOT": "All conditions must return false.",
+      "OR": "One or more conditions must return true.",
+      "creation": "",
+      "creation_in": "",
+      "creation_not": "",
+      "creation_not_in": "",
+      "entityAsyncStatus": "",
+      "entityAsyncStatus_in": "",
+      "entityAsyncStatus_not": "",
+      "entityAsyncStatus_not_in": "",
+      "finished_at": "",
+      "finished_at_gt": "",
+      "finished_at_gte": "",
+      "finished_at_in": "",
+      "finished_at_lt": "",
+      "finished_at_lte": "",
+      "finished_at_not": "",
+      "finished_at_not_in": "",
+      "id": "",
+      "id_contains": "",
+      "id_ends_with": "",
+      "id_gt": "",
+      "id_gte": "",
+      "id_in": "",
+      "id_lt": "",
+      "id_lte": "",
+      "id_not": "",
+      "id_not_contains": "",
+      "id_not_ends_with": "",
+      "id_not_in": "",
+      "id_not_starts_with": "",
+      "id_starts_with": "",
+      "local_id": "",
+      "local_id_contains": "",
+      "local_id_ends_with": "",
+      "local_id_gt": "",
+      "local_id_gte": "",
+      "local_id_in": "",
+      "local_id_lt": "",
+      "local_id_lte": "",
+      "local_id_not": "",
+      "local_id_not_contains": "",
+      "local_id_not_ends_with": "",
+      "local_id_not_in": "",
+      "local_id_not_starts_with": "",
+      "local_id_starts_with": "",
+      "phase": "",
+      "phase_in": "",
+      "phase_not": "",
+      "phase_not_in": "",
+      "replica_vm": "",
+      "replication_plan": "",
+      "replication_plan_execution": "",
+      "resource_version": "",
+      "resource_version_gt": "",
+      "resource_version_gte": "",
+      "resource_version_in": "",
+      "resource_version_lt": "",
+      "resource_version_lte": "",
+      "resource_version_not": "",
+      "resource_version_not_in": "",
+      "started_at": "",
+      "started_at_gt": "",
+      "started_at_gte": "",
+      "started_at_in": "",
+      "started_at_lt": "",
+      "started_at_lte": "",
+      "started_at_not": "",
+      "started_at_not_in": "",
+      "type": "",
+      "type_in": "",
+      "type_not": "",
+      "type_not_in": ""
+    },
+    "ReplicationTargetExecutionCreation": {
       "enum": ""
     },
     "ReplicationRestorePointWhereInput": {
@@ -3675,158 +2457,10 @@
     "BackupDedupMode": {
       "enum": ""
     },
-    "FailoverExecutionWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "createdAt": "",
-      "createdAt_gt": "",
-      "createdAt_gte": "",
-      "createdAt_in": "",
-      "createdAt_lt": "",
-      "createdAt_lte": "",
-      "createdAt_not": "",
-      "createdAt_not_in": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "external_cloudtower": "",
-      "finished_at": "",
-      "finished_at_gt": "",
-      "finished_at_gte": "",
-      "finished_at_in": "",
-      "finished_at_lt": "",
-      "finished_at_lte": "",
-      "finished_at_not": "",
-      "finished_at_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "is_test_mode": "",
-      "is_test_mode_not": "",
-      "replication_failover_target_executions_every": "",
-      "replication_failover_target_executions_none": "",
-      "replication_failover_target_executions_some": "",
-      "replication_service": "",
-      "resource_version": "",
-      "resource_version_gt": "",
-      "resource_version_gte": "",
-      "resource_version_in": "",
-      "resource_version_lt": "",
-      "resource_version_lte": "",
-      "resource_version_not": "",
-      "resource_version_not_in": "",
-      "shutdown_mode": "",
-      "shutdown_mode_in": "",
-      "shutdown_mode_not": "",
-      "shutdown_mode_not_in": "",
-      "state": "",
-      "state_in": "",
-      "state_not": "",
-      "state_not_in": "",
-      "success_job_count": "",
-      "success_job_count_gt": "",
-      "success_job_count_gte": "",
-      "success_job_count_in": "",
-      "success_job_count_lt": "",
-      "success_job_count_lte": "",
-      "success_job_count_not": "",
-      "success_job_count_not_in": "",
-      "total_job_count": "",
-      "total_job_count_gt": "",
-      "total_job_count_gte": "",
-      "total_job_count_in": "",
-      "total_job_count_lt": "",
-      "total_job_count_lte": "",
-      "total_job_count_not": "",
-      "total_job_count_not_in": "",
-      "updatedAt": "",
-      "updatedAt_gt": "",
-      "updatedAt_gte": "",
-      "updatedAt_in": "",
-      "updatedAt_lt": "",
-      "updatedAt_lte": "",
-      "updatedAt_not": "",
-      "updatedAt_not_in": ""
-    },
-    "ReplicationFailoverTargetExecutionWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "failover_execution": "",
-      "finished_at": "",
-      "finished_at_gt": "",
-      "finished_at_gte": "",
-      "finished_at_in": "",
-      "finished_at_lt": "",
-      "finished_at_lte": "",
-      "finished_at_not": "",
-      "finished_at_not_in": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "phase": "",
-      "phase_in": "",
-      "phase_not": "",
-      "phase_not_in": "",
-      "resource_version": "",
-      "resource_version_gt": "",
-      "resource_version_gte": "",
-      "resource_version_in": "",
-      "resource_version_lt": "",
-      "resource_version_lte": "",
-      "resource_version_not": "",
-      "resource_version_not_in": "",
-      "started_at": "",
-      "started_at_gt": "",
-      "started_at_gte": "",
-      "started_at_in": "",
-      "started_at_lt": "",
-      "started_at_lte": "",
-      "started_at_not": "",
-      "started_at_not_in": ""
-    },
-    "FailoverShutdownMode": {
+    "ResiliencyType": {
       "enum": ""
     },
-    "ReplicaVmState": {
+    "ReplicationPlanType": {
       "enum": ""
     },
     "ExternalCloudTowerStatus": {
@@ -3916,6 +2550,126 @@
       "username_not_starts_with": "",
       "username_starts_with": ""
     },
+    "GetReplicaVmsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateReplicaVm": {
+      "count": "count"
+    },
+    "ReplicaVmConnection": {
+      "aggregate": ""
+    },
+    "GetReplicaVmsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedReplicationNetworkConfigure": {
+      "gateway": "",
+      "ip": "",
+      "subnet_mask": ""
+    },
+    "NestedReplicationIPAddressMapping": {
+      "source": "",
+      "target": ""
+    },
+    "NestedReplicationNetworkInformation": {
+      "cluster_local_id": "",
+      "cluster_name": "",
+      "network_ids": "",
+      "vds_name": "",
+      "vlan_id": "",
+      "vlan_local_id": "",
+      "vlan_mode_type": "",
+      "vlan_name": ""
+    },
+    "NestedReplicationPlanNetworkMapping": {
+      "source": "",
+      "target": ""
+    },
+    "NestedReplicaVm": {
+      "id": "id"
+    },
+    "NestedReplicationPlanExecution": {
+      "id": "id"
+    },
+    "NestedReplicationClusterDescriptor": {
+      "cluster_local_id": "",
+      "cluster_name": "",
+      "tower_deploy_id": ""
+    },
+    "ReplicationPlan": {
+      "abort_window_unfinished": "",
+      "activation_timestamp": "",
+      "compression": "",
+      "createdAt": "",
+      "delete_strategy": "",
+      "description": "",
+      "ec_k": "",
+      "ec_m": "",
+      "enable_window": "",
+      "entityAsyncStatus": "",
+      "external_cloudtower": "",
+      "id": "",
+      "inbound": "",
+      "interval": "",
+      "ip_mapping": "",
+      "iscsi_luns": "",
+      "keep_mac_address": "",
+      "keep_policy": "",
+      "keep_policy_value": "",
+      "last_execute_status": "",
+      "last_execute_status_message": "",
+      "last_execute_success_job_count": "",
+      "last_execute_total_job_count": "",
+      "last_executed_at": "",
+      "last_manual_execute_status": "",
+      "last_manual_execute_status_message": "",
+      "last_manual_execute_success_job_count": "",
+      "last_manual_execute_total_job_count": "",
+      "last_manual_executed_at": "",
+      "name": "",
+      "network_mapping": "",
+      "next_execution_time": "",
+      "objects_descriptor": "",
+      "period": "",
+      "phase": "",
+      "replica_name_rule": "",
+      "replica_name_setting": "",
+      "replica_num": "",
+      "replica_vms": "",
+      "replication_plan_executions": "",
+      "replication_restore_points": "",
+      "replication_target_executions": "",
+      "resiliency_type": "",
+      "snapshot_consistent_type": "",
+      "status": "",
+      "storage_policy": "",
+      "target_cluster": "",
+      "target_cluster_descriptor": "",
+      "target_replication_service": "",
+      "thin_provision": "",
+      "time_points": "",
+      "type": "",
+      "updatedAt": "",
+      "vms": "",
+      "weekdays": "",
+      "window_end": "",
+      "window_start": ""
+    },
+    "ReplicationPlanOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
     "GetReplicationPlansRequestBody": {
       "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
       "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
@@ -3976,319 +2730,19 @@
       "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
-    "SecurityPolicyCreateParams": {
-      "is_blocklist": "",
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "everoute_cluster_id": "",
+    "VirtualPrivateCloudEdgeGatewayGroup": {
+      "active_edge_gateway_ids": "",
       "description": "",
-      "name": ""
-    },
-    "SecurityPolicyUpdateParams": {
-      "is_blocklist": "",
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": ""
-    },
-    "NestedVpcRouterGatewayRuleType": {
-      "dst": "",
-      "nexthop": "",
-      "nexthops": ""
-    },
-    "VirtualPrivateCloudRouterGatewayRuleInputType": {
-      "nexthops": "",
-      "dst": "",
-      "nexthop": ""
-    },
-    "NestedVpcRouterGatewayRuleNextHopsItemType": {
-      "edge_gateway_id": "",
-      "nexthop": ""
-    },
-    "VirtualPrivateCloudRouterGatewayNexthopInputType": {
-      "edge_gateway_id": "",
-      "nexthop": ""
-    },
-    "WithTask__local_id-string__": {
-      "task_id": "asynchronous task id ",
-      "data.local_id": "",
-      "data": "resources"
-    },
-    "VirtualPrivateCloudNicWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
+      "edge_gateways": "",
       "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
-      "floating_ip": "",
       "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "local_id": "",
-      "local_id_contains": "",
-      "local_id_ends_with": "",
-      "local_id_gt": "",
-      "local_id_gte": "",
-      "local_id_in": "",
-      "local_id_lt": "",
-      "local_id_lte": "",
-      "local_id_not": "",
-      "local_id_not_contains": "",
-      "local_id_not_ends_with": "",
-      "local_id_not_in": "",
-      "local_id_not_starts_with": "",
-      "local_id_starts_with": "",
-      "snapshots_every": "",
-      "snapshots_none": "",
-      "snapshots_some": "",
-      "vm_nic": "",
-      "vpc": "",
-      "vpc_subnet": ""
-    },
-    "BackupRestoreExecutionNetworkMapping": {
-      "target": "",
-      "src_vlan_id": "",
-      "source": "",
-      "dst_vlan_id": "",
-      "enum": ""
-    },
-    "BackupRestoreExecutionNetworkInformation": {
-      "vpc_subnet_local_id": "",
-      "vpc_local_id": "",
-      "vlan_local_id": "",
-      "type": "",
-      "enum": ""
-    },
-    "SecurityGroupWhereInput": {
-      "vms_some": "",
-      "vms_none": "",
-      "vms_every": "",
-      "security_policies_some": "",
-      "security_policies_none": "",
-      "security_policies_every": "",
-      "name_starts_with": "",
-      "name_not_starts_with": "",
-      "name_not_in": "",
-      "name_not_ends_with": "",
-      "name_not_contains": "",
-      "name_not": "",
-      "name_lte": "",
-      "name_lt": "",
-      "name_in": "",
-      "name_gte": "",
-      "name_gt": "",
-      "name_ends_with": "",
-      "name_contains": "",
       "name": "",
-      "member_type_not_in": "",
-      "member_type_not": "",
-      "member_type_in": "",
-      "member_type": "",
-      "isolation_policies_some": "",
-      "isolation_policies_none": "",
-      "isolation_policies_every": "",
-      "ips_starts_with": "",
-      "ips_not_starts_with": "",
-      "ips_not_in": "",
-      "ips_not_ends_with": "",
-      "ips_not_contains": "",
-      "ips_not": "",
-      "ips_lte": "",
-      "ips_lt": "",
-      "ips_in": "",
-      "ips_gte": "",
-      "ips_gt": "",
-      "ips_ends_with": "",
-      "ips_contains": "",
-      "ips": "",
-      "id_starts_with": "",
-      "id_not_starts_with": "",
-      "id_not_in": "",
-      "id_not_ends_with": "",
-      "id_not_contains": "",
-      "id_not": "",
-      "id_lte": "",
-      "id_lt": "",
-      "id_in": "",
-      "id_gte": "",
-      "id_gt": "",
-      "id_ends_with": "",
-      "id_contains": "",
-      "id": "",
-      "exclude_ips_starts_with": "",
-      "exclude_ips_not_starts_with": "",
-      "exclude_ips_not_in": "",
-      "exclude_ips_not_ends_with": "",
-      "exclude_ips_not_contains": "",
-      "exclude_ips_not": "",
-      "exclude_ips_lte": "",
-      "exclude_ips_lt": "",
-      "exclude_ips_in": "",
-      "exclude_ips_gte": "",
-      "exclude_ips_gt": "",
-      "exclude_ips_ends_with": "",
-      "exclude_ips_contains": "",
-      "exclude_ips": "",
-      "everoute_cluster": "",
-      "description_starts_with": "",
-      "description_not_starts_with": "",
-      "description_not_in": "",
-      "description_not_ends_with": "",
-      "description_not_contains": "",
-      "description_not": "",
-      "description_lte": "",
-      "description_lt": "",
-      "description_in": "",
-      "description_gte": "",
-      "description_gt": "",
-      "description_ends_with": "",
-      "description_contains": "",
-      "description": "",
-      "OR": "One or more conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "AND": "All conditions must return true."
+      "primary_edge_gateway_id": ""
     },
-    "ResourceChangeLimit": {},
-    "SmtpServerWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "host": "",
-      "host_contains": "",
-      "host_ends_with": "",
-      "host_gt": "",
-      "host_gte": "",
-      "host_in": "",
-      "host_lt": "",
-      "host_lte": "",
-      "host_not": "",
-      "host_not_contains": "",
-      "host_not_ends_with": "",
-      "host_not_in": "",
-      "host_not_starts_with": "",
-      "host_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "port": "",
-      "port_gt": "",
-      "port_gte": "",
-      "port_in": "",
-      "port_lt": "",
-      "port_lte": "",
-      "port_not": "",
-      "port_not_in": "",
-      "secure_mode": "",
-      "secure_mode_in": "",
-      "secure_mode_not": "",
-      "secure_mode_not_in": "",
-      "username": "",
-      "username_contains": "",
-      "username_ends_with": "",
-      "username_gt": "",
-      "username_gte": "",
-      "username_in": "",
-      "username_lt": "",
-      "username_lte": "",
-      "username_not": "",
-      "username_not_contains": "",
-      "username_not_ends_with": "",
-      "username_not_in": "",
-      "username_not_starts_with": "",
-      "username_starts_with": ""
-    },
-    "NestedReplicationPlan": {
-      "id": "id",
-      "name": "name"
-    },
-    "ReplicaVm": {
-      "createdAt": "",
-      "entityAsyncStatus": "",
-      "external_cloudtower": "",
-      "failover_test_object_descriptor": "",
-      "failover_test_replica_group": "",
-      "failover_test_vm": "",
-      "id": "",
-      "inbound": "",
-      "iscsi_lun": "",
-      "object_descriptor": "",
-      "origin_iscsi_lun": "",
-      "origin_object_descriptor": "",
-      "origin_vm": "",
-      "origin_vm_cluster_local_id": "",
-      "origin_vm_cluster_name": "",
-      "origin_vm_local_id": "",
-      "origin_vm_name": "",
-      "replica_group": "",
-      "replication_group": "",
-      "replication_plan": "",
-      "replication_service": "",
-      "replication_target_executions": "",
-      "restore_points": "",
-      "state": "",
-      "targets_deletable": "",
-      "type": "",
-      "updatedAt": "",
-      "vm": ""
-    },
-    "ReplicaVmOrderByInput": {
+    "VirtualPrivateCloudEdgeGatewayGroupOrderByInput": {
       "enum": "Sorts a list of records"
     },
-    "GetReplicaVmsRequestBody": {
+    "GetVirtualPrivateCloudEdgeGatewayGroupsRequestBody": {
       "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
       "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
@@ -4297,13 +2751,13 @@
       "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
-    "NestedAggregateReplicaVm": {
+    "NestedAggregateVirtualPrivateCloudEdgeGatewayGroup": {
       "count": "count"
     },
-    "ReplicaVmConnection": {
+    "VirtualPrivateCloudEdgeGatewayGroupConnection": {
       "aggregate": ""
     },
-    "GetReplicaVmsConnectionRequestBody": {
+    "GetVirtualPrivateCloudEdgeGatewayGroupsConnectionRequestBody": {
       "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
       "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
       "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
@@ -4312,158 +2766,116 @@
       "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
+    "NestedVirtualPrivateCloudEdgeGatewayInstanceStatus": {
+      "isHealth": ""
+    },
+    "NestedVirtualPrivateCloudEdgeGatewayStatus": {
+      "instances": ""
+    },
+    "VirtualPrivateCloudEdgeGateway": {
+      "description": "",
+      "entityAsyncStatus": "",
+      "id": "",
+      "name": "",
+      "status": "",
+      "vdses": ""
+    },
+    "VirtualPrivateCloudEdgeGatewayOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
+    "GetVirtualPrivateCloudEdgeGatewaysRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateVirtualPrivateCloudEdgeGateway": {
+      "count": "count"
+    },
+    "VirtualPrivateCloudEdgeGatewayConnection": {
+      "aggregate": ""
+    },
+    "GetVirtualPrivateCloudEdgeGatewaysConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedVirtualPrivateCloudExternalSubnetGroupExternalSubnetsSpec": {
+      "cidr": "",
+      "edge_gateway_id": "",
+      "floating_ip_cidr": "",
+      "gateway": "",
+      "id": "id",
+      "nat_gateway_cidr": "",
+      "router_gateway_cidr": "",
+      "vlan_id": ""
+    },
     "NestedVirtualPrivateCloudFloatingIp": {
-      "external_ip": "",
-      "external_ips": "",
-      "id": "id"
+      "external_ips": ""
     },
     "NestedVirtualPrivateCloudNatGateway": {
-      "external_ip": "",
-      "external_ips": "",
-      "id": "id",
-      "name": "name"
+      "external_ips": ""
     },
     "NestedVirtualPrivateCloudRouterGateway": {
-      "external_ip": "",
-      "external_ips": "",
-      "id": "id",
-      "name": "name"
+      "external_ips": ""
+    },
+    "VirtualPrivateCloudExternalSubnetGroup": {
+      "description": "",
+      "edge_gateway_group": "",
+      "entityAsyncStatus": "",
+      "exclusive": "",
+      "external_subnets_spec": "",
+      "floating_ips": "",
+      "id": "",
+      "local_id": "",
+      "name": "",
+      "nat_gateways": "",
+      "router_gateways": "",
+      "shared_in_edge_gateway_group": "",
+      "vpc": ""
+    },
+    "VirtualPrivateCloudExternalSubnetGroupOrderByInput": {
+      "enum": "Sorts a list of records"
+    },
+    "GetVirtualPrivateCloudExternalSubnetGroupsRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
+    },
+    "NestedAggregateVirtualPrivateCloudExternalSubnetGroup": {
+      "count": "count"
+    },
+    "VirtualPrivateCloudExternalSubnetGroupConnection": {
+      "aggregate": ""
+    },
+    "GetVirtualPrivateCloudExternalSubnetGroupsConnectionRequestBody": {
+      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
+      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
+      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
+      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
+      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
+      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
+      "where": "conditional query, representing to query the resources that meet the conditions. "
     }
   },
-  "tags": [
-    {
-      "name": "NetworkPolicyRuleService",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "Ntp",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "Observability",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "ResourceChange",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "Internal",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "ApiInfo",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "PciDevice",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudEdgeGatewayGroup",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudEdgeGateway",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "VirtualPrivateCloudExternalSubnetGroup",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "ReplicationPlan",
-      "x-displayName": "replication plan",
-      "description": ""
-    },
-    {
-      "name": "SmtpServer",
-      "x-displayName": "",
-      "description": ""
-    },
-    {
-      "name": "ReplicaVm",
-      "x-displayName": "",
-      "description": ""
-    }
-  ],
   "paths": {
-    "/create-isolation-policy": {
-      "summary": "Creating a quarantine policy",
-      "description": ""
-    },
-    "/update-isolation-policy": {
-      "summary": "Updating a quarantine policy",
-      "description": ""
-    },
-    "/delete-isolation-policy": {
-      "summary": "Deleting a quarantine policy",
-      "description": ""
-    },
-    "/create-network-policy-rule-service": {
-      "summary": "Creating a service",
-      "description": ""
-    },
-    "/update-network-policy-rule-service": {
-      "summary": "Updating a service",
-      "description": ""
-    },
-    "/delete-network-policy-rule-service": {
-      "summary": "Deleting a service",
-      "description": ""
-    },
     "/resource-changes": {
       "summary": "Get resource changes",
       "description": ""
     },
-    "/batch-create-virtual-private-cloud-floating-ips": {
-      "summary": "Creating floating IP addresses in batches",
-      "description": ""
-    },
-    "/get-network-policy-rule-services": {
-      "summary": "Fetching a service",
-      "description": ""
-    },
-    "/get-network-policy-rule-services-connection": {
-      "summary": "Fetching the number of services",
-      "description": ""
-    },
     "/get-pci-devices": {
       "summary": "Get PCI devices",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateway-groups": {
-      "summary": "Fetching an edge gateway group",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateway-groups-connection": {
-      "summary": "Fetching the number of edge gateway groups",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateways": {
-      "summary": "Fetching an edge gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-edge-gateways-connection": {
-      "summary": "Fetching the number of edge gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnet-groups": {
-      "summary": "Fetching an external subnet group",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnet-groups-connection": {
-      "summary": "Fetching the number of external subnet groups",
       "description": ""
     },
     "/get-replication-plans": {
@@ -4488,1002 +2900,6 @@
     },
     "/get-replica-vms-connection": {
       "summary": "Get replica VMs count",
-      "description": ""
-    },
-    "/connect-cluster": {
-      "summary": "Associating a cluster",
-      "description": ""
-    },
-    "/upload-content-library-image": {
-      "summary": "Uploading an ISO image to content library",
-      "description": ""
-    },
-    "/update-content-library-image": {
-      "summary": "Updating an ISO image in content library",
-      "description": ""
-    },
-    "/distribute-content-library-image-clusters": {
-      "summary": "Distributing an ISO image in content library to a new cluster",
-      "description": ""
-    },
-    "/remove-content-library-image-clusters": {
-      "summary": "Removing a cluster storing an ISO image in content library",
-      "description": ""
-    },
-    "/delete-content-library-image": {
-      "summary": "Deleting an ISO image in content library",
-      "description": ""
-    },
-    "/import-content-library-image": {
-      "summary": "Importing an ISO image to content library",
-      "description": ""
-    },
-    "/upload-elf-file": {
-      "summary": "Uploading a VMDK file",
-      "description": ""
-    },
-    "/parse-ovf": {
-      "summary": "Parsing an OVF file",
-      "description": ""
-    },
-    "/get-export-file-download-links": {
-      "summary": "Fetching the download link for the exported file",
-      "description": ""
-    },
-    "/create-vm": {
-      "summary": "Creating a virtual machine",
-      "description": ""
-    },
-    "/create-vm-from-template": {
-      "summary": "Creating a virtual machine from a template ",
-      "description": "**Warning**: The VM template has been removed from the Arcfra Operation Center page. Unless required for specific needs, avoid using the API for creating a virtual machine from a template. Please use the template in content library instead."
-    },
-    "/create-vm-from-content-library-template": {
-      "summary": "Creating a virtual machine from a template in content library",
-      "description": ""
-    },
-    "/convert-vm-template-to-vm": {
-      "summary": "Converting a VM template into a virtual machine",
-      "description": ""
-    },
-    "/clone-vm": {
-      "summary": "Cloning a virtual machine",
-      "description": ""
-    },
-    "/rebuild-vm-from-snapshot": {
-      "summary": "Rebuilding a virtual machine from a snapshot",
-      "description": ""
-    },
-    "/rollback-vm": {
-      "summary": "Rolling back a virtual machine",
-      "description": ""
-    },
-    "/update-vm-basic-info": {
-      "summary": "Updating the basic information of a virtual machine",
-      "description": ""
-    },
-    "/move-vm-to-recycle": {
-      "summary": "Moving a virtual machine to the recycle bin",
-      "description": ""
-    },
-    "/recover-vm-from-recycle": {
-      "summary": "Recovering a virtual machine from the recycle bin",
-      "description": ""
-    },
-    "/delete-vm": {
-      "summary": "Deleting a virtual machine",
-      "description": ""
-    },
-    "/start-vm": {
-      "summary": "Powering on a virtual machine",
-      "description": ""
-    },
-    "/restart-vm": {
-      "summary": "Restarting a virtual machine",
-      "description": ""
-    },
-    "/force-restart-vm": {
-      "summary": "Forcibly restarting a virtual machine",
-      "description": ""
-    },
-    "/shutdown-vm": {
-      "summary": "Shutting down a virtual machine",
-      "description": ""
-    },
-    "/poweroff-vm": {
-      "summary": "Forcibly shutting down a virtual machine",
-      "description": ""
-    },
-    "/suspend-vm": {
-      "summary": "Suspending a virtual machine",
-      "description": ""
-    },
-    "/resume-vm": {
-      "summary": "Recovering a virtual machine",
-      "description": ""
-    },
-    "/add-vm-disk": {
-      "summary": "Adding a virtual disk",
-      "description": ""
-    },
-    "/update-vm-disk": {
-      "summary": "Updating a virtual disk",
-      "description": ""
-    },
-    "/expand-vm-disk": {
-      "summary": "Expanding a virtual disk",
-      "description": "The virtual disk will be expanded to the specified size"
-    },
-    "/remove-vm-disk": {
-      "summary": "Unmounting a virtual disk",
-      "description": ""
-    },
-    "/add-vm-cd-rom": {
-      "summary": "Adding a CD-ROM",
-      "description": ""
-    },
-    "/remove-vm-cd-rom": {
-      "summary": "Deleting a CD-ROM",
-      "description": ""
-    },
-    "/eject-iso-from-vm-cd-rom": {
-      "summary": "ISO image used for uninstalling the specified CD-ROM",
-      "description": ""
-    },
-    "/toggle-vm-cd-rom-disable": {
-      "summary": "Setting the CD-ROM status",
-      "description": ""
-    },
-    "/add-vm-nic": {
-      "summary": "Adding a virtual NIC",
-      "description": ""
-    },
-    "/update-vm-nic": {
-      "summary": "Updating a virtual NIC",
-      "description": ""
-    },
-    "/update-vm-nic-basic-info": {
-      "summary": "Updating the NIC basic information",
-      "description": "Used for updating the basic information of a virtual machine NIC. This part of the information changes more frequently than other types, but requires VMTools support. There might be bugs if VMTools is not installed or running."
-    },
-    "/update-vm-nic-advance-info": {
-      "summary": "Updating the NIC advanced attributes",
-      "description": "Used for updating the infrequently changed data in the virtual machine NIC. The nic_id can only be updated when the NIC model is set to SR-IOV. Additionally, updating the NIC model is not supported."
-    },
-    "/update-vm-nic-qos-option": {
-      "summary": "Updating the QoS option for a virtual machine NIC",
-      "description": ""
-    },
-    "/add-vm-pci-nic": {
-      "summary": "Adding a virtual machine PCI NIC",
-      "description": ""
-    },
-    "/remove-vm-pci-nic": {
-      "summary": "Removing a virtual machine PCI NIC",
-      "description": ""
-    },
-    "/remove-vm-nic": {
-      "summary": "Removing a virtual NIC",
-      "description": ""
-    },
-    "/remove-vm-nic-by-where": {
-      "summary": "Removing a virtual machine NIC",
-      "description": "Improving the related filter condition, recommended for use"
-    },
-    "/add-vm-gpu-device": {
-      "summary": "Mounting a GPU device on a virtual machine",
-      "description": ""
-    },
-    "/remove-vm-gpu-device": {
-      "summary": "Unmounting a GPU device from a virtual machine",
-      "description": ""
-    },
-    "/install-vmtools": {
-      "summary": "Installing {OS_CO} VMTools",
-      "description": ""
-    },
-    "/migrate-vm": {
-      "summary": "Migrating a virtual machine",
-      "description": ""
-    },
-    "/migrate-vm-across-cluster": {
-      "summary": "Migrate a virtual machine across clusters ",
-      "description": ""
-    },
-    "/stop-vm-in-cutover-migration": {
-      "summary": "Shutting down the source virtual machine",
-      "description": "In staged migration, you need to manually shut down the source virtual machine to complete the remaining data migration."
-    },
-    "/abort-migrate-vm-across-cluster": {
-      "summary": "Terminating cross-cluster migration",
-      "description": "Manually terminating the cross-cluster migration task"
-    },
-    "/add-vm-to-folder": {
-      "summary": "Moving a virtual machine to a VM group",
-      "description": ""
-    },
-    "/remove-vm-from-folder": {
-      "summary": "Moving a virtual machine out of a VM group",
-      "description": ""
-    },
-    "/update-vm-advanced-options": {
-      "summary": "Updating the virtual machine advanced attributes",
-      "description": "Used for updating virtual machine advanced attributes, including Windows optimization, CPU compatibility, virtual machine clock, and virtual machine graphics card type."
-    },
-    "/update-vm-host-options": {
-      "summary": "Updating the host information of a virtual machine",
-      "description": "Used for updating the host information of a specific virtual machine, including DNS, NTP, and host name."
-    },
-    "/reset-vm-guest-os-password": {
-      "summary": "Resetting the virtual machine password",
-      "description": "Used for updating the password of the guest OS user of a specified virtual machine."
-    },
-    "/update-vm-owner": {
-      "summary": "Updating the owner of a specified virtual machine",
-      "description": ""
-    },
-    "/update-vm-io-policy": {
-      "summary": "Updating the IO throttling policy for a virtual machine",
-      "description": ""
-    },
-    "/export-vm": {
-      "summary": "Exporting a virtual machine",
-      "description": ""
-    },
-    "/import-vm": {
-      "summary": "Importing a virtual machine",
-      "description": ""
-    },
-    "/get-vm-gpu-device-info": {
-      "summary": "Fetching the GPU driver information of the virtual machine",
-      "description": ""
-    },
-    "/get-vm-vnc-info": {
-      "summary": "Fetching the VNC connection information",
-      "description": ""
-    },
-    "/clone-content-library-vm-template-from-vm": {
-      "summary": "Cloning a VM template in content library via a virtual machine",
-      "description": ""
-    },
-    "/convert-content-library-vm-template-from-vm": {
-      "summary": "Converting a virtual machine into a template in content library",
-      "description": ""
-    },
-    "/update-content-library-vm-template": {
-      "summary": "Updating a VM template in content library",
-      "description": ""
-    },
-    "/distribute-content-library-vm-template-clusters": {
-      "summary": "Distributing a VM template in content library to a new cluster",
-      "description": ""
-    },
-    "/remove-content-library-vm-template-clusters": {
-      "summary": "Removing a cluster holding the VM template in content library",
-      "description": ""
-    },
-    "/delete-content-library-vm-template": {
-      "summary": "Deleting a VM template in content library",
-      "description": ""
-    },
-    "/export-content-library-vm-template": {
-      "summary": "Exporting a VM template",
-      "description": ""
-    },
-    "/import-content-library-vm-template": {
-      "summary": "Importing a VM template",
-      "description": ""
-    },
-    "/create-datacenter": {
-      "summary": "Creating a data center",
-      "description": ""
-    },
-    "/get-detail-vm-info-by-gpu-devices": {
-      "summary": "Fetching detailed virtual machine information via GPU details",
-      "description": ""
-    },
-    "/create-iscsi-lun": {
-      "summary": "Creating a LUN",
-      "description": ""
-    },
-    "/delete-iscsi-lun": {
-      "summary": "Deleting a LUN",
-      "description": ""
-    },
-    "/create-iscsi-target": {
-      "summary": "Creating an iSCSI target",
-      "description": ""
-    },
-    "/delete-iscsi-target": {
-      "summary": "Deleting an iSCSI target",
-      "description": ""
-    },
-    "/upload-elf-image": {
-      "summary": "Uploading an ISO image",
-      "description": ""
-    },
-    "/update-elf-image": {
-      "summary": "Updating an ISO image",
-      "description": ""
-    },
-    "/delete-elf-image": {
-      "summary": "Deleting an ISO Image",
-      "description": ""
-    },
-    "/create-label": {
-      "summary": "Creating a label",
-      "description": ""
-    },
-    "/update-label": {
-      "summary": "Updating a label",
-      "description": ""
-    },
-    "/add-labels-to-resources": {
-      "summary": "Associating a label",
-      "description": ""
-    },
-    "/remove-labels-from-resources": {
-      "summary": "Dissociating a label",
-      "description": ""
-    },
-    "/delete-label": {
-      "summary": "Deleting a label",
-      "description": ""
-    },
-    "/disassociate-system-service-from-obs-service": {
-      "summary": "Dissociating a system service from an observability service",
-      "description": "Dissociating a system service from an observability service"
-    },
-    "/create-organization": {
-      "summary": "Creating an organization",
-      "description": ""
-    },
-    "/create-security-group": {
-      "summary": "Creating a security group",
-      "description": ""
-    },
-    "/delete-security-group": {
-      "summary": "Deleting a security group",
-      "description": ""
-    },
-    "/update-security-group": {
-      "summary": "Updating a security group",
-      "description": ""
-    },
-    "/create-security-policy": {
-      "summary": "Creating a security policy",
-      "description": ""
-    },
-    "/delete-security-policy": {
-      "summary": "Deleting a security policy",
-      "description": ""
-    },
-    "/update-security-policy": {
-      "summary": "Updating a security policy",
-      "description": ""
-    },
-    "/upload-svt-image": {
-      "summary": "Uploading an SVT image",
-      "description": ""
-    },
-    "/get-usb-devices": {
-      "summary": "Fetching a USB device",
-      "description": ""
-    },
-    "/login": {
-      "summary": "Logging in",
-      "description": ""
-    },
-    "/create-user": {
-      "summary": "Creating a user",
-      "description": ""
-    },
-    "/update-user": {
-      "summary": "Updating a user",
-      "description": ""
-    },
-    "/delete-user": {
-      "summary": "Deleting a user",
-      "description": ""
-    },
-    "/create-root-user": {
-      "summary": "Creating a user",
-      "description": "This is used to create the first user, with the fixed username as root and the role as root."
-    },
-    "/delete-virtual-private-cloud-floating-ip": {
-      "summary": "Releasing a floating IP address",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-nat-gateway": {
-      "summary": "Creating a NAT gateway",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-nat-gateway": {
-      "summary": "Updating a NAT gateway",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-nat-gateway": {
-      "summary": "Deleting a NAT gateway",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-route-table": {
-      "summary": "Creating a route table",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-route-table": {
-      "summary": "Updating a route table",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-route-table": {
-      "summary": "Deleting a route table",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-router-gateway": {
-      "summary": "Creating a routing gateway",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-router-gateway": {
-      "summary": "Updating a routing gateway",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-router-gateway": {
-      "summary": "Delete a routing gateway",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-security-group": {
-      "summary": "Creating a security group in VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-security-group": {
-      "summary": "Updating a security group in VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-security-group": {
-      "summary": "Deleting a security group in VPC",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-security-policy": {
-      "summary": "Creating a  security policy in VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-security-policy": {
-      "summary": "Deleting a security policy in VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-security-policy": {
-      "summary": "Updating a security policy in VPC",
-      "description": ""
-    },
-    "/create-virtual-private-cloud-subnet": {
-      "summary": "Creating a subnet",
-      "description": ""
-    },
-    "/update-virtual-private-cloud-subnet": {
-      "summary": "Updating a subnet",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud-subnet": {
-      "summary": "Deleting a subnet",
-      "description": ""
-    },
-    "/create-virtual-private-cloud": {
-      "summary": "Creating a VPC",
-      "description": ""
-    },
-    "/update-virtual-private-cloud": {
-      "summary": "Updating a VPC",
-      "description": ""
-    },
-    "/delete-virtual-private-cloud": {
-      "summary": "Deleting a VPC",
-      "description": ""
-    },
-    "/create-vm-vlan": {
-      "summary": "Creating a VM network",
-      "description": ""
-    },
-    "/update-vm-vlan": {
-      "summary": "Updating a VLAN",
-      "description": ""
-    },
-    "/delete-vm-vlan": {
-      "summary": "Deleting a VM network",
-      "description": ""
-    },
-    "/create-vm-folder": {
-      "summary": "Creating a VM group",
-      "description": ""
-    },
-    "/update-vm-folder": {
-      "summary": "Updating a VM group",
-      "description": ""
-    },
-    "/delete-vm-folder": {
-      "summary": "Deleting a VM group",
-      "description": ""
-    },
-    "/create-vm-placement-group": {
-      "summary": "Creating a VM placement group",
-      "description": ""
-    },
-    "/update-vm-placement-group": {
-      "summary": "Updating a VM placement group",
-      "description": ""
-    },
-    "/delete-vm-placement-group": {
-      "summary": "Deleting a VM placement group",
-      "description": ""
-    },
-    "/create-vm-snapshot": {
-      "summary": "Creating a VM snapshot",
-      "description": ""
-    },
-    "/delete-vm-snapshot": {
-      "summary": "Deleting a VM snapshot",
-      "description": ""
-    },
-    "/clone-vm-template-from-vm": {
-      "summary": "Cloning a virtual machine as a VM template",
-      "description": ""
-    },
-    "/convert-vm-template-from-vm": {
-      "summary": "Converting a virtual machine into a VM template",
-      "description": ""
-    },
-    "/update-vm-template": {
-      "summary": "Updating a VM template",
-      "description": ""
-    },
-    "/delete-vm-template": {
-      "summary": "Deleting a VM template",
-      "description": ""
-    },
-    "/create-vm-volume-snapshot": {
-      "summary": "Creating a virtual volume snapshot",
-      "description": ""
-    },
-    "/delete-vm-volume-snapshot": {
-      "summary": "Deleting a virtual volume snapshot",
-      "description": ""
-    },
-    "/create-vm-volume": {
-      "summary": "Creating a virtual volume",
-      "description": ""
-    },
-    "/delete-vm-volume": {
-      "summary": "Deleting a virtual volume",
-      "description": ""
-    },
-    "/rebuild-vm-volume": {
-      "summary": "Rebuilding a virtual volume from a snapshot",
-      "description": ""
-    },
-    "/rollback-vm-volume": {
-      "summary": "Rolling back a virtual volume based on a snapshot",
-      "description": ""
-    },
-    "/clone-vm-volume": {
-      "summary": "Cloning a virtual volume",
-      "description": ""
-    },
-    "/update-vm-volume": {
-      "summary": "Updating a virtual volume",
-      "description": ""
-    },
-    "/export-vm-volume": {
-      "summary": "Exporting a virtual volume",
-      "description": ""
-    },
-    "/import-vm-volume": {
-      "summary": "Importing a virtual volume ",
-      "description": ""
-    },
-    "/get-alerts": {
-      "summary": "Fetching alerts",
-      "description": ""
-    },
-    "/get-alerts-connection": {
-      "summary": "Fetching the number of alerts",
-      "description": ""
-    },
-    "/get-clusters": {
-      "summary": "Fetching a cluster",
-      "description": ""
-    },
-    "/get-clusters-connection": {
-      "summary": "Fetching the number of clusters",
-      "description": ""
-    },
-    "/get-content-library-images": {
-      "summary": "Fetching ISO images in content library ",
-      "description": ""
-    },
-    "/get-content-library-images-connection": {
-      "summary": "Fetching the number of  ISO images in content library",
-      "description": ""
-    },
-    "/get-content-library-vm-templates": {
-      "summary": "Fetching VM templates in content library ",
-      "description": ""
-    },
-    "/get-content-library-vm-templates-connection": {
-      "summary": "Fetching the number of VM templates in content library",
-      "description": ""
-    },
-    "/get-datacenters": {
-      "summary": "Fetching a data center",
-      "description": ""
-    },
-    "/get-datacenters-connection": {
-      "summary": "Fetching the number of data centers",
-      "description": ""
-    },
-    "/get-deploys": {
-      "summary": "Fetching an Arcfra Operation Center",
-      "description": ""
-    },
-    "/get-elf-images": {
-      "summary": "Fetching an ISO image",
-      "description": ""
-    },
-    "/get-elf-images-connection": {
-      "summary": "Fetching the number of ISO images",
-      "description": ""
-    },
-    "/get-elf-storage-policies": {
-      "summary": "Fetching a storage policy",
-      "description": ""
-    },
-    "/get-elf-storage-policies-connection": {
-      "summary": "Fetching the number of storage policies",
-      "description": ""
-    },
-    "/get-everoute-clusters": {
-      "summary": "Fetching an ANS service",
-      "description": ""
-    },
-    "/get-everoute-clusters-connection": {
-      "summary": "Fetching the number of ANS services",
-      "description": ""
-    },
-    "/get-everoute-licenses": {
-      "summary": "Fetching the ANS license",
-      "description": ""
-    },
-    "/get-everoute-licenses-connection": {
-      "summary": "Fetching the number of ANS licenses",
-      "description": ""
-    },
-    "/get-everoute-packages": {
-      "summary": "Fetching the ANS installation package",
-      "description": ""
-    },
-    "/get-everoute-packages-connection": {
-      "summary": "Fetching the number of ANS installation packages",
-      "description": ""
-    },
-    "/get-gpu-devices": {
-      "summary": "Fetching a GPU device",
-      "description": ""
-    },
-    "/get-gpu-devices-connection": {
-      "summary": "Fetching the number of GPU devices",
-      "description": ""
-    },
-    "/get-hosts": {
-      "summary": "Fetching hosts",
-      "description": ""
-    },
-    "/get-hosts-connection": {
-      "summary": "Fetching the number of hosts",
-      "description": ""
-    },
-    "/get-iscsi-lun-snapshots": {
-      "summary": "Fetching a LUN snapshot",
-      "description": ""
-    },
-    "/get-iscsi-luns": {
-      "summary": "Fetching LUNs",
-      "description": ""
-    },
-    "/get-iscsi-luns-connection": {
-      "summary": "Fetching the number of LUNs",
-      "description": ""
-    },
-    "/get-iscsi-targets": {
-      "summary": "Fetching an iSCSI target",
-      "description": ""
-    },
-    "/get-iscsi-targets-connection": {
-      "summary": "Fetching the number of iSCSI targets",
-      "description": ""
-    },
-    "/get-isolation-policies": {
-      "summary": "Fetching a quarantine policy",
-      "description": ""
-    },
-    "/get-isolation-policies-connection": {
-      "summary": "Fetching the number of quarantine policies",
-      "description": ""
-    },
-    "/get-labels": {
-      "summary": "Fetching a label",
-      "description": ""
-    },
-    "/get-labels-connection": {
-      "summary": "Fetching the number of labels",
-      "description": ""
-    },
-    "/get-nics": {
-      "summary": "Fetching a network port",
-      "description": ""
-    },
-    "/get-nics-connection": {
-      "summary": "Fetching the number of network ports",
-      "description": ""
-    },
-    "/get-organizations": {
-      "summary": "Fetching an organization",
-      "description": ""
-    },
-    "/get-organizations-connection": {
-      "summary": "Fetching the number of organizations",
-      "description": ""
-    },
-    "/get-security-groups": {
-      "summary": "Fetching a security group",
-      "description": ""
-    },
-    "/get-security-groups-connection": {
-      "summary": "Fetching the number of security groups",
-      "description": ""
-    },
-    "/get-security-policies": {
-      "summary": "Fetching a security policy",
-      "description": ""
-    },
-    "/get-security-policies-connection": {
-      "summary": "Fetching the number of security policies",
-      "description": ""
-    },
-    "/get-svt-images": {
-      "summary": "Fetching a VMTools ISO image",
-      "description": ""
-    },
-    "/get-svt-images-connection": {
-      "summary": "Fetching the number of VMTools ISO images",
-      "description": ""
-    },
-    "/get-system-audit-logs": {
-      "summary": "Fetching a system event",
-      "description": ""
-    },
-    "/get-system-audit-logs-connection": {
-      "summary": "Fetching the number of system events",
-      "description": ""
-    },
-    "/get-tasks": {
-      "summary": "Fetching a task",
-      "description": ""
-    },
-    "/get-tasks-connection": {
-      "summary": "Fetching the number of tasks",
-      "description": ""
-    },
-    "/get-upload-tasks": {
-      "summary": "Fetching an uploaded task",
-      "description": ""
-    },
-    "/get-upload-tasks-connection": {
-      "summary": "Fetching the number of uploaded tasks",
-      "description": ""
-    },
-    "/get-usb-devices-connection": {
-      "summary": "Fetching the number of USB devices",
-      "description": ""
-    },
-    "/get-user-audit-logs": {
-      "summary": "Fetching a user event",
-      "description": ""
-    },
-    "/get-user-audit-logs-connection": {
-      "summary": "Fetching the number of user events",
-      "description": ""
-    },
-    "/get-user-role-nexts": {
-      "summary": "Fetching a role",
-      "description": ""
-    },
-    "/get-user-role-nexts-connection": {
-      "summary": "Fetching the number of roles",
-      "description": ""
-    },
-    "/get-users": {
-      "summary": "Fetching a user",
-      "description": ""
-    },
-    "/get-users-connection": {
-      "summary": "Fetching the number of users",
-      "description": ""
-    },
-    "/get-v2-everoute-licenses": {
-      "summary": "Fetching the V2 version ANS license",
-      "description": ""
-    },
-    "/get-vdses": {
-      "summary": "Fetching a virtual distributed switch",
-      "description": ""
-    },
-    "/get-vdses-connection": {
-      "summary": "Fetching the number of virtual distributed switches",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-cluster-bindings": {
-      "summary": "Fetching an associated VPC cluster",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-cluster-bindings-connection": {
-      "summary": "Fetching the number of associated VPC clusters",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnets": {
-      "summary": "Fetching an external subnet",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-external-subnets-connection": {
-      "summary": "Fetching the number of external subnets",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-floating-ips": {
-      "summary": "Fetching a floating IP address",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-floating-ips-connection": {
-      "summary": "Fetching the number of floating IP addresses",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-nat-gateways": {
-      "summary": "Fetching a NAT gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-nat-gateways-connection": {
-      "summary": "Fetching the number of NAT gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-route-tables": {
-      "summary": "Fetching a route table",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-route-tables-connection": {
-      "summary": "Fetching the number of route tables",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-router-gateways": {
-      "summary": "Fetching a routing gateway",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-router-gateways-connection": {
-      "summary": "Fetching the number of routing gateways",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-groups": {
-      "summary": "Fetching a security group in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-groups-connection": {
-      "summary": "Fetching the number of security groups in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-policies": {
-      "summary": "Fetching a security policy in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-security-policies-connection": {
-      "summary": "Fetching the number of security policies in VPC",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-subnets": {
-      "summary": "Fetching a subnet",
-      "description": ""
-    },
-    "/get-virtual-private-cloud-subnets-connection": {
-      "summary": "Fetching the number of subnets",
-      "description": ""
-    },
-    "/get-virtual-private-clouds": {
-      "summary": "Fetching a VPC",
-      "description": ""
-    },
-    "/get-virtual-private-clouds-connection": {
-      "summary": "Fetching the number of VPCs",
-      "description": ""
-    },
-    "/get-vlans": {
-      "summary": "Fetching a network",
-      "description": ""
-    },
-    "/get-vlans-connection": {
-      "summary": "Fetching the number of networks",
-      "description": ""
-    },
-    "/get-vm-disks": {
-      "summary": "Fetching a virtual disk",
-      "description": ""
-    },
-    "/get-vm-disks-connection": {
-      "summary": "Fetching the number of virtual disks",
-      "description": ""
-    },
-    "/get-vm-export-files": {
-      "summary": "Fetching a VMDK file",
-      "description": ""
-    },
-    "/get-vm-export-files-connection": {
-      "summary": "Fetching the number of VMDK files",
-      "description": ""
-    },
-    "/get-vm-folders": {
-      "summary": "Fetching a VM group",
-      "description": ""
-    },
-    "/get-vm-folders-connection": {
-      "summary": "Fetching the number of VM groups",
-      "description": ""
-    },
-    "/get-vm-nics": {
-      "summary": "Fetching a virtual NIC",
-      "description": ""
-    },
-    "/get-vm-nics-connection": {
-      "summary": "Fetching the number of virtual NICs",
-      "description": ""
-    },
-    "/get-vm-placement-groups": {
-      "summary": "Fetching a virtual machine placement group",
-      "description": ""
-    },
-    "/get-vm-placement-groups-connection": {
-      "summary": "Fetching the number of virtual machine placement groups",
-      "description": ""
-    },
-    "/get-vm-snapshots": {
-      "summary": "Fetching a VM snapshot",
-      "description": ""
-    },
-    "/get-vm-snapshots-connection": {
-      "summary": "Fetching the number of VM snapshots",
-      "description": ""
-    },
-    "/get-vm-templates": {
-      "summary": "Fetching a VM template in a cluster",
-      "description": ""
-    },
-    "/get-vm-templates-connection": {
-      "summary": "Fetching the number of VM templates in a cluster",
-      "description": ""
-    },
-    "/get-vm-volume-snapshots": {
-      "summary": "Fetching a virtual volume snapshot",
-      "description": ""
-    },
-    "/get-vm-volume-snapshots-connection": {
-      "summary": "Fetching the number of VM snapshots",
-      "description": ""
-    },
-    "/get-vm-volumes": {
-      "summary": "Fetching a virtual volume",
-      "description": ""
-    },
-    "/get-vm-volumes-connection": {
-      "summary": "Fetching the number of virtual volumes",
-      "description": ""
-    },
-    "/get-vms": {
-      "summary": "Fetching a virtual machine",
-      "description": ""
-    },
-    "/get-vms-connection": {
-      "summary": "Fetching the number of virtual machines",
       "description": ""
     }
   }
