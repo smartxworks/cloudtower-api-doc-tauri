@@ -4,7 +4,7 @@
     "tauri": "tauri",
     "sync:sdk-readme": "node ./cloudtower-api-doc/scripts/sync-sdk-readme.js",
     "sync:swagger": "node ./cloudtower-api-doc/scripts/sync-swagger.js",
-    "sync:terminology": "node astgrep-lint-rules/sync-terminology.mjs",
+    "sync:terminology": "node ./cloudtower-api-doc/scripts/sync-terminology.mjs",
     "api:scan": "node ./cloudtower-api-doc/scripts/scan-missing.js",
     "api:new": "node ./cloudtower-api-doc/scripts/create-new-api-doc.js",
     "api:new-example": "node ./cloudtower-api-doc/scripts/create-new-api-example.js",
@@ -17,8 +17,7 @@
     "swizzle": "docusaurus swizzle -- @docusaurus/theme-classic DocSidebarItem ./cloudtower-api-doc",
     "test": "vitest",
     "test:update-snapshots": "UPDATE_SNAPSHOTS=true npm test wrap.test.ts",
-    "lint": "ast-grep scan -c astgrep-lint-rules/sgconfig.yml && node astgrep-lint-rules/markdown-lint.mjs",
-    "sync-terminology": "node astgrep-lint-rules/sync-terminology.mjs"
+    "lint": "ast-grep scan -c astgrep-lint-rules/sgconfig.yml && node astgrep-lint-rules/markdown-lint.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",

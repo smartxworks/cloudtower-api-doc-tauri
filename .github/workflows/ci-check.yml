@@ -30,3 +30,31 @@ jobs:
         run: yarn test
       - name: Build
         run: yarn build
+      - name: Check Locales
+        id: scan
+        run: yarn api:scan
+        continue-on-error: true
+      - name: Read scan result
+        id: read-result
+        if: always()
+        run: |
+          if [ -f "./cloudtower-api-doc/scripts/check-missing.log" ]; then
+            echo "result<<EOF" >> $GITHUB_OUTPUT
+            cat "./cloudtower-api-doc/scripts/check-missing.log" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "result=No scan result file found." >> $GITHUB_OUTPUT
+          fi
+      - name: Comment PR
+        if: always()
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-id: check-locales
+          message: |
+            ## 📋 Check Locales Result
+            
+            ${{ steps.read-result.outputs.result }}
+            
+            ---
+            
+            <sub>🤖 This comment is automatically updated on each run.</sub>

@@ -56,6 +56,14 @@ const config = {
         /.+\.md$/i,             // API doc markdown files
     ],
     
+    // File path patterns to exclude from linting (regex patterns)
+    excludePatterns: [
+        // Add your exclude patterns here
+        // Example: /node_modules/,
+        // Example: /\.git/,
+        "contribute.md"
+    ],
+    
     // Base directory to start scanning
     baseDir: '.',
     
@@ -64,7 +72,7 @@ const config = {
 };
 
 // Function to collect all markdown files matching patterns
-function collectFiles(dir, patterns) {
+function collectFiles(dir, patterns, excludePatterns = []) {
     const files = [];
     
     function walkDir(currentDir) {
@@ -82,8 +90,14 @@ function collectFiles(dir, patterns) {
                 } else if (entry.isFile()) {
                     // Check if file matches any pattern
                     const relativePath = path.relative('.', fullPath);
-                    if (patterns.some(pattern => pattern.test(relativePath))) {
-                        files.push(fullPath);
+                    const matchesPattern = patterns.some(pattern => pattern.test(relativePath));
+                    
+                    if (matchesPattern) {
+                        // Check if file should be excluded
+                        const shouldExclude = excludePatterns.some(pattern => pattern.test(relativePath));
+                        if (!shouldExclude) {
+                            files.push(fullPath);
+                        }
                     }
                 }
             }
@@ -172,7 +186,7 @@ function main() {
     console.log(`${colors.cyan}🔍 Scanning markdown files for restricted terminology...${colors.reset}\n`);
     
     // Collect all files to check
-    const files = collectFiles(config.baseDir, config.filePatterns);
+    const files = collectFiles(config.baseDir, config.filePatterns, config.excludePatterns);
     
     if (files.length === 0) {
         console.log(`${colors.yellow}No markdown files found matching the patterns.${colors.reset}`);

@@ -20,7 +20,5 @@ yarn-error.log*
 .docusaurus
 .vscode/*
 
-**/miss/*.json
-
-
 CloudTower-API-doc_docx/*
+check-missing.log
