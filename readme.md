@@ -12,19 +12,5 @@ when add a new tag `v*` will trigger github action to release new assets, includ
 
 ### for developer
 
-#### how to setup repo
+please read [Contribute](https://github.com/smartxworks/cloudtower-api-doc-tauri/blob/master/contribute.md)
 
-run  `yarn install --pure-lockfile && yarn start`
-
-#### how to update api swagger
-
-1. add new version in versions.json
-2. run `yarn api:sync` 
-
-#### how to quick create new api docs
-
-run `yarn api:new`
-
-#### how to check document missing locales
-
-run `yarn api:scan`

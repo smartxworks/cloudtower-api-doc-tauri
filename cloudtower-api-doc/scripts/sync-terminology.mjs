@@ -192,12 +192,12 @@ function generateRegexPattern(terms) {
     }
     const escapedTerms = terms.map(safeRegex);
     const forbiddenValues = escapedTerms.join('|');
-    return `(?i)(^|[^a-zA-Z])(${forbiddenValues})([^a-zA-Z]|$)`;
+    return `(?i)(^|[^a-zA-Z{])(${forbiddenValues})([^a-zA-Z}]|$)`;
 }
 
 // Update utils/terminology.yml file
 function updateUtilsTerminologyYaml(regexPattern) {
-    const filePath = path.join(__dirname, 'utils', 'terminology.yml');
+    const filePath = path.join(__dirname, '../../astgrep-lint-rules/utils/terminology.yml');
     
     try {
         // Read current file to preserve structure
@@ -223,7 +223,7 @@ function updateUtilsTerminologyYaml(regexPattern) {
 // Read regex from utils/terminology.yml
 function readRegexFromUtilsYaml() {
     try {
-        const filePath = path.join(__dirname, 'utils', 'terminology.yml');
+        const filePath = path.join(__dirname, '../../astgrep-lint-rules/utils/terminology.yml');
         const content = fs.readFileSync(filePath, 'utf-8');
         const match = content.match(/regex:\s*(.+?)$/m);
         
