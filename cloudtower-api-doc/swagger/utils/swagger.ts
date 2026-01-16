@@ -5,6 +5,7 @@ import useIsBrowser from "@docusaurus/useIsBrowser"
 
 // 默认的 specMap 配置
 const defaultSpecMap = {
+  "4.8.0": import("../../static/specs/4.8.0-swagger.json"),
   "4.7.0": import("../../static/specs/4.7.0-swagger.json"),
   "4.6.2": import("../../static/specs/4.6.0-swagger.json"),
   "4.6.1": import("../../static/specs/4.6.0-swagger.json"),
