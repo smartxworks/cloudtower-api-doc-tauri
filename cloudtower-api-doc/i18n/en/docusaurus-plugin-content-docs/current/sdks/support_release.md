@@ -27,7 +27,8 @@ It is recommended to upgrade the SDK first, and then upgrade {Terminology['termi
 
 | <strong>SDK version</strong>           | Product version                                                                                                                                            | <strong>SDK release date</strong>          | <strong>Download</strong>                                                     |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------- |
-| 2.21.0 | 4.7.0                                                                                                                      | 2025.10.14 | <AddressWrapper version="2.21.0" file_version="4.7.0"/>                       |
+| 2.22.0 | 4.8.0   | 2026.02.09 | <AddressWrapper version="2.22.0" file_version="4.8.0"/>                       |
+| 2.21.0 | 4.7.0   | 2025.10.14 | <AddressWrapper version="2.21.0" file_version="4.7.0"/>                       |
 | 2.20.0 | 4.6.x                                                                                                                      | 2025.06.09 | <AddressWrapper version="2.20.0" file_version="4.6.0"/>                       |
 | 2.19.0 | 4.5.0                                                                                                                      | 2025.02.17 | <AddressWrapper version="2.19.0" file_version="4.5.0"/>                       |
 | 2.18.0 | 4.4.0, 4.4.1, 4.4.2                                        | 2024.10.14 | <AddressWrapper version="2.18.0" file_version="4.4.0" node_version="2.18.0"/> |
