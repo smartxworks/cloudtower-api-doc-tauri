@@ -54,7 +54,7 @@
   "paths": {
     "/update-vm-vpc-nic": {
       "summary": "更新虚拟机 VPC 网卡信息",
-      "description": "用于更新虚拟机 VPC 网卡的VPC、子网、浮动 IP、IP 地址配置。"
+      "description": "用于更新虚拟机 VPC 网卡的 VPC、子网、浮动 IP、IP 地址配置。"
     },
     "/create-virtual-private-cloud-floating-ip": {
       "summary": "分配浮动 IP",

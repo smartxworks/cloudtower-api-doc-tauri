@@ -1,20 +1,20 @@
 {
   "schemas": {
     "VmWhereInput": {
-      "bios_uuid": "",
-      "bios_uuid_contains": "",
-      "bios_uuid_ends_with": "",
-      "bios_uuid_gt": "",
-      "bios_uuid_gte": "",
-      "bios_uuid_in": "",
-      "bios_uuid_lt": "",
-      "bios_uuid_lte": "",
-      "bios_uuid_not": "",
-      "bios_uuid_not_contains": "",
-      "bios_uuid_not_ends_with": "",
-      "bios_uuid_not_in": "",
-      "bios_uuid_not_starts_with": "",
-      "bios_uuid_starts_with": ""
+      "bios_uuid": "BIOS UUID",
+      "bios_uuid_contains": "The BIOS UUID contains the specified string",
+      "bios_uuid_ends_with": "The BIOS UUID ends with the specified string",
+      "bios_uuid_gt": "The BIOS UUID is greater than the specified value",
+      "bios_uuid_gte": "The BIOS UUID is greater than or equal to the specified value",
+      "bios_uuid_in": "The BIOS UUID is within the specified range",
+      "bios_uuid_lt": "The BIOS UUID is less than the specified value",
+      "bios_uuid_lte": "The BIOS UUID is less than or equal to the specified value",
+      "bios_uuid_not": "The BIOS UUID is not equal to the specified value",
+      "bios_uuid_not_contains": "The BIOS UUID does not contain the specified string",
+      "bios_uuid_not_ends_with": "The BIOS UUID does not end with the specified string",
+      "bios_uuid_not_in": "The BIOS UUID is not within the specified range",
+      "bios_uuid_not_starts_with": "The BIOS UUID does not start with the specified string",
+      "bios_uuid_starts_with": "The BIOS UUID starts with the specified string"
     },
     "VirtualPrivateCloudNicWhereInput": {
       "snapshots_every": "",
@@ -22,7 +22,7 @@
       "snapshots_some": ""
     },
     "Vm": {
-      "bios_uuid": ""
+      "bios_uuid": "BIOS UUID"
     },
     "ZbsSpec": {
       "enum": ""
@@ -36,21 +36,21 @@
       "zbs_spec": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "floating_ip_cidr": "",
-      "id": "id",
-      "name": "name"
+      "floating_ip_cidr": "Floating IP address block specified from the CIDR block",
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedVirtualPrivateCloud": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloudFloatingIp": {
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "vpc": ""
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "external_ip": "Allocated IP address",
+      "external_subnet": "External subnet",
+      "id": "Unique identifier of the resource",
+      "local_id": "Resource UUID",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudFloatingIp_": {
       "task_id": "asynchronous task id ",
@@ -62,49 +62,49 @@
       "vpc_id": ""
     },
     "DeleteVirtualPrivateCloudFloatingIp": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudFloatingIp_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudFloatingIpDeletionParams": {
       "where": ""
     },
     "NestedVpcDnatRuleType": {
-      "port": "",
-      "target_ip": "",
-      "target_port": ""
+      "port": "Translated port",
+      "target_ip": "Internal destination address",
+      "target_port": "Internal destination address port number"
     },
     "VirtualPrivateCloudNatGateway": {
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "vpc": ""
+      "dnat_rules": "DNAT rule",
+      "enable_dnat": "DNAT status",
+      "enable_snat": "SNAT status",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "external_ip": "Translated address",
+      "external_subnet": "External subnet",
+      "id": "Unique identifier of the resource",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudNatGateway_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudDnatRuleParams": {
-      "target_port": "",
-      "port": "",
-      "target_ip": ""
+      "target_port": "Internal destination address",
+      "port": "Translated port",
+      "target_ip": "Internal destination address port number"
     },
     "VirtualPrivateCloudNatGatewayCreationParams": {
-      "external_ip": "",
-      "external_subnet_id": "",
-      "dnat_rules": "",
-      "enable_dnat": "",
-      "enable_snat": "",
-      "vpc_id": "",
-      "name": ""
+      "external_ip": "Translated address (required when specified manually)",
+      "external_subnet_id": "External subnet ID",
+      "dnat_rules": "DNAT rule",
+      "enable_dnat": "DNAT status",
+      "enable_snat": "SNAT status",
+      "vpc_id": "VPC ID",
+      "name": "Name"
     },
     "VirtualPrivateCloudNatGatewayUpdationParams": {
       "data.external_ip": "",
@@ -112,319 +112,319 @@
       "data.enable_dnat": "",
       "data.enable_snat": "",
       "data.name": "",
-      "data": "",
-      "where": ""
+      "data": "Data for updating the specified NAT gateway",
+      "where": "Query condition for updating the specified NAT gateway"
     },
     "DeleteVirtualPrivateCloudNatGateway": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudNatGateway_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudNatGatewayDeletionParams": {
       "where": ""
     },
     "NestedVirtualPrivateCloudRoute": {
-      "destination": "",
-      "id": "id",
-      "next_hop_local_id": "",
-      "next_hop_type": ""
+      "destination": "Destination address",
+      "id": "Unique identifier",
+      "next_hop_local_id": "Local_id of the next hop instance",
+      "next_hop_type": "Next hop type"
     },
     "NestedVirtualPrivateCloudSubnet": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloudRouteTable": {
-      "default_for_vpc": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "routes": "",
-      "subnets": "",
-      "vpc": ""
+      "default_for_vpc": "Whether it is the default route table of the VPC",
+      "description": "Description",
+      "entityAsyncStatus": "schemas.VirtualPrivateCloudRouteTable.entityAsyncStatus",
+      "id": "Unique identifier of the resource",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "routes": "Routing rule",
+      "subnets": "Associated subnet",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudRouteTable_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudRouteParams": {
-      "destination": "",
-      "next_hop_local_id": "",
-      "next_hop_type": ""
+      "destination": "Destination address",
+      "next_hop_local_id": "Local_id of the next hop instance",
+      "next_hop_type": "Next hop type"
     },
     "VirtualPrivateCloudRouteTableCreationParams": {
-      "routes": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "routes": "Routing rule",
+      "vpc_id": "VPC ID",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudRouteTableUpdationParams": {
       "data.routes": "",
       "data.description": "",
       "data.name": "",
-      "data": "",
-      "where": ""
+      "data": "Data for updating the specified route table",
+      "where": "Query condition for updating the specified route table"
     },
     "DeleteVirtualPrivateCloudRouteTable": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudRouteTable_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudRouteTableDeletionParams": {
       "where": ""
     },
     "NestedVpcRouterGatewayRuleType": {
-      "dst": "",
-      "nexthop": ""
+      "dst": "Destination address",
+      "nexthop": "Next hop address"
     },
     "VirtualPrivateCloudRouterGateway": {
-      "associated_subnets": "",
-      "entityAsyncStatus": "",
-      "external_ip": "",
-      "external_subnet": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nexthop_ip": "",
-      "rules": "",
-      "vpc": ""
+      "associated_subnets": "Associated VPC subnet",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "external_ip": "External interface",
+      "external_subnet": "External subnet",
+      "id": "Unique identifier of the resource",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "nexthop_ip": "Next hop address",
+      "rules": "Routing rule",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudRouterGateway_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudRouterGatewayRuleInputType": {
-      "dst": "",
-      "nexthop": ""
+      "dst": "Destination address",
+      "nexthop": "Next hop address; leave empty to automatically assign the default gateway of the external subnet as the next hop address"
     },
     "VirtualPrivateCloudRouterGatewayCreationParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
-      "external_subnet_id": "",
-      "vpc_id": "",
-      "name": ""
+      "rules": "Routing rule",
+      "associated_subnets_ids": "String array of IDs of the associated VPC subnets",
+      "external_ip": "External interface (required when specified manually)",
+      "external_subnet_id": "External subnet ID",
+      "vpc_id": "VPC ID",
+      "name": "Name"
     },
     "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
-      "rules": "",
-      "associated_subnets_ids": "",
-      "external_ip": "",
-      "name": ""
+      "rules": "Routing rule",
+      "associated_subnets_ids": "String array of IDs of the associated VPC subnets",
+      "external_ip": "External interface",
+      "name": "Name"
     },
     "VirtualPrivateCloudRouterGatewayUpdationParams": {
-      "data": "",
-      "where": ""
+      "data": "Data for updating the specified routing gateway",
+      "where": "Query condition for updating the specified routing gateway"
     },
     "DeleteVirtualPrivateCloudRouterGateway": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudRouterGateway_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudRouterGatewayDeletionParams": {
       "where": ""
     },
     "NestedVirtualPrivateCloudLabelGroup": {
-      "labels": ""
+      "labels": "Associated label collection"
     },
     "VirtualPrivateCloudSecurityGroup": {
-      "default_for_vpc": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "label_groups": "",
-      "local_id": "",
-      "name": "",
-      "vms": "",
-      "vpc": ""
+      "default_for_vpc": "Whether it is the default security group of the VPC",
+      "description": "Description",
+      "entityAsyncStatus": "schemas.VirtualPrivateCloudSecurityGroup.entityAsyncStatus",
+      "id": "Unique identifier of the resource",
+      "label_groups": "Label group",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "vms": "Associated virtual machine collection",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudSecurityGroup_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "LabelGroup": {
-      "label_ids": ""
+      "label_ids": "Associated label ID collection"
     },
     "VirtualPrivateCloudSecurityGroupCreationParams": {
-      "vm_ids": "",
-      "label_groups": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "vm_ids": "Associated virtual machine ID collection",
+      "label_groups": "Label group",
+      "vpc_id": "VPC ID",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudSecurityGroupUpdationParams": {
       "data.vm_ids": "",
       "data.label_groups": "",
       "data.description": "",
       "data.name": "",
-      "data": "",
-      "where": ""
+      "data": "Data for updating the specified security group in VPC",
+      "where": "Query condition for updating the specified security group in VPC"
     },
     "DeleteVirtualPrivateCloudSecurityGroup": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudSecurityGroup_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudSecurityGroupDeletionParams": {
-      "where": ""
+      "where": "Query condition for deleting the specified security group in VPC"
     },
     "NestedVirtualPrivateCloudSecurityGroup": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedVirtualPrivateCloudSecurityPolicyApply": {
-      "communicable": "",
-      "security_group": "",
-      "security_group_id": ""
+      "communicable": "Whether policy objects can communicate with each other",
+      "security_group": "Security group in VPC",
+      "security_group_id": "Security group ID in VPC"
     },
     "VirtualPrivateCloudNetworkPolicyRulePortProtocol": {
       "enum": ""
     },
     "NestedVirtualPrivateCloudNetworkPolicyRulePort": {
-      "port": "",
-      "protocol": ""
+      "port": "Port number",
+      "protocol": "Protocol type"
     },
     "VirtualPrivateCloudNetworkPolicyRuleType": {
       "enum": ""
     },
     "NestedVirtualPrivateCloudNetworkPolicyRule": {
-      "except_ip_block": "",
-      "ip_block": "",
-      "ports": "",
-      "security_group": "",
-      "security_group_id": "",
-      "selector": "",
-      "selector_ids": "",
-      "type": ""
+      "except_ip_block": "Excluded IP addresses; takes effect when the allowlist type is IP address",
+      "ip_block": "IP address; takes effect when the allowlist type is IP address",
+      "ports": "Protocol configuration",
+      "security_group": "Security group",
+      "security_group_id": "Security group in VPC ID; takes effect when the allowlist type is security group",
+      "selector": "Label",
+      "selector_ids": "Collection of label IDs; takes effect when the allowlist type is label.",
+      "type": "Allowlist type"
     },
     "VirtualPrivateCloudSecurityPolicy": {
-      "apply_to": "",
-      "description": "",
-      "egress": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "ingress": "",
-      "local_id": "",
-      "name": "",
-      "policy_mode": "",
-      "vpc": ""
+      "apply_to": "Set of policy objects",
+      "description": "Description",
+      "egress": "Egress traffic allowlist configuration",
+      "entityAsyncStatus": "schemas.VirtualPrivateCloudSecurityPolicy.entityAsyncStatus",
+      "id": "Unique identifier of the resource",
+      "ingress": "Ingress traffic allowlist configuration",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "policy_mode": "Policy enforcement mode",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudSecurityPolicy_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudSecurityPolicyApplyInput": {
-      "security_group_id": "",
-      "communicable": ""
+      "security_group_id": "Security group ID in VPC",
+      "communicable": "Whether policy objects can communicate with each other"
     },
     "VirtualPrivateCloudNetworkPolicyRulePortInput": {
-      "protocol": "",
-      "port": ""
+      "protocol": "Protocol type",
+      "port": "Port number"
     },
     "VirtualPrivateCloudNetworkPolicyRuleInput": {
-      "type": "",
-      "selector_ids": "",
-      "security_group_id": "",
-      "ports": "",
-      "ip_block": "",
-      "except_ip_block": ""
+      "type": "Allowlist type",
+      "selector_ids": "Collection of label IDs; takes effect when the allowlist type is label.",
+      "security_group_id": "Security group in VPC ID; takes effect when the allowlist type is security group",
+      "ports": "Protocol configuration",
+      "ip_block": "IP address; takes effect when the allowlist type is IP address",
+      "except_ip_block": "Excluded IP addresses; takes effect when the allowlist type is IP address"
     },
     "VirtualPrivateCloudSecurityPolicyCreateParams": {
-      "egress": "",
-      "ingress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "egress": "Egress traffic allowlist configuration",
+      "ingress": "Ingress traffic allowlist configuration",
+      "apply_to": "Set of policy objects",
+      "policy_mode": "Policy enforcement mode",
+      "vpc_id": "VPC ID",
+      "description": "Description",
+      "name": "Name"
     },
     "DeleteVirtualPrivateCloudSecurityPolicy": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudSecurityPolicy_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudSecurityPolicyDeleteParams": {
-      "where": ""
+      "where": "Query condition for deleting the specified security policy in VPC"
     },
     "VirtualPrivateCloudSecurityPolicyUpdateParams": {
-      "ingress": "",
-      "egress": "",
-      "apply_to": "",
-      "policy_mode": "",
-      "description": "",
-      "name": ""
+      "ingress": "Ingress traffic allowlist configuration",
+      "egress": "Egress traffic allowlist configuration",
+      "apply_to": "Set of policy objects",
+      "policy_mode": "Policy enforcement mode",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudSecurityPolicyUpdateBody": {
-      "data": "",
-      "where": ""
+      "data": "Data for updating the specified security policy in VPC",
+      "where": "Query condition for deleting the specified security policy in VPC"
     },
     "NestedVpcSubnetIpPooType": {
-      "end": "",
-      "start": ""
+      "end": "End IP of the subnet IP address pool",
+      "start": "Start IP of the subnet IP address pool"
     },
     "NestedVirtualPrivateCloudRouteTable": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloudSubnet": {
-      "cidr": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "gateway": "",
-      "id": "",
-      "ip_pools": "",
-      "local_id": "",
-      "name": "",
-      "route_table": "",
-      "total_ip_count": "",
-      "unused_ip_count": "",
-      "vpc": ""
+      "cidr": "Subnet CIDR block",
+      "description": "Description",
+      "entityAsyncStatus": "schemas.VirtualPrivateCloudSubnet.entityAsyncStatus",
+      "gateway": "Subnet default gateway",
+      "id": "Unique identifier of the resource",
+      "ip_pools": "IP address pool of the subnet",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "route_table": "Associated route table",
+      "total_ip_count": "Total number of IPs",
+      "unused_ip_count": "Number of unused IPs",
+      "vpc": "VPC"
     },
     "WithTask_VirtualPrivateCloudSubnet_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudSubnetIpPoolParams": {
       "end": "",
       "start": ""
     },
     "VirtualPrivateCloudSubnetCreationParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "vpc_id": "",
-      "description": "",
-      "name": ""
+      "route_table_id": "Associated route table ID",
+      "ip_pools": "IP address pool of the subnet",
+      "gateway": "Subnet default gateway",
+      "cidr": "Subnet CIDR block",
+      "vpc_id": "VPC ID",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudSubnetUpdateDataParams": {
-      "route_table_id": "",
-      "ip_pools": "",
-      "gateway": "",
-      "cidr": "",
-      "description": "",
-      "name": ""
+      "route_table_id": "Associated route table ID",
+      "ip_pools": "IP address pool of the subnet",
+      "gateway": "Subnet default gateway",
+      "cidr": "Subnet CIDR block",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudSubnetUpdationParams": {
       "data": "",
       "where": ""
     },
     "DeleteVirtualPrivateCloudSubnet": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloudSubnet_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudSubnetDeletionParams": {
       "where": ""
@@ -434,48 +434,48 @@
       "vm": ""
     },
     "NestedVirtualPrivateCloudSecurityPolicy": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloud": {
-      "associate_external_subnet_num": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "isolation_policies": "",
-      "local_id": "",
-      "mtu": "",
-      "name": "",
-      "route_tables": "",
-      "security_groups": "",
-      "security_policies": "",
-      "subnets": ""
+      "associate_external_subnet_num": "Number of associated external subnets",
+      "description": "Description",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "id": "Unique identifier of the resource",
+      "isolation_policies": "Associated VPC quarantine policy",
+      "local_id": "Resource UUID",
+      "mtu": "MTU of the VPC",
+      "name": "Name",
+      "route_tables": "Associated route table",
+      "security_groups": "Associated security group in VPC",
+      "security_policies": "Associated security policy in VPC",
+      "subnets": "Associated subnet"
     },
     "WithTask_VirtualPrivateCloud_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudCreationParams": {
-      "mtu": "",
-      "vpc_service_id": "",
-      "description": "",
-      "name": ""
+      "mtu": "MTU of the VPC",
+      "vpc_service_id": "VPC service ID (obtained via ANS service)",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudUpdateDataParams": {
-      "mtu": "",
-      "description": "",
-      "name": ""
+      "mtu": "MTU of the VPC",
+      "description": "Description",
+      "name": "Name"
     },
     "VirtualPrivateCloudUpdationParams": {
       "data": "",
       "where": ""
     },
     "DeleteVirtualPrivateCloud": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteVirtualPrivateCloud_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudDeletionParams": {
       "where": ""
@@ -490,21 +490,21 @@
       "enum": ""
     },
     "V2EverouteLicense": {
-      "code": "",
-      "expire_date": "",
-      "feature_type": "",
-      "id": "",
-      "max_socket_num": "",
-      "max_vcpu_num": "",
-      "max_vm_num": "",
-      "max_vpc_socket_num": "",
-      "pricing_type": "",
-      "serial": "",
-      "sign_date": "",
-      "software_edition": "",
-      "type": "",
-      "uid": "",
-      "version": ""
+      "code": "License code",
+      "expire_date": "Expiration time",
+      "feature_type": "Authorized features",
+      "id": "Unique identifier",
+      "max_socket_num": "Maximum number of licensed sockets for distributed firewall",
+      "max_vcpu_num": "Maximum licensed vCPU count for load balancers",
+      "max_vm_num": "Maximum number of licensed virtual machines for distributed firewall",
+      "max_vpc_socket_num": "Maximum number of authorized sockets for VPC networking",
+      "pricing_type": "Billing method",
+      "serial": "Software license serial number",
+      "sign_date": "Signing date",
+      "software_edition": "Version",
+      "type": "Type",
+      "uid": "UID",
+      "version": "License version number"
     },
     "V2EverouteLicenseOrderByInput": {
       "enum": "Sorts a list of records"
@@ -643,13 +643,13 @@
       "version_not_in": ""
     },
     "GetV2EverouteLicensesRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateV2EverouteLicense": {
       "count": "count"
@@ -667,323 +667,323 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "VirtualPrivateCloudClusterBinding": {
-      "cluster": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "mtu": "",
-      "vds": "",
-      "vlan_id": ""
+      "cluster": "Associated cluster",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "id": "Unique identifier of the resource",
+      "mtu": "MTU of the VPC system network",
+      "vds": "Associated virtual distributed switch",
+      "vlan_id": "VLAN ID of the VPC system network"
     },
     "VirtualPrivateCloudClusterBindingOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "VirtualPrivateCloudClusterBindingWhereInput": {
-      "mtu": "",
-      "mtu_gt": "",
-      "mtu_gte": "",
-      "mtu_in": "",
-      "mtu_lt": "",
-      "mtu_lte": "",
-      "mtu_not": "",
-      "mtu_not_in": ""
+      "mtu": "MTU of the VPC system network",
+      "mtu_gt": "The MTU of the VPC system network is greater than the specified value",
+      "mtu_gte": "The MTU of the VPC system network is greater than or equal to the specified value",
+      "mtu_in": "The MTU of the VPC system network is within the specified range",
+      "mtu_lt": "The MTU of the VPC system network is less than the specified value",
+      "mtu_lte": "The MTU of the VPC system network is less than or equal to the specified value",
+      "mtu_not": "The MTU of the VPC system network is not equal to the specified value",
+      "mtu_not_in": "The MTU of the VPC system network is not within the specified range"
     },
     "GetVirtualPrivateCloudClusterBindingsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudClusterBinding": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudClusterBindingConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudClusterBindingsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedVirtualPrivateCloudFloatingIp": {
-      "external_ip": "",
-      "id": "id"
+      "external_ip": "Allocated IP address",
+      "id": "Unique identifier"
     },
     "NestedVirtualPrivateCloudNatGateway": {
-      "external_ip": "",
-      "id": "id",
-      "name": "name"
+      "external_ip": "Translated address",
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedVirtualPrivateCloudRouterGateway": {
-      "external_ip": "",
-      "id": "id",
-      "name": "name"
+      "external_ip": "External interface",
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloudExternalSubnet": {
-      "cidr": "",
-      "description": "",
-      "entityAsyncStatus": "",
-      "floating_ip_cidr": "",
-      "floating_ips": "",
-      "gateway": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nat_gateway_cidr": "",
-      "nat_gateways": "",
-      "router_gateway_cidr": "",
-      "router_gateways": "",
-      "vlan": "",
-      "vpc": ""
+      "cidr": "CIDR block",
+      "description": "Description",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "floating_ip_cidr": "Floating IP address block specified from the CIDR block",
+      "floating_ips": "Associated floating IP collection",
+      "gateway": "Default gateway address",
+      "id": "Unique identifier of the resource",
+      "local_id": "Resource UUID",
+      "name": "Name",
+      "nat_gateway_cidr": "NAT gateway address block specified from the CIDR block",
+      "nat_gateways": "Associated NAT gateway collection",
+      "router_gateway_cidr": "Routing gateway address block specified from the CIDR block",
+      "router_gateways": "Associated routing gateway collection",
+      "vlan": "VM network",
+      "vpc": "VPC"
     },
     "VirtualPrivateCloudExternalSubnetOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudExternalSubnetsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudExternalSubnet": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudExternalSubnetConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudExternalSubnetsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudFloatingIpOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudFloatingIpsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudFloatingIp": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudFloatingIpConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudFloatingIpsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudNatGatewayOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudNatGatewaysRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudNatGateway": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudNatGatewayConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudNatGatewaysConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudRouteTableOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudRouteTablesRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudRouteTable": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudRouteTableConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudRouteTablesConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudRouterGatewayOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudRouterGatewaysRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudRouterGateway": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudRouterGatewayConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudRouterGatewaysConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudSecurityGroupOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudSecurityGroupsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudSecurityGroup": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudSecurityGroupConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudSecurityGroupsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudSecurityPolicyOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudSecurityPoliciesRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudSecurityPolicy": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudSecurityPolicyConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudSecurityPoliciesConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudSubnetOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudSubnetsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudSubnet": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudSubnetConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudSubnetsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "VirtualPrivateCloudOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloud": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     }
   }
 }

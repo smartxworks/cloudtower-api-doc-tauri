@@ -1,27 +1,27 @@
 {
   "schemas": {
     "ContentLibraryImageWhereInput": {
-      "iscsi_luns_every": "",
-      "iscsi_luns_none": "",
-      "iscsi_luns_some": ""
+      "iscsi_luns_every": "schemas.ContentLibraryImageWhereInput.iscsi_luns_every",
+      "iscsi_luns_none": "schemas.ContentLibraryImageWhereInput.iscsi_luns_none",
+      "iscsi_luns_some": "schemas.ContentLibraryImageWhereInput.iscsi_luns_some"
     },
     "ContentLibraryImage": {
       "iscsi_luns": ""
     },
     "VpcNicParams": {
       "ip_addresses": "IP address",
-      "floating_ip_id": "Floating IP ID, the unique identity associated with the floating IP",
-      "vpc_subnet_id": "VPC subnet ID, the unique identity of the associated VPC subnet",
-      "vpc_id": "VPC ID, the unique identity of the associated VPC"
+      "floating_ip_id": "Floating IP ID; unique identifier associated with the floating IP",
+      "vpc_subnet_id": "VPC subnet ID; unique identifier of the associated VPC subnet",
+      "vpc_id": "VPC ID; unique identifier of the associated VPC"
     },
     "VmNicParams": {
-      "vpc_nic": "VPC NIC related configuration",
-      "type": "VM NIC type"
+      "vpc_nic": "VPC NIC configuration",
+      "type": "Virtual machine NIC type"
     },
     "UpdateVpcNicPayloads": {
-      "floating_ip_id": "Floating IP ID, the unique identity associated with the floating IP",
+      "floating_ip_id": "Floating IP ID; unique identifier associated with the floating IP",
       "ip_addresses": "IP address",
-      "vpc_subnet_id": "VPC subnet ID, the unique identity of the associated VPC subnet"
+      "vpc_subnet_id": "VPC subnet ID; unique identifier of the associated VPC subnet"
     },
     "VmUpdateNicParams": {
       "data.vpc_nic": "VPC NIC related configuration"
@@ -32,16 +32,16 @@
       "where": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "nat_gateway_cidr": "",
-      "router_gateway_cidr": ""
+      "nat_gateway_cidr": "NAT gateway address block specified from the CIDR block",
+      "router_gateway_cidr": "Routing gateway address block specified from the CIDR block"
     },
     "NestedTemplateVpcNic": {
-      "vpc_local_id": "",
-      "vpc_subnet_local_id": ""
+      "vpc_local_id": "VPC UUID",
+      "vpc_subnet_local_id": "VPC subnet UUID"
     },
     "NestedTemplateNic": {
-      "type": "",
-      "vpc_nic": ""
+      "type": "schemas.NestedTemplateNic.type",
+      "vpc_nic": "schemas.NestedTemplateNic.vpc_nic"
     },
     "NestedVirtualPrivateCloudNic": {
       "floating_ip": "",

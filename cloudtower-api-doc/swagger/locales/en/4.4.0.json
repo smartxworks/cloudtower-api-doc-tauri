@@ -1,9 +1,9 @@
 {
   "schemas": {
     "VmWhereInput": {
-      "backup_plans_every": "",
-      "backup_plans_none": "",
-      "backup_plans_some": ""
+      "backup_plans_every": "Return associated resources where all items match the filter conditions",
+      "backup_plans_none": "Return associated resources that do not match the filter conditions",
+      "backup_plans_some": "Return associated resources where one or more items match the filter conditions"
     },
     "BackupPlanWhereInput": {
       "backup_delay_option": "",
@@ -1413,8 +1413,8 @@
       "enum": ""
     },
     "EverouteClusterWhereInput": {
-      "load_balancer_service": "",
-      "vpc_service": ""
+      "load_balancer_service": "Load balancing service",
+      "vpc_service": "VPC service"
     },
     "VlanWhereInput": {
       "qos_burst": "",
@@ -1427,14 +1427,14 @@
       "qos_burst_not_in": ""
     },
     "LoadBalancerServiceWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "entityAsyncStatus": "",
+      "AND": "Matches all filter conditions",
+      "NOT": "Does not match all filter conditions",
+      "OR": "Matches one or more filter conditions",
+      "entityAsyncStatus": "schemas.LoadBalancerServiceWhereInput.entityAsyncStatus",
       "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
+      "entityAsyncStatus_not": "schemas.LoadBalancerServiceWhereInput.entityAsyncStatus_not",
       "entityAsyncStatus_not_in": "",
-      "everoute_cluster": "",
+      "everoute_cluster": "{NET_SECURITY} cluster",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -1449,13 +1449,13 @@
       "id_not_in": "",
       "id_not_starts_with": "",
       "id_starts_with": "",
-      "phase": "",
+      "phase": "schemas.LoadBalancerServiceWhereInput.phase",
       "phase_in": "",
-      "phase_not": "",
+      "phase_not": "schemas.LoadBalancerServiceWhereInput.phase_not",
       "phase_not_in": "",
-      "vm_instances_every": "",
-      "vm_instances_none": "",
-      "vm_instances_some": "",
+      "vm_instances_every": "schemas.LoadBalancerServiceWhereInput.vm_instances_every",
+      "vm_instances_none": "schemas.LoadBalancerServiceWhereInput.vm_instances_none",
+      "vm_instances_some": "schemas.LoadBalancerServiceWhereInput.vm_instances_some",
       "vnet_bonds_every": "",
       "vnet_bonds_none": "",
       "vnet_bonds_some": ""
@@ -1532,20 +1532,20 @@
       "vlan": ""
     },
     "VirtualPrivateCloudServiceWhereInput": {
-      "cluster_bindings_every": "",
-      "cluster_bindings_none": "",
-      "cluster_bindings_some": "",
-      "edge_gateways_every": "",
-      "edge_gateways_none": "",
-      "edge_gateways_some": "",
-      "entityAsyncStatus": "",
+      "cluster_bindings_every": "schemas.VirtualPrivateCloudServiceWhereInput.cluster_bindings_every",
+      "cluster_bindings_none": "schemas.VirtualPrivateCloudServiceWhereInput.cluster_bindings_none",
+      "cluster_bindings_some": "schemas.VirtualPrivateCloudServiceWhereInput.cluster_bindings_some",
+      "edge_gateways_every": "schemas.VirtualPrivateCloudServiceWhereInput.edge_gateways_every",
+      "edge_gateways_none": "schemas.VirtualPrivateCloudServiceWhereInput.edge_gateways_none",
+      "edge_gateways_some": "schemas.VirtualPrivateCloudServiceWhereInput.edge_gateways_some",
+      "entityAsyncStatus": "schemas.VirtualPrivateCloudServiceWhereInput.entityAsyncStatus",
       "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
+      "entityAsyncStatus_not": "schemas.VirtualPrivateCloudServiceWhereInput.entityAsyncStatus_not",
       "entityAsyncStatus_not_in": "",
-      "everoute_cluster": "",
-      "external_subnets_every": "",
-      "external_subnets_none": "",
-      "external_subnets_some": "",
+      "everoute_cluster": "{NET_SECURITY} cluster",
+      "external_subnets_every": "schemas.VirtualPrivateCloudServiceWhereInput.external_subnets_every",
+      "external_subnets_none": "schemas.VirtualPrivateCloudServiceWhereInput.external_subnets_none",
+      "external_subnets_some": "schemas.VirtualPrivateCloudServiceWhereInput.external_subnets_some",
       "id": "",
       "id_contains": "",
       "id_ends_with": "",
@@ -1574,13 +1574,13 @@
       "internal_cidr_not_in": "",
       "internal_cidr_not_starts_with": "",
       "internal_cidr_starts_with": "",
-      "phase": "",
+      "phase": "schemas.VirtualPrivateCloudServiceWhereInput.phase",
       "phase_in": "",
-      "phase_not": "",
+      "phase_not": "schemas.VirtualPrivateCloudServiceWhereInput.phase_not",
       "phase_not_in": "",
-      "vpcs_every": "",
-      "vpcs_none": "",
-      "vpcs_some": ""
+      "vpcs_every": "schemas.VirtualPrivateCloudServiceWhereInput.vpcs_every",
+      "vpcs_none": "schemas.VirtualPrivateCloudServiceWhereInput.vpcs_none",
+      "vpcs_some": "schemas.VirtualPrivateCloudServiceWhereInput.vpcs_some"
     },
     "VirtualPrivateCloudEdgeGatewayWhereInput": {
       "cluster": "",
@@ -1600,24 +1600,24 @@
       "data_volume_size_lte": "",
       "data_volume_size_not": "",
       "data_volume_size_not_in": "",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "entityAsyncStatus": "",
-      "entityAsyncStatus_in": "",
-      "entityAsyncStatus_not": "",
-      "entityAsyncStatus_not_in": "",
+      "description": "Description",
+      "description_contains": "The description contains the specified string",
+      "description_ends_with": "The description ends with the specified string",
+      "description_gt": "The description is greater than the specified value",
+      "description_gte": "The description is greater than or equal to the specified value",
+      "description_in": "The description is within the specified range",
+      "description_lt": "The description is less than the specified value",
+      "description_lte": "The description is less than or equal to the specified value",
+      "description_not": "The description is not equal to the specified value",
+      "description_not_contains": "The description does not contain the specified string",
+      "description_not_ends_with": "The description does not end with the specified string",
+      "description_not_in": "The description is not within the specified range",
+      "description_not_starts_with": "The description does not start with the specified string",
+      "description_starts_with": "The description starts with the specified string",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "entityAsyncStatus_in": "The asynchronous status (internal field) is within the specified range",
+      "entityAsyncStatus_not": "The asynchronous status (internal field) is not equal to the specified value",
+      "entityAsyncStatus_not_in": "The asynchronous status (internal field) is not within the specified range",
       "gateway": "",
       "gateway_contains": "",
       "gateway_ends_with": "",
@@ -1632,20 +1632,20 @@
       "gateway_not_in": "",
       "gateway_not_starts_with": "",
       "gateway_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
+      "id": "Unique identifier",
+      "id_contains": "The unique identifier contains the specified string",
+      "id_ends_with": "The unique identifier ends with the specified string",
+      "id_gt": "The unique identifier is greater than the specified value",
+      "id_gte": "The unique identifier is greater than or equal to the specified value",
+      "id_in": "The unique identifier is within the specified range",
+      "id_lt": "The unique identifier is less than the specified value",
+      "id_lte": "The unique identifier is less than or equal to the specified value",
+      "id_not": "The unique identifier is not equal to the specified value",
+      "id_not_contains": "The unique identifier does not contain the specified string",
+      "id_not_ends_with": "The unique identifier does not end with the specified string",
+      "id_not_in": "The unique identifier is not within the specified range",
+      "id_not_starts_with": "The unique identifier does not start with the specified string",
+      "id_starts_with": "The unique identifier starts with the specified string",
       "memory_size": "",
       "memory_size_gt": "",
       "memory_size_gte": "",
@@ -1654,20 +1654,20 @@
       "memory_size_lte": "",
       "memory_size_not": "",
       "memory_size_not_in": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
+      "name": "Name",
+      "name_contains": "The name contains the specified string",
+      "name_ends_with": "The name ends with the specified string",
+      "name_gt": "The name is greater than the specified value",
+      "name_gte": "The name is greater than or equal to the specified value",
+      "name_in": "The name is within the specified range",
+      "name_lt": "The name is less than the specified value",
+      "name_lte": "The name is less than or equal to the specified value",
+      "name_not": "The name is not equal to the specified value",
+      "name_not_contains": "The name does not contain the specified string",
+      "name_not_ends_with": "The name does not end with the specified string",
+      "name_not_in": "The name is not within the specified range",
+      "name_not_starts_with": "The name does not start with the specified string",
+      "name_starts_with": "The name starts with the specified string",
       "phase": "",
       "phase_in": "",
       "phase_not": "",
@@ -1686,16 +1686,16 @@
       "subnet_mask_not_in": "",
       "subnet_mask_not_starts_with": "",
       "subnet_mask_starts_with": "",
-      "vdses_every": "",
-      "vdses_none": "",
-      "vdses_some": "",
+      "vdses_every": "Return associated resources where all items match the filter conditions",
+      "vdses_none": "Return associated resources that do not match the filter conditions",
+      "vdses_some": "Return associated resources where one or more items match the filter conditions",
       "vm_instances_every": "",
       "vm_instances_none": "",
       "vm_instances_some": "",
       "vpc_service": ""
     },
     "Vm": {
-      "backup_plans": ""
+      "backup_plans": "Backup plan"
     },
     "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
       "owner": "",
@@ -1737,22 +1737,22 @@
       "auth_info": ""
     },
     "NestedSecurityGroup": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedSecurityPolicyApply": {
-      "security_group": "",
-      "security_group_id": ""
+      "security_group": "Security group",
+      "security_group_id": "Security group ID"
     },
     "NetworkPolicyRuleAlgProtocol": {
       "enum": ""
     },
     "NestedNetworkPolicyRulePort": {
-      "alg_protocol": ""
+      "alg_protocol": "schemas.NestedNetworkPolicyRulePort.alg_protocol"
     },
     "NestedNetworkPolicyRule": {
-      "security_group": "",
-      "security_group_id": ""
+      "security_group": "Security group",
+      "security_group_id": "Security group ID"
     },
     "NetworkPolicyRulePortInput": {
       "alg_protocol": ""
@@ -1761,7 +1761,7 @@
       "enum": "* ALL: Allow access from all addresses.\n"
     },
     "SecurityPolicyIngressEgressInput": {
-      "type": ""
+      "type": "Type"
     },
     "Vlan": {
       "qos_burst": ""
@@ -1775,8 +1775,8 @@
       "result": ""
     },
     "WithTask_DisassociateSystemServiceFromObsServiceResult_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "ObservabilityConnectedSystemServiceType": {
       "enum": ""
@@ -2211,14 +2211,14 @@
       "aggregate": ""
     },
     "NestedLoadBalancerService": {
-      "id": "id"
+      "id": "Unique identifier"
     },
     "NestedVirtualPrivateCloudService": {
-      "id": "id"
+      "id": "Unique identifier"
     },
     "EverouteCluster": {
-      "load_balancer_service": "",
-      "vpc_service": ""
+      "load_balancer_service": "Load balancing service",
+      "vpc_service": "VPC service"
     }
   },
   "paths": {

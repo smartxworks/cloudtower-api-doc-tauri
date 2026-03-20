@@ -166,9 +166,9 @@
       "valid_cache_space_not_in": ""
     },
     "VmWhereInput": {
-      "ha_priority": "",
+      "ha_priority": "schemas.VmWhereInput.ha_priority",
       "ha_priority_in": "",
-      "ha_priority_not": "",
+      "ha_priority_not": "schemas.VmWhereInput.ha_priority_not",
       "ha_priority_not_in": ""
     },
     "HostWhereInput": {
@@ -196,9 +196,9 @@
       "commited_memory_bytes_lte": "",
       "commited_memory_bytes_not": "",
       "commited_memory_bytes_not_in": "",
-      "connect_status": "",
+      "connect_status": "schemas.HostWhereInput.connect_status",
       "connect_status_in": "",
-      "connect_status_not": "",
+      "connect_status_not": "schemas.HostWhereInput.connect_status_not",
       "connect_status_not_in": "",
       "disk_pools_every": "",
       "disk_pools_none": "",
@@ -211,9 +211,9 @@
       "downgraded_prioritized_space_lte": "",
       "downgraded_prioritized_space_not": "",
       "downgraded_prioritized_space_not_in": "",
-      "merged_status": "",
+      "merged_status": "schemas.HostWhereInput.merged_status",
       "merged_status_in": "",
-      "merged_status_not": "",
+      "merged_status_not": "schemas.HostWhereInput.merged_status_not",
       "merged_status_not_in": "",
       "perf_allocated_data_space": "",
       "perf_allocated_data_space_gt": "",
@@ -577,9 +577,9 @@
       "business_hosts_every": "",
       "business_hosts_none": "",
       "business_hosts_some": "",
-      "configuration_method": "",
+      "configuration_method": "schemas.IscsiLunWhereInput.configuration_method",
       "configuration_method_in": "",
-      "configuration_method_not": "",
+      "configuration_method_not": "schemas.IscsiLunWhereInput.configuration_method_not",
       "configuration_method_not_in": "",
       "downgraded_prioritized_space": "",
       "downgraded_prioritized_space_gt": "",
@@ -605,18 +605,18 @@
       "ec_m_lte": "",
       "ec_m_not": "",
       "ec_m_not_in": "",
-      "encrypt_method": "",
+      "encrypt_method": "schemas.IscsiLunWhereInput.encrypt_method",
       "encrypt_method_in": "",
-      "encrypt_method_not": "",
+      "encrypt_method_not": "schemas.IscsiLunWhereInput.encrypt_method_not",
       "encrypt_method_not_in": "",
       "prioritized": "",
       "prioritized_not": "",
       "replication_plans_every": "",
       "replication_plans_none": "",
       "replication_plans_some": "",
-      "resiliency_type": "",
+      "resiliency_type": "schemas.IscsiLunWhereInput.resiliency_type",
       "resiliency_type_in": "",
-      "resiliency_type_not": "",
+      "resiliency_type_not": "schemas.IscsiLunWhereInput.resiliency_type_not",
       "resiliency_type_not_in": "",
       "snapshot_plans_every": "",
       "snapshot_plans_none": "",
@@ -794,9 +794,9 @@
       "business_hosts_some": "",
       "configuration_adaptive": "",
       "configuration_adaptive_not": "",
-      "configuration_method": "",
+      "configuration_method": "schemas.IscsiTargetWhereInput.configuration_method",
       "configuration_method_in": "",
-      "configuration_method_not": "",
+      "configuration_method_not": "schemas.IscsiTargetWhereInput.configuration_method_not",
       "configuration_method_not_in": "",
       "ec_k": "",
       "ec_k_gt": "",
@@ -814,9 +814,9 @@
       "ec_m_lte": "",
       "ec_m_not": "",
       "ec_m_not_in": "",
-      "encrypt_method": "",
+      "encrypt_method": "schemas.IscsiTargetWhereInput.encrypt_method",
       "encrypt_method_in": "",
-      "encrypt_method_not": "",
+      "encrypt_method_not": "schemas.IscsiTargetWhereInput.encrypt_method_not",
       "encrypt_method_not_in": "",
       "iscsi_connections_every": "",
       "iscsi_connections_none": "",
@@ -831,9 +831,9 @@
       "iscsi_luns_num_not_in": "",
       "prioritized": "",
       "prioritized_not": "",
-      "resiliency_type": "",
+      "resiliency_type": "schemas.IscsiTargetWhereInput.resiliency_type",
       "resiliency_type_in": "",
-      "resiliency_type_not": "",
+      "resiliency_type_not": "schemas.IscsiTargetWhereInput.resiliency_type_not",
       "resiliency_type_not_in": ""
     },
     "ConfigurationMethod": {
@@ -945,9 +945,9 @@
       "snapshot_plans_some": ""
     },
     "VmSnapshotWhereInput": {
-      "ha_priority": "",
+      "ha_priority": "schemas.VmSnapshotWhereInput.ha_priority",
       "ha_priority_in": "",
-      "ha_priority_not": "",
+      "ha_priority_not": "schemas.VmSnapshotWhereInput.ha_priority_not",
       "ha_priority_not_in": ""
     },
     "NvmfNamespaceSnapshotWhereInput": {
@@ -1398,7 +1398,7 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "Vm": {
-      "ha_priority": ""
+      "ha_priority": "schemas.Vm.ha_priority"
     },
     "MountNewCreateDisksParams": {
       "vm_volume.resident_in_cache": "",
@@ -1447,7 +1447,7 @@
     "NestedStoragePolicyConfig": {
       "ec_k": "",
       "ec_m": "",
-      "resiliency_type": ""
+      "resiliency_type": "schemas.NestedStoragePolicyConfig.resiliency_type"
     },
     "HostBatchCreateDiskInput": {
       "chunk_ins_id": ""
@@ -1459,10 +1459,10 @@
       "allocated_prioritized_space": "",
       "allocated_prioritized_space_usage": "",
       "commited_memory_bytes": "",
-      "connect_status": "",
+      "connect_status": "schemas.Host.connect_status",
       "disk_pools": "",
       "downgraded_prioritized_space": "",
-      "merged_status": "",
+      "merged_status": "schemas.Host.merged_status",
       "perf_allocated_data_space": "",
       "perf_failure_data_space": "",
       "perf_total_data_capacity": "",
@@ -1477,7 +1477,7 @@
     "IscsiLunSnapshot": {
       "ec_k": "",
       "ec_m": "",
-      "resiliency_type": "",
+      "resiliency_type": "schemas.IscsiLunSnapshot.resiliency_type",
       "snapshot_group": ""
     },
     "NestedBusinessHostGroup": {
@@ -1492,14 +1492,14 @@
       "business_host_groups": "",
       "business_host_is_same_with_parent": "",
       "business_hosts": "",
-      "configuration_method": "",
+      "configuration_method": "schemas.IscsiLun.configuration_method",
       "downgraded_prioritized_space": "",
       "ec_k": "",
       "ec_m": "",
-      "encrypt_method": "",
+      "encrypt_method": "schemas.IscsiLun.encrypt_method",
       "prioritized": "",
       "replication_plans": "",
-      "resiliency_type": "",
+      "resiliency_type": "schemas.IscsiLun.resiliency_type",
       "snapshot_plans": ""
     },
     "IscsiLunCommonParams": {
@@ -1517,14 +1517,14 @@
       "business_host_groups": "",
       "business_hosts": "",
       "configuration_adaptive": "",
-      "configuration_method": "",
+      "configuration_method": "schemas.IscsiTarget.configuration_method",
       "ec_k": "",
       "ec_m": "",
-      "encrypt_method": "",
+      "encrypt_method": "schemas.IscsiTarget.encrypt_method",
       "iscsi_connections": "",
       "iscsi_luns_num": "",
       "prioritized": "",
-      "resiliency_type": ""
+      "resiliency_type": "schemas.IscsiTarget.resiliency_type"
     },
     "IscsiTargetCommonParams": {
       "business_host_groups": "",
@@ -1641,7 +1641,7 @@
       "resident_in_cache": ""
     },
     "VmSnapshot": {
-      "ha_priority": ""
+      "ha_priority": "schemas.VmSnapshot.ha_priority"
     },
     "VmVolumeSnapshot": {
       "elf_storage_policy_ec_k": "",

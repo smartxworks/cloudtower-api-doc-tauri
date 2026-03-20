@@ -1,43 +1,43 @@
 {
   "schemas": {
     "VmWhereInput": {
-      "used_size": "",
-      "used_size_gt": "",
-      "used_size_gte": "",
-      "used_size_in": "",
-      "used_size_lt": "",
-      "used_size_lte": "",
-      "used_size_not": "",
-      "used_size_not_in": "",
-      "used_size_usage": "",
-      "used_size_usage_gt": "",
-      "used_size_usage_gte": "",
-      "used_size_usage_in": "",
-      "used_size_usage_lt": "",
-      "used_size_usage_lte": "",
-      "used_size_usage_not": "",
-      "used_size_usage_not_in": ""
+      "used_size": "Storage usage (bytes)",
+      "used_size_gt": "The storage usage (bytes) is greater than the specified value",
+      "used_size_gte": "The storage usage (bytes) is greater than or equal to the specified value",
+      "used_size_in": "The storage usage (bytes) is within the specified range",
+      "used_size_lt": "The storage usage (bytes) is less than the specified value",
+      "used_size_lte": "The storage usage (bytes) is less than or equal to the specified value",
+      "used_size_not": "The storage usage (bytes) is not equal to the specified value",
+      "used_size_not_in": "The storage usage (bytes) is not within the specified range",
+      "used_size_usage": "Storage usage",
+      "used_size_usage_gt": "The storage usage is greater than the specified value",
+      "used_size_usage_gte": "The storage usage is greater than or equal to the specified value",
+      "used_size_usage_in": "The storage usage is within the specified range",
+      "used_size_usage_lt": "The storage usage is less than the specified value",
+      "used_size_usage_lte": "The storage usage is less than or equal to the specified value",
+      "used_size_usage_not": "The storage usage is not equal to the specified value",
+      "used_size_usage_not_in": "The storage usage is not within the specified range"
     },
     "VmVolumeWhereInput": {
-      "used_size": "",
-      "used_size_gt": "",
-      "used_size_gte": "",
-      "used_size_in": "",
-      "used_size_lt": "",
-      "used_size_lte": "",
-      "used_size_not": "",
-      "used_size_not_in": "",
-      "used_size_usage": "",
-      "used_size_usage_gt": "",
-      "used_size_usage_gte": "",
-      "used_size_usage_in": "",
-      "used_size_usage_lt": "",
-      "used_size_usage_lte": "",
-      "used_size_usage_not": "",
-      "used_size_usage_not_in": ""
+      "used_size": "Storage usage (bytes)",
+      "used_size_gt": "The storage usage (bytes) is greater than the specified value",
+      "used_size_gte": "The storage usage (bytes) is greater than or equal to the specified value",
+      "used_size_in": "The storage usage (bytes) is within the specified range",
+      "used_size_lt": "The storage usage (bytes) is less than the specified value",
+      "used_size_lte": "The storage usage (bytes) is less than or equal to the specified value",
+      "used_size_not": "The storage usage (bytes) is not equal to the specified value",
+      "used_size_not_in": "The storage usage (bytes) is not within the specified range",
+      "used_size_usage": "Storage usage",
+      "used_size_usage_gt": "The storage usage is greater than the specified value",
+      "used_size_usage_gte": "The storage usage is greater than or equal to the specified value",
+      "used_size_usage_in": "The storage usage is within the specified range",
+      "used_size_usage_lt": "The storage usage is less than the specified value",
+      "used_size_usage_lte": "The storage usage is less than or equal to the specified value",
+      "used_size_usage_not": "The storage usage is not equal to the specified value",
+      "used_size_usage_not_in": "The storage usage is not within the specified range"
     },
     "IsolationPolicyWhereInput": {
-      "statistics": ""
+      "statistics": "Hit count statistics"
     },
     "VirtualPrivateCloudNicWhereInput": {
       "entityAsyncStatus": "",
@@ -46,18 +46,18 @@
       "entityAsyncStatus_not_in": ""
     },
     "VirtualPrivateCloudFloatingIpWhereInput": {
-      "external_subnet_group": ""
+      "external_subnet_group": "External subnet group"
     },
     "VirtualPrivateCloudNatGatewayWhereInput": {
-      "external_subnet_group": ""
+      "external_subnet_group": "External subnet group"
     },
     "VirtualPrivateCloudRouterGatewayWhereInput": {
-      "external_subnet_group": ""
+      "external_subnet_group": "External subnet group"
     },
     "SecurityPolicyStatisticsWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
+      "AND": "Matches all filter conditions",
+      "NOT": "Does not match all filter conditions",
+      "OR": "Matches one or more filter conditions",
       "count_reset_timestamp": "",
       "count_reset_timestamp_gt": "",
       "count_reset_timestamp_gte": "",
@@ -152,7 +152,7 @@
       "total_count_not_in": ""
     },
     "SecurityPolicyWhereInput": {
-      "statistics": ""
+      "statistics": "Hit count statistics"
     },
     "UserAuditLogCreationParams": {
       "api_key_name": "",
@@ -171,38 +171,38 @@
       "source": ""
     },
     "Vm": {
-      "used_size": "",
-      "used_size_usage": ""
+      "used_size": "Storage usage (bytes)",
+      "used_size_usage": "Storage usage"
     },
     "NestedNetworkPolicyRuleService": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedNetworkPolicyRule": {
-      "except_ip_block": "",
-      "security_group": "",
-      "security_group_id": "",
-      "service_ids": "",
-      "services": ""
+      "except_ip_block": "Excluded IP address allowlist/blocklist",
+      "security_group": "Security group",
+      "security_group_id": "Security group ID",
+      "service_ids": "Service ID",
+      "services": "Service"
     },
     "NestedSecurityPolicyStatistics": {
-      "count_reset_timestamp": "",
-      "count_update_timestamp": "",
-      "match_allow_count": "",
-      "match_default_allow_count": "",
-      "match_default_drop_count": "",
-      "match_drop_count": "",
-      "match_whitelist_count": "",
-      "total_count": ""
+      "count_reset_timestamp": "Count reset time",
+      "count_update_timestamp": "Count update time",
+      "match_allow_count": "Secured flow count",
+      "match_default_allow_count": "Number of data flows allowed by default",
+      "match_default_drop_count": "Number of data flows denied by default",
+      "match_drop_count": "Denied flow count",
+      "match_whitelist_count": "Secured flow count (global allowlist)",
+      "total_count": "Number of matched data flows"
     },
     "IsolationPolicy": {
-      "statistics": ""
+      "statistics": "Hit count statistics"
     },
     "SecurityGroupWhereInput": {
       "member_type_not_in": "",
-      "member_type_not": "",
+      "member_type_not": "schemas.SecurityGroupWhereInput.member_type_not",
       "member_type_in": "",
-      "member_type": "",
+      "member_type": "schemas.SecurityGroupWhereInput.member_type",
       "ips_starts_with": "",
       "ips_not_starts_with": "",
       "ips_not_in": "",
@@ -236,99 +236,99 @@
       "enum": ""
     },
     "SecurityPolicyIngressEgressInput": {
-      "service_ids": ""
+      "service_ids": "Service ID"
     },
     "IsolationPolicyCreateParams": {
-      "ingress": "",
-      "egress": "",
-      "mode": "",
-      "vm_id": "",
-      "everoute_cluster_id": ""
+      "ingress": "Ingress traffic control configuration",
+      "egress": "Egress traffic control configuration",
+      "mode": "Quarantine mode",
+      "vm_id": "Quarantined virtual machine ID",
+      "everoute_cluster_id": "ANS service ID"
     },
     "IsolationPolicyUpdateParams": {
-      "ingress": "",
-      "egress": "",
-      "mode": ""
+      "ingress": "Ingress traffic control configuration",
+      "egress": "Egress traffic control configuration",
+      "mode": "Quarantine mode"
     },
     "IsolationPolicyUpdateBody": {
       "data": "",
       "where": ""
     },
     "DeleteIsolationPolicy": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "IsolationPolicyDeleteParams": {
       "where": ""
     },
     "NetworkPolicyRuleService": {
-      "description": "",
-      "id": "",
-      "members": "",
-      "name": "",
-      "preset": ""
+      "description": "Description",
+      "id": "Unique identifier",
+      "members": "Protocol",
+      "name": "Name",
+      "preset": "Whether it is a system-predefined service"
     },
     "WithTask_NetworkPolicyRuleService_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "NetworkPolicyRuleServiceMemberParams": {
-      "alg_protocol": "",
-      "port": "",
-      "protocol": ""
+      "alg_protocol": "ALG protocol",
+      "port": "Port",
+      "protocol": "Protocol"
     },
     "NetworkPolicyRuleServiceCreationParams": {
-      "members": "",
-      "description": "",
-      "name": ""
+      "members": "Protocol",
+      "description": "Description",
+      "name": "Name"
     },
     "NetworkPolicyRuleServiceWhereInput": {
-      "AND": "All conditions must return true.",
-      "NOT": "All conditions must return false.",
-      "OR": "One or more conditions must return true.",
-      "description": "",
-      "description_contains": "",
-      "description_ends_with": "",
-      "description_gt": "",
-      "description_gte": "",
-      "description_in": "",
-      "description_lt": "",
-      "description_lte": "",
-      "description_not": "",
-      "description_not_contains": "",
-      "description_not_ends_with": "",
-      "description_not_in": "",
-      "description_not_starts_with": "",
-      "description_starts_with": "",
-      "id": "",
-      "id_contains": "",
-      "id_ends_with": "",
-      "id_gt": "",
-      "id_gte": "",
-      "id_in": "",
-      "id_lt": "",
-      "id_lte": "",
-      "id_not": "",
-      "id_not_contains": "",
-      "id_not_ends_with": "",
-      "id_not_in": "",
-      "id_not_starts_with": "",
-      "id_starts_with": "",
-      "name": "",
-      "name_contains": "",
-      "name_ends_with": "",
-      "name_gt": "",
-      "name_gte": "",
-      "name_in": "",
-      "name_lt": "",
-      "name_lte": "",
-      "name_not": "",
-      "name_not_contains": "",
-      "name_not_ends_with": "",
-      "name_not_in": "",
-      "name_not_starts_with": "",
-      "name_starts_with": "",
-      "preset": "",
-      "preset_not": ""
+      "AND": "Matches all filter conditions",
+      "NOT": "Does not match all filter conditions",
+      "OR": "Matches one or more filter conditions",
+      "description": "Description",
+      "description_contains": "The description contains the specified string",
+      "description_ends_with": "The description ends with the specified string",
+      "description_gt": "The description is greater than the specified value",
+      "description_gte": "The description is greater than or equal to the specified value",
+      "description_in": "The description is within the specified range",
+      "description_lt": "The description is less than the specified value",
+      "description_lte": "The description is less than or equal to the specified value",
+      "description_not": "The description is not equal to the specified value",
+      "description_not_contains": "The description does not contain the specified string",
+      "description_not_ends_with": "The description does not end with the specified string",
+      "description_not_in": "The description is not within the specified range",
+      "description_not_starts_with": "The description does not start with the specified string",
+      "description_starts_with": "The description starts with the specified string",
+      "id": "Unique identifier",
+      "id_contains": "The unique identifier contains the specified string",
+      "id_ends_with": "The unique identifier ends with the specified string",
+      "id_gt": "The unique identifier is greater than the specified value",
+      "id_gte": "The unique identifier is greater than or equal to the specified value",
+      "id_in": "The unique identifier is within the specified range",
+      "id_lt": "The unique identifier is less than the specified value",
+      "id_lte": "The unique identifier is less than or equal to the specified value",
+      "id_not": "The unique identifier is not equal to the specified value",
+      "id_not_contains": "The unique identifier does not contain the specified string",
+      "id_not_ends_with": "The unique identifier does not end with the specified string",
+      "id_not_in": "The unique identifier is not within the specified range",
+      "id_not_starts_with": "The unique identifier does not start with the specified string",
+      "id_starts_with": "The unique identifier starts with the specified string",
+      "name": "Name",
+      "name_contains": "The name contains the specified string",
+      "name_ends_with": "The name ends with the specified string",
+      "name_gt": "The name is greater than the specified value",
+      "name_gte": "The name is greater than or equal to the specified value",
+      "name_in": "The name is within the specified range",
+      "name_lt": "The name is less than the specified value",
+      "name_lte": "The name is less than or equal to the specified value",
+      "name_not": "The name is not equal to the specified value",
+      "name_not_contains": "The name does not contain the specified string",
+      "name_not_ends_with": "The name does not end with the specified string",
+      "name_not_in": "The name is not within the specified range",
+      "name_not_starts_with": "The name does not start with the specified string",
+      "name_starts_with": "The name starts with the specified string",
+      "preset": "Whether it is a system-predefined service",
+      "preset_not": "The it is a system-predefined service is not equal to the specified value"
     },
     "NetworkPolicyRuleServiceUpdationParams": {
       "data.members": "",
@@ -338,11 +338,11 @@
       "where": ""
     },
     "DeleteNetworkPolicyRuleService": {
-      "id": "resource‘s id "
+      "id": "Resource ID"
     },
     "WithTask_DeleteNetworkPolicyRuleService_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "NetworkPolicyRuleServiceDeletionParams": {
       "where": ""
@@ -365,13 +365,13 @@
       "ec": ""
     },
     "SecurityPolicy": {
-      "statistics": ""
+      "statistics": "Hit count statistics"
     },
     "SecurityPolicyCreateParams": {
-      "is_blocklist": ""
+      "is_blocklist": "Whether it is a deny policy"
     },
     "SecurityPolicyUpdateParams": {
-      "is_blocklist": ""
+      "is_blocklist": "Whether it is a deny policy"
     },
     "TaskCreationParams": {
       "api_key_name": "",
@@ -384,106 +384,106 @@
       "external_ip": ""
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
-      "edge_gateway": ""
+      "edge_gateway": "Edge gateway"
     },
     "NestedVirtualPrivateCloudEdgeGatewayGroup": {
-      "id": "id",
-      "name": "name"
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "NestedVirtualPrivateCloudExternalSubnetGroup": {
-      "edge_gateway_group": "",
-      "id": "id",
-      "name": "name"
+      "edge_gateway_group": "Edge gateway group",
+      "id": "Unique identifier",
+      "name": "Name"
     },
     "VirtualPrivateCloudFloatingIp": {
-      "external_ips": "",
-      "external_subnet_group": ""
+      "external_ips": "Primary/secondary IP address",
+      "external_subnet_group": "External subnet group"
     },
     "BatchCreateVirtualPrivateCloudFloatingIp": {
-      "local_id": ""
+      "local_id": "UUID of the floating IP"
     },
     "WithTask_BatchCreateVirtualPrivateCloudFloatingIp_": {
-      "task_id": "asynchronous task id ",
-      "data": "resources"
+      "task_id": "Asynchronous task ID.",
+      "data": "Resource"
     },
     "VirtualPrivateCloudExternalIpsParams": {
-      "edge_gateway_id": "",
-      "external_ip": ""
+      "edge_gateway_id": "Edge gateway ID",
+      "external_ip": "IP address"
     },
     "BatchCreateVirtualPrivateCloudFloatingIpsParams": {
-      "auto_allocate_number": "",
-      "ip_addresses_under_group": "",
-      "ip_addresses": "",
-      "external_subnet_group_id": "",
-      "external_subnet_id": "",
-      "vpc_id": ""
+      "auto_allocate_number": "Number of automatically assigned IPs",
+      "ip_addresses_under_group": "IP address group (required when manually specified and associated with an external subnet group)",
+      "ip_addresses": "IP address (required when manually specified and associated with an external subnet)",
+      "external_subnet_group_id": "External subnet group ID",
+      "external_subnet_id": "External subnet ID",
+      "vpc_id": "VPC ID"
     },
     "VirtualPrivateCloudNatGateway": {
-      "external_ips": "",
-      "external_subnet_group": ""
+      "external_ips": "Primary/secondary translated address",
+      "external_subnet_group": "External subnet group"
     },
     "VirtualPrivateCloudNatGatewayCreationParams": {
-      "external_ips": "",
-      "external_subnet_group_id": ""
+      "external_ips": "Primary/secondary translated address (required when manually specified and the primary/secondary configurations differ)",
+      "external_subnet_group_id": "External subnet group ID"
     },
     "VirtualPrivateCloudNatGatewayUpdationParams": {
       "data.external_ips": ""
     },
     "NestedVpcRouterGatewayRuleNextHopsItemType": {
-      "edge_gateway_id": "",
-      "nexthop": ""
+      "edge_gateway_id": "Edge gateway ID",
+      "nexthop": "Next hop address"
     },
     "NestedVpcRouterGatewayRuleType": {
-      "nexthops": ""
+      "nexthops": "Primary/secondary next hop address"
     },
     "VirtualPrivateCloudRouterGateway": {
-      "external_ips": "",
-      "external_subnet_group": ""
+      "external_ips": "Primary/secondary external interface",
+      "external_subnet_group": "External subnet group"
     },
     "VirtualPrivateCloudRouterGatewayNexthopInputType": {
-      "edge_gateway_id": "",
-      "nexthop": ""
+      "edge_gateway_id": "Edge gateway ID",
+      "nexthop": "Next hop address"
     },
     "VirtualPrivateCloudRouterGatewayRuleInputType": {
-      "nexthops": ""
+      "nexthops": "Primary/secondary next hop address"
     },
     "VirtualPrivateCloudRouterGatewayCreationParams": {
-      "external_ips": "",
-      "external_subnet_group_id": ""
+      "external_ips": "Primary/secondary external interface (required when manually specified and the primary/secondary configurations differ)",
+      "external_subnet_group_id": "External subnet group ID"
     },
     "VirtualPrivateCloudRouterGatewayUpdateDataParams": {
-      "external_ips": ""
+      "external_ips": "Primary/secondary external interface"
     },
     "VmVolume": {
-      "used_size": "",
-      "used_size_usage": ""
+      "used_size": "Storage usage (bytes)",
+      "used_size_usage": "Storage usage"
     },
     "NetworkPolicyRuleServiceOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetNetworkPolicyRuleServicesRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateNetworkPolicyRuleService": {
-      "count": "count"
+      "count": "Count"
     },
     "NetworkPolicyRuleServiceConnection": {
       "aggregate": ""
     },
     "GetNetworkPolicyRuleServicesConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "PciDeviceMdevState": {
       "enum": ""
@@ -2731,91 +2731,91 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "VirtualPrivateCloudEdgeGatewayGroup": {
-      "active_edge_gateway_ids": "",
-      "description": "",
-      "edge_gateways": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "name": "",
-      "primary_edge_gateway_id": ""
+      "active_edge_gateway_ids": "Active edge gateway ID",
+      "description": "Description",
+      "edge_gateways": "Edge gateway",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "id": "Unique identifier",
+      "name": "Name",
+      "primary_edge_gateway_id": "Primary edge gateway ID"
     },
     "VirtualPrivateCloudEdgeGatewayGroupOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudEdgeGatewayGroupsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudEdgeGatewayGroup": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudEdgeGatewayGroupConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudEdgeGatewayGroupsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedVirtualPrivateCloudEdgeGatewayInstanceStatus": {
-      "isHealth": ""
+      "isHealth": "Whether it is healthy"
     },
     "NestedVirtualPrivateCloudEdgeGatewayStatus": {
-      "instances": ""
+      "instances": "Edge gateway instance"
     },
     "VirtualPrivateCloudEdgeGateway": {
-      "description": "",
-      "entityAsyncStatus": "",
-      "id": "",
-      "name": "",
-      "status": "",
-      "vdses": ""
+      "description": "Description",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "id": "Unique identifier",
+      "name": "Name",
+      "status": "Status",
+      "vdses": "Associated virtual distributed switch"
     },
     "VirtualPrivateCloudEdgeGatewayOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudEdgeGatewaysRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudEdgeGateway": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudEdgeGatewayConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudEdgeGatewaysConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedVirtualPrivateCloudExternalSubnetGroupExternalSubnetsSpec": {
-      "cidr": "",
-      "edge_gateway_id": "",
-      "floating_ip_cidr": "",
-      "gateway": "",
-      "id": "id",
-      "nat_gateway_cidr": "",
-      "router_gateway_cidr": "",
-      "vlan_id": ""
+      "cidr": "CIDR block",
+      "edge_gateway_id": "Edge gateway ID",
+      "floating_ip_cidr": "Floating IP address block specified from the CIDR block",
+      "gateway": "Default gateway address",
+      "id": "Unique identifier",
+      "nat_gateway_cidr": "NAT gateway CIDR block",
+      "router_gateway_cidr": "Routing gateway CIDR block",
+      "vlan_id": "VM network ID"
     },
     "NestedVirtualPrivateCloudFloatingIp": {
       "external_ips": ""
@@ -2827,46 +2827,46 @@
       "external_ips": ""
     },
     "VirtualPrivateCloudExternalSubnetGroup": {
-      "description": "",
-      "edge_gateway_group": "",
-      "entityAsyncStatus": "",
-      "exclusive": "",
-      "external_subnets_spec": "",
-      "floating_ips": "",
-      "id": "",
-      "local_id": "",
-      "name": "",
-      "nat_gateways": "",
-      "router_gateways": "",
-      "shared_in_edge_gateway_group": "",
-      "vpc": ""
+      "description": "Description",
+      "edge_gateway_group": "Edge gateway group",
+      "entityAsyncStatus": "Asynchronous status (internal field)",
+      "exclusive": "Whether it is exclusively used by a VPC",
+      "external_subnets_spec": "Primary/secondary external subnet configuration",
+      "floating_ips": "Associated floating IP collection",
+      "id": "Unique identifier",
+      "local_id": "Local ID",
+      "name": "Name",
+      "nat_gateways": "Associated NAT gateway collection",
+      "router_gateways": "Associated routing gateway collection",
+      "shared_in_edge_gateway_group": "Whether the external subnet configuration is shared between primary and secondary edge gateways",
+      "vpc": "VPC"
     },
     "VirtualPrivateCloudExternalSubnetGroupOrderByInput": {
       "enum": "Sorts a list of records"
     },
     "GetVirtualPrivateCloudExternalSubnetGroupsRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     },
     "NestedAggregateVirtualPrivateCloudExternalSubnetGroup": {
-      "count": "count"
+      "count": "Count"
     },
     "VirtualPrivateCloudExternalSubnetGroupConnection": {
       "aggregate": ""
     },
     "GetVirtualPrivateCloudExternalSubnetGroupsConnectionRequestBody": {
-      "after": "Fill in a single resource’s id, representing to acquire resources after this resource and not including it.",
-      "before": "Fill in a single resource’s id, representing to acquire resources before this resource but not including it.",
-      "first": "It can be used together with after / before, representing the number of data acquired after the specified resource.",
-      "last": "It can be used together with after / before, representing the number of data acquired before the specified resource.",
-      "orderBy": " It represents the order of query results, usually including descending or ascending order of all the fields of the resource, i.e., _DESC or _ASC.",
-      "skip": "It can be used together with after / before, representing to start a query after skipping n items of the specified resource.",
-      "where": "conditional query, representing to query the resources that meet the conditions. "
+      "after": "Enter the ID of a single resource. Retrieves records after this resource, exclusive.",
+      "before": "Enter the ID of a single resource. Retrieves records before this resource, exclusive.",
+      "first": "Used with after/before to specify how many records to retrieve after the given resource.",
+      "last": "Used with after/before to specify how many records to retrieve before the given resource.",
+      "orderBy": "Sort order. Typically includes descending (_DESC) or ascending (_ASC) order for all resource fields.",
+      "skip": "Used with after/before to specify the number of items to skip after the given resource before starting the query.",
+      "where": "Conditional query that returns resources matching the specified condition."
     }
   },
   "paths": {

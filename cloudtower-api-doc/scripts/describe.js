@@ -84,6 +84,20 @@ const describeAllOfSchema = (params) => {
 };
 
 /**
+ * 在 ASCII 字符结尾的文本与中文开头的后缀之间添加空格
+ * @param {string} base - 基础描述文本
+ * @param {string} suffix - 中文后缀
+ * @returns {string} 拼接后的文本
+ */
+const zhJoin = (base, suffix) => {
+  if (!base) return suffix;
+  if (/[a-zA-Z0-9]$/.test(base)) {
+    return `${base} ${suffix}`;
+  }
+  return `${base}${suffix}`;
+};
+
+/**
  * 根据基础资源类型的翻译生成 WhereInput 字段的翻译
  * @param {string} fieldPath - WhereInput 字段路径（如 "access_write_compress_enabled", "access_write_compress_enabled_not"）
  * @param {object} basicAst - 基础资源类型的翻译对象（如 Cluster 的翻译）
@@ -105,43 +119,43 @@ const getWhereInputFieldTranslation = (fieldPath, basicAst, lng) => {
   }
   // 处理变体字段（注意：先检查长的后缀，再检查短的后缀）
   else if (basicDes = basicAst[fieldPath.replace('_not_in', '')]) {
-    des = isZh ? `${basicDes}不在指定范围中` : `${basicDes} not in given range`;
+    des = isZh ? zhJoin(basicDes, '不在指定范围中') : `${basicDes} not in given range`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_not_contains', '')]) {
-    des = isZh ? `${basicDes}不包含指定字符` : `${basicDes} not contains given string`;
+    des = isZh ? zhJoin(basicDes, '不包含指定字符') : `${basicDes} not contains given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_not_ends_with', '')]) {
-    des = isZh ? `${basicDes}不以指定字符结尾` : `${basicDes} not ends with given string`;
+    des = isZh ? zhJoin(basicDes, '不以指定字符结尾') : `${basicDes} not ends with given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_not_starts_with', '')]) {
-    des = isZh ? `${basicDes}不以指定字符开始` : `${basicDes} not starts with given string`;
+    des = isZh ? zhJoin(basicDes, '不以指定字符开始') : `${basicDes} not starts with given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_in', '')]) {
-    des = isZh ? `${basicDes}在指定范围中` : `${basicDes} in given range`;
+    des = isZh ? zhJoin(basicDes, '在指定范围中') : `${basicDes} in given range`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_not', '')]) {
-    des = isZh ? `${basicDes}不等于指定数值` : `${basicDes} not equal given data`;
+    des = isZh ? zhJoin(basicDes, '不等于指定数值') : `${basicDes} not equal given data`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_contains', '')]) {
-    des = isZh ? `${basicDes}包含指定字符` : `${basicDes} contains given string`;
+    des = isZh ? zhJoin(basicDes, '包含指定字符') : `${basicDes} contains given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_ends_with', '')]) {
-    des = isZh ? `${basicDes}以指定字符结尾` : `${basicDes} ends with given string`;
+    des = isZh ? zhJoin(basicDes, '以指定字符结尾') : `${basicDes} ends with given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_starts_with', '')]) {
-    des = isZh ? `${basicDes}以指定字符开始` : `${basicDes} starts with given string`;
+    des = isZh ? zhJoin(basicDes, '以指定字符开始') : `${basicDes} starts with given string`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_gt', '')]) {
-    des = isZh ? `${basicDes}大于指定数值` : `${basicDes} greater than given data`;
+    des = isZh ? zhJoin(basicDes, '大于指定数值') : `${basicDes} greater than given data`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_gte', '')]) {
-    des = isZh ? `${basicDes}大于或等于指定数值` : `${basicDes} greater than or equals to given data`;
+    des = isZh ? zhJoin(basicDes, '大于或等于指定数值') : `${basicDes} greater than or equals to given data`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_lt', '')]) {
-    des = isZh ? `${basicDes}小于指定字符` : `${basicDes} less than given data`;
+    des = isZh ? zhJoin(basicDes, '小于指定字符') : `${basicDes} less than given data`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_lte', '')]) {
-    des = isZh ? `${basicDes}小于或等于指定字符` : `${basicDes} less than or equals to given data`;
+    des = isZh ? zhJoin(basicDes, '小于或等于指定字符') : `${basicDes} less than or equals to given data`;
   }
   else if (basicDes = basicAst[fieldPath.replace('_some', '')]) {
     des = isZh ? `返回关联资源一项或多项符合相关筛选条件的资源` : 'Returns all records where one or more ("some") related records match filtering criteria.';

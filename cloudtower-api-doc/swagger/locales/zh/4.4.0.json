@@ -133,7 +133,7 @@
     },
     "BackupRestoreExecutionWhereInput": {
       "rebuild_target_cluster_contains": "目标集群包含指定字符",
-      "rebuild_target_cluster_ends_with": "目标集群已指定字符结尾",
+      "rebuild_target_cluster_ends_with": "目标集群以指定字符结尾",
       "rebuild_target_cluster_gt": "目标集群大于指定数值",
       "rebuild_target_cluster_gte": "目标集群大于或等于指定数值",
       "rebuild_target_cluster_in": "目标集群在指定范围中",
@@ -141,10 +141,10 @@
       "rebuild_target_cluster_lte": "目标集群小于或等于指定字符",
       "rebuild_target_cluster_not": "目标集群不等于指定数值",
       "rebuild_target_cluster_not_contains": "目标集群不包含指定字符",
-      "rebuild_target_cluster_not_ends_with": "目标集群不已指定字符结尾",
+      "rebuild_target_cluster_not_ends_with": "目标集群不以指定字符结尾",
       "rebuild_target_cluster_not_in": "目标集群不在指定范围中",
-      "rebuild_target_cluster_not_starts_with": "目标集群不已指定字符开始",
-      "rebuild_target_cluster_starts_with": "目标集群已指定字符开始",
+      "rebuild_target_cluster_not_starts_with": "目标集群不以指定字符开始",
+      "rebuild_target_cluster_starts_with": "目标集群以指定字符开始",
       "retry_times": "",
       "retry_times_gt": "",
       "retry_times_gte": "",
@@ -704,7 +704,7 @@
       "alg_protocol": ""
     },
     "SecurityPolicyFlowControlType": {
-      "enum": "* ALL: 允许所有地址进行访问\n"
+      "enum": "* ALL: 允许所有地址进行访问"
     },
     "SecurityPolicyIngressEgressInput": {
       "type": "类型"
@@ -918,7 +918,7 @@
       "vm_nics": "虚拟机网卡",
       "vm_disks": "虚拟机磁盘",
       "video_type": "虚拟机显卡",
-      "vcpu": "虚拟机的cpu总核心数",
+      "vcpu": "虚拟机的 cpu 总核心数",
       "sync_vm_time_on_resume": "虚拟机恢复时同步时间",
       "protected": "虚拟机是否被快照计划保护",
       "nested_virtualization": "虚拟机是否开启嵌套虚拟化",

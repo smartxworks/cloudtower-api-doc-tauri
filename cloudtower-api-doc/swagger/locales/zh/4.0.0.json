@@ -10,23 +10,23 @@
       "vms_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "UserAuditLogWhereInput": {
-      "auth_type": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值",
-      "auth_type_contains": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值包含指定字符",
-      "auth_type_ends_with": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值已指定字符结尾",
-      "auth_type_gt": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值大于指定数值",
-      "auth_type_gte": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值大于或等于指定数值",
-      "auth_type_in": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值在指定范围中",
-      "auth_type_lt": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值小于指定字符",
-      "auth_type_lte": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值小于或等于指定字符",
-      "auth_type_not": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值不等于指定数值",
-      "auth_type_not_contains": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值不包含指定字符",
-      "auth_type_not_ends_with": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值不已指定字符结尾",
-      "auth_type_not_in": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值不在指定范围中",
-      "auth_type_not_starts_with": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值不已指定字符开始",
-      "auth_type_starts_with": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值已指定字符开始",
+      "auth_type": "关联用户的创建来源",
+      "auth_type_contains": "关联用户的创建来源包含指定字符",
+      "auth_type_ends_with": "关联用户的创建来源以指定字符结尾",
+      "auth_type_gt": "关联用户的创建来源大于指定数值",
+      "auth_type_gte": "关联用户的创建来源大于或等于指定数值",
+      "auth_type_in": "关联用户的创建来源在指定范围中",
+      "auth_type_lt": "关联用户的创建来源小于指定字符",
+      "auth_type_lte": "关联用户的创建来源小于或等于指定字符",
+      "auth_type_not": "关联用户的创建来源不等于指定数值",
+      "auth_type_not_contains": "关联用户的创建来源不包含指定字符",
+      "auth_type_not_ends_with": "关联用户的创建来源不以指定字符结尾",
+      "auth_type_not_in": "关联用户的创建来源不在指定范围中",
+      "auth_type_not_starts_with": "关联用户的创建来源不以指定字符开始",
+      "auth_type_starts_with": "关联用户的创建来源以指定字符开始",
       "username": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值",
       "username_contains": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值包含指定字符",
-      "username_ends_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值已指定字符结尾",
+      "username_ends_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值以指定字符结尾",
       "username_gt": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值大于指定数值",
       "username_gte": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值大于或等于指定数值",
       "username_in": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值在指定范围中",
@@ -34,13 +34,13 @@
       "username_lte": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值小于或等于指定字符",
       "username_not": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不等于指定数值",
       "username_not_contains": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不包含指定字符",
-      "username_not_ends_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不已指定字符结尾",
+      "username_not_ends_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不以指定字符结尾",
       "username_not_in": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不在指定范围中",
-      "username_not_starts_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不已指定字符开始",
-      "username_starts_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值已指定字符开始"
+      "username_not_starts_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值不以指定字符开始",
+      "username_starts_with": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值以指定字符开始"
     },
     "UserAuditLog": {
-      "auth_type": "关联用户的创建来源。当关联用户不存在时，展示的 fallback 值",
+      "auth_type": "关联用户的创建来源",
       "username": "关联用户的用户名，当关联用户不存在时，展示的 fallback 值"
     },
     "WithTask_UserAuditLog_": {
@@ -298,7 +298,7 @@
     "CopyIscsiLunParams": {
       "dest_iscsi_target_id": "目标 ISCSI Target ID",
       "name": "LUN 名称",
-      "src_lun_id": "被复制的 LUN 的 ID（非 lun_id） "
+      "src_lun_id": "被复制的 LUN 的 ID（非 lun_id）"
     },
     "Nic": {
       "iommu_status": "IOMMU 状态",
