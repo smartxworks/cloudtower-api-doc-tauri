@@ -34,7 +34,7 @@
   "defaultValue": "Default Value",
   "availableValue": "Available Values",
   "availableAuthorizations": "Available authorizations",
-  "close":"Close",
+  "close": "Close",
   "logout": "Logout",
   "in": "In",
   "value": "Value",
@@ -79,7 +79,6 @@
   "lastVersion": "Latest Version",
   "historyVersion": "History Version",
   "copyright": "Copyright © {year} {COM_COPYRIGHT}. All rights reserved",
-
   "developer": "Developer",
   "user_term": "Terms of Use",
   "legal": "Legal",
