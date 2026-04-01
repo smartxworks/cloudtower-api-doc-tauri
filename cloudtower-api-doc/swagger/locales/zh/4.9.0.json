@@ -1,0 +1,242 @@
+{
+  "schemas": {
+    "ClusterWhereInput": {
+      "overprovision_ratio": "",
+      "overprovision_ratio_gt": "",
+      "overprovision_ratio_gte": "",
+      "overprovision_ratio_in": "",
+      "overprovision_ratio_lt": "",
+      "overprovision_ratio_lte": "",
+      "overprovision_ratio_not": "",
+      "overprovision_ratio_not_in": ""
+    },
+    "ReplicationServiceWhereInput": {
+      "sync_replication_plans_every": "",
+      "sync_replication_plans_none": "",
+      "sync_replication_plans_some": ""
+    },
+    "ReplicaVmWhereInput": {
+      "last_out_of_sync_at": "",
+      "last_out_of_sync_at_gt": "",
+      "last_out_of_sync_at_gte": "",
+      "last_out_of_sync_at_in": "",
+      "last_out_of_sync_at_lt": "",
+      "last_out_of_sync_at_lte": "",
+      "last_out_of_sync_at_not": "",
+      "last_out_of_sync_at_not_in": "",
+      "last_out_of_sync_reason": "",
+      "last_out_of_sync_reason_contains": "",
+      "last_out_of_sync_reason_ends_with": "",
+      "last_out_of_sync_reason_gt": "",
+      "last_out_of_sync_reason_gte": "",
+      "last_out_of_sync_reason_in": "",
+      "last_out_of_sync_reason_lt": "",
+      "last_out_of_sync_reason_lte": "",
+      "last_out_of_sync_reason_not": "",
+      "last_out_of_sync_reason_not_contains": "",
+      "last_out_of_sync_reason_not_ends_with": "",
+      "last_out_of_sync_reason_not_in": "",
+      "last_out_of_sync_reason_not_starts_with": "",
+      "last_out_of_sync_reason_starts_with": "",
+      "last_synced_at": "",
+      "last_synced_at_gt": "",
+      "last_synced_at_gte": "",
+      "last_synced_at_in": "",
+      "last_synced_at_lt": "",
+      "last_synced_at_lte": "",
+      "last_synced_at_not": "",
+      "last_synced_at_not_in": "",
+      "method": "",
+      "method_in": "",
+      "method_not": "",
+      "method_not_in": "",
+      "resource_version": "",
+      "resource_version_gt": "",
+      "resource_version_gte": "",
+      "resource_version_in": "",
+      "resource_version_lt": "",
+      "resource_version_lte": "",
+      "resource_version_not": "",
+      "resource_version_not_in": "",
+      "sync_replication_object_status": "",
+      "sync_replication_object_status_in": "",
+      "sync_replication_object_status_not": "",
+      "sync_replication_object_status_not_in": "",
+      "sync_replication_plan": "",
+      "sync_replication_status": "",
+      "sync_replication_status_in": "",
+      "sync_replication_status_not": "",
+      "sync_replication_status_not_in": ""
+    },
+    "ReplicationMethod": {
+      "enum": ""
+    },
+    "ReplicationTargetExecutionWhereInput": {
+      "createdAt": "",
+      "createdAt_gt": "",
+      "createdAt_gte": "",
+      "createdAt_in": "",
+      "createdAt_lt": "",
+      "createdAt_lte": "",
+      "createdAt_not": "",
+      "createdAt_not_in": "",
+      "updatedAt": "",
+      "updatedAt_gt": "",
+      "updatedAt_gte": "",
+      "updatedAt_in": "",
+      "updatedAt_lt": "",
+      "updatedAt_lte": "",
+      "updatedAt_not": "",
+      "updatedAt_not_in": ""
+    },
+    "SyncReplicationObjectStatus": {
+      "enum": ""
+    },
+    "SyncReplicationStatus": {
+      "enum": ""
+    },
+    "Cluster": {
+      "overprovision_ratio": ""
+    },
+    "NvramDownloadResponse": {
+      "data.resource_uuid": "",
+      "data.fd_mtime": "",
+      "data.data": "",
+      "data.created_time": "",
+      "data": "",
+      "error": "",
+      "ec": ""
+    },
+    "NvramParams": {
+      "data": "",
+      "cluster": "",
+      "vm": ""
+    },
+    "NestedSyncReplicationPlan": {
+      "id": "唯一标识",
+      "name": "名称"
+    },
+    "ReplicaVm": {
+      "last_out_of_sync_at": "",
+      "last_out_of_sync_reason": "",
+      "last_synced_at": "",
+      "method": "",
+      "resource_version": "",
+      "sync_replication_object_status": "",
+      "sync_replication_plan": "",
+      "sync_replication_status": ""
+    },
+    "ReplicationService": {
+      "sync_replication_plans": ""
+    },
+    "SyncReplicationPlan": {
+      "activation_timestamp": "",
+      "compression": "",
+      "createdAt": "",
+      "data_version": "",
+      "delete_strategy": "",
+      "description": "",
+      "ec_k": "",
+      "ec_m": "",
+      "entityAsyncStatus": "",
+      "external_cloudtower": "",
+      "failover_test_ip_mapping": "",
+      "failover_test_keep_mac_address": "",
+      "failover_test_name_rule": "",
+      "failover_test_name_setting": "",
+      "failover_test_network_mapping": "",
+      "id": "",
+      "inbound": "",
+      "initialization_time_point": "",
+      "interval": "",
+      "ip_mapping": "",
+      "keep_mac_address": "",
+      "keep_policy": "",
+      "keep_policy_value": "",
+      "name": "",
+      "network_mapping": "",
+      "objects_descriptor": "",
+      "period": "",
+      "phase": "",
+      "replica_name_rule": "",
+      "replica_name_setting": "",
+      "replica_num": "",
+      "replica_vms": "",
+      "replication_restore_points": "",
+      "resiliency_type": "",
+      "resource_version": "",
+      "snapshot_consistent_type": "",
+      "status": "",
+      "storage_encrypted": "",
+      "storage_policy": "",
+      "target_cluster": "",
+      "target_cluster_descriptor": "",
+      "target_replication_service": "",
+      "thin_provision": "",
+      "time_points": "",
+      "type": "",
+      "updatedAt": "",
+      "vms": "",
+      "weekdays": ""
+    },
+    "SyncReplicationPlanOrderByInput": {
+      "enum": "按照指定方式排列放回数据"
+    },
+    "GetSyncReplicationPlansRequestBody": {
+      "after": "填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。",
+      "before": "填入单个资源的 id。表示从该资源之前开始获取，不包含该资源",
+      "first": "可与 after / before 搭配使用，表示获取指定资源后的多少个数据。",
+      "last": "可与 after / before 搭配使用，表示获取指定资源前的多少个数据。",
+      "orderBy": "表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。",
+      "skip": "可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。",
+      "where": "条件查询，表示查询符合该条件的资源。"
+    },
+    "NestedAggregateSyncReplicationPlan": {
+      "count": "数量"
+    },
+    "SyncReplicationPlanConnection": {
+      "aggregate": ""
+    },
+    "GetSyncReplicationPlansConnectionRequestBody": {
+      "after": "填入单个资源的 id。表示从该资源之后开始获取，不包含该资源。",
+      "before": "填入单个资源的 id。表示从该资源之前开始获取，不包含该资源",
+      "first": "可与 after / before 搭配使用，表示获取指定资源后的多少个数据。",
+      "last": "可与 after / before 搭配使用，表示获取指定资源前的多少个数据。",
+      "orderBy": "表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。",
+      "skip": "可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。",
+      "where": "条件查询，表示查询符合该条件的资源。"
+    },
+    "HostWhereInput": {
+      "total_logical_cpu_cores": "总逻辑 CPU 核心数",
+      "total_logical_cpu_cores_not": "总逻辑 CPU 核心数不等于指定数值",
+      "total_logical_cpu_cores_in": "总逻辑 CPU 核心数在指定范围中",
+      "total_logical_cpu_cores_not_in": "总逻辑 CPU 核心数不在指定范围中",
+      "total_logical_cpu_cores_gt": "总逻辑 CPU 核心数大于指定数值",
+      "total_logical_cpu_cores_gte": "总逻辑 CPU 核心数大于或等于指定数值",
+      "total_logical_cpu_cores_lt": "总逻辑 CPU 核心数小于指定数值",
+      "total_logical_cpu_cores_lte": "总逻辑 CPU 核心数小于或等于指定数值"
+    },
+    "Host": {
+      "total_logical_cpu_cores": "总逻辑 CPU 核心数"
+    }
+  },
+  "tags": [],
+  "paths": {
+    "/download_nvram": {
+      "summary": "",
+      "description": ""
+    },
+    "/upload_nvram": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-sync-replication-plans": {
+      "summary": "",
+      "description": ""
+    },
+    "/get-sync-replication-plans-connection": {
+      "summary": "",
+      "description": ""
+    }
+  }
+}
