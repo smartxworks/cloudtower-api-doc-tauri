@@ -4,6 +4,8 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const webpack = require("webpack");
+const fs = require("fs");
+const path = require("path");
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -106,6 +108,23 @@ const config = {
     },
   },
   plugins: [
+    () => {
+      return {
+        name: "latest-swagger",
+        async loadContent() {
+          const specsDir = path.join(__dirname, "static/specs");
+          const files = fs.readdirSync(specsDir).filter(f => /^\d+\.\d+\.\d+-swagger\.json$/.test(f));
+          if (files.length === 0) return;
+          const latest = files
+            .map(f => ({ file: f, ver: f.replace("-swagger.json", "").split(".").map(Number) }))
+            .sort((a, b) => b.ver[0] - a.ver[0] || b.ver[1] - a.ver[1] || b.ver[2] - a.ver[2])[0];
+          fs.copyFileSync(
+            path.join(specsDir, latest.file),
+            path.join(specsDir, "latest-swagger.json")
+          );
+        },
+      };
+    },
     (context, opts) => {
       return {
         name: "overwrite-config",
