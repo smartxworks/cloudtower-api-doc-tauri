@@ -16,5 +16,7 @@
     "python_package": "cloudtower-sdk",
     "python_package_1": "cloudtower_sdk",
     "go_client": "apiclient.Cloudtower",
-    "go_client_type": "client.Cloudtower"
+    "go_client_type": "client.Cloudtower",
+    "skills_github_address": "smartxworks/cloudtower-skills",
+    "skills_api_name": "cloudtower-api"
 }

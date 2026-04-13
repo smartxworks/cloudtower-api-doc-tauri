@@ -16,5 +16,8 @@
   },
   "sidebar.tutorialSidebar.category.案例演示": {
     "message": "Case demonstrations"
+  },
+  "sidebar.tutorialSidebar.category.工具": {
+    "message": "Tools"
   }
 }
