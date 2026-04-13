@@ -522,3 +522,18 @@ html:not(.docs-doc-id-download):not(.docs-doc-id-api) .markdown {
   color: rgba(0, 21, 64, .3);
   margin: 0 2px;
 }
+
+/* Sidebar "NEW" badge for new items */
+.sidebar-new-item > .menu__link::after {
+  content: "NEW";
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #0080ff, #00c6ff);
+  border-radius: 4px;
+  vertical-align: middle;
+}

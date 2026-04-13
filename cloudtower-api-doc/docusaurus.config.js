@@ -137,6 +137,12 @@ const config = {
                 chunkFilename: '[name].[contenthash:8].js',
               },
             }),
+            watchOptions: {
+              ignored: [
+                '**/swagger/utils/__snapshots_json__/**',
+                '**/node_modules/**',
+              ],
+            },
             plugins: [
               new webpack.DefinePlugin({
                 ['process.env.DEFAULT_LNG']:  JSON.stringify('zh')

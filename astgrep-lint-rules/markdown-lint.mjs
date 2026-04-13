@@ -61,7 +61,8 @@ const config = {
         // Add your exclude patterns here
         // Example: /node_modules/,
         // Example: /\.git/,
-        "contribute.md"
+        /contribute\.md/,
+        /^readme\.md$/i
     ],
     
     // Base directory to start scanning

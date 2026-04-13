@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import _, { cloneDeep } from "lodash";
 import { ProStore, RedocProRawOptions } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Badge } from "@redocly/reference-docs/lib/redoc-lib/src/common-elements";
@@ -76,9 +75,10 @@ const App: React.FC = () => {
   useEffect(() => {
     const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
     specMap[lastVersion].then(data => {
-      const swaggerSpec: ISpec = _.cloneDeep(data.default);
+      const swaggerSpec: ISpec = data.default;
       setRawSpec(swaggerSpec);
       i18next.changeLanguage(i18n.currentLocale);
+      // wrapSpecWithI18n 内部已做 cloneDeep，无需提前复制
       const newSpec = wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version);
       setSpec(newSpec);
     })
@@ -132,7 +132,7 @@ const App: React.FC = () => {
 
   return (
     <div id="swagger-ui">
-      <Redoc spec={cloneDeep(spec)} rawSpec={rawSpec} onInit={onReDocLoaded} />
+      <Redoc spec={spec} rawSpec={rawSpec} onInit={onReDocLoaded} />
     </div>
   );
 };
