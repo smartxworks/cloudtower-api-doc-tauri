@@ -1,0 +1,36 @@
+{
+  "schemas": {
+    "ClusterWhereInput": {
+      "overprovision_ratio": "",
+      "overprovision_ratio_gt": "",
+      "overprovision_ratio_gte": "",
+      "overprovision_ratio_in": "",
+      "overprovision_ratio_lt": "",
+      "overprovision_ratio_lte": "",
+      "overprovision_ratio_not": "",
+      "overprovision_ratio_not_in": ""
+    },
+    "ReplicationTargetExecutionWhereInput": {
+      "createdAt": "",
+      "createdAt_gt": "",
+      "createdAt_gte": "",
+      "createdAt_in": "",
+      "createdAt_lt": "",
+      "createdAt_lte": "",
+      "createdAt_not": "",
+      "createdAt_not_in": "",
+      "updatedAt": "",
+      "updatedAt_gt": "",
+      "updatedAt_gte": "",
+      "updatedAt_in": "",
+      "updatedAt_lt": "",
+      "updatedAt_lte": "",
+      "updatedAt_not": "",
+      "updatedAt_not_in": ""
+    },
+    "Cluster": {
+      "overprovision_ratio": ""
+    }
+  },
+  "paths": {}
+}
