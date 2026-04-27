@@ -9,8 +9,6 @@ jobs:
   vercel-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: global-setting
-        run: npm install -g vercel@27.0.0
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -30,7 +28,7 @@ jobs:
           NODE_OPTIONS: "--max-old-space-size=10240"
         run: yarn build
       - name: set up pr preview
-        uses: amondnet/vercel-action@v25
+        uses: amondnet/vercel-action@v42.2.0
         id: vercel-action-staging
         if: github.event_name == 'pull_request'
         with:
@@ -38,9 +36,11 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
+          vercel-version: 52.0.0
+          working-directory: ${{ github.workspace }}
+          vercel-args: '--yes'
       - name: set up production
-        uses: amondnet/vercel-action@v25
+        uses: amondnet/vercel-action@v42.2.0
         id: vercel-action-production
         if: github.event_name == 'push'
         with:
@@ -48,7 +48,8 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
+          vercel-version: 52.0.0
+          working-directory: ${{ github.workspace }}
           vercel-args: '--prod'
       - name: upload to cdn
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
