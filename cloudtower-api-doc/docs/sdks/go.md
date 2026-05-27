@@ -5,8 +5,11 @@ import Terminology from '@site/terminology.json'
 import CodeTerminology from '@site/code-terminology.json'
 import CodeBlock from '@theme/CodeBlock'
 
-<>Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本。</>
+Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本
 
+# {Terminology['terminology']['zh-CN']['PRODUCT']} Go SDK
+
+Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.18 及以上版本
 
 - <a href={`https://github.com/${CodeTerminology["go_github_address"]}`}>源码地址</a>
 - <a href={`https://github.com/${CodeTerminology["go_github_address"]}/releases`}>下载地址</a>
@@ -14,7 +17,7 @@ import CodeBlock from '@theme/CodeBlock'
 ## 安装
 
 <CodeBlock language="shell">
-{`go get github.com/${CodeTerminology["go_github_address"]}/v2`}
+{"go get github.com/smartxworks/cloudtower-go-sdk/v2\n"}
 </CodeBlock>
 
 ## 使用
@@ -26,32 +29,13 @@ import CodeBlock from '@theme/CodeBlock'
 #### 创建 `ApiClient` 实例
 
 <CodeBlock language="go">
-{`import (
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-client := apiclient.New(transport, strfmt.Default)`}
+{"import (\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\t\"github.com/go-openapi/strfmt\"\n)\ntransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\nclient := apiclient.New(transport, strfmt.Default)\n"}
 </CodeBlock>
 
 > 如果需要使用 https，可以安装证书，或者忽略证书验证
 
 <CodeBlock language="go">
-{`import (
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-tlsClient, err := httptransport.TLSClient(httptransport.TLSClientOptions{
-	InsecureSkipVerify: true,
-})
-if err != nil {
-	fmt.Print(err)
-	return
-}
-transport := httptransport.NewWithClient("192.168.29.157", "/v2/api", []string{"https"}, tlsClient)
-client := apiclient.New(transport, strfmt.Default)`}
+{"import (\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\t\"github.com/go-openapi/strfmt\"\n)\ntlsClient, err := httptransport.TLSClient(httptransport.TLSClientOptions{\n\tInsecureSkipVerify: true,\n})\nif err != nil {\n\tfmt.Print(err)\n\treturn\n}\ntransport := httptransport.NewWithClient(\"tower.example.com\", \"/v2/api\", []string{\"https\"}, tlsClient)\nclient := apiclient.New(transport, strfmt.Default)\n"}
 </CodeBlock>
 
 ### 发送请求
@@ -61,9 +45,7 @@ client := apiclient.New(transport, strfmt.Default)`}
 > 根据不同用途的操作引入创建相关的 `client` 包
 
 <CodeBlock language="go">
-{`import (
-  	vm "github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-)`}
+{"import (\n  \tvm \"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n)\n"}
 </CodeBlock>
 
 #### 鉴权
@@ -71,54 +53,19 @@ client := apiclient.New(transport, strfmt.Default)`}
 可以使用 `NewWithUserConfig` 来创建一个具有鉴权信息的 `Client`
 
 <CodeBlock language="go">
-{`import (
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-)
-client, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{
-	Host:     "localhost:8090",
-	BasePath: "v2/api",
-	Schemes:  []string{"http"},
-}, apiclient.UserConfig{
-	Name:     "Name",
-	Password: "Password",
-	Source:   models.UserSourceLOCAL,
-})`}
+{"import (\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n)\n\nclient, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{\n\tHost:     \"localhost:8090\",\n\tBasePath: \"v2/api\",\n\tSchemes:  []string{\"http\"},\n}, apiclient.UserConfig{\n\tName:     \"<username>\",\n\tPassword: \"<password>\",\n\tSource:   models.UserSourceLOCAL,\n})\n"}
 </CodeBlock>
 
 也可以创建 `Client` 后手动添加鉴权信息
 
 <CodeBlock language="go">
-{`import (
-  User "github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
-)
-loginParams := User.NewLoginParams()
-loginParams.RequestBody = &models.LoginInput{
-	Username: pointy.String("username"),
-	Password: pointy.String("password"),
-	Source:   models.NewUserSource(models.UserSourceLOCAL),
-}
-logRes, err := client.User.Login(loginParams)
-if err != nil {
-	return err
-}
-transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", *logRes.Payload.Data.Token)`}
+{"import (\n  User \"github.com/smartxworks/cloudtower-go-sdk/v2/client/user\"\n)\nloginParams := User.NewLoginParams()\nloginParams.RequestBody = &models.LoginInput{\n\tUsername: pointy.String(\"<username>\"),\n\tPassword: pointy.String(\"<password>\"),\n\tSource:   models.NewUserSource(models.UserSourceLOCAL),\n}\nlogRes, err := client.User.Login(loginParams)\nif err != nil {\n\treturn err\n}\ntransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", *logRes.Payload.Data.Token)\n"}
 </CodeBlock>
 
-#### 获取资源
+#### ��取资源
 
 <CodeBlock language="go">
-{`getVmParams := vm.NewGetVmsParams();
-getVmParams.RequestBody = &models.GetVmsRequestBody{
-	Where: &models.VMWhereInput{
-		ID: pointy.String("vm_id"),
-	},
-}
-vmsRes, err := client.VM.GetVms(getVmParams)
-if err != nil {
-	return err
-}
-vms := vmsRes.Payload`}
+{"getVmParams := vm.NewGetVmsParams();\ngetVmParams.RequestBody = &models.GetVmsRequestBody{\n\tWhere: &models.VMWhereInput{\n\t\tID: pointy.String(\"vm_id\"),\n\t},\n}\nvmsRes, err := client.VM.GetVms(getVmParams)\nif err != nil {\n\treturn err\n}\nvms := vmsRes.Payload\n"}
 </CodeBlock>
 
 #### 更新资源
@@ -126,139 +73,69 @@ vms := vmsRes.Payload`}
 > 资源更新会产生相关的异步任务，当异步任务结束时，代表资源操作完成且数据已更新。
 
 <CodeBlock language="go">
-{`target_vm := vmsRes.Payload[0]
-vmStartParams := vm.NewStartVMParams()
-vmStartParams.RequestBody = &models.VMStartParams{
-	Where: &models.VMWhereInput{
-		ID: target_vm.ID,
-	},
-}
-startRes, err := client.VM.StartVM(vmStartParams)
-if err != nil {
-	return err
-}`}
+{"target_vm := vmsRes.Payload[0]\nvmStartParams := vm.NewStartVMParams()\nvmStartParams.RequestBody = &models.VMStartParams{\n\tWhere: &models.VMWhereInput{\n\t\tID: target_vm.ID,\n\t},\n}\nstartRes, err := client.VM.StartVM(vmStartParams)\nif err != nil {\n\treturn err\n}\n"}
 </CodeBlock>
 
 > 可以通过提供的工具方法 `WaitTask` 同步等待异步任务结束，如果任务失败或超时，都会返回一个异常，轮询间隔 5s，超时时间为 300s。
 >
 > - 方法参数说明
 >
-> <table>
-> <thead>
-> <tr>
-> <th>参数名</th>
-> <th>类型</th>
-> <th>是否必须</th>
-> <th>说明</th>
-> </tr>
-> </thead>
-> <tbody>
-> <tr>
-> <td>context</td>
-> <td>Context</td>
-> <td>是</td>
-> <td>用于控制中断</td>
-> </tr>
-> <tr>
-> <td>client</td>
-> <td>*{CodeTerminology["go_client_type"]}</td>
-> <td>是</td>
-> <td>查询所使用的 client 实例</td>
-> </tr>
-> <tr>
-> <td>id</td>
-> <td>string</td>
-> <td>是</td>
-> <td>需查询的 task 的 id</td>
-> </tr>
-> <tr>
-> <td>interval</td>
-> <td>time.duration</td>
-> <td>是</td>
-> <td>每次查询后的等待时间，最小时间为 1s</td>
-> </tr>
-> </tbody>
-> </table>
+> | 参数名   | 类型                | 是否必须 | 说明                                |
+> | -------- | ------------------- | -------- | ----------------------------------- |
+> | context  | Context             | 是       | 用于控制中断                        |
+> | client   | \*client.{Terminology['terminology']['zh-CN']['PRODUCT']} | 是       | 查询所使用的 client 实例            |
+> | id       | string              | 是       | 需查询的 task 的 id                 |
+> | interval | time.duration       | 是       | 每次查询后的等待时间，最小时间为 1s |
 
 <CodeBlock language="go">
-{`task := *startRes.Payload[0].TaskID
-err = utils.WaitTask(context.TODO(), client, task, 1*time.Second)
-if err != nil {
-	return err
-}`}
+{"task := *startRes.Payload[0].TaskID\nerr = utils.WaitTask(context.TODO(), client, task, 1*time.Second)\nif err != nil {\n\treturn err\n}\n"}
 </CodeBlock>
 
 > 如果是复数任务则可以通过 `WaitTasks`，接受复数个 task id，其余与 `WaitTask` 相同。
 >
 > - 方法参数说明
 >
-> <table>
-> <thead>
-> <tr>
-> <th>参数名</th>
-> <th>类型</th>
-> <th>是否必须</th>
-> <th>说明</th>
-> </tr>
-> </thead>
-> <tbody>
-> <tr>
-> <td>context</td>
-> <td>Context</td>
-> <td>是</td>
-> <td>用于控制中断</td>
-> </tr>
-> <tr>
-> <td>client</td>
-> <td>*{CodeTerminology["go_client_type"]}</td>
-> <td>是</td>
-> <td>查询所使用的 client 实例</td>
-> </tr>
-> <tr>
-> <td>ids</td>
-> <td>[]string</td>
-> <td>是</td>
-> <td>需查询的 task 的 id 列表</td>
-> </tr>
-> <tr>
-> <td>interval</td>
-> <td>time.duration</td>
-> <td>是</td>
-> <td>每次查询后的等待时间，最小时间为 1s</td>
-> </tr>
-> </tbody>
-> </table>
+> | 参数名   | 类型                | 是否必须 | 说明                                |
+> | -------- | ------------------- | -------- | ----------------------------------- |
+> | context  | Context             | 是       | 用于控制中断                        |
+> | client   | \*client.{Terminology['terminology']['zh-CN']['PRODUCT']} | 是       | 查询所使用的 client 实例            |
+> | ids      | []string            | 是       | 需查询的 task 的 id 列表            |
+> | interval | time.duration       | 是       | 每次查询后的等待时间，最小时间为 1s |
 
 <CodeBlock language="go">
-{`tasks := funk.Map(startRes.Payload, func(tvm *models.WithTaskVM) string {
-	return *tvm.TaskID
-}).([]string)
-err = utils.WaitTask(context.TODO(), client, tasks, 1*time.Second)
-if err != nil {
-	return err
-}`}
+{"tasks := funk.Map(startRes.Payload, func(tvm *models.WithTaskVM) string {\n\treturn *tvm.TaskID\n}).([]string)\nerr = utils.WaitTasks(context.TODO(), client, tasks, 1*time.Second)\nif err != nil {\n\treturn err\n}\n"}
 </CodeBlock>
 
 #### 其他
 
-##### 设置返回信息的语言
+##### 创建 `ActivePassiveApiClient` 实例
 
-> 可以设置请求 params 中的 `ContentLanguage` 项设置返回值的语言，可选值为 `["en-US", "zh-CN"]`，默认值为 `en-US`，不在可选值范围内的语言会返回一个 HTTP 400 错
+{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。
 
 <CodeBlock language="go">
-{`getTaskDefaultParams := task.NewGetTasksParams()
-getTaskDefaultParams.RequestBody = &models.GetTasksRequestBody{
-	First: pointy.Int32(10),
-}
-// 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为英文描述。
-taskDefaultRes, err := client.Task.GetTasks(getTaskDefaultParams)
-getTaskZhParams := task.NewGetTasksParams()
-getTaskZhParams.RequestBody = &models.GetTasksRequestBody{
-	First: pointy.Int32(10),
-}
-// 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为中文描述。
-getTaskZhParams.ContentLanguage = pointy.String("zh-CN")
-taskZhRes, err := client.Task.GetTasks(getTaskZhParams)`}
+{"import (\n\t\"context\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n)\n\nclient, err := apiclient.NewActivePassiveWithUserConfig(\n\tcontext.Background(),\n\tapiclient.ActivePassiveClientConfig{\n\t\tEndpoints: []apiclient.ActivePassiveEndpointConfig{\n\t\t\t{Host: \"tower-a.example.com\", Schemes: []string{\"https\"}},\n\t\t\t{Host: \"tower-b.example.com\", Schemes: []string{\"https\"}},\n\t\t},\n\t},\n\tapiclient.UserConfig{\n\t\tName:     \"<username>\",\n\t\tPassword: \"<password>\",\n\t\tSource:   models.UserSourceLOCAL,\n\t},\n)\nif err != nil {\n\treturn err\n}\n"}
+</CodeBlock>
+
+##### 故障切换策略
+
+`ActivePassiveApiClient` 支持以下故障切换策略：
+
+- `AUTO_FAILOVER`：默认的策略，当没有缓存的 active endpoint 时，会尝试探测并缓存当前 active endpoint；请求返回 307 后自动重新探测并重试一次；请求发生网络 I/O 异常后清空缓存，但不会自动重试。
+- `MANUAL_FAILOVER`：请求返回 307 后不自动重新探测和重试，清空缓存由调用方处理故障切换，其余业务逻辑和 `AUTO_FAILOVER` 一致。
+- `ALWAYS_PROBE`：不缓存 active endpoint，每次请求前都重新探测 active endpoint；请求返回 307 后不自动重试。
+
+如果需要指定故障切换策略，可以在创建实例时传入：
+
+<CodeBlock language="go">
+{"client, err := apiclient.NewActivePassiveWithUserConfig(\n\tcontext.Background(),\n\tapiclient.ActivePassiveClientConfig{\n\t\tEndpoints: []apiclient.ActivePassiveEndpointConfig{\n\t\t\t{Host: \"tower-a.example.com\", Schemes: []string{\"https\"}},\n\t\t\t{Host: \"tower-b.example.com\", Schemes: []string{\"https\"}},\n\t\t},\n\t\tFailoverStrategy: apiclient.FailoverStrategyManualFailover,\n\t},\n\tapiclient.UserConfig{\n\t\tName:     \"<username>\",\n\t\tPassword: \"<password>\",\n\t\tSource:   models.UserSourceLOCAL,\n\t},\n)\nif err != nil {\n\treturn err\n}\n"}
+</CodeBlock>
+
+##### 设置返回信息的语言
+
+> 可以设置请求 params 中的 `ContentLanguage` 项设置返回值的语言，可选值为 `["en-US", "zh-CN"]`，默认值为 `en-US`，不在可选值范围内的语言会返回一个 HTTP 400 错误
+
+<CodeBlock language="go">
+{"getTaskDefaultParams := task.NewGetTasksParams()\ngetTaskDefaultParams.RequestBody = &models.GetTasksRequestBody{\n\tFirst: pointy.Int32(10),\n}\n// 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为英文描述。\ntaskDefaultRes, err := client.Task.GetTasks(getTaskDefaultParams)\n\ngetTaskZhParams := task.NewGetTasksParams()\ngetTaskZhParams.RequestBody = &models.GetTasksRequestBody{\n\tFirst: pointy.Int32(10),\n}\n// 此时得到的 alerts 中的 message, solution, cause, impact 将被转换为中文描述。\ngetTaskZhParams.ContentLanguage = pointy.String(\"zh-CN\")\ntaskZhRes, err := client.Task.GetTasks(getTaskZhParams)\n"}
 </CodeBlock>
 
 ## 操作示例
@@ -268,189 +145,31 @@ taskZhRes, err := client.Task.GetTasks(getTaskZhParams)`}
 #### 获取所有虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	httptransport "github.com/go-openapi/runtime/client"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vms, err := getAllVms(client)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle queried vms
-}
-func getAllVms(
-	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
-	getAllVmsParams := vm.NewGetVmsParams()
-	getAllVmsParams.RequestBody = &models.GetVmsRequestBody{}
-	vmsRes, err := client.VM.GetVms(getAllVmsParams)
-	if err != nil {
-		return nil, err
-	}
-	return vmsRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tvms, err := getAllVms(client)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle queried vms\n}\n\nfunc getAllVms(\n\tclient *apiclient.Cloudtower) ([]*models.VM, error) {\n\tgetAllVmsParams := vm.NewGetVmsParams()\n\tgetAllVmsParams.RequestBody = &models.GetVmsRequestBody{}\n\tvmsRes, err := client.VM.GetVms(getAllVmsParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn vmsRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 #### 分页获取虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vms, err := getVmsWithPagination(client)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle queried vms
-}
-func getVmsWithPagination(
-	client *${CodeTerminology["go_client"]},
-  from int32,
-  to int32) ([]*models.VM, error) {
-	getVmsWithPaginationParams := vm.NewGetVmsParams()
-	getVmsWithPaginationParams.RequestBody = &models.GetVmsRequestBody{
-		First: pointy.Int32(from+1),
-		Skip:  pointy.Int32(to-from),
-	}
-	vmsRes, err := client.VM.GetVms(getVmsWithPaginationParams)
-	if err != nil {
-		return nil, err
-	}
-	return vmsRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tvms, err := getVmsWithPagination(client)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle queried vms\n}\n\nfunc getVmsWithPagination(\n\tclient *apiclient.Cloudtower,\n  from int32,\n  to int32) ([]*models.VM, error) {\n\tgetVmsWithPaginationParams := vm.NewGetVmsParams()\n\tgetVmsWithPaginationParams.RequestBody = &models.GetVmsRequestBody{\n\t\tFirst: pointy.Int32(from+1),\n\t\tSkip:  pointy.Int32(to-from),\n\t}\n\tvmsRes, err := client.VM.GetVms(getVmsWithPaginationParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn vmsRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 #### 获取所有已开机虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vms, err := getAllRunningVms(client)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle queried vms
-}
-func getAllRunningVms(
-	client *${CodeTerminology["go_client"]}) ([]*models.VM, error) {
-	getAllRunningVmsParams := vm.NewGetVmsParams()
-	getAllRunningVmsParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			Status: models.VMStatusRUNNING.Pointer(),
-		},
-	}
-	vmsRes, err := client.VM.GetVms(getAllRunningVmsParams)
-	if err != nil {
-		return nil, err
-	}
-	return vmsRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tvms, err := getAllRunningVms(client)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle queried vms\n}\n\nfunc getAllRunningVms(\n\tclient *apiclient.Cloudtower) ([]*models.VM, error) {\n\tgetAllRunningVmsParams := vm.NewGetVmsParams()\n\tgetAllRunningVmsParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tStatus: models.VMStatusRUNNING.Pointer(),\n\t\t},\n\t}\n\tvmsRes, err := client.VM.GetVms(getAllRunningVmsParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn vmsRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 #### 获取名称或描述中包含特定字符串的虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vms, err := getVmsMatchStr(client, "matchStr")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle queried vms
-}
-func getVmsMatchStr(
-	client *${CodeTerminology["go_client"]},
-	match string) ([]*models.VM, error) {
-	getAllVmNameMatchStrParams := vm.NewGetVmsParams()
-	getAllVmNameMatchStrParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			NameContains: pointy.String(match),
-		},
-	}
-	vmsRes, err := client.VM.GetVms(getAllVmNameMatchStrParams)
-	if err != nil {
-		return nil, err
-	}
-	return vmsRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tvms, err := getVmsMatchStr(client, \"matchStr\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle queried vms\n}\n\nfunc getVmsMatchStr(\n\tclient *apiclient.Cloudtower,\n\tmatch string) ([]*models.VM, error) {\n\tgetAllVmNameMatchStrParams := vm.NewGetVmsParams()\n\tgetAllVmNameMatchStrParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tNameContains: pointy.String(match),\n\t\t},\n\t}\n\tvmsRes, err := client.VM.GetVms(getAllVmNameMatchStrParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn vmsRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 #### 获取所有 vcpu > n 的虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vms, err := getVmshasNMoreCpuCore(client, 4)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle queried vms
-}
-func getVmshasNMoreCpuCore(
-	client *${CodeTerminology["go_client"]},
-	n int32) ([]*models.VM, error) {
-	getAllVmCoreGtNParams := vm.NewGetVmsParams()
-	getAllVmCoreGtNParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			VcpuGt: pointy.Int32(n),
-		},
-	}
-	vmsRes, err := client.VM.GetVms(getAllVmCoreGtNParams)
-	if err != nil {
-		return nil, err
-	}
-	return vmsRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tvms, err := getVmshasNMoreCpuCore(client, 4)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle queried vms\n}\n\nfunc getVmshasNMoreCpuCore(\n\tclient *apiclient.Cloudtower,\n\tn int32) ([]*models.VM, error) {\n\tgetAllVmCoreGtNParams := vm.NewGetVmsParams()\n\tgetAllVmCoreGtNParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tVcpuGt: pointy.Int32(n),\n\t\t},\n\t}\n\tvmsRes, err := client.VM.GetVms(getAllVmCoreGtNParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn vmsRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 ### 从模版创建虚拟机
@@ -458,233 +177,19 @@ func getVmshasNMoreCpuCore(
 #### 仅指定 id
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createdVm, err := createVmFromTemplate(client, "templateId", "clusterId", "vm_name")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVmFromTemplate(
-	client *${CodeTerminology["go_client"]},
-	templateId string,
-	clusterId string,
-	name string) (*models.VM, error) {
-	createVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()
-	createVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
-		{
-			TemplateID: &templateId,
-			ClusterID:  &clusterId,
-			Name:       &name,
-			IsFullCopy: pointy.Bool(false),
-		},
-	}
-	createRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreatedVm, err := createVmFromTemplate(client, \"templateId\", \"clusterId\", \"vm_name\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVmFromTemplate(\n\tclient *apiclient.Cloudtower,\n\ttemplateId string,\n\tclusterId string,\n\tname string) (*models.VM, error) {\n\tcreateVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()\n\tcreateVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{\n\t\t{\n\t\t\tTemplateID: &templateId,\n\t\t\tClusterID:  &clusterId,\n\t\t\tName:       &name,\n\t\t\tIsFullCopy: pointy.Bool(false),\n\t\t},\n\t}\n\tcreateRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 配置与模板不同的虚拟盘参数
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createdVm, err := createVmFromTemplate(client, "templateId", "clusterId", "vm_name")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVmFromTemplate(
-	client *${CodeTerminology["go_client"]},
-	templateId string,
-	clusterId string,
-	name string) (*models.VM, error) {
-	createVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()
-	createVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
-		{
-			TemplateID: &templateId,
-			ClusterID:  &clusterId,
-			Name:       &name,
-			DiskOperate: &models.VMDiskOperate{
-				RemoveDisks: &models.VMDiskOperateRemoveDisks{
-					DiskIndex: []int32{2, 3},
-				},
-				ModifyDisks: []*models.DiskOperateModifyDisk{
-					{
-						DiskIndex:  pointy.Int32(0),
-						VMVolumeID: pointy.String("vmVolumeId1"),
-					},
-				},
-				NewDisks: &models.VMDiskParams{
-					MountCdRoms: []*models.VMCdRomParams{
-						{
-							Index:                 pointy.Int32(2),
-							Boot:                  pointy.Int32(0),
-							ContentLibraryImageID: pointy.String("contentLibraryImageId"),
-						},
-					},
-					MountDisks: []*models.MountDisksParams{
-						{
-							Index:      pointy.Int32(3),
-							Bus:        models.BusVIRTIO.Pointer(),
-							Boot:       pointy.Int32(1),
-							VMVolumeID: pointy.String("vmVolumeId2"),
-						},
-					},
-					MountNewCreateDisks: []*models.MountNewCreateDisksParams{
-						{
-							VMVolume: &models.MountNewCreateDisksParamsVMVolume{
-								ElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),
-								Size:             pointy.Int64(4 * 1024 * 1024 * 1024),
-								Name:             pointy.String("disk_name"),
-							},
-							Boot: pointy.Int32(2),
-							Bus:  models.BusVIRTIO.Pointer(),
-						},
-					},
-				},
-			},
-			IsFullCopy: pointy.Bool(false),
-		},
-	}
-	createRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreatedVm, err := createVmFromTemplate(client, \"templateId\", \"clusterId\", \"vm_name\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVmFromTemplate(\n\tclient *apiclient.Cloudtower,\n\ttemplateId string,\n\tclusterId string,\n\tname string) (*models.VM, error) {\n\tcreateVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()\n\tcreateVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{\n\t\t{\n\t\t\tTemplateID: &templateId,\n\t\t\tClusterID:  &clusterId,\n\t\t\tName:       &name,\n\t\t\tDiskOperate: &models.VMDiskOperate{\n\t\t\t\tRemoveDisks: &models.VMDiskOperateRemoveDisks{\n\t\t\t\t\tDiskIndex: []int32{2, 3},\n\t\t\t\t},\n\t\t\t\tModifyDisks: []*models.DiskOperateModifyDisk{\n\t\t\t\t\t{\n\t\t\t\t\t\tDiskIndex:  pointy.Int32(0),\n\t\t\t\t\t\tVMVolumeID: pointy.String(\"vmVolumeId1\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tNewDisks: &models.VMDiskParams{\n\t\t\t\t\tMountCdRoms: []*models.VMCdRomParams{\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tIndex:                 pointy.Int32(2),\n\t\t\t\t\t\t\tBoot:                  pointy.Int32(0),\n\t\t\t\t\t\t\tContentLibraryImageID: pointy.String(\"contentLibraryImageId\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tMountDisks: []*models.MountDisksParams{\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tIndex:      pointy.Int32(3),\n\t\t\t\t\t\t\tBus:        models.BusVIRTIO.Pointer(),\n\t\t\t\t\t\t\tBoot:       pointy.Int32(1),\n\t\t\t\t\t\t\tVMVolumeID: pointy.String(\"vmVolumeId2\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tMountNewCreateDisks: []*models.MountNewCreateDisksParams{\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tVMVolume: &models.MountNewCreateDisksParamsVMVolume{\n\t\t\t\t\t\t\t\tElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),\n\t\t\t\t\t\t\t\tSize:             pointy.Int64(4 * 1024 * 1024 * 1024),\n\t\t\t\t\t\t\t\tName:             pointy.String(\"disk_name\"),\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\tBoot: pointy.Int32(2),\n\t\t\t\t\t\t\tBus:  models.BusVIRTIO.Pointer(),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tIsFullCopy: pointy.Bool(false),\n\t\t},\n\t}\n\tcreateRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 配置与模版不同的网卡参数
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createdVm, err := createVmFromTemplate(client, "templateId", "clusterId", "vm_name")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVmFromTemplate(
-	client *${CodeTerminology["go_client"]},
-	templateId string,
-	clusterId string,
-	name string) (*models.VM, error) {
-	createVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()
-	createVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{
-		{
-			TemplateID: &templateId,
-			ClusterID:  &clusterId,
-			Name:       &name,
-			VMNics: []*models.VMNicParams{
-				{
-					ConnectVlanID: pointy.String("vlanId2"),
-					Enabled:       pointy.Bool(true),
-					Model:         models.VMNicModelVIRTIO.Pointer(),
-				},
-			},
-			IsFullCopy: pointy.Bool(false),
-		},
-	}
-	createRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreatedVm, err := createVmFromTemplate(client, \"templateId\", \"clusterId\", \"vm_name\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVmFromTemplate(\n\tclient *apiclient.Cloudtower,\n\ttemplateId string,\n\tclusterId string,\n\tname string) (*models.VM, error) {\n\tcreateVmFromTemplateParams := vm.NewCreateVMFromContentLibraryTemplateParams()\n\tcreateVmFromTemplateParams.RequestBody = []*models.VMCreateVMFromContentLibraryTemplateParams{\n\t\t{\n\t\t\tTemplateID: &templateId,\n\t\t\tClusterID:  &clusterId,\n\t\t\tName:       &name,\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{\n\t\t\t\t\tConnectVlanID: pointy.String(\"vlanId2\"),\n\t\t\t\t\tEnabled:       pointy.Bool(true),\n\t\t\t\t\tModel:         models.VMNicModelVIRTIO.Pointer(),\n\t\t\t\t},\n\t\t\t},\n\t\t\tIsFullCopy: pointy.Bool(false),\n\t\t},\n\t}\n\tcreateRes, err := client.VM.CreateVMFromContentLibraryTemplate(createVmFromTemplateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ### 创建空白虚拟机
@@ -692,77 +197,7 @@ func createVmFromTemplate(
 #### 简单创建
 
 <CodeBlock language="go">
-{`package main
-import (
-  	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createParams := vm.NewCreateVMParams()
-	createParams.RequestBody = []*models.VMCreationParams{
-		{
-			ClusterID:  pointy.String("clusterId"),
-			Name:       pointy.String("test_vm_name"),
-			Ha:         pointy.Bool(true),
-			CPUCores:   pointy.Int32(4),
-			CPUSockets: pointy.Int32(2),
-			Memory:     pointy.Int64(8 * 1024 * 1024 * 1024),
-			Vcpu:       pointy.Int32(4 * 2),
-			Status:     models.VMStatusSTOPPED.Pointer(),
-			Firmware:   models.VMFirmwareBIOS.Pointer(),
-			VMNics: []*models.VMNicParams{
-				{ConnectVlanID: pointy.String("vlanId1")},
-			},
-			VMDisks: &models.VMDiskParams{
-				MountCdRoms: []*models.VMCdRomParams{
-					{
-						Boot:  pointy.Int32(0),
-						Index: pointy.Int32(0),
-					},
-				},
-			},
-		},
-	}
-	createdVm, err := createVm(client, createParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVm(
-	client *${CodeTerminology["go_client"]},
-	createParams *vm.CreateVMParams) (*models.VM, error) {
-	createRes, err := client.VM.CreateVM(createParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n  \t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreateParams := vm.NewCreateVMParams()\n\tcreateParams.RequestBody = []*models.VMCreationParams{\n\t\t{\n\t\t\tClusterID:  pointy.String(\"clusterId\"),\n\t\t\tName:       pointy.String(\"test_vm_name\"),\n\t\t\tHa:         pointy.Bool(true),\n\t\t\tCPUCores:   pointy.Int32(4),\n\t\t\tCPUSockets: pointy.Int32(2),\n\t\t\tMemory:     pointy.Int64(8 * 1024 * 1024 * 1024),\n\t\t\tVcpu:       pointy.Int32(4 * 2),\n\t\t\tStatus:     models.VMStatusSTOPPED.Pointer(),\n\t\t\tFirmware:   models.VMFirmwareBIOS.Pointer(),\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{ConnectVlanID: pointy.String(\"vlanId1\")},\n\t\t\t},\n\t\t\tVMDisks: &models.VMDiskParams{\n\t\t\t\tMountCdRoms: []*models.VMCdRomParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot:  pointy.Int32(0),\n\t\t\t\t\t\tIndex: pointy.Int32(0),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tcreatedVm, err := createVm(client, createParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVm(\n\tclient *apiclient.Cloudtower,\n\tcreateParams *vm.CreateVMParams) (*models.VM, error) {\n\n\tcreateRes, err := client.VM.CreateVM(createParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n\n"}
 </CodeBlock>
 
 #### 创建时配置虚拟盘
@@ -770,318 +205,25 @@ func createVm(
 ##### CD-ROM 加载 ISO
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createParams := vm.NewCreateVMParams()
-	createParams.RequestBody = []*models.VMCreationParams{
-		{
-			ClusterID:  pointy.String("clusterId"),
-			Name:       pointy.String("test_vm_name"),
-			Ha:         pointy.Bool(true),
-			CPUCores:   pointy.Int32(4),
-			CPUSockets: pointy.Int32(2),
-			Memory:     pointy.Int64(8 * 1024 * 1024 * 1024),
-			Vcpu:       pointy.Int32(4 * 2),
-			Status:     models.VMStatusSTOPPED.Pointer(),
-			Firmware:   models.VMFirmwareBIOS.Pointer(),
-			VMNics: []*models.VMNicParams{
-				{ConnectVlanID: pointy.String("vlanId1")},
-			},
-			VMDisks: &models.VMDiskParams{
-				MountCdRoms: []*models.VMCdRomParams{
-					{
-						Index:      pointy.Int32(0),
-						Boot:       pointy.Int32(0),
-						ElfImageID: pointy.String("elfImageId"),
-					},
-				},
-			},
-		},
-	}
-	createdVm, err := createVm(client, createParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVm(
-	client *${CodeTerminology["go_client"]},
-	createParams *vm.CreateVMParams) (*models.VM, error) {
-	createRes, err := client.VM.CreateVM(createParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreateParams := vm.NewCreateVMParams()\n\tcreateParams.RequestBody = []*models.VMCreationParams{\n\t\t{\n\t\t\tClusterID:  pointy.String(\"clusterId\"),\n\t\t\tName:       pointy.String(\"test_vm_name\"),\n\t\t\tHa:         pointy.Bool(true),\n\t\t\tCPUCores:   pointy.Int32(4),\n\t\t\tCPUSockets: pointy.Int32(2),\n\t\t\tMemory:     pointy.Int64(8 * 1024 * 1024 * 1024),\n\t\t\tVcpu:       pointy.Int32(4 * 2),\n\t\t\tStatus:     models.VMStatusSTOPPED.Pointer(),\n\t\t\tFirmware:   models.VMFirmwareBIOS.Pointer(),\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{ConnectVlanID: pointy.String(\"vlanId1\")},\n\t\t\t},\n\t\t\tVMDisks: &models.VMDiskParams{\n\t\t\t\tMountCdRoms: []*models.VMCdRomParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tIndex:      pointy.Int32(0),\n\t\t\t\t\t\tBoot:       pointy.Int32(0),\n\t\t\t\t\t\tElfImageID: pointy.String(\"elfImageId\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tcreatedVm, err := createVm(client, createParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVm(\n\tclient *apiclient.Cloudtower,\n\tcreateParams *vm.CreateVMParams) (*models.VM, error) {\n\n\tcreateRes, err := client.VM.CreateVM(createParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 挂载虚拟卷为虚拟盘
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createParams := vm.NewCreateVMParams()
-	createParams.RequestBody = []*models.VMCreationParams{
-		{
-			ClusterID:  pointy.String("clusterId"),
-			Name:       pointy.String("test_vm_name"),
-			Ha:         pointy.Bool(true),
-			CPUCores:   pointy.Int32(4),
-			CPUSockets: pointy.Int32(2),
-			Memory:     pointy.Int64(8 * 1024 * 1024 * 1024),
-			Vcpu:       pointy.Int32(4 * 2),
-			Status:     models.VMStatusSTOPPED.Pointer(),
-			Firmware:   models.VMFirmwareBIOS.Pointer(),
-			VMNics: []*models.VMNicParams{
-				{ConnectVlanID: pointy.String("vlanId1")},
-			},
-			VMDisks: &models.VMDiskParams{
-				MountDisks: []*models.MountDisksParams{
-					{
-						Boot:       pointy.Int32(0),
-						Bus:        models.BusVIRTIO.Pointer(),
-						VMVolumeID: pointy.String("vmVolumeId1"),
-						Index:      pointy.Int32(0),
-					},
-				},
-			},
-		},
-	}
-	createdVm, err := createVm(client, createParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVm(
-	client *${CodeTerminology["go_client"]},
-	createParams *vm.CreateVMParams) (*models.VM, error) {
-	createRes, err := client.VM.CreateVM(createParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreateParams := vm.NewCreateVMParams()\n\tcreateParams.RequestBody = []*models.VMCreationParams{\n\t\t{\n\t\t\tClusterID:  pointy.String(\"clusterId\"),\n\t\t\tName:       pointy.String(\"test_vm_name\"),\n\t\t\tHa:         pointy.Bool(true),\n\t\t\tCPUCores:   pointy.Int32(4),\n\t\t\tCPUSockets: pointy.Int32(2),\n\t\t\tMemory:     pointy.Int64(8 * 1024 * 1024 * 1024),\n\t\t\tVcpu:       pointy.Int32(4 * 2),\n\t\t\tStatus:     models.VMStatusSTOPPED.Pointer(),\n\t\t\tFirmware:   models.VMFirmwareBIOS.Pointer(),\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{ConnectVlanID: pointy.String(\"vlanId1\")},\n\t\t\t},\n\t\t\tVMDisks: &models.VMDiskParams{\n\t\t\t\tMountDisks: []*models.MountDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot:       pointy.Int32(0),\n\t\t\t\t\t\tBus:        models.BusVIRTIO.Pointer(),\n\t\t\t\t\t\tVMVolumeID: pointy.String(\"vmVolumeId1\"),\n\t\t\t\t\t\tIndex:      pointy.Int32(0),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tcreatedVm, err := createVm(client, createParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVm(\n\tclient *apiclient.Cloudtower,\n\tcreateParams *vm.CreateVMParams) (*models.VM, error) {\n\n\tcreateRes, err := client.VM.CreateVM(createParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 挂载新增虚拟盘
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createParams := vm.NewCreateVMParams()
-	createParams.RequestBody = []*models.VMCreationParams{
-		{
-			ClusterID:  pointy.String("clusterId"),
-			Name:       pointy.String("test_vm_name"),
-			Ha:         pointy.Bool(true),
-			CPUCores:   pointy.Int32(4),
-			CPUSockets: pointy.Int32(2),
-			Memory:     pointy.Int64(8 * 1024 * 1024 * 1024),
-			Vcpu:       pointy.Int32(4 * 2),
-			Status:     models.VMStatusSTOPPED.Pointer(),
-			Firmware:   models.VMFirmwareBIOS.Pointer(),
-			VMNics: []*models.VMNicParams{
-				{ConnectVlanID: pointy.String("vlanId1")},
-			},
-			VMDisks: &models.VMDiskParams{
-				MountNewCreateDisks: []*models.MountNewCreateDisksParams{
-					{
-						Boot: pointy.Int32(0),
-						Bus:  models.BusVIRTIO.Pointer(),
-						VMVolume: &models.MountNewCreateDisksParamsVMVolume{
-							Size:             pointy.Int64(10 * 1024 * 1024 * 1024),
-							ElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),
-							Name:             pointy.String("new_vm_disk_name"),
-						},
-					},
-				},
-			},
-		},
-	}
-	createdVm, err := createVm(client, createParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVm(
-	client *${CodeTerminology["go_client"]},
-	createParams *vm.CreateVMParams) (*models.VM, error) {
-	createRes, err := client.VM.CreateVM(createParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreateParams := vm.NewCreateVMParams()\n\tcreateParams.RequestBody = []*models.VMCreationParams{\n\t\t{\n\t\t\tClusterID:  pointy.String(\"clusterId\"),\n\t\t\tName:       pointy.String(\"test_vm_name\"),\n\t\t\tHa:         pointy.Bool(true),\n\t\t\tCPUCores:   pointy.Int32(4),\n\t\t\tCPUSockets: pointy.Int32(2),\n\t\t\tMemory:     pointy.Int64(8 * 1024 * 1024 * 1024),\n\t\t\tVcpu:       pointy.Int32(4 * 2),\n\t\t\tStatus:     models.VMStatusSTOPPED.Pointer(),\n\t\t\tFirmware:   models.VMFirmwareBIOS.Pointer(),\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{ConnectVlanID: pointy.String(\"vlanId1\")},\n\t\t\t},\n\t\t\tVMDisks: &models.VMDiskParams{\n\t\t\t\tMountNewCreateDisks: []*models.MountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot: pointy.Int32(0),\n\t\t\t\t\t\tBus:  models.BusVIRTIO.Pointer(),\n\t\t\t\t\t\tVMVolume: &models.MountNewCreateDisksParamsVMVolume{\n\t\t\t\t\t\t\tSize:             pointy.Int64(10 * 1024 * 1024 * 1024),\n\t\t\t\t\t\t\tElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),\n\t\t\t\t\t\t\tName:             pointy.String(\"new_vm_disk_name\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tcreatedVm, err := createVm(client, createParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVm(\n\tclient *apiclient.Cloudtower,\n\tcreateParams *vm.CreateVMParams) (*models.VM, error) {\n\n\tcreateRes, err := client.VM.CreateVM(createParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 创建时配置虚拟网卡
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	createParams := vm.NewCreateVMParams()
-	createParams.RequestBody = []*models.VMCreationParams{
-		{
-			ClusterID:  pointy.String("clusterId"),
-			Name:       pointy.String("test_vm_name"),
-			Ha:         pointy.Bool(true),
-			CPUCores:   pointy.Int32(4),
-			CPUSockets: pointy.Int32(2),
-			Memory:     pointy.Int64(8 * 1024 * 1024 * 1024),
-			Vcpu:       pointy.Int32(4 * 2),
-			Status:     models.VMStatusSTOPPED.Pointer(),
-			Firmware:   models.VMFirmwareBIOS.Pointer(),
-			VMNics: []*models.VMNicParams{
-				{
-					ConnectVlanID: pointy.String("vlanId1"),
-					Mirror:        pointy.Bool(true),
-					Enabled:       pointy.Bool(false),
-					Model:         models.VMNicModelE1000.Pointer(),
-				},
-			},
-			VMDisks: &models.VMDiskParams{
-				MountCdRoms: []*models.VMCdRomParams{
-					{
-						Boot:  pointy.Int32(0),
-						Index: pointy.Int32(0),
-					},
-				},
-			},
-		},
-	}
-	createdVm, err := createVm(client, createParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func createVm(
-	client *${CodeTerminology["go_client"]},
-	createParams *vm.CreateVMParams) (*models.VM, error) {
-	createRes, err := client.VM.CreateVM(createParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := createRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tcreateParams := vm.NewCreateVMParams()\n\tcreateParams.RequestBody = []*models.VMCreationParams{\n\t\t{\n\t\t\tClusterID:  pointy.String(\"clusterId\"),\n\t\t\tName:       pointy.String(\"test_vm_name\"),\n\t\t\tHa:         pointy.Bool(true),\n\t\t\tCPUCores:   pointy.Int32(4),\n\t\t\tCPUSockets: pointy.Int32(2),\n\t\t\tMemory:     pointy.Int64(8 * 1024 * 1024 * 1024),\n\t\t\tVcpu:       pointy.Int32(4 * 2),\n\t\t\tStatus:     models.VMStatusSTOPPED.Pointer(),\n\t\t\tFirmware:   models.VMFirmwareBIOS.Pointer(),\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{\n\t\t\t\t\tConnectVlanID: pointy.String(\"vlanId1\"),\n\t\t\t\t\tMirror:        pointy.Bool(true),\n\t\t\t\t\tEnabled:       pointy.Bool(false),\n\t\t\t\t\tModel:         models.VMNicModelE1000.Pointer(),\n\t\t\t\t},\n\t\t\t},\n\t\t\tVMDisks: &models.VMDiskParams{\n\t\t\t\tMountCdRoms: []*models.VMCdRomParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot:  pointy.Int32(0),\n\t\t\t\t\t\tIndex: pointy.Int32(0),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tcreatedVm, err := createVm(client, createParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc createVm(\n\tclient *apiclient.Cloudtower,\n\tcreateParams *vm.CreateVMParams) (*models.VM, error) {\n\n\tcreateRes, err := client.VM.CreateVM(createParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := createRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ### 编辑虚拟机
@@ -1089,67 +231,7 @@ func createVm(
 #### 编辑基本信息
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewUpdateVMParams()
-	updateParams.RequestBody = &models.VMUpdateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMUpdateParamsData{
-			Name:        pointy.String("updated_name"),
-			Description: pointy.String("updated description"),
-			Ha:          pointy.Bool(true),
-			CPUCores:    pointy.Int32(2),
-			CPUSockets:  pointy.Int32(8),
-			Vcpu:        pointy.Int32(2 * 8),
-			Memory:      pointy.Int64(16 * 1024 * 1024 * 1024),
-		},
-	}
-	updatedVm, err := updateVm(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func updateVm(
-	client *${CodeTerminology["go_client"]},
-	updateParams *vm.UpdateVMParams) (*models.VM, error) {
-	updateRes, err := client.VM.UpdateVM(updateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewUpdateVMParams()\n\tupdateParams.RequestBody = &models.VMUpdateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMUpdateParamsData{\n\t\t\tName:        pointy.String(\"updated_name\"),\n\t\t\tDescription: pointy.String(\"updated description\"),\n\t\t\tHa:          pointy.Bool(true),\n\t\t\tCPUCores:    pointy.Int32(2),\n\t\t\tCPUSockets:  pointy.Int32(8),\n\t\t\tVcpu:        pointy.Int32(2 * 8),\n\t\t\tMemory:      pointy.Int64(16 * 1024 * 1024 * 1024),\n\t\t},\n\t}\n\tupdatedVm, err := updateVm(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc updateVm(\n\tclient *apiclient.Cloudtower,\n\tupdateParams *vm.UpdateVMParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.UpdateVM(updateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### CD-ROM 编辑
@@ -1157,127 +239,13 @@ func updateVm(
 ##### 添加 CD-ROM
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	addCdRomParams := vm.NewAddVMCdRomParams()
-	addCdRomParams.RequestBody = &models.VMAddCdRomParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMAddCdRomParamsData{
-			VMCdRoms: []*models.VMCdRomParams{
-				{
-					Index:      pointy.Int32(0),
-					ElfImageID: pointy.String("elfImageId"),
-					Boot:       pointy.Int32(0),
-				},
-			},
-		},
-	}
-	updatedVm, err := addVmCdRom(client, addCdRomParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func addVmCdRom(
-	client *${CodeTerminology["go_client"]},
-	addCdRomParams *vm.AddVMCdRomParams) (*models.VM, error) {
-	updateRes, err := client.VM.AddVMCdRom(addCdRomParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\taddCdRomParams := vm.NewAddVMCdRomParams()\n\taddCdRomParams.RequestBody = &models.VMAddCdRomParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMAddCdRomParamsData{\n\t\t\tVMCdRoms: []*models.VMCdRomParams{\n\t\t\t\t{\n\t\t\t\t\tIndex:      pointy.Int32(0),\n\t\t\t\t\tElfImageID: pointy.String(\"elfImageId\"),\n\t\t\t\t\tBoot:       pointy.Int32(0),\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tupdatedVm, err := addVmCdRom(client, addCdRomParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc addVmCdRom(\n\tclient *apiclient.Cloudtower,\n\taddCdRomParams *vm.AddVMCdRomParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.AddVMCdRom(addCdRomParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 删除 CD-ROM
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewRemoveVMCdRomParams()
-	updateParams.RequestBody = &models.VMRemoveCdRomParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMRemoveCdRomParamsData{
-			CdRomIds: []string{"cdRomId1", "cdRomId2"},
-		},
-	}
-	updatedVm, err := removeVmCdRom(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func removeVmCdRom(
-	client *${CodeTerminology["go_client"]},
-	removeCdRomParams *vm.RemoveVMCdRomParams) (*models.VM, error) {
-	updateRes, err := client.VM.RemoveVMCdRom(removeCdRomParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewRemoveVMCdRomParams()\n\tupdateParams.RequestBody = &models.VMRemoveCdRomParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMRemoveCdRomParamsData{\n\t\t\tCdRomIds: []string{\"cdRomId1\", \"cdRomId2\"},\n\t\t},\n\t}\n\tupdatedVm, err := removeVmCdRom(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc removeVmCdRom(\n\tclient *apiclient.Cloudtower,\n\tremoveCdRomParams *vm.RemoveVMCdRomParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.RemoveVMCdRom(removeCdRomParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 虚拟卷操作
@@ -1285,202 +253,19 @@ func removeVmCdRom(
 ##### 添加新虚拟卷
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewAddVMDiskParams()
-	updateParams.RequestBody = &models.VMAddDiskParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMAddDiskParamsData{
-			VMDisks: &models.VMAddDiskParamsDataVMDisks{
-				MountNewCreateDisks: []*models.MountNewCreateDisksParams{
-					{
-						VMVolume: &models.MountNewCreateDisksParamsVMVolume{
-							ElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),
-							Size:             pointy.Int64(10 * 1024 * 1024 * 1024),
-							Name:             pointy.String("new_disk_name"),
-						},
-						Boot: pointy.Int32(1),
-						Bus:  models.BusVIRTIO.Pointer(),
-					},
-				},
-			},
-		},
-	}
-	updatedVm, err := addVmDisk(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle created vm
-}
-func addVmDisk(
-	client *${CodeTerminology["go_client"]},
-	addVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {
-	updateRes, err := client.VM.AddVMDisk(addVMDiskParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewAddVMDiskParams()\n\tupdateParams.RequestBody = &models.VMAddDiskParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountNewCreateDisks: []*models.MountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tVMVolume: &models.MountNewCreateDisksParamsVMVolume{\n\t\t\t\t\t\t\tElfStoragePolicy: models.VMVolumeElfStoragePolicyTypeREPLICA2THINPROVISION.Pointer(),\n\t\t\t\t\t\t\tSize:             pointy.Int64(10 * 1024 * 1024 * 1024),\n\t\t\t\t\t\t\tName:             pointy.String(\"new_disk_name\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tBoot: pointy.Int32(1),\n\t\t\t\t\t\tBus:  models.BusVIRTIO.Pointer(),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tupdatedVm, err := addVmDisk(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle created vm\n}\n\nfunc addVmDisk(\n\tclient *apiclient.Cloudtower,\n\taddVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.AddVMDisk(addVMDiskParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 挂载已存在虚拟卷为虚拟盘
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewAddVMDiskParams()
-	updateParams.RequestBody = &models.VMAddDiskParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMAddDiskParamsData{
-			VMDisks: &models.VMAddDiskParamsDataVMDisks{
-				MountDisks: []*models.MountDisksParams{
-					{
-						Index:      pointy.Int32(0),
-						VMVolumeID: pointy.String("vmVolumeId"),
-						Boot:       pointy.Int32(0),
-						Bus:        models.BusVIRTIO.Pointer(),
-					},
-				},
-			},
-		},
-	}
-	updatedVm, err := addVmDisk(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func addVmDisk(
-	client *${CodeTerminology["go_client"]},
-	addVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {
-	updateRes, err := client.VM.AddVMDisk(addVMDiskParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewAddVMDiskParams()\n\tupdateParams.RequestBody = &models.VMAddDiskParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountDisks: []*models.MountDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tIndex:      pointy.Int32(0),\n\t\t\t\t\t\tVMVolumeID: pointy.String(\"vmVolumeId\"),\n\t\t\t\t\t\tBoot:       pointy.Int32(0),\n\t\t\t\t\t\tBus:        models.BusVIRTIO.Pointer(),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tupdatedVm, err := addVmDisk(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc addVmDisk(\n\tclient *apiclient.Cloudtower,\n\taddVMDiskParams *vm.AddVMDiskParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.AddVMDisk(addVMDiskParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 卸载虚拟盘
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewRemoveVMDiskParams()
-	updateParams.RequestBody = &models.VMRemoveDiskParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMRemoveDiskParamsData{
-			DiskIds: []string{"diskId1", "diskId2"},
-		},
-	}
-	updatedVm, err := removeVmDisk(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func removeVmDisk(
-	client *${CodeTerminology["go_client"]},
-	removeVmDiskParams *vm.RemoveVMDiskParams) (*models.VM, error) {
-	updateRes, err := client.VM.RemoveVMDisk(removeVmDiskParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewRemoveVMDiskParams()\n\tupdateParams.RequestBody = &models.VMRemoveDiskParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMRemoveDiskParamsData{\n\t\t\tDiskIds: []string{\"diskId1\", \"diskId2\"},\n\t\t},\n\t}\n\tupdatedVm, err := removeVmDisk(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc removeVmDisk(\n\tclient *apiclient.Cloudtower,\n\tremoveVmDiskParams *vm.RemoveVMDiskParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.RemoveVMDisk(removeVmDiskParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 网卡操作
@@ -1488,189 +273,19 @@ func removeVmDisk(
 ##### 添加网卡
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewAddVMNicParams()
-	updateParams.RequestBody = &models.VMAddNicParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMAddNicParamsData{
-			VMNics: []*models.VMNicParams{
-				{
-					ConnectVlanID: pointy.String("vlanId2"),
-					Enabled:       pointy.Bool(true),
-					Model:         models.VMNicModelVIRTIO.Pointer(),
-				},
-			},
-		},
-	}
-	updatedVm, err := addVmNic(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func addVmNic(
-	client *${CodeTerminology["go_client"]},
-	addVMNicParams *vm.AddVMNicParams) (*models.VM, error) {
-	updateRes, err := client.VM.AddVMNic(addVMNicParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewAddVMNicParams()\n\tupdateParams.RequestBody = &models.VMAddNicParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMAddNicParamsData{\n\t\t\tVMNics: []*models.VMNicParams{\n\t\t\t\t{\n\t\t\t\t\tConnectVlanID: pointy.String(\"vlanId2\"),\n\t\t\t\t\tEnabled:       pointy.Bool(true),\n\t\t\t\t\tModel:         models.VMNicModelVIRTIO.Pointer(),\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\tupdatedVm, err := addVmNic(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc addVmNic(\n\tclient *apiclient.Cloudtower,\n\taddVMNicParams *vm.AddVMNicParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.AddVMNic(addVMNicParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 编辑网卡
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewUpdateVMNicParams()
-	updateParams.RequestBody = &models.VMUpdateNicParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMUpdateNicParamsData{
-			NicIndex: pointy.Int32(0),
-			Enabled:  pointy.Bool(false),
-			Mirror:   pointy.Bool(false),
-		},
-	}
-	updatedVm, err := updateVmNic(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func updateVmNic(
-	client *${CodeTerminology["go_client"]},
-	updateVMNicParams *vm.UpdateVMNicParams) (*models.VM, error) {
-	updateRes, err := client.VM.UpdateVMNic(updateVMNicParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewUpdateVMNicParams()\n\tupdateParams.RequestBody = &models.VMUpdateNicParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMUpdateNicParamsData{\n\t\t\tNicIndex: pointy.Int32(0),\n\t\t\tEnabled:  pointy.Bool(false),\n\t\t\tMirror:   pointy.Bool(false),\n\t\t},\n\t}\n\tupdatedVm, err := updateVmNic(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc updateVmNic(\n\tclient *apiclient.Cloudtower,\n\tupdateVMNicParams *vm.UpdateVMNicParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.UpdateVMNic(updateVMNicParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 移除网卡
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	updateParams := vm.NewRemoveVMNicParams()
-	updateParams.RequestBody = &models.VMRemoveNicParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String("vmId"),
-		},
-		Data: &models.VMRemoveNicParamsData{
-			NicIndex: []int32{0, 1},
-		},
-	}
-	updatedVm, err := removeVmNic(client, updateParams)
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle updated vm
-}
-func removeVmNic(
-	client *${CodeTerminology["go_client"]},
-	removeVmDiskParams *vm.RemoveVMNicParams) (*models.VM, error) {
-	updateRes, err := client.VM.RemoveVMNic(removeVmDiskParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := updateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\tupdateParams := vm.NewRemoveVMNicParams()\n\tupdateParams.RequestBody = &models.VMRemoveNicParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"vmId\"),\n\t\t},\n\t\tData: &models.VMRemoveNicParamsData{\n\t\t\tNicIndex: []int32{0, 1},\n\t\t},\n\t}\n\tupdatedVm, err := removeVmNic(client, updateParams)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle updated vm\n}\n\nfunc removeVmNic(\n\tclient *apiclient.Cloudtower,\n\tremoveVmDiskParams *vm.RemoveVMNicParams) (*models.VM, error) {\n\tupdateRes, err := client.VM.RemoveVMNic(removeVmDiskParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := updateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n\n"}
 </CodeBlock>
 
 #### 虚拟机迁移
@@ -1678,119 +293,13 @@ func removeVmNic(
 ##### 迁移至指定主机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	migratedVm, err := migrateVmToHost(client, "vmId", "hostId")
-	if err != nil {
-		panic(err.Error())
-	}
-	// handle migrated vm
-}
-func migrateVmToHost(
-	client *${CodeTerminology["go_client"]},
-	vmId string,
-	hostId string) (*models.VM, error) {
-	migrateParams := vm.NewMigRateVMParams()
-	migrateParams.RequestBody = &models.VMMigrateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-		Data: &models.VMMigrateParamsData{
-			HostID: pointy.String(hostId),
-		},
-	}
-	migrateRes, err := client.VM.MigRateVM(migrateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := migrateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tmigratedVm, err := migrateVmToHost(client, \"vmId\", \"hostId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\t// handle migrated vm\n}\n\nfunc migrateVmToHost(\n\tclient *apiclient.Cloudtower,\n\tvmId string,\n\thostId string) (*models.VM, error) {\n\tmigrateParams := vm.NewMigRateVMParams()\n\tmigrateParams.RequestBody = &models.VMMigrateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t\tData: &models.VMMigrateParamsData{\n\t\t\tHostID: pointy.String(hostId),\n\t\t},\n\t}\n\tmigrateRes, err := client.VM.MigRateVM(migrateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := migrateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 自动调度到合适的主机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	migratedVm, err := migrateVmAutoSchedule(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-	// handle migrated vm
-}
-func migrateVmAutoSchedule(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	migrateParams := vm.NewMigRateVMParams()
-	migrateParams.RequestBody = &models.VMMigrateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	migrateRes, err := client.VM.MigRateVM(migrateParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := migrateRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tmigratedVm, err := migrateVmAutoSchedule(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\t// handle migrated vm\n}\n\nfunc migrateVmAutoSchedule(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tmigrateParams := vm.NewMigRateVMParams()\n\tmigrateParams.RequestBody = &models.VMMigrateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tmigrateRes, err := client.VM.MigRateVM(migrateParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := migrateRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ### 虚拟机电源操作
@@ -1800,189 +309,19 @@ func migrateVmAutoSchedule(
 ##### 指定虚拟机开机，自动调度到合适的虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	startedVm, err := startVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle started vm
-}
-func startVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	startParams := vm.NewStartVMParams()
-	startParams.RequestBody = &models.VMStartParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	startRes, err := client.VM.StartVM(startParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := startRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tstartedVm, err := startVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle started vm\n}\n\nfunc startVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tstartParams := vm.NewStartVMParams()\n\tstartParams.RequestBody = &models.VMStartParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tstartRes, err := client.VM.StartVM(startParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := startRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 批量虚拟机开机，自动调度到合适的虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	startedVms, err := startVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle started vms
-}
-func startVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	startParams := vm.NewStartVMParams()
-	startParams.RequestBody = &models.VMStartParams{
-		Where: where,
-	}
-	startRes, err := client.VM.StartVM(startParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := startRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tstartedVms, err := startVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle started vms\n}\n\nfunc startVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\tstartParams := vm.NewStartVMParams()\n\tstartParams.RequestBody = &models.VMStartParams{\n\t\tWhere: where,\n\t}\n\tstartRes, err := client.VM.StartVM(startParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := startRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 ##### 开机至指定主机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	startedVm, err := startVmOnHost(client, "vmId", "hostId2")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle started vm
-}
-func startVmOnHost(
-	client *${CodeTerminology["go_client"]},
-	vmId string,
-	hostId string) (*models.VM, error) {
-	startParams := vm.NewStartVMParams()
-	startParams.RequestBody = &models.VMStartParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-		Data: &models.VMStartParamsData{
-			HostID: pointy.String(hostId),
-		},
-	}
-	startRes, err := client.VM.StartVM(startParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := startRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tstartedVm, err := startVmOnHost(client, \"vmId\", \"hostId2\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle started vm\n}\n\nfunc startVmOnHost(\n\tclient *apiclient.Cloudtower,\n\tvmId string,\n\thostId string) (*models.VM, error) {\n\tstartParams := vm.NewStartVMParams()\n\tstartParams.RequestBody = &models.VMStartParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t\tData: &models.VMStartParamsData{\n\t\t\tHostID: pointy.String(hostId),\n\t\t},\n\t}\n\tstartRes, err := client.VM.StartVM(startParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := startRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 虚拟机关机
@@ -1990,254 +329,25 @@ func startVmOnHost(
 ##### 指定虚拟机关机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	shutdownVm, err := shutdownVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle shutdown vm
-}
-func shutdownVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	shutdownParams := vm.NewShutDownVMParams()
-	shutdownParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	shutdownRes, err := client.VM.ShutDownVM(shutdownParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := shutdownRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tshutdownVm, err := shutdownVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle shutdown vm\n}\n\nfunc shutdownVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tshutdownParams := vm.NewShutDownVMParams()\n\tshutdownParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tshutdownRes, err := client.VM.ShutDownVM(shutdownParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := shutdownRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 批量虚拟机关机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	shutdownVms, err := shutdownVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle shutdown vms
-}
-func shutdownVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	shutdownParams := vm.NewShutDownVMParams()
-	shutdownParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	shutdownRes, err := client.VM.ShutDownVM(shutdownParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := shutdownRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tshutdownVms, err := shutdownVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle shutdown vms\n}\n\nfunc shutdownVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\tshutdownParams := vm.NewShutDownVMParams()\n\tshutdownParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\tshutdownRes, err := client.VM.ShutDownVM(shutdownParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := shutdownRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 ##### 强制关机指定虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	shutdownVm, err := forceShutdownVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle shutdown vm
-}
-func forceShutdownVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	shutdownParams := vm.NewForceShutDownVMParams()
-	shutdownParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	shutdownRes, err := client.VM.ForceShutDownVM(shutdownParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := shutdownRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tshutdownVm, err := forceShutdownVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle shutdown vm\n}\n\nfunc forceShutdownVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tshutdownParams := vm.NewForceShutDownVMParams()\n\tshutdownParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tshutdownRes, err := client.VM.ForceShutDownVM(shutdownParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := shutdownRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 强制关机批量虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	shutdownVms, err := forceshutdownVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle shutdown vms
-}
-func forceshutdownVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	shutdownParams := vm.NewForceShutDownVMParams()
-	shutdownParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	shutdownRes, err := client.VM.ForceShutDownVM(shutdownParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := shutdownRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tshutdownVms, err := forceshutdownVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle shutdown vms\n}\n\n\nfunc forceshutdownVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\tshutdownParams := vm.NewForceShutDownVMParams()\n\tshutdownParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\tshutdownRes, err := client.VM.ForceShutDownVM(shutdownParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := shutdownRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n\n"}
 </CodeBlock>
 
 #### 虚拟机重启
@@ -2245,253 +355,25 @@ func forceshutdownVmsByQuery(client *${CodeTerminology["go_client"]},
 ##### 重启指定虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	restartedVm, err := restartVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle restarted vm
-}
-func restartVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	restartParams := vm.NewRestartVMParams()
-	restartParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	restartRes, err := client.VM.RestartVM(restartParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := restartRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\trestartedVm, err := restartVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle restarted vm\n}\n\nfunc restartVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\trestartParams := vm.NewRestartVMParams()\n\trestartParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\trestartRes, err := client.VM.RestartVM(restartParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := restartRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 重启批量虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-  	restartedVms, err := restartVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle restarted vms
-}
-func restartVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	restartParams := vm.NewRestartVMParams()
-	restartParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	restartRes, err := client.VM.RestartVM(restartParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := restartRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n  \trestartedVms, err := restartVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle restarted vms\n}\n\nfunc restartVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\trestartParams := vm.NewRestartVMParams()\n\trestartParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\trestartRes, err := client.VM.RestartVM(restartParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := restartRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 ##### 强制重启指定虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	restartedVm, err := forceRestartVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle restarted vm
-}
-func forceRestartVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	restartParams := vm.NewForceRestartVMParams()
-	restartParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	shutdownRes, err := client.VM.ForceRestartVM(restartParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := shutdownRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\trestartedVm, err := forceRestartVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle restarted vm\n}\n\nfunc forceRestartVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\trestartParams := vm.NewForceRestartVMParams()\n\trestartParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tshutdownRes, err := client.VM.ForceRestartVM(restartParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := shutdownRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 强制重启批量虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	restartedVms, err := forceRestartVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle restarted vms
-}
-func forceRestartVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	restartParams := vm.NewForceRestartVMParams()
-	restartParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	startRes, err := client.VM.ForceRestartVM(restartParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := startRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\trestartedVms, err := forceRestartVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle restarted vms\n}\n\nfunc forceRestartVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\trestartParams := vm.NewForceRestartVMParams()\n\trestartParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\tstartRes, err := client.VM.ForceRestartVM(restartParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := startRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 #### 虚拟机暂停
@@ -2499,128 +381,13 @@ func forceRestartVmsByQuery(client *${CodeTerminology["go_client"]},
 ##### 暂停指定虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	suspendedVm, err := suspendVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle suspended vm
-}
-func suspendVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	suspendParams := vm.NewSuspendVMParams()
-	suspendParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	shutdownRes, err := client.VM.SuspendVM(suspendParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := shutdownRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tsuspendedVm, err := suspendVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle suspended vm\n}\n\nfunc suspendVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tsuspendParams := vm.NewSuspendVMParams()\n\tsuspendParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tshutdownRes, err := client.VM.SuspendVM(suspendParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := shutdownRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 暂停批量虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	suspendedVms, err := suspendVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-	// handle restarted vms
-	print(suspendedVms)
-}
-func suspendVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	suspendParams := vm.NewSuspendVMParams()
-	suspendParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	suspendRes, err := client.VM.SuspendVM(suspendParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := suspendRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tsuspendedVms, err := suspendVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\t// handle restarted vms\n\tprint(suspendedVms)\n}\n\nfunc suspendVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\tsuspendParams := vm.NewSuspendVMParams()\n\tsuspendParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\tsuspendRes, err := client.VM.SuspendVM(suspendParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := suspendRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n\n"}
 </CodeBlock>
 
 #### 虚拟机恢复
@@ -2628,127 +395,13 @@ func suspendVmsByQuery(client *${CodeTerminology["go_client"]},
 ##### 恢复指定虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	resumedVm, err := resumeVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle resumed vm
-}
-func resumeVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	resumeVmParams := vm.NewResumeVMParams()
-	resumeVmParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	resumeRes, err := client.VM.ResumeVM(resumeVmParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := resumeRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tresumedVm, err := resumeVm(client, \"vmId\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle resumed vm\n}\n\nfunc resumeVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tresumeVmParams := vm.NewResumeVMParams()\n\tresumeVmParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tresumeRes, err := client.VM.ResumeVM(resumeVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := resumeRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 恢复批量虚拟机
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	resumedVms, err := resumeVmsByQuery(client, &models.VMWhereInput{
-		IDIn: []string{"vmId"},
-	})
-	if err != nil {
-		panic(err.Error())
-	}
-  // handle resumed vms
-}
-func resumeVmsByQuery(client *${CodeTerminology["go_client"]},
-	where *models.VMWhereInput) ([]*models.VM, error) {
-	resumeParams := vm.NewResumeVMParams()
-	resumeParams.RequestBody = &models.VMOperateParams{
-		Where: where,
-	}
-	resumeRes, err := client.VM.ResumeVM(resumeParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVms := resumeRes.Payload
-	taskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.TaskID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse task ids")
-	}
-	vmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {
-		return *vm.Data.ID
-	}).([]string)
-	if !valid {
-		return nil, fmt.Errorf("failed to parse vm ids")
-	}
-	err = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			IDIn: vmIds,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tresumedVms, err := resumeVmsByQuery(client, &models.VMWhereInput{\n\t\tIDIn: []string{\"vmId\"},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n  // handle resumed vms\n}\n\nfunc resumeVmsByQuery(client *apiclient.Cloudtower,\n\twhere *models.VMWhereInput) ([]*models.VM, error) {\n\tresumeParams := vm.NewResumeVMParams()\n\tresumeParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: where,\n\t}\n\tresumeRes, err := client.VM.ResumeVM(resumeParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVms := resumeRes.Payload\n\ttaskIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.TaskID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse task ids\")\n\t}\n\tvmIds, valid := funk.Map(withTaskVms, func(vm *models.WithTaskVM) string {\n\t\treturn *vm.Data.ID\n\t}).([]string)\n\tif !valid {\n\t\treturn nil, fmt.Errorf(\"failed to parse vm ids\")\n\t}\n\terr = utils.WaitTasks(context.TODO(), client, taskIds, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tIDIn: vmIds,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload, nil\n}\n\n"}
 </CodeBlock>
 
 ### 删除虚拟机
@@ -2758,163 +411,19 @@ func resumeVmsByQuery(client *${CodeTerminology["go_client"]},
 ##### 移入回收站
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vmInRecycleBin, err := moveVmToRecycleBin(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-	// fmt.Print(vms)
-	print(vmInRecycleBin)
-}
-func moveVmToRecycleBin(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	moveParams := vm.NewMoveVMToRecycleBinParams()
-	moveParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	moveRes, err := client.VM.MoveVMToRecycleBin(moveParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := moveRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tvmInRecycleBin, err := moveVmToRecycleBin(client, \"vmId\")\n\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\t// fmt.Print(vms)\n\tprint(vmInRecycleBin)\n}\n\nfunc moveVmToRecycleBin(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\tmoveParams := vm.NewMoveVMToRecycleBinParams()\n\tmoveParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tmoveRes, err := client.VM.MoveVMToRecycleBin(moveParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := moveRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 ##### 从回收站恢复
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	vmInRecycleBin, err := recoverVmFromRecycleBin(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-	// fmt.Print(vms)
-	print(vmInRecycleBin)
-}
-func recoverVmFromRecycleBin(
-	client *${CodeTerminology["go_client"]},
-	vmId string) (*models.VM, error) {
-	recoverParams := vm.NewRecoverVMFromRecycleBinParams()
-	recoverParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	recoverRes, err := client.VM.RecoverVMFromRecycleBin(recoverParams)
-	if err != nil {
-		return nil, err
-	}
-	withTaskVm := recoverRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, err
-	}
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			ID: withTaskVm.Data.ID,
-		},
-	}
-	queryRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, err
-	}
-	return queryRes.Payload[0], nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\tvmInRecycleBin, err := recoverVmFromRecycleBin(client, \"vmId\")\n\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\t// fmt.Print(vms)\n\tprint(vmInRecycleBin)\n}\n\nfunc recoverVmFromRecycleBin(\n\tclient *apiclient.Cloudtower,\n\tvmId string) (*models.VM, error) {\n\trecoverParams := vm.NewRecoverVMFromRecycleBinParams()\n\trecoverParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\trecoverRes, err := client.VM.RecoverVMFromRecycleBin(recoverParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\twithTaskVm := recoverRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: withTaskVm.Data.ID,\n\t\t},\n\t}\n\tqueryRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn queryRes.Payload[0], nil\n}\n"}
 </CodeBlock>
 
 #### 永久删除
 
 <CodeBlock language="go">
-{`package main
-import (
-	"time"
-	"context"
-	"github.com/openlyinc/pointy"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func main() {
-	transport := httptransport.New("192.168.36.133", "/v2/api", []string{"http"})
-	client := apiclient.New(transport, strfmt.Default)
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "token")
-	err := deleteVm(client, "vmId")
-	if err != nil {
-		panic(err.Error())
-	}
-}
-func deleteVm(
-	client *${CodeTerminology["go_client"]},
-	vmId string) error {
-	deleteParams := vm.NewDeleteVMParams()
-	deleteParams.RequestBody = &models.VMOperateParams{
-		Where: &models.VMWhereInput{
-			ID: pointy.String(vmId),
-		},
-	}
-	deleteRes, err := client.VM.DeleteVM(deleteParams)
-	if err != nil {
-		return err
-	}
-	withTaskVm := deleteRes.Payload[0]
-	err = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)
-	if err != nil {
-		return err
-	}
-	return nil
-}`}
+{"package main\n\nimport (\n\t\"time\"\n\t\"context\"\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc main() {\n\ttransport := httptransport.New(\"tower.example.com\", \"/v2/api\", []string{\"http\"})\n\tclient := apiclient.New(transport, strfmt.Default)\n\ttransport.DefaultAuthentication = httptransport.APIKeyAuth(\"Authorization\", \"header\", \"token\")\n\n\terr := deleteVm(client, \"vmId\")\n\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n}\n\nfunc deleteVm(\n\tclient *apiclient.Cloudtower,\n\tvmId string) error {\n\tdeleteParams := vm.NewDeleteVMParams()\n\tdeleteParams.RequestBody = &models.VMOperateParams{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(vmId),\n\t\t},\n\t}\n\tdeleteRes, err := client.VM.DeleteVM(deleteParams)\n\tif err != nil {\n\t\treturn err\n\t}\n\twithTaskVm := deleteRes.Payload[0]\n\terr = utils.WaitTask(context.TODO(), client, withTaskVm.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}\n"}
 </CodeBlock>
 
 ## 场景示例
@@ -2922,99 +431,7 @@ func deleteVm(
 ### 虚拟机备份
 
 <CodeBlock language="go">
-{`package main
-import (
-	"fmt"
-	"time"
-	"context"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/iscsi_lun_snapshot"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/vm_snapshot"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/utils"
-	"github.com/openlyinc/pointy"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-func create_vm_snapshot(
-  client *${CodeTerminology["go_client"]},
-	targetVmName string,
-	targetSnapshotName string,
-	consistentType models.ConsistentType) (*models.VMSnapshot, []*models.IscsiLunSnapshot, error) {
-	getVmParams := vm.NewGetVmsParams()
-	getVmParams.RequestBody = &models.GetVmsRequestBody{
-		Where: &models.VMWhereInput{
-			Name: &targetVmName,
-		},
-		First: pointy.Int32(1),
-	}
-	// 1. 获取所需备份的虚拟机的信息，这里我们需要vm的id来构建创建snapshot的参数
-	getVmRes, err := client.VM.GetVms(getVmParams)
-	if err != nil {
-		return nil, nil, err
-	}
-	targetVm := getVmRes.Payload[0]
-	vmToolStatus := *targetVm.VMToolsStatus
-	// vm 已安装并启动 VMTools 时，consistent_type 可以使用 FILE_SYSTEM_CONSISTENT 代表文件系统一致性快照
-	if vmToolStatus != models.VMToolsStatusRUNNING && consistentType == models.ConsistentTypeFILESYSTEMCONSISTENT {
-		consistentType = models.ConsistentTypeCRASHCONSISTENT
-	}
-	createSnapshotParams := vm_snapshot.NewCreateVMSnapshotParams()
-	createSnapshotParams.RequestBody = &models.VMSnapshotCreationParams{
-		Data: []*models.VMSnapshotCreationParamsDataItems0{
-			{
-				VMID:           targetVm.ID,
-				Name:           &targetSnapshotName,
-				ConsistentType: consistentType.Pointer(),
-			},
-		},
-	}
-	// 2. 创建虚拟机快照
-	createRes, err := client.VMSnapshot.CreateVMSnapshot(createSnapshotParams)
-	if err != nil {
-		return nil, nil, err
-	}
-	withTaskSnapshot := createRes.Payload[0]
-	// 3. 等待Task完成
-	err = utils.WaitTask(context.TODO(), client, withTaskSnapshot.TaskID, 1*time.Second)
-	if err != nil {
-		return nil, nil, err
-	}
-	getSnapshotParams := vm_snapshot.NewGetVMSnapshotsParams()
-	getSnapshotParams.RequestBody = &models.GetVMSnapshotsRequestBody{
-		Where: &models.VMSnapshotWhereInput{
-			ID: withTaskSnapshot.Data.ID,
-		},
-	}
-	// 4. 根据返回的id查询生成的虚拟机快照
-	getSnapshotRes, err := client.VMSnapshot.GetVMSnapshots(getSnapshotParams)
-	if err != nil {
-		return nil, nil, err
-	}
-	createdSnapshot := getSnapshotRes.Payload[0]
-	// 5. 根据返回的snapshot中的vm_disks包含了快照的虚拟盘信息
-	// type 为 DISK 表示对应一个卷，其中会包含一个 snapshot_local_id 则表示该虚拟卷对应的lun快照的 local_id
-	// type 为 CD-ROM则代表为被挂载的CD-ROM，不会产生lun快照
-	lunSnapshotIds := funk.Map(funk.Filter(createdSnapshot.VMDisks, func(disk *models.NestedFrozenDisks) bool {
-		return *disk.Type == models.VMDiskTypeDISK
-	}), func(disk *models.NestedFrozenDisks) string {
-		return *disk.SnapshotLocalID
-	}).([]string)
-	getLunSnapshotParams := iscsi_lun_snapshot.NewGetIscsiLunSnapshotsParams()
-	getLunSnapshotParams.RequestBody = &models.GetIscsiLunSnapshotsRequestBody{
-		Where: &models.IscsiLunSnapshotWhereInput{
-			NameIn: lunSnapshotIds,
-		},
-	}
-	getLunSnapshotRes, err := client.IscsiLunSnapshot.GetIscsiLunSnapshots(getLunSnapshotParams)
-	if err != nil {
-		return nil, nil, err
-	}
-	return createdSnapshot, getLunSnapshotRes.Payload, nil
-}`}
+{"package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n\t\"context\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/iscsi_lun_snapshot\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/user\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm_snapshot\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/openlyinc/pointy\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nfunc create_vm_snapshot(\n  client *apiclient.Cloudtower,\n\ttargetVmName string,\n\ttargetSnapshotName string,\n\tconsistentType models.ConsistentType) (*models.VMSnapshot, []*models.IscsiLunSnapshot, error) {\n\tgetVmParams := vm.NewGetVmsParams()\n\tgetVmParams.RequestBody = &models.GetVmsRequestBody{\n\t\tWhere: &models.VMWhereInput{\n\t\t\tName: &targetVmName,\n\t\t},\n\t\tFirst: pointy.Int32(1),\n\t}\n\t// 1. 获取所需备份的虚拟机的信息，这里我们需要vm的id来构建创建snapshot的参数\n\tgetVmRes, err := client.VM.GetVms(getVmParams)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\ttargetVm := getVmRes.Payload[0]\n\tvmToolStatus := *targetVm.VMToolsStatus\n\t// vm 已安装并启动 VMTools 时，consistent_type 可以使用 FILE_SYSTEM_CONSISTENT 代表文件系统一致性快照\n\tif vmToolStatus != models.VMToolsStatusRUNNING && consistentType == models.ConsistentTypeFILESYSTEMCONSISTENT {\n\t\tconsistentType = models.ConsistentTypeCRASHCONSISTENT\n\t}\n\tcreateSnapshotParams := vm_snapshot.NewCreateVMSnapshotParams()\n\tcreateSnapshotParams.RequestBody = &models.VMSnapshotCreationParams{\n\t\tData: []*models.VMSnapshotCreationParamsDataItems0{\n\t\t\t{\n\t\t\t\tVMID:           targetVm.ID,\n\t\t\t\tName:           &targetSnapshotName,\n\t\t\t\tConsistentType: consistentType.Pointer(),\n\t\t\t},\n\t\t},\n\t}\n\t// 2. 创建虚拟机快照\n\tcreateRes, err := client.VMSnapshot.CreateVMSnapshot(createSnapshotParams)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\twithTaskSnapshot := createRes.Payload[0]\n\t// 3. 等待Task完成\n\terr = utils.WaitTask(context.TODO(), client, withTaskSnapshot.TaskID, 1*time.Second)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\tgetSnapshotParams := vm_snapshot.NewGetVMSnapshotsParams()\n\tgetSnapshotParams.RequestBody = &models.GetVMSnapshotsRequestBody{\n\t\tWhere: &models.VMSnapshotWhereInput{\n\t\t\tID: withTaskSnapshot.Data.ID,\n\t\t},\n\t}\n\t// 4. 根据返回的id查询生成的虚拟机快照\n\tgetSnapshotRes, err := client.VMSnapshot.GetVMSnapshots(getSnapshotParams)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\tcreatedSnapshot := getSnapshotRes.Payload[0]\n\t// 5. 根据返回的snapshot中的vm_disks包含了快照的虚拟盘信息\n\t// type 为 DISK 表示对应一个卷，其中会包含一个 snapshot_local_id 则表示该虚拟卷对应的lun快照的 local_id\n\t// type 为 CD-ROM则代表为被挂载的CD-ROM，不会产生lun快照\n\tlunSnapshotIds := funk.Map(funk.Filter(createdSnapshot.VMDisks, func(disk *models.NestedFrozenDisks) bool {\n\t\treturn *disk.Type == models.VMDiskTypeDISK\n\t}), func(disk *models.NestedFrozenDisks) string {\n\t\treturn *disk.SnapshotLocalID\n\t}).([]string)\n\tgetLunSnapshotParams := iscsi_lun_snapshot.NewGetIscsiLunSnapshotsParams()\n\tgetLunSnapshotParams.RequestBody = &models.GetIscsiLunSnapshotsRequestBody{\n\t\tWhere: &models.IscsiLunSnapshotWhereInput{\n\t\t\tNameIn: lunSnapshotIds,\n\t\t},\n\t}\n\tgetLunSnapshotRes, err := client.IscsiLunSnapshot.GetIscsiLunSnapshots(getLunSnapshotParams)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\treturn createdSnapshot, getLunSnapshotRes.Payload, nil\n}\n"}
 </CodeBlock>
 
 ### Dashboard 构建
@@ -3022,92 +439,13 @@ func create_vm_snapshot(
 #### 定义工具方法
 
 <CodeBlock language="go">
-{`import (
-	"fmt"
-	apiclient "github.com/${CodeTerminology["go_github_address"]}/v2/client"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/alert"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/cluster"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/disk"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/host"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/client/user"
-	"github.com/${CodeTerminology["go_github_address"]}/v2/models"
-	"github.com/openlyinc/pointy"
-	"github.com/thoas/go-funk"
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
-)
-var ByteUnits []string = []string{"B", "KiB", "MiB", "GiB", "TiB", "PiB"}
-var HzUnits []string = []string{"Hz", "KHz", "MHz", "GHz", "THz"}
-func formatUnit(base float64, units []string, step int32) string {
-	length := len(units)
-	if length == 0 {
-		panic("No unit provided")
-	}
-	if base <= 0 {
-		return fmt.Sprintf("0%s", units[0])
-	}
-	for i, unit := range units {
-		if base < float64(step) || i == length-1 {
-			return fmt.Sprintf("%0.2f%s", base, unit)
-		}
-		base = base / float64(step)
-	}
-	return fmt.Sprintf("%0.2f%s", base, units[length-1])
-}`}
+{"import (\n\t\"fmt\"\n\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/alert\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/cluster\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/disk\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/host\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/user\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/openlyinc/pointy\"\n\t\"github.com/thoas/go-funk\"\n\n\thttptransport \"github.com/go-openapi/runtime/client\"\n\n\t\"github.com/go-openapi/strfmt\"\n)\n\nvar ByteUnits []string = []string{\"B\", \"KiB\", \"MiB\", \"GiB\", \"TiB\", \"PiB\"}\nvar HzUnits []string = []string{\"Hz\", \"KHz\", \"MHz\", \"GHz\", \"THz\"}\n\nfunc formatUnit(base float64, units []string, step int32) string {\n\tlength := len(units)\n\tif length == 0 {\n\t\tpanic(\"No unit provided\")\n\t}\n\tif base <= 0 {\n\t\treturn fmt.Sprintf(\"0%s\", units[0])\n\t}\n\tfor i, unit := range units {\n\t\tif base < float64(step) || i == length-1 {\n\t\t\treturn fmt.Sprintf(\"%0.2f%s\", base, unit)\n\t\t}\n\t\tbase = base / float64(step)\n\t}\n\treturn fmt.Sprintf(\"%0.2f%s\", base, units[length-1])\n}\n"}
 </CodeBlock>
 
 #### 构建报警信息
 
 <CodeBlock language="go">
-{`type AlertInfo struct {
-	Critical []*models.Alert
-	Notice   []*models.Alert
-	Info     []*models.Alert
-}
-func NewAlertInfo(critial []*models.Alert, notice []*models.Alert, info []*models.Alert) *AlertInfo {
-	return &AlertInfo{
-		Critical: critial,
-		Notice:   notice,
-		Info:     info,
-	}
-}
-func buildAlertInfo(client *${CodeTerminology["go_client"]}, clusterIds []string) (*AlertInfo, error) {
-	getAlertParams := alert.NewGetAlertsParams()
-	if len(clusterIds) == 0 {
-		getAlertParams.RequestBody = &models.GetAlertsRequestBody{
-			Where: &models.AlertWhereInput{
-				Ended: pointy.Bool(false),
-			},
-		}
-	} else {
-		getAlertParams.RequestBody = &models.GetAlertsRequestBody{
-			Where: &models.AlertWhereInput{
-				Ended: pointy.Bool(false),
-				Cluster: &models.ClusterWhereInput{
-					IDIn: clusterIds,
-				},
-			},
-		}
-	}
-	res, err := client.Alert.GetAlerts(getAlertParams)
-	if err != nil {
-		return nil, err
-	}
-	var critial []*models.Alert = []*models.Alert{}
-	var notice []*models.Alert = []*models.Alert{}
-	var info []*models.Alert = []*models.Alert{}
-	for _, alert := range res.Payload {
-		switch *alert.Severity {
-		case "CRITICAL":
-			critial = append(critial, alert)
-		case "NOTICE":
-			notice = append(notice, alert)
-		case "INFO":
-			info = append(info, alert)
-		}
-	}
-	return NewAlertInfo(critial, notice, info), nil
-}`}
+{"type AlertInfo struct {\n\tCritical []*models.Alert\n\tNotice   []*models.Alert\n\tInfo     []*models.Alert\n}\n\nfunc NewAlertInfo(critial []*models.Alert, notice []*models.Alert, info []*models.Alert) *AlertInfo {\n\treturn &AlertInfo{\n\t\tCritical: critial,\n\t\tNotice:   notice,\n\t\tInfo:     info,\n\t}\n}\n\nfunc buildAlertInfo(client *apiclient.Cloudtower, clusterIds []string) (*AlertInfo, error) {\n\tgetAlertParams := alert.NewGetAlertsParams()\n\tif len(clusterIds) == 0 {\n\t\tgetAlertParams.RequestBody = &models.GetAlertsRequestBody{\n\t\t\tWhere: &models.AlertWhereInput{\n\t\t\t\tEnded: pointy.Bool(false),\n\t\t\t},\n\t\t}\n\t} else {\n\t\tgetAlertParams.RequestBody = &models.GetAlertsRequestBody{\n\t\t\tWhere: &models.AlertWhereInput{\n\t\t\t\tEnded: pointy.Bool(false),\n\t\t\t\tCluster: &models.ClusterWhereInput{\n\t\t\t\t\tIDIn: clusterIds,\n\t\t\t\t},\n\t\t\t},\n\t\t}\n\t}\n\tres, err := client.Alert.GetAlerts(getAlertParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tvar critial []*models.Alert = []*models.Alert{}\n\tvar notice []*models.Alert = []*models.Alert{}\n\tvar info []*models.Alert = []*models.Alert{}\n\tfor _, alert := range res.Payload {\n\t\tswitch *alert.Severity {\n\t\tcase \"CRITICAL\":\n\t\t\tcritial = append(critial, alert)\n\t\tcase \"NOTICE\":\n\t\t\tnotice = append(notice, alert)\n\t\tcase \"INFO\":\n\t\t\tinfo = append(info, alert)\n\t\t}\n\t}\n\treturn NewAlertInfo(critial, notice, info), nil\n}\n"}
 </CodeBlock>
 
 #### 构建硬盘信息
@@ -3115,67 +453,7 @@ func buildAlertInfo(client *${CodeTerminology["go_client"]}, clusterIds []string
 > 这里以机械硬盘为例
 
 <CodeBlock language="go">
-{`type DiskInfo struct {
-	Healthy int32
-	Warning int32
-	Error   int32
-	Total   int32
-}
-func NewDiskInfo() *DiskInfo {
-	return &DiskInfo{
-		Healthy: 0,
-		Warning: 0,
-		Error:   0,
-		Total:   0,
-	}
-}
-func buildHddInfo(client *${CodeTerminology["go_client"]}, clusterIds []string) (*DiskInfo, error) {
-	getDiskParams := disk.NewGetDisksParams()
-	if len(clusterIds) == 0 {
-		getDiskParams.RequestBody = &models.GetDisksRequestBody{}
-	} else {
-		getDiskParams.RequestBody = &models.GetDisksRequestBody{
-			Where: &models.DiskWhereInput{
-				Host: &models.HostWhereInput{
-					Cluster: &models.ClusterWhereInput{
-						IDIn: clusterIds,
-					},
-				},
-			},
-		}
-	}
-	res, err := client.Disk.GetDisks(getDiskParams)
-	if err != nil {
-		return nil, err
-	}
-	hddInfo := NewDiskInfo()
-	for _, disk := range res.Payload {
-		if *disk.Type == models.DiskTypeHDD {
-			if funk.Contains(
-				[]models.DiskHealthStatus{
-					models.DiskHealthStatusHEALTHY,
-					models.DiskHealthStatusSUBHEALTHY,
-					models.DiskHealthStatusSMARTFAILED,
-				},
-				*disk.HealthStatus,
-			) {
-				hddInfo.Error++
-			} else if funk.Contains(
-				[]models.DiskUsageStatus{
-					models.DiskUsageStatusUNMOUNTED,
-					models.DiskUsageStatusPARTIALMOUNTED,
-				},
-				*disk.UsageStatus,
-			) {
-				hddInfo.Warning++
-			} else {
-				hddInfo.Healthy++
-			}
-			hddInfo.Total++
-		}
-	}
-	return hddInfo, nil
-}`}
+{"type DiskInfo struct {\n\tHealthy int32\n\tWarning int32\n\tError   int32\n\tTotal   int32\n}\n\nfunc NewDiskInfo() *DiskInfo {\n\treturn &DiskInfo{\n\t\tHealthy: 0,\n\t\tWarning: 0,\n\t\tError:   0,\n\t\tTotal:   0,\n\t}\n}\n\nfunc buildHddInfo(client *apiclient.Cloudtower, clusterIds []string) (*DiskInfo, error) {\n\tgetDiskParams := disk.NewGetDisksParams()\n\tif len(clusterIds) == 0 {\n\t\tgetDiskParams.RequestBody = &models.GetDisksRequestBody{}\n\t} else {\n\t\tgetDiskParams.RequestBody = &models.GetDisksRequestBody{\n\t\t\tWhere: &models.DiskWhereInput{\n\t\t\t\tHost: &models.HostWhereInput{\n\t\t\t\t\tCluster: &models.ClusterWhereInput{\n\t\t\t\t\t\tIDIn: clusterIds,\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t}\n\t}\n\tres, err := client.Disk.GetDisks(getDiskParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\thddInfo := NewDiskInfo()\n\tfor _, disk := range res.Payload {\n\t\tif *disk.Type == models.DiskTypeHDD {\n\t\t\tif funk.Contains(\n\t\t\t\t[]models.DiskHealthStatus{\n\t\t\t\t\tmodels.DiskHealthStatusHEALTHY,\n\t\t\t\t\tmodels.DiskHealthStatusSUBHEALTHY,\n\t\t\t\t\tmodels.DiskHealthStatusSMARTFAILED,\n\t\t\t\t},\n\t\t\t\t*disk.HealthStatus,\n\t\t\t) {\n\t\t\t\thddInfo.Error++\n\t\t\t} else if funk.Contains(\n\t\t\t\t[]models.DiskUsageStatus{\n\t\t\t\t\tmodels.DiskUsageStatusUNMOUNTED,\n\t\t\t\t\tmodels.DiskUsageStatusPARTIALMOUNTED,\n\t\t\t\t},\n\t\t\t\t*disk.UsageStatus,\n\t\t\t) {\n\t\t\t\thddInfo.Warning++\n\t\t\t} else {\n\t\t\t\thddInfo.Healthy++\n\t\t\t}\n\t\t\thddInfo.Total++\n\t\t}\n\t}\n\treturn hddInfo, nil\n}\n"}
 </CodeBlock>
 
 #### 构建性能指标
@@ -3183,174 +461,11 @@ func buildHddInfo(client *${CodeTerminology["go_client"]}, clusterIds []string) 
 > 获取指定集群的 CPU 核数，CPU 频率总数，CPU 使用率，内存总量，内存使用量，存储资源总量，存储资源已使用量，存储资源失效量与存储资源可用量。
 
 <CodeBlock language="go">
-{`type CpuInfo struct {
-	TotalCore uint32
-	TotalInHz uint64
-	Total     string
-	UsedInHz  uint64
-	Used      string
-	Usage     string
-}
-func NewCpuInfo() *CpuInfo {
-	return &CpuInfo{
-		TotalCore: 0,
-		TotalInHz: 0,
-		UsedInHz:  0,
-	}
-}
-func (info *CpuInfo) compute() *CpuInfo {
-	info.Total = formatUnit(float64(info.TotalInHz), HzUnits, 1000)
-	info.Used = formatUnit(float64(info.UsedInHz), HzUnits, 1000)
-	info.Usage = fmt.Sprintf("%0.2f%%", float64(info.UsedInHz)/float64(info.TotalInHz))
-	return info
-}
-type MemoryInfo struct {
-	TotalInByte uint64
-	Total       string
-	UsedInByte  uint64
-	Used        string
-	Usage       string
-}
-func NewMemoryInfo() *MemoryInfo {
-	return &MemoryInfo{
-		TotalInByte: 0,
-		UsedInByte:  0,
-	}
-}
-func (info *MemoryInfo) compute() *MemoryInfo {
-	info.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)
-	info.Used = formatUnit(float64(info.UsedInByte), ByteUnits, 1024)
-	info.Usage = fmt.Sprintf("%0.2f%%", float64(info.UsedInByte)/float64(info.TotalInByte))
-	return info
-}
-type StorageInfo struct {
-	TotalInByte     uint64
-	Total           string
-	UsedInByte      uint64
-	Used            string
-	InvalidInByte   uint64
-	Invalid         string
-	AvailableInByte uint64
-	Available       string
-}
-func NewStorageInfo() *StorageInfo {
-	return &StorageInfo{
-		TotalInByte:     0,
-		UsedInByte:      0,
-		InvalidInByte:   0,
-		AvailableInByte: 0,
-	}
-}
-func (info *StorageInfo) compute() *StorageInfo {
-	info.AvailableInByte = info.TotalInByte - info.UsedInByte - info.InvalidInByte
-	info.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)
-	info.Used = formatUnit(float64(info.UsedInByte), ByteUnits, 1024)
-	info.Invalid = formatUnit(float64(info.InvalidInByte), ByteUnits, 1024)
-	info.Available = formatUnit(float64(info.AvailableInByte), ByteUnits, 1024)
-	return info
-}
-type MetricInfo struct {
-	Storage *StorageInfo
-	Memory  *MemoryInfo
-	Cpu     *CpuInfo
-}
-func buildMetricsInfo(client *${CodeTerminology["go_client"]}, clusters []*models.Cluster, clusterIds []string) (*MetricInfo, error) {
-	memory := NewMemoryInfo()
-	storage := NewStorageInfo()
-	cpu := NewCpuInfo()
-	getHostParams := host.NewGetHostsParams()
-	if len(clusterIds) == 0 {
-		getHostParams.RequestBody = &models.GetHostsRequestBody{}
-	} else {
-		getHostParams.RequestBody = &models.GetHostsRequestBody{
-			Where: &models.HostWhereInput{
-				Cluster: &models.ClusterWhereInput{
-					IDIn: clusterIds,
-				},
-			},
-		}
-	}
-	hosts, err := client.Host.GetHosts(getHostParams)
-	if err != nil {
-		return nil, err
-	}
-	clusterIdMap := make(map[string]*models.Cluster)
-	for _, cluster := range clusters {
-		if _, ok := clusterIdMap[*cluster.ID]; !ok {
-			clusterIdMap[*cluster.ID] = cluster
-		}
-		if *cluster.Type == models.ClusterTypeSMTXOS {
-			cpu.TotalCore += uint32(*cluster.TotalCPUCores)
-			cpu.TotalInHz += uint64(*cluster.TotalCPUHz)
-			cpu.UsedInHz += uint64(*cluster.UsedCPUHz)
-			if cluster.Hypervisor != nil && *cluster.Hypervisor == models.HypervisorVMWARE {
-				memory.TotalInByte += uint64(*cluster.TotalMemoryBytes)
-				memory.UsedInByte += uint64(*cluster.UsedMemoryBytes)
-			}
-		}
-		storage.TotalInByte += uint64(*cluster.TotalDataCapacity)
-		storage.UsedInByte += uint64(*cluster.UsedDataSpace)
-		storage.InvalidInByte += uint64(*cluster.FailureDataSpace)
-	}
-	for _, host := range hosts.Payload {
-		cluster, ok := clusterIdMap[*host.Cluster.ID]
-		if ok {
-			if *cluster.Hypervisor == models.HypervisorELF {
-				memory.TotalInByte += uint64(*host.TotalMemoryBytes)
-				memory.UsedInByte += uint64(*host.UsedMemoryBytes)
-			}
-		}
-	}
-	storage.compute()
-	cpu.compute()
-	memory.compute()
-	return &MetricInfo{
-		Memory:  memory,
-		Cpu:     cpu,
-		Storage: storage,
-	}, nil
-}`}
+{"type CpuInfo struct {\n\tTotalCore uint32\n\tTotalInHz uint64\n\tTotal     string\n\tUsedInHz  uint64\n\tUsed      string\n\tUsage     string\n}\n\nfunc NewCpuInfo() *CpuInfo {\n\treturn &CpuInfo{\n\t\tTotalCore: 0,\n\t\tTotalInHz: 0,\n\t\tUsedInHz:  0,\n\t}\n}\n\nfunc (info *CpuInfo) compute() *CpuInfo {\n\tinfo.Total = formatUnit(float64(info.TotalInHz), HzUnits, 1000)\n\tinfo.Used = formatUnit(float64(info.UsedInHz), HzUnits, 1000)\n\tinfo.Usage = fmt.Sprintf(\"%0.2f%%\", float64(info.UsedInHz)/float64(info.TotalInHz))\n\treturn info\n}\n\ntype MemoryInfo struct {\n\tTotalInByte uint64\n\tTotal       string\n\tUsedInByte  uint64\n\tUsed        string\n\tUsage       string\n}\n\nfunc NewMemoryInfo() *MemoryInfo {\n\treturn &MemoryInfo{\n\t\tTotalInByte: 0,\n\t\tUsedInByte:  0,\n\t}\n}\n\nfunc (info *MemoryInfo) compute() *MemoryInfo {\n\tinfo.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)\n\tinfo.Used = formatUnit(float64(info.UsedInByte), ByteUnits, 1024)\n\tinfo.Usage = fmt.Sprintf(\"%0.2f%%\", float64(info.UsedInByte)/float64(info.TotalInByte))\n\treturn info\n}\n\ntype StorageInfo struct {\n\tTotalInByte     uint64\n\tTotal           string\n\tUsedInByte      uint64\n\tUsed            string\n\tInvalidInByte   uint64\n\tInvalid         string\n\tAvailableInByte uint64\n\tAvailable       string\n}\n\nfunc NewStorageInfo() *StorageInfo {\n\treturn &StorageInfo{\n\t\tTotalInByte:     0,\n\t\tUsedInByte:      0,\n\t\tInvalidInByte:   0,\n\t\tAvailableInByte: 0,\n\t}\n}\n\nfunc (info *StorageInfo) compute() *StorageInfo {\n\tinfo.AvailableInByte = info.TotalInByte - info.UsedInByte - info.InvalidInByte\n\tinfo.Total = formatUnit(float64(info.TotalInByte), ByteUnits, 1024)\n\tinfo.Used = formatUnit(float64(info.UsedInByte), ByteUnits, 1024)\n\tinfo.Invalid = formatUnit(float64(info.InvalidInByte), ByteUnits, 1024)\n\tinfo.Available = formatUnit(float64(info.AvailableInByte), ByteUnits, 1024)\n\treturn info\n}\n\ntype MetricInfo struct {\n\tStorage *StorageInfo\n\tMemory  *MemoryInfo\n\tCpu     *CpuInfo\n}\n\nfunc buildMetricsInfo(client *apiclient.Cloudtower, clusters []*models.Cluster, clusterIds []string) (*MetricInfo, error) {\n\tmemory := NewMemoryInfo()\n\tstorage := NewStorageInfo()\n\tcpu := NewCpuInfo()\n\tgetHostParams := host.NewGetHostsParams()\n\tif len(clusterIds) == 0 {\n\t\tgetHostParams.RequestBody = &models.GetHostsRequestBody{}\n\t} else {\n\t\tgetHostParams.RequestBody = &models.GetHostsRequestBody{\n\t\t\tWhere: &models.HostWhereInput{\n\t\t\t\tCluster: &models.ClusterWhereInput{\n\t\t\t\t\tIDIn: clusterIds,\n\t\t\t\t},\n\t\t\t},\n\t\t}\n\t}\n\thosts, err := client.Host.GetHosts(getHostParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tclusterIdMap := make(map[string]*models.Cluster)\n\tfor _, cluster := range clusters {\n\t\tif _, ok := clusterIdMap[*cluster.ID]; !ok {\n\t\t\tclusterIdMap[*cluster.ID] = cluster\n\t\t}\n\t\tif *cluster.Type == models.ClusterTypeSMTXOS {\n\t\t\tcpu.TotalCore += uint32(*cluster.TotalCPUCores)\n\t\t\tcpu.TotalInHz += uint64(*cluster.TotalCPUHz)\n\t\t\tcpu.UsedInHz += uint64(*cluster.UsedCPUHz)\n\t\t\tif cluster.Hypervisor != nil && *cluster.Hypervisor == models.HypervisorVMWARE {\n\t\t\t\tmemory.TotalInByte += uint64(*cluster.TotalMemoryBytes)\n\t\t\t\tmemory.UsedInByte += uint64(*cluster.UsedMemoryBytes)\n\t\t\t}\n\t\t}\n\t\tstorage.TotalInByte += uint64(*cluster.TotalDataCapacity)\n\t\tstorage.UsedInByte += uint64(*cluster.UsedDataSpace)\n\t\tstorage.InvalidInByte += uint64(*cluster.FailureDataSpace)\n\t}\n\tfor _, host := range hosts.Payload {\n\t\tcluster, ok := clusterIdMap[*host.Cluster.ID]\n\t\tif ok {\n\t\t\tif *cluster.Hypervisor == models.HypervisorELF {\n\t\t\t\tmemory.TotalInByte += uint64(*host.TotalMemoryBytes)\n\t\t\t\tmemory.UsedInByte += uint64(*host.UsedMemoryBytes)\n\t\t\t}\n\t\t}\n\t}\n\tstorage.compute()\n\tcpu.compute()\n\tmemory.compute()\n\treturn &MetricInfo{\n\t\tMemory:  memory,\n\t\tCpu:     cpu,\n\t\tStorage: storage,\n\t}, nil\n}\n"}
 </CodeBlock>
 
 #### 构建 Dashboard
 
 <CodeBlock language="go">
-{`type DashboardInfo struct {
-	Metric *MetricInfo
-	Hdd    *DiskInfo
-	Alert  *AlertInfo
-}
-func BuildDashboard(client *${CodeTerminology["go_client"]}, clusterIds []string) (*DashboardInfo, error) {
-	getClusterParams := cluster.NewGetClustersParams()
-	if len(clusterIds) == 0 {
-		getClusterParams.RequestBody = &models.GetClustersRequestBody{}
-	} else {
-		getClusterParams.RequestBody = &models.GetClustersRequestBody{
-			Where: &models.ClusterWhereInput{
-				IDIn: clusterIds,
-			},
-		}
-	}
-	res, err := client.Cluster.GetClusters(getClusterParams)
-	if err != nil {
-		return nil, err
-	}
-	metrics, err := buildMetricsInfo(client, res.Payload, clusterIds)
-	if err != nil {
-		return nil, err
-	}
-	hdd, err := buildHddInfo(client, clusterIds)
-	if err != nil {
-		return nil, err
-	}
-	alert, err := buildAlertInfo(client, clusterIds)
-	if err != nil {
-		return nil, err
-	}
-	return &DashboardInfo{
-		Metric: metrics,
-		Hdd:    hdd,
-		Alert:  alert,
-	}, nil
-}`}
+{"type DashboardInfo struct {\n\tMetric *MetricInfo\n\tHdd    *DiskInfo\n\tAlert  *AlertInfo\n}\n\nfunc BuildDashboard(client *apiclient.Cloudtower, clusterIds []string) (*DashboardInfo, error) {\n\tgetClusterParams := cluster.NewGetClustersParams()\n\tif len(clusterIds) == 0 {\n\t\tgetClusterParams.RequestBody = &models.GetClustersRequestBody{}\n\t} else {\n\t\tgetClusterParams.RequestBody = &models.GetClustersRequestBody{\n\t\t\tWhere: &models.ClusterWhereInput{\n\t\t\t\tIDIn: clusterIds,\n\t\t\t},\n\t\t}\n\t}\n\tres, err := client.Cluster.GetClusters(getClusterParams)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tmetrics, err := buildMetricsInfo(client, res.Payload, clusterIds)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\thdd, err := buildHddInfo(client, clusterIds)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\talert, err := buildAlertInfo(client, clusterIds)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &DashboardInfo{\n\t\tMetric: metrics,\n\t\tHdd:    hdd,\n\t\tAlert:  alert,\n\t}, nil\n}\n"}
 </CodeBlock>
