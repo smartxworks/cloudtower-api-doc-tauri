@@ -158,6 +158,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
       "ReplicationPlan",
       "ReplicationService",
       "ReplicaVm",
+      "SyncReplicationPlan",
       "BusinessHostGroup",
       "BusinessHost"
     ],
@@ -194,7 +195,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
   },
   {
     name: "Other",
-    tags: ["ApiInfo", "Internal", "ResourceChange"],
+    tags: ["ApiInfo", "Internal", "ResourceChange", "RegistryService"],
   },
   {
     name: "Observability",

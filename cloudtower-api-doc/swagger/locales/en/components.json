@@ -60,6 +60,8 @@
   "TaskManagement": "Task Management",
   "UserManagement": "User And Privileges Management",
   "BackupManagement": "Backup Management",
+  "RegistryService": "Registry Service",
+  "SyncReplicationPlan": "Sync Replication Plan",
   "ResponseHeader_1": "Could not get any response",
   "ResponseHeader_2": "Why this might have happened:",
   "ResponseHeader_3": "Something went wrong",
