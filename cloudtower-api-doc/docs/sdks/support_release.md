@@ -27,6 +27,7 @@ export const AddressWrapper = (props) => {
 
 | SDK 版本 | 产品版本 | SDK 发布日期 | 下载地址 |
 | --- | --- | --- | --- |
+| 2.23.0 | 4.9.0 | 2026.05.27 | <AddressWrapper version="2.23.0" file_version="4.9.0"/>|
 | 2.22.1 | 4.8.1 | 2026.04.28 | <AddressWrapper version="2.22.1" file_version="4.8.1"/>|
 | 2.22.0 | 4.8.0 | 2026.02.09 | <AddressWrapper version="2.22.0" file_version="4.8.0"/>|
 | 2.21.1 | 4.7.2 | 2026.04.28 | <AddressWrapper version="2.21.1" file_version="4.7.2"/>|
