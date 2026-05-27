@@ -230,13 +230,21 @@
       "summary": "",
       "description": ""
     },
+    "/get-registry-services": {
+      "summary": "获取镜像仓库",
+      "description": "获取符合条件的镜像仓库列表。"
+    },
+    "/get-registry-services-connection": {
+      "summary": "获取镜像仓库数量",
+      "description": "获取符合条件的镜像仓库数量。"
+    },
     "/get-sync-replication-plans": {
-      "summary": "",
-      "description": ""
+      "summary": "获取同步复制计划",
+      "description": "获取符合条件的同步复制计划列表。"
     },
     "/get-sync-replication-plans-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "获取同步复制计划数量",
+      "description": "获取符合条件的同步复制计划数量。"
     }
   }
 }

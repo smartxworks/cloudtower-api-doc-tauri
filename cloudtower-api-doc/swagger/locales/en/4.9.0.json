@@ -230,13 +230,21 @@
       "summary": "",
       "description": ""
     },
+    "/get-registry-services": {
+      "summary": "Getting registry services",
+      "description": "Get a list of registry services that match the specified filter."
+    },
+    "/get-registry-services-connection": {
+      "summary": "Getting the registry service count",
+      "description": "Get the count of registry services that match the specified filter."
+    },
     "/get-sync-replication-plans": {
-      "summary": "",
-      "description": ""
+      "summary": "Getting sync replication plans",
+      "description": "Get a list of sync replication plans that match the specified filter."
     },
     "/get-sync-replication-plans-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "Getting the sync replication plan count",
+      "description": "Get the count of sync replication plans that match the specified filter."
     }
   }
 }
