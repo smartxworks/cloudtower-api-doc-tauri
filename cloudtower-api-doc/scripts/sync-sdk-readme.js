@@ -9,23 +9,28 @@ const http = require('http');
 const SDK_CONFIG = {
   go: {
     repo: 'smartxworks/cloudtower-go-sdk',
+    terminologyKey: 'go_github_address',
     title: 'Go',
     outputPath: path.join(__dirname, '../docs/sdks/go.md'),
     description: 'Golang 环境下的 CloudTower SDK，适用于 golang 1.16 及以上版本'
   },
   java: {
     repo: 'smartxworks/cloudtower-java-sdk',
+    terminologyKey: 'java_github_address',
     title: 'Java',
     outputPath: path.join(__dirname, '../docs/sdks/java.md'),
     description: 'Java 环境下的 CloudTower SDK，适用于 Java 1.8 及以上版本'
   },
   python: {
     repo: 'smartxworks/cloudtower-python-sdk',
+    terminologyKey: 'python_github_address',
     title: 'Python',
     outputPath: path.join(__dirname, '../docs/sdks/python.md'),
     description: 'Python 环境下的 CloudTower SDK，适用于 2.7 和 3.4 及以上版本'
   }
 };
+
+const PRODUCT_EXPRESSION = "{Terminology['terminology']['zh-CN']['PRODUCT']}";
 
 /**
  * 从 GitHub 获取 README.md 内容
@@ -73,13 +78,18 @@ function fetchReadmeFromGitHub(repo, branch = 'master') {
 function processReadmeContent(content, config) {
   // 移除可能存在的 frontmatter
   content = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
+
+  content = processMarkdownContent(content, config);
   
   // 添加 Docusaurus frontmatter
   const frontmatter = `---
 title: ${config.title}
 ---
+import Terminology from '@site/terminology.json'
+import CodeTerminology from '@site/code-terminology.json'
+import CodeBlock from '@theme/CodeBlock'
 
-${config.description}
+${processMarkdownText(config.description, config)}
 
 `;
   
@@ -89,6 +99,60 @@ ${config.description}
   }
   
   return frontmatter + content;
+}
+
+function processMarkdownContent(content, config) {
+  const segments = [];
+  const fenceRegex = /^([ \t]*)```([^\n]*)\n([\s\S]*?)^\1```[ \t]*$/gm;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = fenceRegex.exec(content)) !== null) {
+    segments.push(processMarkdownText(content.slice(lastIndex, match.index), config));
+    const indent = match[1];
+    const code = match[3].replace(new RegExp(`^${escapeRegex(indent)}`, 'gm'), '');
+    segments.push(toCodeBlock(match[2].trim(), code, config, indent));
+    lastIndex = fenceRegex.lastIndex;
+  }
+
+  segments.push(processMarkdownText(content.slice(lastIndex), config));
+  return segments.join('');
+}
+
+function processMarkdownText(content, config) {
+  let result = content;
+
+  const repoUrl = `https://github.com/${config.repo}`;
+  const repoExpression = `https://github.com/\${CodeTerminology["${config.terminologyKey}"]}`;
+  result = result
+    .replaceAll(`[源码地址](${repoUrl})`, `<a href={\`${repoExpression}\`}>源码地址</a>`)
+    .replaceAll(`[下载地址](${repoUrl}/releases)`, `<a href={\`${repoExpression}/releases\`}>下载地址</a>`)
+    .replaceAll(`[下载地址](${repoUrl})`, `<a href={\`${repoExpression}\`}>下载地址</a>`)
+    .replaceAll('[文档链接](https://code.smartx.com)', `<a href={\`https://code.\${'s' + 'martx'}.com\`}>文档链接</a>`)
+    .replaceAll(repoUrl, `{CodeTerminology["${config.terminologyKey}"]}`);
+
+  return result.replace(/\bCloudTower\b|\bCloudtower\b|\bcloudtower\b/g, PRODUCT_EXPRESSION);
+}
+
+function toCodeBlock(language, content, config, indent = '') {
+  const languageProp = language ? ` language="${language}"` : '';
+  const escapedContent = JSON.stringify(content);
+
+  return indentLines(`<CodeBlock${languageProp}>
+{${escapedContent}}
+</CodeBlock>`, indent);
+}
+
+function indentLines(content, indent) {
+  if (!indent) {
+    return content;
+  }
+
+  return content.split('\n').map(line => line ? `${indent}${line}` : line).join('\n');
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 /**
