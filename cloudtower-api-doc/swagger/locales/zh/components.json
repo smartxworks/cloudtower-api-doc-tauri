@@ -61,6 +61,8 @@
   "UserManagement": "用户与权限管理",
   "BackupManagement": "备份管理",
   "Other": "其他",
+  "RegistryService": "镜像仓库",
+  "SyncReplicationPlan": "同步复制计划",
   "CloudTowerApplicationManagement": "{PRODUCT} Application 管理",
   "ResponseHeader_1": "无法获得任何返回",
   "ResponseHeader_2": "可能原因如下：",
