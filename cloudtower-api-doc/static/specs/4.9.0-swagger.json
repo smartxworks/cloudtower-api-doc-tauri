@@ -17555,6 +17555,7 @@
       },
       "BackupStoreType": {
         "enum": [
+          "BOOSTFS",
           "ISCSI",
           "NFS3",
           "NFS4"
@@ -86674,6 +86675,16 @@
             "type": "boolean",
             "nullable": true
           },
+          "cap_snapshot_unique_size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cap_volume_unique_size": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "commited_memory_bytes": {
             "type": "integer",
             "format": "int64",
@@ -100550,6 +100561,880 @@
         ],
         "type": "object"
       },
+      "NetworkPolicyRuleAlgProtocol": {
+        "enum": [
+          "FTP",
+          "TFTP"
+        ],
+        "type": "string"
+      },
+      "NetworkPolicyRulePortProtocol": {
+        "enum": [
+          "ALG",
+          "ICMP",
+          "IPIP",
+          "TCP",
+          "UDP"
+        ],
+        "type": "string"
+      },
+      "NestedNetworkPolicyRulePort": {
+        "properties": {
+          "alg_protocol": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
+              }
+            ],
+            "nullable": true
+          },
+          "port": {
+            "type": "string",
+            "nullable": true
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
+          }
+        },
+        "required": [
+          "protocol"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedSecurityGroup": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedNetworkPolicyRuleService": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NetworkPolicyRuleType": {
+        "enum": [
+          "ALL",
+          "IP_BLOCK",
+          "SECURITY_GROUP",
+          "SELECTOR"
+        ],
+        "type": "string"
+      },
+      "NestedNetworkPolicyRule": {
+        "properties": {
+          "except_ip_block": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "ip_block": {
+            "type": "string",
+            "nullable": true
+          },
+          "ports": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNetworkPolicyRulePort"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "security_group": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedSecurityGroup"
+              }
+            ],
+            "nullable": true
+          },
+          "security_group_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "selector": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "selector_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "service_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "services": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNetworkPolicyRuleService"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedSecurityPolicyStatistics": {
+        "properties": {
+          "count_reset_timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "count_update_timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "match_allow_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "match_default_allow_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "match_default_drop_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "match_drop_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "match_whitelist_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "total_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IsolationPolicy": {
+        "properties": {
+          "egress": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNetworkPolicyRule"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "everoute_cluster": {
+            "$ref": "#/components/schemas/NestedEverouteCluster"
+          },
+          "id": {
+            "type": "string"
+          },
+          "ingress": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNetworkPolicyRule"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "mode": {
+            "$ref": "#/components/schemas/IsolationMode"
+          },
+          "statistics": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedSecurityPolicyStatistics"
+              }
+            ],
+            "nullable": true
+          },
+          "vm": {
+            "$ref": "#/components/schemas/NestedVm"
+          }
+        },
+        "required": [
+          "everoute_cluster",
+          "id",
+          "mode",
+          "vm"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IPSecurityPolicy": {
+        "properties": {
+          "except_ip_block": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "ip_block": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ip_block"
+        ],
+        "type": "object"
+      },
+      "SecurityGroupWhereInput": {
+        "properties": {
+          "vms_some": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "vms_none": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "vms_every": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VmWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "security_policies_some": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "security_policies_none": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "security_policies_every": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "name_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "name_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "name_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "member_type_not_in": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityGroupMemberType"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "member_type_not": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityGroupMemberType"
+              }
+            ],
+            "nullable": true
+          },
+          "member_type_in": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityGroupMemberType"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "member_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityGroupMemberType"
+              }
+            ],
+            "nullable": true
+          },
+          "isolation_policies_some": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "isolation_policies_none": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "isolation_policies_every": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "ips_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "ips_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "ips_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "ips": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "exclude_ips_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "exclude_ips_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude_ips": {
+            "type": "string",
+            "nullable": true
+          },
+          "everoute_cluster": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EverouteClusterWhereInput"
+              }
+            ],
+            "nullable": true
+          },
+          "description_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "description_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "description_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "OR": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityGroupWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "NOT": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityGroupWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "AND": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityGroupWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "SecurityGroupMemberType": {
+        "enum": [
+          "IP",
+          "POD",
+          "VM"
+        ],
+        "type": "string"
+      },
+      "SecurityPolicyIngressEgressInputTarget": {
+        "properties": {
+          "security_groups": {
+            "$ref": "#/components/schemas/SecurityGroupWhereInput"
+          },
+          "ips": {
+            "items": {
+              "$ref": "#/components/schemas/IPSecurityPolicy"
+            },
+            "type": "array"
+          },
+          "label_groups": {
+            "items": {
+              "$ref": "#/components/schemas/LabelWhereInput"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "NetworkPolicyRulePortInput": {
+        "properties": {
+          "alg_protocol": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
+          },
+          "port": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "protocol"
+        ],
+        "type": "object"
+      },
+      "SecurityPolicyFlowControlType": {
+        "enum": [
+          "ALL"
+        ],
+        "type": "string"
+      },
+      "SecurityPolicyIngressEgressInput": {
+        "properties": {
+          "service_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SecurityPolicyFlowControlType"
+          },
+          "ports": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkPolicyRulePortInput"
+            },
+            "type": "array"
+          },
+          "target": {
+            "$ref": "#/components/schemas/SecurityPolicyIngressEgressInputTarget"
+          }
+        },
+        "type": "object"
+      },
+      "IsolationPolicyCreateParams": {
+        "properties": {
+          "ingress": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
+            },
+            "type": "array"
+          },
+          "egress": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
+            },
+            "type": "array"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/IsolationMode"
+          },
+          "vm_id": {
+            "type": "string"
+          },
+          "everoute_cluster_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode",
+          "vm_id",
+          "everoute_cluster_id"
+        ],
+        "type": "object"
+      },
+      "IsolationPolicyUpdateParams": {
+        "properties": {
+          "ingress": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
+            },
+            "type": "array"
+          },
+          "egress": {
+            "items": {
+              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
+            },
+            "type": "array"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/IsolationMode"
+          }
+        },
+        "type": "object"
+      },
+      "IsolationPolicyUpdateBody": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/IsolationPolicyUpdateParams"
+          },
+          "where": {
+            "$ref": "#/components/schemas/IsolationPolicyWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteIsolationPolicy": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "IsolationPolicyDeleteParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/IsolationPolicyWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
       "NestedNamespaceGroup": {
         "properties": {
           "id": {
@@ -102894,6 +103779,377 @@
         ],
         "type": "object"
       },
+      "NetworkPolicyRuleService": {
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/NestedNetworkPolicyRulePort"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "preset": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "members",
+          "name",
+          "preset"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_NetworkPolicyRuleService_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleService"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "NetworkPolicyRuleServiceMemberParams": {
+        "properties": {
+          "alg_protocol": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
+          },
+          "port": {
+            "type": "string"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
+          }
+        },
+        "required": [
+          "protocol"
+        ],
+        "type": "object"
+      },
+      "NetworkPolicyRuleServiceCreationParams": {
+        "properties": {
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkPolicyRuleServiceMemberParams"
+            },
+            "type": "array"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "members",
+          "name"
+        ],
+        "type": "object"
+      },
+      "NetworkPolicyRuleServiceWhereInput": {
+        "properties": {
+          "AND": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "NOT": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "OR": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "description_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "description_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "description_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "id_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_gt": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_gte": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "name_lt": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_lte": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_contains": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_ends_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_not_in": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "name_not_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "name_starts_with": {
+            "type": "string",
+            "nullable": true
+          },
+          "preset": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "preset_not": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NetworkPolicyRuleServiceUpdationParams": {
+        "properties": {
+          "data": {
+            "properties": {
+              "members": {
+                "items": {
+                  "$ref": "#/components/schemas/NetworkPolicyRuleServiceMemberParams"
+                },
+                "type": "array"
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "where": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
+          }
+        },
+        "required": [
+          "data",
+          "where"
+        ],
+        "type": "object"
+      },
+      "DeleteNetworkPolicyRuleService": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "WithTask_DeleteNetworkPolicyRuleService_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DeleteNetworkPolicyRuleService"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "NetworkPolicyRuleServiceDeletionParams": {
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
+          }
+        },
+        "required": [
+          "where"
+        ],
+        "type": "object"
+      },
       "NfsExport": {
         "properties": {
           "cluster": {
@@ -103121,6 +104377,158 @@
           }
         },
         "required": [
+          "where"
+        ],
+        "type": "object"
+      },
+      "NfsInode": {
+        "properties": {
+          "assigned_size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "downgraded_prioritized_space": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ec_k": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ec_m": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "encrypt_method": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EncryptMethod"
+              }
+            ],
+            "nullable": true
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "file": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "$ref": "#/components/schemas/NestedLabel"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string"
+          },
+          "local_updated_at": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nfs_export": {
+            "$ref": "#/components/schemas/NestedNfsExport"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "prioritized": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "resiliency_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResiliencyType"
+              }
+            ],
+            "nullable": true
+          },
+          "shared_size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "snapshot_num": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unique_logical_size": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "unique_size": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "assigned_size",
+          "file",
+          "id",
+          "local_id",
+          "local_updated_at",
+          "name",
+          "nfs_export",
+          "parent_id",
+          "shared_size",
+          "snapshot_num",
+          "unique_size"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WithTask_NfsInode_": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/NfsInode"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "NfsInodeUpdationParamsData": {
+        "properties": {
+          "prioritized": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prioritized"
+        ],
+        "type": "object"
+      },
+      "NfsInodeUpdationParams": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/NfsInodeUpdationParamsData"
+          },
+          "where": {
+            "$ref": "#/components/schemas/NfsInodeWhereInput"
+          }
+        },
+        "required": [
+          "data",
           "where"
         ],
         "type": "object"
@@ -103496,6 +104904,17 @@
           "$ref": "#/components/schemas/NodeTopUpdationParam"
         },
         "type": "array"
+      },
+      "NtpServiceUrl": {
+        "properties": {
+          "ntp_service_url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ntp_service_url"
+        ],
+        "type": "object"
       },
       "NvmfNamespaceSnapshot": {
         "properties": {
@@ -105205,6 +106624,14 @@
             ],
             "nullable": true
           },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
           "id": {
             "type": "string"
           },
@@ -105342,6 +106769,692 @@
           "where"
         ],
         "type": "object"
+      },
+      "NestedExternalCloudTower": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationNetworkConfigure": {
+        "properties": {
+          "gateway": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip": {
+            "type": "string"
+          },
+          "subnet_mask": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "ip"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationIPAddressMapping": {
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/NestedReplicationNetworkConfigure"
+          },
+          "target": {
+            "$ref": "#/components/schemas/NestedReplicationNetworkConfigure"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationNetworkInformation": {
+        "properties": {
+          "cluster_local_id": {
+            "type": "string"
+          },
+          "cluster_name": {
+            "type": "string"
+          },
+          "network_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "vds_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "vlan_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "vlan_local_id": {
+            "type": "string"
+          },
+          "vlan_mode_type": {
+            "$ref": "#/components/schemas/VlanModeType"
+          },
+          "vlan_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cluster_local_id",
+          "cluster_name",
+          "vlan_local_id",
+          "vlan_mode_type",
+          "vlan_name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationPlanNetworkMapping": {
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/NestedReplicationNetworkInformation"
+          },
+          "target": {
+            "$ref": "#/components/schemas/NestedReplicationNetworkInformation"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationObjectDescriptor": {
+        "properties": {
+          "cluster_local_id": {
+            "type": "string"
+          },
+          "cluster_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "object_local_id": {
+            "type": "string"
+          },
+          "object_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "parent_object_local_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "parent_object_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "tower_deploy_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "zbs_volume_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster_local_id",
+          "object_local_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicaVm": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationPlanExecution": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationRestorePoint": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationTargetExecution": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationClusterDescriptor": {
+        "properties": {
+          "cluster_local_id": {
+            "type": "string"
+          },
+          "cluster_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "tower_deploy_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "cluster_local_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NestedReplicationService": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ReplicationPlan": {
+        "properties": {
+          "abort_window_unfinished": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "activation_timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "compression": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "delete_strategy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BackupPlanDeleteStrategy"
+              }
+            ],
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "ec_k": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ec_m": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "enable_window": {
+            "type": "boolean"
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "external_cloudtower": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedExternalCloudTower"
+              }
+            ],
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "inbound": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "interval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ip_mapping": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationIPAddressMapping"
+            },
+            "type": "array"
+          },
+          "iscsi_luns": {
+            "items": {
+              "$ref": "#/components/schemas/NestedIscsiLun"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "keep_mac_address": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "keep_policy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BackupPlanKeepPolicy"
+              }
+            ],
+            "nullable": true
+          },
+          "keep_policy_value": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last_execute_status": {
+            "$ref": "#/components/schemas/BackupPlanExecutionStatus"
+          },
+          "last_execute_status_message": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_execute_success_job_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last_execute_total_job_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last_executed_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_manual_execute_status": {
+            "$ref": "#/components/schemas/BackupPlanExecutionStatus"
+          },
+          "last_manual_execute_status_message": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_manual_execute_success_job_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last_manual_execute_total_job_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last_manual_executed_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "network_mapping": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationPlanNetworkMapping"
+            },
+            "type": "array"
+          },
+          "next_execution_time": {
+            "type": "string",
+            "nullable": true
+          },
+          "objects_descriptor": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationObjectDescriptor"
+            },
+            "type": "array"
+          },
+          "period": {
+            "$ref": "#/components/schemas/ReplicationPlanPeriod"
+          },
+          "phase": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BackupPlanPhase"
+              }
+            ],
+            "nullable": true
+          },
+          "replica_name_rule": {
+            "$ref": "#/components/schemas/ReplicaNameRule"
+          },
+          "replica_name_setting": {
+            "type": "string",
+            "nullable": true
+          },
+          "replica_num": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "replica_vms": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicaVm"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "replication_plan_executions": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationPlanExecution"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "replication_restore_points": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationRestorePoint"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "replication_target_executions": {
+            "items": {
+              "$ref": "#/components/schemas/NestedReplicationTargetExecution"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "resiliency_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResiliencyType"
+              }
+            ],
+            "nullable": true
+          },
+          "snapshot_consistent_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConsistentType"
+              }
+            ],
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/BackupPlanStatus"
+          },
+          "storage_policy": {
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+          },
+          "target_cluster": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NestedCluster"
+              }
+            ],
+            "nullable": true
+          },
+          "target_cluster_descriptor": {
+            "$ref": "#/components/schemas/NestedReplicationClusterDescriptor"
+          },
+          "target_replication_service": {
+            "$ref": "#/components/schemas/NestedReplicationService"
+          },
+          "thin_provision": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "time_points": {
+            "items": {
+              "$ref": "#/components/schemas/NestedBackupPlanTimePoint"
+            },
+            "type": "array"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ReplicationPlanType"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/NestedVm"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "weekdays": {
+            "items": {
+              "$ref": "#/components/schemas/WeekdayTypeEnum"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "window_end": {
+            "type": "string",
+            "nullable": true
+          },
+          "window_start": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "compression",
+          "createdAt",
+          "enable_window",
+          "id",
+          "interval",
+          "ip_mapping",
+          "last_execute_status",
+          "last_manual_execute_status",
+          "name",
+          "network_mapping",
+          "objects_descriptor",
+          "period",
+          "replica_name_rule",
+          "status",
+          "storage_policy",
+          "target_cluster_descriptor",
+          "target_replication_service",
+          "time_points",
+          "type",
+          "updatedAt"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ReplicationPlanOrderByInput": {
+        "enum": [
+          "abort_window_unfinished_ASC",
+          "abort_window_unfinished_DESC",
+          "activation_timestamp_ASC",
+          "activation_timestamp_DESC",
+          "compression_ASC",
+          "compression_DESC",
+          "createdAt_ASC",
+          "createdAt_DESC",
+          "delete_strategy_ASC",
+          "delete_strategy_DESC",
+          "description_ASC",
+          "description_DESC",
+          "ec_k_ASC",
+          "ec_k_DESC",
+          "ec_m_ASC",
+          "ec_m_DESC",
+          "enable_window_ASC",
+          "enable_window_DESC",
+          "entityAsyncStatus_ASC",
+          "entityAsyncStatus_DESC",
+          "id_ASC",
+          "id_DESC",
+          "inbound_ASC",
+          "inbound_DESC",
+          "interval_ASC",
+          "interval_DESC",
+          "ip_mapping_ASC",
+          "ip_mapping_DESC",
+          "keep_mac_address_ASC",
+          "keep_mac_address_DESC",
+          "keep_policy_ASC",
+          "keep_policy_DESC",
+          "keep_policy_value_ASC",
+          "keep_policy_value_DESC",
+          "last_execute_status_ASC",
+          "last_execute_status_DESC",
+          "last_execute_status_message_ASC",
+          "last_execute_status_message_DESC",
+          "last_execute_success_job_count_ASC",
+          "last_execute_success_job_count_DESC",
+          "last_execute_total_job_count_ASC",
+          "last_execute_total_job_count_DESC",
+          "last_executed_at_ASC",
+          "last_executed_at_DESC",
+          "last_manual_execute_status_ASC",
+          "last_manual_execute_status_DESC",
+          "last_manual_execute_status_message_ASC",
+          "last_manual_execute_status_message_DESC",
+          "last_manual_execute_success_job_count_ASC",
+          "last_manual_execute_success_job_count_DESC",
+          "last_manual_execute_total_job_count_ASC",
+          "last_manual_execute_total_job_count_DESC",
+          "last_manual_executed_at_ASC",
+          "last_manual_executed_at_DESC",
+          "name_ASC",
+          "name_DESC",
+          "network_mapping_ASC",
+          "network_mapping_DESC",
+          "next_execution_time_ASC",
+          "next_execution_time_DESC",
+          "objects_descriptor_ASC",
+          "objects_descriptor_DESC",
+          "period_ASC",
+          "period_DESC",
+          "phase_ASC",
+          "phase_DESC",
+          "replica_name_rule_ASC",
+          "replica_name_rule_DESC",
+          "replica_name_setting_ASC",
+          "replica_name_setting_DESC",
+          "replica_num_ASC",
+          "replica_num_DESC",
+          "resiliency_type_ASC",
+          "resiliency_type_DESC",
+          "snapshot_consistent_type_ASC",
+          "snapshot_consistent_type_DESC",
+          "status_ASC",
+          "status_DESC",
+          "storage_policy_ASC",
+          "storage_policy_DESC",
+          "target_cluster_descriptor_ASC",
+          "target_cluster_descriptor_DESC",
+          "thin_provision_ASC",
+          "thin_provision_DESC",
+          "time_points_ASC",
+          "time_points_DESC",
+          "type_ASC",
+          "type_DESC",
+          "updatedAt_ASC",
+          "updatedAt_DESC",
+          "window_end_ASC",
+          "window_end_DESC",
+          "window_start_ASC",
+          "window_start_DESC"
+        ],
+        "type": "string"
+      },
+      "GetReplicationPlansRequestBody": {
+        "properties": {
+          "after": {
+            "type": "string",
+            "nullable": true
+          },
+          "before": {
+            "type": "string",
+            "nullable": true
+          },
+          "first": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "last": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "orderBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReplicationPlanOrderByInput"
+              }
+            ],
+            "nullable": true
+          },
+          "skip": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "where": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReplicationPlanWhereInput"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
       },
       "NestedExecutePlan": {
         "properties": {
@@ -106428,6 +108541,71 @@
         ],
         "type": "object"
       },
+      "ResourceChangeEvent": {
+        "properties": {
+          "prev_revision": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "new_value": {
+            "type": "string"
+          },
+          "old_value": {
+            "type": "string"
+          },
+          "resource_id": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "revision"
+        ],
+        "type": "object"
+      },
+      "ResourceChangeResponse": {
+        "properties": {
+          "currentRevision": {
+            "type": "string"
+          },
+          "compactRevision": {
+            "type": "string"
+          },
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceChangeEvent"
+            },
+            "type": "array"
+          },
+          "error": {},
+          "ec": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "currentRevision",
+          "compactRevision",
+          "data",
+          "ec"
+        ],
+        "type": "object"
+      },
+      "ResourceChangeLimit": {
+        "type": "integer",
+        "format": "int32",
+        "minimum": 1,
+        "maximum": 1000
+      },
       "UserRoleNext": {
         "properties": {
           "actions": {
@@ -106891,299 +109069,6 @@
         ],
         "type": "object"
       },
-      "SecurityGroupWhereInput": {
-        "properties": {
-          "AND": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityGroupWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "NOT": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityGroupWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "OR": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityGroupWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "everoute_cluster": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EverouteClusterWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "isolation_policies_every": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "isolation_policies_none": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "isolation_policies_some": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/IsolationPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "name_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "name_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "security_policies_every": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "security_policies_none": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "security_policies_some": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SecurityPolicyWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "vms_every": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "vms_none": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmWhereInput"
-              }
-            ],
-            "nullable": true
-          },
-          "vms_some": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmWhereInput"
-              }
-            ],
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
       "SecurityGroupDeleteParams": {
         "properties": {
           "where": {
@@ -107230,22 +109115,6 @@
         ],
         "type": "object"
       },
-      "NestedSecurityGroup": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
       "NestedSecurityPolicyApply": {
         "properties": {
           "communicable": {
@@ -107281,186 +109150,6 @@
           "selector",
           "selector_ids"
         ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NetworkPolicyRuleAlgProtocol": {
-        "enum": [
-          "FTP",
-          "TFTP"
-        ],
-        "type": "string"
-      },
-      "NetworkPolicyRulePortProtocol": {
-        "enum": [
-          "ALG",
-          "ICMP",
-          "IPIP",
-          "TCP",
-          "UDP"
-        ],
-        "type": "string"
-      },
-      "NestedNetworkPolicyRulePort": {
-        "properties": {
-          "alg_protocol": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
-              }
-            ],
-            "nullable": true
-          },
-          "port": {
-            "type": "string",
-            "nullable": true
-          },
-          "protocol": {
-            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
-          }
-        },
-        "required": [
-          "protocol"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedNetworkPolicyRuleService": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NetworkPolicyRuleType": {
-        "enum": [
-          "ALL",
-          "IP_BLOCK",
-          "SECURITY_GROUP",
-          "SELECTOR"
-        ],
-        "type": "string"
-      },
-      "NestedNetworkPolicyRule": {
-        "properties": {
-          "except_ip_block": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ip_block": {
-            "type": "string",
-            "nullable": true
-          },
-          "ports": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNetworkPolicyRulePort"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "security_group": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedSecurityGroup"
-              }
-            ],
-            "nullable": true
-          },
-          "security_group_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "selector": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "selector_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "service_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "services": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNetworkPolicyRuleService"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "type": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleType"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedSecurityPolicyStatistics": {
-        "properties": {
-          "count_reset_timestamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "count_update_timestamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "match_allow_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "match_default_allow_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "match_default_drop_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "match_drop_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "match_whitelist_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "total_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
         "type": "object",
         "additionalProperties": false
       },
@@ -107570,89 +109259,6 @@
         "required": [
           "target"
         ],
-        "type": "object"
-      },
-      "IPSecurityPolicy": {
-        "properties": {
-          "except_ip_block": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "ip_block": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "ip_block"
-        ],
-        "type": "object"
-      },
-      "SecurityPolicyIngressEgressInputTarget": {
-        "properties": {
-          "security_groups": {
-            "$ref": "#/components/schemas/SecurityGroupWhereInput"
-          },
-          "ips": {
-            "items": {
-              "$ref": "#/components/schemas/IPSecurityPolicy"
-            },
-            "type": "array"
-          },
-          "label_groups": {
-            "items": {
-              "$ref": "#/components/schemas/LabelWhereInput"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkPolicyRulePortInput": {
-        "properties": {
-          "alg_protocol": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
-          },
-          "protocol": {
-            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
-          },
-          "port": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "protocol"
-        ],
-        "type": "object"
-      },
-      "SecurityPolicyFlowControlType": {
-        "enum": [
-          "ALL"
-        ],
-        "type": "string"
-      },
-      "SecurityPolicyIngressEgressInput": {
-        "properties": {
-          "service_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "type": {
-            "$ref": "#/components/schemas/SecurityPolicyFlowControlType"
-          },
-          "ports": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkPolicyRulePortInput"
-            },
-            "type": "array"
-          },
-          "target": {
-            "$ref": "#/components/schemas/SecurityPolicyIngressEgressInputTarget"
-          }
-        },
         "type": "object"
       },
       "SecurityPolicyCreateParams": {
@@ -116112,7 +117718,8 @@
         "enum": [
           "Mail",
           "Sms",
-          "Totp"
+          "Totp",
+          "TotpRecoveryCode"
         ],
         "type": "string"
       },
@@ -121324,6 +122931,75 @@
         ],
         "type": "object"
       },
+      "NvramDownloadResponse": {
+        "properties": {
+          "data": {
+            "properties": {
+              "resource_uuid": {
+                "type": "string"
+              },
+              "fd_mtime": {
+                "type": "number",
+                "format": "double"
+              },
+              "data": {
+                "type": "string"
+              },
+              "created_time": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "required": [
+              "resource_uuid",
+              "fd_mtime",
+              "data",
+              "created_time"
+            ],
+            "type": "object"
+          },
+          "error": {},
+          "ec": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ec"
+        ],
+        "type": "object"
+      },
+      "ClusterWhereUniqueInput": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "local_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NvramParams": {
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/ClusterWhereUniqueInput"
+          },
+          "vm": {
+            "$ref": "#/components/schemas/VmWhereUniqueInput"
+          }
+        },
+        "required": [
+          "cluster",
+          "vm"
+        ],
+        "type": "object"
+      },
       "VsphereEsxiAccount": {
         "properties": {
           "host": {
@@ -121416,1501 +123092,6 @@
         },
         "required": [
           "data"
-        ],
-        "type": "object"
-      },
-      "IsolationPolicy": {
-        "properties": {
-          "egress": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNetworkPolicyRule"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "everoute_cluster": {
-            "$ref": "#/components/schemas/NestedEverouteCluster"
-          },
-          "id": {
-            "type": "string"
-          },
-          "ingress": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNetworkPolicyRule"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "mode": {
-            "$ref": "#/components/schemas/IsolationMode"
-          },
-          "statistics": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedSecurityPolicyStatistics"
-              }
-            ],
-            "nullable": true
-          },
-          "vm": {
-            "$ref": "#/components/schemas/NestedVm"
-          }
-        },
-        "required": [
-          "everoute_cluster",
-          "id",
-          "mode",
-          "vm"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "IsolationPolicyCreateParams": {
-        "properties": {
-          "ingress": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
-            },
-            "type": "array"
-          },
-          "egress": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
-            },
-            "type": "array"
-          },
-          "mode": {
-            "$ref": "#/components/schemas/IsolationMode"
-          },
-          "vm_id": {
-            "type": "string"
-          },
-          "everoute_cluster_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "mode",
-          "vm_id",
-          "everoute_cluster_id"
-        ],
-        "type": "object"
-      },
-      "IsolationPolicyUpdateParams": {
-        "properties": {
-          "ingress": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
-            },
-            "type": "array"
-          },
-          "egress": {
-            "items": {
-              "$ref": "#/components/schemas/SecurityPolicyIngressEgressInput"
-            },
-            "type": "array"
-          },
-          "mode": {
-            "$ref": "#/components/schemas/IsolationMode"
-          }
-        },
-        "type": "object"
-      },
-      "IsolationPolicyUpdateBody": {
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/IsolationPolicyUpdateParams"
-          },
-          "where": {
-            "$ref": "#/components/schemas/IsolationPolicyWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteIsolationPolicy": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "IsolationPolicyDeleteParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/IsolationPolicyWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "NetworkPolicyRuleService": {
-        "properties": {
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "members": {
-            "items": {
-              "$ref": "#/components/schemas/NestedNetworkPolicyRulePort"
-            },
-            "type": "array"
-          },
-          "name": {
-            "type": "string"
-          },
-          "preset": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "id",
-          "members",
-          "name",
-          "preset"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_NetworkPolicyRuleService_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleService"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "NetworkPolicyRuleServiceMemberParams": {
-        "properties": {
-          "alg_protocol": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleAlgProtocol"
-          },
-          "port": {
-            "type": "string"
-          },
-          "protocol": {
-            "$ref": "#/components/schemas/NetworkPolicyRulePortProtocol"
-          }
-        },
-        "required": [
-          "protocol"
-        ],
-        "type": "object"
-      },
-      "NetworkPolicyRuleServiceCreationParams": {
-        "properties": {
-          "members": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkPolicyRuleServiceMemberParams"
-            },
-            "type": "array"
-          },
-          "description": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "members",
-          "name"
-        ],
-        "type": "object"
-      },
-      "NetworkPolicyRuleServiceWhereInput": {
-        "properties": {
-          "AND": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "NOT": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "OR": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "description_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "description_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "id_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "id_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_gt": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_gte": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "name_lt": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_lte": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_contains": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_ends_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_not_in": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "name_not_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "name_starts_with": {
-            "type": "string",
-            "nullable": true
-          },
-          "preset": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "preset_not": {
-            "type": "boolean",
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NetworkPolicyRuleServiceUpdationParams": {
-        "properties": {
-          "data": {
-            "properties": {
-              "members": {
-                "items": {
-                  "$ref": "#/components/schemas/NetworkPolicyRuleServiceMemberParams"
-                },
-                "type": "array"
-              },
-              "description": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "where": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "DeleteNetworkPolicyRuleService": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object"
-      },
-      "WithTask_DeleteNetworkPolicyRuleService_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/DeleteNetworkPolicyRuleService"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "NetworkPolicyRuleServiceDeletionParams": {
-        "properties": {
-          "where": {
-            "$ref": "#/components/schemas/NetworkPolicyRuleServiceWhereInput"
-          }
-        },
-        "required": [
-          "where"
-        ],
-        "type": "object"
-      },
-      "NtpServiceUrl": {
-        "properties": {
-          "ntp_service_url": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "ntp_service_url"
-        ],
-        "type": "object"
-      },
-      "ResourceChangeEvent": {
-        "properties": {
-          "prev_revision": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "new_value": {
-            "type": "string"
-          },
-          "old_value": {
-            "type": "string"
-          },
-          "resource_id": {
-            "type": "string"
-          },
-          "resource_type": {
-            "type": "string"
-          },
-          "action": {
-            "type": "string"
-          },
-          "revision": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "revision"
-        ],
-        "type": "object"
-      },
-      "ResourceChangeResponse": {
-        "properties": {
-          "currentRevision": {
-            "type": "string"
-          },
-          "compactRevision": {
-            "type": "string"
-          },
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/ResourceChangeEvent"
-            },
-            "type": "array"
-          },
-          "error": {},
-          "ec": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "currentRevision",
-          "compactRevision",
-          "data",
-          "ec"
-        ],
-        "type": "object"
-      },
-      "ResourceChangeLimit": {
-        "type": "integer",
-        "format": "int32",
-        "minimum": 1,
-        "maximum": 1000
-      },
-      "NfsInode": {
-        "properties": {
-          "assigned_size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "downgraded_prioritized_space": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ec_k": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "ec_m": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "encrypt_method": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EncryptMethod"
-              }
-            ],
-            "nullable": true
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "file": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "labels": {
-            "items": {
-              "$ref": "#/components/schemas/NestedLabel"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string"
-          },
-          "local_updated_at": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "nfs_export": {
-            "$ref": "#/components/schemas/NestedNfsExport"
-          },
-          "parent_id": {
-            "type": "string"
-          },
-          "prioritized": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "resiliency_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ResiliencyType"
-              }
-            ],
-            "nullable": true
-          },
-          "shared_size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "snapshot_num": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "unique_logical_size": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "unique_size": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "required": [
-          "assigned_size",
-          "file",
-          "id",
-          "local_id",
-          "local_updated_at",
-          "name",
-          "nfs_export",
-          "parent_id",
-          "shared_size",
-          "snapshot_num",
-          "unique_size"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "WithTask_NfsInode_": {
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/NfsInode"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "NfsInodeUpdationParamsData": {
-        "properties": {
-          "prioritized": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "prioritized"
-        ],
-        "type": "object"
-      },
-      "NfsInodeUpdationParams": {
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/NfsInodeUpdationParamsData"
-          },
-          "where": {
-            "$ref": "#/components/schemas/NfsInodeWhereInput"
-          }
-        },
-        "required": [
-          "data",
-          "where"
-        ],
-        "type": "object"
-      },
-      "NestedExternalCloudTower": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationNetworkConfigure": {
-        "properties": {
-          "gateway": {
-            "type": "string",
-            "nullable": true
-          },
-          "ip": {
-            "type": "string"
-          },
-          "subnet_mask": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "ip"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationIPAddressMapping": {
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/NestedReplicationNetworkConfigure"
-          },
-          "target": {
-            "$ref": "#/components/schemas/NestedReplicationNetworkConfigure"
-          }
-        },
-        "required": [
-          "source",
-          "target"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationNetworkInformation": {
-        "properties": {
-          "cluster_local_id": {
-            "type": "string"
-          },
-          "cluster_name": {
-            "type": "string"
-          },
-          "network_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "vds_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "vlan_id": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "vlan_local_id": {
-            "type": "string"
-          },
-          "vlan_mode_type": {
-            "$ref": "#/components/schemas/VlanModeType"
-          },
-          "vlan_name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "cluster_local_id",
-          "cluster_name",
-          "vlan_local_id",
-          "vlan_mode_type",
-          "vlan_name"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationPlanNetworkMapping": {
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/NestedReplicationNetworkInformation"
-          },
-          "target": {
-            "$ref": "#/components/schemas/NestedReplicationNetworkInformation"
-          }
-        },
-        "required": [
-          "source",
-          "target"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationObjectDescriptor": {
-        "properties": {
-          "cluster_local_id": {
-            "type": "string"
-          },
-          "cluster_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "object_local_id": {
-            "type": "string"
-          },
-          "object_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "parent_object_local_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "parent_object_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "tower_deploy_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "zbs_volume_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster_local_id",
-          "object_local_id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicaVm": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationPlanExecution": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationRestorePoint": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationTargetExecution": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationClusterDescriptor": {
-        "properties": {
-          "cluster_local_id": {
-            "type": "string"
-          },
-          "cluster_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "tower_deploy_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "cluster_local_id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NestedReplicationService": {
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "ReplicationPlan": {
-        "properties": {
-          "abort_window_unfinished": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "activation_timestamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "compression": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string"
-          },
-          "delete_strategy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BackupPlanDeleteStrategy"
-              }
-            ],
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "ec_k": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "ec_m": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "enable_window": {
-            "type": "boolean"
-          },
-          "entityAsyncStatus": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
-              }
-            ],
-            "nullable": true
-          },
-          "external_cloudtower": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedExternalCloudTower"
-              }
-            ],
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "inbound": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "interval": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ip_mapping": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationIPAddressMapping"
-            },
-            "type": "array"
-          },
-          "iscsi_luns": {
-            "items": {
-              "$ref": "#/components/schemas/NestedIscsiLun"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "keep_mac_address": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "keep_policy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BackupPlanKeepPolicy"
-              }
-            ],
-            "nullable": true
-          },
-          "keep_policy_value": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last_execute_status": {
-            "$ref": "#/components/schemas/BackupPlanExecutionStatus"
-          },
-          "last_execute_status_message": {
-            "type": "string",
-            "nullable": true
-          },
-          "last_execute_success_job_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last_execute_total_job_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last_executed_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "last_manual_execute_status": {
-            "$ref": "#/components/schemas/BackupPlanExecutionStatus"
-          },
-          "last_manual_execute_status_message": {
-            "type": "string",
-            "nullable": true
-          },
-          "last_manual_execute_success_job_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last_manual_execute_total_job_count": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last_manual_executed_at": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string"
-          },
-          "network_mapping": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationPlanNetworkMapping"
-            },
-            "type": "array"
-          },
-          "next_execution_time": {
-            "type": "string",
-            "nullable": true
-          },
-          "objects_descriptor": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationObjectDescriptor"
-            },
-            "type": "array"
-          },
-          "period": {
-            "$ref": "#/components/schemas/ReplicationPlanPeriod"
-          },
-          "phase": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BackupPlanPhase"
-              }
-            ],
-            "nullable": true
-          },
-          "replica_name_rule": {
-            "$ref": "#/components/schemas/ReplicaNameRule"
-          },
-          "replica_name_setting": {
-            "type": "string",
-            "nullable": true
-          },
-          "replica_num": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "replica_vms": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicaVm"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "replication_plan_executions": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationPlanExecution"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "replication_restore_points": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationRestorePoint"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "replication_target_executions": {
-            "items": {
-              "$ref": "#/components/schemas/NestedReplicationTargetExecution"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "resiliency_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ResiliencyType"
-              }
-            ],
-            "nullable": true
-          },
-          "snapshot_consistent_type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ConsistentType"
-              }
-            ],
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/BackupPlanStatus"
-          },
-          "storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "target_cluster": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NestedCluster"
-              }
-            ],
-            "nullable": true
-          },
-          "target_cluster_descriptor": {
-            "$ref": "#/components/schemas/NestedReplicationClusterDescriptor"
-          },
-          "target_replication_service": {
-            "$ref": "#/components/schemas/NestedReplicationService"
-          },
-          "thin_provision": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "time_points": {
-            "items": {
-              "$ref": "#/components/schemas/NestedBackupPlanTimePoint"
-            },
-            "type": "array"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ReplicationPlanType"
-          },
-          "updatedAt": {
-            "type": "string"
-          },
-          "vms": {
-            "items": {
-              "$ref": "#/components/schemas/NestedVm"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "weekdays": {
-            "items": {
-              "$ref": "#/components/schemas/WeekdayTypeEnum"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "window_end": {
-            "type": "string",
-            "nullable": true
-          },
-          "window_start": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": [
-          "compression",
-          "createdAt",
-          "enable_window",
-          "id",
-          "interval",
-          "ip_mapping",
-          "last_execute_status",
-          "last_manual_execute_status",
-          "name",
-          "network_mapping",
-          "objects_descriptor",
-          "period",
-          "replica_name_rule",
-          "status",
-          "storage_policy",
-          "target_cluster_descriptor",
-          "target_replication_service",
-          "time_points",
-          "type",
-          "updatedAt"
-        ],
-        "type": "object",
-        "additionalProperties": false
-      },
-      "ReplicationPlanOrderByInput": {
-        "enum": [
-          "abort_window_unfinished_ASC",
-          "abort_window_unfinished_DESC",
-          "activation_timestamp_ASC",
-          "activation_timestamp_DESC",
-          "compression_ASC",
-          "compression_DESC",
-          "createdAt_ASC",
-          "createdAt_DESC",
-          "delete_strategy_ASC",
-          "delete_strategy_DESC",
-          "description_ASC",
-          "description_DESC",
-          "ec_k_ASC",
-          "ec_k_DESC",
-          "ec_m_ASC",
-          "ec_m_DESC",
-          "enable_window_ASC",
-          "enable_window_DESC",
-          "entityAsyncStatus_ASC",
-          "entityAsyncStatus_DESC",
-          "id_ASC",
-          "id_DESC",
-          "inbound_ASC",
-          "inbound_DESC",
-          "interval_ASC",
-          "interval_DESC",
-          "ip_mapping_ASC",
-          "ip_mapping_DESC",
-          "keep_mac_address_ASC",
-          "keep_mac_address_DESC",
-          "keep_policy_ASC",
-          "keep_policy_DESC",
-          "keep_policy_value_ASC",
-          "keep_policy_value_DESC",
-          "last_execute_status_ASC",
-          "last_execute_status_DESC",
-          "last_execute_status_message_ASC",
-          "last_execute_status_message_DESC",
-          "last_execute_success_job_count_ASC",
-          "last_execute_success_job_count_DESC",
-          "last_execute_total_job_count_ASC",
-          "last_execute_total_job_count_DESC",
-          "last_executed_at_ASC",
-          "last_executed_at_DESC",
-          "last_manual_execute_status_ASC",
-          "last_manual_execute_status_DESC",
-          "last_manual_execute_status_message_ASC",
-          "last_manual_execute_status_message_DESC",
-          "last_manual_execute_success_job_count_ASC",
-          "last_manual_execute_success_job_count_DESC",
-          "last_manual_execute_total_job_count_ASC",
-          "last_manual_execute_total_job_count_DESC",
-          "last_manual_executed_at_ASC",
-          "last_manual_executed_at_DESC",
-          "name_ASC",
-          "name_DESC",
-          "network_mapping_ASC",
-          "network_mapping_DESC",
-          "next_execution_time_ASC",
-          "next_execution_time_DESC",
-          "objects_descriptor_ASC",
-          "objects_descriptor_DESC",
-          "period_ASC",
-          "period_DESC",
-          "phase_ASC",
-          "phase_DESC",
-          "replica_name_rule_ASC",
-          "replica_name_rule_DESC",
-          "replica_name_setting_ASC",
-          "replica_name_setting_DESC",
-          "replica_num_ASC",
-          "replica_num_DESC",
-          "resiliency_type_ASC",
-          "resiliency_type_DESC",
-          "snapshot_consistent_type_ASC",
-          "snapshot_consistent_type_DESC",
-          "status_ASC",
-          "status_DESC",
-          "storage_policy_ASC",
-          "storage_policy_DESC",
-          "target_cluster_descriptor_ASC",
-          "target_cluster_descriptor_DESC",
-          "thin_provision_ASC",
-          "thin_provision_DESC",
-          "time_points_ASC",
-          "time_points_DESC",
-          "type_ASC",
-          "type_DESC",
-          "updatedAt_ASC",
-          "updatedAt_DESC",
-          "window_end_ASC",
-          "window_end_DESC",
-          "window_start_ASC",
-          "window_start_DESC"
-        ],
-        "type": "string"
-      },
-      "GetReplicationPlansRequestBody": {
-        "properties": {
-          "after": {
-            "type": "string",
-            "nullable": true
-          },
-          "before": {
-            "type": "string",
-            "nullable": true
-          },
-          "first": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "last": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "orderBy": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ReplicationPlanOrderByInput"
-              }
-            ],
-            "nullable": true
-          },
-          "skip": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "where": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ReplicationPlanWhereInput"
-              }
-            ],
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NvramDownloadResponse": {
-        "properties": {
-          "data": {
-            "properties": {
-              "resource_uuid": {
-                "type": "string"
-              },
-              "fd_mtime": {
-                "type": "number",
-                "format": "double"
-              },
-              "data": {
-                "type": "string"
-              },
-              "created_time": {
-                "type": "number",
-                "format": "double"
-              }
-            },
-            "required": [
-              "resource_uuid",
-              "fd_mtime",
-              "data",
-              "created_time"
-            ],
-            "type": "object"
-          },
-          "error": {},
-          "ec": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "ec"
-        ],
-        "type": "object"
-      },
-      "ClusterWhereUniqueInput": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "local_id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object",
-        "additionalProperties": false
-      },
-      "NvramParams": {
-        "properties": {
-          "data": {
-            "type": "string"
-          },
-          "cluster": {
-            "$ref": "#/components/schemas/ClusterWhereUniqueInput"
-          },
-          "vm": {
-            "$ref": "#/components/schemas/VmWhereUniqueInput"
-          }
-        },
-        "required": [
-          "cluster",
-          "vm"
         ],
         "type": "object"
       },
@@ -133810,6 +133991,8 @@
         "enum": [
           "auth_ASC",
           "auth_DESC",
+          "entityAsyncStatus_ASC",
+          "entityAsyncStatus_DESC",
           "id_ASC",
           "id_DESC",
           "vm_recycle_bin_ASC",
@@ -133836,6 +134019,36 @@
           "OR": {
             "items": {
               "$ref": "#/components/schemas/GlobalSettingsWhereInput"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "entityAsyncStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "entityAsyncStatus_in": {
+            "items": {
+              "$ref": "#/components/schemas/EntityAsyncStatus"
+            },
+            "type": "array",
+            "nullable": true
+          },
+          "entityAsyncStatus_not": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EntityAsyncStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "entityAsyncStatus_not_in": {
+            "items": {
+              "$ref": "#/components/schemas/EntityAsyncStatus"
             },
             "type": "array",
             "nullable": true
@@ -149111,7 +149324,7 @@
   },
   "info": {
     "title": "",
-    "version": "2.3.0",
+    "version": "4.9.0",
     "description": "cloudtower operation API and SDK"
   },
   "openapi": "3.0.0",
@@ -167076,6 +167289,345 @@
         }
       }
     },
+    "/create-isolation-policy": {
+      "post": {
+        "operationId": "CreateIsolationPolicy",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IsolationPolicy"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "IsolationPolicy"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsolationPolicyCreateParams"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-isolation-policy": {
+      "post": {
+        "operationId": "UpdateIsolationPolicy",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/IsolationPolicy"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "IsolationPolicy"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsolationPolicyUpdateBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-isolation-policy": {
+      "post": {
+        "operationId": "DeleteIsolationPolicy",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DeleteIsolationPolicy"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "IsolationPolicy"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsolationPolicyDeleteParams"
+              }
+            }
+          }
+        }
+      }
+    },
     "/create-label": {
       "post": {
         "operationId": "CreateLabel",
@@ -170237,6 +170789,351 @@
         }
       }
     },
+    "/create-network-policy-rule-service": {
+      "post": {
+        "operationId": "CreateNetworkPolicyRuleService",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WithTask_NetworkPolicyRuleService_"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "NetworkPolicyRuleService"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/components/schemas/NetworkPolicyRuleServiceCreationParams"
+                },
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-network-policy-rule-service": {
+      "post": {
+        "operationId": "UpdateNetworkPolicyRuleService",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WithTask_NetworkPolicyRuleService_"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "NetworkPolicyRuleService"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkPolicyRuleServiceUpdationParams"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-network-policy-rule-service": {
+      "post": {
+        "operationId": "DeleteNetworkPolicyRuleService",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WithTask_DeleteNetworkPolicyRuleService_"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "NetworkPolicyRuleService"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkPolicyRuleServiceDeletionParams"
+              }
+            }
+          }
+        }
+      }
+    },
     "/create-nfs-export": {
       "post": {
         "operationId": "CreateNfsExport",
@@ -170582,6 +171479,120 @@
         }
       }
     },
+    "/update-nfs-inode": {
+      "post": {
+        "operationId": "UpdateNfsInode",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WithTask_NfsInode_"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "NfsInode"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NfsInodeUpdationParams"
+              }
+            }
+          }
+        }
+      }
+    },
     "/update-nic": {
       "post": {
         "operationId": "UpdateNic",
@@ -170808,6 +171819,107 @@
             }
           }
         }
+      }
+    },
+    "/get-ntp-service-url": {
+      "post": {
+        "operationId": "GetNtpServiceUrl",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NtpServiceUrl"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Ntp"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/create-nvmf-namespace-snapshot": {
@@ -173330,6 +174442,112 @@
         }
       }
     },
+    "/get-replication-plans-without-executions": {
+      "post": {
+        "operationId": "GetReplicationPlanWithoutExecutions",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ReplicationPlan"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReplicationPlan"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetReplicationPlansRequestBody"
+              }
+            }
+          }
+        }
+      }
+    },
     "/create-report-template": {
       "post": {
         "operationId": "CreateReportTemplate",
@@ -173787,6 +175005,112 @@
             }
           }
         }
+      }
+    },
+    "/resource-changes": {
+      "get": {
+        "operationId": "GetResourceChanges",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceChangeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ResourceChange",
+          "Internal"
+        ],
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "action",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start_revision",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ResourceChangeLimit"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/create-role": {
@@ -185635,1234 +186959,6 @@
         }
       }
     },
-    "/update-vsphere-esxi-account": {
-      "post": {
-        "operationId": "UpdateVsphereEsxiAccount",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/WithTask_VsphereEsxiAccount-Array_"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "Not modified"
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "VsphereEsxiAccount"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateVsphereEsxiAccountParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/create-isolation-policy": {
-      "post": {
-        "operationId": "CreateIsolationPolicy",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IsolationPolicy"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "IsolationPolicy"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IsolationPolicyCreateParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update-isolation-policy": {
-      "post": {
-        "operationId": "UpdateIsolationPolicy",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/IsolationPolicy"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "IsolationPolicy"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IsolationPolicyUpdateBody"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/delete-isolation-policy": {
-      "post": {
-        "operationId": "DeleteIsolationPolicy",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/DeleteIsolationPolicy"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "IsolationPolicy"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IsolationPolicyDeleteParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/create-network-policy-rule-service": {
-      "post": {
-        "operationId": "CreateNetworkPolicyRuleService",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/WithTask_NetworkPolicyRuleService_"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "NetworkPolicyRuleService"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "items": {
-                  "$ref": "#/components/schemas/NetworkPolicyRuleServiceCreationParams"
-                },
-                "type": "array"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update-network-policy-rule-service": {
-      "post": {
-        "operationId": "UpdateNetworkPolicyRuleService",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/WithTask_NetworkPolicyRuleService_"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "NetworkPolicyRuleService"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NetworkPolicyRuleServiceUpdationParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/delete-network-policy-rule-service": {
-      "post": {
-        "operationId": "DeleteNetworkPolicyRuleService",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/WithTask_DeleteNetworkPolicyRuleService_"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "NetworkPolicyRuleService"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NetworkPolicyRuleServiceDeletionParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/get-ntp-service-url": {
-      "post": {
-        "operationId": "GetNtpServiceUrl",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NtpServiceUrl"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Ntp"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/resource-changes": {
-      "get": {
-        "operationId": "GetResourceChanges",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ResourceChangeResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "ResourceChange",
-          "Internal"
-        ],
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "action",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "resource_type",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "resource_id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "start_revision",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ResourceChangeLimit"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/update-nfs-inode": {
-      "post": {
-        "operationId": "UpdateNfsInode",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/WithTask_NfsInode_"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "NfsInode"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "content-language",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/ContentLanguage"
-            }
-          },
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NfsInodeUpdationParams"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/get-replication-plans-without-executions": {
-      "post": {
-        "operationId": "GetReplicationPlanWithoutExecutions",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/ReplicationPlan"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorBody"
-                }
-              }
-            },
-            "headers": {
-              "CommonHeader": {
-                "schema": {
-                  "$ref": "#/components/schemas/CommonHeader"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "ReplicationPlan"
-        ],
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "external-cloudtower-id",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetReplicationPlansRequestBody"
-              }
-            }
-          }
-        }
-      }
-    },
     "/download_nvram": {
       "post": {
         "operationId": "DownloadNvram",
@@ -187079,6 +187175,123 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NvramParams"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-vsphere-esxi-account": {
+      "post": {
+        "operationId": "UpdateVsphereEsxiAccount",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WithTask_VsphereEsxiAccount-Array_"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            },
+            "headers": {
+              "CommonHeader": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommonHeader"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "VsphereEsxiAccount"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "content-language",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContentLanguage"
+            }
+          },
+          {
+            "in": "header",
+            "name": "external-cloudtower-id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVsphereEsxiAccountParams"
               }
             }
           }
