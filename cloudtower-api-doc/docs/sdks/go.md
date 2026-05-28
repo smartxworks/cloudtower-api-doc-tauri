@@ -5,11 +5,11 @@ import Terminology from '@site/terminology.json'
 import CodeTerminology from '@site/code-terminology.json'
 import CodeBlock from '@theme/CodeBlock'
 
-Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本
+<>Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.16 及以上版本</>
 
-# {Terminology['terminology']['zh-CN']['PRODUCT']} Go SDK
+<h1>{Terminology['terminology']['zh-CN']['PRODUCT']} Go SDK</h1>
 
-Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.18 及以上版本
+<>Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 golang 1.18 及以上版本</>
 
 - <a href={`https://github.com/${CodeTerminology["go_github_address"]}`}>源码地址</a>
 - <a href={`https://github.com/${CodeTerminology["go_github_address"]}/releases`}>下载地址</a>
@@ -83,7 +83,7 @@ Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适�
 > | 参数名   | 类型                | 是否必须 | 说明                                |
 > | -------- | ------------------- | -------- | ----------------------------------- |
 > | context  | Context             | 是       | 用于控制中断                        |
-> | client   | \*client.{Terminology['terminology']['zh-CN']['PRODUCT']} | 是       | 查询所使用的 client 实例            |
+> | client   | \*client.CloudTower | 是       | 查询所使用的 client 实例            |
 > | id       | string              | 是       | 需查询的 task 的 id                 |
 > | interval | time.duration       | 是       | 每次查询后的等待时间，最小时间为 1s |
 
@@ -98,7 +98,7 @@ Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适�
 > | 参数名   | 类型                | 是否必须 | 说明                                |
 > | -------- | ------------------- | -------- | ----------------------------------- |
 > | context  | Context             | 是       | 用于控制中断                        |
-> | client   | \*client.{Terminology['terminology']['zh-CN']['PRODUCT']} | 是       | 查询所使用的 client 实例            |
+> | client   | \*client.CloudTower | 是       | 查询所使用的 client 实例            |
 > | ids      | []string            | 是       | 需查询的 task 的 id 列表            |
 > | interval | time.duration       | 是       | 每次查询后的等待时间，最小时间为 1s |
 
@@ -110,7 +110,7 @@ Golang 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适�
 
 ##### 创建 `ActivePassiveApiClient` 实例
 
-{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。</>
 
 <CodeBlock language="go">
 {["import (\n\t\"context\"\n\tapiclient \"github.com/", CodeTerminology["go_github_address"], "/v2/client\"\n\t\"github.com/", CodeTerminology["go_github_address"], "/v2/models\"\n)\n\nclient, err := apiclient.NewActivePassiveWithUserConfig(\n\tcontext.Background(),\n\tapiclient.ActivePassiveClientConfig{\n\t\tEndpoints: []apiclient.ActivePassiveEndpointConfig{\n\t\t\t{Host: \"tower-a.example.com\", Schemes: []string{\"https\"}},\n\t\t\t{Host: \"tower-b.example.com\", Schemes: []string{\"https\"}},\n\t\t},\n\t},\n\tapiclient.UserConfig{\n\t\tName:     \"<username>\",\n\t\tPassword: \"<password>\",\n\t\tSource:   models.UserSourceLOCAL,\n\t},\n)\nif err != nil {\n\treturn err\n}\n"].join('')}
