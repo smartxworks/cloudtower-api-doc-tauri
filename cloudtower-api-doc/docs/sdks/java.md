@@ -20,7 +20,7 @@ Java 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用�
 - ### 源码安装
 
   <CodeBlock language="shell">
-  {"git clone https://github.com/smartxworks/cloudtower-java-sdk.git\nmvn clean install\n"}
+  {["git clone https://github.com/", CodeTerminology["java_github_address"], ".git\nmvn clean install\n"].join('')}
   </CodeBlock>
 
 - ### jar 包安装
