@@ -131,7 +131,40 @@ function processMarkdownText(content, config) {
     .replaceAll('[文档链接](https://code.smartx.com)', `<a href={\`https://code.\${'s' + 'martx'}.com\`}>文档链接</a>`)
     .replaceAll(repoUrl, `{CodeTerminology["${config.terminologyKey}"]}`);
 
-  return result.replace(/\bCloudTower\b|\bCloudtower\b|\bcloudtower\b/g, `{${PRODUCT_EXPRESSION}}`);
+  return wrapMarkdownMdxExpressions(
+    result.replace(/\bCloudTower\b|\bCloudtower\b|\bcloudtower\b/g, `{${PRODUCT_EXPRESSION}}`)
+  );
+}
+
+function wrapMarkdownMdxExpressions(content) {
+  const expression = `{${PRODUCT_EXPRESSION}}`;
+
+  return content.split('\n').map((line) => {
+    if (!line.includes(expression)) {
+      return line;
+    }
+
+    if (isMarkdownTableLine(line)) {
+      return line.replaceAll(expression, 'CloudTower');
+    }
+
+    const heading = line.match(/^(#{1,6})\s+(.*)$/);
+    if (heading) {
+      const level = heading[1].length;
+      return `<h${level}>${heading[2]}</h${level}>`;
+    }
+
+    const prefixed = line.match(/^(\s*(?:(?:>\s*)+|[-*+]\s+|\d+\.\s+))(.*)$/);
+    if (prefixed) {
+      return `${prefixed[1]}<>${prefixed[2]}</>`;
+    }
+
+    return `<>${line}</>`;
+  }).join('\n');
+}
+
+function isMarkdownTableLine(line) {
+  return /^\s*(?:>\s*)?\|/.test(line);
 }
 
 function toCodeBlock(language, content, config, indent = '') {

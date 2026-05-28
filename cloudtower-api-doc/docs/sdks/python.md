@@ -5,11 +5,11 @@ import Terminology from '@site/terminology.json'
 import CodeTerminology from '@site/code-terminology.json'
 import CodeBlock from '@theme/CodeBlock'
 
-Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本
+<>Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 和 3.4 及以上版本</>
 
-# {Terminology['terminology']['zh-CN']['PRODUCT']} Python SDK
+<h1>{Terminology['terminology']['zh-CN']['PRODUCT']} Python SDK</h1>
 
-Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 与 3.4 以上版本。
+<>Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适用于 2.7 与 3.4 以上版本。</>
 
 - <a href={`https://github.com/${CodeTerminology["python_github_address"]}`}>源码地址</a>
 - <a href={`https://github.com/${CodeTerminology["python_github_address"]}`}>下载地址</a>
@@ -124,7 +124,7 @@ Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适�
 
 #### 自定义 header
 
-> {Terminology['terminology']['zh-CN']['PRODUCT']} api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。
+> <>{Terminology['terminology']['zh-CN']['PRODUCT']} api 支持通过设置 header 中的 content-language 来设置返回信息的语言, 可选值 `en-US`, `zh-CN`。默认为 `en-US`。</>
 
 ##### 通过 `ApiClient` 的 `set_default_header` 方法
 
@@ -146,7 +146,7 @@ Python 环境下的 {Terminology['terminology']['zh-CN']['PRODUCT']} SDK，适�
 
 ##### 创建 `ActivePassiveApiClient` 实例
 
-{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。</>
 
 <CodeBlock language="python">
 {["from ", CodeTerminology["python_from_package"], " import ActivePassiveApiClient\n\nclient = ActivePassiveApiClient(\n    endpoints=[\"https://tower-a.example.com\", \"https://tower-b.example.com\"],\n    user_config={\n        \"name\": \"<username>\",\n        \"password\": \"<password>\",\n    },\n)\n"].join('')}
