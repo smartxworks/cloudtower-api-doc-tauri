@@ -30,7 +30,7 @@ const SDK_CONFIG = {
   }
 };
 
-const PRODUCT_EXPRESSION = "{Terminology['terminology']['zh-CN']['PRODUCT']}";
+const PRODUCT_EXPRESSION = "Terminology['terminology']['zh-CN']['PRODUCT']";
 
 /**
  * 从 GitHub 获取 README.md 内容
@@ -40,14 +40,14 @@ const PRODUCT_EXPRESSION = "{Terminology['terminology']['zh-CN']['PRODUCT']}";
  */
 function fetchReadmeFromGitHub(repo, branch = 'master') {
   return new Promise((resolve, reject) => {
-    const url = `https://raw.githubusercontent.com/${repo}/${branch}/README.md`;
+    const url = repo.startsWith('http') ? repo : `https://raw.githubusercontent.com/${repo}/${branch}/README.md`;
     
     const protocol = url.startsWith('https') ? https : http;
     
     protocol.get(url, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
         // 处理重定向
-        return fetchReadmeFromGitHub(res.headers.location).then(resolve).catch(reject);
+        return fetchReadmeFromGitHub(res.headers.location, branch).then(resolve).catch(reject);
       }
       
       if (res.statusCode !== 200) {
@@ -55,13 +55,13 @@ function fetchReadmeFromGitHub(repo, branch = 'master') {
         return;
       }
       
-      let data = '';
+      const chunks = [];
       res.on('data', (chunk) => {
-        data += chunk;
+        chunks.push(chunk);
       });
       
       res.on('end', () => {
-        resolve(data);
+        resolve(Buffer.concat(chunks).toString('utf8'));
       });
     }).on('error', (err) => {
       reject(err);
@@ -131,16 +131,75 @@ function processMarkdownText(content, config) {
     .replaceAll('[文档链接](https://code.smartx.com)', `<a href={\`https://code.\${'s' + 'martx'}.com\`}>文档链接</a>`)
     .replaceAll(repoUrl, `{CodeTerminology["${config.terminologyKey}"]}`);
 
-  return result.replace(/\bCloudTower\b|\bCloudtower\b|\bcloudtower\b/g, PRODUCT_EXPRESSION);
+  return result.replace(/\bCloudTower\b|\bCloudtower\b|\bcloudtower\b/g, `{${PRODUCT_EXPRESSION}}`);
 }
 
 function toCodeBlock(language, content, config, indent = '') {
   const languageProp = language ? ` language="${language}"` : '';
-  const escapedContent = JSON.stringify(content);
+  const code = processCodeContent(content, config);
 
   return indentLines(`<CodeBlock${languageProp}>
-{${escapedContent}}
+{${toJsxTextExpression(code)}}
 </CodeBlock>`, indent);
+}
+
+function toJsxTextExpression(content) {
+  const expressionRegex = /\$\{(CodeTerminology\["[^"]+"\]|Terminology\[[^}]+\])\}/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = expressionRegex.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(JSON.stringify(content.slice(lastIndex, match.index)));
+    }
+    parts.push(match[1]);
+    lastIndex = expressionRegex.lastIndex;
+  }
+
+  if (lastIndex < content.length) {
+    parts.push(JSON.stringify(content.slice(lastIndex)));
+  }
+
+  if (parts.length === 1) {
+    return parts[0];
+  }
+
+  return `[${parts.join(', ')}].join('')`;
+}
+
+function processCodeContent(content, config) {
+  const repoUrl = `https://github.com/${config.repo}`;
+  const repoPath = config.repo;
+  let result = content
+    .replace(/^ +\t/gm, '\t')
+    .replace(/[ \t]+$/gm, '')
+    .replaceAll(repoUrl, `https://github.com/\${CodeTerminology["${config.terminologyKey}"]}`)
+    .replaceAll(repoPath, `\${CodeTerminology["${config.terminologyKey}"]}`);
+
+  if (config.title === 'Go') {
+    result = result
+      .replace(/\bapiclient\.Cloudtower\b/g, '${CodeTerminology["go_client"]}')
+      .replace(/\bclient\.Cloudtower\b/g, '${CodeTerminology["go_client_type"]}');
+  }
+
+  if (config.title === 'Java') {
+    result = result
+      .replace(/\bcom\.smartx\.com\b/g, '${CodeTerminology["java_package"]}')
+      .replace(/\bcom\.smartx\.tower\b/g, '${CodeTerminology["java_import_package"]}');
+  }
+
+  if (config.title === 'Python') {
+    result = result
+      .replace(/\bcloudtower_sdk\b/g, '${CodeTerminology["python_package_1"]}')
+      .replace(/\bcloudtower-sdk\b/g, '${CodeTerminology["python_package"]}')
+      .replace(/\bCLOUDTOWER_ENDPOINT\b/g, '${CodeTerminology["endpoint_placeholder"]}')
+      .replace(/\bCLOUDTOWER_USERNAME\b/g, '${CodeTerminology["username_placeholder"]}')
+      .replace(/\bCLOUDTOWER_PASSWORD\b/g, '${CodeTerminology["password_placeholder"]}')
+      .replace(/\bcloudtower\b/g, '${CodeTerminology["python_from_package"]}');
+  }
+
+  return result;
 }
 
 function indentLines(content, indent) {
