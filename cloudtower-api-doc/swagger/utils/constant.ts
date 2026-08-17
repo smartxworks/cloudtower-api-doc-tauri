@@ -40,7 +40,7 @@ export const tagsGroup: { name: string; tags: string[] }[] = [
     ],
   },
   {
-    name: "CloudTowerSetting",
+    name: "OperationCenterSetting",
     tags: [
       "Application",
       "Ntp",

@@ -128553,7 +128553,7 @@
         ],
         "summary": "创建集群回收站设置",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -135404,7 +135404,7 @@
         ],
         "summary": "删除集群回收站设置",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -144213,7 +144213,7 @@
         ],
         "summary": "获取高级监控",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -144356,7 +144356,7 @@
         ],
         "summary": "获取高级监控应用",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -145369,7 +145369,7 @@
         ],
         "summary": "获取集群镜像",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -145512,7 +145512,7 @@
         ],
         "summary": "获取集群镜像数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -146368,7 +146368,7 @@
         ],
         "summary": "获取集群升级进度",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -146511,7 +146511,7 @@
         ],
         "summary": "获取集群升级进度数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -148391,7 +148391,7 @@
         ],
         "summary": "获取 CloudTower",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -148534,7 +148534,7 @@
         ],
         "summary": "获取 CloudTower 数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -151836,7 +151836,7 @@
         ],
         "summary": "获取 CloudTower 设置",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -151979,7 +151979,7 @@
         ],
         "summary": "获取 CloudTower 设置数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -155271,7 +155271,7 @@
         ],
         "summary": "获取使用许可",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -155414,7 +155414,7 @@
         ],
         "summary": "获取使用许可数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -162787,7 +162787,7 @@
         ],
         "summary": "获取虚拟机工具 ISO 映像",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -162930,7 +162930,7 @@
         ],
         "summary": "获取虚拟机工具 ISO 映像数量",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -179256,7 +179256,7 @@
         ],
         "summary": "更新访问限制",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -180344,7 +180344,7 @@
         ],
         "summary": "更新集群回收站设置",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -181723,7 +181723,7 @@
         ],
         "summary": "更新回收站设置",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -182833,7 +182833,7 @@
         ],
         "summary": "更新使用许可",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -184189,7 +184189,7 @@
         ],
         "summary": "更新密码安全",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -185011,7 +185011,7 @@
         ],
         "summary": "更新会话超时",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -189256,7 +189256,7 @@
         ],
         "summary": "上传 SVT 镜像",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -189342,7 +189342,7 @@
     },
     {
       "description": "",
-      "name": "CloudTowerSetting",
+      "name": "OperationCenterSetting",
       "x-displayName": "CloudTower 系统配置"
     },
     {
