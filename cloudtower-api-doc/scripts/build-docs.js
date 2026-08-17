@@ -56,7 +56,7 @@ const tagsGroup =  [
     ],
   },
   {
-    name: "CloudTowerSetting",
+    name: "OperationCenterSetting",
     tags: [
       "Application",
       "Ntp",

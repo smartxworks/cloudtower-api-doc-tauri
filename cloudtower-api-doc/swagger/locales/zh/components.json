@@ -43,7 +43,7 @@
   "VmwareManagement": "VMware 平台相关配置",
   "AlertManagement": "报警管理",
   "VmManagement": "虚拟机管理",
-  "CloudTowerSetting": "{PRODUCT} 系统配置",
+  "OperationCenterSetting": "{PRODUCT} 系统配置",
   "HardwareManagement": "硬件管理",
   "StorageManagement": "存储管理",
   "SharedManagement": "共享内容管理",

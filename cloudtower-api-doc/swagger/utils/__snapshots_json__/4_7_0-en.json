@@ -167153,7 +167153,7 @@
         ],
         "summary": " Create cluster recycle bin settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -176345,7 +176345,7 @@
         ],
         "summary": " Delete the cluster recycle bin settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -187659,7 +187659,7 @@
         ],
         "summary": " Get advanced monitoring",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -187802,7 +187802,7 @@
         ],
         "summary": " Get advanced monitoring applications",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -191550,7 +191550,7 @@
         ],
         "summary": " Get cluster images",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -191693,7 +191693,7 @@
         ],
         "summary": " Get the number of cluster images",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -192833,7 +192833,7 @@
         ],
         "summary": " Get cluster upgrade progresses",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -192976,7 +192976,7 @@
         ],
         "summary": " Get the number of cluster upgrade progresses",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -194856,7 +194856,7 @@
         ],
         "summary": "Getting Arcfra Operation Centers",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -194999,7 +194999,7 @@
         ],
         "summary": "Get the number of CloudTower",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -198904,7 +198904,7 @@
         ],
         "summary": " Get CloudTower settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -199047,7 +199047,7 @@
         ],
         "summary": "Get the number of CloudTower settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -202366,7 +202366,7 @@
         ],
         "summary": " Get licenses",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -202509,7 +202509,7 @@
         ],
         "summary": "Get the number of licenses",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -205179,7 +205179,7 @@
         ],
         "summary": "",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -211657,7 +211657,7 @@
         ],
         "summary": "Getting VMTools ISO images",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -211800,7 +211800,7 @@
         ],
         "summary": "Getting the VMTools ISO image count",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -233238,7 +233238,7 @@
         ],
         "summary": "Update access restriction",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -234541,7 +234541,7 @@
         ],
         "summary": " Update the cluster recycle bin settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -236000,7 +236000,7 @@
         ],
         "summary": " Update the recycle bin settings",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -237320,7 +237320,7 @@
         ],
         "summary": " Update the license",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -239055,7 +239055,7 @@
         ],
         "summary": "Update password security",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -239925,7 +239925,7 @@
         ],
         "summary": "Update session timeout",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -245582,7 +245582,7 @@
         ],
         "summary": "Uploading an SVT image",
         "tags": [
-          "CloudTowerSetting"
+          "OperationCenterSetting"
         ],
         "x-codeSamples": [
           {
@@ -245683,7 +245683,7 @@
     },
     {
       "description": "",
-      "name": "CloudTowerSetting",
+      "name": "OperationCenterSetting",
       "x-displayName": "CloudTower 系统配置"
     },
     {

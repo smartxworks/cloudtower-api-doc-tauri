@@ -43,7 +43,7 @@
   "VmwareManagement": "VMware Management",
   "AlertManagement": "Alert Management",
   "VmManagement": "VM Management",
-  "CloudTowerSetting": "{PRODUCT} Setting",
+  "OperationCenterSetting": "{PRODUCT} Setting",
   "HardwareManagement": "Hardware Management",
   "StorageManagement": "Storage Management",
   "SharedManagement": "Shared Content Management",
