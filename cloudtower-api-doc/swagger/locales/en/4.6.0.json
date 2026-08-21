@@ -199,9 +199,9 @@
       "statistics": "Hit count statistics"
     },
     "SecurityGroupWhereInput": {
-      "member_type_not_in": "",
+      "member_type_not_in": "schemas.SecurityGroupWhereInput.member_type_not is in the specified range",
       "member_type_not": "schemas.SecurityGroupWhereInput.member_type_not",
-      "member_type_in": "",
+      "member_type_in": "schemas.SecurityGroupWhereInput.member_type is in the specified range",
       "member_type": "schemas.SecurityGroupWhereInput.member_type",
       "ips_starts_with": "",
       "ips_not_starts_with": "",
