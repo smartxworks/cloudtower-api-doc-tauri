@@ -14,7 +14,7 @@
     },
     "/add-vm-nic": {
       "summary": "添加虚拟网卡",
-      "description": ""
+      "description": "添加虚拟网卡。"
     },
     "/add-vm-to-folder": {
       "summary": "移动虚拟机至虚拟机分组",
@@ -38,7 +38,7 @@
     },
     "/clone-vm": {
       "summary": "克隆虚拟机",
-      "description": ""
+      "description": "克隆虚拟机。"
     },
     "/connect-cluster": {
       "summary": "关联集群",
@@ -50,7 +50,7 @@
     },
     "/convert-vm-template-to-vm": {
       "summary": "将虚拟机模板转换为虚拟机",
-      "description": ""
+      "description": "将虚拟机模板转换为虚拟机。"
     },
     "/create-brick-topo": {
       "summary": "创建机箱",
@@ -194,7 +194,7 @@
     },
     "/create-vm": {
       "summary": "创建虚拟机",
-      "description": ""
+      "description": "创建虚拟机。"
     },
     "/delete-brick-topo": {
       "summary": "删除机箱",
@@ -974,7 +974,7 @@
     },
     "/get-vm-volumes": {
       "summary": "获取虚拟卷",
-      "description": ""
+      "description": "获取虚拟机卷列表。"
     },
     "/get-vms-connection": {
       "summary": "获取虚拟机数量",
@@ -982,7 +982,7 @@
     },
     "/get-vms": {
       "summary": "获取虚拟机",
-      "description": ""
+      "description": "获取虚拟机列表。"
     },
     "/get-vsphere-esxi-accounts-connection": {
       "summary": "获取 vSphere 账号数量",
@@ -1062,7 +1062,7 @@
     },
     "/rebuild-vm-from-snapshot": {
       "summary": "从快照重建虚拟机",
-      "description": ""
+      "description": "从快照重建虚拟机。"
     },
     "/recover-vm-from-recycle": {
       "summary": "从回收站恢复虚拟机",
@@ -1294,7 +1294,7 @@
     },
     "/update-vm-disk": {
       "summary": "更新虚拟盘",
-      "description": ""
+      "description": "更新虚拟机磁盘。"
     },
     "/update-vm-folder": {
       "summary": "更新虚拟机分组",
@@ -1302,7 +1302,7 @@
     },
     "/update-vm-nic": {
       "summary": "更新虚拟网卡",
-      "description": ""
+      "description": "更新虚拟机网卡。"
     },
     "/update-vm-placement-group": {
       "summary": "更新虚拟机放置组",
@@ -1394,7 +1394,7 @@
     },
     "/get-backup-plans": {
       "summary": "获取备份计划",
-      "description": "",
+      "description": "用于查询备份计划。",
       "responses": {
         "200": "",
         "400": ""
@@ -1714,7 +1714,7 @@
     },
     "/create-vm-from-content-library-template": {
       "summary": "内容库模板创建虚拟机",
-      "description": ""
+      "description": "从内容库模板创建虚拟机。"
     },
     "/get-my-info": {
       "summary": "获取当前登录用户信息",
@@ -1722,7 +1722,7 @@
     },
     "/rebuild-vm-volume": {
       "summary": "根据虚拟卷快照重建虚拟卷",
-      "description": ""
+      "description": "重建虚拟机卷。"
     },
     "/rollback-vm-volume": {
       "summary": "根据虚拟卷快照回滚虚拟卷",
@@ -1850,7 +1850,7 @@
     },
     "/import-vm": {
       "summary": "导入虚拟机",
-      "description": ""
+      "description": "导入虚拟机。"
     },
     "/get-security-groups": {
       "summary": "获取安全组",
@@ -1882,7 +1882,7 @@
     },
     "/update-vm-nic-qos-option": {
       "summary": "更新虚拟机网卡 Qos 选项",
-      "description": ""
+      "description": "更新虚拟机网卡 QoS 配置。"
     },
     "/export-content-library-vm-template": {
       "summary": "导出虚拟机模板",
@@ -10845,11 +10845,11 @@
     },
     "NestedEverouteControllerTemplate": {
       "cluster": "",
-      "gateway": "",
-      "memory": "",
+      "gateway": "网关",
+      "memory": "内存",
       "netmask": "",
       "size": "",
-      "vcpu": ""
+      "vcpu": "vCPU"
     },
     "NestedEverouteManageVDSStatus": {
       "message": "",
@@ -11063,7 +11063,7 @@
       "name": "名称"
     },
     "NestedSecurityPolicyApply": {
-      "communicable": "",
+      "communicable": "可通信",
       "selector": "",
       "selector_ids": ""
     },
@@ -20805,9 +20805,9 @@
       "id": "唯一标识"
     },
     "NestedEverouteClusterWhitelist": {
-      "egress": "",
+      "egress": "出流量规则",
       "enable": "",
-      "ingress": ""
+      "ingress": "入流量规则"
     },
     "WeekdayTypeEnum": {
       "enum": "* FRI:星期五 \n* MON: 星期一\n* SAT: 星期六\n* SUN: 星期天\n* THU:星期四 \n* TUE: 星期四\n* WED: 星期三"
@@ -22065,7 +22065,7 @@
     },
     "MetaLeader": {
       "meta_leader": "",
-      "cluster_id": ""
+      "cluster_id": "集群 ID"
     },
     "GetMetaLeaderRequestBody": {
       "where": "条件查询，表示查询符合该条件的资源。"

@@ -381,7 +381,7 @@
     },
     "NestedVpcGatewaysCommonExternalIpsType": {
       "edge_gateway_id": "",
-      "external_ip": ""
+      "external_ip": "External IP"
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
       "edge_gateway": "Edge gateway"
@@ -2575,7 +2575,7 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "NestedReplicationNetworkConfigure": {
-      "gateway": "",
+      "gateway": "Gateway",
       "ip": "",
       "subnet_mask": ""
     },
@@ -2699,7 +2699,7 @@
       "host": "",
       "id": "",
       "name": "",
-      "port": "",
+      "port": "Port",
       "secure_mode": "",
       "username": ""
     },

@@ -1866,7 +1866,7 @@
       "id": "id"
     },
     "NestedReplicationServiceNetwork": {
-      "gateway": "",
+      "gateway": "Gateway",
       "ip": "",
       "mask": "",
       "type": "",

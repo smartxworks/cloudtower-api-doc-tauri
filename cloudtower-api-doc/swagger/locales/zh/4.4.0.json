@@ -616,7 +616,7 @@
       "data_volume_size_lte": "",
       "data_volume_size_not": "",
       "data_volume_size_not_in": "",
-      "gateway": "",
+      "gateway": "网关",
       "gateway_contains": "",
       "gateway_ends_with": "",
       "gateway_gt": "",
@@ -663,12 +663,12 @@
     },
     "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
       "owner": "所属用户",
-      "cloud_init": "",
-      "max_bandwidth_policy": "",
+      "cloud_init": "Cloud-Init 配置",
+      "max_bandwidth_policy": "带宽上限策略",
       "max_bandwidth_unit": "",
       "max_iops_policy": "",
       "status": "",
-      "firmware": "",
+      "firmware": "引导模式",
       "memory_unit": "",
       "guest_os_type": ""
     },
@@ -729,7 +729,7 @@
     },
     "DisassociateSystemServiceFromObsServiceParams": {
       "system_service_type": "",
-      "system_service_id": ""
+      "system_service_id": "系统服务 ID"
     },
     "BackupPlan": {
       "compression_ratio": "备份文件压缩比",
@@ -1041,7 +1041,7 @@
     },
     "/update-backup-plan": {
       "summary": "更新备份计划",
-      "description": ""
+      "description": "用于编辑备份计划。"
     },
     "/delete-backup-plan": {
       "summary": "删除备份计划",

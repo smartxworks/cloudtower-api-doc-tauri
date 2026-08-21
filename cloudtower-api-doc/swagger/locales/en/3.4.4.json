@@ -451,7 +451,7 @@
     },
     "/add-vm-nic": {
       "summary": "Adding a virtual NIC",
-      "description": ""
+      "description": "Add a VM NIC."
     },
     "/add-vm-to-folder": {
       "summary": "Moving a virtual machine to a VM folder",
@@ -475,7 +475,7 @@
     },
     "/clone-vm": {
       "summary": "Cloning a virtual machine",
-      "description": ""
+      "description": "Clone a VM."
     },
     "/connect-cluster": {
       "summary": "Associating a cluster",
@@ -487,7 +487,7 @@
     },
     "/convert-vm-template-to-vm": {
       "summary": "Converting a VM template to a virtual machine",
-      "description": ""
+      "description": "Convert a VM template to a VM."
     },
     "/create-brick-topo": {
       "summary": " Create a chassis",
@@ -631,7 +631,7 @@
     },
     "/create-vm": {
       "summary": "Creating a virtual machine",
-      "description": ""
+      "description": "Create a VM."
     },
     "/delete-brick-topo": {
       "summary": " Delete the chassis",
@@ -1411,7 +1411,7 @@
     },
     "/get-vm-volumes": {
       "summary": "Getting virtual volumes",
-      "description": ""
+      "description": "Get a list of VM volumes."
     },
     "/get-vms-connection": {
       "summary": "Getting the virtual machine count",
@@ -1419,7 +1419,7 @@
     },
     "/get-vms": {
       "summary": "Getting virtual machines",
-      "description": ""
+      "description": "Get a list of VMs."
     },
     "/get-vsphere-esxi-accounts-connection": {
       "summary": " Get the number of vSphere accounts",
@@ -1499,7 +1499,7 @@
     },
     "/rebuild-vm-from-snapshot": {
       "summary": "Rebuilding a virtual machine from a snapshot",
-      "description": ""
+      "description": "Rebuild a VM from a snapshot."
     },
     "/recover-vm-from-recycle": {
       "summary": "Recovering a virtual machine from the recycle bin",
@@ -1731,7 +1731,7 @@
     },
     "/update-vm-disk": {
       "summary": "Updating a virtual disk",
-      "description": ""
+      "description": "Update a VM disk."
     },
     "/update-vm-folder": {
       "summary": "Updating a VM folder",
@@ -1739,7 +1739,7 @@
     },
     "/update-vm-nic": {
       "summary": "Updating a virtual NIC",
-      "description": ""
+      "description": "Update a VM NIC."
     },
     "/update-vm-placement-group": {
       "summary": "Updating a vM placement group",
@@ -1799,7 +1799,7 @@
     },
     "/get-backup-plans": {
       "summary": " Get backup plans",
-      "description": ""
+      "description": "Query backup plans."
     },
     "/get-backup-restore-executions-connection": {
       "summary": " Get the number of backup restore executions",
@@ -2067,7 +2067,7 @@
     },
     "/create-vm-from-content-library-template": {
       "summary": "Creating a virtual machine from a content library template",
-      "description": ""
+      "description": "Create a VM from a content library template."
     },
     "/get-my-info": {
       "summary": "Get current login user info",
@@ -2075,7 +2075,7 @@
     },
     "/rebuild-vm-volume": {
       "summary": "Rebuilding a virtual volume from a snapshot",
-      "description": ""
+      "description": "Rebuild a VM volume."
     },
     "/rollback-vm-volume": {
       "summary": "Rolling back a virtual volume from a snapshot",
@@ -2203,7 +2203,7 @@
     },
     "/import-vm": {
       "summary": "Importing a virtual machine",
-      "description": ""
+      "description": "Import a VM."
     },
     "/get-security-groups": {
       "summary": "Getting security groups",
@@ -2235,7 +2235,7 @@
     },
     "/update-vm-nic-qos-option": {
       "summary": "Updating virtual NIC QoS options",
-      "description": ""
+      "description": "Update VM NIC QoS options."
     },
     "/export-content-library-vm-template": {
       "summary": "Exporting a VM template",
@@ -3010,12 +3010,12 @@
       "id": "",
       "image_name": "",
       "local_id": "",
-      "memory": "",
+      "memory": "Memory",
       "state": "",
       "storage_ip": "",
       "type": "",
       "update_time": "",
-      "vcpu": "",
+      "vcpu": "vCPU",
       "version": "",
       "volume_size": "",
       "vm": ""
@@ -3091,7 +3091,7 @@
       "local_id_not_in": "",
       "local_id_not_starts_with": "",
       "local_id_starts_with": "",
-      "memory": "",
+      "memory": "Memory",
       "memory_gt": "",
       "memory_gte": "",
       "memory_in": "",
@@ -3131,7 +3131,7 @@
       "update_time_lte": "",
       "update_time_not": "",
       "update_time_not_in": "",
-      "vcpu": "",
+      "vcpu": "vCPU",
       "vcpu_gt": "",
       "vcpu_gte": "",
       "vcpu_in": "",
@@ -4441,7 +4441,7 @@
       "namespaces_ids": "",
       "iscsi_luns_ids": "",
       "description": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "name": ""
     },
     "ConsistencyGroupDeletionParams": {
@@ -5273,7 +5273,7 @@
     "Disk": {
       "entityAsyncStatus": "",
       "failure_information": "",
-      "firmware": "",
+      "firmware": "Boot mode",
       "function": "",
       "health_status": "",
       "healthy": "",
@@ -5334,7 +5334,7 @@
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
-      "firmware": "",
+      "firmware": "Boot mode",
       "firmware_contains": "",
       "firmware_ends_with": "",
       "firmware_gt": "",
@@ -5907,7 +5907,7 @@
       "last_executed_at": "",
       "name": "",
       "preset": "",
-      "rules": ""
+      "rules": "Rules"
     },
     "EntityFilterConnection": {
       "aggregate": ""
@@ -5916,7 +5916,7 @@
       "exclude_vms": "",
       "clusters": "",
       "apply_to_all_clusters": "",
-      "rules": "",
+      "rules": "Rules",
       "name": ""
     },
     "EntityFilterDeletionParams": {
@@ -5929,7 +5929,7 @@
       "data.exclude_vms": "",
       "data.clusters": "",
       "data.apply_to_all_clusters": "",
-      "data.rules": "",
+      "data.rules": "Rules",
       "data.name": "",
       "data": "",
       "where": ""
@@ -8052,7 +8052,7 @@
       "resource_type": "",
       "view_id": "",
       "title": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "connect_id": "",
       "metric_name": ""
     },
@@ -8340,7 +8340,7 @@
       "data.host_uuid": "",
       "data.host_ip": "",
       "data": "",
-      "cluster_id": ""
+      "cluster_id": "Cluster ID"
     },
     "HostOrderByInput": {
       "enum": "Sorts a list of records"
@@ -11668,7 +11668,7 @@
       "name": "Name"
     },
     "NestedSecurityPolicyApply": {
-      "communicable": "",
+      "communicable": "Communicable",
       "selector": "",
       "selector_ids": ""
     },
@@ -11832,7 +11832,7 @@
       "aggregate": ""
     },
     "NfsExportCreationParams": {
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "ip_whitelist": "",
       "thin_provision": "",
       "replica_num": "",
@@ -12135,7 +12135,7 @@
     },
     "NicUpdationParams": {
       "data.total_vf_num": "",
-      "data.mtu": "",
+      "data.mtu": "MTU",
       "data": "",
       "where": "",
       "data.nic_user_usage": ""
@@ -13056,7 +13056,7 @@
       "stripe_size": "",
       "stripe_num": "",
       "policy": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "name": "",
       "stripe_size_unit": ""
     },
@@ -13601,7 +13601,7 @@
     },
     "RackTopoCreationParams": {
       "brick_topoes": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "zone_topo_id": "",
       "height": "",
       "name": ""
@@ -13614,7 +13614,7 @@
     },
     "RackTopoUpdationParams": {
       "data.brick_topoes": "",
-      "data.cluster_id": "",
+      "data.cluster_id": "Cluster ID",
       "data.zone_topo_id": "",
       "data.height": "",
       "data.name": "",
@@ -14158,7 +14158,7 @@
       "end_time": "",
       "start_time": "",
       "remain_snapshot_num": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "name": ""
     },
     "SnapshotPlanDeletionParams": {
@@ -14508,7 +14508,7 @@
       "id": "",
       "local_id": "",
       "name": "",
-      "port": "",
+      "port": "Port",
       "privacy_pass_phrase": "",
       "privacy_protocol": "",
       "protocol": "",
@@ -14526,11 +14526,11 @@
       "auth_pass_phrase": "",
       "username": "",
       "community": "",
-      "port": "",
+      "port": "Port",
       "protocol": "",
       "version": "",
       "name": "",
-      "cluster_id": ""
+      "cluster_id": "Cluster ID"
     },
     "SnmpTransportDeletionParams": {
       "where": ""
@@ -14546,7 +14546,7 @@
       "data.auth_pass_phrase": "",
       "data.username": "",
       "data.community": "",
-      "data.port": "",
+      "data.port": "Port",
       "data.protocol": "",
       "data.version": "",
       "data.name": "",
@@ -14638,7 +14638,7 @@
       "name_starts_with": "",
       "NOT": "All conditions must return false.",
       "OR": "One or more conditions must return true.",
-      "port": "",
+      "port": "Port",
       "port_gt": "",
       "port_gte": "",
       "port_in": "",
@@ -14701,7 +14701,7 @@
       "language_code": "",
       "local_id": "",
       "name": "",
-      "port": "",
+      "port": "Port",
       "privacy_pass_phrase": "",
       "privacy_protocol": "",
       "protocol": "",
@@ -14722,12 +14722,12 @@
       "username": "",
       "community": "",
       "language_code": "",
-      "port": "",
+      "port": "Port",
       "host": "",
       "protocol": "",
       "version": "",
       "name": "",
-      "cluster_id": ""
+      "cluster_id": "Cluster ID"
     },
     "SnmpTrapReceiverDeletionParams": {
       "where": ""
@@ -14746,7 +14746,7 @@
       "data.username": "",
       "data.community": "",
       "data.language_code": "",
-      "data.port": "",
+      "data.port": "Port",
       "data.host": "",
       "data.protocol": "",
       "data.version": "",
@@ -14873,7 +14873,7 @@
       "name_starts_with": "",
       "NOT": "All conditions must return false.",
       "OR": "One or more conditions must return true.",
-      "port": "",
+      "port": "Port",
       "port_gt": "",
       "port_gte": "",
       "port_in": "",
@@ -16086,7 +16086,7 @@
       "is_valid": "",
       "local_id": "",
       "password": "",
-      "port": "",
+      "port": "Port",
       "username": ""
     },
     "VcenterAccountConnection": {
@@ -16158,7 +16158,7 @@
       "password_not_in": "",
       "password_not_starts_with": "",
       "password_starts_with": "",
-      "port": "",
+      "port": "Port",
       "port_gt": "",
       "port_gte": "",
       "port_in": "",
@@ -16203,7 +16203,7 @@
     },
     "VdsCreationParams": {
       "nic_ids": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "bond_mode": "",
       "name": "",
       "work_mode": ""
@@ -16376,7 +16376,7 @@
     "ViewCreationParams": {
       "time_unit": "",
       "time_span": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "name": ""
     },
     "ViewDeletionParams": {
@@ -16700,8 +16700,8 @@
       "where": ""
     },
     "VmAddDiskParams": {
-      "data.max_bandwidth_policy": "",
-      "data.max_bandwidth": "",
+      "data.max_bandwidth_policy": "Bandwidth limit policy",
+      "data.max_bandwidth": "Bandwidth limit",
       "data.max_iops_policy": "",
       "data.max_iops": "",
       "data.io_policy": "",
@@ -16718,7 +16718,7 @@
       "where": ""
     },
     "VmAddNicParams": {
-      "data.vm_nics": "",
+      "data.vm_nics": "VM NICs",
       "data": "",
       "where": ""
     },
@@ -18059,7 +18059,7 @@
     },
     "VmUpdateNicParams": {
       "data.subnet_mask": "",
-      "data.gateway": "",
+      "data.gateway": "Gateway",
       "data.ip_address": "",
       "data.nic_id": "",
       "data.connect_vlan_id": "",
@@ -18072,11 +18072,11 @@
       "where": ""
     },
     "VmUpdateParams": {
-      "data.vcpu": "",
-      "data.ha": "",
-      "data.memory": "",
-      "data.cpu_cores": "",
-      "data.cpu_sockets": "",
+      "data.vcpu": "vCPU",
+      "data.ha": "HA",
+      "data.memory": "Memory",
+      "data.cpu_cores": "CPU cores",
+      "data.cpu_sockets": "CPU sockets",
       "data.description": "",
       "data.name": "",
       "data": "",
@@ -18724,7 +18724,7 @@
       "is_valid": "",
       "local_id": "",
       "password": "",
-      "port": "",
+      "port": "Port",
       "username": ""
     },
     "VsphereEsxiAccountConnection": {
@@ -18796,7 +18796,7 @@
       "password_not_in": "",
       "password_not_starts_with": "",
       "password_starts_with": "",
-      "port": "",
+      "port": "Port",
       "port_gt": "",
       "port_gte": "",
       "port_in": "",
@@ -20536,7 +20536,7 @@
       "backup_store_repositories": "",
       "description": "",
       "entityAsyncStatus": "",
-      "gateway": "",
+      "gateway": "Gateway",
       "id": "",
       "iops_limit": "",
       "ip": "",
@@ -20593,7 +20593,7 @@
       "entityAsyncStatus_in": "",
       "entityAsyncStatus_not": "",
       "entityAsyncStatus_not_in": "",
-      "gateway": "",
+      "gateway": "Gateway",
       "gateway_contains": "",
       "gateway_ends_with": "",
       "gateway_gt": "",
@@ -21328,7 +21328,7 @@
       "services": "",
       "log_ended_at": "",
       "log_started_at": "",
-      "cluster_id": "",
+      "cluster_id": "Cluster ID",
       "hosts": "",
       "service_groups": ""
     },
@@ -21410,9 +21410,9 @@
       "id": "id"
     },
     "NestedEverouteClusterWhitelist": {
-      "egress": "",
+      "egress": "Egress rules",
       "enable": "",
-      "ingress": ""
+      "ingress": "Ingress rules"
     },
     "WeekdayTypeEnum": {
       "enum": "* FRI: \n* MON: \n* SAT: \n* SUN: \n* THU: \n* TUE: \n* WED:"
@@ -21599,7 +21599,7 @@
     },
     "VmUpdateNicBasicInfoParams": {
       "data.subnet_mask": "",
-      "data.gateway": "",
+      "data.gateway": "Gateway",
       "data.ip_address": "",
       "data": "Data to be updated for the virtual NIC",
       "where": "Used to query the virtual NICs that need to be updated"
@@ -21848,7 +21848,7 @@
       "where": ""
     },
     "ClusterHaUpdationParams": {
-      "ha": "",
+      "ha": "HA",
       "where": ""
     },
     "ClusterEnableIscsiUpdationParams": {
@@ -21904,7 +21904,7 @@
     },
     "VmMigrateAcrossClusterParams": {
       "data.vm_config": "",
-      "data.cluster_id": "",
+      "data.cluster_id": "Cluster ID",
       "data.host_id": "",
       "data": "Migration configuration",
       "where": "Select virtual machines to be migrated"
@@ -21953,7 +21953,7 @@
       "data": "resources"
     },
     "UpdateVsphereEsxiAccountParamsData": {
-      "port": "",
+      "port": "Port",
       "password": "",
       "username": "",
       "ip": "",
@@ -21967,11 +21967,11 @@
       "data": "resources"
     },
     "CreateVcenterAccountParamsData": {
-      "port": "",
+      "port": "Port",
       "password": "",
       "username": "",
       "ip": "",
-      "cluster_id": ""
+      "cluster_id": "Cluster ID"
     },
     "CreateVcenterAccountParams": {
       "data": ""
@@ -21981,7 +21981,7 @@
       "local_id": ""
     },
     "UpdateVcenterAccountParamsData": {
-      "port": "",
+      "port": "Port",
       "password": "",
       "username": "",
       "ip": ""
@@ -22526,7 +22526,7 @@
       "vlanId": "",
       "mask": "",
       "ip": "",
-      "gateway": "",
+      "gateway": "Gateway",
       "dhcp": ""
     },
     "ApplicationVmSpecNetwork": {
@@ -22549,7 +22549,7 @@
       "network": "",
       "name": "",
       "memory_unit": "",
-      "memory": "",
+      "memory": "Memory",
       "internal": "",
       "image": "",
       "host": "",
@@ -22670,7 +22670,7 @@
     },
     "MetaLeader": {
       "meta_leader": "",
-      "cluster_id": ""
+      "cluster_id": "Cluster ID"
     },
     "GetMetaLeaderRequestBody": {
       "where": "conditional query, representing to query the resources that meet the conditions. "
@@ -23185,7 +23185,7 @@
       "password_not_in": "",
       "password_not_starts_with": "",
       "password_starts_with": "",
-      "port": "",
+      "port": "Port",
       "port_gt": "",
       "port_gte": "",
       "port_in": "",
