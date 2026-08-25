@@ -49,6 +49,20 @@ export default function DocsVersionDropdownNavbarItem({
     );
   }
   const archiveIndex = items.findIndex(v => v.label.startsWith('3.4.4'));
+  const historyItems = archiveIndex === -1
+    ? items.slice(1)
+    : items.slice(1, archiveIndex);
+  const archivedItems = archiveIndex === -1 ? [] : [
+    {
+      type: 'html',
+      value: "<hr class=\"dropdown-separator\">"
+    },
+    {
+      type: 'html',
+      value: `<span class="dropdown-subtitle">${i18next.t('components.archivedVersion')}</span>`
+    },
+    ...items.slice(archiveIndex),
+  ];
   const completeItems = [
     {
       type: 'html',
@@ -63,16 +77,8 @@ export default function DocsVersionDropdownNavbarItem({
       type: 'html',
       value: `<span class="dropdown-subtitle">${i18next.t('components.historyVersion')}</span>`
     },
-    ...items.slice(1, archiveIndex),
-    {
-      type: 'html',
-      value: "<hr class=\"dropdown-separator\">"
-    },
-    {
-      type: 'html',
-      value: `<span class="dropdown-subtitle">${i18next.t('components.archivedVersion')}</span>`
-    },
-    ...items.slice(archiveIndex),
+    ...historyItems,
+    ...archivedItems,
   ].map(v => {
     if(v.label) {
       let label = v.label;
