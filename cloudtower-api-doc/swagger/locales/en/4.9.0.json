@@ -223,11 +223,11 @@
   "tags": [],
   "paths": {
     "/download_nvram": {
-      "summary": "",
+      "summary": "Downloading VM NVRAM",
       "description": ""
     },
     "/upload_nvram": {
-      "summary": "",
+      "summary": "Uploading VM NVRAM",
       "description": ""
     },
     "/get-registry-services": {
