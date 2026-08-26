@@ -223,11 +223,11 @@
   "tags": [],
   "paths": {
     "/download_nvram": {
-      "summary": "",
+      "summary": "下载虚拟机 NVRAM",
       "description": ""
     },
     "/upload_nvram": {
-      "summary": "",
+      "summary": "上传虚拟机 NVRAM",
       "description": ""
     },
     "/get-registry-services": {
