@@ -21,7 +21,7 @@
       "incremental_interval": "增量备份时间间隔",
       "incremental_interval_gt": "增量备份时间间隔大于指定数值",
       "incremental_interval_gte": "增量备份时间间隔大于或等于指定数值",
-      "incremental_interval_in": "",
+      "incremental_interval_in": "增量备份时间间隔在指定范围中",
       "incremental_interval_lt": "增量备份时间间隔小于指定字符",
       "incremental_interval_lte": "增量备份时间间隔小于或等于指定字符",
       "incremental_interval_not": "增量备份时间间隔不等于指定数值",
@@ -616,20 +616,20 @@
       "data_volume_size_lte": "",
       "data_volume_size_not": "",
       "data_volume_size_not_in": "",
-      "gateway": "",
-      "gateway_contains": "",
-      "gateway_ends_with": "",
-      "gateway_gt": "",
-      "gateway_gte": "",
-      "gateway_in": "",
-      "gateway_lt": "",
-      "gateway_lte": "",
-      "gateway_not": "",
-      "gateway_not_contains": "",
-      "gateway_not_ends_with": "",
-      "gateway_not_in": "",
-      "gateway_not_starts_with": "",
-      "gateway_starts_with": "",
+      "gateway": "网关",
+      "gateway_contains": "网关包含指定字符",
+      "gateway_ends_with": "网关以指定字符结尾",
+      "gateway_gt": "网关大于指定数值",
+      "gateway_gte": "网关大于或等于指定数值",
+      "gateway_in": "网关在指定范围中",
+      "gateway_lt": "网关小于指定数值",
+      "gateway_lte": "网关小于或等于指定数值",
+      "gateway_not": "网关不等于指定数值",
+      "gateway_not_contains": "网关不包含指定字符",
+      "gateway_not_ends_with": "网关不以指定字符结尾",
+      "gateway_not_in": "网关不在指定范围中",
+      "gateway_not_starts_with": "网关不以指定字符开始",
+      "gateway_starts_with": "网关以指定字符开始",
       "memory_size": "",
       "memory_size_gt": "",
       "memory_size_gte": "",
@@ -663,12 +663,12 @@
     },
     "VmCreateVmFromContentLibraryTemplateBatchVmParams": {
       "owner": "所属用户",
-      "cloud_init": "",
-      "max_bandwidth_policy": "",
+      "cloud_init": "Cloud-Init 配置",
+      "max_bandwidth_policy": "带宽上限策略",
       "max_bandwidth_unit": "",
       "max_iops_policy": "",
       "status": "",
-      "firmware": "",
+      "firmware": "引导模式",
       "memory_unit": "",
       "guest_os_type": ""
     },
@@ -729,7 +729,7 @@
     },
     "DisassociateSystemServiceFromObsServiceParams": {
       "system_service_type": "",
-      "system_service_id": ""
+      "system_service_id": "系统服务 ID"
     },
     "BackupPlan": {
       "compression_ratio": "备份文件压缩比",
@@ -1041,7 +1041,7 @@
     },
     "/update-backup-plan": {
       "summary": "更新备份计划",
-      "description": ""
+      "description": "用于编辑备份计划。"
     },
     "/delete-backup-plan": {
       "summary": "删除备份计划",

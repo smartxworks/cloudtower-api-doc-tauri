@@ -379,7 +379,7 @@
     },
     "NestedVpcGatewaysCommonExternalIpsType": {
       "edge_gateway_id": "",
-      "external_ip": ""
+      "external_ip": "外部 IP"
     },
     "NestedVirtualPrivateCloudExternalSubnet": {
       "edge_gateway": "所属边缘网关"
@@ -2586,7 +2586,7 @@
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "NestedReplicationNetworkConfigure": {
-      "gateway": "",
+      "gateway": "网关",
       "ip": "",
       "subnet_mask": ""
     },

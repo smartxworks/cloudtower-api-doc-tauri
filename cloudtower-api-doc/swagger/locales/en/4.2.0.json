@@ -57,9 +57,9 @@
       "data": "resources"
     },
     "VirtualPrivateCloudFloatingIpCreationParams": {
-      "external_ip": "",
-      "external_subnet_id": "",
-      "vpc_id": ""
+      "external_ip": "External IP",
+      "external_subnet_id": "External subnet ID",
+      "vpc_id": "VPC ID"
     },
     "DeleteVirtualPrivateCloudFloatingIp": {
       "id": "Resource ID"
@@ -107,7 +107,7 @@
       "name": "Name"
     },
     "VirtualPrivateCloudNatGatewayUpdationParams": {
-      "data.external_ip": "",
+      "data.external_ip": "External IP",
       "data.dnat_rules": "",
       "data.enable_dnat": "",
       "data.enable_snat": "",
@@ -395,8 +395,8 @@
       "data": "Resource"
     },
     "VirtualPrivateCloudSubnetIpPoolParams": {
-      "end": "",
-      "start": ""
+      "end": "End IP",
+      "start": "Start IP"
     },
     "VirtualPrivateCloudSubnetCreationParams": {
       "route_table_id": "Associated route table ID",
