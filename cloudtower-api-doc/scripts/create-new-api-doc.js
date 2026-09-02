@@ -229,7 +229,7 @@ function updateSwaggerTs(version) {
   }
   
   const insertIndex = specMapMatch.index + specMapMatch[0].length;
-  const newEntry = `\n  "${version}": import("../../static/specs/${version}-swagger.json"),`;
+  const newEntry = `\n  "${version}": "specs/${version}-swagger.json",`;
   content = content.slice(0, insertIndex) + newEntry + content.slice(insertIndex);
   
   fsExtra.writeFileSync(swaggerPath, content, 'utf-8');
