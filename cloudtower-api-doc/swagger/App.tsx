@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
-import { ProStore, RedocProRawOptions } from "@redocly/reference-docs";
+import React, { useEffect, useState, useCallback, useMemo, useRef } from "react";
+import { Loading, ProStore, RedocProRawOptions } from "@redocly/reference-docs";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Badge } from "@redocly/reference-docs/lib/redoc-lib/src/common-elements";
 import i18next from "./i18n";
@@ -14,6 +14,12 @@ import { LOCAL_STORAGE_SERVERS_KEY } from "./redoc/Console/ServerDropdown";
 import { DeepSearchStore } from "./redoc/services/SearchStore";
 import { useLocation } from "@docusaurus/router";
 const REDOC_CLASS = "redoc-container";
+
+type LoadedSpec = {
+  version: string;
+  rawSpec: ISpec;
+  spec: ISpec;
+};
 
 const ApiTag: React.FC<{
   operationId: string;
@@ -30,64 +36,99 @@ const ApiTag: React.FC<{
   );
   return <Badge type="secondary">{findRawTags(operationId)}</Badge>;
 };
-const Redoc: React.FC<{
+const Redoc = React.memo((props: {
   spec: ISpec;
   rawSpec: ISpec;
   onInit: RedocProRawOptions["hooks"]["onInit"];
-}> = (props) => {
+}) => {
+  // ProStoreProvider rebuilds when the options reference changes. Keep it stable
+  // while the next version's spec is being fetched, so the current docs stay visible.
+  const options = useMemo(
+    () => ({
+      hooks: {
+        onInit: props.onInit,
+        AfterOperationSummary: ({ operation }) => (
+          <ApiTag operationId={operation.operationId} rawSpec={props.rawSpec} />
+        ),
+      },
+      routingBasePath: "api/#",
+      pagination: "section" as const,
+      ctrlFHijack: false,
+      expandDefaultServerVariables: true,
+      scrollYOffset: 60,
+      minCharacterLengthToInitSearch: 2,
+      nativeScrollbars: true,
+      hideDownloadButton: true,
+      disableSearch: true,
+    }),
+    [props.onInit, props.rawSpec]
+  );
+
   return props.spec ? (
     <Redocly
       definition={props.spec}
-      options={{
-        hooks: {
-          onInit: props.onInit,
-          AfterOperationSummary: ({ operation }) => (
-            <ApiTag
-              operationId={operation.operationId}
-              rawSpec={props.rawSpec}
-            />
-          ),
-        },
-        routingBasePath: "api/#",
-        pagination: "section",
-        ctrlFHijack: false,
-        expandDefaultServerVariables: true,
-        scrollYOffset: 60,
-        minCharacterLengthToInitSearch: 2,
-        nativeScrollbars: true,
-        hideDownloadButton: true,
-        disableSearch: true,
-      }}
+      options={options}
     />
   ) : (
     <></>
   );
-};
+});
 
 const App: React.FC = () => {
-  const { i18n } = useDocusaurusContext();
+  const { i18n, siteConfig } = useDocusaurusContext();
   const { search } = useLocation();
   const specMap = useSpecMap();
-  const version = new URLSearchParams(search).get('version') || Object.keys(specMap)[0]
-  const [spec, setSpec] = useState<ISpec>();
-  const [rawSpec, setRawSpec] = useState<ISpec>();
-  const specRef = useRef<ISpec>(spec);
+  const version = new URLSearchParams(search).get('version') || Object.keys(specMap)[0];
+  const requestedVersion = specMap[version] ? version : Object.keys(specMap)[0];
+  const [loadedSpec, setLoadedSpec] = useState<LoadedSpec>();
+  const specRef = useRef<ISpec>();
+  const specCacheRef = useRef(new Map<string, ISpec>());
   useEffect(() => {
-    const lastVersion = specMap[version] ? version : Object.keys(specMap)[0];
-    specMap[lastVersion].then(data => {
-      const swaggerSpec: ISpec = data.default;
-      setRawSpec(swaggerSpec);
+    const controller = new AbortController();
+    const specUrl = `${siteConfig.baseUrl}${specMap[requestedVersion]}`;
+    const applySpec = (swaggerSpec: ISpec) => {
       i18next.changeLanguage(i18n.currentLocale);
       // wrapSpecWithI18n 内部已做 cloneDeep，无需提前复制
-      const newSpec = wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, version);
-      setSpec(newSpec);
-    })
+      setLoadedSpec({
+        version: requestedVersion,
+        rawSpec: swaggerSpec,
+        spec: wrapSpecWithI18n(swaggerSpec, i18n.currentLocale, requestedVersion),
+      });
+    };
+    const cachedSpec = specCacheRef.current.get(specUrl);
 
-  }, [version, i18n.currentLocale, specMap]);
+    if (cachedSpec) {
+      applySpec(cachedSpec);
+      return () => controller.abort();
+    }
+
+    fetch(specUrl, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load Swagger spec: ${response.status}`);
+        }
+        return response.json() as Promise<ISpec>;
+      })
+      .then((swaggerSpec) => {
+        if (controller.signal.aborted) {
+          return;
+        }
+        specCacheRef.current.set(specUrl, swaggerSpec);
+        applySpec(swaggerSpec);
+      })
+      .catch((error) => {
+        if (error.name !== 'AbortError') {
+          console.error(error);
+        }
+      });
+
+    return () => controller.abort();
+
+  }, [requestedVersion, i18n.currentLocale, siteConfig.baseUrl, specMap]);
 
   useEffect(() => {
-    specRef.current = spec;
-  }, [spec]);
+    specRef.current = loadedSpec?.spec;
+  }, [loadedSpec]);
 
   useEffect(() => {
     localStorage.removeItem(LOCAL_STORAGE_SERVERS_KEY);
@@ -130,9 +171,21 @@ const App: React.FC = () => {
     };
   }, []);
 
+  const displayedSpec =
+    loadedSpec?.version === requestedVersion ? loadedSpec : undefined;
+
   return (
     <div id="swagger-ui">
-      <Redoc spec={spec} rawSpec={rawSpec} onInit={onReDocLoaded} />
+      {displayedSpec ? (
+        <Redoc
+          key={displayedSpec.version}
+          spec={displayedSpec.spec}
+          rawSpec={displayedSpec.rawSpec}
+          onInit={onReDocLoaded}
+        />
+      ) : (
+        <Loading color="#2c3852" />
+      )}
     </div>
   );
 };
