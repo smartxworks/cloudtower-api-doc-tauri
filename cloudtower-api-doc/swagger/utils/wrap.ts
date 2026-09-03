@@ -5,6 +5,7 @@ import { ISpec  } from "./swagger";
 import { describeSchema } from "./describe";
 import { tagsGroup } from './constant';
 import swaggerSpecExample from '../examples/swagger-examples.json';
+import { getDisplayVersion } from './version';
 
 
 const replaceTags = (tag:string) => {
@@ -133,6 +134,6 @@ export const wrapSpecWithI18n = (
     description: ""
   }));
 
-  cloneSpec.info.version = version.split('_').join('.');
+  cloneSpec.info.version = getDisplayVersion(version.split('_').join('.'));
   return cloneSpec;
 };
