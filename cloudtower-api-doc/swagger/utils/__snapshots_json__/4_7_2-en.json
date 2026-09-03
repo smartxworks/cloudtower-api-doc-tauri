@@ -163030,7 +163030,7 @@
   "info": {
     "description": "cloudtower operation API and SDK",
     "title": "CloudTower APIs",
-    "version": "4.7.2"
+    "version": "4.7 P2"
   },
   "openapi": "3.0.0",
   "paths": {

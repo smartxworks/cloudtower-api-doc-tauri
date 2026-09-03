@@ -110,7 +110,7 @@ import CodeBlock from '@theme/CodeBlock'
 
 ##### 创建 `ActivePassiveApiClient` 实例
 
-<>{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9.0 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。</>
+<>{Terminology['terminology']['zh-CN']['PRODUCT']} 在 4.9 引入了多管理 IP 主备部署，如果需要访问此类 {Terminology['terminology']['zh-CN']['PRODUCT']}，可以使用 `ActivePassiveApiClient` 配置同一个主备集群的多个 endpoint。同一时间预期最多只有一个 active endpoint，传入顺序不代表主备关系，客户端会通过探测结果选择当前 active endpoint。</>
 
 <CodeBlock language="go">
 {["import (\n\t\"context\"\n\tapiclient \"github.com/", CodeTerminology["go_github_address"], "/v2/client\"\n\t\"github.com/", CodeTerminology["go_github_address"], "/v2/models\"\n)\n\nclient, err := apiclient.NewActivePassiveWithUserConfig(\n\tcontext.Background(),\n\tapiclient.ActivePassiveClientConfig{\n\t\tEndpoints: []apiclient.ActivePassiveEndpointConfig{\n\t\t\t{Host: \"tower-a.example.com\", Schemes: []string{\"https\"}},\n\t\t\t{Host: \"tower-b.example.com\", Schemes: []string{\"https\"}},\n\t\t},\n\t},\n\tapiclient.UserConfig{\n\t\tName:     \"<username>\",\n\t\tPassword: \"<password>\",\n\t\tSource:   models.UserSourceLOCAL,\n\t},\n)\nif err != nil {\n\treturn err\n}\n"].join('')}
