@@ -16101,7 +16101,7 @@
       "data.max_iops": "IOPS 上限，单位为字节",
       "data.io_policy": "I/O 策略",
       "data.vm_disks.mount_disks": "挂载虚拟盘",
-      "data.vm_disks.mount_new_create_disks": "创建并挂在新虚拟盘",
+      "data.vm_disks.mount_new_create_disks": "创建并挂载新虚拟盘",
       "data.vm_disks": "虚拟盘",
       "data": "",
       "where": "",
