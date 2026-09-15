@@ -94380,10 +94380,10 @@
                     "type": "array"
                   },
                   "mount_new_create_disks": {
-                    "description": "创建并挂在新虚拟盘",
+                    "description": "创建并挂载新虚拟盘",
                     "items": {
                       "$ref": "#/components/schemas/MountNewCreateDisksParams",
-                      "description": "创建并挂在新虚拟盘"
+                      "description": "创建并挂载新虚拟盘"
                     },
                     "type": "array"
                   }
