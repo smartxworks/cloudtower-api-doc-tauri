@@ -45,7 +45,7 @@
     },
     "NestedVirtualPrivateCloudNic": {
       "floating_ip": "",
-      "ip_addresses": "",
+      "ip_addresses": "IP 地址列表",
       "local_id": "",
       "vpc": "",
       "vpc_subnet": ""
@@ -58,7 +58,7 @@
     },
     "/create-virtual-private-cloud-floating-ip": {
       "summary": "分配浮动 IP",
-      "description": ""
+      "description": "分配浮动 IP。"
     },
     "/delete-virtual-private-cloud-floating-ip": {
       "summary": "释放浮动 IP",
@@ -66,11 +66,11 @@
     },
     "/create-virtual-private-cloud-nat-gateway": {
       "summary": "创建 NAT 网关",
-      "description": ""
+      "description": "用于创建 VPC NAT 网关。"
     },
     "/update-virtual-private-cloud-nat-gateway": {
       "summary": "更新 NAT 网关",
-      "description": ""
+      "description": "用于编辑 VPC NAT 网关。"
     },
     "/delete-virtual-private-cloud-nat-gateway": {
       "summary": "删除 NAT 网关",
@@ -90,15 +90,15 @@
     },
     "/create-virtual-private-cloud-router-gateway": {
       "summary": "创建路由网关",
-      "description": ""
+      "description": "用于创建 VPC 路由网关。"
     },
     "/update-virtual-private-cloud-router-gateway": {
       "summary": "更新路由网关",
-      "description": ""
+      "description": "用于编辑 VPC 路由网关。"
     },
     "/delete-virtual-private-cloud-router-gateway": {
       "summary": "删除路由网关",
-      "description": ""
+      "description": "用于删除 VPC 路由网关。"
     },
     "/create-virtual-private-cloud-security-group": {
       "summary": "创建 VPC 安全组",
@@ -114,19 +114,19 @@
     },
     "/create-virtual-private-cloud-security-policy": {
       "summary": "创建 VPC 安全策略",
-      "description": ""
+      "description": "用于创建 VPC 安全策略。"
     },
     "/delete-virtual-private-cloud-security-policy": {
       "summary": "删除 VPC 安全策略",
-      "description": ""
+      "description": "用于删除 VPC 安全策略。"
     },
     "/update-virtual-private-cloud-security-policy": {
       "summary": "更新 VPC 安全策略",
-      "description": ""
+      "description": "用于编辑 VPC 安全策略。"
     },
     "/create-virtual-private-cloud-subnet": {
       "summary": "创建子网",
-      "description": ""
+      "description": "用于创建 VPC 子网。"
     },
     "/update-virtual-private-cloud-subnet": {
       "summary": "更新子网",
@@ -134,19 +134,19 @@
     },
     "/delete-virtual-private-cloud-subnet": {
       "summary": "删除子网",
-      "description": ""
+      "description": "用于删除 VPC 子网。"
     },
     "/create-virtual-private-cloud": {
       "summary": "创建 VPC",
-      "description": ""
+      "description": "用于创建 VPC。"
     },
     "/update-virtual-private-cloud": {
       "summary": "更新 VPC",
-      "description": ""
+      "description": "用于编辑 VPC。"
     },
     "/delete-virtual-private-cloud": {
       "summary": "删除 VPC",
-      "description": ""
+      "description": "用于删除 VPC。"
     },
     "/get-virtual-private-cloud-cluster-bindings": {
       "summary": "获取 VPC 关联集群",

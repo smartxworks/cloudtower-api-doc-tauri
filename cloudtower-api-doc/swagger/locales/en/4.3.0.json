@@ -45,7 +45,7 @@
     },
     "NestedVirtualPrivateCloudNic": {
       "floating_ip": "",
-      "ip_addresses": "",
+      "ip_addresses": "IP addresses",
       "local_id": "",
       "vpc": "",
       "vpc_subnet": ""
@@ -57,8 +57,8 @@
       "description": "Used to update the VPC, subnet, floating IP, and IP address configuration of a VM's VPC NIC."
     },
     "/create-virtual-private-cloud-floating-ip": {
-      "summary": "",
-      "description": ""
+      "summary": "Allocate a floating IP.",
+      "description": "Allocate a floating IP."
     }
   }
 }
