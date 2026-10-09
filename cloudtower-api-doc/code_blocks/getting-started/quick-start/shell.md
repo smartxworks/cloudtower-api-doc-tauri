@@ -31,6 +31,6 @@ curl \\
     -X POST \\
     -H "Content-Type: application/json" \\
     -H "Authorization: $token" \\
-    -d '{"where":{}}' http://192.168.27.57/v2/api/get-vms | jq ".[]"`}
+    -d '{"where":{}}' $endpoint/v2/api/get-vms | jq ".[]"`}
 </CodeBlock>
 
