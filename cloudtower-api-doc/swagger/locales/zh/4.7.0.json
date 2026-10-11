@@ -1866,7 +1866,7 @@
       "id": "唯一标识"
     },
     "NestedReplicationServiceNetwork": {
-      "gateway": "",
+      "gateway": "网关",
       "ip": "",
       "mask": "",
       "type": "",

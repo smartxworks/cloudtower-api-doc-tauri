@@ -419,8 +419,8 @@
       "data": "资源"
     },
     "VirtualPrivateCloudSubnetIpPoolParams": {
-      "end": "",
-      "start": ""
+      "end": "结束 IP",
+      "start": "起始 IP"
     },
     "VirtualPrivateCloudSubnetCreationParams": {
       "route_table_id": "关联路由表 id",

@@ -147,7 +147,7 @@
       "local_id_not_ends_with": "UUID 不以指定字符结尾",
       "local_id_not_in": "UUID 不在指定范围中",
       "local_id_not_starts_with": "UUID 不以指定字符开始",
-      "local_id_starts_with": "",
+      "local_id_starts_with": "UUID以指定字符开始",
       "name": "名称",
       "name_contains": "名称包含指定字符",
       "name_ends_with": "名称以指定字符结尾",
