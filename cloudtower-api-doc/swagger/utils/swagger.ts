@@ -6,6 +6,7 @@ export type SpecMap = Record<string, string>;
 
 // Swagger files are static assets so only the selected version is fetched.
 const defaultSpecMap = {
+  "4.10.0": "specs/4.10.0-swagger.json",
   "4.9.0": "specs/4.9.0-swagger.json",
   "4.8.1": "specs/4.8.1-swagger.json",
   "4.8.0": "specs/4.8.0-swagger.json",
