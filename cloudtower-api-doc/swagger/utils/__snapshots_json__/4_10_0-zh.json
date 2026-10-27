@@ -246,7 +246,7 @@
       "AddVmDiskVmVolumeParams": {
         "properties": {
           "elf_ec_storage_policy": {
-            "description": "ELF 纠删码存储策略",
+            "description": "纠删码存储策略",
             "properties": {
               "ec_k": {
                 "description": "纠删码 K 值",
@@ -267,12 +267,12 @@
           },
           "elf_replica_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "description": "ELF 副本存储策略"
+            "description": "副本存储策略"
           },
           "elf_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
             "deprecated": true,
-            "description": "ELF 存储策略"
+            "description": "存储策略"
           },
           "name": {
             "description": "磁盘名称",

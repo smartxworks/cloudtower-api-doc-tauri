@@ -238,7 +238,7 @@
       "AddVmDiskVmVolumeParams": {
         "properties": {
           "elf_ec_storage_policy": {
-            "description": "ELF erasure coding storage policy",
+            "description": "Erasure coding storage policy",
             "properties": {
               "ec_k": {
                 "description": "Erasure coding K value",
@@ -259,12 +259,12 @@
           },
           "elf_replica_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "description": "ELF replica storage policy"
+            "description": "Replica storage policy"
           },
           "elf_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
             "deprecated": true,
-            "description": "ELF storage policy"
+            "description": "Storage policy"
           },
           "name": {
             "description": "Disk name",
