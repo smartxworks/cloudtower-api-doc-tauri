@@ -2897,20 +2897,20 @@
       "description": "获取符合条件的 V2 版本 {NET_SECURITY} 使用许可数量。"
     },
     "/get-datastore-mounts": {
-      "summary": "",
-      "description": ""
+      "summary": "获取数据存储挂载列表",
+      "description": "获取数据存储挂载列表。"
     },
     "/get-datastore-mounts-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "获取数据存储挂载连接信息",
+      "description": "获取数据存储挂载连接信息。"
     },
     "/get-datastores": {
-      "summary": "",
-      "description": ""
+      "summary": "获取数据存储列表",
+      "description": "获取数据存储列表。"
     },
     "/get-datastores-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "获取数据存储连接信息",
+      "description": "获取数据存储连接信息。"
     }
   }
 }
