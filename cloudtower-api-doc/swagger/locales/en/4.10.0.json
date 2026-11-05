@@ -2897,20 +2897,20 @@
       "description": "Get the count of V2 {NET_SECURITY} licenses that match the specified filter."
     },
     "/get-datastore-mounts": {
-      "summary": "",
-      "description": ""
+      "summary": "Get datastore mounts",
+      "description": "Get datastore mounts."
     },
     "/get-datastore-mounts-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "Get datastore mount connections",
+      "description": "Get datastore mount connections."
     },
     "/get-datastores": {
-      "summary": "",
-      "description": ""
+      "summary": "Get datastores",
+      "description": "Get datastores."
     },
     "/get-datastores-connection": {
-      "summary": "",
-      "description": ""
+      "summary": "Get datastore connections",
+      "description": "Get datastore connections."
     }
   }
 }
