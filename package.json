@@ -1,5 +1,8 @@
 {
   "name": "cloudtower-api-doc-tauri",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "tauri": "tauri",
     "sync:sdk-readme": "node ./cloudtower-api-doc/scripts/sync-sdk-readme.js",
