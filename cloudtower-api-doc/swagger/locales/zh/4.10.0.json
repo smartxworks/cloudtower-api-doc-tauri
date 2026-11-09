@@ -2254,7 +2254,11 @@
       "enum": "* DYNAMIC: 动态\n* STATIC: 静态"
     },
     "StorageAdapterType": {
-      "enum": "* FC: FC\n* ISCSI: iSCSI\n* ZBS: {STORAGE_PRODUCT}"
+      "enum": {
+        "FC": "FC",
+        "ISCSI": "iSCSI",
+        "ZBS": "{STORAGE_PRODUCT}"
+      }
     },
     "StorageProtocol": {
       "enum": "* FC: FC\n* ISCSI: iSCSI"
@@ -2907,10 +2911,33 @@
       "enum": "* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI 虚拟卷快照\n* KVM_VOLUME_SNAPSHOT: 普通虚拟卷快照\n* KVM_VOLUME_VCFS_SNAPSHOT: VCFS 虚拟卷快照"
     },
     "VmUsage": {
-      "enum": "* ADVANCED_MONITORING: 高级监控\n* AGENT_MESH_NODE: {PRODUCT} 代理\n* BACKUP_CONTROLLER: 备份\n* BUNDLE_APPLICATION: 可观测性\n* CLOUDTOWER: {PRODUCT}\n* CLOUDTOWER_PASSIVE: {PRODUCT} 被动节点\n* CLOUDTOWER_WITNESS: {PRODUCT} 仲裁节点\n* EVEROUTE_CONTROLLER: 网络与安全\n* EVEROUTE_LB: 网络负载均衡器\n* EVEROUTE_VPC_EDGE: 虚拟专有云网络\n* REGISTRY: 镜像仓库\n* REPLICATION_CONTROLLER: 复制\n* SFS_CONTROLLER: 文件控制器\n* SHARE_REGISTRY: 容器镜像仓库\n* SKS_MANAGEMENT: {K8S_SERVER} 管控集群"
+      "enum": {
+        "ADVANCED_MONITORING": "高级监控",
+        "AGENT_MESH_NODE": "{PRODUCT} 代理",
+        "BACKUP_CONTROLLER": "备份",
+        "BUNDLE_APPLICATION": "可观测性",
+        "CLOUDTOWER": "{PRODUCT}",
+        "CLOUDTOWER_PASSIVE": "{PRODUCT} 被动节点",
+        "CLOUDTOWER_WITNESS": "{PRODUCT} 仲裁节点",
+        "EVEROUTE_CONTROLLER": "网络与安全",
+        "EVEROUTE_LB": "网络负载均衡器",
+        "EVEROUTE_VPC_EDGE": "虚拟专有云网络",
+        "REGISTRY": "镜像仓库",
+        "REPLICATION_CONTROLLER": "复制",
+        "SFS_CONTROLLER": "文件控制器",
+        "SHARE_REGISTRY": "容器镜像仓库",
+        "SKS_MANAGEMENT": "{K8S_SERVER} 管控集群"
+      }
     },
     "EcpEdition": {
-      "enum": "* ECP_ADVANCED: {ECP_EDITION_PREFIX} Advanced\n* ECP_COMPUTE: {ECP_EDITION_PREFIX} Compute\n* ECP_ESSENTIAL: {ECP_EDITION_PREFIX} Essential\n* ECP_STANDARD: {ECP_EDITION_PREFIX} Standard\n* ECP_VDI_ESSENTIAL: {ECP_EDITION_PREFIX} VDI Essential\n* ECP_VDI_STANDARD: {ECP_EDITION_PREFIX} VDI Standard"
+      "enum": {
+        "ECP_ADVANCED": "{ECP_EDITION_PREFIX} Advanced",
+        "ECP_COMPUTE": "{ECP_EDITION_PREFIX} Compute",
+        "ECP_ESSENTIAL": "{ECP_EDITION_PREFIX} Essential",
+        "ECP_STANDARD": "{ECP_EDITION_PREFIX} Standard",
+        "ECP_VDI_ESSENTIAL": "{ECP_EDITION_PREFIX} VDI Essential",
+        "ECP_VDI_STANDARD": "{ECP_EDITION_PREFIX} VDI Standard"
+      }
     },
     "ReportResourceInputEnum": {
       "enum": "* ALERT: 报警\n* ALL: 全部\n* CLUSTER: 集群\n* CONTENT_LIBRARY_IMAGE: ISO 映像\n* CONTENT_LIBRARY_VM_TEMPLATE: 虚拟机模板\n* DATA_CENTER: 数据中心\n* DISK: 物理盘\n* ENTITY_FILTERS: 资源优化\n* GLOBAL_ALERT_RULE: 全局报警规则\n* HOST: 主机\n* TASK: 任务\n* VDS: 虚拟分布式交换机\n* VLAN: 虚拟机网络\n* VM: 虚拟机"

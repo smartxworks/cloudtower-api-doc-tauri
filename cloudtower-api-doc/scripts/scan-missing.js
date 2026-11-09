@@ -27,6 +27,18 @@ function isWhitespaceOnly(value) {
   return typeof value === 'string' && value.trim() === '';
 }
 
+function countUntranslatedEnums(enumDescriptions) {
+  if (typeof enumDescriptions === 'string') {
+    return enumDescriptions.split('\n').filter(line => {
+      const trimmed = line.trim();
+      return trimmed.length > 1 && trimmed.endsWith(':');
+    }).length;
+  }
+  return Object.values(enumDescriptions || {}).filter(
+    value => isEmpty(value) || isWhitespaceOnly(value)
+  ).length;
+}
+
 /**
  * 检查 schema 是否有缺失的翻译
  */
@@ -55,20 +67,7 @@ function hasMissingTranslations(schemaName, schemaValue) {
     }
   }
 
-  // 特殊处理 enum 字段：检查是否有未翻译的枚举值
-  if (schemaValue.enum && typeof schemaValue.enum === 'string') {
-    const enumLines = schemaValue.enum.split('\n');
-    const hasUntranslatedEnum = enumLines.some(line => {
-      const trimmed = line.trim();
-      // 检查是否有以冒号结尾但后面没有内容的行（表示未翻译）
-      return trimmed && trimmed.endsWith(':') && trimmed.length > 1;
-    });
-    if (hasUntranslatedEnum) {
-      return true;
-    }
-  }
-
-  return false;
+  return countUntranslatedEnums(schemaValue.enum) > 0;
 }
 
 /**
@@ -142,18 +141,9 @@ function scanTranslationFile(filePath) {
               }
             }
 
-            // 检查 enum
-            if (schemaValue.enum && typeof schemaValue.enum === 'string') {
-              const enumLines = schemaValue.enum.split('\n');
-              const untranslatedEnums = enumLines
-                .filter(line => {
-                  const trimmed = line.trim();
-                  return trimmed && trimmed.endsWith(':') && trimmed.length > 1;
-                })
-                .map(line => line.trim());
-              if (untranslatedEnums.length > 0) {
-                missingFields.push(`enum (${untranslatedEnums.length} 个未翻译)`);
-              }
+            const untranslatedEnums = countUntranslatedEnums(schemaValue.enum);
+            if (untranslatedEnums > 0) {
+              missingFields.push(`enum (${untranslatedEnums} 个未翻译)`);
             }
           }
 
