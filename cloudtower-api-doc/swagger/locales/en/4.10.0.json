@@ -25,14 +25,14 @@
       "cap_volume_unique_size_lte": "",
       "cap_volume_unique_size_not": "",
       "cap_volume_unique_size_not_in": "",
-      "memory_allocation_rate": "Memory allocation rate",
-      "memory_allocation_rate_gt": "Memory allocation rate greater than given data",
-      "memory_allocation_rate_gte": "Memory allocation rate greater than or equals to given data",
-      "memory_allocation_rate_in": "Memory allocation rate in given range",
-      "memory_allocation_rate_lt": "Memory allocation rate less than given data",
-      "memory_allocation_rate_lte": "Memory allocation rate less than or equals to given data",
-      "memory_allocation_rate_not": "Memory allocation rate not equal given data",
-      "memory_allocation_rate_not_in": "Memory allocation rate not in given range",
+      "memory_allocation_rate": "Allocated memory (%)",
+      "memory_allocation_rate_gt": "Allocated memory (%) greater than given data",
+      "memory_allocation_rate_gte": "Allocated memory (%) greater than or equals to given data",
+      "memory_allocation_rate_in": "Allocated memory (%) in given range",
+      "memory_allocation_rate_lt": "Allocated memory (%) less than given data",
+      "memory_allocation_rate_lte": "Allocated memory (%) less than or equals to given data",
+      "memory_allocation_rate_not": "Allocated memory (%) not equal given data",
+      "memory_allocation_rate_not_in": "Allocated memory (%) not in given range",
       "overcommit_memory_ratio": "Memory overcommit ratio",
       "overcommit_memory_ratio_gt": "Memory overcommit ratio greater than given data",
       "overcommit_memory_ratio_gte": "Memory overcommit ratio greater than or equals to given data",
@@ -44,20 +44,20 @@
     },
     "VmFolderWhereInput": {
       "parent": "Parent folder",
-      "path": "Path",
-      "path_contains": "Path contains given string",
-      "path_ends_with": "Path ends with given string",
-      "path_gt": "Path greater than given data",
-      "path_gte": "Path greater than or equals to given data",
-      "path_in": "Path in given range",
-      "path_lt": "Path less than given data",
-      "path_lte": "Path less than or equals to given data",
-      "path_not": "Path not equal given data",
-      "path_not_contains": "Path not contains given string",
-      "path_not_ends_with": "Path not ends with given string",
-      "path_not_in": "Path not in given range",
-      "path_not_starts_with": "Path not starts with given string",
-      "path_starts_with": "Path starts with given string",
+      "path": "Group directory",
+      "path_contains": "Group directory contains given string",
+      "path_ends_with": "Group directory ends with given string",
+      "path_gt": "Group directory greater than given data",
+      "path_gte": "Group directory greater than or equals to given data",
+      "path_in": "Group directory in given range",
+      "path_lt": "Group directory less than given data",
+      "path_lte": "Group directory less than or equals to given data",
+      "path_not": "Group directory not equal given data",
+      "path_not_contains": "Group directory not contains given string",
+      "path_not_ends_with": "Group directory not ends with given string",
+      "path_not_in": "Group directory not in given range",
+      "path_not_starts_with": "Group directory not starts with given string",
+      "path_starts_with": "Group directory starts with given string",
       "total_vm_num": "Total number of VMs",
       "total_vm_num_gt": "Total number of VMs greater than given data",
       "total_vm_num_gte": "Total number of VMs greater than or equals to given data",
@@ -79,14 +79,14 @@
       "datastore_mounts_every": "Returns all records where all (\"every\") related records match filtering criteria.",
       "datastore_mounts_none": "Returns all records where zero related records match filtering criteria.",
       "datastore_mounts_some": "Returns all records where one or more (\"some\") related records match filtering criteria.",
-      "memory_allocation_rate": "Memory allocation rate",
-      "memory_allocation_rate_gt": "Memory allocation rate greater than given data",
-      "memory_allocation_rate_gte": "Memory allocation rate greater than or equals to given data",
-      "memory_allocation_rate_in": "Memory allocation rate in given range",
-      "memory_allocation_rate_lt": "Memory allocation rate less than given data",
-      "memory_allocation_rate_lte": "Memory allocation rate less than or equals to given data",
-      "memory_allocation_rate_not": "Memory allocation rate not equal given data",
-      "memory_allocation_rate_not_in": "Memory allocation rate not in given range",
+      "memory_allocation_rate": "Allocated memory (%)",
+      "memory_allocation_rate_gt": "Allocated memory (%) greater than given data",
+      "memory_allocation_rate_gte": "Allocated memory (%) greater than or equals to given data",
+      "memory_allocation_rate_in": "Allocated memory (%) in given range",
+      "memory_allocation_rate_lt": "Allocated memory (%) less than given data",
+      "memory_allocation_rate_lte": "Allocated memory (%) less than or equals to given data",
+      "memory_allocation_rate_not": "Allocated memory (%) not equal given data",
+      "memory_allocation_rate_not_in": "Allocated memory (%) not in given range",
       "memory_overcommit_enabled": "Whether memory overcommit is enabled",
       "memory_overcommit_enabled_not": "Whether memory overcommit is enabled not equal given data",
       "overcommit_active_memory_bytes": "Overcommit active memory (bytes)",
@@ -418,20 +418,20 @@
       "datastores_some": "Returns all records where one or more (\"some\") related records match filtering criteria."
     },
     "VmVolumeWhereInput": {
-      "provision_policy": "Provisioning policy",
-      "provision_policy_contains": "Provisioning policy contains given string",
-      "provision_policy_ends_with": "Provisioning policy ends with given string",
-      "provision_policy_gt": "Provisioning policy greater than given data",
-      "provision_policy_gte": "Provisioning policy greater than or equals to given data",
-      "provision_policy_in": "Provisioning policy in given range",
-      "provision_policy_lt": "Provisioning policy less than given data",
-      "provision_policy_lte": "Provisioning policy less than or equals to given data",
-      "provision_policy_not": "Provisioning policy not equal given data",
-      "provision_policy_not_contains": "Provisioning policy not contains given string",
-      "provision_policy_not_ends_with": "Provisioning policy not ends with given string",
-      "provision_policy_not_in": "Provisioning policy not in given range",
-      "provision_policy_not_starts_with": "Provisioning policy not starts with given string",
-      "provision_policy_starts_with": "Provisioning policy starts with given string",
+      "provision_policy": "Provisioning",
+      "provision_policy_contains": "Provisioning contains given string",
+      "provision_policy_ends_with": "Provisioning ends with given string",
+      "provision_policy_gt": "Provisioning greater than given data",
+      "provision_policy_gte": "Provisioning greater than or equals to given data",
+      "provision_policy_in": "Provisioning in given range",
+      "provision_policy_lt": "Provisioning less than given data",
+      "provision_policy_lte": "Provisioning less than or equals to given data",
+      "provision_policy_not": "Provisioning not equal given data",
+      "provision_policy_not_contains": "Provisioning not contains given string",
+      "provision_policy_not_ends_with": "Provisioning not ends with given string",
+      "provision_policy_not_in": "Provisioning not in given range",
+      "provision_policy_not_starts_with": "Provisioning not starts with given string",
+      "provision_policy_starts_with": "Provisioning starts with given string",
       "storage_cluster_config": "Storage cluster configuration"
     },
     "StorageClusterConfigWhereInput": {
@@ -1325,20 +1325,20 @@
       "vm_template_config": ""
     },
     "VmVolumeSnapshotWhereInput": {
-      "provision_policy": "Provisioning policy",
-      "provision_policy_contains": "Provisioning policy contains given string",
-      "provision_policy_ends_with": "Provisioning policy ends with given string",
-      "provision_policy_gt": "Provisioning policy greater than given data",
-      "provision_policy_gte": "Provisioning policy greater than or equals to given data",
-      "provision_policy_in": "Provisioning policy in given range",
-      "provision_policy_lt": "Provisioning policy less than given data",
-      "provision_policy_lte": "Provisioning policy less than or equals to given data",
-      "provision_policy_not": "Provisioning policy not equal given data",
-      "provision_policy_not_contains": "Provisioning policy not contains given string",
-      "provision_policy_not_ends_with": "Provisioning policy not ends with given string",
-      "provision_policy_not_in": "Provisioning policy not in given range",
-      "provision_policy_not_starts_with": "Provisioning policy not starts with given string",
-      "provision_policy_starts_with": "Provisioning policy starts with given string",
+      "provision_policy": "Provisioning",
+      "provision_policy_contains": "Provisioning contains given string",
+      "provision_policy_ends_with": "Provisioning ends with given string",
+      "provision_policy_gt": "Provisioning greater than given data",
+      "provision_policy_gte": "Provisioning greater than or equals to given data",
+      "provision_policy_in": "Provisioning in given range",
+      "provision_policy_lt": "Provisioning less than given data",
+      "provision_policy_lte": "Provisioning less than or equals to given data",
+      "provision_policy_not": "Provisioning not equal given data",
+      "provision_policy_not_contains": "Provisioning not contains given string",
+      "provision_policy_not_ends_with": "Provisioning not ends with given string",
+      "provision_policy_not_in": "Provisioning not in given range",
+      "provision_policy_not_starts_with": "Provisioning not starts with given string",
+      "provision_policy_starts_with": "Provisioning starts with given string",
       "storage_cluster_config": "Storage cluster configuration"
     },
     "DatastoreStatus": {
@@ -2471,21 +2471,21 @@
       "vpc": "VPC"
     },
     "NestedVmFolder": {
-      "path": "Path"
+      "path": "Group directory"
     },
     "Cluster": {
       "allocated_memory_bytes": "Allocated memory (bytes)",
-      "memory_allocation_rate": "Memory allocation rate",
+      "memory_allocation_rate": "Allocated memory (%)",
       "overcommit_memory_ratio": "Memory overcommit ratio"
     },
     "ClusterStorageInfo": {
       "storage_cluster_configs": "Storage cluster configurations"
     },
     "ClusterStorageClusterConfigDatastore": {
-      "free_bytes": "Free space (bytes)",
-      "used_bytes": "Used space (bytes)",
-      "datastore_capacity_bytes": "Datastore capacity (bytes)",
-      "type": "Storage protocol type",
+      "free_bytes": "Free capacity (bytes)",
+      "used_bytes": "Used capacity (bytes)",
+      "datastore_capacity_bytes": "Total capacity (bytes)",
+      "type": "Protocol",
       "status": "Datastore status",
       "description": "Description",
       "name": "Name",
@@ -2506,9 +2506,9 @@
       "source": "Source"
     },
     "ClusterNtpServicesInfo": {
-      "ntp_services": "NTP services",
+      "ntp_services": "NTP server",
       "cluster_time": "Cluster time",
-      "ntp_service_time": "NTP service time",
+      "ntp_service_time": "NTP server time",
       "time_zone_name": "Time zone name",
       "time_zone": "Time zone",
       "cluster_id": "Cluster ID"
@@ -2517,15 +2517,15 @@
       "where": "conditional query, representing to query the resources that meet the conditions. "
     },
     "NestedDatastore": {
-      "datastore_capacity_bytes": "Datastore capacity (bytes)",
+      "datastore_capacity_bytes": "Total capacity (bytes)",
       "description": "Description",
-      "free_bytes": "Free space (bytes)",
+      "free_bytes": "Free capacity (bytes)",
       "id": "id",
       "local_id": "UUID",
       "name": "name",
       "status": "Datastore status",
-      "type": "Storage protocol type",
-      "used_bytes": "Used space (bytes)"
+      "type": "Protocol",
+      "used_bytes": "Used capacity (bytes)"
     },
     "ContentLibraryImage": {
       "datastores": "Datastores"
@@ -2548,7 +2548,7 @@
     },
     "MountNewCreateDisksParams": {
       "storage_config": "Storage configuration",
-      "vm_volume.provision_policy": "VM volume provisioning policy"
+      "vm_volume.provision_policy": "VM volume provisioning"
     },
     "VmCdRomParams": {
       "storage_config": "Storage configuration"
@@ -2569,7 +2569,7 @@
       "storage_config": "Storage configuration"
     },
     "AddVmDiskVmVolumeParams": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "resident_in_cache": "Resident in cache",
       "elf_ec_storage_policy.thin_provision": "Whether thin provisioning is used",
       "elf_ec_storage_policy.ec_m": "Erasure coding M value",
@@ -2599,21 +2599,21 @@
       "enum": ""
     },
     "MigrateVmConfig": {
-      "provision_policy": "Provisioning policy",
-      "migrate_mode": "Migration mode"
+      "provision_policy": "Provisioning",
+      "migrate_mode": "Migration type"
     },
     "VmMigrateAcrossClusterParams": {
       "data.storage_config": "Storage configuration"
     },
     "VmUpdateSyncTimeOnResumeParamsData": {
-      "sync_vm_time_on_resume": "Synchronize VM time on resume"
+      "sync_vm_time_on_resume": "Time sync settings when VM resumes"
     },
     "VmUpdateSyncTimeOnResumeParams": {
       "data": "",
       "where": ""
     },
     "VmdkDiskModify": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "storage_config": "Storage configuration"
     },
     "VmdkCdromModify": {
@@ -2684,12 +2684,12 @@
     "NestedDatastoreMount": {
       "datastore": "Datastore",
       "id": "id",
-      "state": "State"
+      "state": "Mount state"
     },
     "Host": {
       "allocated_memory_bytes": "Allocated memory (bytes)",
       "datastore_mounts": "Datastore mounts",
-      "memory_allocation_rate": "Memory allocation rate",
+      "memory_allocation_rate": "Allocated memory (%)",
       "memory_overcommit_enabled": "Whether memory overcommit is enabled",
       "overcommit_active_memory_bytes": "Overcommit active memory (bytes)",
       "overcommit_memory_bytes": "Overcommit memory (bytes)",
@@ -2732,7 +2732,7 @@
     },
     "VmFolder": {
       "parent": "Parent folder",
-      "path": "Path",
+      "path": "Group directory",
       "total_vm_num": "Total number of VMs"
     },
     "VmFolderCreationParams": {
@@ -2749,22 +2749,22 @@
       "type": "Storage cluster configuration type"
     },
     "VmVolumeSnapshot": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "storage_cluster_config": "Storage cluster configuration"
     },
     "VmVolume": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "storage_cluster_config": "Storage cluster configuration"
     },
     "VmVolumeCreationParams": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "storage_config": "Storage configuration"
     },
     "CloneVmVolumeParams": {
-      "data.provision_policy": "Provisioning policy"
+      "data.provision_policy": "Provisioning"
     },
     "ImportVmVolumeParams": {
-      "provision_policy": "Provisioning policy",
+      "provision_policy": "Provisioning",
       "storage_config": "Storage configuration"
     },
     "LicenseWhereInput": {
@@ -2877,16 +2877,16 @@
   "tags": [],
   "paths": {
     "/get-cluster-ntp-services": {
-      "summary": "Getting cluster NTP services",
-      "description": "Get the NTP service configuration and time synchronization status of the specified clusters."
+      "summary": "Getting cluster NTP server information",
+      "description": "Get the NTP server configuration and time synchronization status of the specified clusters."
     },
     "/import-content-library-image-v2": {
-      "summary": "Importing a content library image (V2)",
-      "description": "Import a content library image to the specified clusters. Multiple clusters are supported, and the upload tasks for each cluster are returned."
+      "summary": "Importing an ISO image into the content library (V2)",
+      "description": "Import an ISO image to the specified clusters. Multiple clusters are supported, and the upload tasks for each cluster are returned."
     },
     "/update-vm-sync-time-on-resume": {
-      "summary": "Updating the VM time synchronization setting on resume",
-      "description": "Configure whether to synchronize the VM time when the VM resumes."
+      "summary": "Updating the time sync settings when a VM resumes",
+      "description": "Configure whether to synchronize time when the VM resumes."
     },
     "/get-auth-configs": {
       "summary": "Getting authentication configurations",

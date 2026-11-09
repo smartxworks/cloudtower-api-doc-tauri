@@ -284,7 +284,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备策略"
+            "description": "置备方式"
           },
           "resident_in_cache": {
             "description": "常驻缓存",
@@ -18089,7 +18089,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "置备策略"
+                "description": "置备方式"
               }
             },
             "required": [
@@ -19240,7 +19240,7 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
-            "description": "已分配内存（字节）",
+            "description": "内存分配量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -19643,7 +19643,7 @@
             "type": "number"
           },
           "overcommit_memory_ratio": {
-            "description": "内存超分比例",
+            "description": "内存超分比",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -21182,16 +21182,16 @@
             "type": "number"
           },
           "ntp_service_time": {
-            "description": "NTP 服务时间",
+            "description": "NTP 服务器时间",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_services": {
-            "description": "NTP 服务",
+            "description": "NTP 服务器",
             "items": {
               "$ref": "#/components/schemas/NtpServiceInfo",
-              "description": "NTP 服务"
+              "description": "NTP 服务器"
             },
             "nullable": true,
             "type": "array"
@@ -22075,7 +22075,7 @@
       "ClusterStorageClusterConfigDatastore": {
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "数据存储容量（字节）",
+            "description": "总容量（字节）",
             "format": "int64",
             "type": "integer"
           },
@@ -22084,7 +22084,7 @@
             "type": "string"
           },
           "free_bytes": {
-            "description": "可用空间（字节）",
+            "description": "空闲容量（字节）",
             "format": "int64",
             "type": "integer"
           },
@@ -22106,10 +22106,10 @@
           },
           "type": {
             "$ref": "#/components/schemas/StorageProtocol",
-            "description": "存储协议类型"
+            "description": "连接协议"
           },
           "used_bytes": {
-            "description": "已用空间（字节）",
+            "description": "已使用容量（字节）",
             "format": "int64",
             "type": "integer"
           }
@@ -23350,27 +23350,27 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
-            "description": "已分配内存（字节）",
+            "description": "内存分配量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
-            "description": "已分配内存（字节）大于指定数值",
+            "description": "内存分配量（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
-            "description": "已分配内存（字节）大于或等于指定数值",
+            "description": "内存分配量（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
-            "description": "已分配内存（字节）在指定范围中",
+            "description": "内存分配量（字节）在指定范围中",
             "items": {
-              "description": "已分配内存（字节）在指定范围中",
+              "description": "内存分配量（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -23378,27 +23378,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
-            "description": "已分配内存（字节）小于指定字符",
+            "description": "内存分配量（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
-            "description": "已分配内存（字节）小于或等于指定字符",
+            "description": "内存分配量（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
-            "description": "已分配内存（字节）不等于指定数值",
+            "description": "内存分配量（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
-            "description": "已分配内存（字节）不在指定范围中",
+            "description": "内存分配量（字节）不在指定范围中",
             "items": {
-              "description": "已分配内存（字节）不在指定范围中",
+              "description": "内存分配量（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -25687,13 +25687,13 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
-            "description": "内存分配率小于指定字符",
+            "description": "内存分配率小于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
-            "description": "内存分配率小于或等于指定字符",
+            "description": "内存分配率小于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -26197,27 +26197,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
-            "description": "内存超分比例",
+            "description": "内存超分比",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
-            "description": "内存超分比例大于指定数值",
+            "description": "内存超分比大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
-            "description": "内存超分比例大于或等于指定数值",
+            "description": "内存超分比大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
-            "description": "内存超分比例在指定范围中",
+            "description": "内存超分比在指定范围中",
             "items": {
-              "description": "内存超分比例在指定范围中",
+              "description": "内存超分比在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -26225,27 +26225,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
-            "description": "内存超分比例小于指定字符",
+            "description": "内存超分比小于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
-            "description": "内存超分比例小于或等于指定字符",
+            "description": "内存超分比小于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
-            "description": "内存超分比例不等于指定数值",
+            "description": "内存超分比不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
-            "description": "内存超分比例不在指定范围中",
+            "description": "内存超分比不在指定范围中",
             "items": {
-              "description": "内存超分比例不在指定范围中",
+              "description": "内存超分比不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -69104,7 +69104,7 @@
             "type": "integer"
           },
           "allocated_memory_bytes": {
-            "description": "已分配内存（字节）",
+            "description": "内存分配量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -69431,7 +69431,7 @@
             "type": "integer"
           },
           "overcommit_memory_ratio": {
-            "description": "内存超分比例",
+            "description": "内存超分比",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -70535,27 +70535,27 @@
             "type": "array"
           },
           "allocated_memory_bytes": {
-            "description": "已分配内存（字节）",
+            "description": "内存分配量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
-            "description": "已分配内存（字节）大于指定数值",
+            "description": "内存分配量（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
-            "description": "已分配内存（字节）大于或等于指定数值",
+            "description": "内存分配量（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
-            "description": "已分配内存（字节）在指定范围中",
+            "description": "内存分配量（字节）在指定范围中",
             "items": {
-              "description": "已分配内存（字节）在指定范围中",
+              "description": "内存分配量（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -70563,27 +70563,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
-            "description": "已分配内存（字节）小于指定字符",
+            "description": "内存分配量（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
-            "description": "已分配内存（字节）小于或等于指定字符",
+            "description": "内存分配量（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
-            "description": "已分配内存（字节）不等于指定数值",
+            "description": "内存分配量（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
-            "description": "已分配内存（字节）不在指定范围中",
+            "description": "内存分配量（字节）不在指定范围中",
             "items": {
-              "description": "已分配内存（字节）不在指定范围中",
+              "description": "内存分配量（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -72288,13 +72288,13 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
-            "description": "内存分配率小于指定字符",
+            "description": "内存分配率小于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
-            "description": "内存分配率小于或等于指定字符",
+            "description": "内存分配率小于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -72855,13 +72855,13 @@
             "type": "array"
           },
           "overcommit_active_memory_bytes_lt": {
-            "description": "超分活跃内存（字节）小于指定字符",
+            "description": "超分活跃内存（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_lte": {
-            "description": "超分活跃内存（字节）小于或等于指定字符",
+            "description": "超分活跃内存（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -72911,13 +72911,13 @@
             "type": "array"
           },
           "overcommit_memory_bytes_lt": {
-            "description": "超分内存（字节）小于指定字符",
+            "description": "超分内存（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_lte": {
-            "description": "超分内存（字节）小于或等于指定字符",
+            "description": "超分内存（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -72939,27 +72939,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
-            "description": "内存超分比例",
+            "description": "内存超分比",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
-            "description": "内存超分比例大于指定数值",
+            "description": "内存超分比大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
-            "description": "内存超分比例大于或等于指定数值",
+            "description": "内存超分比大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
-            "description": "内存超分比例在指定范围中",
+            "description": "内存超分比在指定范围中",
             "items": {
-              "description": "内存超分比例在指定范围中",
+              "description": "内存超分比在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -72967,27 +72967,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
-            "description": "内存超分比例小于指定字符",
+            "description": "内存超分比小于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
-            "description": "内存超分比例小于或等于指定字符",
+            "description": "内存超分比小于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
-            "description": "内存超分比例不等于指定数值",
+            "description": "内存超分比不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
-            "description": "内存超分比例不在指定范围中",
+            "description": "内存超分比不在指定范围中",
             "items": {
-              "description": "内存超分比例不在指定范围中",
+              "description": "内存超分比不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -73728,13 +73728,13 @@
             "type": "array"
           },
           "reserved_memory_bytes_lt": {
-            "description": "预留内存（字节）小于指定字符",
+            "description": "预留内存（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_lte": {
-            "description": "预留内存（字节）小于或等于指定字符",
+            "description": "预留内存（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -73784,13 +73784,13 @@
             "type": "array"
           },
           "running_pause_overcommit_memory_bytes_lt": {
-            "description": "运行及暂停状态虚拟机的超分内存（字节）小于指定字符",
+            "description": "运行及暂停状态虚拟机的超分内存（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_lte": {
-            "description": "运行及暂停状态虚拟机的超分内存（字节）小于或等于指定字符",
+            "description": "运行及暂停状态虚拟机的超分内存（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -73840,13 +73840,13 @@
             "type": "array"
           },
           "running_pause_reserved_memory_bytes_lt": {
-            "description": "运行及暂停状态虚拟机的预留内存（字节）小于指定字符",
+            "description": "运行及暂停状态虚拟机的预留内存（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_lte": {
-            "description": "运行及暂停状态虚拟机的预留内存（字节）小于或等于指定字符",
+            "description": "运行及暂停状态虚拟机的预留内存（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -74972,13 +74972,13 @@
             "type": "array"
           },
           "total_physical_memory_bytes_lt": {
-            "description": "物理内存总量（字节）小于指定字符",
+            "description": "物理内存总量（字节）小于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_lte": {
-            "description": "物理内存总量（字节）小于或等于指定字符",
+            "description": "物理内存总量（字节）小于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -75666,7 +75666,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备策略"
+            "description": "置备方式"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
@@ -91664,7 +91664,7 @@
           },
           "migrate_mode": {
             "$ref": "#/components/schemas/MigrateMode",
-            "description": "迁移模式"
+            "description": "迁移类型"
           },
           "migrate_type": {
             "$ref": "#/components/schemas/MigrateType",
@@ -91684,7 +91684,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备策略"
+            "description": "置备方式"
           },
           "remove_unmovable_devices": {
             "description": "移除设备",
@@ -91880,7 +91880,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "虚拟卷置备策略"
+                "description": "虚拟卷置备方式"
               },
               "resident_in_cache": {
                 "type": "boolean"
@@ -94961,7 +94961,7 @@
         "additionalProperties": false,
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "数据存储容量（字节）",
+            "description": "总容量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -94972,7 +94972,7 @@
             "type": "string"
           },
           "free_bytes": {
-            "description": "可用空间（字节）",
+            "description": "空闲容量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -94995,10 +94995,10 @@
           },
           "type": {
             "$ref": "#/components/schemas/StorageProtocol",
-            "description": "存储协议类型"
+            "description": "连接协议"
           },
           "used_bytes": {
-            "description": "已用空间（字节）",
+            "description": "已使用容量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -95026,7 +95026,7 @@
           },
           "state": {
             "$ref": "#/components/schemas/DatastoreMountState",
-            "description": "状态"
+            "description": "挂载状态"
           }
         },
         "required": [
@@ -98880,7 +98880,7 @@
             "type": "string"
           },
           "path": {
-            "description": "路径",
+            "description": "组目录",
             "nullable": true,
             "type": "string"
           }
@@ -169821,7 +169821,7 @@
             "title": "NestedVmFolder"
           },
           "path": {
-            "description": "路径",
+            "description": "组目录",
             "nullable": true,
             "type": "string"
           },
@@ -170230,80 +170230,80 @@
             "title": "VmFolderWhereInput"
           },
           "path": {
-            "description": "路径",
+            "description": "组目录",
             "nullable": true,
             "type": "string"
           },
           "path_contains": {
-            "description": "路径包含指定字符",
+            "description": "组目录包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_ends_with": {
-            "description": "路径以指定字符结尾",
+            "description": "组目录以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "path_gt": {
-            "description": "路径大于指定数值",
+            "description": "组目录大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_gte": {
-            "description": "路径大于或等于指定数值",
+            "description": "组目录大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_in": {
-            "description": "路径在指定范围中",
+            "description": "组目录在指定范围中",
             "items": {
-              "description": "路径在指定范围中",
+              "description": "组目录在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_lt": {
-            "description": "路径小于指定字符",
+            "description": "组目录小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_lte": {
-            "description": "路径小于或等于指定字符",
+            "description": "组目录小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_not": {
-            "description": "路径不等于指定数值",
+            "description": "组目录不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_not_contains": {
-            "description": "路径不包含指定字符",
+            "description": "组目录不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_not_ends_with": {
-            "description": "路径不以指定字符结尾",
+            "description": "组目录不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "path_not_in": {
-            "description": "路径不在指定范围中",
+            "description": "组目录不在指定范围中",
             "items": {
-              "description": "路径不在指定范围中",
+              "description": "组目录不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_not_starts_with": {
-            "description": "路径不以指定字符开始",
+            "description": "组目录不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "path_starts_with": {
-            "description": "路径以指定字符开始",
+            "description": "组目录以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -170336,13 +170336,13 @@
             "type": "array"
           },
           "total_vm_num_lt": {
-            "description": "虚拟机总数小于指定字符",
+            "description": "虚拟机总数小于指定数值",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_lte": {
-            "description": "虚拟机总数小于或等于指定字符",
+            "description": "虚拟机总数小于或等于指定数值",
             "format": "int32",
             "nullable": true,
             "type": "integer"
@@ -180625,7 +180625,7 @@
       "VmUpdateSyncTimeOnResumeParamsData": {
         "properties": {
           "sync_vm_time_on_resume": {
-            "description": "恢复运行时同步虚拟机时间",
+            "description": "恢复时同步时间",
             "type": "boolean"
           }
         },
@@ -180975,7 +180975,7 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "置备策略",
+            "description": "置备方式",
             "nullable": true,
             "type": "string"
           },
@@ -181110,7 +181110,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备策略"
+            "description": "置备方式"
           },
           "resident_in_cache": {
             "type": "boolean"
@@ -181369,7 +181369,7 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "置备策略",
+            "description": "置备方式",
             "nullable": true,
             "type": "string"
           },
@@ -182311,80 +182311,80 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "置备策略",
+            "description": "置备方式",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
-            "description": "置备策略包含指定字符",
+            "description": "置备方式包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
-            "description": "置备策略以指定字符结尾",
+            "description": "置备方式以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
-            "description": "置备策略大于指定数值",
+            "description": "置备方式大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
-            "description": "置备策略大于或等于指定数值",
+            "description": "置备方式大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
-            "description": "置备策略在指定范围中",
+            "description": "置备方式在指定范围中",
             "items": {
-              "description": "置备策略在指定范围中",
+              "description": "置备方式在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
-            "description": "置备策略小于指定字符",
+            "description": "置备方式小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
-            "description": "置备策略小于或等于指定字符",
+            "description": "置备方式小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
-            "description": "置备策略不等于指定数值",
+            "description": "置备方式不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
-            "description": "置备策略不包含指定字符",
+            "description": "置备方式不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
-            "description": "置备策略不以指定字符结尾",
+            "description": "置备方式不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
-            "description": "置备策略不在指定范围中",
+            "description": "置备方式不在指定范围中",
             "items": {
-              "description": "置备策略不在指定范围中",
+              "description": "置备方式不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
-            "description": "置备策略不以指定字符开始",
+            "description": "置备方式不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
-            "description": "置备策略以指定字符开始",
+            "description": "置备方式以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -184468,80 +184468,80 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "置备策略",
+            "description": "置备方式",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
-            "description": "置备策略包含指定字符",
+            "description": "置备方式包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
-            "description": "置备策略以指定字符结尾",
+            "description": "置备方式以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
-            "description": "置备策略大于指定数值",
+            "description": "置备方式大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
-            "description": "置备策略大于或等于指定数值",
+            "description": "置备方式大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
-            "description": "置备策略在指定范围中",
+            "description": "置备方式在指定范围中",
             "items": {
-              "description": "置备策略在指定范围中",
+              "description": "置备方式在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
-            "description": "置备策略小于指定字符",
+            "description": "置备方式小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
-            "description": "置备策略小于或等于指定字符",
+            "description": "置备方式小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
-            "description": "置备策略不等于指定数值",
+            "description": "置备方式不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
-            "description": "置备策略不包含指定字符",
+            "description": "置备方式不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
-            "description": "置备策略不以指定字符结尾",
+            "description": "置备方式不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
-            "description": "置备策略不在指定范围中",
+            "description": "置备方式不在指定范围中",
             "items": {
-              "description": "置备策略不在指定范围中",
+              "description": "置备方式不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
-            "description": "置备策略不以指定字符开始",
+            "description": "置备方式不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
-            "description": "置备策略以指定字符开始",
+            "description": "置备方式以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -188287,7 +188287,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备策略"
+            "description": "置备方式"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
@@ -224346,7 +224346,7 @@
     },
     "/get-cluster-ntp-services": {
       "post": {
-        "description": "获取指定集群的 NTP 服务配置及时间同步状态信息。",
+        "description": "获取指定集群的 NTP 服务器配置及时间同步状态信息。",
         "operationId": "GetClusterNtpServices",
         "parameters": [
           {
@@ -224457,7 +224457,7 @@
             "Authorization": []
           }
         ],
-        "summary": "获取集群 NTP 服务",
+        "summary": "获取集群 NTP 服务器信息",
         "tags": [
           "ClusterManagement"
         ],
@@ -258202,7 +258202,7 @@
     },
     "/import-content-library-image-v2": {
       "post": {
-        "description": "将内容库镜像导入到指定集群，支持同时导入多个集群，并返回各集群的上传任务。",
+        "description": "将 ISO 映像导入到指定集群，支持同时导入多个集群，并返回各集群的上传任务。",
         "operationId": "ImportContentLibraryImageV2",
         "parameters": [
           {
@@ -258322,7 +258322,7 @@
             "Authorization": []
           }
         ],
-        "summary": "导入内容库镜像（V2）",
+        "summary": "导入 ISO 映像到内容库（V2）",
         "tags": [
           "SharedManagement"
         ],
@@ -277424,7 +277424,7 @@
     },
     "/update-vm-sync-time-on-resume": {
       "post": {
-        "description": "设置虚拟机恢复运行时是否同步虚拟机时间。",
+        "description": "设置虚拟机恢复时是否同步时间。",
         "operationId": "UpdateVmSyncTimeOnResume",
         "parameters": [
           {
@@ -277546,7 +277546,7 @@
             "Authorization": []
           }
         ],
-        "summary": "更新虚拟机恢复时的时间同步设置",
+        "summary": "编辑虚拟机恢复时同步时间设置",
         "tags": [
           "VmManagement"
         ],
