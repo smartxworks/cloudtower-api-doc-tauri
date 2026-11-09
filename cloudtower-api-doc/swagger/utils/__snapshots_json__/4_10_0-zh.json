@@ -187,43 +187,53 @@
       "AddVmDiskMountNewCreateDisksParams": {
         "properties": {
           "boot": {
+            "description": "启动顺序",
             "format": "int32",
             "type": "integer"
           },
           "bus": {
-            "$ref": "#/components/schemas/Bus"
+            "$ref": "#/components/schemas/Bus",
+            "description": "总线"
           },
           "index": {
+            "description": "磁盘序号",
             "format": "int32",
             "type": "integer"
           },
           "key": {
+            "description": "键值",
             "format": "int32",
             "type": "integer"
           },
           "max_bandwidth": {
+            "description": "最大带宽",
             "format": "int64",
             "type": "integer"
           },
           "max_bandwidth_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
+            "$ref": "#/components/schemas/VmDiskIoRestrictType",
+            "description": "最大带宽限制策略"
           },
           "max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit"
+            "$ref": "#/components/schemas/BPSUnit",
+            "description": "最大带宽单位"
           },
           "max_iops": {
+            "description": "最大 IOPS",
             "format": "int64",
             "type": "integer"
           },
           "max_iops_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
+            "$ref": "#/components/schemas/VmDiskIoRestrictType",
+            "description": "最大 IOPS 限制策略"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vm_volume": {
-            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams"
+            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams",
+            "description": "虚拟卷"
           }
         },
         "required": [
@@ -236,47 +246,58 @@
       "AddVmDiskVmVolumeParams": {
         "properties": {
           "elf_ec_storage_policy": {
+            "description": "纠删码存储策略",
             "properties": {
               "ec_k": {
+                "description": "纠删码 K 值",
                 "format": "int32",
                 "type": "integer"
               },
               "ec_m": {
+                "description": "纠删码 M 值",
                 "format": "int32",
                 "type": "integer"
               },
               "thin_provision": {
+                "description": "是否为精简置备",
                 "type": "boolean"
               }
             },
             "type": "object"
           },
           "elf_replica_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
+            "description": "副本存储策略"
           },
           "elf_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "deprecated": true
+            "deprecated": true,
+            "description": "存储策略"
           },
           "name": {
+            "description": "磁盘名称",
             "type": "string"
           },
           "path": {
+            "description": "磁盘路径",
             "type": "string"
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type when associated storage is a datastore."
+            "description": "置备策略"
           },
           "resident_in_cache": {
+            "description": "常驻缓存",
             "type": "boolean"
           },
           "size": {
+            "description": "容量大小（字节）",
             "format": "int64",
             "type": "integer"
           },
           "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit"
+            "$ref": "#/components/schemas/ByteUnit",
+            "description": "容量单位"
           }
         },
         "required": [
@@ -4328,10 +4349,12 @@
       "AuthConfig": {
         "properties": {
           "id": {
+            "description": "认证配置 ID",
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/AuthStrategyType"
+            "$ref": "#/components/schemas/AuthStrategyType",
+            "description": "认证类型"
           }
         },
         "required": [
@@ -18066,7 +18089,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "Datastore volumes only. Omitted means inheriting the source policy.\nShared volumes require thick_eager_zeroed."
+                "description": "置备策略"
               }
             },
             "required": [
@@ -19217,6 +19240,7 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
+            "description": "已分配内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -19531,6 +19555,7 @@
             "type": "integer"
           },
           "memory_allocation_rate": {
+            "description": "内存分配率",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -19618,6 +19643,7 @@
             "type": "number"
           },
           "overcommit_memory_ratio": {
+            "description": "内存超分比例",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -21146,30 +21172,37 @@
       "ClusterNtpServicesInfo": {
         "properties": {
           "cluster_id": {
+            "description": "集群 ID",
             "type": "string"
           },
           "cluster_time": {
+            "description": "集群时间",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_service_time": {
+            "description": "NTP 服务时间",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_services": {
+            "description": "NTP 服务",
             "items": {
-              "$ref": "#/components/schemas/NtpServiceInfo"
+              "$ref": "#/components/schemas/NtpServiceInfo",
+              "description": "NTP 服务"
             },
             "nullable": true,
             "type": "array"
           },
           "time_zone": {
+            "description": "时区",
             "nullable": true,
             "type": "string"
           },
           "time_zone_name": {
+            "description": "时区名称",
             "nullable": true,
             "type": "string"
           }
@@ -22013,19 +22046,24 @@
       "ClusterStorageClusterConfig": {
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/ClusterStorageClusterConfigDatastore"
+            "$ref": "#/components/schemas/ClusterStorageClusterConfigDatastore",
+            "description": "数据存储"
           },
           "id": {
+            "description": "唯一标识",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "storage_cluster": {
-            "$ref": "#/components/schemas/ClusterStorageInfo"
+            "$ref": "#/components/schemas/ClusterStorageInfo",
+            "description": "存储集群"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+            "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+            "description": "存储集群配置类型"
           }
         },
         "required": [
@@ -22037,35 +22075,41 @@
       "ClusterStorageClusterConfigDatastore": {
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "Total physical capacity in bytes.",
+            "description": "数据存储容量（字节）",
             "format": "int64",
             "type": "integer"
           },
           "description": {
+            "description": "描述",
             "type": "string"
           },
           "free_bytes": {
-            "description": "Available capacity in bytes.",
+            "description": "可用空间（字节）",
             "format": "int64",
             "type": "integer"
           },
           "id": {
+            "description": "唯一标识",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
+            "description": "名称",
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/DatastoreStatus"
+            "$ref": "#/components/schemas/DatastoreStatus",
+            "description": "数据存储状态"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageProtocol"
+            "$ref": "#/components/schemas/StorageProtocol",
+            "description": "存储协议类型"
           },
           "used_bytes": {
-            "description": "Used capacity in bytes.",
+            "description": "已用空间（字节）",
             "format": "int64",
             "type": "integer"
           }
@@ -22112,8 +22156,10 @@
             "type": "array"
           },
           "storage_cluster_configs": {
+            "description": "存储集群配置",
             "items": {
-              "$ref": "#/components/schemas/ClusterStorageClusterConfig"
+              "$ref": "#/components/schemas/ClusterStorageClusterConfig",
+              "description": "存储集群配置"
             },
             "type": "array"
           },
@@ -23304,22 +23350,27 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
+            "description": "已分配内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
+            "description": "已分配内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
+            "description": "已分配内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
+            "description": "已分配内存（字节）在指定范围中",
             "items": {
+              "description": "已分配内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -23327,22 +23378,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
+            "description": "已分配内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
+            "description": "已分配内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
+            "description": "已分配内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
+            "description": "已分配内存（字节）不在指定范围中",
             "items": {
+              "description": "已分配内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -25603,22 +25659,27 @@
             "type": "array"
           },
           "memory_allocation_rate": {
+            "description": "内存分配率",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
+            "description": "内存分配率大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
+            "description": "内存分配率大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
+            "description": "内存分配率在指定范围中",
             "items": {
+              "description": "内存分配率在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -25626,22 +25687,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
+            "description": "内存分配率小于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
+            "description": "内存分配率小于或等于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
+            "description": "内存分配率不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
+            "description": "内存分配率不在指定范围中",
             "items": {
+              "description": "内存分配率不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -26131,22 +26197,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
+            "description": "内存超分比例",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
+            "description": "内存超分比例大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
+            "description": "内存超分比例大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
+            "description": "内存超分比例在指定范围中",
             "items": {
+              "description": "内存超分比例在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -26154,22 +26225,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
+            "description": "内存超分比例小于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
+            "description": "内存超分比例小于或等于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
+            "description": "内存超分比例不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
+            "description": "内存超分比例不在指定范围中",
             "items": {
+              "description": "内存超分比例不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -30210,8 +30286,10 @@
             "type": "string"
           },
           "datastores": {
+            "description": "数据存储",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastore"
+              "$ref": "#/components/schemas/NestedDatastore",
+              "description": "数据存储"
             },
             "nullable": true,
             "type": "array"
@@ -30352,10 +30430,11 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "数据存储"
               }
             ],
-            "description": "schemas.ContentLibraryImageImportData.datastore",
+            "description": "数据存储",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -30433,10 +30512,11 @@
           "datastores": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "数据存储"
               }
             ],
-            "description": "schemas.ContentLibraryImageUpdationClusterParamsData.datastores",
+            "description": "数据存储",
             "nullable": true,
             "title": "DatastoreWhereInput"
           }
@@ -30467,10 +30547,11 @@
           "datastores": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "数据存储"
               }
             ],
-            "description": "schemas.ContentLibraryImageUpdationParamsData.datastores",
+            "description": "数据存储",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -30599,30 +30680,33 @@
           "datastores_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源全都符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_every",
+            "description": "返回关联资源全都符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源不符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_none",
+            "description": "返回关联资源不符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源一项或多项符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_some",
+            "description": "返回关联资源一项或多项符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -31304,8 +31388,10 @@
             "type": "string"
           },
           "datastores": {
+            "description": "数据存储",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastore"
+              "$ref": "#/components/schemas/NestedDatastore",
+              "description": "数据存储"
             },
             "nullable": true,
             "type": "array"
@@ -31468,8 +31554,10 @@
             "type": "array"
           },
           "vm_template_configs": {
+            "description": "虚拟机模板配置",
             "items": {
-              "$ref": "#/components/schemas/NestedVmTemplateConfig"
+              "$ref": "#/components/schemas/NestedVmTemplateConfig",
+              "description": "虚拟机模板配置"
             },
             "nullable": true,
             "type": "array"
@@ -31551,9 +31639,10 @@
             "type": "string"
           },
           "storage_configs": {
-            "description": "Template file placements. Provide nonempty storage_configs or clusters.",
+            "description": "存储配置",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateStoragePlacement"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateStoragePlacement",
+              "description": "存储配置"
             },
             "type": "array"
           },
@@ -31636,11 +31725,12 @@
             "description": "解析的 ovf 文件包信息，可以通过 parse-ovf api 解析"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "存储配置"
           },
           "template_architecture": {
             "$ref": "#/components/schemas/Architecture",
-            "description": "Required for datastore and ZBS template imports."
+            "description": "模板架构"
           },
           "upload_tasks": {
             "description": "上传任务",
@@ -31767,7 +31857,7 @@
         "description": "Storage target for a template file. Currently only VCFS datastores are supported.",
         "properties": {
           "datastore_id": {
-            "description": "VCFS Datastore.id. Clustered-storage targets can be added to this type later.",
+            "description": "数据存储 ID",
             "type": "string"
           }
         },
@@ -31779,11 +31869,14 @@
       "ContentLibraryVmTemplateStoragePlacement": {
         "properties": {
           "config_file_storage_config": {
-            "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig"
+            "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig",
+            "description": "配置文件存储配置"
           },
           "volume_storage_configs": {
+            "description": "卷存储配置",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateVolumeStoragePlacement"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateVolumeStoragePlacement",
+              "description": "卷存储配置"
             },
             "type": "array"
           }
@@ -31866,14 +31959,15 @@
       "ContentLibraryVmTemplateVolumeStoragePlacement": {
         "properties": {
           "raw_file_storage_configs": {
-            "description": "Storage targets for this volume's raw file copies.",
+            "description": "原始文件存储配置",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig",
+              "description": "原始文件存储配置"
             },
             "type": "array"
           },
           "volume_id": {
-            "description": "Database ID of a volume belonging to the source VM.",
+            "description": "卷 ID",
             "type": "string"
           }
         },
@@ -32165,30 +32259,33 @@
           "datastores_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源全都符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_every",
+            "description": "返回关联资源全都符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源不符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_none",
+            "description": "返回关联资源不符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "返回关联资源一项或多项符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_some",
+            "description": "返回关联资源一项或多项符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -33142,30 +33239,33 @@
           "vm_template_configs_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "返回关联资源全都符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_every",
+            "description": "返回关联资源全都符合相关筛选条件的资源",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
           "vm_template_configs_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "返回关联资源不符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_none",
+            "description": "返回关联资源不符合相关筛选条件的资源",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
           "vm_template_configs_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "返回关联资源一项或多项符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_some",
+            "description": "返回关联资源一项或多项符合相关筛选条件的资源",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
@@ -37302,7 +37402,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vm_volume_id": {
             "description": "虚拟卷的唯一标识",
@@ -40602,14 +40702,17 @@
         "additionalProperties": false,
         "properties": {
           "async_replication": {
+            "description": "异步复制",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "备份",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "品牌",
             "nullable": true,
             "type": "string"
           },
@@ -40627,6 +40730,7 @@
             "type": "string"
           },
           "dfw": {
+            "description": "分布式防火墙",
             "nullable": true,
             "type": "string"
           },
@@ -40638,10 +40742,12 @@
             "type": "string"
           },
           "external_storage": {
+            "description": "外部存储",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "文件存储",
             "nullable": true,
             "type": "string"
           },
@@ -40657,22 +40763,27 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes 裸金属",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes 服务",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "负载均衡",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "许可证数据",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "许可证签名",
             "nullable": true,
             "type": "string"
           },
@@ -40717,10 +40828,12 @@
             "type": "string"
           },
           "sync_replication": {
+            "description": "同步复制",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "流量可视化",
             "nullable": true,
             "type": "string"
           },
@@ -40733,6 +40846,7 @@
             "type": "integer"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           }
@@ -40860,188 +40974,236 @@
             "type": "array"
           },
           "async_replication": {
+            "description": "异步复制",
             "nullable": true,
             "type": "string"
           },
           "async_replication_contains": {
+            "description": "异步复制包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "async_replication_ends_with": {
+            "description": "异步复制以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "async_replication_gt": {
+            "description": "异步复制大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "async_replication_gte": {
+            "description": "异步复制大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "async_replication_in": {
+            "description": "异步复制在指定范围中",
             "items": {
+              "description": "异步复制在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "async_replication_lt": {
+            "description": "异步复制小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "async_replication_lte": {
+            "description": "异步复制小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not": {
+            "description": "异步复制不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_contains": {
+            "description": "异步复制不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_ends_with": {
+            "description": "异步复制不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_in": {
+            "description": "异步复制不在指定范围中",
             "items": {
+              "description": "异步复制不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "async_replication_not_starts_with": {
+            "description": "异步复制不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "async_replication_starts_with": {
+            "description": "异步复制以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "备份",
             "nullable": true,
             "type": "string"
           },
           "backup_contains": {
+            "description": "备份包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "backup_ends_with": {
+            "description": "备份以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "backup_gt": {
+            "description": "备份大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "backup_gte": {
+            "description": "备份大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "backup_in": {
+            "description": "备份在指定范围中",
             "items": {
+              "description": "备份在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "backup_lt": {
+            "description": "备份小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "backup_lte": {
+            "description": "备份小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "backup_not": {
+            "description": "备份不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "backup_not_contains": {
+            "description": "备份不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "backup_not_ends_with": {
+            "description": "备份不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "backup_not_in": {
+            "description": "备份不在指定范围中",
             "items": {
+              "description": "备份不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "backup_not_starts_with": {
+            "description": "备份不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "backup_starts_with": {
+            "description": "备份以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "品牌",
             "nullable": true,
             "type": "string"
           },
           "brand_contains": {
+            "description": "品牌包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "brand_ends_with": {
+            "description": "品牌以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "brand_gt": {
+            "description": "品牌大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "brand_gte": {
+            "description": "品牌大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "brand_in": {
+            "description": "品牌在指定范围中",
             "items": {
+              "description": "品牌在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "brand_lt": {
+            "description": "品牌小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "brand_lte": {
+            "description": "品牌小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "brand_not": {
+            "description": "品牌不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "brand_not_contains": {
+            "description": "品牌不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "brand_not_ends_with": {
+            "description": "品牌不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "brand_not_in": {
+            "description": "品牌不在指定范围中",
             "items": {
+              "description": "品牌不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "brand_not_starts_with": {
+            "description": "品牌不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "brand_starts_with": {
+            "description": "品牌以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -41118,64 +41280,80 @@
             "type": "string"
           },
           "dfw": {
+            "description": "分布式防火墙",
             "nullable": true,
             "type": "string"
           },
           "dfw_contains": {
+            "description": "分布式防火墙包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "dfw_ends_with": {
+            "description": "分布式防火墙以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "dfw_gt": {
+            "description": "分布式防火墙大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "dfw_gte": {
+            "description": "分布式防火墙大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "dfw_in": {
+            "description": "分布式防火墙在指定范围中",
             "items": {
+              "description": "分布式防火墙在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "dfw_lt": {
+            "description": "分布式防火墙小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "dfw_lte": {
+            "description": "分布式防火墙小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "dfw_not": {
+            "description": "分布式防火墙不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_contains": {
+            "description": "分布式防火墙不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_ends_with": {
+            "description": "分布式防火墙不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_in": {
+            "description": "分布式防火墙不在指定范围中",
             "items": {
+              "description": "分布式防火墙不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "dfw_not_starts_with": {
+            "description": "分布式防火墙不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "dfw_starts_with": {
+            "description": "分布式防火墙以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -41252,72 +41430,90 @@
             "type": "array"
           },
           "external_storage": {
+            "description": "外部存储",
             "nullable": true,
             "type": "boolean"
           },
           "external_storage_not": {
+            "description": "外部存储不等于指定数值",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "文件存储",
             "nullable": true,
             "type": "string"
           },
           "file_storage_contains": {
+            "description": "文件存储包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "file_storage_ends_with": {
+            "description": "文件存储以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "file_storage_gt": {
+            "description": "文件存储大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "file_storage_gte": {
+            "description": "文件存储大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "file_storage_in": {
+            "description": "文件存储在指定范围中",
             "items": {
+              "description": "文件存储在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "file_storage_lt": {
+            "description": "文件存储小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "file_storage_lte": {
+            "description": "文件存储小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not": {
+            "description": "文件存储不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_contains": {
+            "description": "文件存储不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_ends_with": {
+            "description": "文件存储不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_in": {
+            "description": "文件存储不在指定范围中",
             "items": {
+              "description": "文件存储不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "file_storage_not_starts_with": {
+            "description": "文件存储不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "file_storage_starts_with": {
+            "description": "文件存储以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -41400,312 +41596,392 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes 裸金属",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_contains": {
+            "description": "Kubernetes 裸金属包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_ends_with": {
+            "description": "Kubernetes 裸金属以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_gt": {
+            "description": "Kubernetes 裸金属大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_gte": {
+            "description": "Kubernetes 裸金属大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_in": {
+            "description": "Kubernetes 裸金属在指定范围中",
             "items": {
+              "description": "Kubernetes 裸金属在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_bare_metal_lt": {
+            "description": "Kubernetes 裸金属小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_lte": {
+            "description": "Kubernetes 裸金属小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not": {
+            "description": "Kubernetes 裸金属不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_contains": {
+            "description": "Kubernetes 裸金属不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_ends_with": {
+            "description": "Kubernetes 裸金属不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_in": {
+            "description": "Kubernetes 裸金属不在指定范围中",
             "items": {
+              "description": "Kubernetes 裸金属不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_bare_metal_not_starts_with": {
+            "description": "Kubernetes 裸金属不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_starts_with": {
+            "description": "Kubernetes 裸金属以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes 服务",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_contains": {
+            "description": "Kubernetes 服务包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_ends_with": {
+            "description": "Kubernetes 服务以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_gt": {
+            "description": "Kubernetes 服务大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_gte": {
+            "description": "Kubernetes 服务大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_in": {
+            "description": "Kubernetes 服务在指定范围中",
             "items": {
+              "description": "Kubernetes 服务在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_service_lt": {
+            "description": "Kubernetes 服务小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_lte": {
+            "description": "Kubernetes 服务小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not": {
+            "description": "Kubernetes 服务不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_contains": {
+            "description": "Kubernetes 服务不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_ends_with": {
+            "description": "Kubernetes 服务不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_in": {
+            "description": "Kubernetes 服务不在指定范围中",
             "items": {
+              "description": "Kubernetes 服务不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_service_not_starts_with": {
+            "description": "Kubernetes 服务不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_starts_with": {
+            "description": "Kubernetes 服务以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "负载均衡",
             "nullable": true,
             "type": "string"
           },
           "lb_contains": {
+            "description": "负载均衡包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "lb_ends_with": {
+            "description": "负载均衡以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "lb_gt": {
+            "description": "负载均衡大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "lb_gte": {
+            "description": "负载均衡大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "lb_in": {
+            "description": "负载均衡在指定范围中",
             "items": {
+              "description": "负载均衡在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "lb_lt": {
+            "description": "负载均衡小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "lb_lte": {
+            "description": "负载均衡小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "lb_not": {
+            "description": "负载均衡不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "lb_not_contains": {
+            "description": "负载均衡不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "lb_not_ends_with": {
+            "description": "负载均衡不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "lb_not_in": {
+            "description": "负载均衡不在指定范围中",
             "items": {
+              "description": "负载均衡不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "lb_not_starts_with": {
+            "description": "负载均衡不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "lb_starts_with": {
+            "description": "负载均衡以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "许可证数据",
             "nullable": true,
             "type": "string"
           },
           "license_payload_contains": {
+            "description": "许可证数据包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_payload_ends_with": {
+            "description": "许可证数据以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "license_payload_gt": {
+            "description": "许可证数据大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_payload_gte": {
+            "description": "许可证数据大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_payload_in": {
+            "description": "许可证数据在指定范围中",
             "items": {
+              "description": "许可证数据在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_payload_lt": {
+            "description": "许可证数据小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_payload_lte": {
+            "description": "许可证数据小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not": {
+            "description": "许可证数据不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_contains": {
+            "description": "许可证数据不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_ends_with": {
+            "description": "许可证数据不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_in": {
+            "description": "许可证数据不在指定范围中",
             "items": {
+              "description": "许可证数据不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_payload_not_starts_with": {
+            "description": "许可证数据不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "license_payload_starts_with": {
+            "description": "许可证数据以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "许可证签名",
             "nullable": true,
             "type": "string"
           },
           "license_signature_contains": {
+            "description": "许可证签名包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_signature_ends_with": {
+            "description": "许可证签名以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "license_signature_gt": {
+            "description": "许可证签名大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_signature_gte": {
+            "description": "许可证签名大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_signature_in": {
+            "description": "许可证签名在指定范围中",
             "items": {
+              "description": "许可证签名在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_signature_lt": {
+            "description": "许可证签名小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_signature_lte": {
+            "description": "许可证签名小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not": {
+            "description": "许可证签名不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_contains": {
+            "description": "许可证签名不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_ends_with": {
+            "description": "许可证签名不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_in": {
+            "description": "许可证签名不在指定范围中",
             "items": {
+              "description": "许可证签名不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_signature_not_starts_with": {
+            "description": "许可证签名不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "license_signature_starts_with": {
+            "description": "许可证签名以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -42136,126 +42412,158 @@
             "type": "array"
           },
           "sync_replication": {
+            "description": "同步复制",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_contains": {
+            "description": "同步复制包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_ends_with": {
+            "description": "同步复制以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_gt": {
+            "description": "同步复制大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_gte": {
+            "description": "同步复制大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_in": {
+            "description": "同步复制在指定范围中",
             "items": {
+              "description": "同步复制在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "sync_replication_lt": {
+            "description": "同步复制小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_lte": {
+            "description": "同步复制小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not": {
+            "description": "同步复制不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_contains": {
+            "description": "同步复制不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_ends_with": {
+            "description": "同步复制不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_in": {
+            "description": "同步复制不在指定范围中",
             "items": {
+              "description": "同步复制不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "sync_replication_not_starts_with": {
+            "description": "同步复制不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_starts_with": {
+            "description": "同步复制以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "流量可视化",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_contains": {
+            "description": "流量可视化包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_ends_with": {
+            "description": "流量可视化以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_gt": {
+            "description": "流量可视化大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_gte": {
+            "description": "流量可视化大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_in": {
+            "description": "流量可视化在指定范围中",
             "items": {
+              "description": "流量可视化在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "traffic_visualization_lt": {
+            "description": "流量可视化小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_lte": {
+            "description": "流量可视化小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not": {
+            "description": "流量可视化不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_contains": {
+            "description": "流量可视化不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_ends_with": {
+            "description": "流量可视化不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_in": {
+            "description": "流量可视化不在指定范围中",
             "items": {
+              "description": "流量可视化不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "traffic_visualization_not_starts_with": {
+            "description": "流量可视化不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_starts_with": {
+            "description": "流量可视化以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -42368,64 +42676,80 @@
             "type": "array"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           },
           "vpc_contains": {
+            "description": "VPC 包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "vpc_ends_with": {
+            "description": "VPC 以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "vpc_gt": {
+            "description": "VPC 大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "vpc_gte": {
+            "description": "VPC 大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "vpc_in": {
+            "description": "VPC 在指定范围中",
             "items": {
+              "description": "VPC 在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "vpc_lt": {
+            "description": "VPC 小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "vpc_lte": {
+            "description": "VPC 小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "vpc_not": {
+            "description": "VPC 不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_contains": {
+            "description": "VPC 不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_ends_with": {
+            "description": "VPC 不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_in": {
+            "description": "VPC 不在指定范围中",
             "items": {
+              "description": "VPC 不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "vpc_not_starts_with": {
+            "description": "VPC 不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "vpc_starts_with": {
+            "description": "VPC 以指定字符开始",
             "nullable": true,
             "type": "string"
           }
@@ -50493,7 +50817,8 @@
           "where": {
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/AuthStrategyType"
+                "$ref": "#/components/schemas/AuthStrategyType",
+                "description": "认证类型"
               }
             },
             "type": "object"
@@ -68779,6 +69104,7 @@
             "type": "integer"
           },
           "allocated_memory_bytes": {
+            "description": "已分配内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -68879,8 +69205,10 @@
             "type": "string"
           },
           "datastore_mounts": {
+            "description": "数据存储挂载",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastoreMount"
+              "$ref": "#/components/schemas/NestedDatastoreMount",
+              "description": "数据存储挂载"
             },
             "nullable": true,
             "type": "array"
@@ -69029,11 +69357,13 @@
             "type": "string"
           },
           "memory_allocation_rate": {
+            "description": "内存分配率",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_overcommit_enabled": {
+            "description": "是否启用内存超分",
             "nullable": true,
             "type": "boolean"
           },
@@ -69089,16 +69419,19 @@
             "type": "string"
           },
           "overcommit_active_memory_bytes": {
+            "description": "超分活跃内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes": {
+            "description": "超分内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_ratio": {
+            "description": "内存超分比例",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -69180,16 +69513,19 @@
             "type": "integer"
           },
           "reserved_memory_bytes": {
+            "description": "预留内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -69296,6 +69632,7 @@
             "type": "integer"
           },
           "total_physical_memory_bytes": {
+            "description": "物理内存总量（字节）",
             "format": "int64",
             "type": "integer"
           },
@@ -70198,22 +70535,27 @@
             "type": "array"
           },
           "allocated_memory_bytes": {
+            "description": "已分配内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
+            "description": "已分配内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
+            "description": "已分配内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
+            "description": "已分配内存（字节）在指定范围中",
             "items": {
+              "description": "已分配内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -70221,22 +70563,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
+            "description": "已分配内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
+            "description": "已分配内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
+            "description": "已分配内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
+            "description": "已分配内存（字节）不在指定范围中",
             "items": {
+              "description": "已分配内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -70935,30 +71282,33 @@
           "datastore_mounts_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "返回关联资源全都符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_every",
+            "description": "返回关联资源全都符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
           "datastore_mounts_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "返回关联资源不符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_none",
+            "description": "返回关联资源不符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
           "datastore_mounts_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "返回关联资源一项或多项符合相关筛选条件的资源"
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_some",
+            "description": "返回关联资源一项或多项符合相关筛选条件的资源",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
@@ -71910,22 +72260,27 @@
             "type": "string"
           },
           "memory_allocation_rate": {
+            "description": "内存分配率",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
+            "description": "内存分配率大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
+            "description": "内存分配率大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
+            "description": "内存分配率在指定范围中",
             "items": {
+              "description": "内存分配率在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -71933,22 +72288,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
+            "description": "内存分配率小于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
+            "description": "内存分配率小于或等于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
+            "description": "内存分配率不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
+            "description": "内存分配率不在指定范围中",
             "items": {
+              "description": "内存分配率不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -71956,10 +72316,12 @@
             "type": "array"
           },
           "memory_overcommit_enabled": {
+            "description": "是否启用内存超分",
             "nullable": true,
             "type": "boolean"
           },
           "memory_overcommit_enabled_not": {
+            "description": "是否启用内存超分不等于指定数值",
             "nullable": true,
             "type": "boolean"
           },
@@ -72465,22 +72827,27 @@
             "type": "string"
           },
           "overcommit_active_memory_bytes": {
+            "description": "超分活跃内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_gt": {
+            "description": "超分活跃内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_gte": {
+            "description": "超分活跃内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_in": {
+            "description": "超分活跃内存（字节）在指定范围中",
             "items": {
+              "description": "超分活跃内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -72488,22 +72855,27 @@
             "type": "array"
           },
           "overcommit_active_memory_bytes_lt": {
+            "description": "超分活跃内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_lte": {
+            "description": "超分活跃内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_not": {
+            "description": "超分活跃内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_not_in": {
+            "description": "超分活跃内存（字节）不在指定范围中",
             "items": {
+              "description": "超分活跃内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -72511,22 +72883,27 @@
             "type": "array"
           },
           "overcommit_memory_bytes": {
+            "description": "超分内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_gt": {
+            "description": "超分内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_gte": {
+            "description": "超分内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_in": {
+            "description": "超分内存（字节）在指定范围中",
             "items": {
+              "description": "超分内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -72534,22 +72911,27 @@
             "type": "array"
           },
           "overcommit_memory_bytes_lt": {
+            "description": "超分内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_lte": {
+            "description": "超分内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_not": {
+            "description": "超分内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_not_in": {
+            "description": "超分内存（字节）不在指定范围中",
             "items": {
+              "description": "超分内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -72557,22 +72939,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
+            "description": "内存超分比例",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
+            "description": "内存超分比例大于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
+            "description": "内存超分比例大于或等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
+            "description": "内存超分比例在指定范围中",
             "items": {
+              "description": "内存超分比例在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -72580,22 +72967,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
+            "description": "内存超分比例小于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
+            "description": "内存超分比例小于或等于指定字符",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
+            "description": "内存超分比例不等于指定数值",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
+            "description": "内存超分比例不在指定范围中",
             "items": {
+              "description": "内存超分比例不在指定范围中",
               "format": "double",
               "type": "number"
             },
@@ -73308,22 +73700,27 @@
             "type": "array"
           },
           "reserved_memory_bytes": {
+            "description": "预留内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_gt": {
+            "description": "预留内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_gte": {
+            "description": "预留内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_in": {
+            "description": "预留内存（字节）在指定范围中",
             "items": {
+              "description": "预留内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -73331,22 +73728,27 @@
             "type": "array"
           },
           "reserved_memory_bytes_lt": {
+            "description": "预留内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_lte": {
+            "description": "预留内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_not": {
+            "description": "预留内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_not_in": {
+            "description": "预留内存（字节）不在指定范围中",
             "items": {
+              "description": "预留内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -73354,22 +73756,27 @@
             "type": "array"
           },
           "running_pause_overcommit_memory_bytes": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_gt": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_gte": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_in": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）在指定范围中",
             "items": {
+              "description": "运行及暂停状态虚拟机的超分内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -73377,22 +73784,27 @@
             "type": "array"
           },
           "running_pause_overcommit_memory_bytes_lt": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_lte": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_not": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_not_in": {
+            "description": "运行及暂停状态虚拟机的超分内存（字节）不在指定范围中",
             "items": {
+              "description": "运行及暂停状态虚拟机的超分内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -73400,22 +73812,27 @@
             "type": "array"
           },
           "running_pause_reserved_memory_bytes": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_gt": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_gte": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_in": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）在指定范围中",
             "items": {
+              "description": "运行及暂停状态虚拟机的预留内存（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -73423,22 +73840,27 @@
             "type": "array"
           },
           "running_pause_reserved_memory_bytes_lt": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_lte": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_not": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_not_in": {
+            "description": "运行及暂停状态虚拟机的预留内存（字节）不在指定范围中",
             "items": {
+              "description": "运行及暂停状态虚拟机的预留内存（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -74522,22 +74944,27 @@
             "type": "array"
           },
           "total_physical_memory_bytes": {
+            "description": "物理内存总量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_gt": {
+            "description": "物理内存总量（字节）大于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_gte": {
+            "description": "物理内存总量（字节）大于或等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_in": {
+            "description": "物理内存总量（字节）在指定范围中",
             "items": {
+              "description": "物理内存总量（字节）在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -74545,22 +74972,27 @@
             "type": "array"
           },
           "total_physical_memory_bytes_lt": {
+            "description": "物理内存总量（字节）小于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_lte": {
+            "description": "物理内存总量（字节）小于或等于指定字符",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_not": {
+            "description": "物理内存总量（字节）不等于指定数值",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_not_in": {
+            "description": "物理内存总量（字节）不在指定范围中",
             "items": {
+              "description": "物理内存总量（字节）不在指定范围中",
               "format": "int64",
               "type": "integer"
             },
@@ -75234,11 +75666,11 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type for datastore volumes. Defaults to thin."
+            "description": "置备策略"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
@@ -87678,6 +88110,7 @@
         "additionalProperties": false,
         "properties": {
           "bundle_type": {
+            "description": "许可证包类型",
             "nullable": true,
             "type": "string"
           },
@@ -87838,64 +88271,80 @@
             "type": "array"
           },
           "bundle_type": {
+            "description": "许可证包类型",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_contains": {
+            "description": "许可证包类型包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_ends_with": {
+            "description": "许可证包类型以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_gt": {
+            "description": "许可证包类型大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_gte": {
+            "description": "许可证包类型大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_in": {
+            "description": "许可证包类型在指定范围中",
             "items": {
+              "description": "许可证包类型在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "bundle_type_lt": {
+            "description": "许可证包类型小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_lte": {
+            "description": "许可证包类型小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not": {
+            "description": "许可证包类型不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_contains": {
+            "description": "许可证包类型不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_ends_with": {
+            "description": "许可证包类型不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_in": {
+            "description": "许可证包类型不在指定范围中",
             "items": {
+              "description": "许可证包类型不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "bundle_type_not_starts_with": {
+            "description": "许可证包类型不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_starts_with": {
+            "description": "许可证包类型以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -90926,6 +91375,7 @@
             "type": "string"
           },
           "_adapter": {
+            "description": "适配器",
             "nullable": true,
             "type": "string"
           },
@@ -90942,6 +91392,7 @@
             "type": "string"
           },
           "_datastore_id": {
+            "description": "数据存储 ID",
             "nullable": true,
             "type": "string"
           },
@@ -90958,6 +91409,7 @@
             "type": "string"
           },
           "_host_id": {
+            "description": "主机 ID",
             "nullable": true,
             "type": "string"
           },
@@ -90990,6 +91442,7 @@
             "type": "string"
           },
           "_volume_id": {
+            "description": "虚拟卷 ID",
             "nullable": true,
             "type": "string"
           },
@@ -91002,10 +91455,12 @@
             "type": "string"
           },
           "adapter_type": {
+            "description": "适配器类型",
             "nullable": true,
             "type": "string"
           },
           "identifier": {
+            "description": "标识符",
             "nullable": true,
             "type": "string"
           },
@@ -91209,7 +91664,7 @@
           },
           "migrate_mode": {
             "$ref": "#/components/schemas/MigrateMode",
-            "description": "Omitted means migrating both compute resources and storage."
+            "description": "迁移模式"
           },
           "migrate_type": {
             "$ref": "#/components/schemas/MigrateType",
@@ -91229,7 +91684,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Target datastore provision for live migration; cold storage migration preserves the source provision."
+            "description": "置备策略"
           },
           "remove_unmovable_devices": {
             "description": "移除设备",
@@ -91386,7 +91841,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vm_volume": {
             "description": "关联虚拟卷",
@@ -91425,7 +91880,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "Provisioning type for imported datastore volumes."
+                "description": "虚拟卷置备策略"
               },
               "resident_in_cache": {
                 "type": "boolean"
@@ -94114,6 +94569,7 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "nullable": true,
             "type": "string"
           },
@@ -94505,15 +94961,18 @@
         "additionalProperties": false,
         "properties": {
           "datastore_capacity_bytes": {
+            "description": "数据存储容量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "description": {
+            "description": "描述",
             "nullable": true,
             "type": "string"
           },
           "free_bytes": {
+            "description": "可用空间（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -94523,6 +94982,7 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
@@ -94530,12 +94990,15 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/DatastoreStatus"
+            "$ref": "#/components/schemas/DatastoreStatus",
+            "description": "数据存储状态"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageProtocol"
+            "$ref": "#/components/schemas/StorageProtocol",
+            "description": "存储协议类型"
           },
           "used_bytes": {
+            "description": "已用空间（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -94554,14 +95017,16 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "数据存储"
           },
           "id": {
             "description": "唯一标识",
             "type": "string"
           },
           "state": {
-            "$ref": "#/components/schemas/DatastoreMountState"
+            "$ref": "#/components/schemas/DatastoreMountState",
+            "description": "状态"
           }
         },
         "required": [
@@ -94796,26 +95261,32 @@
         "additionalProperties": false,
         "properties": {
           "async_replication": {
+            "description": "异步复制",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "备份",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "品牌",
             "nullable": true,
             "type": "string"
           },
           "dfw": {
+            "description": "分布式防火墙",
             "nullable": true,
             "type": "string"
           },
           "external_storage": {
+            "description": "外部存储",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "文件存储",
             "nullable": true,
             "type": "string"
           },
@@ -94824,34 +95295,42 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes 裸金属",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes 服务",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "负载均衡",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "许可证数据",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "许可证签名",
             "nullable": true,
             "type": "string"
           },
           "sync_replication": {
+            "description": "同步复制",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "流量可视化",
             "nullable": true,
             "type": "string"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           }
@@ -96679,7 +97158,8 @@
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/ReplicationObjectType"
+            "$ref": "#/components/schemas/ReplicationObjectType",
+            "description": "复制对象类型"
           },
           "zbs_volume_id": {
             "description": "复制卷 UUID",
@@ -97211,10 +97691,11 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedDatastore"
+                "$ref": "#/components/schemas/NestedDatastore",
+                "description": "数据存储"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.datastore",
+            "description": "数据存储",
             "nullable": true,
             "title": "NestedDatastore"
           },
@@ -97223,25 +97704,28 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "storage_cluster": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedCluster"
+                "$ref": "#/components/schemas/NestedCluster",
+                "description": "存储集群"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.storage_cluster",
+            "description": "存储集群",
             "nullable": true,
             "title": "NestedCluster"
           },
           "type": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+                "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+                "description": "存储集群配置类型"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.type",
+            "description": "存储集群配置类型",
             "nullable": true,
             "title": "StorageClusterConfigStorageType"
           }
@@ -98303,6 +98787,7 @@
         "additionalProperties": false,
         "properties": {
           "cidr": {
+            "description": "CIDR 块",
             "type": "string"
           },
           "id": {
@@ -98395,6 +98880,7 @@
             "type": "string"
           },
           "path": {
+            "description": "路径",
             "nullable": true,
             "type": "string"
           }
@@ -98497,16 +98983,19 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedDatastore"
+                "$ref": "#/components/schemas/NestedDatastore",
+                "description": "数据存储"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.datastore",
+            "description": "数据存储",
             "nullable": true,
             "title": "NestedDatastore"
           },
           "disks": {
+            "description": "磁盘",
             "items": {
-              "$ref": "#/components/schemas/NestedVmTemplateConfigDisk"
+              "$ref": "#/components/schemas/NestedVmTemplateConfigDisk",
+              "description": "磁盘"
             },
             "nullable": true,
             "type": "array"
@@ -98514,10 +99003,11 @@
           "entityAsyncStatus": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
+                "$ref": "#/components/schemas/EntityAsyncStatus",
+                "description": "实体异步状态"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.entityAsyncStatus",
+            "description": "实体异步状态",
             "nullable": true,
             "title": "EntityAsyncStatus"
           },
@@ -98526,24 +99016,28 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "path": {
+            "description": "路径",
             "nullable": true,
             "type": "string"
           },
           "storage_cluster": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedCluster"
+                "$ref": "#/components/schemas/NestedCluster",
+                "description": "存储集群"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.storage_cluster",
+            "description": "存储集群",
             "nullable": true,
             "title": "NestedCluster"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+            "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+            "description": "存储集群配置类型"
           }
         },
         "required": [
@@ -98557,13 +99051,16 @@
         "additionalProperties": false,
         "properties": {
           "boot": {
+            "description": "启动顺序",
             "format": "int32",
             "type": "integer"
           },
           "bus": {
-            "$ref": "#/components/schemas/Bus"
+            "$ref": "#/components/schemas/Bus",
+            "description": "总线"
           },
           "disk_name": {
+            "description": "磁盘名称",
             "nullable": true,
             "type": "string"
           },
@@ -98572,29 +99069,34 @@
             "type": "string"
           },
           "index": {
+            "description": "磁盘序号",
             "format": "int32",
             "type": "integer"
           },
           "size": {
+            "description": "磁盘容量（字节）",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "type": {
-            "$ref": "#/components/schemas/VmDiskType"
+            "$ref": "#/components/schemas/VmDiskType",
+            "description": "类型"
           },
           "vm_volume_template_config_file": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedVmVolumeTemplateConfigFile"
+                "$ref": "#/components/schemas/NestedVmVolumeTemplateConfigFile",
+                "description": "虚拟卷模板配置文件"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfigDisk.vm_volume_template_config_file",
+            "description": "虚拟卷模板配置文件",
             "nullable": true,
             "title": "NestedVmVolumeTemplateConfigFile"
           },
           "volume_storage_type": {
-            "$ref": "#/components/schemas/VmTemplateConfigDiskVolumeStorageType"
+            "$ref": "#/components/schemas/VmTemplateConfigDiskVolumeStorageType",
+            "description": "卷存储类型"
           }
         },
         "required": [
@@ -98647,13 +99149,15 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "数据存储"
           },
           "id": {
             "description": "唯一标识",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
@@ -98661,20 +99165,25 @@
             "type": "string"
           },
           "path": {
+            "description": "文件路径",
             "type": "string"
           },
           "raw_files": {
+            "description": "原始文件",
             "items": {
-              "$ref": "#/components/schemas/NestedVmVolumeTemplateRawFile"
+              "$ref": "#/components/schemas/NestedVmVolumeTemplateRawFile",
+              "description": "原始文件"
             },
             "nullable": true,
             "type": "array"
           },
           "size": {
+            "description": "文件大小（字节）",
             "format": "int64",
             "type": "integer"
           },
           "vcfs_version": {
+            "description": "VCFS 版本",
             "type": "string"
           }
         },
@@ -98693,7 +99202,8 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "数据存储"
           },
           "id": {
             "description": "唯一标识",
@@ -98704,6 +99214,7 @@
             "type": "string"
           },
           "path": {
+            "description": "文件路径",
             "type": "string"
           }
         },
@@ -104159,15 +104670,19 @@
       "NtpServiceInfo": {
         "properties": {
           "check_detail": {
+            "description": "检查详情",
             "type": "string"
           },
           "check_state": {
+            "description": "检查状态",
             "type": "string"
           },
           "ip_addr": {
+            "description": "IP 地址",
             "type": "string"
           },
           "source": {
+            "description": "来源",
             "type": "string"
           }
         },
@@ -137387,11 +137902,11 @@
       "StorageConfig": {
         "properties": {
           "datastore_id": {
-            "description": "VCFS Datastore.id",
+            "description": "数据存储 ID",
             "type": "string"
           },
           "storage_cluster_id": {
-            "description": "Clustered-storage Cluster.id",
+            "description": "存储集群 ID",
             "type": "string"
           }
         },
@@ -166198,7 +166713,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           }
         },
         "required": [
@@ -166327,7 +166842,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vcpu": {
             "description": "vCPU",
@@ -166633,7 +167148,8 @@
             "description": "决定是否在创建完成后立即开机新虚拟机，若置空则不开机。"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "存储配置"
           },
           "template_id": {
             "description": "指定内容库模板 ID",
@@ -166914,7 +167430,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vcpu": {
             "description": "vCPU",
@@ -169296,18 +169812,21 @@
           "parent": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedVmFolder"
+                "$ref": "#/components/schemas/NestedVmFolder",
+                "description": "父文件夹"
               }
             ],
-            "description": "schemas.VmFolder.parent",
+            "description": "父文件夹",
             "nullable": true,
             "title": "NestedVmFolder"
           },
           "path": {
+            "description": "路径",
             "nullable": true,
             "type": "string"
           },
           "total_vm_num": {
+            "description": "虚拟机总数",
             "format": "int32",
             "nullable": true,
             "type": "integer"
@@ -169358,6 +169877,7 @@
             "type": "string"
           },
           "parent_id": {
+            "description": "父文件夹 ID",
             "type": "string"
           }
         },
@@ -169406,6 +169926,7 @@
                 "type": "string"
               },
               "parent_id": {
+                "description": "父文件夹 ID",
                 "nullable": true,
                 "type": "string"
               }
@@ -169700,92 +170221,114 @@
           "parent": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmFolderWhereInput"
+                "$ref": "#/components/schemas/VmFolderWhereInput",
+                "description": "父文件夹"
               }
             ],
-            "description": "schemas.VmFolderWhereInput.parent",
+            "description": "父文件夹",
             "nullable": true,
             "title": "VmFolderWhereInput"
           },
           "path": {
+            "description": "路径",
             "nullable": true,
             "type": "string"
           },
           "path_contains": {
+            "description": "路径包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_ends_with": {
+            "description": "路径以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "path_gt": {
+            "description": "路径大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_gte": {
+            "description": "路径大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_in": {
+            "description": "路径在指定范围中",
             "items": {
+              "description": "路径在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_lt": {
+            "description": "路径小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_lte": {
+            "description": "路径小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_not": {
+            "description": "路径不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "path_not_contains": {
+            "description": "路径不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "path_not_ends_with": {
+            "description": "路径不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "path_not_in": {
+            "description": "路径不在指定范围中",
             "items": {
+              "description": "路径不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_not_starts_with": {
+            "description": "路径不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "path_starts_with": {
+            "description": "路径以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "total_vm_num": {
+            "description": "虚拟机总数",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_gt": {
+            "description": "虚拟机总数大于指定数值",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_gte": {
+            "description": "虚拟机总数大于或等于指定数值",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_in": {
+            "description": "虚拟机总数在指定范围中",
             "items": {
+              "description": "虚拟机总数在指定范围中",
               "format": "int32",
               "type": "integer"
             },
@@ -169793,22 +170336,27 @@
             "type": "array"
           },
           "total_vm_num_lt": {
+            "description": "虚拟机总数小于指定字符",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_lte": {
+            "description": "虚拟机总数小于或等于指定字符",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_not": {
+            "description": "虚拟机总数不等于指定数值",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_not_in": {
+            "description": "虚拟机总数不在指定范围中",
             "items": {
+              "description": "虚拟机总数不在指定范围中",
               "format": "int32",
               "type": "integer"
             },
@@ -170269,7 +170817,8 @@
             "description": "虚拟机开机时的状态"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "存储配置"
           },
           "upload_tasks": {
             "description": "指定上传 vmdk_file 的 uploadTask 的 id",
@@ -170576,7 +171125,7 @@
               },
               "storage_config": {
                 "$ref": "#/components/schemas/StorageConfig",
-                "description": "Required for ELF targets when migrating storage."
+                "description": "存储配置"
               },
               "vm_config": {
                 "$ref": "#/components/schemas/MigrateVmConfig",
@@ -173407,7 +173956,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           },
           "vcpu": {
             "description": "vCPU",
@@ -180076,6 +180625,7 @@
       "VmUpdateSyncTimeOnResumeParamsData": {
         "properties": {
           "sync_vm_time_on_resume": {
+            "description": "恢复运行时同步虚拟机时间",
             "type": "boolean"
           }
         },
@@ -180425,6 +180975,7 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "置备策略",
             "nullable": true,
             "type": "string"
           },
@@ -180444,10 +180995,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedStorageClusterConfig"
+                "$ref": "#/components/schemas/NestedStorageClusterConfig",
+                "description": "存储集群配置"
               }
             ],
-            "description": "schemas.VmVolume.storage_cluster_config",
+            "description": "存储集群配置",
             "nullable": true,
             "title": "NestedStorageClusterConfig"
           },
@@ -180558,7 +181110,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type when associated storage is a datastore."
+            "description": "置备策略"
           },
           "resident_in_cache": {
             "type": "boolean"
@@ -180578,7 +181130,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "存储配置"
           }
         },
         "required": [
@@ -180817,6 +181369,7 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "置备策略",
             "nullable": true,
             "type": "string"
           },
@@ -180839,10 +181392,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedStorageClusterConfig"
+                "$ref": "#/components/schemas/NestedStorageClusterConfig",
+                "description": "存储集群配置"
               }
             ],
-            "description": "schemas.VmVolumeSnapshot.storage_cluster_config",
+            "description": "存储集群配置",
             "nullable": true,
             "title": "NestedStorageClusterConfig"
           },
@@ -181757,64 +182311,80 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "置备策略",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
+            "description": "置备策略包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
+            "description": "置备策略以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
+            "description": "置备策略大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
+            "description": "置备策略大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
+            "description": "置备策略在指定范围中",
             "items": {
+              "description": "置备策略在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
+            "description": "置备策略小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
+            "description": "置备策略小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
+            "description": "置备策略不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
+            "description": "置备策略不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
+            "description": "置备策略不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
+            "description": "置备策略不在指定范围中",
             "items": {
+              "description": "置备策略不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
+            "description": "置备策略不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
+            "description": "置备策略以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -181941,10 +182511,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigWhereInput"
+                "$ref": "#/components/schemas/StorageClusterConfigWhereInput",
+                "description": "存储集群配置"
               }
             ],
-            "description": "schemas.VmVolumeSnapshotWhereInput.storage_cluster_config",
+            "description": "存储集群配置",
             "nullable": true,
             "title": "StorageClusterConfigWhereInput"
           },
@@ -183897,64 +184468,80 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "置备策略",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
+            "description": "置备策略包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
+            "description": "置备策略以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
+            "description": "置备策略大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
+            "description": "置备策略大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
+            "description": "置备策略在指定范围中",
             "items": {
+              "description": "置备策略在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
+            "description": "置备策略小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
+            "description": "置备策略小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
+            "description": "置备策略不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
+            "description": "置备策略不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
+            "description": "置备策略不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
+            "description": "置备策略不在指定范围中",
             "items": {
+              "description": "置备策略不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
+            "description": "置备策略不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
+            "description": "置备策略以指定字符开始",
             "nullable": true,
             "type": "string"
           },
@@ -184035,10 +184622,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigWhereInput"
+                "$ref": "#/components/schemas/StorageClusterConfigWhereInput",
+                "description": "存储集群配置"
               }
             ],
-            "description": "schemas.VmVolumeWhereInput.storage_cluster_config",
+            "description": "存储集群配置",
             "nullable": true,
             "title": "StorageClusterConfigWhereInput"
           },
@@ -187653,7 +188241,8 @@
             "type": "boolean"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "存储配置"
           }
         },
         "required": [
@@ -187697,10 +188286,12 @@
             "description": "存储策略"
           },
           "provision_policy": {
-            "$ref": "#/components/schemas/VmVolumeProvisionPolicy"
+            "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
+            "description": "置备策略"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "存储配置"
           },
           "vmdk_name": {
             "description": "VMDK 名称",
@@ -219449,7 +220040,7 @@
     },
     "/get-auth-configs": {
       "post": {
-        "description": "",
+        "description": "获取身份认证配置列表，可按认证类型筛选。",
         "operationId": "GetAuthConfigs",
         "parameters": [
           {
@@ -219560,7 +220151,7 @@
           }
         },
         "security": [],
-        "summary": "",
+        "summary": "获取认证配置",
         "tags": [
           "UserManagement"
         ],
@@ -223755,7 +224346,7 @@
     },
     "/get-cluster-ntp-services": {
       "post": {
-        "description": "",
+        "description": "获取指定集群的 NTP 服务配置及时间同步状态信息。",
         "operationId": "GetClusterNtpServices",
         "parameters": [
           {
@@ -223866,7 +224457,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "获取集群 NTP 服务",
         "tags": [
           "ClusterManagement"
         ],
@@ -246892,7 +247483,7 @@
     },
     "/get-v2-everoute-licenses-connection": {
       "post": {
-        "description": "",
+        "description": "获取符合条件的 V2 版本 Everoute 使用许可数量。",
         "operationId": "GetV2EverouteLicensesConnection",
         "parameters": [
           {
@@ -247009,7 +247600,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "获取 V2 版本 Everoute 使用许可数量",
         "tags": [
           "ErManagement"
         ],
@@ -257611,7 +258202,7 @@
     },
     "/import-content-library-image-v2": {
       "post": {
-        "description": "",
+        "description": "将内容库镜像导入到指定集群，支持同时导入多个集群，并返回各集群的上传任务。",
         "operationId": "ImportContentLibraryImageV2",
         "parameters": [
           {
@@ -257731,7 +258322,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "导入内容库镜像（V2）",
         "tags": [
           "SharedManagement"
         ],
@@ -276833,7 +277424,7 @@
     },
     "/update-vm-sync-time-on-resume": {
       "post": {
-        "description": "",
+        "description": "设置虚拟机恢复运行时是否同步虚拟机时间。",
         "operationId": "UpdateVmSyncTimeOnResume",
         "parameters": [
           {
@@ -276955,7 +277546,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "更新虚拟机恢复时的时间同步设置",
         "tags": [
           "VmManagement"
         ],

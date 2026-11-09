@@ -179,43 +179,53 @@
       "AddVmDiskMountNewCreateDisksParams": {
         "properties": {
           "boot": {
+            "description": "Boot order",
             "format": "int32",
             "type": "integer"
           },
           "bus": {
-            "$ref": "#/components/schemas/Bus"
+            "$ref": "#/components/schemas/Bus",
+            "description": "Bus"
           },
           "index": {
+            "description": "Disk index",
             "format": "int32",
             "type": "integer"
           },
           "key": {
+            "description": "Key",
             "format": "int32",
             "type": "integer"
           },
           "max_bandwidth": {
+            "description": "Maximum bandwidth",
             "format": "int64",
             "type": "integer"
           },
           "max_bandwidth_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
+            "$ref": "#/components/schemas/VmDiskIoRestrictType",
+            "description": "Maximum bandwidth limit policy"
           },
           "max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit"
+            "$ref": "#/components/schemas/BPSUnit",
+            "description": "Maximum bandwidth unit"
           },
           "max_iops": {
+            "description": "Maximum IOPS",
             "format": "int64",
             "type": "integer"
           },
           "max_iops_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
+            "$ref": "#/components/schemas/VmDiskIoRestrictType",
+            "description": "Maximum IOPS limit policy"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vm_volume": {
-            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams"
+            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams",
+            "description": "VM volume"
           }
         },
         "required": [
@@ -228,47 +238,58 @@
       "AddVmDiskVmVolumeParams": {
         "properties": {
           "elf_ec_storage_policy": {
+            "description": "Erasure coding storage policy",
             "properties": {
               "ec_k": {
+                "description": "Erasure coding K value",
                 "format": "int32",
                 "type": "integer"
               },
               "ec_m": {
+                "description": "Erasure coding M value",
                 "format": "int32",
                 "type": "integer"
               },
               "thin_provision": {
+                "description": "Whether thin provisioning is used",
                 "type": "boolean"
               }
             },
             "type": "object"
           },
           "elf_replica_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
+            "description": "Replica storage policy"
           },
           "elf_storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "deprecated": true
+            "deprecated": true,
+            "description": "Storage policy"
           },
           "name": {
+            "description": "Disk name",
             "type": "string"
           },
           "path": {
+            "description": "Disk path",
             "type": "string"
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type when associated storage is a datastore."
+            "description": "Provisioning policy"
           },
           "resident_in_cache": {
+            "description": "Resident in cache",
             "type": "boolean"
           },
           "size": {
+            "description": "Size (bytes)",
             "format": "int64",
             "type": "integer"
           },
           "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit"
+            "$ref": "#/components/schemas/ByteUnit",
+            "description": "Size unit"
           }
         },
         "required": [
@@ -4008,10 +4029,12 @@
       "AuthConfig": {
         "properties": {
           "id": {
+            "description": "Authentication configuration ID",
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/AuthStrategyType"
+            "$ref": "#/components/schemas/AuthStrategyType",
+            "description": "Authentication type"
           }
         },
         "required": [
@@ -15889,7 +15912,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "Datastore volumes only. Omitted means inheriting the source policy.\nShared volumes require thick_eager_zeroed."
+                "description": "Provisioning policy"
               }
             },
             "required": [
@@ -17027,6 +17050,7 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
+            "description": "Allocated memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -17327,6 +17351,7 @@
             "type": "integer"
           },
           "memory_allocation_rate": {
+            "description": "Memory allocation rate",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -17412,6 +17437,7 @@
             "type": "number"
           },
           "overcommit_memory_ratio": {
+            "description": "Memory overcommit ratio",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -18749,30 +18775,37 @@
       "ClusterNtpServicesInfo": {
         "properties": {
           "cluster_id": {
+            "description": "Cluster ID",
             "type": "string"
           },
           "cluster_time": {
+            "description": "Cluster time",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_service_time": {
+            "description": "NTP service time",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_services": {
+            "description": "NTP services",
             "items": {
-              "$ref": "#/components/schemas/NtpServiceInfo"
+              "$ref": "#/components/schemas/NtpServiceInfo",
+              "description": "NTP services"
             },
             "nullable": true,
             "type": "array"
           },
           "time_zone": {
+            "description": "Time zone",
             "nullable": true,
             "type": "string"
           },
           "time_zone_name": {
+            "description": "Time zone name",
             "nullable": true,
             "type": "string"
           }
@@ -19572,19 +19605,24 @@
       "ClusterStorageClusterConfig": {
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/ClusterStorageClusterConfigDatastore"
+            "$ref": "#/components/schemas/ClusterStorageClusterConfigDatastore",
+            "description": "Datastore"
           },
           "id": {
+            "description": "Unique identifier",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "storage_cluster": {
-            "$ref": "#/components/schemas/ClusterStorageInfo"
+            "$ref": "#/components/schemas/ClusterStorageInfo",
+            "description": "Storage cluster"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+            "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+            "description": "Storage cluster configuration type"
           }
         },
         "required": [
@@ -19596,35 +19634,41 @@
       "ClusterStorageClusterConfigDatastore": {
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "Total physical capacity in bytes.",
+            "description": "Datastore capacity (bytes)",
             "format": "int64",
             "type": "integer"
           },
           "description": {
+            "description": "Description",
             "type": "string"
           },
           "free_bytes": {
-            "description": "Available capacity in bytes.",
+            "description": "Free space (bytes)",
             "format": "int64",
             "type": "integer"
           },
           "id": {
+            "description": "Unique identifier",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
+            "description": "Name",
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/DatastoreStatus"
+            "$ref": "#/components/schemas/DatastoreStatus",
+            "description": "Datastore status"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageProtocol"
+            "$ref": "#/components/schemas/StorageProtocol",
+            "description": "Storage protocol type"
           },
           "used_bytes": {
-            "description": "Used capacity in bytes.",
+            "description": "Used space (bytes)",
             "format": "int64",
             "type": "integer"
           }
@@ -19664,8 +19708,10 @@
             "type": "array"
           },
           "storage_cluster_configs": {
+            "description": "Storage cluster configurations",
             "items": {
-              "$ref": "#/components/schemas/ClusterStorageClusterConfig"
+              "$ref": "#/components/schemas/ClusterStorageClusterConfig",
+              "description": "Storage cluster configurations"
             },
             "type": "array"
           },
@@ -20672,22 +20718,27 @@
             "type": "boolean"
           },
           "allocated_memory_bytes": {
+            "description": "Allocated memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
+            "description": "Allocated memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
+            "description": "Allocated memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
+            "description": "Allocated memory (bytes) in given range",
             "items": {
+              "description": "Allocated memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -20695,22 +20746,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
+            "description": "Allocated memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
+            "description": "Allocated memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
+            "description": "Allocated memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
+            "description": "Allocated memory (bytes) not in given range",
             "items": {
+              "description": "Allocated memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -22878,22 +22934,27 @@
             "type": "array"
           },
           "memory_allocation_rate": {
+            "description": "Memory allocation rate",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
+            "description": "Memory allocation rate greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
+            "description": "Memory allocation rate greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
+            "description": "Memory allocation rate in given range",
             "items": {
+              "description": "Memory allocation rate in given range",
               "format": "double",
               "type": "number"
             },
@@ -22901,22 +22962,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
+            "description": "Memory allocation rate less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
+            "description": "Memory allocation rate less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
+            "description": "Memory allocation rate not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
+            "description": "Memory allocation rate not in given range",
             "items": {
+              "description": "Memory allocation rate not in given range",
               "format": "double",
               "type": "number"
             },
@@ -23394,22 +23460,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
+            "description": "Memory overcommit ratio",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
+            "description": "Memory overcommit ratio greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
+            "description": "Memory overcommit ratio greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
+            "description": "Memory overcommit ratio in given range",
             "items": {
+              "description": "Memory overcommit ratio in given range",
               "format": "double",
               "type": "number"
             },
@@ -23417,22 +23488,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
+            "description": "Memory overcommit ratio less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
+            "description": "Memory overcommit ratio less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
+            "description": "Memory overcommit ratio not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
+            "description": "Memory overcommit ratio not in given range",
             "items": {
+              "description": "Memory overcommit ratio not in given range",
               "format": "double",
               "type": "number"
             },
@@ -27121,8 +27197,10 @@
             "type": "string"
           },
           "datastores": {
+            "description": "Datastores",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastore"
+              "$ref": "#/components/schemas/NestedDatastore",
+              "description": "Datastores"
             },
             "nullable": true,
             "type": "array"
@@ -27263,10 +27341,11 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Datastore"
               }
             ],
-            "description": "schemas.ContentLibraryImageImportData.datastore",
+            "description": "Datastore",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -27344,10 +27423,11 @@
           "datastores": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Datastores"
               }
             ],
-            "description": "schemas.ContentLibraryImageUpdationClusterParamsData.datastores",
+            "description": "Datastores",
             "nullable": true,
             "title": "DatastoreWhereInput"
           }
@@ -27378,10 +27458,11 @@
           "datastores": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Datastores"
               }
             ],
-            "description": "schemas.ContentLibraryImageUpdationParamsData.datastores",
+            "description": "Datastores",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -27510,30 +27591,33 @@
           "datastores_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where all (\"every\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_every",
+            "description": "Returns all records where all (\"every\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where zero related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_none",
+            "description": "Returns all records where zero related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where one or more (\"some\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryImageWhereInput.datastores_some",
+            "description": "Returns all records where one or more (\"some\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -28215,8 +28299,10 @@
             "type": "string"
           },
           "datastores": {
+            "description": "Datastores",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastore"
+              "$ref": "#/components/schemas/NestedDatastore",
+              "description": "Datastores"
             },
             "nullable": true,
             "type": "array"
@@ -28379,8 +28465,10 @@
             "type": "array"
           },
           "vm_template_configs": {
+            "description": "VM template configurations",
             "items": {
-              "$ref": "#/components/schemas/NestedVmTemplateConfig"
+              "$ref": "#/components/schemas/NestedVmTemplateConfig",
+              "description": "VM template configurations"
             },
             "nullable": true,
             "type": "array"
@@ -28462,9 +28550,10 @@
             "type": "string"
           },
           "storage_configs": {
-            "description": "Template file placements. Provide nonempty storage_configs or clusters.",
+            "description": "Storage configurations",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateStoragePlacement"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateStoragePlacement",
+              "description": "Storage configurations"
             },
             "type": "array"
           },
@@ -28547,11 +28636,12 @@
             "description": "Parsed OVF package information, which can be obtained via the parse-ovf API"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "Storage configuration"
           },
           "template_architecture": {
             "$ref": "#/components/schemas/Architecture",
-            "description": "Required for datastore and ZBS template imports."
+            "description": "Template architecture"
           },
           "upload_tasks": {
             "description": "Upload task",
@@ -28678,7 +28768,7 @@
         "description": "Storage target for a template file. Currently only VCFS datastores are supported.",
         "properties": {
           "datastore_id": {
-            "description": "VCFS Datastore.id. Clustered-storage targets can be added to this type later.",
+            "description": "Datastore ID",
             "type": "string"
           }
         },
@@ -28690,11 +28780,14 @@
       "ContentLibraryVmTemplateStoragePlacement": {
         "properties": {
           "config_file_storage_config": {
-            "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig"
+            "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig",
+            "description": "Configuration file storage configuration"
           },
           "volume_storage_configs": {
+            "description": "Volume storage configurations",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateVolumeStoragePlacement"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateVolumeStoragePlacement",
+              "description": "Volume storage configurations"
             },
             "type": "array"
           }
@@ -28777,14 +28870,15 @@
       "ContentLibraryVmTemplateVolumeStoragePlacement": {
         "properties": {
           "raw_file_storage_configs": {
-            "description": "Storage targets for this volume's raw file copies.",
+            "description": "Raw file storage configurations",
             "items": {
-              "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig"
+              "$ref": "#/components/schemas/ContentLibraryVmTemplateStorageConfig",
+              "description": "Raw file storage configurations"
             },
             "type": "array"
           },
           "volume_id": {
-            "description": "Database ID of a volume belonging to the source VM.",
+            "description": "Volume ID",
             "type": "string"
           }
         },
@@ -29076,30 +29170,33 @@
           "datastores_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where all (\"every\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_every",
+            "description": "Returns all records where all (\"every\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where zero related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_none",
+            "description": "Returns all records where zero related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
           "datastores_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreWhereInput"
+                "$ref": "#/components/schemas/DatastoreWhereInput",
+                "description": "Returns all records where one or more (\"some\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.datastores_some",
+            "description": "Returns all records where one or more (\"some\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreWhereInput"
           },
@@ -30053,30 +30150,33 @@
           "vm_template_configs_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "Returns all records where all (\"every\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_every",
+            "description": "Returns all records where all (\"every\") related records match filtering criteria.",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
           "vm_template_configs_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "Returns all records where zero related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_none",
+            "description": "Returns all records where zero related records match filtering criteria.",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
           "vm_template_configs_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmTemplateConfigWhereInput"
+                "$ref": "#/components/schemas/VmTemplateConfigWhereInput",
+                "description": "Returns all records where one or more (\"some\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.ContentLibraryVmTemplateWhereInput.vm_template_configs_some",
+            "description": "Returns all records where one or more (\"some\") related records match filtering criteria.",
             "nullable": true,
             "title": "VmTemplateConfigWhereInput"
           },
@@ -34112,7 +34212,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vm_volume_id": {
             "description": "Unique identifier of the virtual volume",
@@ -36987,14 +37087,17 @@
         "additionalProperties": false,
         "properties": {
           "async_replication": {
+            "description": "Asynchronous replication",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "Backup",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "Brand",
             "nullable": true,
             "type": "string"
           },
@@ -37012,6 +37115,7 @@
             "type": "string"
           },
           "dfw": {
+            "description": "Distributed firewall",
             "nullable": true,
             "type": "string"
           },
@@ -37023,10 +37127,12 @@
             "type": "string"
           },
           "external_storage": {
+            "description": "External storage",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "File storage",
             "nullable": true,
             "type": "string"
           },
@@ -37042,22 +37148,27 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes bare metal",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes service",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "Load balancing",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "License payload",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "License signature",
             "nullable": true,
             "type": "string"
           },
@@ -37102,10 +37213,12 @@
             "type": "string"
           },
           "sync_replication": {
+            "description": "Synchronous replication",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "Traffic visualization",
             "nullable": true,
             "type": "string"
           },
@@ -37118,6 +37231,7 @@
             "type": "integer"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           }
@@ -37245,188 +37359,236 @@
             "type": "array"
           },
           "async_replication": {
+            "description": "Asynchronous replication",
             "nullable": true,
             "type": "string"
           },
           "async_replication_contains": {
+            "description": "Asynchronous replication contains given string",
             "nullable": true,
             "type": "string"
           },
           "async_replication_ends_with": {
+            "description": "Asynchronous replication ends with given string",
             "nullable": true,
             "type": "string"
           },
           "async_replication_gt": {
+            "description": "Asynchronous replication greater than given data",
             "nullable": true,
             "type": "string"
           },
           "async_replication_gte": {
+            "description": "Asynchronous replication greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "async_replication_in": {
+            "description": "Asynchronous replication in given range",
             "items": {
+              "description": "Asynchronous replication in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "async_replication_lt": {
+            "description": "Asynchronous replication less than given data",
             "nullable": true,
             "type": "string"
           },
           "async_replication_lte": {
+            "description": "Asynchronous replication less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not": {
+            "description": "Asynchronous replication not equal given data",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_contains": {
+            "description": "Asynchronous replication not contains given string",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_ends_with": {
+            "description": "Asynchronous replication not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "async_replication_not_in": {
+            "description": "Asynchronous replication not in given range",
             "items": {
+              "description": "Asynchronous replication not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "async_replication_not_starts_with": {
+            "description": "Asynchronous replication not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "async_replication_starts_with": {
+            "description": "Asynchronous replication starts with given string",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "Backup",
             "nullable": true,
             "type": "string"
           },
           "backup_contains": {
+            "description": "Backup contains given string",
             "nullable": true,
             "type": "string"
           },
           "backup_ends_with": {
+            "description": "Backup ends with given string",
             "nullable": true,
             "type": "string"
           },
           "backup_gt": {
+            "description": "Backup greater than given data",
             "nullable": true,
             "type": "string"
           },
           "backup_gte": {
+            "description": "Backup greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "backup_in": {
+            "description": "Backup in given range",
             "items": {
+              "description": "Backup in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "backup_lt": {
+            "description": "Backup less than given data",
             "nullable": true,
             "type": "string"
           },
           "backup_lte": {
+            "description": "Backup less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "backup_not": {
+            "description": "Backup not equal given data",
             "nullable": true,
             "type": "string"
           },
           "backup_not_contains": {
+            "description": "Backup not contains given string",
             "nullable": true,
             "type": "string"
           },
           "backup_not_ends_with": {
+            "description": "Backup not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "backup_not_in": {
+            "description": "Backup not in given range",
             "items": {
+              "description": "Backup not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "backup_not_starts_with": {
+            "description": "Backup not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "backup_starts_with": {
+            "description": "Backup starts with given string",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "Brand",
             "nullable": true,
             "type": "string"
           },
           "brand_contains": {
+            "description": "Brand contains given string",
             "nullable": true,
             "type": "string"
           },
           "brand_ends_with": {
+            "description": "Brand ends with given string",
             "nullable": true,
             "type": "string"
           },
           "brand_gt": {
+            "description": "Brand greater than given data",
             "nullable": true,
             "type": "string"
           },
           "brand_gte": {
+            "description": "Brand greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "brand_in": {
+            "description": "Brand in given range",
             "items": {
+              "description": "Brand in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "brand_lt": {
+            "description": "Brand less than given data",
             "nullable": true,
             "type": "string"
           },
           "brand_lte": {
+            "description": "Brand less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "brand_not": {
+            "description": "Brand not equal given data",
             "nullable": true,
             "type": "string"
           },
           "brand_not_contains": {
+            "description": "Brand not contains given string",
             "nullable": true,
             "type": "string"
           },
           "brand_not_ends_with": {
+            "description": "Brand not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "brand_not_in": {
+            "description": "Brand not in given range",
             "items": {
+              "description": "Brand not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "brand_not_starts_with": {
+            "description": "Brand not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "brand_starts_with": {
+            "description": "Brand starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -37503,64 +37665,80 @@
             "type": "string"
           },
           "dfw": {
+            "description": "Distributed firewall",
             "nullable": true,
             "type": "string"
           },
           "dfw_contains": {
+            "description": "Distributed firewall contains given string",
             "nullable": true,
             "type": "string"
           },
           "dfw_ends_with": {
+            "description": "Distributed firewall ends with given string",
             "nullable": true,
             "type": "string"
           },
           "dfw_gt": {
+            "description": "Distributed firewall greater than given data",
             "nullable": true,
             "type": "string"
           },
           "dfw_gte": {
+            "description": "Distributed firewall greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "dfw_in": {
+            "description": "Distributed firewall in given range",
             "items": {
+              "description": "Distributed firewall in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "dfw_lt": {
+            "description": "Distributed firewall less than given data",
             "nullable": true,
             "type": "string"
           },
           "dfw_lte": {
+            "description": "Distributed firewall less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "dfw_not": {
+            "description": "Distributed firewall not equal given data",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_contains": {
+            "description": "Distributed firewall not contains given string",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_ends_with": {
+            "description": "Distributed firewall not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "dfw_not_in": {
+            "description": "Distributed firewall not in given range",
             "items": {
+              "description": "Distributed firewall not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "dfw_not_starts_with": {
+            "description": "Distributed firewall not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "dfw_starts_with": {
+            "description": "Distributed firewall starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -37637,72 +37815,90 @@
             "type": "array"
           },
           "external_storage": {
+            "description": "External storage",
             "nullable": true,
             "type": "boolean"
           },
           "external_storage_not": {
+            "description": "External storage not equal given data",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "File storage",
             "nullable": true,
             "type": "string"
           },
           "file_storage_contains": {
+            "description": "File storage contains given string",
             "nullable": true,
             "type": "string"
           },
           "file_storage_ends_with": {
+            "description": "File storage ends with given string",
             "nullable": true,
             "type": "string"
           },
           "file_storage_gt": {
+            "description": "File storage greater than given data",
             "nullable": true,
             "type": "string"
           },
           "file_storage_gte": {
+            "description": "File storage greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "file_storage_in": {
+            "description": "File storage in given range",
             "items": {
+              "description": "File storage in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "file_storage_lt": {
+            "description": "File storage less than given data",
             "nullable": true,
             "type": "string"
           },
           "file_storage_lte": {
+            "description": "File storage less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not": {
+            "description": "File storage not equal given data",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_contains": {
+            "description": "File storage not contains given string",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_ends_with": {
+            "description": "File storage not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "file_storage_not_in": {
+            "description": "File storage not in given range",
             "items": {
+              "description": "File storage not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "file_storage_not_starts_with": {
+            "description": "File storage not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "file_storage_starts_with": {
+            "description": "File storage starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -37785,312 +37981,392 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes bare metal",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_contains": {
+            "description": "Kubernetes bare metal contains given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_ends_with": {
+            "description": "Kubernetes bare metal ends with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_gt": {
+            "description": "Kubernetes bare metal greater than given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_gte": {
+            "description": "Kubernetes bare metal greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_in": {
+            "description": "Kubernetes bare metal in given range",
             "items": {
+              "description": "Kubernetes bare metal in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_bare_metal_lt": {
+            "description": "Kubernetes bare metal less than given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_lte": {
+            "description": "Kubernetes bare metal less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not": {
+            "description": "Kubernetes bare metal not equal given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_contains": {
+            "description": "Kubernetes bare metal not contains given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_ends_with": {
+            "description": "Kubernetes bare metal not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_not_in": {
+            "description": "Kubernetes bare metal not in given range",
             "items": {
+              "description": "Kubernetes bare metal not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_bare_metal_not_starts_with": {
+            "description": "Kubernetes bare metal not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_bare_metal_starts_with": {
+            "description": "Kubernetes bare metal starts with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes service",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_contains": {
+            "description": "Kubernetes service contains given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_ends_with": {
+            "description": "Kubernetes service ends with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_gt": {
+            "description": "Kubernetes service greater than given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_gte": {
+            "description": "Kubernetes service greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_in": {
+            "description": "Kubernetes service in given range",
             "items": {
+              "description": "Kubernetes service in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_service_lt": {
+            "description": "Kubernetes service less than given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_lte": {
+            "description": "Kubernetes service less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not": {
+            "description": "Kubernetes service not equal given data",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_contains": {
+            "description": "Kubernetes service not contains given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_ends_with": {
+            "description": "Kubernetes service not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_not_in": {
+            "description": "Kubernetes service not in given range",
             "items": {
+              "description": "Kubernetes service not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "k8s_service_not_starts_with": {
+            "description": "Kubernetes service not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "k8s_service_starts_with": {
+            "description": "Kubernetes service starts with given string",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "Load balancing",
             "nullable": true,
             "type": "string"
           },
           "lb_contains": {
+            "description": "Load balancing contains given string",
             "nullable": true,
             "type": "string"
           },
           "lb_ends_with": {
+            "description": "Load balancing ends with given string",
             "nullable": true,
             "type": "string"
           },
           "lb_gt": {
+            "description": "Load balancing greater than given data",
             "nullable": true,
             "type": "string"
           },
           "lb_gte": {
+            "description": "Load balancing greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "lb_in": {
+            "description": "Load balancing in given range",
             "items": {
+              "description": "Load balancing in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "lb_lt": {
+            "description": "Load balancing less than given data",
             "nullable": true,
             "type": "string"
           },
           "lb_lte": {
+            "description": "Load balancing less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "lb_not": {
+            "description": "Load balancing not equal given data",
             "nullable": true,
             "type": "string"
           },
           "lb_not_contains": {
+            "description": "Load balancing not contains given string",
             "nullable": true,
             "type": "string"
           },
           "lb_not_ends_with": {
+            "description": "Load balancing not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "lb_not_in": {
+            "description": "Load balancing not in given range",
             "items": {
+              "description": "Load balancing not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "lb_not_starts_with": {
+            "description": "Load balancing not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "lb_starts_with": {
+            "description": "Load balancing starts with given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "License payload",
             "nullable": true,
             "type": "string"
           },
           "license_payload_contains": {
+            "description": "License payload contains given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload_ends_with": {
+            "description": "License payload ends with given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload_gt": {
+            "description": "License payload greater than given data",
             "nullable": true,
             "type": "string"
           },
           "license_payload_gte": {
+            "description": "License payload greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "license_payload_in": {
+            "description": "License payload in given range",
             "items": {
+              "description": "License payload in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_payload_lt": {
+            "description": "License payload less than given data",
             "nullable": true,
             "type": "string"
           },
           "license_payload_lte": {
+            "description": "License payload less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not": {
+            "description": "License payload not equal given data",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_contains": {
+            "description": "License payload not contains given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_ends_with": {
+            "description": "License payload not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload_not_in": {
+            "description": "License payload not in given range",
             "items": {
+              "description": "License payload not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_payload_not_starts_with": {
+            "description": "License payload not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "license_payload_starts_with": {
+            "description": "License payload starts with given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "License signature",
             "nullable": true,
             "type": "string"
           },
           "license_signature_contains": {
+            "description": "License signature contains given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature_ends_with": {
+            "description": "License signature ends with given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature_gt": {
+            "description": "License signature greater than given data",
             "nullable": true,
             "type": "string"
           },
           "license_signature_gte": {
+            "description": "License signature greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "license_signature_in": {
+            "description": "License signature in given range",
             "items": {
+              "description": "License signature in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_signature_lt": {
+            "description": "License signature less than given data",
             "nullable": true,
             "type": "string"
           },
           "license_signature_lte": {
+            "description": "License signature less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not": {
+            "description": "License signature not equal given data",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_contains": {
+            "description": "License signature not contains given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_ends_with": {
+            "description": "License signature not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature_not_in": {
+            "description": "License signature not in given range",
             "items": {
+              "description": "License signature not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "license_signature_not_starts_with": {
+            "description": "License signature not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "license_signature_starts_with": {
+            "description": "License signature starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -38521,126 +38797,158 @@
             "type": "array"
           },
           "sync_replication": {
+            "description": "Synchronous replication",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_contains": {
+            "description": "Synchronous replication contains given string",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_ends_with": {
+            "description": "Synchronous replication ends with given string",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_gt": {
+            "description": "Synchronous replication greater than given data",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_gte": {
+            "description": "Synchronous replication greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_in": {
+            "description": "Synchronous replication in given range",
             "items": {
+              "description": "Synchronous replication in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "sync_replication_lt": {
+            "description": "Synchronous replication less than given data",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_lte": {
+            "description": "Synchronous replication less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not": {
+            "description": "Synchronous replication not equal given data",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_contains": {
+            "description": "Synchronous replication not contains given string",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_ends_with": {
+            "description": "Synchronous replication not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_not_in": {
+            "description": "Synchronous replication not in given range",
             "items": {
+              "description": "Synchronous replication not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "sync_replication_not_starts_with": {
+            "description": "Synchronous replication not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "sync_replication_starts_with": {
+            "description": "Synchronous replication starts with given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "Traffic visualization",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_contains": {
+            "description": "Traffic visualization contains given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_ends_with": {
+            "description": "Traffic visualization ends with given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_gt": {
+            "description": "Traffic visualization greater than given data",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_gte": {
+            "description": "Traffic visualization greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_in": {
+            "description": "Traffic visualization in given range",
             "items": {
+              "description": "Traffic visualization in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "traffic_visualization_lt": {
+            "description": "Traffic visualization less than given data",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_lte": {
+            "description": "Traffic visualization less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not": {
+            "description": "Traffic visualization not equal given data",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_contains": {
+            "description": "Traffic visualization not contains given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_ends_with": {
+            "description": "Traffic visualization not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_not_in": {
+            "description": "Traffic visualization not in given range",
             "items": {
+              "description": "Traffic visualization not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "traffic_visualization_not_starts_with": {
+            "description": "Traffic visualization not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization_starts_with": {
+            "description": "Traffic visualization starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -38753,64 +39061,80 @@
             "type": "array"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           },
           "vpc_contains": {
+            "description": "VPC contains given string",
             "nullable": true,
             "type": "string"
           },
           "vpc_ends_with": {
+            "description": "VPC ends with given string",
             "nullable": true,
             "type": "string"
           },
           "vpc_gt": {
+            "description": "VPC greater than given data",
             "nullable": true,
             "type": "string"
           },
           "vpc_gte": {
+            "description": "VPC greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "vpc_in": {
+            "description": "VPC in given range",
             "items": {
+              "description": "VPC in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "vpc_lt": {
+            "description": "VPC less than given data",
             "nullable": true,
             "type": "string"
           },
           "vpc_lte": {
+            "description": "VPC less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "vpc_not": {
+            "description": "VPC not equal given data",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_contains": {
+            "description": "VPC not contains given string",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_ends_with": {
+            "description": "VPC not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "vpc_not_in": {
+            "description": "VPC not in given range",
             "items": {
+              "description": "VPC not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "vpc_not_starts_with": {
+            "description": "VPC not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "vpc_starts_with": {
+            "description": "VPC starts with given string",
             "nullable": true,
             "type": "string"
           }
@@ -46110,7 +46434,8 @@
           "where": {
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/AuthStrategyType"
+                "$ref": "#/components/schemas/AuthStrategyType",
+                "description": "Authentication type"
               }
             },
             "type": "object"
@@ -63900,6 +64225,7 @@
             "type": "integer"
           },
           "allocated_memory_bytes": {
+            "description": "Allocated memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -63996,8 +64322,10 @@
             "type": "string"
           },
           "datastore_mounts": {
+            "description": "Datastore mounts",
             "items": {
-              "$ref": "#/components/schemas/NestedDatastoreMount"
+              "$ref": "#/components/schemas/NestedDatastoreMount",
+              "description": "Datastore mounts"
             },
             "nullable": true,
             "type": "array"
@@ -64141,11 +64469,13 @@
             "type": "string"
           },
           "memory_allocation_rate": {
+            "description": "Memory allocation rate",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_overcommit_enabled": {
+            "description": "Whether memory overcommit is enabled",
             "nullable": true,
             "type": "boolean"
           },
@@ -64201,16 +64531,19 @@
             "type": "string"
           },
           "overcommit_active_memory_bytes": {
+            "description": "Overcommit active memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes": {
+            "description": "Overcommit memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_ratio": {
+            "description": "Memory overcommit ratio",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -64285,16 +64618,19 @@
             "type": "integer"
           },
           "reserved_memory_bytes": {
+            "description": "Reserved memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes": {
+            "description": "Overcommit memory of running and paused VMs (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes": {
+            "description": "Reserved memory of running and paused VMs (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -64398,6 +64734,7 @@
             "type": "integer"
           },
           "total_physical_memory_bytes": {
+            "description": "Total physical memory (bytes)",
             "format": "int64",
             "type": "integer"
           },
@@ -65261,22 +65598,27 @@
             "type": "array"
           },
           "allocated_memory_bytes": {
+            "description": "Allocated memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gt": {
+            "description": "Allocated memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_gte": {
+            "description": "Allocated memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_in": {
+            "description": "Allocated memory (bytes) in given range",
             "items": {
+              "description": "Allocated memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -65284,22 +65626,27 @@
             "type": "array"
           },
           "allocated_memory_bytes_lt": {
+            "description": "Allocated memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_lte": {
+            "description": "Allocated memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not": {
+            "description": "Allocated memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "allocated_memory_bytes_not_in": {
+            "description": "Allocated memory (bytes) not in given range",
             "items": {
+              "description": "Allocated memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -65978,30 +66325,33 @@
           "datastore_mounts_every": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "Returns all records where all (\"every\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_every",
+            "description": "Returns all records where all (\"every\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
           "datastore_mounts_none": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "Returns all records where zero related records match filtering criteria."
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_none",
+            "description": "Returns all records where zero related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
           "datastore_mounts_some": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/DatastoreMountWhereInput"
+                "$ref": "#/components/schemas/DatastoreMountWhereInput",
+                "description": "Returns all records where one or more (\"some\") related records match filtering criteria."
               }
             ],
-            "description": "schemas.HostWhereInput.datastore_mounts_some",
+            "description": "Returns all records where one or more (\"some\") related records match filtering criteria.",
             "nullable": true,
             "title": "DatastoreMountWhereInput"
           },
@@ -66910,22 +67260,27 @@
             "type": "string"
           },
           "memory_allocation_rate": {
+            "description": "Memory allocation rate",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
+            "description": "Memory allocation rate greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
+            "description": "Memory allocation rate greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
+            "description": "Memory allocation rate in given range",
             "items": {
+              "description": "Memory allocation rate in given range",
               "format": "double",
               "type": "number"
             },
@@ -66933,22 +67288,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
+            "description": "Memory allocation rate less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
+            "description": "Memory allocation rate less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
+            "description": "Memory allocation rate not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
+            "description": "Memory allocation rate not in given range",
             "items": {
+              "description": "Memory allocation rate not in given range",
               "format": "double",
               "type": "number"
             },
@@ -66956,10 +67316,12 @@
             "type": "array"
           },
           "memory_overcommit_enabled": {
+            "description": "Whether memory overcommit is enabled",
             "nullable": true,
             "type": "boolean"
           },
           "memory_overcommit_enabled_not": {
+            "description": "Whether memory overcommit is enabled not equal given data",
             "nullable": true,
             "type": "boolean"
           },
@@ -67465,22 +67827,27 @@
             "type": "string"
           },
           "overcommit_active_memory_bytes": {
+            "description": "Overcommit active memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_gt": {
+            "description": "Overcommit active memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_gte": {
+            "description": "Overcommit active memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_in": {
+            "description": "Overcommit active memory (bytes) in given range",
             "items": {
+              "description": "Overcommit active memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -67488,22 +67855,27 @@
             "type": "array"
           },
           "overcommit_active_memory_bytes_lt": {
+            "description": "Overcommit active memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_lte": {
+            "description": "Overcommit active memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_not": {
+            "description": "Overcommit active memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_active_memory_bytes_not_in": {
+            "description": "Overcommit active memory (bytes) not in given range",
             "items": {
+              "description": "Overcommit active memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -67511,22 +67883,27 @@
             "type": "array"
           },
           "overcommit_memory_bytes": {
+            "description": "Overcommit memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_gt": {
+            "description": "Overcommit memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_gte": {
+            "description": "Overcommit memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_in": {
+            "description": "Overcommit memory (bytes) in given range",
             "items": {
+              "description": "Overcommit memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -67534,22 +67911,27 @@
             "type": "array"
           },
           "overcommit_memory_bytes_lt": {
+            "description": "Overcommit memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_lte": {
+            "description": "Overcommit memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_not": {
+            "description": "Overcommit memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "overcommit_memory_bytes_not_in": {
+            "description": "Overcommit memory (bytes) not in given range",
             "items": {
+              "description": "Overcommit memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -67557,22 +67939,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio": {
+            "description": "Memory overcommit ratio",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gt": {
+            "description": "Memory overcommit ratio greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_gte": {
+            "description": "Memory overcommit ratio greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_in": {
+            "description": "Memory overcommit ratio in given range",
             "items": {
+              "description": "Memory overcommit ratio in given range",
               "format": "double",
               "type": "number"
             },
@@ -67580,22 +67967,27 @@
             "type": "array"
           },
           "overcommit_memory_ratio_lt": {
+            "description": "Memory overcommit ratio less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_lte": {
+            "description": "Memory overcommit ratio less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not": {
+            "description": "Memory overcommit ratio not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "overcommit_memory_ratio_not_in": {
+            "description": "Memory overcommit ratio not in given range",
             "items": {
+              "description": "Memory overcommit ratio not in given range",
               "format": "double",
               "type": "number"
             },
@@ -68238,22 +68630,27 @@
             "type": "array"
           },
           "reserved_memory_bytes": {
+            "description": "Reserved memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_gt": {
+            "description": "Reserved memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_gte": {
+            "description": "Reserved memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_in": {
+            "description": "Reserved memory (bytes) in given range",
             "items": {
+              "description": "Reserved memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -68261,22 +68658,27 @@
             "type": "array"
           },
           "reserved_memory_bytes_lt": {
+            "description": "Reserved memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_lte": {
+            "description": "Reserved memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_not": {
+            "description": "Reserved memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "reserved_memory_bytes_not_in": {
+            "description": "Reserved memory (bytes) not in given range",
             "items": {
+              "description": "Reserved memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -68284,22 +68686,27 @@
             "type": "array"
           },
           "running_pause_overcommit_memory_bytes": {
+            "description": "Overcommit memory of running and paused VMs (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_gt": {
+            "description": "Overcommit memory of running and paused VMs (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_gte": {
+            "description": "Overcommit memory of running and paused VMs (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_in": {
+            "description": "Overcommit memory of running and paused VMs (bytes) in given range",
             "items": {
+              "description": "Overcommit memory of running and paused VMs (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -68307,22 +68714,27 @@
             "type": "array"
           },
           "running_pause_overcommit_memory_bytes_lt": {
+            "description": "Overcommit memory of running and paused VMs (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_lte": {
+            "description": "Overcommit memory of running and paused VMs (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_not": {
+            "description": "Overcommit memory of running and paused VMs (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_overcommit_memory_bytes_not_in": {
+            "description": "Overcommit memory of running and paused VMs (bytes) not in given range",
             "items": {
+              "description": "Overcommit memory of running and paused VMs (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -68330,22 +68742,27 @@
             "type": "array"
           },
           "running_pause_reserved_memory_bytes": {
+            "description": "Reserved memory of running and paused VMs (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_gt": {
+            "description": "Reserved memory of running and paused VMs (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_gte": {
+            "description": "Reserved memory of running and paused VMs (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_in": {
+            "description": "Reserved memory of running and paused VMs (bytes) in given range",
             "items": {
+              "description": "Reserved memory of running and paused VMs (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -68353,22 +68770,27 @@
             "type": "array"
           },
           "running_pause_reserved_memory_bytes_lt": {
+            "description": "Reserved memory of running and paused VMs (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_lte": {
+            "description": "Reserved memory of running and paused VMs (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_not": {
+            "description": "Reserved memory of running and paused VMs (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "running_pause_reserved_memory_bytes_not_in": {
+            "description": "Reserved memory of running and paused VMs (bytes) not in given range",
             "items": {
+              "description": "Reserved memory of running and paused VMs (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -69442,22 +69864,27 @@
             "type": "array"
           },
           "total_physical_memory_bytes": {
+            "description": "Total physical memory (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_gt": {
+            "description": "Total physical memory (bytes) greater than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_gte": {
+            "description": "Total physical memory (bytes) greater than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_in": {
+            "description": "Total physical memory (bytes) in given range",
             "items": {
+              "description": "Total physical memory (bytes) in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -69465,22 +69892,27 @@
             "type": "array"
           },
           "total_physical_memory_bytes_lt": {
+            "description": "Total physical memory (bytes) less than given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_lte": {
+            "description": "Total physical memory (bytes) less than or equals to given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_not": {
+            "description": "Total physical memory (bytes) not equal given data",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "total_physical_memory_bytes_not_in": {
+            "description": "Total physical memory (bytes) not in given range",
             "items": {
+              "description": "Total physical memory (bytes) not in given range",
               "format": "int64",
               "type": "integer"
             },
@@ -70119,11 +70551,11 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type for datastore volumes. Defaults to thin."
+            "description": "Provisioning policy"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "storage_policy": {
             "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
@@ -82155,6 +82587,7 @@
         "additionalProperties": false,
         "properties": {
           "bundle_type": {
+            "description": "License bundle type",
             "nullable": true,
             "type": "string"
           },
@@ -82304,64 +82737,80 @@
             "type": "array"
           },
           "bundle_type": {
+            "description": "License bundle type",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_contains": {
+            "description": "License bundle type contains given string",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_ends_with": {
+            "description": "License bundle type ends with given string",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_gt": {
+            "description": "License bundle type greater than given data",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_gte": {
+            "description": "License bundle type greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_in": {
+            "description": "License bundle type in given range",
             "items": {
+              "description": "License bundle type in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "bundle_type_lt": {
+            "description": "License bundle type less than given data",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_lte": {
+            "description": "License bundle type less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not": {
+            "description": "License bundle type not equal given data",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_contains": {
+            "description": "License bundle type not contains given string",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_ends_with": {
+            "description": "License bundle type not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_not_in": {
+            "description": "License bundle type not in given range",
             "items": {
+              "description": "License bundle type not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "bundle_type_not_starts_with": {
+            "description": "License bundle type not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "bundle_type_starts_with": {
+            "description": "License bundle type starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -85112,6 +85561,7 @@
             "type": "string"
           },
           "_adapter": {
+            "description": "Adapter",
             "nullable": true,
             "type": "string"
           },
@@ -85128,6 +85578,7 @@
             "type": "string"
           },
           "_datastore_id": {
+            "description": "Datastore ID",
             "nullable": true,
             "type": "string"
           },
@@ -85144,6 +85595,7 @@
             "type": "string"
           },
           "_host_id": {
+            "description": "Host ID",
             "nullable": true,
             "type": "string"
           },
@@ -85176,6 +85628,7 @@
             "type": "string"
           },
           "_volume_id": {
+            "description": "Volume ID",
             "nullable": true,
             "type": "string"
           },
@@ -85188,10 +85641,12 @@
             "type": "string"
           },
           "adapter_type": {
+            "description": "Adapter type",
             "nullable": true,
             "type": "string"
           },
           "identifier": {
+            "description": "Identifier",
             "nullable": true,
             "type": "string"
           },
@@ -85393,7 +85848,7 @@
           },
           "migrate_mode": {
             "$ref": "#/components/schemas/MigrateMode",
-            "description": "Omitted means migrating both compute resources and storage."
+            "description": "Migration mode"
           },
           "migrate_type": {
             "$ref": "#/components/schemas/MigrateType",
@@ -85413,7 +85868,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Target datastore provision for live migration; cold storage migration preserves the source provision."
+            "description": "Provisioning policy"
           },
           "remove_unmovable_devices": {
             "description": "Remove device",
@@ -85557,7 +86012,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vm_volume": {
             "description": "Associated virtual volume",
@@ -85593,7 +86048,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "Provisioning type for imported datastore volumes."
+                "description": "VM volume provisioning policy"
               },
               "resident_in_cache": {
                 "type": "boolean"
@@ -88174,6 +88629,7 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "nullable": true,
             "type": "string"
           },
@@ -88565,15 +89021,18 @@
         "additionalProperties": false,
         "properties": {
           "datastore_capacity_bytes": {
+            "description": "Datastore capacity (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "description": {
+            "description": "Description",
             "nullable": true,
             "type": "string"
           },
           "free_bytes": {
+            "description": "Free space (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -88583,6 +89042,7 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
@@ -88590,12 +89050,15 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/DatastoreStatus"
+            "$ref": "#/components/schemas/DatastoreStatus",
+            "description": "Datastore status"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageProtocol"
+            "$ref": "#/components/schemas/StorageProtocol",
+            "description": "Storage protocol type"
           },
           "used_bytes": {
+            "description": "Used space (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -88614,14 +89077,16 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "Datastore"
           },
           "id": {
             "description": "id",
             "type": "string"
           },
           "state": {
-            "$ref": "#/components/schemas/DatastoreMountState"
+            "$ref": "#/components/schemas/DatastoreMountState",
+            "description": "State"
           }
         },
         "required": [
@@ -88852,26 +89317,32 @@
         "additionalProperties": false,
         "properties": {
           "async_replication": {
+            "description": "Asynchronous replication",
             "nullable": true,
             "type": "string"
           },
           "backup": {
+            "description": "Backup",
             "nullable": true,
             "type": "string"
           },
           "brand": {
+            "description": "Brand",
             "nullable": true,
             "type": "string"
           },
           "dfw": {
+            "description": "Distributed firewall",
             "nullable": true,
             "type": "string"
           },
           "external_storage": {
+            "description": "External storage",
             "nullable": true,
             "type": "boolean"
           },
           "file_storage": {
+            "description": "File storage",
             "nullable": true,
             "type": "string"
           },
@@ -88880,34 +89351,42 @@
             "type": "string"
           },
           "k8s_bare_metal": {
+            "description": "Kubernetes bare metal",
             "nullable": true,
             "type": "string"
           },
           "k8s_service": {
+            "description": "Kubernetes service",
             "nullable": true,
             "type": "string"
           },
           "lb": {
+            "description": "Load balancing",
             "nullable": true,
             "type": "string"
           },
           "license_payload": {
+            "description": "License payload",
             "nullable": true,
             "type": "string"
           },
           "license_signature": {
+            "description": "License signature",
             "nullable": true,
             "type": "string"
           },
           "sync_replication": {
+            "description": "Synchronous replication",
             "nullable": true,
             "type": "string"
           },
           "traffic_visualization": {
+            "description": "Traffic visualization",
             "nullable": true,
             "type": "string"
           },
           "vpc": {
+            "description": "VPC",
             "nullable": true,
             "type": "string"
           }
@@ -90734,7 +91213,8 @@
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/ReplicationObjectType"
+            "$ref": "#/components/schemas/ReplicationObjectType",
+            "description": "Replication object type"
           },
           "zbs_volume_id": {
             "nullable": true,
@@ -91258,10 +91738,11 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedDatastore"
+                "$ref": "#/components/schemas/NestedDatastore",
+                "description": "Datastore"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.datastore",
+            "description": "Datastore",
             "nullable": true,
             "title": "NestedDatastore"
           },
@@ -91270,25 +91751,28 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "storage_cluster": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedCluster"
+                "$ref": "#/components/schemas/NestedCluster",
+                "description": "Storage cluster"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.storage_cluster",
+            "description": "Storage cluster",
             "nullable": true,
             "title": "NestedCluster"
           },
           "type": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+                "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+                "description": "Storage cluster configuration type"
               }
             ],
-            "description": "schemas.NestedStorageClusterConfig.type",
+            "description": "Storage cluster configuration type",
             "nullable": true,
             "title": "StorageClusterConfigStorageType"
           }
@@ -92344,6 +92828,7 @@
         "additionalProperties": false,
         "properties": {
           "cidr": {
+            "description": "CIDR block",
             "type": "string"
           },
           "id": {
@@ -92436,6 +92921,7 @@
             "type": "string"
           },
           "path": {
+            "description": "Path",
             "nullable": true,
             "type": "string"
           }
@@ -92536,16 +93022,19 @@
           "datastore": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedDatastore"
+                "$ref": "#/components/schemas/NestedDatastore",
+                "description": "Datastore"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.datastore",
+            "description": "Datastore",
             "nullable": true,
             "title": "NestedDatastore"
           },
           "disks": {
+            "description": "Disks",
             "items": {
-              "$ref": "#/components/schemas/NestedVmTemplateConfigDisk"
+              "$ref": "#/components/schemas/NestedVmTemplateConfigDisk",
+              "description": "Disks"
             },
             "nullable": true,
             "type": "array"
@@ -92553,10 +93042,11 @@
           "entityAsyncStatus": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/EntityAsyncStatus"
+                "$ref": "#/components/schemas/EntityAsyncStatus",
+                "description": "Entity async status"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.entityAsyncStatus",
+            "description": "Entity async status",
             "nullable": true,
             "title": "EntityAsyncStatus"
           },
@@ -92565,24 +93055,28 @@
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "path": {
+            "description": "Path",
             "nullable": true,
             "type": "string"
           },
           "storage_cluster": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedCluster"
+                "$ref": "#/components/schemas/NestedCluster",
+                "description": "Storage cluster"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfig.storage_cluster",
+            "description": "Storage cluster",
             "nullable": true,
             "title": "NestedCluster"
           },
           "type": {
-            "$ref": "#/components/schemas/StorageClusterConfigStorageType"
+            "$ref": "#/components/schemas/StorageClusterConfigStorageType",
+            "description": "Storage cluster configuration type"
           }
         },
         "required": [
@@ -92596,13 +93090,16 @@
         "additionalProperties": false,
         "properties": {
           "boot": {
+            "description": "Boot order",
             "format": "int32",
             "type": "integer"
           },
           "bus": {
-            "$ref": "#/components/schemas/Bus"
+            "$ref": "#/components/schemas/Bus",
+            "description": "Bus"
           },
           "disk_name": {
+            "description": "Disk name",
             "nullable": true,
             "type": "string"
           },
@@ -92611,29 +93108,34 @@
             "type": "string"
           },
           "index": {
+            "description": "Disk index",
             "format": "int32",
             "type": "integer"
           },
           "size": {
+            "description": "Disk size (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
           },
           "type": {
-            "$ref": "#/components/schemas/VmDiskType"
+            "$ref": "#/components/schemas/VmDiskType",
+            "description": "Type"
           },
           "vm_volume_template_config_file": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedVmVolumeTemplateConfigFile"
+                "$ref": "#/components/schemas/NestedVmVolumeTemplateConfigFile",
+                "description": "VM volume template configuration file"
               }
             ],
-            "description": "schemas.NestedVmTemplateConfigDisk.vm_volume_template_config_file",
+            "description": "VM volume template configuration file",
             "nullable": true,
             "title": "NestedVmVolumeTemplateConfigFile"
           },
           "volume_storage_type": {
-            "$ref": "#/components/schemas/VmTemplateConfigDiskVolumeStorageType"
+            "$ref": "#/components/schemas/VmTemplateConfigDiskVolumeStorageType",
+            "description": "Volume storage type"
           }
         },
         "required": [
@@ -92686,13 +93188,15 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "Datastore"
           },
           "id": {
             "description": "id",
             "type": "string"
           },
           "local_id": {
+            "description": "UUID",
             "type": "string"
           },
           "name": {
@@ -92700,20 +93204,25 @@
             "type": "string"
           },
           "path": {
+            "description": "File path",
             "type": "string"
           },
           "raw_files": {
+            "description": "Raw files",
             "items": {
-              "$ref": "#/components/schemas/NestedVmVolumeTemplateRawFile"
+              "$ref": "#/components/schemas/NestedVmVolumeTemplateRawFile",
+              "description": "Raw files"
             },
             "nullable": true,
             "type": "array"
           },
           "size": {
+            "description": "File size (bytes)",
             "format": "int64",
             "type": "integer"
           },
           "vcfs_version": {
+            "description": "VCFS version",
             "type": "string"
           }
         },
@@ -92732,7 +93241,8 @@
         "additionalProperties": false,
         "properties": {
           "datastore": {
-            "$ref": "#/components/schemas/NestedDatastore"
+            "$ref": "#/components/schemas/NestedDatastore",
+            "description": "Datastore"
           },
           "id": {
             "description": "id",
@@ -92743,6 +93253,7 @@
             "type": "string"
           },
           "path": {
+            "description": "File path",
             "type": "string"
           }
         },
@@ -97687,15 +98198,19 @@
       "NtpServiceInfo": {
         "properties": {
           "check_detail": {
+            "description": "Check details",
             "type": "string"
           },
           "check_state": {
+            "description": "Check status",
             "type": "string"
           },
           "ip_addr": {
+            "description": "IP address",
             "type": "string"
           },
           "source": {
+            "description": "Source",
             "type": "string"
           }
         },
@@ -127263,11 +127778,11 @@
       "StorageConfig": {
         "properties": {
           "datastore_id": {
-            "description": "VCFS Datastore.id",
+            "description": "Datastore ID",
             "type": "string"
           },
           "storage_cluster_id": {
-            "description": "Clustered-storage Cluster.id",
+            "description": "Storage cluster ID",
             "type": "string"
           }
         },
@@ -155110,7 +155625,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           }
         },
         "required": [
@@ -155239,7 +155754,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vcpu": {
             "description": "vCPU",
@@ -155524,7 +156039,8 @@
             "description": "Determines whether to power on the new virtual machine immediately after creation. Leave empty to keep it powered off."
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "Storage configuration"
           },
           "template_id": {
             "description": "Content library template ID",
@@ -155805,7 +156321,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vcpu": {
             "description": "vCPU",
@@ -158147,18 +158663,21 @@
           "parent": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedVmFolder"
+                "$ref": "#/components/schemas/NestedVmFolder",
+                "description": "Parent folder"
               }
             ],
-            "description": "schemas.VmFolder.parent",
+            "description": "Parent folder",
             "nullable": true,
             "title": "NestedVmFolder"
           },
           "path": {
+            "description": "Path",
             "nullable": true,
             "type": "string"
           },
           "total_vm_num": {
+            "description": "Total number of VMs",
             "format": "int32",
             "nullable": true,
             "type": "integer"
@@ -158209,6 +158728,7 @@
             "type": "string"
           },
           "parent_id": {
+            "description": "Parent folder ID",
             "type": "string"
           }
         },
@@ -158256,6 +158776,7 @@
                 "type": "string"
               },
               "parent_id": {
+                "description": "Parent folder ID",
                 "nullable": true,
                 "type": "string"
               }
@@ -158550,92 +159071,114 @@
           "parent": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/VmFolderWhereInput"
+                "$ref": "#/components/schemas/VmFolderWhereInput",
+                "description": "Parent folder"
               }
             ],
-            "description": "schemas.VmFolderWhereInput.parent",
+            "description": "Parent folder",
             "nullable": true,
             "title": "VmFolderWhereInput"
           },
           "path": {
+            "description": "Path",
             "nullable": true,
             "type": "string"
           },
           "path_contains": {
+            "description": "Path contains given string",
             "nullable": true,
             "type": "string"
           },
           "path_ends_with": {
+            "description": "Path ends with given string",
             "nullable": true,
             "type": "string"
           },
           "path_gt": {
+            "description": "Path greater than given data",
             "nullable": true,
             "type": "string"
           },
           "path_gte": {
+            "description": "Path greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "path_in": {
+            "description": "Path in given range",
             "items": {
+              "description": "Path in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_lt": {
+            "description": "Path less than given data",
             "nullable": true,
             "type": "string"
           },
           "path_lte": {
+            "description": "Path less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "path_not": {
+            "description": "Path not equal given data",
             "nullable": true,
             "type": "string"
           },
           "path_not_contains": {
+            "description": "Path not contains given string",
             "nullable": true,
             "type": "string"
           },
           "path_not_ends_with": {
+            "description": "Path not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "path_not_in": {
+            "description": "Path not in given range",
             "items": {
+              "description": "Path not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_not_starts_with": {
+            "description": "Path not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "path_starts_with": {
+            "description": "Path starts with given string",
             "nullable": true,
             "type": "string"
           },
           "total_vm_num": {
+            "description": "Total number of VMs",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_gt": {
+            "description": "Total number of VMs greater than given data",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_gte": {
+            "description": "Total number of VMs greater than or equals to given data",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_in": {
+            "description": "Total number of VMs in given range",
             "items": {
+              "description": "Total number of VMs in given range",
               "format": "int32",
               "type": "integer"
             },
@@ -158643,22 +159186,27 @@
             "type": "array"
           },
           "total_vm_num_lt": {
+            "description": "Total number of VMs less than given data",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_lte": {
+            "description": "Total number of VMs less than or equals to given data",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_not": {
+            "description": "Total number of VMs not equal given data",
             "format": "int32",
             "nullable": true,
             "type": "integer"
           },
           "total_vm_num_not_in": {
+            "description": "Total number of VMs not in given range",
             "items": {
+              "description": "Total number of VMs not in given range",
               "format": "int32",
               "type": "integer"
             },
@@ -159119,7 +159667,8 @@
             "description": "Virtual machine status at power-on"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "Storage configuration"
           },
           "upload_tasks": {
             "description": "ID of the uploadTask for uploading the vmdk_file",
@@ -159387,7 +159936,7 @@
               },
               "storage_config": {
                 "$ref": "#/components/schemas/StorageConfig",
-                "description": "Required for ELF targets when migrating storage."
+                "description": "Storage configuration"
               },
               "vm_config": {
                 "$ref": "#/components/schemas/MigrateVmConfig"
@@ -162190,7 +162739,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           },
           "vcpu": {
             "description": "vCPU",
@@ -168789,6 +169338,7 @@
       "VmUpdateSyncTimeOnResumeParamsData": {
         "properties": {
           "sync_vm_time_on_resume": {
+            "description": "Synchronize VM time on resume",
             "type": "boolean"
           }
         },
@@ -169126,6 +169676,7 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "Provisioning policy",
             "nullable": true,
             "type": "string"
           },
@@ -169145,10 +169696,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedStorageClusterConfig"
+                "$ref": "#/components/schemas/NestedStorageClusterConfig",
+                "description": "Storage cluster configuration"
               }
             ],
-            "description": "schemas.VmVolume.storage_cluster_config",
+            "description": "Storage cluster configuration",
             "nullable": true,
             "title": "NestedStorageClusterConfig"
           },
@@ -169259,7 +169811,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type when associated storage is a datastore."
+            "description": "Provisioning policy"
           },
           "resident_in_cache": {
             "type": "boolean"
@@ -169279,7 +169831,7 @@
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
+            "description": "Storage configuration"
           }
         },
         "required": [
@@ -169518,6 +170070,7 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "Provisioning policy",
             "nullable": true,
             "type": "string"
           },
@@ -169540,10 +170093,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/NestedStorageClusterConfig"
+                "$ref": "#/components/schemas/NestedStorageClusterConfig",
+                "description": "Storage cluster configuration"
               }
             ],
-            "description": "schemas.VmVolumeSnapshot.storage_cluster_config",
+            "description": "Storage cluster configuration",
             "nullable": true,
             "title": "NestedStorageClusterConfig"
           },
@@ -170458,64 +171012,80 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "Provisioning policy",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
+            "description": "Provisioning policy contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
+            "description": "Provisioning policy ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
+            "description": "Provisioning policy greater than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
+            "description": "Provisioning policy greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
+            "description": "Provisioning policy in given range",
             "items": {
+              "description": "Provisioning policy in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
+            "description": "Provisioning policy less than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
+            "description": "Provisioning policy less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
+            "description": "Provisioning policy not equal given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
+            "description": "Provisioning policy not contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
+            "description": "Provisioning policy not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
+            "description": "Provisioning policy not in given range",
             "items": {
+              "description": "Provisioning policy not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
+            "description": "Provisioning policy not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
+            "description": "Provisioning policy starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -170642,10 +171212,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigWhereInput"
+                "$ref": "#/components/schemas/StorageClusterConfigWhereInput",
+                "description": "Storage cluster configuration"
               }
             ],
-            "description": "schemas.VmVolumeSnapshotWhereInput.storage_cluster_config",
+            "description": "Storage cluster configuration",
             "nullable": true,
             "title": "StorageClusterConfigWhereInput"
           },
@@ -172598,64 +173169,80 @@
             "type": "string"
           },
           "provision_policy": {
+            "description": "Provisioning policy",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
+            "description": "Provisioning policy contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
+            "description": "Provisioning policy ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
+            "description": "Provisioning policy greater than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
+            "description": "Provisioning policy greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
+            "description": "Provisioning policy in given range",
             "items": {
+              "description": "Provisioning policy in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
+            "description": "Provisioning policy less than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
+            "description": "Provisioning policy less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
+            "description": "Provisioning policy not equal given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
+            "description": "Provisioning policy not contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
+            "description": "Provisioning policy not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
+            "description": "Provisioning policy not in given range",
             "items": {
+              "description": "Provisioning policy not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
+            "description": "Provisioning policy not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
+            "description": "Provisioning policy starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -172736,10 +173323,11 @@
           "storage_cluster_config": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/StorageClusterConfigWhereInput"
+                "$ref": "#/components/schemas/StorageClusterConfigWhereInput",
+                "description": "Storage cluster configuration"
               }
             ],
-            "description": "schemas.VmVolumeWhereInput.storage_cluster_config",
+            "description": "Storage cluster configuration",
             "nullable": true,
             "title": "StorageClusterConfigWhereInput"
           },
@@ -176354,7 +176942,8 @@
             "type": "boolean"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "Storage configuration"
           }
         },
         "required": [
@@ -176398,10 +176987,12 @@
             "description": "Storage policy"
           },
           "provision_policy": {
-            "$ref": "#/components/schemas/VmVolumeProvisionPolicy"
+            "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
+            "description": "Provisioning policy"
           },
           "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig"
+            "$ref": "#/components/schemas/StorageConfig",
+            "description": "Storage configuration"
           },
           "vmdk_name": {
             "description": "VMDK name",
@@ -207585,7 +208176,7 @@
     },
     "/get-auth-configs": {
       "post": {
-        "description": "",
+        "description": "Get a list of authentication configurations, optionally filtered by authentication type.",
         "operationId": "GetAuthConfigs",
         "parameters": [
           {
@@ -207696,7 +208287,7 @@
           }
         },
         "security": [],
-        "summary": "",
+        "summary": "Getting authentication configurations",
         "tags": [
           "UserManagement"
         ],
@@ -211891,7 +212482,7 @@
     },
     "/get-cluster-ntp-services": {
       "post": {
-        "description": "",
+        "description": "Get the NTP service configuration and time synchronization status of the specified clusters.",
         "operationId": "GetClusterNtpServices",
         "parameters": [
           {
@@ -212002,7 +212593,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "Getting cluster NTP services",
         "tags": [
           "ClusterManagement"
         ],
@@ -235028,7 +235619,7 @@
     },
     "/get-v2-everoute-licenses-connection": {
       "post": {
-        "description": "",
+        "description": "Get the count of V2 Everoute licenses that match the specified filter.",
         "operationId": "GetV2EverouteLicensesConnection",
         "parameters": [
           {
@@ -235145,7 +235736,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "Getting the V2 Everoute license count",
         "tags": [
           "ErManagement"
         ],
@@ -245747,7 +246338,7 @@
     },
     "/import-content-library-image-v2": {
       "post": {
-        "description": "",
+        "description": "Import a content library image to the specified clusters. Multiple clusters are supported, and the upload tasks for each cluster are returned.",
         "operationId": "ImportContentLibraryImageV2",
         "parameters": [
           {
@@ -245867,7 +246458,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "Importing a content library image (V2)",
         "tags": [
           "SharedManagement"
         ],
@@ -264969,7 +265560,7 @@
     },
     "/update-vm-sync-time-on-resume": {
       "post": {
-        "description": "",
+        "description": "Configure whether to synchronize the VM time when the VM resumes.",
         "operationId": "UpdateVmSyncTimeOnResume",
         "parameters": [
           {
@@ -265091,7 +265682,7 @@
             "Authorization": []
           }
         ],
-        "summary": "",
+        "summary": "Updating the VM time synchronization setting on resume",
         "tags": [
           "VmManagement"
         ],
