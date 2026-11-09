@@ -223867,7 +223867,7 @@
         ],
         "summary": "",
         "tags": [
-          "RegistryService"
+          "Other"
         ],
         "x-codeSamples": [
           {
@@ -224010,7 +224010,7 @@
         ],
         "summary": "",
         "tags": [
-          "RegistryService"
+          "Other"
         ],
         "x-codeSamples": [
           {
@@ -262702,11 +262702,6 @@
       "description": "",
       "name": "ErManagement",
       "x-displayName": "Everoute 运维管理"
-    },
-    {
-      "description": "",
-      "name": "RegistryService",
-      "x-displayName": "RegistryService"
     },
     {
       "description": "",
