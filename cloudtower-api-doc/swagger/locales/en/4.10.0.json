@@ -2254,7 +2254,11 @@
       "enum": "* DYNAMIC: Dynamic\n* STATIC: Static"
     },
     "StorageAdapterType": {
-      "enum": "* FC: FC\n* ISCSI: iSCSI\n* ZBS: {STORAGE_PRODUCT}"
+      "enum": {
+        "FC": "FC",
+        "ISCSI": "iSCSI",
+        "ZBS": "{STORAGE_PRODUCT}"
+      }
     },
     "StorageProtocol": {
       "enum": "* FC: FC\n* ISCSI: iSCSI"
@@ -2907,10 +2911,33 @@
       "enum": "* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI vm volume snapshot\n* KVM_VOLUME_SNAPSHOT: normal vm volume snapshot\n* KVM_VOLUME_VCFS_SNAPSHOT: VCFS virtual volume snapshot"
     },
     "VmUsage": {
-      "enum": "* ADVANCED_MONITORING: Advanced monitoring\n* AGENT_MESH_NODE: {PRODUCT} agent\n* BACKUP_CONTROLLER: Backup\n* BUNDLE_APPLICATION: Observability\n* CLOUDTOWER: {PRODUCT}\n* CLOUDTOWER_PASSIVE: {PRODUCT} passive node\n* CLOUDTOWER_WITNESS: {PRODUCT} witness node\n* EVEROUTE_CONTROLLER: Network and security\n* EVEROUTE_LB: Network load balancer\n* EVEROUTE_VPC_EDGE: VPC networking\n* REGISTRY: Registry\n* REPLICATION_CONTROLLER: Replication\n* SFS_CONTROLLER: File controller\n* SHARE_REGISTRY: Container registry\n* SKS_MANAGEMENT: {K8S_SERVER} management cluster"
+      "enum": {
+        "ADVANCED_MONITORING": "Advanced monitoring",
+        "AGENT_MESH_NODE": "{PRODUCT} agent",
+        "BACKUP_CONTROLLER": "Backup",
+        "BUNDLE_APPLICATION": "Observability",
+        "CLOUDTOWER": "{PRODUCT}",
+        "CLOUDTOWER_PASSIVE": "{PRODUCT} passive node",
+        "CLOUDTOWER_WITNESS": "{PRODUCT} witness node",
+        "EVEROUTE_CONTROLLER": "Network and security",
+        "EVEROUTE_LB": "Network load balancer",
+        "EVEROUTE_VPC_EDGE": "VPC networking",
+        "REGISTRY": "Registry",
+        "REPLICATION_CONTROLLER": "Replication",
+        "SFS_CONTROLLER": "File controller",
+        "SHARE_REGISTRY": "Container registry",
+        "SKS_MANAGEMENT": "{K8S_SERVER} management cluster"
+      }
     },
     "EcpEdition": {
-      "enum": "* ECP_ADVANCED: {ECP_EDITION_PREFIX} Advanced\n* ECP_COMPUTE: {ECP_EDITION_PREFIX} Compute\n* ECP_ESSENTIAL: {ECP_EDITION_PREFIX} Essential\n* ECP_STANDARD: {ECP_EDITION_PREFIX} Standard\n* ECP_VDI_ESSENTIAL: {ECP_EDITION_PREFIX} VDI Essential\n* ECP_VDI_STANDARD: {ECP_EDITION_PREFIX} VDI Standard"
+      "enum": {
+        "ECP_ADVANCED": "{ECP_EDITION_PREFIX} Advanced",
+        "ECP_COMPUTE": "{ECP_EDITION_PREFIX} Compute",
+        "ECP_ESSENTIAL": "{ECP_EDITION_PREFIX} Essential",
+        "ECP_STANDARD": "{ECP_EDITION_PREFIX} Standard",
+        "ECP_VDI_ESSENTIAL": "{ECP_EDITION_PREFIX} VDI Essential",
+        "ECP_VDI_STANDARD": "{ECP_EDITION_PREFIX} VDI Standard"
+      }
     },
     "ReportResourceInputEnum": {
       "enum": "* ALERT: Alert\n* ALL: All\n* CLUSTER: Cluster\n* CONTENT_LIBRARY_IMAGE: ISO image\n* CONTENT_LIBRARY_VM_TEMPLATE: VM template\n* DATA_CENTER: Data center\n* DISK: Physical disk\n* ENTITY_FILTERS: Resource optimization\n* GLOBAL_ALERT_RULE: Global alert rule\n* HOST: Host\n* TASK: Task\n* VDS: Virtual distributed switch\n* VLAN: VLAN\n* VM: VM"
