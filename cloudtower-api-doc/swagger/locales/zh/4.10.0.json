@@ -615,13 +615,13 @@
       "username_starts_with": ""
     },
     "StorageClusterConnectState": {
-      "enum": ""
+      "enum": "* CONNECTED: 已连接\n* FAILED_TO_REMOVE: 卸载失败\n* INITIALIZING: 初始化中\n* REMOVING: 卸载中"
     },
     "StorageClusterErrorState": {
-      "enum": ""
+      "enum": "* SERVICE_ERROR: 存储服务异常"
     },
     "StorageClusterConfigStorageType": {
-      "enum": ""
+      "enum": "* DATASTORE: 数据存储\n* STORAGE_CLUSTER: 存储集群"
     },
     "ContentLibraryVmTemplateWhereInput": {
       "datastores_every": "返回关联资源全都符合相关筛选条件的资源",
@@ -1218,7 +1218,7 @@
       "vm_volume_template_config_file": ""
     },
     "VmTemplateConfigDiskVolumeStorageType": {
-      "enum": ""
+      "enum": "* ISCSI_LUN: iSCSI LUN\n* ISCSI_LUN_SNAPSHOT: iSCSI LUN 快照\n* NONE: 无卷数据\n* VCFS_VOLUME_FILE: VCFS 数据存储中的卷文件"
     },
     "VmTemplateConfigNicWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -1342,7 +1342,7 @@
       "storage_cluster_config": "存储集群配置"
     },
     "DatastoreStatus": {
-      "enum": ""
+      "enum": "* ACTIVE: 活动\n* ATTACHING: 挂载中\n* CREATING: 创建中\n* ERROR: 异常\n* INACTIVE: 不活动"
     },
     "StorageDeviceWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -1758,7 +1758,7 @@
       "transport_starts_with": ""
     },
     "StorageDevicePathState": {
-      "enum": ""
+      "enum": "* ACTIVE: 活动 I/O\n* DEAD: 不活动\n* DISABLED: 已禁用\n* STANDBY: 备用"
     },
     "StorageAdapterWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -2069,10 +2069,10 @@
       "wwpn_starts_with": ""
     },
     "IdentityVerificationMethod": {
-      "enum": ""
+      "enum": "* BOTHWAY_CHAP: 双向 CHAP\n* HERITED: 从存储适配器继承\n* NO_CHAP: 无\n* ONEWAY_CHAP: 单向 CHAP"
     },
     "StorageAdapterStatus": {
-      "enum": ""
+      "enum": "* ABNORMAL: 异常\n* DEGRADED: 降级\n* OFFLINE: 脱机\n* ONLINE: 联机"
     },
     "StorageTargetWhereInput": {
       "AND": "符合所有的筛选条件",
@@ -2251,19 +2251,19 @@
       "target_type_not_in": ""
     },
     "StorageTargetType": {
-      "enum": ""
+      "enum": "* DYNAMIC: 动态\n* STATIC: 静态"
     },
     "StorageAdapterType": {
-      "enum": ""
+      "enum": "* FC: FC\n* ISCSI: iSCSI\n* ZBS: {STORAGE_PRODUCT}"
     },
     "StorageProtocol": {
-      "enum": ""
+      "enum": "* FC: FC\n* ISCSI: iSCSI"
     },
     "DatastoreMountDeviceState": {
-      "enum": ""
+      "enum": "* ACTIVE: 正常\n* ERROR: 异常\n* UNKNOWN: 未知"
     },
     "DatastoreMountState": {
-      "enum": ""
+      "enum": "* ATTACHING: 挂载中\n* DEGRADED: 已挂载·异常\n* FORMATTED: 未挂载\n* FORMATTING: 格式化中\n* MOUNTED: 已挂载\n* UNKNOWN: 未知"
     },
     "EcpLicenseWhereInput": {
       "async_replication": "异步复制",
@@ -2540,7 +2540,7 @@
       "datastore": "数据存储"
     },
     "VmVolumeProvisionPolicy": {
-      "enum": ""
+      "enum": "* thin: 精简置备\n* thick_lazy_zeroed: 厚置备延迟置零\n* thick_eager_zeroed: 厚置备立即置零"
     },
     "StorageConfig": {
       "datastore_id": "数据存储 ID",
@@ -2596,7 +2596,7 @@
       "boot": "启动顺序"
     },
     "MigrateMode": {
-      "enum": ""
+      "enum": "* CHANGE_COMPUTE_RESOURCE_AND_STORAGE: 迁移计算和存储资源\n* CHANGE_COMPUTE_RESOURCE_ONLY: 仅迁移计算资源\n* CHANGE_STORAGE_ONLY: 仅迁移存储资源"
     },
     "MigrateVmConfig": {
       "provision_policy": "置备方式",
@@ -2717,7 +2717,7 @@
       "name": "名称"
     },
     "AuthStrategyType": {
-      "enum": ""
+      "enum": "* BCM: USP\n* LDAP: LDAP/AD\n* OIDC: OIDC\n* SAML: SAML"
     },
     "AuthConfig": {
       "type": "认证类型",
@@ -2872,6 +2872,54 @@
       "orderBy": "表示查询顺序，通常包含了资源所有字段的降序(_DESC)或者升序 (_ASC)。",
       "skip": "可与 after / before 搭配使用，表示跳过指定资源的 n 项后开始查询。",
       "where": "条件查询，表示查询符合该条件的资源。"
+    },
+    "AlertRuleObject": {
+      "enum": "* BRICK: 机箱\n* CLUSTER: 集群\n* DATASTORE: 数据存储\n* DISK: 物理盘\n* DISK_POOL: 物理盘池\n* HYPERVISOR: Hypervisor\n* NETWORK: 网络\n* NTP_SERVER: NTP 服务器\n* OBSERVABILITY_CONNECTED_SYSTEM_SERVICE: 系统服务\n* OBSERVABILITY_SERVICE: 可观测性服务\n* PHYSICAL_HOST: 主机\n* POD: Pod\n* SCVM: SCVM\n* SKS_CLUSTER: { K8S_SERVER } 集群\n* SKS_CLUSTER_NODE: { K8S_SERVER } 集群节点\n* SKS_PV: 持久卷\n* SKS_PVC: 持久卷申领\n* SKS_REGISTRY: { K8S_SERVER } 容器镜像仓库\n* SKS_SERVICE: { K8S_SERVER } 系统服务\n* SNAPSHOT_PLAN: 快照计划\n* STORAGE_CHUNK: 存储\n* STORAGE_POOL: 存储池\n* SYSTEM_SERVICE: 服务\n* TIME_MACHINE_PLAN: 快照计划\n* VM: 虚拟机\n* WITNESS: 仲裁节点\n* WITNESS_NETWORK: 仲裁节点到可用域之间网络\n* ZBS_ZONE: 可用域"
+    },
+    "BackupExecutionType": {
+      "enum": "* FULL: 全量备份\n* INCREMENTAL: 增量备份\n* SYNTHETIC_FULL: 合成全量备份"
+    },
+    "BackupRestorePointType": {
+      "enum": "* FULL: 全量备份\n* INCREMENTAL: 增量备份\n* SYNTHETIC_FULL: 合成全量备份"
+    },
+    "BackupStoreType": {
+      "enum": "* BOOSTFS: BoostFS\n* ISCSI: iSCSI\n* NETBACKUP: NetBackup\n* NFS3: NFS 3\n* NFS4: NFS 4"
+    },
+    "Bus": {
+      "enum": "* IDE: IDE\n* SATA: SATA\n* SCSI: SCSI\n* USB: USB\n* VIRTIO: VIRTIO"
+    },
+    "VmVolumeType": {
+      "enum": "* KVM_VOLUME: 普通虚拟卷\n* KVM_VOLUME_ISCSI: ISCSI 虚拟卷\n* KVM_VOLUME_VCFS: VCFS 虚拟卷"
+    },
+    "DiskHealthStatus": {
+      "enum": "* HEALTHY: 健康\n* SMART_FAILED: S.M.A.R.T. 不通过\n* SOFTWARE_RAID_FAILURE: 软件 RAID 故障\n* SUBHEALTHY: 亚健康\n* UNHEALTHY: 不健康\n* UNKNOWN: 未知"
+    },
+    "DiskUsage": {
+      "enum": "* BOOT: 启动盘\n* CACHE: 缓存盘\n* CACHE_AND_META: 含元数据分区的缓存盘\n* DATA: 数据盘\n* DATA_AND_META: 含元数据分区的数据盘\n* UNKNOWN: 未知"
+    },
+    "DiskUsageStatus": {
+      "enum": "* ISOLATED: 隔离中\n* MOUNTED: 已挂载\n* MOUNTING: 挂载中\n* PARTIAL_MOUNTED: 部分挂载\n* UNKNOWN: 未知\n* UNMOUNTED: 未挂载\n* UNMOUNTING: 卸载中"
+    },
+    "NetworkType": {
+      "enum": "* ACCESS: 接入网络\n* CUSTOM: 自定义系统网络\n* ERSPAN: 镜像出口网络\n* INTERNAL: 内部通信网络\n* MANAGEMENT: 管理网络\n* MIGRATION: 迁移网络\n* STORAGE: 存储网络\n* STORAGE_ACCESS: 存储接入网络\n* VM: 虚拟机网络\n* VPC_SYS: 虚拟专有云系统网络\n* VPC_VM: 系统虚拟机网络"
+    },
+    "VmVolumeSnapshotType": {
+      "enum": "* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI 虚拟卷快照\n* KVM_VOLUME_SNAPSHOT: 普通虚拟卷快照\n* KVM_VOLUME_VCFS_SNAPSHOT: VCFS 虚拟卷快照"
+    },
+    "VmUsage": {
+      "enum": "* ADVANCED_MONITORING: 高级监控\n* AGENT_MESH_NODE: {PRODUCT} 代理\n* BACKUP_CONTROLLER: 备份\n* BUNDLE_APPLICATION: 可观测性\n* CLOUDTOWER: {PRODUCT}\n* CLOUDTOWER_PASSIVE: {PRODUCT} 被动节点\n* CLOUDTOWER_WITNESS: {PRODUCT} 仲裁节点\n* EVEROUTE_CONTROLLER: 网络与安全\n* EVEROUTE_LB: 网络负载均衡器\n* EVEROUTE_VPC_EDGE: 虚拟专有云网络\n* REGISTRY: 镜像仓库\n* REPLICATION_CONTROLLER: 复制\n* SFS_CONTROLLER: 文件控制器\n* SHARE_REGISTRY: 容器镜像仓库\n* SKS_MANAGEMENT: {K8S_SERVER} 管控集群"
+    },
+    "EcpEdition": {
+      "enum": "* ECP_ADVANCED: {ECP_EDITION_PREFIX} Advanced\n* ECP_COMPUTE: {ECP_EDITION_PREFIX} Compute\n* ECP_ESSENTIAL: {ECP_EDITION_PREFIX} Essential\n* ECP_STANDARD: {ECP_EDITION_PREFIX} Standard\n* ECP_VDI_ESSENTIAL: {ECP_EDITION_PREFIX} VDI Essential\n* ECP_VDI_STANDARD: {ECP_EDITION_PREFIX} VDI Standard"
+    },
+    "ReportResourceInputEnum": {
+      "enum": "* ALERT: 报警\n* ALL: 全部\n* CLUSTER: 集群\n* CONTENT_LIBRARY_IMAGE: ISO 映像\n* CONTENT_LIBRARY_VM_TEMPLATE: 虚拟机模板\n* DATA_CENTER: 数据中心\n* DISK: 物理盘\n* ENTITY_FILTERS: 资源优化\n* GLOBAL_ALERT_RULE: 全局报警规则\n* HOST: 主机\n* TASK: 任务\n* VDS: 虚拟分布式交换机\n* VLAN: 虚拟机网络\n* VM: 虚拟机"
+    },
+    "ROLE_ACTION": {
+      "enum": "* *: 所有操作权限\n* MANAGE_DATA_CENTER: 数据中心管理\n* MANAGE_CLUSTER_CONNECTION: 集群关联管理\n* MANAGE_STORAGE_CLUSTER_CONNECTION: {STORAGE_PRODUCT} 数据存储管理\n* MANAGE_HOST: 主机管理\n* MANAGE_NIC_MTU: 编辑网卡 MTU\n* MANAGE_DISK: 物理盘管理\n* MANAGE_HARDWARE_TOPO: 机架配置\n* MANAGE_HARDWARE_HEALTH: 硬件监控管理\n* MANAGE_USB_DEVICE: USB 设备管理\n* MANAGE_GPU_DEVICE: GPU 设备管理\n* MANAGE_PCI_DEVICE: PCI 设备管理\n* MANAGE_VDS: 虚拟分布式交换机管理\n* MANAGE_VLAN: 虚拟机网络管理\n* MANAGE_SYSTEM_VLAN: 系统网络管理\n* MANAGE_TRAFFIC_MIRROR: 流量镜像管理\n* MANAGE_ISCSI_DATA_STORE: iSCSI 类型用户存储对象管理\n* MANAGE_NFS_DATA_STORE: NFS 类型用户存储对象管理\n* MANAGE_NVMF_DATA_STORE: NVMe 类型用户存储对象管理\n* MANAGE_DATASTORE: VCFS 数据存储管理\n* VM_FOLDER_OPERATION: 虚拟机组管理\n* CREATE_VM: 创建虚拟机\n* UPDATE_VM: 编辑虚拟机\n* DELETE_VM: 删除及恢复虚拟机\n* UPDATE_VM_ADVANCED_SETTING: 编辑虚拟机高级设置\n* UPDATE_VM_GUEST: 通过虚拟机工具变更虚拟机\n* VM_OPERATION_OPEN_TERMINAL: 打开控制台\n* VM_OPERATION_MIGRATE: 迁移虚拟机\n* VM_OPERATION_VM_FOLDER: 虚拟机所在组管理\n* VM_OPERATION_VM_POWER: 虚拟机电源操作\n* VM_OPERATION_CLONE: 克隆虚拟机\n* VM_OPERATION_INSTALL_TOOLS: 安装虚拟机工具\n* VM_IMPORT_EXPORT: 虚拟机导入导出\n* CREATE_VM_TEMPLATE: 创建虚拟机模板\n* MANAGE_VM_TEMPLATE: 虚拟机模板管理\n* VM_TEMPLATE_IMPORT_EXPORT: 虚拟机模板导入导出\n* MANAGE_VM_SNAPSHOT: 虚拟机快照管理\n* MANAGE_VM_VOLUME: 虚拟卷管理\n* VM_VOLUME_IMPORT_EXPORT: 虚拟卷导入导出\n* MANAGE_ISO: ISO 映像管理\n* DOWNLOAD_ISO: 下载 ISO 映像\n* QUERY_SENSITIVE_RESOURCE_LIST: 查询敏感资源列表\n* QUERY_SENSITIVE_RESOURCE: 查询敏感资源\n* MANAGE_SENSITIVE_RESOURCE: 敏感资源管理\n* MANAGE_VM_PLACEMENT_GROUP: 虚拟机放置组管理\n* MANAGE_SNAPSHOT_PLAN: 快照计划管理\n* MANAGE_ALERT: 报警管理\n* MANAGE_ALERT_ACK: 报警确认管理\n* MANAGE_MONITOR_VIEW: 监控分析管理\n* MANAGE_ENTITY_FILTER: 资源优化管理\n* MANAGE_CLUSTER_BASIC_INFO: 集群基本信息管理\n* MANAGE_CLUSTER_LICENCE: 集群软件许可管理\n* MANAGE_CLUSTER_SNMP_TRANSPORT: SNMP 传输管理\n* MANAGE_SNMP_TRAP: SNMP 陷阱管理\n* MANAGE_CLUSTER_VIP: 虚拟 IP 管理\n* MANAGE_CLUSTER_MANAGEMENT_IP: 管理 IP 管理\n* MANAGE_DNS_SERVER: DNS 服务器管理\n* MANAGE_NTP_SERVER: NTP 服务器管理\n* MANAGE_IPMI: IPMI 信息管理\n* MANAGE_CLUSTER_VM_CPU_MODEL: 虚拟机 CPU 兼容性管理\n* MANAGE_CLUSTER_VM_TOOLS: 虚拟机工具 ISO 映像管理\n* MANAGE_CLUSTER_HOT_MIGRATION: 热迁移选项配置\n* MANAGE_CLUSTER_MEMORY_OVERCOMMIT: 修改集群内存超分配置\n* MANAGE_CLUSTER_HA: 集群高可用配置\n* MANAGE_CLUSTER_FULL_COPY_MAX_BPS: 集群完全克隆任务全局限速配置\n* MANAGE_SSL_CERTIFICATE: SSL 证书管理\n* MANAGE_LOG_COLLECTION: 日志采集\n* MANAGE_SYSLOG: 日志传输 - 配置 Syslog\n* MANAGE_LOG_FIND: 日志检索\n* MANAGE_LABEL: 标签管理\n* MANAGE_USER_AND_ROLE: 用户与角色管理\n* MANAGE_PASSWORD_SETTINGS: 密码安全管理\n* MANAGE_ACCESS_CONTROL: 访问限制管理\n* MANAGE_SESSION_EXPIRATION: 会话超时管理\n* MANAGE_LOGOUT_METHOD: 登出方式管理\n* MANAGE_VCENTER_ASSOCIATION: vCenter 关联管理\n* MANAGE_ESXI_ASSOCIATION: ESXi 关联管理\n* MANAGE_AUDIT_LOG: 事件审计信息管理\n* MANAGE_AUDIT_LOG_CONFIG: 事件审计配置管理\n* MANAGE_ALERT_EMAIL_SETTING: 邮件报警通知管理\n* MANAGE_SMTP_SERVER: SMTP 服务器管理\n* MANAGE_UPGRADE_CENTER: 升级中心管理\n* MANAGE_CLUSTER_UPGRADE: 集群升级管理\n* MANAGE_ALERT_NOTIFIER: 报警通知器管理\n* MANAGE_VM_RECYCLE_BIN_SETTING: 回收站规则管理\n* MANAGE_REPORT: 报表管理\n* MANAGE_SHARING_VM_TOOLS: 共享虚拟机工具映像管理\n* MANAGE_ADVANCED_MONITOR: 高级监控管理\n* MANAGE_THIRD_PARTY_DRIVER: 第三方存储驱动管理\n* MANAGE_ORGANIZATION_NAME: 组织名称管理\n* MANAGE_CLOUD_TOWER_LICENSE: {PRODUCT} 软件许可管理\n* MANAGE_CONSISTENCY_GROUP: 一致性组管理\n* MANAGE_NIC: 网口配置\n* MANAGE_CLUSTER_ISCSI: 开启或关闭 iSCSI 存储\n* MANAGE_BACKUP_LICENSE: 许可管理\n* MANAGE_BACKUP_PACKAGE: 安装包管理\n* MANAGE_BACKUP_SERVICE: {OS_CO} 备份服务管理\n* MANAGE_BACKUP_STORE_REPOSITORY: {OS_CO} 备份存储库管理\n* MANAGE_BACKUP_PLAN: {OS_CO} 备份计划管理\n* MANAGE_BACKUP_TASK: {OS_CO} 备份任务管理\n* MANAGE_BACKUP_RESTORE_POINT: {OS_CO} 备份恢复点管理\n* MANAGE_BACKUP_RESTORE_POINT_TASK: {OS_CO} 备份恢复任务管理\n* MANAGE_NET_BACKUP_SERVICE: NetBackup 备份服务管理\n* MANAGE_NET_BACKUP_STORE_REPOSITORY: NetBackup 备份存储库管理\n* MANAGE_NET_BACKUP_PLAN: NetBackup 备份计划管理\n* MANAGE_NET_BACKUP_TASK: NetBackup 备份任务管理\n* MANAGE_NET_BACKUP_RESTORE_POINT: NetBackup 备份恢复点管理\n* MANAGE_NET_BACKUP_RESTORE_POINT_TASK: NetBackup 备份恢复任务管理\n* MANAGE_SECURITY_POLICY: 安全策略管理\n* MANAGE_SECURITY_GROUP: 安全组管理\n* ISOLATE_VM: 虚拟机隔离操作\n* MANAGE_EVEROUTE_LICENSE: 许可管理\n* MANAGE_EVEROUTE_PACKAGE: 安装包管理\n* DEPLOY_EVEROUTE_CLUSTER: 部署 {NET_SECURITY_SERVICE}\n* UNDEPLOY_EVEROUTE_CLUSTER: 卸载 {NET_SECURITY_SERVICE}\n* UPDATE_EVEROUTE_CLUSTER: 编辑 {NET_SECURITY_SERVICE}\n* UPGRADE_EVEROUTE_CLUSTER: 升级 {NET_SECURITY_SERVICE}\n* MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE: 服务管理\n* MANAGE_EVEROUTE_CLUSTER_ASSOCIATION: 集群关联管理\n* MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY: 全局安全策略管理\n* MANAGE_MICRO_SEGMENTATION: 分布式防火墙管理\n* MANAGE_LOAD_BALANCER_RESOURCE: 网络负载均衡资源管理\n* MANAGE_LOAD_BALANCER: 网络负载均衡器管理\n* MANAGE_LOAD_BALANCER_VNET_BOND: 虚拟机网络关联管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SERVICE: 虚拟专有云网络功能管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_CLUSTER_BINDING: 关联集群管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_EDGE_GATEWAY: 边缘网关管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_EXTERNAL_SUBNET: 外部子网管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_BASIC_RESOURCE: VPC 资源管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_GROUP: VPC 安全组管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_POLICY: VPC 安全策略管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_ISOLATION_POLICY: VPC 内虚拟机隔离操作\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_FLOATING_IP: 浮动 IP 管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_ROUTER_GATEWAY: 路由网关管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_NAT_GATEWAY: NAT 网关管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_LAYER2_GATEWAY: L2 网关管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING: VPC 对等连接管理\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE: LB 网关资源管理\n* MANAGE_TRAFFIC_REDIRECT_SERVICE: 网络安全导流功能管理\n* MANAGE_TRAFFIC_REDIRECT_CLUSTER_BINDING: 集群关联管理\n* MANAGE_LDAP_AD_CONFIG: LDAP/AD 服务器管理\n* MANAGE_MFA_CONFIG: 双因子认证管理\n* MANAGE_DEFAULT_LOGIN_OPTION: 默认登录方式管理\n* MANAGE_CLUSTER_STORAGE_POLICY: 设置默认存储策略\n* MANAGE_SKS_SERVICE: {K8S_SERVER} 服务管理\n* MANAGE_SKS_LICENSE: {K8S_SERVER} 许可管理\n* CONFIGURE_SKS_SERVICE: {K8S_SERVER} 服务配置管理\n* CREATE_SKS_WORKLOAD_CLUSTER: 创建工作负载集群\n* DELETE_SKS_WORKLOAD_CLUSTER: 删除工作负载集群\n* UPDATE_SKS_WORKLOAD_CLUSTER: 编辑工作负载集群\n* MANAGE_CONTAINER_REGISTRY: 容器镜像仓库管理\n* DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG: 下载工作负载集群 Kubeconfig 文件\n* DOWNLOAD_SKS_WORKLOAD_SPEC_FILE: 下载工作负载集群的集群规格文件\n* MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE: 同步状态管理\n* MANAGE_OBSERVABILITY_PACKAGE: 安装包管理\n* MANAGE_OBSERVABILITY_SERVICE: 可观测性服务管理\n* CONFIG_DYNAMIC_RESOURCE_SCHEDULE: 编辑动态资源调度设置\n* GENERATE_DRS_PROPOSALS: 立即生成建议\n* APPLY_DRS_PROPOSAL: 应用迁移建议\n* MANAGE_AGENT_MESH: {PRODUCT} 代理管理\n* MANAGE_REPLICATION_SERVICE: 复制服务管理\n* MANAGE_REPLICATION_RESTORE_POINT: 恢复点管理\n* MANAGE_REPLICATION_PLAN: 复制计划管理\n* MANAGE_REPLICATION_TASK: 复制任务管理\n* MANAGE_REPLICATION_FAULT_TASK: 故障处理任务管理\n* MANAGE_REPLICA_OBJECT: 管理复制对象\n* MANAGE_BACKUP_AND_DR_EMAIL: 邮件通知管理\n* MANAGE_CLUSTER_PRIORITIZED: 开启或关闭常驻缓存\n* SMTX_INSPECTOR: 巡检中心\n* MANAGE_SFS_LICENSE: 许可管理\n* MANAGE_SFS_IMAGE: 安装包管理\n* MANAGE_SFS_FILE_STORAGE_CLUSTER: 文件存储集群管理\n* MANAGE_SFS_FILE_SYSTEM_CONFIG: 文件系统配置管理\n* MANAGE_SFS_FILE_SYSTEM_ACCESSIBILITY: 文件系统可访问性管理\n* MANAGE_SFS_FS_CONTROLLER: 文件控制器管理\n* MANAGE_SFS_SNAPSHOT: 快照管理\n* MANAGE_CLOUDTOWER_SNMP_TRANSPORT: SNMP 传输管理\n* MANAGE_CLOUD_TOWER_NTP: NTP 服务器管理\n* MANAGE_CLOUDTOWER_WEBHOOK_NOTIFIER: Webhook 通知管理\n* MANAGE_API_KEY: API 密钥管理\n* MANAGE_KMS_CLUSTER: 密钥管理服务管理\n* MANAGE_CLUSTER_STORAGE_ENCRYPTION: 数据加密管理\n* MANAGE_SSO_LOGIN: SSO 登录管理\n* MANAGE_SYSTEM_DNS: DNS 服务器管理\n* MANAGE_SYSTEM_UPGRADE: {PRODUCT} 升级管理\n* MANAGE_OPERATION_CENTER_HA: {PRODUCT} 高可用管理\n* MANAGE_BUSINESS_HOST: 业务主机（组）管理\n* MANAGE_PORT_ACCESS_CONTROL: 端口访问控制\n* MANAGE_CLUSTER_ANTI_MALWARE: 深度安全防护\n* MANAGE_CLOUDTOWER_APPLICATION: {PRODUCT} 应用管理\n* MANAGE_SERVER_PORT: 服务端口管理\n* MANAGE_STORAGE_ADAPTER: 存储适配器管理\n* MANAGE_STORAGE_DEVICE: 存储设备管理"
+    },
+    "EverouteLicensePricingType": {
+      "enum": "* CORE_NUM: 核心数\n* CPU_SLOT_NUM: CPU 插槽数\n* VCPU_NUM: vCPU 数\n* VM_NUM: 虚拟机数"
     }
   },
   "tags": [],

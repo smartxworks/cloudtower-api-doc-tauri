@@ -1361,7 +1361,7 @@
         "type": "object"
       },
       "AlertRuleObject": {
-        "description": "* BRICK: \n* CLUSTER: \n* DISK: \n* HYPERVISOR: \n* NETWORK: \n* NTP_SERVER: \n* PHYSICAL_HOST: \n* SCVM: \n* SNAPSHOT_PLAN: \n* STORAGE_CHUNK: \n* STORAGE_POOL: \n* SYSTEM_SERVICE: \n* TIME_MACHINE_PLAN: \n* VM: \n* WITNESS: \n* WITNESS_NETWORK: \n* ZBS_ZONE:",
+        "description": "* BRICK: Chassis\n* CLUSTER: Cluster\n* DATASTORE: Datastore\n* DISK: Physical disk\n* DISK_POOL: Physical disk pool\n* HYPERVISOR: Hypervisor\n* NETWORK: Network\n* NTP_SERVER: NTP server\n* OBSERVABILITY_CONNECTED_SYSTEM_SERVICE: System service\n* OBSERVABILITY_SERVICE: Observability service\n* PHYSICAL_HOST: Host\n* POD: Pod\n* SCVM: SCVM\n* SKS_CLUSTER: SKS cluster\n* SKS_CLUSTER_NODE: SKS cluster node\n* SKS_PV: Persistent volume\n* SKS_PVC: Persistent volume claim\n* SKS_REGISTRY: SKS container registry\n* SKS_SERVICE: SKS system service\n* SNAPSHOT_PLAN: Snapshot plan\n* STORAGE_CHUNK: Storage\n* STORAGE_POOL: Storage pool\n* SYSTEM_SERVICE: Service\n* TIME_MACHINE_PLAN: Snapshot plan\n* VM: Virtual machine\n* WITNESS: Witness node\n* WITNESS_NETWORK: Network between witness node and AZ\n* ZBS_ZONE: Availability zone",
         "enum": [
           "BRICK",
           "CLUSTER",
@@ -4044,6 +4044,7 @@
         "type": "object"
       },
       "AuthStrategyType": {
+        "description": "* BCM: USP\n* LDAP: LDAP/AD\n* OIDC: OIDC\n* SAML: SAML",
         "enum": [
           "BCM",
           "LDAP",
@@ -4104,7 +4105,7 @@
         "type": "string"
       },
       "BackupExecutionType": {
-        "description": "* FULL: \n* INCREMENTAL:",
+        "description": "* FULL: Full backup\n* INCREMENTAL: Incremental backup\n* SYNTHETIC_FULL: Synthetic full backup",
         "enum": [
           "FULL",
           "INCREMENTAL",
@@ -8433,7 +8434,7 @@
         "type": "object"
       },
       "BackupRestorePointType": {
-        "description": "* FULL: \n* INCREMENTAL:",
+        "description": "* FULL: Full backup\n* INCREMENTAL: Incremental backup\n* SYNTHETIC_FULL: Synthetic full backup",
         "enum": [
           "FULL",
           "INCREMENTAL",
@@ -12803,7 +12804,7 @@
         "type": "string"
       },
       "BackupStoreType": {
-        "description": "* ISCSI: \n* NFS3: \n* NFS4:",
+        "description": "* BOOSTFS: BoostFS\n* ISCSI: iSCSI\n* NETBACKUP: NetBackup\n* NFS3: NFS 3\n* NFS4: NFS 4",
         "enum": [
           "BOOSTFS",
           "ISCSI",
@@ -14683,7 +14684,7 @@
         "type": "object"
       },
       "Bus": {
-        "description": "* IDE: \n* SCSI: \n* VIRTIO:",
+        "description": "* IDE: IDE\n* SATA: SATA\n* SCSI: SCSI\n* USB: USB\n* VIRTIO: VirtIO",
         "enum": [
           "IDE",
           "SATA",
@@ -31442,6 +31443,7 @@
         "type": "object"
       },
       "DatastoreMountDeviceState": {
+        "description": "* ACTIVE: Normal\n* ERROR: Abnormal\n* UNKNOWN: Unknown",
         "enum": [
           "ACTIVE",
           "ERROR",
@@ -31450,6 +31452,7 @@
         "type": "string"
       },
       "DatastoreMountState": {
+        "description": "* ATTACHING: Mounting\n* DEGRADED: Mounted · Abnormal\n* FORMATTED: Unmounted\n* FORMATTING: Formatting\n* MOUNTED: Mounted\n* UNKNOWN: Unknown",
         "enum": [
           "ATTACHING",
           "DEGRADED",
@@ -31898,6 +31901,7 @@
         "type": "object"
       },
       "DatastoreStatus": {
+        "description": "* ACTIVE: Active\n* ATTACHING: Mounting\n* CREATING: Creating\n* ERROR: Error\n* INACTIVE: Inactive",
         "enum": [
           "ACTIVE",
           "ATTACHING",
@@ -34165,7 +34169,7 @@
         "type": "string"
       },
       "DiskHealthStatus": {
-        "description": "* HEALTHY: \n* SMART_FAILED: \n* SUBHEALTHY: \n* UNHEALTHY:",
+        "description": "* HEALTHY: Healthy\n* SMART_FAILED: S.M.A.R.T. test failed\n* SOFTWARE_RAID_FAILURE: Software RAID failure\n* SUBHEALTHY: Failing\n* UNHEALTHY: Unhealthy\n* UNKNOWN: Unknown",
         "enum": [
           "HEALTHY",
           "SMART_FAILED",
@@ -36003,7 +36007,7 @@
         "type": "object"
       },
       "DiskUsage": {
-        "description": "* BOOT: \n* CACHE: \n* CACHE_AND_META: \n* DATA: \n* DATA_AND_META:",
+        "description": "* BOOT: Boot disk\n* CACHE: Cache disk\n* CACHE_AND_META: Cache disk with metadata partition\n* DATA: Data disk\n* DATA_AND_META: Data disk with metadata partition\n* UNKNOWN: Unknown",
         "enum": [
           "BOOT",
           "CACHE",
@@ -36015,7 +36019,7 @@
         "type": "string"
       },
       "DiskUsageStatus": {
-        "description": "* ISOLATED: \n* MOUNTED: \n* MOUNTING: \n* PARTIAL_MOUNTED: \n* UNMOUNTED: \n* UNMOUNTING:",
+        "description": "* ISOLATED: Quarantining\n* MOUNTED: Mounted\n* MOUNTING: Mounting\n* PARTIAL_MOUNTED: Partially mounted\n* UNKNOWN: Unknown\n* UNMOUNTED: Unmounted\n* UNMOUNTING: Unmounting",
         "enum": [
           "ISOLATED",
           "MOUNTED",
@@ -37073,6 +37077,7 @@
         "type": "object"
       },
       "EcpEdition": {
+        "description": "* ECP_ADVANCED: SECP Advanced\n* ECP_COMPUTE: SECP Compute\n* ECP_ESSENTIAL: SECP Essential\n* ECP_STANDARD: SECP Standard\n* ECP_VDI_ESSENTIAL: SECP VDI Essential\n* ECP_VDI_STANDARD: SECP VDI Standard",
         "enum": [
           "ECP_ADVANCED",
           "ECP_COMPUTE",
@@ -42757,6 +42762,7 @@
         "type": "string"
       },
       "EverouteLicensePricingType": {
+        "description": "* CORE_NUM: Number of cores\n* CPU_SLOT_NUM: Number of CPU sockets\n* VCPU_NUM: Number of vCPUs\n* VM_NUM: Number of VMs",
         "enum": [
           "CORE_NUM",
           "CPU_SLOT_NUM",
@@ -70512,6 +70518,7 @@
         "type": "object"
       },
       "IdentityVerificationMethod": {
+        "description": "* BOTHWAY_CHAP: Mutual CHAP\n* HERITED: Inherited from the storage adapter\n* NO_CHAP: None\n* ONEWAY_CHAP: One-way CHAP",
         "enum": [
           "BOTHWAY_CHAP",
           "HERITED",
@@ -85801,6 +85808,7 @@
         "type": "object"
       },
       "MigrateMode": {
+        "description": "* CHANGE_COMPUTE_RESOURCE_AND_STORAGE: Migrate compute and storage resources\n* CHANGE_COMPUTE_RESOURCE_ONLY: Only migrate compute resources\n* CHANGE_STORAGE_ONLY: Only migrate storage resources",
         "enum": [
           "CHANGE_COMPUTE_RESOURCE_AND_STORAGE",
           "CHANGE_COMPUTE_RESOURCE_ONLY",
@@ -93923,7 +93931,7 @@
         "type": "string"
       },
       "NetworkType": {
-        "description": "* ACCESS: \n* MANAGEMENT: \n* MIGRATION: \n* STORAGE: \n* VM:",
+        "description": "* ACCESS: Access network\n* CUSTOM: Custom system network\n* ERSPAN: Mirroring egress network\n* INTERNAL: Internal communication network\n* MANAGEMENT: Management network\n* MIGRATION: Migration network\n* STORAGE: Storage network\n* STORAGE_ACCESS: Storage access network\n* VM: VM network\n* VPC_SYS: VPC system network\n* VPC_VM: System VM network",
         "enum": [
           "ACCESS",
           "CUSTOM",
@@ -108203,7 +108211,7 @@
         "type": "string"
       },
       "ROLE_ACTION": {
-        "description": "* *: \n* MANAGE_DATA_CENTER: \n* MANAGE_CLUSTER_CONNECTION: \n* MANAGE_HOST: \n* MANAGE_NIC_MTU: \n* MANAGE_DISK: \n* MANAGE_HARDWARE_TOPO: \n* MANAGE_USB_DEVICE: \n* MANAGE_VDS: \n* MANAGE_VLAN: \n* MANAGE_SYSTEM_VLAN: \n* MANAGE_ISCSI_DATA_STORE: \n* MANAGE_NFS_DATA_STORE: \n* MANAGE_NVMF_DATA_STORE: \n* CREATE_VM: \n* UPDATE_VM: \n* DELETE_VM: \n* UPDATE_VM_ADVANCED_SETTING: \n* UPDATE_VM_GUEST: \n* VM_OPERATION_OPEN_TERMINAL: \n* VM_OPERATION_MIGRATE: \n* VM_OPERATION_VM_FOLDER: \n* VM_OPERATION_VM_POWER: \n* VM_OPERATION_CLONE: \n* VM_OPERATION_INSTALL_TOOLS: \n* MANAGE_VM_TEMPLATE: \n* MANAGE_VM_SNAPSHOT: \n* MANAGE_VM_VOLUME: \n* MANAGE_ISO: \n* QUERY_SENSITIVE_RESOURCE_LIST: \n* QUERY_SENSITIVE_RESOURCE: \n* MANAGE_SENSITIVE_RESOURCE: \n* MANAGE_VM_PLACEMENT_GROUP: \n* MANAGE_SNAPSHOT_PLAN: \n* MANAGE_ALERT: \n* MANAGE_MONITOR_VIEW: \n* MANAGE_ENTITY_FILTER: \n* MANAGE_CLUSTER_BASIC_INFO: \n* MANAGE_CLUSTER_LICENCE: \n* MANAGE_CLUSTER_SNMP: \n* MANAGE_CLUSTER_VIP: \n* MANAGE_CLUSTER_MANAGEMENT_IP: \n* MANAGE_DNS_SERVER: \n* MANAGE_NTP_SERVER: \n* MANAGE_IPMI: \n* MANAGE_CLUSTER_VM_CPU_MODEL: \n* MANAGE_CLUSTER_VM_TOOLS: \n* MANAGE_CLUSTER_HOT_MIGRATION: \n* MANAGE_CLUSTER_HA: \n* MANAGE_SSL_CERTIFICATE: \n* MANAGE_LOG_COLLECTION: \n* MANAGE_LABEL: \n* MANAGE_USER_AND_ROLE: \n* MANAGE_PASSWORD_SETTINGS: \n* MANAGE_ACCESS_CONTROL: \n* MANAGE_SESSION_EXPIRATION: \n* MANAGE_VCENTER_ASSOCIATION: \n* MANAGE_ESXI_ASSOCIATION: \n* MANAGE_AUDIT_LOG: \n* MANAGE_ALERT_EMAIL_SETTING: \n* MANAGE_SMTP_SERVER: \n* MANAGE_CLUSTER_UPGRADE: \n* MANAGE_VM_RECYCLE_BIN_SETTING: \n* MANAGE_REPORT: \n* MANAGE_SHARING_VM_TOOLS: \n* MANAGE_ADVANCED_MONITOR: \n* MANAGE_THIRD_PARTY_DRIVER: \n* MANAGE_ORGANIZATION_NAME: \n* MANAGE_CLOUD_TOWER_LICENSE: \n* MANAGE_CONSISTENCY_GROUP: \n* MANAGE_SR_IOV_NIC: \n* MANAGE_CLUSTER_ISCSI: \n* MANAGE_BACKUP_LICENSE: \n* MANAGE_BACKUP_PACKAGE: \n* MANAGE_BACKUP_SERVICE: \n* MANAGE_BACKUP_STORE_REPOSITORY: \n* MANAGE_BACKUP_PLAN: \n* MANAGE_BACKUP_TASK: \n* MANAGE_BACKUP_RESTORE_POINT: \n* MANAGE_BACKUP_RESTORE_POINT_TASK:",
+        "description": "* *: All permissions\n* MANAGE_DATA_CENTER: Data center management\n* MANAGE_CLUSTER_CONNECTION: Cluster association management\n* MANAGE_STORAGE_CLUSTER_CONNECTION: ZBS datastore management\n* MANAGE_HOST: Host management\n* MANAGE_NIC_MTU: Edit NIC MTU\n* MANAGE_DISK: Physical disk management\n* MANAGE_HARDWARE_TOPO: Rack configuration\n* MANAGE_HARDWARE_HEALTH: Hardware monitoring management\n* MANAGE_USB_DEVICE: USB device management\n* MANAGE_GPU_DEVICE: GPU device management\n* MANAGE_PCI_DEVICE: PCI device management\n* MANAGE_VDS: VDS management\n* MANAGE_VLAN: VM network management\n* MANAGE_SYSTEM_VLAN: System network management\n* MANAGE_TRAFFIC_MIRROR: Traffic mirroring management\n* MANAGE_ISCSI_DATA_STORE: iSCSI user storage object management\n* MANAGE_NFS_DATA_STORE: NFS user storage object management\n* MANAGE_NVMF_DATA_STORE: NVMe user storage object management\n* MANAGE_DATASTORE: VCFS datastore management\n* VM_FOLDER_OPERATION: VM group management\n* CREATE_VM: Create virtual machine\n* UPDATE_VM: Edit virtual machine\n* DELETE_VM: Delete and resume VM\n* UPDATE_VM_ADVANCED_SETTING: Edit VM advanced settings\n* UPDATE_VM_GUEST: Update VM via VMTools\n* VM_OPERATION_OPEN_TERMINAL: Open terminal\n* VM_OPERATION_MIGRATE: Migrate virtual machine\n* VM_OPERATION_VM_FOLDER: VM folder management\n* VM_OPERATION_VM_POWER: VM power operations\n* VM_OPERATION_CLONE: Clone VM\n* VM_OPERATION_INSTALL_TOOLS: Install VMTools\n* VM_IMPORT_EXPORT: VM import and export\n* CREATE_VM_TEMPLATE: Create VM template\n* MANAGE_VM_TEMPLATE: VM template management\n* VM_TEMPLATE_IMPORT_EXPORT: VM template import and export\n* MANAGE_VM_SNAPSHOT: VM snapshot management\n* MANAGE_VM_VOLUME: Virtual volume management\n* VM_VOLUME_IMPORT_EXPORT: Virtual volume import and export\n* MANAGE_ISO: ISO image management\n* DOWNLOAD_ISO: Download ISO image\n* QUERY_SENSITIVE_RESOURCE_LIST: Query the list of sensitive resources\n* QUERY_SENSITIVE_RESOURCE: Query sensitive resources\n* MANAGE_SENSITIVE_RESOURCE: Sensitive resource management\n* MANAGE_VM_PLACEMENT_GROUP: VM placement group management\n* MANAGE_SNAPSHOT_PLAN: Snapshot plan management\n* MANAGE_ALERT: Alert management\n* MANAGE_ALERT_ACK: Alert acknowledgment management\n* MANAGE_MONITOR_VIEW: Monitoring management\n* MANAGE_ENTITY_FILTER: Resource optimization management\n* MANAGE_CLUSTER_BASIC_INFO: Cluster basic information management\n* MANAGE_CLUSTER_LICENCE: Cluster software license management\n* MANAGE_CLUSTER_SNMP_TRANSPORT: SNMP transport management\n* MANAGE_SNMP_TRAP: SNMP trap management\n* MANAGE_CLUSTER_VIP: Virtual IP management\n* MANAGE_CLUSTER_MANAGEMENT_IP: Cluster management IP’s management\n* MANAGE_DNS_SERVER: DNS server management\n* MANAGE_NTP_SERVER: NTP server management\n* MANAGE_IPMI: IPMI information management\n* MANAGE_CLUSTER_VM_CPU_MODEL: VM CPU compatibility management\n* MANAGE_CLUSTER_VM_TOOLS: VMTools ISO image management\n* MANAGE_CLUSTER_HOT_MIGRATION: Hot migration option configuration\n* MANAGE_CLUSTER_MEMORY_OVERCOMMIT: Modify cluster memory overcommit configuration\n* MANAGE_CLUSTER_HA: Cluster HA configuration\n* MANAGE_CLUSTER_FULL_COPY_MAX_BPS: Full-copy cloning task global speed limit configuration\n* MANAGE_SSL_CERTIFICATE: SSL certificate management\n* MANAGE_LOG_COLLECTION: Log collection\n* MANAGE_SYSLOG: Log transmission - Syslog server configuration\n* MANAGE_LOG_FIND: Log search\n* MANAGE_LABEL: Label management\n* MANAGE_USER_AND_ROLE: User and role management\n* MANAGE_PASSWORD_SETTINGS: Password security management\n* MANAGE_ACCESS_CONTROL: Access restriction management\n* MANAGE_SESSION_EXPIRATION: Session timeout management\n* MANAGE_LOGOUT_METHOD: Logout method management\n* MANAGE_VCENTER_ASSOCIATION: vCenter association management\n* MANAGE_ESXI_ASSOCIATION: ESXi association management\n* MANAGE_AUDIT_LOG: Event audit information management\n* MANAGE_AUDIT_LOG_CONFIG: Event audit configuration management\n* MANAGE_ALERT_EMAIL_SETTING: Email alert notification management\n* MANAGE_SMTP_SERVER: SMTP server management\n* MANAGE_UPGRADE_CENTER: Upgrade center management\n* MANAGE_CLUSTER_UPGRADE: Cluster upgrade management\n* MANAGE_ALERT_NOTIFIER: Alert notifier management\n* MANAGE_VM_RECYCLE_BIN_SETTING: Recycle bin rule management\n* MANAGE_REPORT: Report management\n* MANAGE_SHARING_VM_TOOLS: Shared VMTools image management\n* MANAGE_ADVANCED_MONITOR: Advanced monitoring management\n* MANAGE_THIRD_PARTY_DRIVER: Third-party storage driver management\n* MANAGE_ORGANIZATION_NAME: Organization name management\n* MANAGE_CLOUD_TOWER_LICENSE: CloudTower software license management\n* MANAGE_CONSISTENCY_GROUP: Consistency group management\n* MANAGE_NIC: Port configuration\n* MANAGE_CLUSTER_ISCSI: Enable or disable iSCSI storage\n* MANAGE_BACKUP_LICENSE: License management\n* MANAGE_BACKUP_PACKAGE: Installation package management\n* MANAGE_BACKUP_SERVICE: SMTX backup service management\n* MANAGE_BACKUP_STORE_REPOSITORY: SMTX backup repository management\n* MANAGE_BACKUP_PLAN: SMTX backup plan management\n* MANAGE_BACKUP_TASK: SMTX backup job management\n* MANAGE_BACKUP_RESTORE_POINT: SMTX backup restore point management\n* MANAGE_BACKUP_RESTORE_POINT_TASK: SMTX backup restore job management\n* MANAGE_NET_BACKUP_SERVICE: NetBackup backup service management\n* MANAGE_NET_BACKUP_STORE_REPOSITORY: NetBackup backup repository management\n* MANAGE_NET_BACKUP_PLAN: NetBackup backup plan management\n* MANAGE_NET_BACKUP_TASK: NetBackup backup job management\n* MANAGE_NET_BACKUP_RESTORE_POINT: NetBackup backup restore point management\n* MANAGE_NET_BACKUP_RESTORE_POINT_TASK: NetBackup backup restore job management\n* MANAGE_SECURITY_POLICY: Security policy management\n* MANAGE_SECURITY_GROUP: Security group management\n* ISOLATE_VM: VM quarantine\n* MANAGE_EVEROUTE_LICENSE: Software license management\n* MANAGE_EVEROUTE_PACKAGE: Installation package management\n* DEPLOY_EVEROUTE_CLUSTER: Deploy Everoute service\n* UNDEPLOY_EVEROUTE_CLUSTER: Uninstall Everoute service\n* UPDATE_EVEROUTE_CLUSTER: Edit Everoute service\n* UPGRADE_EVEROUTE_CLUSTER: Upgrade Everoute service\n* MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE: Service management\n* MANAGE_EVEROUTE_CLUSTER_ASSOCIATION: Cluster association management\n* MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY: Global security policy management\n* MANAGE_MICRO_SEGMENTATION: Distributed firewall management\n* MANAGE_LOAD_BALANCER_RESOURCE: Network load balancing resource management\n* MANAGE_LOAD_BALANCER: Network load balancer management\n* MANAGE_LOAD_BALANCER_VNET_BOND: VM network association management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SERVICE: VPC networking function management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_CLUSTER_BINDING: Associated cluster management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_EDGE_GATEWAY: Edge gateway management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_EXTERNAL_SUBNET: External subnet management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_BASIC_RESOURCE: VPC resource management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_GROUP: Security group in VPC management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_POLICY: Security policy in VPC management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_ISOLATION_POLICY: VM quarantine in VPC\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_FLOATING_IP: Floating IP address management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_ROUTER_GATEWAY: Routing gateway management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_NAT_GATEWAY: NAT gateway management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_LAYER2_GATEWAY: Layer 2 gateway management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING: VPC peering connection management\n* MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE: LB gateway management\n* MANAGE_TRAFFIC_REDIRECT_SERVICE: Security traffic steering management\n* MANAGE_TRAFFIC_REDIRECT_CLUSTER_BINDING: Cluster association management\n* MANAGE_LDAP_AD_CONFIG: LDAP/AD server management\n* MANAGE_MFA_CONFIG: Two-factor authentication management\n* MANAGE_DEFAULT_LOGIN_OPTION: Default login option management\n* MANAGE_CLUSTER_STORAGE_POLICY: Set default storage policy\n* MANAGE_SKS_SERVICE: SKS service management\n* MANAGE_SKS_LICENSE: SKS license management\n* CONFIGURE_SKS_SERVICE: SKS configuration management\n* CREATE_SKS_WORKLOAD_CLUSTER: Create workload cluster\n* DELETE_SKS_WORKLOAD_CLUSTER: Delete workload cluster\n* UPDATE_SKS_WORKLOAD_CLUSTER: Edit workload cluster\n* MANAGE_CONTAINER_REGISTRY: Container registry management\n* DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG: Download workload cluster Kubeconfig file\n* DOWNLOAD_SKS_WORKLOAD_SPEC_FILE: Download workload cluster spec file\n* MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE: Reconciliation management\n* MANAGE_OBSERVABILITY_PACKAGE: Observability installation package management\n* MANAGE_OBSERVABILITY_SERVICE: Observability service management\n* CONFIG_DYNAMIC_RESOURCE_SCHEDULE: Configure dynamic resource scheduler\n* GENERATE_DRS_PROPOSALS: Generate migration recommendation\n* APPLY_DRS_PROPOSAL: Apply migration recommendation\n* MANAGE_AGENT_MESH: CloudTower agent management\n* MANAGE_REPLICATION_SERVICE: Replication service management\n* MANAGE_REPLICATION_RESTORE_POINT: Restore point management\n* MANAGE_REPLICATION_PLAN: Replication plan management\n* MANAGE_REPLICATION_TASK: Replication job management\n* MANAGE_REPLICATION_FAULT_TASK: Fault handling job management\n* MANAGE_REPLICA_OBJECT: Replication object management\n* MANAGE_BACKUP_AND_DR_EMAIL: Email notification management\n* MANAGE_CLUSTER_PRIORITIZED: Volume pinning management\n* SMTX_INSPECTOR: Inspector\n* MANAGE_SFS_LICENSE: License management\n* MANAGE_SFS_IMAGE: Installation package management\n* MANAGE_SFS_FILE_STORAGE_CLUSTER: File storage cluster management\n* MANAGE_SFS_FILE_SYSTEM_CONFIG: File system configuration management\n* MANAGE_SFS_FILE_SYSTEM_ACCESSIBILITY: File system access management\n* MANAGE_SFS_FS_CONTROLLER: File controller management\n* MANAGE_SFS_SNAPSHOT: Snapshot management\n* MANAGE_CLOUDTOWER_SNMP_TRANSPORT: SNMP transport management\n* MANAGE_CLOUD_TOWER_NTP: NTP server management\n* MANAGE_CLOUDTOWER_WEBHOOK_NOTIFIER: Webhook notification management\n* MANAGE_API_KEY: API key management\n* MANAGE_KMS_CLUSTER: Key management service management\n* MANAGE_CLUSTER_STORAGE_ENCRYPTION: Data encryption management\n* MANAGE_SSO_LOGIN: SSO login management\n* MANAGE_SYSTEM_DNS: DNS server management\n* MANAGE_SYSTEM_UPGRADE: CloudTower upgrade management\n* MANAGE_OPERATION_CENTER_HA: CloudTower high availability management\n* MANAGE_BUSINESS_HOST: Client host and host group management\n* MANAGE_PORT_ACCESS_CONTROL: Port access control\n* MANAGE_CLUSTER_ANTI_MALWARE: Deep security protection\n* MANAGE_CLOUDTOWER_APPLICATION: CloudTower application management\n* MANAGE_SERVER_PORT: Service port management\n* MANAGE_STORAGE_ADAPTER: Storage adapter management\n* MANAGE_STORAGE_DEVICE: Storage device management",
         "enum": [
           "*",
           "MANAGE_DATA_CENTER",
@@ -116876,7 +116884,7 @@
         "type": "object"
       },
       "ReportResourceInputEnum": {
-        "description": "* ALERT: \n* ALL: \n* CLUSTER: \n* DATA_CENTER: \n* DISK: \n* ELF_IMAGE: \n* ENTITY_FILTERS: \n* GLOBAL_ALERT_RULE: \n* HOST: \n* TASK: \n* VDS: \n* VLAN: \n* VM: \n* VM_TEMPLATE:",
+        "description": "* ALERT: Alert\n* ALL: All\n* CLUSTER: Cluster\n* CONTENT_LIBRARY_IMAGE: ISO image\n* CONTENT_LIBRARY_VM_TEMPLATE: VM template\n* DATA_CENTER: Data center\n* DISK: Physical disk\n* ENTITY_FILTERS: Resource optimization\n* GLOBAL_ALERT_RULE: Global alert rule\n* HOST: Host\n* TASK: Task\n* VDS: Virtual distributed switch\n* VLAN: VLAN\n* VM: VM",
         "enum": [
           "ALERT",
           "ALL",
@@ -125245,6 +125253,7 @@
         "type": "object"
       },
       "StorageAdapterStatus": {
+        "description": "* ABNORMAL: Abnormal\n* DEGRADED: Degraded\n* OFFLINE: Offline\n* ONLINE: Online",
         "enum": [
           "ABNORMAL",
           "DEGRADED",
@@ -125254,6 +125263,7 @@
         "type": "string"
       },
       "StorageAdapterType": {
+        "description": "* FC: FC\n* ISCSI: iSCSI\n* ZBS: ZBS",
         "enum": [
           "FC",
           "ISCSI",
@@ -126821,6 +126831,7 @@
         "type": "object"
       },
       "StorageClusterConfigStorageType": {
+        "description": "* DATASTORE: Datastore\n* STORAGE_CLUSTER: Storage cluster",
         "enum": [
           "DATASTORE",
           "STORAGE_CLUSTER"
@@ -127761,6 +127772,7 @@
         "type": "object"
       },
       "StorageClusterConnectState": {
+        "description": "* CONNECTED: Connected\n* FAILED_TO_REMOVE: Failed to unmount.\n* INITIALIZING: Initializing\n* REMOVING: Unmounting",
         "enum": [
           "CONNECTED",
           "FAILED_TO_REMOVE",
@@ -127770,6 +127782,7 @@
         "type": "string"
       },
       "StorageClusterErrorState": {
+        "description": "* SERVICE_ERROR: Storage service abnormal",
         "enum": [
           "SERVICE_ERROR"
         ],
@@ -128384,6 +128397,7 @@
         "type": "object"
       },
       "StorageDevicePathState": {
+        "description": "* ACTIVE: Active I/O\n* DEAD: Inactive\n* DISABLED: Disabled\n* STANDBY: Standby",
         "enum": [
           "ACTIVE",
           "DEAD",
@@ -129903,6 +129917,7 @@
         "type": "object"
       },
       "StorageProtocol": {
+        "description": "* FC: FC\n* ISCSI: iSCSI",
         "enum": [
           "FC",
           "ISCSI"
@@ -129910,6 +129925,7 @@
         "type": "string"
       },
       "StorageTargetType": {
+        "description": "* DYNAMIC: Dynamic\n* STATIC: Static",
         "enum": [
           "DYNAMIC",
           "STATIC"
@@ -164684,6 +164700,7 @@
         "type": "object"
       },
       "VmTemplateConfigDiskVolumeStorageType": {
+        "description": "* ISCSI_LUN: iSCSI LUN\n* ISCSI_LUN_SNAPSHOT: iSCSI LUN snapshot\n* NONE: No volume data\n* VCFS_VOLUME_FILE: Volume file in a VCFS datastore",
         "enum": [
           "ISCSI_LUN",
           "ISCSI_LUN_SNAPSHOT",
@@ -169372,6 +169389,7 @@
         "type": "object"
       },
       "VmUsage": {
+        "description": "* ADVANCED_MONITORING: Advanced monitoring\n* AGENT_MESH_NODE: CloudTower agent\n* BACKUP_CONTROLLER: Backup\n* BUNDLE_APPLICATION: Observability\n* CLOUDTOWER: CloudTower\n* CLOUDTOWER_PASSIVE: CloudTower passive node\n* CLOUDTOWER_WITNESS: CloudTower witness node\n* EVEROUTE_CONTROLLER: Network and security\n* EVEROUTE_LB: Network load balancer\n* EVEROUTE_VPC_EDGE: VPC networking\n* REGISTRY: Registry\n* REPLICATION_CONTROLLER: Replication\n* SFS_CONTROLLER: File controller\n* SHARE_REGISTRY: Container registry\n* SKS_MANAGEMENT: SKS management cluster",
         "enum": [
           "ADVANCED_MONITORING",
           "AGENT_MESH_NODE",
@@ -169948,6 +169966,7 @@
         "type": "string"
       },
       "VmVolumeProvisionPolicy": {
+        "description": "* thin: Thin provisioning\n* thick_lazy_zeroed: Thick provisioning lazily zeroed\n* thick_eager_zeroed: Thick provisioning eagerly zeroed",
         "enum": [
           "thin",
           "thick_lazy_zeroed",
@@ -170249,7 +170268,7 @@
         "type": "string"
       },
       "VmVolumeSnapshotType": {
-        "description": "KVM_VOLUME_SNAPSHOT: normal vm volume snapshot \n* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI vm volume snapshot",
+        "description": "* KVM_VOLUME_ISCSI_SNAPSHOT: ISCSI vm volume snapshot\n* KVM_VOLUME_SNAPSHOT: normal vm volume snapshot\n* KVM_VOLUME_VCFS_SNAPSHOT: VCFS virtual volume snapshot",
         "enum": [
           "KVM_VOLUME_ISCSI_SNAPSHOT",
           "KVM_VOLUME_SNAPSHOT",
@@ -172243,7 +172262,7 @@
         "type": "object"
       },
       "VmVolumeType": {
-        "description": "* KVM_VOLUME: Normal volume \n* KVM_VOLUME_ISCSI: ISCSI vm volume",
+        "description": "* KVM_VOLUME: Normal volume\n* KVM_VOLUME_ISCSI: ISCSI vm volume\n* KVM_VOLUME_VCFS: VCFS virtual volume",
         "enum": [
           "KVM_VOLUME",
           "KVM_VOLUME_ISCSI",
