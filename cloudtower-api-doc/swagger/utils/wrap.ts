@@ -106,6 +106,13 @@ export const wrapSpecWithI18n = (
           }
         }
         const des = i18next.t(`${ns}.schemas.${s}${path ? `.${path}` : ''}`, {lng: language, returnObjects: true});
+        if (path === "enum" && Array.isArray(schemaObj.enum) && _.isPlainObject(des)) {
+          const enumValues: unknown[] = schemaObj.enum;
+          schemaObj.description = enumValues
+            .map(value => `* ${value}: ${_.get(des, [String(value)]) ?? ""}`)
+            .join("\n");
+          return;
+        }
         if(typeof des === 'string' && des.includes(s)) { return }
         if(typeof des === 'string') {
           _.set(cloneSpec, [...prefix, "description"], des);
