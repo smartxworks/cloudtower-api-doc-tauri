@@ -276,7 +276,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning policy"
+            "description": "Provisioning"
           },
           "resident_in_cache": {
             "description": "Resident in cache",
@@ -15912,7 +15912,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "Provisioning policy"
+                "description": "Provisioning"
               }
             },
             "required": [
@@ -17351,7 +17351,7 @@
             "type": "integer"
           },
           "memory_allocation_rate": {
-            "description": "Memory allocation rate",
+            "description": "Allocated memory (%)",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -18785,16 +18785,16 @@
             "type": "number"
           },
           "ntp_service_time": {
-            "description": "NTP service time",
+            "description": "NTP server time",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "ntp_services": {
-            "description": "NTP services",
+            "description": "NTP server",
             "items": {
               "$ref": "#/components/schemas/NtpServiceInfo",
-              "description": "NTP services"
+              "description": "NTP server"
             },
             "nullable": true,
             "type": "array"
@@ -19634,7 +19634,7 @@
       "ClusterStorageClusterConfigDatastore": {
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "Datastore capacity (bytes)",
+            "description": "Total capacity (bytes)",
             "format": "int64",
             "type": "integer"
           },
@@ -19643,7 +19643,7 @@
             "type": "string"
           },
           "free_bytes": {
-            "description": "Free space (bytes)",
+            "description": "Free capacity (bytes)",
             "format": "int64",
             "type": "integer"
           },
@@ -19665,10 +19665,10 @@
           },
           "type": {
             "$ref": "#/components/schemas/StorageProtocol",
-            "description": "Storage protocol type"
+            "description": "Protocol"
           },
           "used_bytes": {
-            "description": "Used space (bytes)",
+            "description": "Used capacity (bytes)",
             "format": "int64",
             "type": "integer"
           }
@@ -22934,27 +22934,27 @@
             "type": "array"
           },
           "memory_allocation_rate": {
-            "description": "Memory allocation rate",
+            "description": "Allocated memory (%)",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
-            "description": "Memory allocation rate greater than given data",
+            "description": "Allocated memory (%) greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
-            "description": "Memory allocation rate greater than or equals to given data",
+            "description": "Allocated memory (%) greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
-            "description": "Memory allocation rate in given range",
+            "description": "Allocated memory (%) in given range",
             "items": {
-              "description": "Memory allocation rate in given range",
+              "description": "Allocated memory (%) in given range",
               "format": "double",
               "type": "number"
             },
@@ -22962,27 +22962,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
-            "description": "Memory allocation rate less than given data",
+            "description": "Allocated memory (%) less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
-            "description": "Memory allocation rate less than or equals to given data",
+            "description": "Allocated memory (%) less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
-            "description": "Memory allocation rate not equal given data",
+            "description": "Allocated memory (%) not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
-            "description": "Memory allocation rate not in given range",
+            "description": "Allocated memory (%) not in given range",
             "items": {
-              "description": "Memory allocation rate not in given range",
+              "description": "Allocated memory (%) not in given range",
               "format": "double",
               "type": "number"
             },
@@ -64469,7 +64469,7 @@
             "type": "string"
           },
           "memory_allocation_rate": {
-            "description": "Memory allocation rate",
+            "description": "Allocated memory (%)",
             "format": "double",
             "nullable": true,
             "type": "number"
@@ -67260,27 +67260,27 @@
             "type": "string"
           },
           "memory_allocation_rate": {
-            "description": "Memory allocation rate",
+            "description": "Allocated memory (%)",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gt": {
-            "description": "Memory allocation rate greater than given data",
+            "description": "Allocated memory (%) greater than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_gte": {
-            "description": "Memory allocation rate greater than or equals to given data",
+            "description": "Allocated memory (%) greater than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_in": {
-            "description": "Memory allocation rate in given range",
+            "description": "Allocated memory (%) in given range",
             "items": {
-              "description": "Memory allocation rate in given range",
+              "description": "Allocated memory (%) in given range",
               "format": "double",
               "type": "number"
             },
@@ -67288,27 +67288,27 @@
             "type": "array"
           },
           "memory_allocation_rate_lt": {
-            "description": "Memory allocation rate less than given data",
+            "description": "Allocated memory (%) less than given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_lte": {
-            "description": "Memory allocation rate less than or equals to given data",
+            "description": "Allocated memory (%) less than or equals to given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not": {
-            "description": "Memory allocation rate not equal given data",
+            "description": "Allocated memory (%) not equal given data",
             "format": "double",
             "nullable": true,
             "type": "number"
           },
           "memory_allocation_rate_not_in": {
-            "description": "Memory allocation rate not in given range",
+            "description": "Allocated memory (%) not in given range",
             "items": {
-              "description": "Memory allocation rate not in given range",
+              "description": "Allocated memory (%) not in given range",
               "format": "double",
               "type": "number"
             },
@@ -70551,7 +70551,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning policy"
+            "description": "Provisioning"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
@@ -85848,7 +85848,7 @@
           },
           "migrate_mode": {
             "$ref": "#/components/schemas/MigrateMode",
-            "description": "Migration mode"
+            "description": "Migration type"
           },
           "migrate_type": {
             "$ref": "#/components/schemas/MigrateType",
@@ -85868,7 +85868,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning policy"
+            "description": "Provisioning"
           },
           "remove_unmovable_devices": {
             "description": "Remove device",
@@ -86048,7 +86048,7 @@
               },
               "provision_policy": {
                 "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-                "description": "VM volume provisioning policy"
+                "description": "VM volume provisioning"
               },
               "resident_in_cache": {
                 "type": "boolean"
@@ -89021,7 +89021,7 @@
         "additionalProperties": false,
         "properties": {
           "datastore_capacity_bytes": {
-            "description": "Datastore capacity (bytes)",
+            "description": "Total capacity (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -89032,7 +89032,7 @@
             "type": "string"
           },
           "free_bytes": {
-            "description": "Free space (bytes)",
+            "description": "Free capacity (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -89055,10 +89055,10 @@
           },
           "type": {
             "$ref": "#/components/schemas/StorageProtocol",
-            "description": "Storage protocol type"
+            "description": "Protocol"
           },
           "used_bytes": {
-            "description": "Used space (bytes)",
+            "description": "Used capacity (bytes)",
             "format": "int64",
             "nullable": true,
             "type": "integer"
@@ -89086,7 +89086,7 @@
           },
           "state": {
             "$ref": "#/components/schemas/DatastoreMountState",
-            "description": "State"
+            "description": "Mount state"
           }
         },
         "required": [
@@ -92921,7 +92921,7 @@
             "type": "string"
           },
           "path": {
-            "description": "Path",
+            "description": "Group directory",
             "nullable": true,
             "type": "string"
           }
@@ -158672,7 +158672,7 @@
             "title": "NestedVmFolder"
           },
           "path": {
-            "description": "Path",
+            "description": "Group directory",
             "nullable": true,
             "type": "string"
           },
@@ -159080,80 +159080,80 @@
             "title": "VmFolderWhereInput"
           },
           "path": {
-            "description": "Path",
+            "description": "Group directory",
             "nullable": true,
             "type": "string"
           },
           "path_contains": {
-            "description": "Path contains given string",
+            "description": "Group directory contains given string",
             "nullable": true,
             "type": "string"
           },
           "path_ends_with": {
-            "description": "Path ends with given string",
+            "description": "Group directory ends with given string",
             "nullable": true,
             "type": "string"
           },
           "path_gt": {
-            "description": "Path greater than given data",
+            "description": "Group directory greater than given data",
             "nullable": true,
             "type": "string"
           },
           "path_gte": {
-            "description": "Path greater than or equals to given data",
+            "description": "Group directory greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "path_in": {
-            "description": "Path in given range",
+            "description": "Group directory in given range",
             "items": {
-              "description": "Path in given range",
+              "description": "Group directory in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_lt": {
-            "description": "Path less than given data",
+            "description": "Group directory less than given data",
             "nullable": true,
             "type": "string"
           },
           "path_lte": {
-            "description": "Path less than or equals to given data",
+            "description": "Group directory less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "path_not": {
-            "description": "Path not equal given data",
+            "description": "Group directory not equal given data",
             "nullable": true,
             "type": "string"
           },
           "path_not_contains": {
-            "description": "Path not contains given string",
+            "description": "Group directory not contains given string",
             "nullable": true,
             "type": "string"
           },
           "path_not_ends_with": {
-            "description": "Path not ends with given string",
+            "description": "Group directory not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "path_not_in": {
-            "description": "Path not in given range",
+            "description": "Group directory not in given range",
             "items": {
-              "description": "Path not in given range",
+              "description": "Group directory not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "path_not_starts_with": {
-            "description": "Path not starts with given string",
+            "description": "Group directory not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "path_starts_with": {
-            "description": "Path starts with given string",
+            "description": "Group directory starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -169338,7 +169338,7 @@
       "VmUpdateSyncTimeOnResumeParamsData": {
         "properties": {
           "sync_vm_time_on_resume": {
-            "description": "Synchronize VM time on resume",
+            "description": "Time sync settings when VM resumes",
             "type": "boolean"
           }
         },
@@ -169676,7 +169676,7 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "Provisioning policy",
+            "description": "Provisioning",
             "nullable": true,
             "type": "string"
           },
@@ -169811,7 +169811,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning policy"
+            "description": "Provisioning"
           },
           "resident_in_cache": {
             "type": "boolean"
@@ -170070,7 +170070,7 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "Provisioning policy",
+            "description": "Provisioning",
             "nullable": true,
             "type": "string"
           },
@@ -171012,80 +171012,80 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "Provisioning policy",
+            "description": "Provisioning",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
-            "description": "Provisioning policy contains given string",
+            "description": "Provisioning contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
-            "description": "Provisioning policy ends with given string",
+            "description": "Provisioning ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
-            "description": "Provisioning policy greater than given data",
+            "description": "Provisioning greater than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
-            "description": "Provisioning policy greater than or equals to given data",
+            "description": "Provisioning greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
-            "description": "Provisioning policy in given range",
+            "description": "Provisioning in given range",
             "items": {
-              "description": "Provisioning policy in given range",
+              "description": "Provisioning in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
-            "description": "Provisioning policy less than given data",
+            "description": "Provisioning less than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
-            "description": "Provisioning policy less than or equals to given data",
+            "description": "Provisioning less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
-            "description": "Provisioning policy not equal given data",
+            "description": "Provisioning not equal given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
-            "description": "Provisioning policy not contains given string",
+            "description": "Provisioning not contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
-            "description": "Provisioning policy not ends with given string",
+            "description": "Provisioning not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
-            "description": "Provisioning policy not in given range",
+            "description": "Provisioning not in given range",
             "items": {
-              "description": "Provisioning policy not in given range",
+              "description": "Provisioning not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
-            "description": "Provisioning policy not starts with given string",
+            "description": "Provisioning not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
-            "description": "Provisioning policy starts with given string",
+            "description": "Provisioning starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -173169,80 +173169,80 @@
             "type": "string"
           },
           "provision_policy": {
-            "description": "Provisioning policy",
+            "description": "Provisioning",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_contains": {
-            "description": "Provisioning policy contains given string",
+            "description": "Provisioning contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_ends_with": {
-            "description": "Provisioning policy ends with given string",
+            "description": "Provisioning ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gt": {
-            "description": "Provisioning policy greater than given data",
+            "description": "Provisioning greater than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_gte": {
-            "description": "Provisioning policy greater than or equals to given data",
+            "description": "Provisioning greater than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_in": {
-            "description": "Provisioning policy in given range",
+            "description": "Provisioning in given range",
             "items": {
-              "description": "Provisioning policy in given range",
+              "description": "Provisioning in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_lt": {
-            "description": "Provisioning policy less than given data",
+            "description": "Provisioning less than given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_lte": {
-            "description": "Provisioning policy less than or equals to given data",
+            "description": "Provisioning less than or equals to given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not": {
-            "description": "Provisioning policy not equal given data",
+            "description": "Provisioning not equal given data",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_contains": {
-            "description": "Provisioning policy not contains given string",
+            "description": "Provisioning not contains given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_ends_with": {
-            "description": "Provisioning policy not ends with given string",
+            "description": "Provisioning not ends with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_not_in": {
-            "description": "Provisioning policy not in given range",
+            "description": "Provisioning not in given range",
             "items": {
-              "description": "Provisioning policy not in given range",
+              "description": "Provisioning not in given range",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "provision_policy_not_starts_with": {
-            "description": "Provisioning policy not starts with given string",
+            "description": "Provisioning not starts with given string",
             "nullable": true,
             "type": "string"
           },
           "provision_policy_starts_with": {
-            "description": "Provisioning policy starts with given string",
+            "description": "Provisioning starts with given string",
             "nullable": true,
             "type": "string"
           },
@@ -176988,7 +176988,7 @@
           },
           "provision_policy": {
             "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning policy"
+            "description": "Provisioning"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
@@ -212482,7 +212482,7 @@
     },
     "/get-cluster-ntp-services": {
       "post": {
-        "description": "Get the NTP service configuration and time synchronization status of the specified clusters.",
+        "description": "Get the NTP server configuration and time synchronization status of the specified clusters.",
         "operationId": "GetClusterNtpServices",
         "parameters": [
           {
@@ -212593,7 +212593,7 @@
             "Authorization": []
           }
         ],
-        "summary": "Getting cluster NTP services",
+        "summary": "Getting cluster NTP server information",
         "tags": [
           "ClusterManagement"
         ],
@@ -246338,7 +246338,7 @@
     },
     "/import-content-library-image-v2": {
       "post": {
-        "description": "Import a content library image to the specified clusters. Multiple clusters are supported, and the upload tasks for each cluster are returned.",
+        "description": "Import an ISO image to the specified clusters. Multiple clusters are supported, and the upload tasks for each cluster are returned.",
         "operationId": "ImportContentLibraryImageV2",
         "parameters": [
           {
@@ -246458,7 +246458,7 @@
             "Authorization": []
           }
         ],
-        "summary": "Importing a content library image (V2)",
+        "summary": "Importing an ISO image into the content library (V2)",
         "tags": [
           "SharedManagement"
         ],
@@ -265560,7 +265560,7 @@
     },
     "/update-vm-sync-time-on-resume": {
       "post": {
-        "description": "Configure whether to synchronize the VM time when the VM resumes.",
+        "description": "Configure whether to synchronize time when the VM resumes.",
         "operationId": "UpdateVmSyncTimeOnResume",
         "parameters": [
           {
@@ -265682,7 +265682,7 @@
             "Authorization": []
           }
         ],
-        "summary": "Updating the VM time synchronization setting on resume",
+        "summary": "Updating the time sync settings when a VM resumes",
         "tags": [
           "VmManagement"
         ],

@@ -1,14 +1,14 @@
 {
   "schemas": {
     "ClusterWhereInput": {
-      "allocated_memory_bytes": "已分配内存（字节）",
-      "allocated_memory_bytes_gt": "已分配内存（字节）大于指定数值",
-      "allocated_memory_bytes_gte": "已分配内存（字节）大于或等于指定数值",
-      "allocated_memory_bytes_in": "已分配内存（字节）在指定范围中",
-      "allocated_memory_bytes_lt": "已分配内存（字节）小于指定字符",
-      "allocated_memory_bytes_lte": "已分配内存（字节）小于或等于指定字符",
-      "allocated_memory_bytes_not": "已分配内存（字节）不等于指定数值",
-      "allocated_memory_bytes_not_in": "已分配内存（字节）不在指定范围中",
+      "allocated_memory_bytes": "内存分配量（字节）",
+      "allocated_memory_bytes_gt": "内存分配量（字节）大于指定数值",
+      "allocated_memory_bytes_gte": "内存分配量（字节）大于或等于指定数值",
+      "allocated_memory_bytes_in": "内存分配量（字节）在指定范围中",
+      "allocated_memory_bytes_lt": "内存分配量（字节）小于指定数值",
+      "allocated_memory_bytes_lte": "内存分配量（字节）小于或等于指定数值",
+      "allocated_memory_bytes_not": "内存分配量（字节）不等于指定数值",
+      "allocated_memory_bytes_not_in": "内存分配量（字节）不在指定范围中",
       "cap_snapshot_unique_size": "",
       "cap_snapshot_unique_size_gt": "",
       "cap_snapshot_unique_size_gte": "",
@@ -29,53 +29,53 @@
       "memory_allocation_rate_gt": "内存分配率大于指定数值",
       "memory_allocation_rate_gte": "内存分配率大于或等于指定数值",
       "memory_allocation_rate_in": "内存分配率在指定范围中",
-      "memory_allocation_rate_lt": "内存分配率小于指定字符",
-      "memory_allocation_rate_lte": "内存分配率小于或等于指定字符",
+      "memory_allocation_rate_lt": "内存分配率小于指定数值",
+      "memory_allocation_rate_lte": "内存分配率小于或等于指定数值",
       "memory_allocation_rate_not": "内存分配率不等于指定数值",
       "memory_allocation_rate_not_in": "内存分配率不在指定范围中",
-      "overcommit_memory_ratio": "内存超分比例",
-      "overcommit_memory_ratio_gt": "内存超分比例大于指定数值",
-      "overcommit_memory_ratio_gte": "内存超分比例大于或等于指定数值",
-      "overcommit_memory_ratio_in": "内存超分比例在指定范围中",
-      "overcommit_memory_ratio_lt": "内存超分比例小于指定字符",
-      "overcommit_memory_ratio_lte": "内存超分比例小于或等于指定字符",
-      "overcommit_memory_ratio_not": "内存超分比例不等于指定数值",
-      "overcommit_memory_ratio_not_in": "内存超分比例不在指定范围中"
+      "overcommit_memory_ratio": "内存超分比",
+      "overcommit_memory_ratio_gt": "内存超分比大于指定数值",
+      "overcommit_memory_ratio_gte": "内存超分比大于或等于指定数值",
+      "overcommit_memory_ratio_in": "内存超分比在指定范围中",
+      "overcommit_memory_ratio_lt": "内存超分比小于指定数值",
+      "overcommit_memory_ratio_lte": "内存超分比小于或等于指定数值",
+      "overcommit_memory_ratio_not": "内存超分比不等于指定数值",
+      "overcommit_memory_ratio_not_in": "内存超分比不在指定范围中"
     },
     "VmFolderWhereInput": {
       "parent": "父文件夹",
-      "path": "路径",
-      "path_contains": "路径包含指定字符",
-      "path_ends_with": "路径以指定字符结尾",
-      "path_gt": "路径大于指定数值",
-      "path_gte": "路径大于或等于指定数值",
-      "path_in": "路径在指定范围中",
-      "path_lt": "路径小于指定字符",
-      "path_lte": "路径小于或等于指定字符",
-      "path_not": "路径不等于指定数值",
-      "path_not_contains": "路径不包含指定字符",
-      "path_not_ends_with": "路径不以指定字符结尾",
-      "path_not_in": "路径不在指定范围中",
-      "path_not_starts_with": "路径不以指定字符开始",
-      "path_starts_with": "路径以指定字符开始",
+      "path": "组目录",
+      "path_contains": "组目录包含指定字符",
+      "path_ends_with": "组目录以指定字符结尾",
+      "path_gt": "组目录大于指定数值",
+      "path_gte": "组目录大于或等于指定数值",
+      "path_in": "组目录在指定范围中",
+      "path_lt": "组目录小于指定字符",
+      "path_lte": "组目录小于或等于指定字符",
+      "path_not": "组目录不等于指定数值",
+      "path_not_contains": "组目录不包含指定字符",
+      "path_not_ends_with": "组目录不以指定字符结尾",
+      "path_not_in": "组目录不在指定范围中",
+      "path_not_starts_with": "组目录不以指定字符开始",
+      "path_starts_with": "组目录以指定字符开始",
       "total_vm_num": "虚拟机总数",
       "total_vm_num_gt": "虚拟机总数大于指定数值",
       "total_vm_num_gte": "虚拟机总数大于或等于指定数值",
       "total_vm_num_in": "虚拟机总数在指定范围中",
-      "total_vm_num_lt": "虚拟机总数小于指定字符",
-      "total_vm_num_lte": "虚拟机总数小于或等于指定字符",
+      "total_vm_num_lt": "虚拟机总数小于指定数值",
+      "total_vm_num_lte": "虚拟机总数小于或等于指定数值",
       "total_vm_num_not": "虚拟机总数不等于指定数值",
       "total_vm_num_not_in": "虚拟机总数不在指定范围中"
     },
     "HostWhereInput": {
-      "allocated_memory_bytes": "已分配内存（字节）",
-      "allocated_memory_bytes_gt": "已分配内存（字节）大于指定数值",
-      "allocated_memory_bytes_gte": "已分配内存（字节）大于或等于指定数值",
-      "allocated_memory_bytes_in": "已分配内存（字节）在指定范围中",
-      "allocated_memory_bytes_lt": "已分配内存（字节）小于指定字符",
-      "allocated_memory_bytes_lte": "已分配内存（字节）小于或等于指定字符",
-      "allocated_memory_bytes_not": "已分配内存（字节）不等于指定数值",
-      "allocated_memory_bytes_not_in": "已分配内存（字节）不在指定范围中",
+      "allocated_memory_bytes": "内存分配量（字节）",
+      "allocated_memory_bytes_gt": "内存分配量（字节）大于指定数值",
+      "allocated_memory_bytes_gte": "内存分配量（字节）大于或等于指定数值",
+      "allocated_memory_bytes_in": "内存分配量（字节）在指定范围中",
+      "allocated_memory_bytes_lt": "内存分配量（字节）小于指定数值",
+      "allocated_memory_bytes_lte": "内存分配量（字节）小于或等于指定数值",
+      "allocated_memory_bytes_not": "内存分配量（字节）不等于指定数值",
+      "allocated_memory_bytes_not_in": "内存分配量（字节）不在指定范围中",
       "datastore_mounts_every": "返回关联资源全都符合相关筛选条件的资源",
       "datastore_mounts_none": "返回关联资源不符合相关筛选条件的资源",
       "datastore_mounts_some": "返回关联资源一项或多项符合相关筛选条件的资源",
@@ -83,8 +83,8 @@
       "memory_allocation_rate_gt": "内存分配率大于指定数值",
       "memory_allocation_rate_gte": "内存分配率大于或等于指定数值",
       "memory_allocation_rate_in": "内存分配率在指定范围中",
-      "memory_allocation_rate_lt": "内存分配率小于指定字符",
-      "memory_allocation_rate_lte": "内存分配率小于或等于指定字符",
+      "memory_allocation_rate_lt": "内存分配率小于指定数值",
+      "memory_allocation_rate_lte": "内存分配率小于或等于指定数值",
       "memory_allocation_rate_not": "内存分配率不等于指定数值",
       "memory_allocation_rate_not_in": "内存分配率不在指定范围中",
       "memory_overcommit_enabled": "是否启用内存超分",
@@ -93,56 +93,56 @@
       "overcommit_active_memory_bytes_gt": "超分活跃内存（字节）大于指定数值",
       "overcommit_active_memory_bytes_gte": "超分活跃内存（字节）大于或等于指定数值",
       "overcommit_active_memory_bytes_in": "超分活跃内存（字节）在指定范围中",
-      "overcommit_active_memory_bytes_lt": "超分活跃内存（字节）小于指定字符",
-      "overcommit_active_memory_bytes_lte": "超分活跃内存（字节）小于或等于指定字符",
+      "overcommit_active_memory_bytes_lt": "超分活跃内存（字节）小于指定数值",
+      "overcommit_active_memory_bytes_lte": "超分活跃内存（字节）小于或等于指定数值",
       "overcommit_active_memory_bytes_not": "超分活跃内存（字节）不等于指定数值",
       "overcommit_active_memory_bytes_not_in": "超分活跃内存（字节）不在指定范围中",
       "overcommit_memory_bytes": "超分内存（字节）",
       "overcommit_memory_bytes_gt": "超分内存（字节）大于指定数值",
       "overcommit_memory_bytes_gte": "超分内存（字节）大于或等于指定数值",
       "overcommit_memory_bytes_in": "超分内存（字节）在指定范围中",
-      "overcommit_memory_bytes_lt": "超分内存（字节）小于指定字符",
-      "overcommit_memory_bytes_lte": "超分内存（字节）小于或等于指定字符",
+      "overcommit_memory_bytes_lt": "超分内存（字节）小于指定数值",
+      "overcommit_memory_bytes_lte": "超分内存（字节）小于或等于指定数值",
       "overcommit_memory_bytes_not": "超分内存（字节）不等于指定数值",
       "overcommit_memory_bytes_not_in": "超分内存（字节）不在指定范围中",
-      "overcommit_memory_ratio": "内存超分比例",
-      "overcommit_memory_ratio_gt": "内存超分比例大于指定数值",
-      "overcommit_memory_ratio_gte": "内存超分比例大于或等于指定数值",
-      "overcommit_memory_ratio_in": "内存超分比例在指定范围中",
-      "overcommit_memory_ratio_lt": "内存超分比例小于指定字符",
-      "overcommit_memory_ratio_lte": "内存超分比例小于或等于指定字符",
-      "overcommit_memory_ratio_not": "内存超分比例不等于指定数值",
-      "overcommit_memory_ratio_not_in": "内存超分比例不在指定范围中",
+      "overcommit_memory_ratio": "内存超分比",
+      "overcommit_memory_ratio_gt": "内存超分比大于指定数值",
+      "overcommit_memory_ratio_gte": "内存超分比大于或等于指定数值",
+      "overcommit_memory_ratio_in": "内存超分比在指定范围中",
+      "overcommit_memory_ratio_lt": "内存超分比小于指定数值",
+      "overcommit_memory_ratio_lte": "内存超分比小于或等于指定数值",
+      "overcommit_memory_ratio_not": "内存超分比不等于指定数值",
+      "overcommit_memory_ratio_not_in": "内存超分比不在指定范围中",
       "reserved_memory_bytes": "预留内存（字节）",
       "reserved_memory_bytes_gt": "预留内存（字节）大于指定数值",
       "reserved_memory_bytes_gte": "预留内存（字节）大于或等于指定数值",
       "reserved_memory_bytes_in": "预留内存（字节）在指定范围中",
-      "reserved_memory_bytes_lt": "预留内存（字节）小于指定字符",
-      "reserved_memory_bytes_lte": "预留内存（字节）小于或等于指定字符",
+      "reserved_memory_bytes_lt": "预留内存（字节）小于指定数值",
+      "reserved_memory_bytes_lte": "预留内存（字节）小于或等于指定数值",
       "reserved_memory_bytes_not": "预留内存（字节）不等于指定数值",
       "reserved_memory_bytes_not_in": "预留内存（字节）不在指定范围中",
       "running_pause_overcommit_memory_bytes": "运行及暂停状态虚拟机的超分内存（字节）",
       "running_pause_overcommit_memory_bytes_gt": "运行及暂停状态虚拟机的超分内存（字节）大于指定数值",
       "running_pause_overcommit_memory_bytes_gte": "运行及暂停状态虚拟机的超分内存（字节）大于或等于指定数值",
       "running_pause_overcommit_memory_bytes_in": "运行及暂停状态虚拟机的超分内存（字节）在指定范围中",
-      "running_pause_overcommit_memory_bytes_lt": "运行及暂停状态虚拟机的超分内存（字节）小于指定字符",
-      "running_pause_overcommit_memory_bytes_lte": "运行及暂停状态虚拟机的超分内存（字节）小于或等于指定字符",
+      "running_pause_overcommit_memory_bytes_lt": "运行及暂停状态虚拟机的超分内存（字节）小于指定数值",
+      "running_pause_overcommit_memory_bytes_lte": "运行及暂停状态虚拟机的超分内存（字节）小于或等于指定数值",
       "running_pause_overcommit_memory_bytes_not": "运行及暂停状态虚拟机的超分内存（字节）不等于指定数值",
       "running_pause_overcommit_memory_bytes_not_in": "运行及暂停状态虚拟机的超分内存（字节）不在指定范围中",
       "running_pause_reserved_memory_bytes": "运行及暂停状态虚拟机的预留内存（字节）",
       "running_pause_reserved_memory_bytes_gt": "运行及暂停状态虚拟机的预留内存（字节）大于指定数值",
       "running_pause_reserved_memory_bytes_gte": "运行及暂停状态虚拟机的预留内存（字节）大于或等于指定数值",
       "running_pause_reserved_memory_bytes_in": "运行及暂停状态虚拟机的预留内存（字节）在指定范围中",
-      "running_pause_reserved_memory_bytes_lt": "运行及暂停状态虚拟机的预留内存（字节）小于指定字符",
-      "running_pause_reserved_memory_bytes_lte": "运行及暂停状态虚拟机的预留内存（字节）小于或等于指定字符",
+      "running_pause_reserved_memory_bytes_lt": "运行及暂停状态虚拟机的预留内存（字节）小于指定数值",
+      "running_pause_reserved_memory_bytes_lte": "运行及暂停状态虚拟机的预留内存（字节）小于或等于指定数值",
       "running_pause_reserved_memory_bytes_not": "运行及暂停状态虚拟机的预留内存（字节）不等于指定数值",
       "running_pause_reserved_memory_bytes_not_in": "运行及暂停状态虚拟机的预留内存（字节）不在指定范围中",
       "total_physical_memory_bytes": "物理内存总量（字节）",
       "total_physical_memory_bytes_gt": "物理内存总量（字节）大于指定数值",
       "total_physical_memory_bytes_gte": "物理内存总量（字节）大于或等于指定数值",
       "total_physical_memory_bytes_in": "物理内存总量（字节）在指定范围中",
-      "total_physical_memory_bytes_lt": "物理内存总量（字节）小于指定字符",
-      "total_physical_memory_bytes_lte": "物理内存总量（字节）小于或等于指定字符",
+      "total_physical_memory_bytes_lt": "物理内存总量（字节）小于指定数值",
+      "total_physical_memory_bytes_lte": "物理内存总量（字节）小于或等于指定数值",
       "total_physical_memory_bytes_not": "物理内存总量（字节）不等于指定数值",
       "total_physical_memory_bytes_not_in": "物理内存总量（字节）不在指定范围中"
     },
@@ -418,20 +418,20 @@
       "datastores_some": "返回关联资源一项或多项符合相关筛选条件的资源"
     },
     "VmVolumeWhereInput": {
-      "provision_policy": "置备策略",
-      "provision_policy_contains": "置备策略包含指定字符",
-      "provision_policy_ends_with": "置备策略以指定字符结尾",
-      "provision_policy_gt": "置备策略大于指定数值",
-      "provision_policy_gte": "置备策略大于或等于指定数值",
-      "provision_policy_in": "置备策略在指定范围中",
-      "provision_policy_lt": "置备策略小于指定字符",
-      "provision_policy_lte": "置备策略小于或等于指定字符",
-      "provision_policy_not": "置备策略不等于指定数值",
-      "provision_policy_not_contains": "置备策略不包含指定字符",
-      "provision_policy_not_ends_with": "置备策略不以指定字符结尾",
-      "provision_policy_not_in": "置备策略不在指定范围中",
-      "provision_policy_not_starts_with": "置备策略不以指定字符开始",
-      "provision_policy_starts_with": "置备策略以指定字符开始",
+      "provision_policy": "置备方式",
+      "provision_policy_contains": "置备方式包含指定字符",
+      "provision_policy_ends_with": "置备方式以指定字符结尾",
+      "provision_policy_gt": "置备方式大于指定数值",
+      "provision_policy_gte": "置备方式大于或等于指定数值",
+      "provision_policy_in": "置备方式在指定范围中",
+      "provision_policy_lt": "置备方式小于指定字符",
+      "provision_policy_lte": "置备方式小于或等于指定字符",
+      "provision_policy_not": "置备方式不等于指定数值",
+      "provision_policy_not_contains": "置备方式不包含指定字符",
+      "provision_policy_not_ends_with": "置备方式不以指定字符结尾",
+      "provision_policy_not_in": "置备方式不在指定范围中",
+      "provision_policy_not_starts_with": "置备方式不以指定字符开始",
+      "provision_policy_starts_with": "置备方式以指定字符开始",
       "storage_cluster_config": "存储集群配置"
     },
     "StorageClusterConfigWhereInput": {
@@ -1325,20 +1325,20 @@
       "vm_template_config": ""
     },
     "VmVolumeSnapshotWhereInput": {
-      "provision_policy": "置备策略",
-      "provision_policy_contains": "置备策略包含指定字符",
-      "provision_policy_ends_with": "置备策略以指定字符结尾",
-      "provision_policy_gt": "置备策略大于指定数值",
-      "provision_policy_gte": "置备策略大于或等于指定数值",
-      "provision_policy_in": "置备策略在指定范围中",
-      "provision_policy_lt": "置备策略小于指定字符",
-      "provision_policy_lte": "置备策略小于或等于指定字符",
-      "provision_policy_not": "置备策略不等于指定数值",
-      "provision_policy_not_contains": "置备策略不包含指定字符",
-      "provision_policy_not_ends_with": "置备策略不以指定字符结尾",
-      "provision_policy_not_in": "置备策略不在指定范围中",
-      "provision_policy_not_starts_with": "置备策略不以指定字符开始",
-      "provision_policy_starts_with": "置备策略以指定字符开始",
+      "provision_policy": "置备方式",
+      "provision_policy_contains": "置备方式包含指定字符",
+      "provision_policy_ends_with": "置备方式以指定字符结尾",
+      "provision_policy_gt": "置备方式大于指定数值",
+      "provision_policy_gte": "置备方式大于或等于指定数值",
+      "provision_policy_in": "置备方式在指定范围中",
+      "provision_policy_lt": "置备方式小于指定字符",
+      "provision_policy_lte": "置备方式小于或等于指定字符",
+      "provision_policy_not": "置备方式不等于指定数值",
+      "provision_policy_not_contains": "置备方式不包含指定字符",
+      "provision_policy_not_ends_with": "置备方式不以指定字符结尾",
+      "provision_policy_not_in": "置备方式不在指定范围中",
+      "provision_policy_not_starts_with": "置备方式不以指定字符开始",
+      "provision_policy_starts_with": "置备方式以指定字符开始",
       "storage_cluster_config": "存储集群配置"
     },
     "DatastoreStatus": {
@@ -2471,21 +2471,21 @@
       "vpc": "VPC"
     },
     "NestedVmFolder": {
-      "path": "路径"
+      "path": "组目录"
     },
     "Cluster": {
-      "allocated_memory_bytes": "已分配内存（字节）",
+      "allocated_memory_bytes": "内存分配量（字节）",
       "memory_allocation_rate": "内存分配率",
-      "overcommit_memory_ratio": "内存超分比例"
+      "overcommit_memory_ratio": "内存超分比"
     },
     "ClusterStorageInfo": {
       "storage_cluster_configs": "存储集群配置"
     },
     "ClusterStorageClusterConfigDatastore": {
-      "free_bytes": "可用空间（字节）",
-      "used_bytes": "已用空间（字节）",
-      "datastore_capacity_bytes": "数据存储容量（字节）",
-      "type": "存储协议类型",
+      "free_bytes": "空闲容量（字节）",
+      "used_bytes": "已使用容量（字节）",
+      "datastore_capacity_bytes": "总容量（字节）",
+      "type": "连接协议",
       "status": "数据存储状态",
       "description": "描述",
       "name": "名称",
@@ -2506,9 +2506,9 @@
       "source": "来源"
     },
     "ClusterNtpServicesInfo": {
-      "ntp_services": "NTP 服务",
+      "ntp_services": "NTP 服务器",
       "cluster_time": "集群时间",
-      "ntp_service_time": "NTP 服务时间",
+      "ntp_service_time": "NTP 服务器时间",
       "time_zone_name": "时区名称",
       "time_zone": "时区",
       "cluster_id": "集群 ID"
@@ -2517,15 +2517,15 @@
       "where": "条件查询，表示查询符合该条件的资源。"
     },
     "NestedDatastore": {
-      "datastore_capacity_bytes": "数据存储容量（字节）",
+      "datastore_capacity_bytes": "总容量（字节）",
       "description": "描述",
-      "free_bytes": "可用空间（字节）",
+      "free_bytes": "空闲容量（字节）",
       "id": "唯一标识",
       "local_id": "UUID",
       "name": "名称",
       "status": "数据存储状态",
-      "type": "存储协议类型",
-      "used_bytes": "已用空间（字节）"
+      "type": "连接协议",
+      "used_bytes": "已使用容量（字节）"
     },
     "ContentLibraryImage": {
       "datastores": "数据存储"
@@ -2548,7 +2548,7 @@
     },
     "MountNewCreateDisksParams": {
       "storage_config": "存储配置",
-      "vm_volume.provision_policy": "虚拟卷置备策略"
+      "vm_volume.provision_policy": "虚拟卷置备方式"
     },
     "VmCdRomParams": {
       "storage_config": "存储配置"
@@ -2569,7 +2569,7 @@
       "storage_config": "存储配置"
     },
     "AddVmDiskVmVolumeParams": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "resident_in_cache": "常驻缓存",
       "elf_ec_storage_policy.thin_provision": "是否为精简置备",
       "elf_ec_storage_policy.ec_m": "纠删码 M 值",
@@ -2599,21 +2599,21 @@
       "enum": ""
     },
     "MigrateVmConfig": {
-      "provision_policy": "置备策略",
-      "migrate_mode": "迁移模式"
+      "provision_policy": "置备方式",
+      "migrate_mode": "迁移类型"
     },
     "VmMigrateAcrossClusterParams": {
       "data.storage_config": "存储配置"
     },
     "VmUpdateSyncTimeOnResumeParamsData": {
-      "sync_vm_time_on_resume": "恢复运行时同步虚拟机时间"
+      "sync_vm_time_on_resume": "恢复时同步时间"
     },
     "VmUpdateSyncTimeOnResumeParams": {
       "data": "",
       "where": ""
     },
     "VmdkDiskModify": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "storage_config": "存储配置"
     },
     "VmdkCdromModify": {
@@ -2684,16 +2684,16 @@
     "NestedDatastoreMount": {
       "datastore": "数据存储",
       "id": "唯一标识",
-      "state": "状态"
+      "state": "挂载状态"
     },
     "Host": {
-      "allocated_memory_bytes": "已分配内存（字节）",
+      "allocated_memory_bytes": "内存分配量（字节）",
       "datastore_mounts": "数据存储挂载",
       "memory_allocation_rate": "内存分配率",
       "memory_overcommit_enabled": "是否启用内存超分",
       "overcommit_active_memory_bytes": "超分活跃内存（字节）",
       "overcommit_memory_bytes": "超分内存（字节）",
-      "overcommit_memory_ratio": "内存超分比例",
+      "overcommit_memory_ratio": "内存超分比",
       "reserved_memory_bytes": "预留内存（字节）",
       "running_pause_overcommit_memory_bytes": "运行及暂停状态虚拟机的超分内存（字节）",
       "running_pause_reserved_memory_bytes": "运行及暂停状态虚拟机的预留内存（字节）",
@@ -2732,7 +2732,7 @@
     },
     "VmFolder": {
       "parent": "父文件夹",
-      "path": "路径",
+      "path": "组目录",
       "total_vm_num": "虚拟机总数"
     },
     "VmFolderCreationParams": {
@@ -2749,22 +2749,22 @@
       "type": "存储集群配置类型"
     },
     "VmVolumeSnapshot": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "storage_cluster_config": "存储集群配置"
     },
     "VmVolume": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "storage_cluster_config": "存储集群配置"
     },
     "VmVolumeCreationParams": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "storage_config": "存储配置"
     },
     "CloneVmVolumeParams": {
-      "data.provision_policy": "置备策略"
+      "data.provision_policy": "置备方式"
     },
     "ImportVmVolumeParams": {
-      "provision_policy": "置备策略",
+      "provision_policy": "置备方式",
       "storage_config": "存储配置"
     },
     "LicenseWhereInput": {
@@ -2877,16 +2877,16 @@
   "tags": [],
   "paths": {
     "/get-cluster-ntp-services": {
-      "summary": "获取集群 NTP 服务",
-      "description": "获取指定集群的 NTP 服务配置及时间同步状态信息。"
+      "summary": "获取集群 NTP 服务器信息",
+      "description": "获取指定集群的 NTP 服务器配置及时间同步状态信息。"
     },
     "/import-content-library-image-v2": {
-      "summary": "导入内容库镜像（V2）",
-      "description": "将内容库镜像导入到指定集群，支持同时导入多个集群，并返回各集群的上传任务。"
+      "summary": "导入 ISO 映像到内容库（V2）",
+      "description": "将 ISO 映像导入到指定集群，支持同时导入多个集群，并返回各集群的上传任务。"
     },
     "/update-vm-sync-time-on-resume": {
-      "summary": "更新虚拟机恢复时的时间同步设置",
-      "description": "设置虚拟机恢复运行时是否同步虚拟机时间。"
+      "summary": "编辑虚拟机恢复时同步时间设置",
+      "description": "设置虚拟机恢复时是否同步时间。"
     },
     "/get-auth-configs": {
       "summary": "获取认证配置",
