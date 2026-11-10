@@ -2819,7 +2819,7 @@
             "type": "boolean"
           },
           "gateway": {
-            "description": "网管",
+            "description": "网关",
             "type": "string"
           },
           "ip": {
@@ -125875,7 +125875,7 @@
             "type": "boolean"
           },
           "gateway": {
-            "description": "网管",
+            "description": "网关",
             "nullable": true,
             "type": "string"
           },
@@ -126417,80 +126417,80 @@
             "type": "boolean"
           },
           "gateway": {
-            "description": "网管",
+            "description": "网关",
             "nullable": true,
             "type": "string"
           },
           "gateway_contains": {
-            "description": "网管包含指定字符",
+            "description": "网关包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "gateway_ends_with": {
-            "description": "网管以指定字符结尾",
+            "description": "网关以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "gateway_gt": {
-            "description": "网管大于指定数值",
+            "description": "网关大于指定数值",
             "nullable": true,
             "type": "string"
           },
           "gateway_gte": {
-            "description": "网管大于或等于指定数值",
+            "description": "网关大于或等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "gateway_in": {
-            "description": "网管在指定范围中",
+            "description": "网关在指定范围中",
             "items": {
-              "description": "网管在指定范围中",
+              "description": "网关在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "gateway_lt": {
-            "description": "网管小于指定字符",
+            "description": "网关小于指定字符",
             "nullable": true,
             "type": "string"
           },
           "gateway_lte": {
-            "description": "网管小于或等于指定字符",
+            "description": "网关小于或等于指定字符",
             "nullable": true,
             "type": "string"
           },
           "gateway_not": {
-            "description": "网管不等于指定数值",
+            "description": "网关不等于指定数值",
             "nullable": true,
             "type": "string"
           },
           "gateway_not_contains": {
-            "description": "网管不包含指定字符",
+            "description": "网关不包含指定字符",
             "nullable": true,
             "type": "string"
           },
           "gateway_not_ends_with": {
-            "description": "网管不以指定字符结尾",
+            "description": "网关不以指定字符结尾",
             "nullable": true,
             "type": "string"
           },
           "gateway_not_in": {
-            "description": "网管不在指定范围中",
+            "description": "网关不在指定范围中",
             "items": {
-              "description": "网管不在指定范围中",
+              "description": "网关不在指定范围中",
               "type": "string"
             },
             "nullable": true,
             "type": "array"
           },
           "gateway_not_starts_with": {
-            "description": "网管不以指定字符开始",
+            "description": "网关不以指定字符开始",
             "nullable": true,
             "type": "string"
           },
           "gateway_starts_with": {
-            "description": "网管以指定字符开始",
+            "description": "网关以指定字符开始",
             "nullable": true,
             "type": "string"
           },
