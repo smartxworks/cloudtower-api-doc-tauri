@@ -28,7 +28,7 @@
 
 5. **生成示例代码**
    ```bash
-   yarn api:new-example
+   yarn api:new-example -v <version> --versioned
    ```
 
 ### 更新现有版本
@@ -70,7 +70,7 @@
 
 6. **重新生成示例代码**（如果需要）
    ```bash
-   yarn api:new-example -v <version>
+   yarn api:new-example -v <version> --versioned
    ```
 
 ## 脚本说明
@@ -150,6 +150,8 @@ node create-new-api-example.js -v <version>
 ```
 
 **输出**: 生成的示例代码保存到 `swagger/examples/swagger-examples.json`
+
+如果示例只应影响指定版本及后续版本，运行 `yarn api:new-example -v <version> --versioned`。脚本将与继承示例不同的接口写入 `swagger/examples/swagger-examples-by-version.json` 的对应版本。每个接口的请求体和 SDK 片段一起覆盖。同一接口有多次覆盖时，使用不晚于当前文档版本的最新一条。
 
 ### merge-json.js
 

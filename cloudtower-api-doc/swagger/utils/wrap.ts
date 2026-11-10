@@ -5,6 +5,8 @@ import { ISpec  } from "./swagger";
 import { describeSchema } from "./describe";
 import { tagsGroup } from './constant';
 import swaggerSpecExample from '../examples/swagger-examples.json';
+import exampleOverrides from '../examples/swagger-examples-by-version.json';
+import { resolveExamples } from '../examples/resolve-examples';
 import { getDisplayVersion } from './version';
 
 
@@ -35,6 +37,7 @@ export const wrapSpecWithI18n = (
   const ns = getNs(version);
   const fallbackNS = getFallbackNS(version);
   i18next.options.fallbackNS = fallbackNS;
+  const examples = resolveExamples(swaggerSpecExample, exampleOverrides, version);
   Object.keys(paths).forEach((p) => {
     const apiDoc = i18next.t(`${ns}.paths.${p}`, {lng: language, returnObjects: true }) as ApiDoc;
     const method = Object.keys(paths[p])[0]
@@ -42,7 +45,7 @@ export const wrapSpecWithI18n = (
     const { description, summary } = apiDoc;
     operationObj .description = description;
     operationObj .summary = summary;
-    const example = swaggerSpecExample [p] || {};
+    const example = examples[p] || {};
     if(example) {
       operationObj["x-codeSamples"] = [
         {
