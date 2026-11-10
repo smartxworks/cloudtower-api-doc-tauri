@@ -16,6 +16,7 @@ const path = require("path");
 const _ = require("lodash");
 const httpSnippet = require("httpsnippet");
 const { program } = require('commander');
+const { resolveExamples } = require("../swagger/examples/resolve-examples");
 
 const genSchemaExample = (params) => {
   const { schema, schemaName, spec, field } = params;
@@ -215,7 +216,7 @@ const traveseSpec = async (specPath) => {
   return example;
 };
 
-const main = async (version) => {
+const main = async ({ version, versioned }) => {
   const filePath = path.join(__dirname, "../static/specs", `${version}-swagger.json`);
   const examplePath = path.join(
     __dirname,
@@ -223,6 +224,21 @@ const main = async (version) => {
     `swagger-examples.json`
   );
   const examples = await traveseSpec(filePath);
+  if (versioned) {
+    const overridesPath = path.join(path.dirname(examplePath), "swagger-examples-by-version.json");
+    const shared = require(examplePath);
+    const overridesByVersion = require(overridesPath);
+    delete overridesByVersion[version];
+    const inherited = resolveExamples(shared, overridesByVersion, version);
+    const overrides = Object.fromEntries(
+      Object.entries(examples).filter(([apiPath, example]) => !_.isEqual(inherited[apiPath], example))
+    );
+    if (Object.keys(overrides).length) {
+      overridesByVersion[version] = overrides;
+    }
+    fs.writeFileSync(overridesPath, JSON.stringify(overridesByVersion, null, 2));
+    return;
+  }
   fs.writeFileSync(examplePath, JSON.stringify(examples, null, 2));
 };
 
@@ -230,6 +246,7 @@ const main = async (version) => {
 
 program
   .requiredOption('-v --version <char>')
+  .option('--versioned', 'Save overrides that apply starting from this version')
 program.parse();
-main(program.opts().version);
+main(program.opts());
 
