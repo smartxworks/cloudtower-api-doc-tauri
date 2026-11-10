@@ -8,6 +8,7 @@ ignores:
   - "**/terminology.json"
   - "**/tauri.conf.json"
   - "**/swagger-examples.json"
+  - "**/swagger-examples-by-version.json"
   - "**/code-terminology.json"
   - "**/package.json"
   - "**/package-lock.json"
