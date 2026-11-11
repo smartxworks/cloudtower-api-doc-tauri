@@ -2552,7 +2552,28 @@
     },
     "MountNewCreateDisksParams": {
       "storage_config": "存储配置",
-      "vm_volume.provision_policy": "虚拟卷置备方式"
+      "max_bandwidth_policy": "最大带宽限制策略",
+      "max_bandwidth_unit": "最大带宽单位",
+      "max_bandwidth": "最大带宽",
+      "max_iops_policy": "最大 IOPS 限制策略",
+      "max_iops": "最大 IOPS",
+      "vm_volume": "虚拟卷",
+      "index": "磁盘序号",
+      "key": "键值",
+      "bus": "总线",
+      "boot": "启动顺序",
+      "vm_volume.provision_policy": "虚拟卷置备方式",
+      "vm_volume.resident_in_cache": "常驻缓存",
+      "vm_volume.elf_ec_storage_policy.thin_provision": "是否为精简置备",
+      "vm_volume.elf_ec_storage_policy.ec_m": "纠删码 M 值",
+      "vm_volume.elf_ec_storage_policy.ec_k": "纠删码 K 值",
+      "vm_volume.elf_ec_storage_policy": "纠删码存储策略",
+      "vm_volume.elf_replica_storage_policy": "副本存储策略",
+      "vm_volume.elf_storage_policy": "存储策略",
+      "vm_volume.path": "磁盘路径",
+      "vm_volume.size_unit": "容量单位",
+      "vm_volume.size": "容量大小（字节）",
+      "vm_volume.name": "磁盘名称"
     },
     "VmCdRomParams": {
       "storage_config": "存储配置"
@@ -2571,33 +2592,6 @@
     },
     "VmRebuildParams": {
       "storage_config": "存储配置"
-    },
-    "AddVmDiskVmVolumeParams": {
-      "provision_policy": "置备方式",
-      "resident_in_cache": "常驻缓存",
-      "elf_ec_storage_policy.thin_provision": "是否为精简置备",
-      "elf_ec_storage_policy.ec_m": "纠删码 M 值",
-      "elf_ec_storage_policy.ec_k": "纠删码 K 值",
-      "elf_ec_storage_policy": "纠删码存储策略",
-      "elf_replica_storage_policy": "副本存储策略",
-      "elf_storage_policy": "存储策略",
-      "path": "磁盘路径",
-      "size_unit": "容量单位",
-      "size": "容量大小（字节）",
-      "name": "磁盘名称"
-    },
-    "AddVmDiskMountNewCreateDisksParams": {
-      "storage_config": "存储配置",
-      "max_bandwidth_policy": "最大带宽限制策略",
-      "max_bandwidth_unit": "最大带宽单位",
-      "max_bandwidth": "最大带宽",
-      "max_iops_policy": "最大 IOPS 限制策略",
-      "max_iops": "最大 IOPS",
-      "vm_volume": "虚拟卷",
-      "index": "磁盘序号",
-      "key": "键值",
-      "bus": "总线",
-      "boot": "启动顺序"
     },
     "MigrateMode": {
       "enum": "* CHANGE_COMPUTE_RESOURCE_AND_STORAGE: 迁移计算和存储资源\n* CHANGE_COMPUTE_RESOURCE_ONLY: 仅迁移计算资源\n* CHANGE_STORAGE_ONLY: 仅迁移存储资源"

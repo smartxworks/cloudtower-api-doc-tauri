@@ -184,128 +184,6 @@
         ],
         "type": "object"
       },
-      "AddVmDiskMountNewCreateDisksParams": {
-        "properties": {
-          "boot": {
-            "description": "启动顺序",
-            "format": "int32",
-            "type": "integer"
-          },
-          "bus": {
-            "$ref": "#/components/schemas/Bus",
-            "description": "总线"
-          },
-          "index": {
-            "description": "磁盘序号",
-            "format": "int32",
-            "type": "integer"
-          },
-          "key": {
-            "description": "键值",
-            "format": "int32",
-            "type": "integer"
-          },
-          "max_bandwidth": {
-            "description": "最大带宽",
-            "format": "int64",
-            "type": "integer"
-          },
-          "max_bandwidth_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "最大带宽限制策略"
-          },
-          "max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit",
-            "description": "最大带宽单位"
-          },
-          "max_iops": {
-            "description": "最大 IOPS",
-            "format": "int64",
-            "type": "integer"
-          },
-          "max_iops_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "最大 IOPS 限制策略"
-          },
-          "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig",
-            "description": "存储配置"
-          },
-          "vm_volume": {
-            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams",
-            "description": "虚拟卷"
-          }
-        },
-        "required": [
-          "vm_volume",
-          "bus",
-          "boot"
-        ],
-        "type": "object"
-      },
-      "AddVmDiskVmVolumeParams": {
-        "properties": {
-          "elf_ec_storage_policy": {
-            "description": "纠删码存储策略",
-            "properties": {
-              "ec_k": {
-                "description": "纠删码 K 值",
-                "format": "int32",
-                "type": "integer"
-              },
-              "ec_m": {
-                "description": "纠删码 M 值",
-                "format": "int32",
-                "type": "integer"
-              },
-              "thin_provision": {
-                "description": "是否为精简置备",
-                "type": "boolean"
-              }
-            },
-            "type": "object"
-          },
-          "elf_replica_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "description": "副本存储策略"
-          },
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "deprecated": true,
-            "description": "存储策略"
-          },
-          "name": {
-            "description": "磁盘名称",
-            "type": "string"
-          },
-          "path": {
-            "description": "磁盘路径",
-            "type": "string"
-          },
-          "provision_policy": {
-            "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "置备方式"
-          },
-          "resident_in_cache": {
-            "description": "常驻缓存",
-            "type": "boolean"
-          },
-          "size": {
-            "description": "容量大小（字节）",
-            "format": "int64",
-            "type": "integer"
-          },
-          "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit",
-            "description": "容量单位"
-          }
-        },
-        "required": [
-          "size",
-          "name"
-        ],
-        "type": "object"
-      },
       "Alert": {
         "additionalProperties": false,
         "properties": {
@@ -91815,62 +91693,67 @@
             "description": "总线"
           },
           "index": {
-            "description": "内部字段",
+            "description": "磁盘序号",
             "format": "int32",
             "type": "integer"
           },
           "key": {
-            "description": "磁盘的 key 属性",
+            "description": "键值",
             "format": "int32",
             "type": "integer"
           },
           "max_bandwidth": {
-            "description": "带宽上限，单位 bps",
+            "description": "最大带宽",
             "format": "int64",
             "type": "integer"
           },
           "max_bandwidth_policy": {
             "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "带宽上限策略"
+            "description": "最大带宽限制策略"
           },
           "max_bandwidth_unit": {
             "$ref": "#/components/schemas/BPSUnit",
-            "description": "指定传入的 bandwidth 的所属单位"
+            "description": "最大带宽单位"
           },
           "max_iops": {
-            "description": "IOPS 上限，单位字节",
+            "description": "最大 IOPS",
             "format": "int64",
             "type": "integer"
           },
           "max_iops_policy": {
             "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "IOPS 上限策略"
+            "description": "最大 IOPS 限制策略"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
             "description": "存储配置"
           },
           "vm_volume": {
-            "description": "关联虚拟卷",
+            "description": "虚拟卷",
             "properties": {
               "elf_ec_storage_policy": {
+                "description": "纠删码存储策略",
                 "properties": {
                   "ec_k": {
+                    "description": "纠删码 K 值",
                     "format": "int32",
                     "type": "integer"
                   },
                   "ec_m": {
+                    "description": "纠删码 M 值",
                     "format": "int32",
                     "type": "integer"
                   },
                   "thin_provision": {
+                    "description": "是否为精简置备",
                     "type": "boolean"
                   }
                 },
                 "type": "object"
               },
               "elf_replica_storage_policy": {
-                "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+                "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
+                "description": "副本存储策略"
               },
               "elf_storage_policy": {
                 "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
@@ -91878,11 +91761,11 @@
                 "description": "存储策略"
               },
               "name": {
-                "description": "虚拟卷名称",
+                "description": "磁盘名称",
                 "type": "string"
               },
               "path": {
-                "description": "虚拟卷路径",
+                "description": "磁盘路径",
                 "type": "string"
               },
               "provision_policy": {
@@ -91890,16 +91773,17 @@
                 "description": "虚拟卷置备方式"
               },
               "resident_in_cache": {
+                "description": "常驻缓存",
                 "type": "boolean"
               },
               "size": {
-                "description": "虚拟卷大小",
+                "description": "容量大小（字节）",
                 "format": "int64",
                 "type": "integer"
               },
               "size_unit": {
                 "$ref": "#/components/schemas/ByteUnit",
-                "description": "指定传入的 size 的所属单位"
+                "description": "容量单位"
               }
             },
             "required": [
@@ -166603,7 +166487,7 @@
                   "mount_new_create_disks": {
                     "description": "创建并挂载新虚拟盘",
                     "items": {
-                      "$ref": "#/components/schemas/AddVmDiskMountNewCreateDisksParams",
+                      "$ref": "#/components/schemas/MountNewCreateDisksParams",
                       "description": "创建并挂载新虚拟盘"
                     },
                     "type": "array"
@@ -195514,11 +195398,11 @@
           },
           {
             "lang": "Java",
-            "source": "package com.smartx.com;\r\n\r\nimport com.smartx.tower.ApiClient;\r\nimport com.smartx.tower.ApiException;\r\nimport com.smartx.tower.ClientUtil;\r\nimport com.smartx.tower.TaskUtil;\r\nimport com.smartx.tower.api.VmApi;\r\nimport com.smartx.tower.model.*;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\nimport java.util.stream.Collectors;\r\n\r\npublic class App {\r\n    public static void main(String[] args) throws ApiException, IOException {\r\n        ApiClient client = new ApiClient();\r\n        client.setBasePath(\"http://tower.smartx.com/v2/api\");\r\n        ClientUtil.login(\"username\",\"root\", client);\r\n\r\n        VmApi vmApi = new VmApi(client);\r\n        VmAddDiskParams params = new VmAddDiskParams()\n.data(new VmAddDiskParamsData()\n.vmDisks(new VmAddDiskParamsDataVmDisks()\n.addMountNewCreateDisksItem(new AddVmDiskMountNewCreateDisksParams()\n.boot(1)\n.bus(Bus.fromValue(\"SCSI\"))\n.vmVolume(new AddVmDiskVmVolumeParams()\n.name(\"extra-disk\")\n.size(21474836480L)\n.provisionPolicy(VmVolumeProvisionPolicy.fromValue(\"thin\")))\n.storageConfig(new StorageConfig()\n.datastoreId(\"Disk-datastore-id\")))))\n.where(new VmWhereInput()\n.id(\"Vm-id\"));\r\n        List<WithTaskVm> resp = vmApi.addVmDisk(params);\r\n        List<String> taskIds = resp.stream().map(withTaskObj -> withTaskObj.getTaskId()).filter(id -> Objects.nonNull(id)).collect(Collectors.toList());\r\n        TaskUtil.WaitTasks(taskIds, client);\r\n    }\r\n}"
+            "source": "package com.smartx.com;\r\n\r\nimport com.smartx.tower.ApiClient;\r\nimport com.smartx.tower.ApiException;\r\nimport com.smartx.tower.ClientUtil;\r\nimport com.smartx.tower.TaskUtil;\r\nimport com.smartx.tower.api.VmApi;\r\nimport com.smartx.tower.model.*;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\nimport java.util.stream.Collectors;\r\n\r\npublic class App {\r\n    public static void main(String[] args) throws ApiException, IOException {\r\n        ApiClient client = new ApiClient();\r\n        client.setBasePath(\"http://tower.smartx.com/v2/api\");\r\n        ClientUtil.login(\"username\",\"root\", client);\r\n\r\n        VmApi vmApi = new VmApi(client);\r\n        VmAddDiskParams params = new VmAddDiskParams()\n.data(new VmAddDiskParamsData()\n.vmDisks(new VmAddDiskParamsDataVmDisks()\n.addMountNewCreateDisksItem(new MountNewCreateDisksParams()\n.boot(1)\n.bus(Bus.fromValue(\"SCSI\"))\n.vmVolume(new MountNewCreateDisksParamsVmVolume()\n.name(\"extra-disk\")\n.size(21474836480L)\n.provisionPolicy(VmVolumeProvisionPolicy.fromValue(\"thin\")))\n.storageConfig(new StorageConfig()\n.datastoreId(\"Disk-datastore-id\")))))\n.where(new VmWhereInput()\n.id(\"Vm-id\"));\r\n        List<WithTaskVm> resp = vmApi.addVmDisk(params);\r\n        List<String> taskIds = resp.stream().map(withTaskObj -> withTaskObj.getTaskId()).filter(id -> Objects.nonNull(id)).collect(Collectors.toList());\r\n        TaskUtil.WaitTasks(taskIds, client);\r\n    }\r\n}"
           },
           {
             "lang": "Go",
-            "source": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"time\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n)\n\nfunc main() {\n\tclient, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{\n\t\tHost:     \"tower.smartx.com\",\n\t\tBasePath: \"v2/api\",\n\t\tSchemes:  []string{\"http\"},\n\t}, apiclient.UserConfig{\n\t\tName:     \"Name\",\n\t\tPassword: \"Password\",\n\t\tSource:   models.UserSourceLOCAL,\n\t})\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tvm_api := client.VM\n\tparams := vm.NewAddVMDiskParams()\n\tparams.RequestBody = &models.VMAddDiskParams{\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountNewCreateDisks: []*models.AddVMDiskMountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot: pointy.Int32(1),\n\t\t\t\t\t\tBus:  models.BusSCSI.Pointer(),\n\t\t\t\t\t\tVMVolume: &models.AddVMDiskVMVolumeParams{\n\t\t\t\t\t\t\tName:            pointy.String(\"extra-disk\"),\n\t\t\t\t\t\t\tSize:            pointy.Int64(21474836480),\n\t\t\t\t\t\t\tProvisionPolicy: models.VMVolumeProvisionPolicy(\"thin\").Pointer(),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tStorageConfig: &models.StorageConfig{\n\t\t\t\t\t\t\tDatastoreID: pointy.String(\"Disk-datastore-id\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"Vm-id\"),\n\t\t},\n\t}\n\trawResp, err := vm_api.AddVMDisk(params)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tresp := rawResp.Payload\n\trespTaskIds := funk.Filter(resp, func(withTaskObj *models.WithTaskVM) bool {\n\t\treturn withTaskObj.TaskID != nil\n\t}).([]*models.WithTaskVM)\n\tif len(respTaskIds) == 0 {\n\t\treturn\n\t}\n\terr = utils.WaitTasks(context.Background(), client, funk.Map(respTaskIds, func(withTaskObj *models.WithTaskVM) string {\n\t\treturn *withTaskObj.TaskID\n\t}).([]string), 1*time.Second)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n}\n"
+            "source": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"time\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n)\n\nfunc main() {\n\tclient, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{\n\t\tHost:     \"tower.smartx.com\",\n\t\tBasePath: \"v2/api\",\n\t\tSchemes:  []string{\"http\"},\n\t}, apiclient.UserConfig{\n\t\tName:     \"Name\",\n\t\tPassword: \"Password\",\n\t\tSource:   models.UserSourceLOCAL,\n\t})\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tvm_api := client.VM\n\tparams := vm.NewAddVMDiskParams()\n\tparams.RequestBody = &models.VMAddDiskParams{\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountNewCreateDisks: []*models.MountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot: pointy.Int32(1),\n\t\t\t\t\t\tBus:  models.BusSCSI.Pointer(),\n\t\t\t\t\t\tVMVolume: &models.MountNewCreateDisksParamsVMVolume{\n\t\t\t\t\t\t\tName:            pointy.String(\"extra-disk\"),\n\t\t\t\t\t\t\tSize:            pointy.Int64(21474836480),\n\t\t\t\t\t\t\tProvisionPolicy: models.VMVolumeProvisionPolicy(\"thin\").Pointer(),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tStorageConfig: &models.StorageConfig{\n\t\t\t\t\t\t\tDatastoreID: pointy.String(\"Disk-datastore-id\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"Vm-id\"),\n\t\t},\n\t}\n\trawResp, err := vm_api.AddVMDisk(params)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tresp := rawResp.Payload\n\trespTaskIds := funk.Filter(resp, func(withTaskObj *models.WithTaskVM) bool {\n\t\treturn withTaskObj.TaskID != nil\n\t}).([]*models.WithTaskVM)\n\tif len(respTaskIds) == 0 {\n\t\treturn\n\t}\n\terr = utils.WaitTasks(context.Background(), client, funk.Map(respTaskIds, func(withTaskObj *models.WithTaskVM) string {\n\t\treturn *withTaskObj.TaskID\n\t}).([]string), 1*time.Second)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n}\n"
           },
           {
             "lang": "Python",
