@@ -176,128 +176,6 @@
         ],
         "type": "object"
       },
-      "AddVmDiskMountNewCreateDisksParams": {
-        "properties": {
-          "boot": {
-            "description": "Boot order",
-            "format": "int32",
-            "type": "integer"
-          },
-          "bus": {
-            "$ref": "#/components/schemas/Bus",
-            "description": "Bus"
-          },
-          "index": {
-            "description": "Disk index",
-            "format": "int32",
-            "type": "integer"
-          },
-          "key": {
-            "description": "Key",
-            "format": "int32",
-            "type": "integer"
-          },
-          "max_bandwidth": {
-            "description": "Maximum bandwidth",
-            "format": "int64",
-            "type": "integer"
-          },
-          "max_bandwidth_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "Maximum bandwidth limit policy"
-          },
-          "max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit",
-            "description": "Maximum bandwidth unit"
-          },
-          "max_iops": {
-            "description": "Maximum IOPS",
-            "format": "int64",
-            "type": "integer"
-          },
-          "max_iops_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "Maximum IOPS limit policy"
-          },
-          "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig",
-            "description": "Storage configuration"
-          },
-          "vm_volume": {
-            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams",
-            "description": "VM volume"
-          }
-        },
-        "required": [
-          "vm_volume",
-          "bus",
-          "boot"
-        ],
-        "type": "object"
-      },
-      "AddVmDiskVmVolumeParams": {
-        "properties": {
-          "elf_ec_storage_policy": {
-            "description": "Erasure coding storage policy",
-            "properties": {
-              "ec_k": {
-                "description": "Erasure coding K value",
-                "format": "int32",
-                "type": "integer"
-              },
-              "ec_m": {
-                "description": "Erasure coding M value",
-                "format": "int32",
-                "type": "integer"
-              },
-              "thin_provision": {
-                "description": "Whether thin provisioning is used",
-                "type": "boolean"
-              }
-            },
-            "type": "object"
-          },
-          "elf_replica_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "description": "Replica storage policy"
-          },
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "deprecated": true,
-            "description": "Storage policy"
-          },
-          "name": {
-            "description": "Disk name",
-            "type": "string"
-          },
-          "path": {
-            "description": "Disk path",
-            "type": "string"
-          },
-          "provision_policy": {
-            "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning"
-          },
-          "resident_in_cache": {
-            "description": "Resident in cache",
-            "type": "boolean"
-          },
-          "size": {
-            "description": "Size (bytes)",
-            "format": "int64",
-            "type": "integer"
-          },
-          "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit",
-            "description": "Size unit"
-          }
-        },
-        "required": [
-          "size",
-          "name"
-        ],
-        "type": "object"
-      },
       "Alert": {
         "additionalProperties": false,
         "properties": {
@@ -85987,71 +85865,79 @@
             "description": "Bus"
           },
           "index": {
-            "description": "Internal field",
+            "description": "Disk index",
             "format": "int32",
             "type": "integer"
           },
           "key": {
-            "description": "Disk key attribute",
+            "description": "Key",
             "format": "int32",
             "type": "integer"
           },
           "max_bandwidth": {
-            "description": "Maximum bandwidth limit (bps)",
+            "description": "Maximum bandwidth",
             "format": "int64",
             "type": "integer"
           },
           "max_bandwidth_policy": {
             "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "Bandwidth limit policy"
+            "description": "Maximum bandwidth limit policy"
           },
           "max_bandwidth_unit": {
             "$ref": "#/components/schemas/BPSUnit",
-            "description": "Unit of the bandwidth parameter"
+            "description": "Maximum bandwidth unit"
           },
           "max_iops": {
-            "description": "Maximum IOPS limit (bytes)",
+            "description": "Maximum IOPS",
             "format": "int64",
             "type": "integer"
           },
           "max_iops_policy": {
             "$ref": "#/components/schemas/VmDiskIoRestrictType",
-            "description": "IOPS limit policy"
+            "description": "Maximum IOPS limit policy"
           },
           "storage_config": {
             "$ref": "#/components/schemas/StorageConfig",
             "description": "Storage configuration"
           },
           "vm_volume": {
-            "description": "Associated virtual volume",
+            "description": "VM volume",
             "properties": {
               "elf_ec_storage_policy": {
+                "description": "Erasure coding storage policy",
                 "properties": {
                   "ec_k": {
+                    "description": "Erasure coding K value",
                     "format": "int32",
                     "type": "integer"
                   },
                   "ec_m": {
+                    "description": "Erasure coding M value",
                     "format": "int32",
                     "type": "integer"
                   },
                   "thin_provision": {
+                    "description": "Whether thin provisioning is used",
                     "type": "boolean"
                   }
                 },
                 "type": "object"
               },
               "elf_replica_storage_policy": {
-                "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
+                "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
+                "description": "Replica storage policy"
               },
               "elf_storage_policy": {
                 "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-                "deprecated": true
+                "deprecated": true,
+                "description": "Storage policy"
               },
               "name": {
+                "description": "Disk name",
                 "type": "string"
               },
               "path": {
+                "description": "Disk path",
                 "type": "string"
               },
               "provision_policy": {
@@ -86059,14 +85945,17 @@
                 "description": "VM volume provisioning"
               },
               "resident_in_cache": {
+                "description": "Resident in cache",
                 "type": "boolean"
               },
               "size": {
+                "description": "Size (bytes)",
                 "format": "int64",
                 "type": "integer"
               },
               "size_unit": {
-                "$ref": "#/components/schemas/ByteUnit"
+                "$ref": "#/components/schemas/ByteUnit",
+                "description": "Size unit"
               }
             },
             "required": [
@@ -155520,7 +155409,7 @@
                   },
                   "mount_new_create_disks": {
                     "items": {
-                      "$ref": "#/components/schemas/AddVmDiskMountNewCreateDisksParams"
+                      "$ref": "#/components/schemas/MountNewCreateDisksParams"
                     },
                     "type": "array"
                   }
@@ -183651,11 +183540,11 @@
           },
           {
             "lang": "Java",
-            "source": "package com.smartx.com;\r\n\r\nimport com.smartx.tower.ApiClient;\r\nimport com.smartx.tower.ApiException;\r\nimport com.smartx.tower.ClientUtil;\r\nimport com.smartx.tower.TaskUtil;\r\nimport com.smartx.tower.api.VmApi;\r\nimport com.smartx.tower.model.*;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\nimport java.util.stream.Collectors;\r\n\r\npublic class App {\r\n    public static void main(String[] args) throws ApiException, IOException {\r\n        ApiClient client = new ApiClient();\r\n        client.setBasePath(\"http://tower.smartx.com/v2/api\");\r\n        ClientUtil.login(\"username\",\"root\", client);\r\n\r\n        VmApi vmApi = new VmApi(client);\r\n        VmAddDiskParams params = new VmAddDiskParams()\n.data(new VmAddDiskParamsData()\n.vmDisks(new VmAddDiskParamsDataVmDisks()\n.addMountNewCreateDisksItem(new AddVmDiskMountNewCreateDisksParams()\n.boot(1)\n.bus(Bus.fromValue(\"SCSI\"))\n.vmVolume(new AddVmDiskVmVolumeParams()\n.name(\"extra-disk\")\n.size(21474836480L)\n.provisionPolicy(VmVolumeProvisionPolicy.fromValue(\"thin\")))\n.storageConfig(new StorageConfig()\n.datastoreId(\"Disk-datastore-id\")))))\n.where(new VmWhereInput()\n.id(\"Vm-id\"));\r\n        List<WithTaskVm> resp = vmApi.addVmDisk(params);\r\n        List<String> taskIds = resp.stream().map(withTaskObj -> withTaskObj.getTaskId()).filter(id -> Objects.nonNull(id)).collect(Collectors.toList());\r\n        TaskUtil.WaitTasks(taskIds, client);\r\n    }\r\n}"
+            "source": "package com.smartx.com;\r\n\r\nimport com.smartx.tower.ApiClient;\r\nimport com.smartx.tower.ApiException;\r\nimport com.smartx.tower.ClientUtil;\r\nimport com.smartx.tower.TaskUtil;\r\nimport com.smartx.tower.api.VmApi;\r\nimport com.smartx.tower.model.*;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\nimport java.util.stream.Collectors;\r\n\r\npublic class App {\r\n    public static void main(String[] args) throws ApiException, IOException {\r\n        ApiClient client = new ApiClient();\r\n        client.setBasePath(\"http://tower.smartx.com/v2/api\");\r\n        ClientUtil.login(\"username\",\"root\", client);\r\n\r\n        VmApi vmApi = new VmApi(client);\r\n        VmAddDiskParams params = new VmAddDiskParams()\n.data(new VmAddDiskParamsData()\n.vmDisks(new VmAddDiskParamsDataVmDisks()\n.addMountNewCreateDisksItem(new MountNewCreateDisksParams()\n.boot(1)\n.bus(Bus.fromValue(\"SCSI\"))\n.vmVolume(new MountNewCreateDisksParamsVmVolume()\n.name(\"extra-disk\")\n.size(21474836480L)\n.provisionPolicy(VmVolumeProvisionPolicy.fromValue(\"thin\")))\n.storageConfig(new StorageConfig()\n.datastoreId(\"Disk-datastore-id\")))))\n.where(new VmWhereInput()\n.id(\"Vm-id\"));\r\n        List<WithTaskVm> resp = vmApi.addVmDisk(params);\r\n        List<String> taskIds = resp.stream().map(withTaskObj -> withTaskObj.getTaskId()).filter(id -> Objects.nonNull(id)).collect(Collectors.toList());\r\n        TaskUtil.WaitTasks(taskIds, client);\r\n    }\r\n}"
           },
           {
             "lang": "Go",
-            "source": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"time\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n)\n\nfunc main() {\n\tclient, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{\n\t\tHost:     \"tower.smartx.com\",\n\t\tBasePath: \"v2/api\",\n\t\tSchemes:  []string{\"http\"},\n\t}, apiclient.UserConfig{\n\t\tName:     \"Name\",\n\t\tPassword: \"Password\",\n\t\tSource:   models.UserSourceLOCAL,\n\t})\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tvm_api := client.VM\n\tparams := vm.NewAddVMDiskParams()\n\tparams.RequestBody = &models.VMAddDiskParams{\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountNewCreateDisks: []*models.AddVMDiskMountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot: pointy.Int32(1),\n\t\t\t\t\t\tBus:  models.BusSCSI.Pointer(),\n\t\t\t\t\t\tVMVolume: &models.AddVMDiskVMVolumeParams{\n\t\t\t\t\t\t\tName:            pointy.String(\"extra-disk\"),\n\t\t\t\t\t\t\tSize:            pointy.Int64(21474836480),\n\t\t\t\t\t\t\tProvisionPolicy: models.VMVolumeProvisionPolicy(\"thin\").Pointer(),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tStorageConfig: &models.StorageConfig{\n\t\t\t\t\t\t\tDatastoreID: pointy.String(\"Disk-datastore-id\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"Vm-id\"),\n\t\t},\n\t}\n\trawResp, err := vm_api.AddVMDisk(params)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tresp := rawResp.Payload\n\trespTaskIds := funk.Filter(resp, func(withTaskObj *models.WithTaskVM) bool {\n\t\treturn withTaskObj.TaskID != nil\n\t}).([]*models.WithTaskVM)\n\tif len(respTaskIds) == 0 {\n\t\treturn\n\t}\n\terr = utils.WaitTasks(context.Background(), client, funk.Map(respTaskIds, func(withTaskObj *models.WithTaskVM) string {\n\t\treturn *withTaskObj.TaskID\n\t}).([]string), 1*time.Second)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n}\n"
+            "source": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"time\"\n\n\t\"github.com/openlyinc/pointy\"\n\tapiclient \"github.com/smartxworks/cloudtower-go-sdk/v2/client\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/client/vm\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/models\"\n\t\"github.com/smartxworks/cloudtower-go-sdk/v2/utils\"\n\t\"github.com/thoas/go-funk\"\n)\n\nfunc main() {\n\tclient, err := apiclient.NewWithUserConfig(apiclient.ClientConfig{\n\t\tHost:     \"tower.smartx.com\",\n\t\tBasePath: \"v2/api\",\n\t\tSchemes:  []string{\"http\"},\n\t}, apiclient.UserConfig{\n\t\tName:     \"Name\",\n\t\tPassword: \"Password\",\n\t\tSource:   models.UserSourceLOCAL,\n\t})\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tvm_api := client.VM\n\tparams := vm.NewAddVMDiskParams()\n\tparams.RequestBody = &models.VMAddDiskParams{\n\t\tData: &models.VMAddDiskParamsData{\n\t\t\tVMDisks: &models.VMAddDiskParamsDataVMDisks{\n\t\t\t\tMountNewCreateDisks: []*models.MountNewCreateDisksParams{\n\t\t\t\t\t{\n\t\t\t\t\t\tBoot: pointy.Int32(1),\n\t\t\t\t\t\tBus:  models.BusSCSI.Pointer(),\n\t\t\t\t\t\tVMVolume: &models.MountNewCreateDisksParamsVMVolume{\n\t\t\t\t\t\t\tName:            pointy.String(\"extra-disk\"),\n\t\t\t\t\t\t\tSize:            pointy.Int64(21474836480),\n\t\t\t\t\t\t\tProvisionPolicy: models.VMVolumeProvisionPolicy(\"thin\").Pointer(),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tStorageConfig: &models.StorageConfig{\n\t\t\t\t\t\t\tDatastoreID: pointy.String(\"Disk-datastore-id\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t\tWhere: &models.VMWhereInput{\n\t\t\tID: pointy.String(\"Vm-id\"),\n\t\t},\n\t}\n\trawResp, err := vm_api.AddVMDisk(params)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n\tresp := rawResp.Payload\n\trespTaskIds := funk.Filter(resp, func(withTaskObj *models.WithTaskVM) bool {\n\t\treturn withTaskObj.TaskID != nil\n\t}).([]*models.WithTaskVM)\n\tif len(respTaskIds) == 0 {\n\t\treturn\n\t}\n\terr = utils.WaitTasks(context.Background(), client, funk.Map(respTaskIds, func(withTaskObj *models.WithTaskVM) string {\n\t\treturn *withTaskObj.TaskID\n\t}).([]string), 1*time.Second)\n\tif err != nil {\n\t\tfmt.Println(err)\n\t\treturn\n\t}\n}\n"
           },
           {
             "lang": "Python",

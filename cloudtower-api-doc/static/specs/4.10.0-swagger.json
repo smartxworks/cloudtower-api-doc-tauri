@@ -103359,107 +103359,6 @@
         ],
         "type": "object"
       },
-      "AddVmDiskVmVolumeParams": {
-        "properties": {
-          "provision_policy": {
-            "$ref": "#/components/schemas/VmVolumeProvisionPolicy",
-            "description": "Provisioning type when associated storage is a datastore."
-          },
-          "resident_in_cache": {
-            "type": "boolean"
-          },
-          "elf_ec_storage_policy": {
-            "properties": {
-              "thin_provision": {
-                "type": "boolean"
-              },
-              "ec_m": {
-                "type": "integer",
-                "format": "int32"
-              },
-              "ec_k": {
-                "type": "integer",
-                "format": "int32"
-              }
-            },
-            "type": "object"
-          },
-          "elf_replica_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType"
-          },
-          "elf_storage_policy": {
-            "$ref": "#/components/schemas/VmVolumeElfStoragePolicyType",
-            "deprecated": true
-          },
-          "path": {
-            "type": "string"
-          },
-          "size_unit": {
-            "$ref": "#/components/schemas/ByteUnit"
-          },
-          "size": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "size",
-          "name"
-        ],
-        "type": "object"
-      },
-      "AddVmDiskMountNewCreateDisksParams": {
-        "properties": {
-          "storage_config": {
-            "$ref": "#/components/schemas/StorageConfig",
-            "description": "Associated storage for a compute cluster."
-          },
-          "max_bandwidth_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
-          },
-          "max_bandwidth_unit": {
-            "$ref": "#/components/schemas/BPSUnit"
-          },
-          "max_bandwidth": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "max_iops_policy": {
-            "$ref": "#/components/schemas/VmDiskIoRestrictType"
-          },
-          "max_iops": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "vm_volume": {
-            "$ref": "#/components/schemas/AddVmDiskVmVolumeParams"
-          },
-          "index": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "key": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bus": {
-            "$ref": "#/components/schemas/Bus"
-          },
-          "boot": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "required": [
-          "vm_volume",
-          "bus",
-          "boot"
-        ],
-        "type": "object"
-      },
       "VmAddDiskParams": {
         "properties": {
           "data": {
@@ -103494,7 +103393,7 @@
                   },
                   "mount_new_create_disks": {
                     "items": {
-                      "$ref": "#/components/schemas/AddVmDiskMountNewCreateDisksParams"
+                      "$ref": "#/components/schemas/MountNewCreateDisksParams"
                     },
                     "type": "array"
                   }

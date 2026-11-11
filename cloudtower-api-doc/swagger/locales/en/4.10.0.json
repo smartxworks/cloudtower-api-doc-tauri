@@ -2552,7 +2552,28 @@
     },
     "MountNewCreateDisksParams": {
       "storage_config": "Storage configuration",
-      "vm_volume.provision_policy": "VM volume provisioning"
+      "max_bandwidth_policy": "Maximum bandwidth limit policy",
+      "max_bandwidth_unit": "Maximum bandwidth unit",
+      "max_bandwidth": "Maximum bandwidth",
+      "max_iops_policy": "Maximum IOPS limit policy",
+      "max_iops": "Maximum IOPS",
+      "vm_volume": "VM volume",
+      "index": "Disk index",
+      "key": "Key",
+      "bus": "Bus",
+      "boot": "Boot order",
+      "vm_volume.provision_policy": "VM volume provisioning",
+      "vm_volume.resident_in_cache": "Resident in cache",
+      "vm_volume.elf_ec_storage_policy.thin_provision": "Whether thin provisioning is used",
+      "vm_volume.elf_ec_storage_policy.ec_m": "Erasure coding M value",
+      "vm_volume.elf_ec_storage_policy.ec_k": "Erasure coding K value",
+      "vm_volume.elf_ec_storage_policy": "Erasure coding storage policy",
+      "vm_volume.elf_replica_storage_policy": "Replica storage policy",
+      "vm_volume.elf_storage_policy": "Storage policy",
+      "vm_volume.path": "Disk path",
+      "vm_volume.size_unit": "Size unit",
+      "vm_volume.size": "Size (bytes)",
+      "vm_volume.name": "Disk name"
     },
     "VmCdRomParams": {
       "storage_config": "Storage configuration"
@@ -2571,33 +2592,6 @@
     },
     "VmRebuildParams": {
       "storage_config": "Storage configuration"
-    },
-    "AddVmDiskVmVolumeParams": {
-      "provision_policy": "Provisioning",
-      "resident_in_cache": "Resident in cache",
-      "elf_ec_storage_policy.thin_provision": "Whether thin provisioning is used",
-      "elf_ec_storage_policy.ec_m": "Erasure coding M value",
-      "elf_ec_storage_policy.ec_k": "Erasure coding K value",
-      "elf_ec_storage_policy": "Erasure coding storage policy",
-      "elf_replica_storage_policy": "Replica storage policy",
-      "elf_storage_policy": "Storage policy",
-      "path": "Disk path",
-      "size_unit": "Size unit",
-      "size": "Size (bytes)",
-      "name": "Disk name"
-    },
-    "AddVmDiskMountNewCreateDisksParams": {
-      "storage_config": "Storage configuration",
-      "max_bandwidth_policy": "Maximum bandwidth limit policy",
-      "max_bandwidth_unit": "Maximum bandwidth unit",
-      "max_bandwidth": "Maximum bandwidth",
-      "max_iops_policy": "Maximum IOPS limit policy",
-      "max_iops": "Maximum IOPS",
-      "vm_volume": "VM volume",
-      "index": "Disk index",
-      "key": "Key",
-      "bus": "Bus",
-      "boot": "Boot order"
     },
     "MigrateMode": {
       "enum": "* CHANGE_COMPUTE_RESOURCE_AND_STORAGE: Migrate compute and storage resources\n* CHANGE_COMPUTE_RESOURCE_ONLY: Only migrate compute resources\n* CHANGE_STORAGE_ONLY: Only migrate storage resources"
