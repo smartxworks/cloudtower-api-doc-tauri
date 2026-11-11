@@ -13,21 +13,21 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Run Test on Node ${{ matrix.node }}
+    name: Run Test on Node
     steps:
       - name: checkout
         uses: actions/checkout@v4
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 24
       - name: Setup yarn
         run: npm install -g yarn
       - name: Install deps
         run: yarn install --frozen-lockfile
         timeout-minutes: 15
-      # - name: Test
-      #   run: yarn test
+      - name: Test
+        run: yarn test --run
       - name: Build
         run: yarn build
       - name: Check Locales
