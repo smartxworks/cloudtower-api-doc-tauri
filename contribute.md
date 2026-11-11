@@ -143,15 +143,15 @@ node create-new-api-doc.js
 - 支持生成 curl、Python、Go、Java 代码片段
 - 生成示例请求体数据
 
-**使用方法**:
+新增版本的 Swagger 后，可以为该版本及后续版本生成示例覆盖。以 4.11.0 为例，运行以下命令。
+
 ```bash
-node create-new-api-example.js -v <version>
-# 例如: node create-new-api-example.js -v 4.7.0
+yarn api:new-example -v 4.11.0 --versioned
 ```
 
-**输出**: 生成的示例代码保存到 `swagger/examples/swagger-examples.json`
+脚本将与继承示例不同的接口写入 `swagger/examples/swagger-examples-by-version.json` 的对应版本。每个接口的请求体和 SDK 片段一起覆盖。文档使用不晚于当前版本的最新覆盖，找不到覆盖时使用共享示例。
 
-如果示例只应影响指定版本及后续版本，运行 `yarn api:new-example -v <version> --versioned`。脚本将与继承示例不同的接口写入 `swagger/examples/swagger-examples-by-version.json` 的对应版本。每个接口的请求体和 SDK 片段一起覆盖。同一接口有多次覆盖时，使用不晚于当前文档版本的最新一条。
+运行 `yarn api:new-example -v <version>` 会重写共享的 `swagger/examples/swagger-examples.json`。带 `--versioned` 重新生成已有版本时，脚本会重算该版本的覆盖。生成后检查 diff，并补回需要保留的手工修改。
 
 ### merge-json.js
 
