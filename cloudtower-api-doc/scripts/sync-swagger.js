@@ -16,7 +16,11 @@ const sync = (t, v) => {
     response.on('data', (chunk) => content += chunk);
     response.on('end', () => {
       if(response.statusCode === 200) {
-        const formatContent = JSON.stringify(JSON.parse(content), null, 2)
+        const spec = JSON.parse(content)
+        if (!spec.info.title?.trim()) {
+          spec.info.title = 'CloudTower APIs'
+        }
+        const formatContent = JSON.stringify(spec, null, 2)
         fs.writeFileSync(filePath, formatContent, 'utf-8')
       }
     })
