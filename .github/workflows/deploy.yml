@@ -51,13 +51,12 @@ jobs:
           vercel-version: 52.0.0
           working-directory: ${{ github.workspace }}
           vercel-args: '--prod'
-      - name: upload to cdn
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Save CDN build
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: github.event_name == 'push'
         with:
-            username: ${{ secrets.SFTP_USERNAME }}
-            server: ${{ secrets.SFTP_SERVER }}
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-            local_path: './cloudtower-api-doc/build/*'
-            remote_path: '/uploads/code-site'
-            sftp_only: true
+          name: cloudtower-api-doc-site
+          path: cloudtower-api-doc/build/
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
